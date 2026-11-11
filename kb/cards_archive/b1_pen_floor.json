@@ -1,0 +1,786 @@
+[
+ {
+  "id": "b-floor-principle",
+  "cat": "pen",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "펜이 책상에 닿았는지 어떻게 알아내나요?",
+    "펜 접촉 판정 원리가 뭔가요",
+    "floor 접촉 판정이 뭐예요",
+    "카메라 하나로 펜 터치를 어떻게 구분해요",
+    "floor 접촉 판정이 뭐예요?",
+    "펜 접촉 판정 방식 설명"
+   ],
+   "en": [
+    "How does AnyControl tell whether the pen is touching the desk?",
+    "What is the principle behind pen contact detection?",
+    "What is the floor contact method?",
+    "How can one camera detect a pen touch?",
+    "What is floor contact detection?",
+    "Explain pen contact detection"
+   ]
+  },
+  "a": {
+   "ko": "'펜은 책상을 뚫고 내려갈 수 없다'는 물리 제약을 씁니다. 펜 끝의 화면 위치 d 와 펜 몸통의 화면 굵기 w 는 닿아 있을 때 직선 관계 d = k·w − c 를 이룹니다. 이 직선을 영상에서 스스로 학습하고, 펜 끝이 그 직선에서 얼마나 떨어졌는지(펜 지름 단위)로 접촉을 판정합니다. 구현은 pen_floor.py 이고 현재 기본 접촉 방식(contact_method=floor)입니다.",
+   "en": "It relies on a physical constraint: a pen cannot go through the desk. When the tip touches the desk, the tip's on-screen position d and the pen body's on-screen width w follow a straight line, d = k·w − c. The system learns that line from the video itself and judges contact by how far the tip sits from it, measured in pen diameters. It is implemented in pen_floor.py and is the current default contact method (contact_method=floor)."
+  },
+  "kw": [
+   "펜 접촉",
+   "floor",
+   "바닥 기하",
+   "d=k·w−c",
+   "pen contact",
+   "touch detection",
+   "접촉 판정",
+   "pen_floor.py",
+   "책상"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#0",
+   "sources/04_HANDOFF_개발기록.md#3.1",
+   "sources/04_HANDOFF_개발기록.md#9.2"
+  ],
+  "related": [
+   "b-floor-hover-formula",
+   "b-floor-online-learning",
+   "b-floor-vs-legacy"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-floor-hover-formula",
+  "cat": "pen",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "d = k·w − c 식은 어디서 나왔나요?",
+    "펜이 떠 있는 높이는 어떻게 계산하나요",
+    "hover 값이 뭐예요",
+    "왜 펜 굵기를 같이 보나요"
+   ],
+   "en": [
+    "Where does d = k·w − c come from?",
+    "How is the pen's hover height computed?",
+    "What is the hover value?",
+    "Why does the system look at pen width as well?"
+   ]
+  },
+  "a": {
+   "ko": "단안 카메라는 깊이를 모르기 때문에 펜 끝의 화면 y 만으로는 접촉을 알 수 없습니다. 펜 지름은 고정이라 화면 굵기 w 가 깊이에 반비례하므로, 핀홀 카메라 식에서 깊이를 소거하면 접촉 시 d = k·w − c 가 나옵니다(METHOD.md 유도). 일반 프레임의 떠 있는 높이는 hover = k − (d + c)/w 이고 단위가 펜 지름이라 카메라 거리와 무관한 임계값을 쓸 수 있습니다. hover 0 은 접촉, 양수는 떠 있음, 크게 음수면 책상 아래라는 불가능 값(마스크 오류)입니다.",
+   "en": "With a single camera the tip's screen y alone cannot reveal contact because depth is unknown. The pen diameter is fixed, so its on-screen width w is inversely proportional to depth; eliminating depth from the pinhole-camera equations gives d = k·w − c at contact (derivation in METHOD.md). For any frame, hover = k − (d + c)/w is the height above the desk in pen diameters, so thresholds do not depend on camera distance. A hover of 0 means contact, positive means hovering, and a large negative value is impossible (a mask error)."
+  },
+  "kw": [
+   "hover",
+   "펜 지름",
+   "깊이 모호성",
+   "핀홀",
+   "pinhole",
+   "d=k·w−c",
+   "굵기",
+   "pen width",
+   "무차원 임계값"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#1.2",
+   "sources/05_펜_접촉판정_METHOD.md#3.4"
+  ],
+  "related": [
+   "b-floor-principle",
+   "b-floor-online-learning"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-online-learning",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "라벨 없이 어떻게 학습하나요?",
+    "k와 c는 어떻게 정해지나요",
+    "바닥 모델은 어떻게 자동 보정되나요",
+    "RANSAC을 왜 쓰나요"
+   ],
+   "en": [
+    "How does it learn without labels?",
+    "How are k and c determined?",
+    "How is the floor model calibrated automatically?",
+    "Why is RANSAC used?"
+   ]
+  },
+  "a": {
+   "ko": "접촉 프레임은 모두 한 직선 위에 모이고 떠 있는 프레임은 직선의 한쪽으로만 흩어지며 반대쪽은 물리적으로 불가능하므로 직선이 구조적으로 정해집니다. FloorModel 이 최근 1800개 표본을 쌓아 10프레임마다 RANSAC 후 IRLS(Tukey)로 (k, c)와 잡음 σ 를 다시 맞춥니다. 독립 알고리즘 테스트(pen_test.mov 1개, 60fps, 임시 분할기)에서는 라벨 없이 k≈2.52, c≈64.9 px, σ≈0.20 D 를 얻었고 정답 라벨로 최소제곱한 k≈2.48, c≈62 와 거의 같았습니다.",
+   "en": "Contact frames all lie on one line, while hovering frames scatter only to one side of it and the other side is physically impossible, so the line is determined structurally. FloorModel keeps the latest 1800 samples and refits (k, c) and the noise level σ every 10 frames using RANSAC followed by IRLS (Tukey). In the standalone algorithm test (1 video, pen_test.mov, 60 fps, a stand-in segmenter) it found k≈2.52, c≈64.9 px, σ≈0.20 D without labels, close to the k≈2.48, c≈62 from a least-squares fit on the ground-truth labels."
+  },
+  "kw": [
+   "FloorModel",
+   "RANSAC",
+   "IRLS",
+   "라벨 없음",
+   "self-calibration",
+   "자기 보정",
+   "sigma",
+   "σ",
+   "k",
+   "c"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#3.4"
+  ],
+  "related": [
+   "b-floor-hover-formula",
+   "b-floor-vs-legacy"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-vs-legacy",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "floor 방식이 기존 방식보다 얼마나 좋아졌나요?",
+    "legacy와 floor 비교 수치",
+    "펜 접촉 정확도 수치가 뭐예요",
+    "펜 접촉 F1이 얼마예요"
+   ],
+   "en": [
+    "How much better is the floor method than the legacy one?",
+    "legacy vs floor numbers",
+    "What is the pen contact accuracy?",
+    "What F1 does pen contact detection reach?"
+   ]
+  },
+  "a": {
+   "ko": "AnyControl 벤치(30fps, 영상 pen_test.mov 1개, 사람이 라벨링, 경계 ±2프레임 제외)에서 프레임 F1 이 legacy 0.649 → floor 0.946 입니다. 영상 IMG_0002(30fps 원본, 실내 확산광)에서는 step 2 기준 floor 0.889 이고, step 1 에서 legacy 0.785 → floor(평면 모델) 0.813 으로 차이가 훨씬 작습니다. IMG_0002 라벨은 사람 검수 전이고 영상이 2개뿐이라 일반화된 수치로 보면 안 됩니다.",
+   "en": "On the AnyControl bench (30 fps, one video pen_test.mov, human-labelled, ±2 frames around boundaries excluded) the frame-level F1 goes from 0.649 for legacy to 0.946 for floor. On the second video IMG_0002 (30 fps original, diffuse indoor light) floor scores 0.889 at step 2, and at step 1 legacy 0.785 versus floor (plane model) 0.813, a much smaller gap. The IMG_0002 labels have not been human-reviewed and there are only two videos, so these are not general figures."
+  },
+  "kw": [
+   "F1",
+   "legacy",
+   "floor",
+   "0.946",
+   "0.649",
+   "접촉 정확도",
+   "pen_test",
+   "IMG_0002",
+   "벤치",
+   "비교"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.1",
+   "sources/04_HANDOFF_개발기록.md#8",
+   "sources/09_bench_pen_README.md#결과"
+  ],
+  "related": [
+   "b-floor-bench-table",
+   "b-limits-two-videos",
+   "b-floor-first-stroke"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-floor-bench-table",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "펜 접촉 벤치 결과표를 자세히 알려주세요",
+    "그림자 단서를 넣으면 얼마나 좋아지나요",
+    "단서별 효과가 어떻게 되나요",
+    "30fps와 60fps 결과 차이"
+   ],
+   "en": [
+    "Give me the detailed pen contact bench table",
+    "How much does the shadow cue help?",
+    "What does each cue contribute?",
+    "30 fps vs 60 fps results"
+   ]
+  },
+  "a": {
+   "ko": "pen_test.mov 1개 기준 프레임 F1(30fps / 60fps)은 legacy 0.649/0.816, legacy+그림자 0.674/0.838, floor(바닥 기하+상태기계만) 0.728/0.931, floor+그림자 0.946/0.908 입니다. 전체 구성(floor+all)은 HANDOFF 에 0.946, bench README 표에 0.948 로 적혀 있어 문서 간 0.002 차이가 있습니다. 60fps 에서는 floor 단독이 그림자 추가보다 높아 항상 같은 방향으로 좋아지는 것은 아닙니다. 모두 같은 영상으로 설정을 고른 결과라 낙관적일 수 있습니다.",
+   "en": "On pen_test.mov alone, frame F1 (30 fps / 60 fps) is legacy 0.649/0.816, legacy plus shadow 0.674/0.838, floor (floor geometry plus state machine only) 0.728/0.931, and floor plus shadow 0.946/0.908. The full configuration (floor+all) is listed as 0.946 in HANDOFF and 0.948 in the bench README table, a 0.002 difference between documents. At 60 fps floor alone beats floor plus shadow, so the gain does not always point the same way. Settings were chosen on the same video, so the numbers may be optimistic."
+  },
+  "kw": [
+   "ablation",
+   "그림자",
+   "shadow",
+   "30fps",
+   "60fps",
+   "bench",
+   "floor+all",
+   "단서",
+   "표",
+   "F1"
+  ],
+  "src": [
+   "sources/09_bench_pen_README.md#결과 (pen_test.mov, 라벨: 사람이 펜촉 확대 크롭으로 판정)"
+  ],
+  "related": [
+   "b-floor-vs-legacy",
+   "b-floor-shadow-ring",
+   "b-floor-overfit"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-first-stroke",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "기존 방식은 왜 첫 획을 놓쳤나요?",
+    "터치다운 지연이 얼마인가요",
+    "펜을 대고 얼마 만에 인식하나요",
+    "처음 몇 초 동안은 안 되나요"
+   ],
+   "en": [
+    "Why did the legacy method miss the first stroke?",
+    "What is the touch-down delay?",
+    "How quickly is a touch recognized?",
+    "Does it not work for the first few seconds?"
+   ]
+  },
+  "a": {
+   "ko": "legacy 는 표본 90개가 모여야 책상 면을 맞추기 시작해서, 30fps 의 pen_test.mov 에서 첫 획(원본 프레임 147–305)을 통째로 놓쳤습니다. floor 는 그림자 'attached' 단서가 바닥 모델을 부트스트랩해 첫 획 터치다운 지연이 +3프레임(50 ms)이고 획 기록은 +1프레임부터 시작합니다(영상 1개, 30fps 측정). 이는 직사광 영상에서의 결과이며, 그림자 단서가 없는 확산광에서는 같은 이점을 보장하지 않습니다.",
+   "en": "Legacy only starts fitting the desk plane after 90 samples are collected, so on pen_test.mov at 30 fps it missed the whole first stroke (original frames 147–305). In floor, the shadow 'attached' cue bootstraps the floor model, giving a first-stroke touch-down delay of +3 frames (50 ms), with stroke recording starting at +1 frame (one video, measured at 30 fps). That is from a direct-sunlight video; under diffuse light with no useful shadow cue the same benefit is not established."
+  },
+  "kw": [
+   "첫 획",
+   "터치다운",
+   "touch-down",
+   "지연",
+   "부트스트랩",
+   "bootstrap",
+   "50 ms",
+   "표본 90개",
+   "초기 보정"
+  ],
+  "src": [
+   "sources/09_bench_pen_README.md#결과 (pen_test.mov, 라벨: 사람이 펜촉 확대 크롭으로 판정)",
+   "sources/05_펜_접촉판정_METHOD.md#4.2"
+  ],
+  "related": [
+   "b-floor-shadow-ring",
+   "b-floor-vs-legacy"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-default",
+  "cat": "pen",
+  "status": "info",
+  "q": {
+   "ko": [
+    "펜 접촉 판정 기본값이 뭔가요?",
+    "floor가 기본인가요 legacy가 기본인가요",
+    "legacy로 되돌릴 수 있나요",
+    "기본값이 바뀐 이력"
+   ],
+   "en": [
+    "What is the default pen contact method?",
+    "Is floor or legacy the default?",
+    "Can I switch back to legacy?",
+    "History of the default change"
+   ]
+  },
+  "a": {
+   "ko": "현재 기본값은 floor 입니다(PenConfig.contact_method=floor, HANDOFF §9.2). 처음에는 검증 영상이 2개뿐이라 legacy 를 기본으로 두었다가 같은 날 후속 작업에서 floor 로 바꿨습니다. 그리기 패널의 '바닥 기하 접촉 판정' 체크박스를 끄거나 POST /api/objects/{id}/pen/config 로 legacy 를 고를 수 있습니다. 기본값 변경 전 다른 조명·각도 영상으로 재검증하겠다던 계획은 새 영상이 없어 수행되지 않았습니다.",
+   "en": "The current default is floor (PenConfig.contact_method=floor, HANDOFF §9.2). It started as legacy because only 2 validation videos existed, and was changed to floor in a follow-up the same day. Unchecking the 'floor-geometry contact' checkbox in the drawing panel, or calling POST /api/objects/{id}/pen/config, selects legacy. The plan to re-validate on other lighting and angles before changing the default was not carried out because no new videos were available."
+  },
+  "kw": [
+   "기본값",
+   "default",
+   "contact_method",
+   "legacy",
+   "floor",
+   "체크박스",
+   "설정",
+   "pen config"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#9.2",
+   "sources/04_HANDOFF_개발기록.md#3.1",
+   "sources/09_bench_pen_README.md#기본값"
+  ],
+  "related": [
+   "b-floor-vs-legacy",
+   "b-limits-two-videos"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-shadow-ring",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "그림자는 펜 접촉 판정에 어떻게 쓰이나요?",
+    "그림자 링이 뭐예요",
+    "확산광에서도 그림자를 쓰나요",
+    "gap과 attached가 뭐예요"
+   ],
+   "en": [
+    "How is shadow used in pen contact detection?",
+    "What is the shadow ring?",
+    "Is the shadow cue used under diffuse light?",
+    "What are gap and attached?"
+   ]
+  },
+  "a": {
+   "ko": "펜 끝 둘레의 가까운 링과 먼 링에서 그림자 픽셀 비율을 봅니다. 주변이 모두 밝으면 'gap'(빛이 들어옴 = 떠 있음, 거부권)이고, 주변은 밝은데 펜 끝에만 그림자가 붙어 있으면 'attached'(접촉 증거)입니다. 손 그림자 속에 묻히면 정보 없음으로 둡니다. 밝기 히스토그램의 Otsu 로 직사광일 때만 켜지며 확산광에서는 자동으로 꺼집니다(METHOD.md). 다만 IMG_0002(확산광)에서는 이 판정이 켜져 놓친 구간이 있었다고 bench README 에 기록돼 있습니다.",
+   "en": "It measures the share of shadow pixels in a near ring and a far ring around the pen tip. If everything around the tip is bright, that is 'gap' (light passes under the tip, so the pen is hovering; a veto). If the surroundings are bright but a shadow touches the tip, that is 'attached' (evidence of contact). A tip buried in a hand shadow yields no information. An Otsu split on the brightness histogram turns the cue on only for direct light and off under diffuse light (METHOD.md). The bench README notes, however, that on IMG_0002 (diffuse light) the check still switched on and some touches were missed."
+  },
+  "kw": [
+   "그림자",
+   "shadow ring",
+   "gap",
+   "attached",
+   "Otsu",
+   "직사광",
+   "확산광",
+   "diffuse",
+   "거부권",
+   "그림자 링"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#3.5",
+   "sources/09_bench_pen_README.md#결과 2: IMG_0002.MOV (30fps 원본, 실내 확산광)"
+  ],
+  "related": [
+   "b-floor-bench-table",
+   "b-floor-state-machine"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-state-machine",
+  "cat": "pen",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "접촉 상태가 깜빡이지 않게 하는 방법은?",
+    "히스테리시스 상태기계가 뭐예요",
+    "접촉에서 뗌으로 바뀌는 조건",
+    "게이트가 뭐예요"
+   ],
+   "en": [
+    "How is contact flicker prevented?",
+    "What is the hysteresis state machine?",
+    "When does contact switch to air?",
+    "What is the gate?"
+   ]
+  },
+  "a": {
+   "ko": "상태는 AIR 와 CONTACT 두 개이고 연속 프레임 조건으로 전이합니다(기본 n_on=2, n_off=2, 그림자만 근거면 4프레임). 펜 끝이 책상 먼 모서리보다 위에 찍히면(게이트 4 px 미만) 즉시 AIR 입니다. 접촉 중에는 진입 시 hover 를 기준선으로 천천히 따라가고 기준선보다 lift_delta(=max(0.25, 1.5σ), 펜 지름 단위) 이상 빠르게 올라갈 때만 뗀 것으로 봐서, 미끄러질 때의 느린 편향은 흡수합니다. 모든 값은 METHOD.md 의 독립 알고리즘 기본 파라미터입니다.",
+   "en": "There are two states, AIR and CONTACT, with transitions that need consecutive frames (defaults n_on=2, n_off=2, and 4 frames if shadow is the only evidence). If the tip lands above the desk's far edge (gate under 4 px) it is AIR immediately. While in contact, the hover at entry is a baseline that is followed slowly, and the pen counts as lifted only when hover rises above it by lift_delta (= max(0.25, 1.5σ), in pen diameters), so slow bias during sliding is absorbed. These values are the standalone algorithm's default parameters from METHOD.md."
+  },
+  "kw": [
+   "상태기계",
+   "hysteresis",
+   "히스테리시스",
+   "AIR",
+   "CONTACT",
+   "lift_delta",
+   "baseline",
+   "게이트",
+   "gate",
+   "n_on"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#3.3",
+   "sources/05_펜_접촉판정_METHOD.md#3.7",
+   "sources/05_펜_접촉판정_METHOD.md#7.1"
+  ],
+  "related": [
+   "b-floor-shadow-ring",
+   "b-floor-object-permanence"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-object-permanence",
+  "cat": "pen",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜이 잠깐 안 보여도 접촉이 유지되나요?",
+    "객체 영속성이 뭐예요",
+    "분할 탈락 중 접촉 유지",
+    "펜 추적이 끊기면 획이 끊기나요"
+   ],
+   "en": [
+    "Does contact persist if the pen briefly disappears?",
+    "What is object permanence here?",
+    "Contact hold during segmentation dropout",
+    "Do strokes break if tracking drops?"
+   ]
+  },
+  "a": {
+   "ko": "직전 접촉이 분할 탈락으로만 끊겼고(들어 올린 증거 없음) 20프레임 이내에 사라진 위치 1 w 이내에 다시 나타나면 2프레임 만에 접촉을 복원합니다(METHOD.md 독립 테스트에서 551–555프레임 탈락을 메움). AnyControl 벤치에서는 트래커가 펜을 한 번도 놓치지 않아 이 효과가 측정되지 않았고 단위 테스트(test_pen_floor.py)로만 확인했습니다. 20프레임보다 오래 사라지면 복원하지 못합니다.",
+   "en": "If the previous contact ended only because the segmentation dropped out (no evidence of lifting) and the pen reappears within 20 frames and within 1 w of where it vanished, contact is restored after 2 frames. In the standalone METHOD.md test this bridged a dropout at frames 551–555. In the AnyControl bench the tracker never lost the pen, so the effect was not measured there and is covered only by unit tests (test_pen_floor.py). A disappearance longer than 20 frames is not bridged."
+  },
+  "kw": [
+   "객체 영속성",
+   "object permanence",
+   "분할 탈락",
+   "dropout",
+   "memory",
+   "20프레임",
+   "재획득",
+   "획 끊김"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#3.7",
+   "sources/09_bench_pen_README.md#결과 (pen_test.mov, 라벨: 사람이 펜촉 확대 크롭으로 판정)"
+  ],
+  "related": [
+   "b-floor-state-machine",
+   "b-skeleton-what"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-method-standalone-results",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "독립 접촉 판별 알고리즘의 정확도는?",
+    "METHOD.md의 검증 결과",
+    "정밀도와 재현율이 얼마예요",
+    "허위 접촉이 있었나요"
+   ],
+   "en": [
+    "How accurate was the standalone contact algorithm?",
+    "Validation results in METHOD.md",
+    "What are precision and recall?",
+    "Were there false contacts?"
+   ]
+  },
+  "a": {
+   "ko": "AnyControl 이전의 독립 알고리즘(pen_test.mov 1개, 60fps 1920×1080, 임시 색 기반 분할기, 사람이 판정한 라벨, 경계 ±2프레임 제외)의 정확도는 0.927, 저신뢰 구간(262–305)을 빼면 0.988 입니다. 정밀도 0.993, 재현율 0.862(저신뢰 제외 0.982), F1 0.923 이고 허위 접촉 구간은 0개였습니다. 이 알고리즘은 같은 영상을 보며 임계값을 조정했으므로 낙관적일 수 있다고 문서가 직접 밝힙니다. AnyControl 통합 벤치(30fps)의 0.946 과는 조건이 다른 별개 수치입니다.",
+   "en": "The standalone algorithm that preceded AnyControl's integration (one video, pen_test.mov, 60 fps 1920×1080, a temporary colour-based segmenter, human-judged labels, ±2 boundary frames excluded) reached accuracy 0.927, or 0.988 when the low-confidence span (frames 262–305) is excluded. Precision was 0.993, recall 0.862 (0.982 without that span), F1 0.923, and there were 0 false-contact intervals. The document itself says thresholds were tuned while watching the same video, so the numbers may be optimistic. This is a separate measurement from the 0.946 in the AnyControl 30 fps bench; the conditions differ."
+  },
+  "kw": [
+   "정확도",
+   "0.927",
+   "0.988",
+   "정밀도",
+   "재현율",
+   "precision",
+   "recall",
+   "허위 접촉",
+   "METHOD",
+   "독립 알고리즘"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#4.2",
+   "sources/05_펜_접촉판정_METHOD.md#6.1"
+  ],
+  "related": [
+   "b-method-ablation",
+   "b-floor-overfit"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-method-ablation",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "순진한 방법과 비교하면 얼마나 좋은가요?",
+    "각 단서(G, F, S)의 기여도",
+    "손 그림자 앞 호버는 어떻게 구분하나요",
+    "ablation 결과"
+   ],
+   "en": [
+    "How does it compare to a naive method?",
+    "Contribution of each cue (G, F, S)",
+    "How are hovers in front of a hand shadow handled?",
+    "Ablation results"
+   ]
+  },
+  "a": {
+   "ko": "독립 알고리즘 ablation(pen_test.mov 1개, 60fps)에서 '끝이 모서리 아래면 접촉'이라는 순진한 방법은 정확도 0.828·정밀도 0.754, 그림자만 쓰면 0.930·0.935, 전체(G+F+S+객체 영속성)는 0.927·0.993 입니다. 그림자만으로는 손 그림자 앞 2–4 mm 호버를 접촉으로 오판해 정밀도가 0.935 였고, 바닥 기하를 더하면 그 오판이 사라졌다고 문서는 해석합니다. 정확도 자체는 그림자 단독이 비슷하게 높아 영상 조건(강한 직사광)에 의존한 결과입니다.",
+   "en": "In the standalone ablation (1 video, pen_test.mov, 60 fps), the naive rule 'tip below the edge means contact' scores accuracy 0.828 and precision 0.754; shadow only gives 0.930 and 0.935; the full system (G+F+S plus object permanence) gives 0.927 and 0.993. Shadow alone mistook a 2–4 mm hover in front of a hand shadow for contact, hence precision 0.935, and the document reads adding floor geometry as removing that error. Accuracy itself is similar for shadow-only, so the result depends on this video's strong direct light."
+  },
+  "kw": [
+   "ablation",
+   "기여도",
+   "순진한 방법",
+   "G",
+   "F",
+   "S",
+   "정밀도",
+   "0.754",
+   "0.993",
+   "손 그림자"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#4.3"
+  ],
+  "related": [
+   "b-method-standalone-results",
+   "b-floor-shadow-ring"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-cost",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "floor 방식은 얼마나 느린가요?",
+    "처리 시간은 어느 정도인가요",
+    "펜 판정 연산 비용",
+    "CPU 부담이 큰가요"
+   ],
+   "en": [
+    "How much slower is the floor method?",
+    "What is the processing time?",
+    "Compute cost of pen detection",
+    "Is the CPU load heavy?"
+   ]
+  },
+  "a": {
+   "ko": "AnyControl 벤치의 pen.update 처리 시간 p95 는 legacy 2.1 ms, legacy+그림자 8.1 ms, floor+그림자 5.7 ms, floor+all 6.0 ms 입니다(pen_test 30fps 재생, 한 영상). 독립 알고리즘 문서의 별도 측정(1080p, 2코어 클라우드 컨테이너 CPU)은 TableModel 약 4.7 ms, ContactDetector 약 8.1 ms 입니다. 모두 모듈 단위 처리 시간이며 카메라부터 커서까지의 종단 지연은 측정하지 않았습니다.",
+   "en": "In the AnyControl bench, p95 pen.update time is 2.1 ms for legacy, 8.1 ms for legacy plus shadow, 5.7 ms for floor plus shadow and 6.0 ms for floor+all (pen_test replayed at 30 fps, one video). The standalone document separately reports about 4.7 ms for TableModel and about 8.1 ms for ContactDetector at 1080p on a 2-core cloud-container CPU. These are per-module processing times; end-to-end delay from camera to cursor was not measured."
+  },
+  "kw": [
+   "처리 시간",
+   "ms",
+   "p95",
+   "latency",
+   "CPU",
+   "pen.update",
+   "성능",
+   "연산량",
+   "속도"
+  ],
+  "src": [
+   "sources/09_bench_pen_README.md#결과 (pen_test.mov, 라벨: 사람이 펜촉 확대 크롭으로 판정)",
+   "sources/05_펜_접촉판정_METHOD.md#2"
+  ],
+  "related": [
+   "b-floor-vs-legacy",
+   "b-limits-latency"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-drift-off",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "책상 모서리 추적은 왜 꺼져 있나요?",
+    "floor_drift가 뭐예요",
+    "카메라가 움직이면 어떻게 하나요",
+    "모서리 추적이 해로웠다는 게 무슨 말이에요"
+   ],
+   "en": [
+    "Why is desk-edge tracking turned off?",
+    "What is floor_drift?",
+    "What if the camera moves?",
+    "What does it mean that edge tracking was harmful?"
+   ]
+  },
+  "a": {
+   "ko": "floor_drift(책상 모서리 추적)의 기본값은 off 입니다. IMG_0002(30fps, 실내 확산광)에서 피부·팔이 책상색과 비슷해 고정 카메라인데도 기준선이 약 56 px 흔들렸고, F1 이 0.785 에서 0.645 로 떨어졌습니다. pen_test 에서는 켜도 영향이 0.002 이내였습니다. 그래서 카메라가 천천히 기우는 영상에 대한 모서리 추적의 이점은 이 프로젝트 벤치에서 확인되지 않았습니다.",
+   "en": "floor_drift (desk-edge tracking) is off by default. On IMG_0002 (30 fps, diffuse indoor light) skin and arms resemble the desk colour, so the reference line wobbled by about 56 px even with a fixed camera, and F1 fell from 0.785 to 0.645. On pen_test it changed results by no more than 0.002. So the benefit of edge tracking for a slowly tilting camera was not confirmed in this project's bench."
+  },
+  "kw": [
+   "floor_drift",
+   "모서리 추적",
+   "edge tracking",
+   "드리프트",
+   "책상 모서리",
+   "56px",
+   "카메라 기울어짐",
+   "기본 off"
+  ],
+  "src": [
+   "sources/09_bench_pen_README.md#결과 2: IMG_0002.MOV (30fps 원본, 실내 확산광)",
+   "sources/04_HANDOFF_개발기록.md#3.1"
+  ],
+  "related": [
+   "b-floor-default",
+   "b-floor-overfit"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-registration",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "펜 등록할 때 주의할 점이 있나요?",
+    "손가락이 펜을 가리면 어떻게 하나요",
+    "펜 두 점을 어디에 찍어야 하나요",
+    "등록을 잘못하면 어떻게 되나요"
+   ],
+   "en": [
+    "Any tips for registering the pen?",
+    "What if a finger covers the pen?",
+    "Where should I click the two points?",
+    "What happens if registration is wrong?"
+   ]
+  },
+  "a": {
+   "ko": "손가락이 펜 가운데를 쥐어 펜이 두 조각으로 보이면, 펜촉부터 반대쪽 끝 전체를 찍었을 때 위쪽 조각이 선택되어 legacy 와 floor 모두 F1 이 0 이 됐습니다(IMG_0002 벤치). 이 경우 펜촉에서 손가락 아래 조각까지만 찍어야 합니다. 이 영상용 설정은 configs/img_0002.json 에 있습니다.",
+   "en": "When a finger grips the middle of the pen so it looks like two pieces, clicking from the tip to the far end selects the upper piece, and both legacy and floor scored F1 0 (IMG_0002 bench). In that case, register only from the tip to the piece under the finger. The configuration for that video is in configs/img_0002.json."
+  },
+  "kw": [
+   "펜 등록",
+   "registration",
+   "두 조각",
+   "손가락",
+   "펜촉",
+   "두 점",
+   "IMG_0002",
+   "주의"
+  ],
+  "src": [
+   "sources/09_bench_pen_README.md#결과 2: IMG_0002.MOV (30fps 원본, 실내 확산광)",
+   "sources/04_HANDOFF_개발기록.md#3.1"
+  ],
+  "related": [
+   "b-floor-default",
+   "b-skeleton-what"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-failure-modes",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜 접촉 판정이 틀리는 경우는?",
+    "어떤 상황에서 실패하나요",
+    "알려진 약점",
+    "손 그림자 속 수직 펜 문제"
+   ],
+   "en": [
+    "When does pen contact detection fail?",
+    "In what situations does it fail?",
+    "Known weaknesses",
+    "The near-vertical pen in hand shadow problem"
+   ]
+  },
+  "a": {
+   "ko": "문서에 적힌 실패 유형은 셋입니다. (1) 거의 수직인 펜 끝이 손 그림자 속에 있을 때(pen_test 262–305): 접촉 hover 가 0.15–0.3 D 로 실제 호버 구간(0.2–0.35 D)과 겹쳐 이 분할 품질로는 분리가 어렵습니다. (2) 먼 쪽(w≈35–45 px)에서 바닥 직선이 접촉을 −0.5~−1 D 로 읽는 비선형 편향. (3) 분할 탈락이 20프레임을 넘는 경우. IMG_0002 에서는 확산광에서도 그림자 판정이 켜져 392–450, 470–530 구간을 놓치기도 했습니다.",
+   "en": "The documents list three failure types. (1) A near-vertical pen with its tip inside a hand shadow (pen_test 262–305): measured contact hover is 0.15–0.3 D, overlapping the true hover span (0.2–0.35 D), which cannot be separated at this segmentation quality. (2) A non-linear bias at the far end (w≈35–45 px) where the floor line reads contact as −0.5 to −1 D. (3) Segmentation dropouts longer than 20 frames. On IMG_0002 the shadow check also switched on under diffuse light, and spans 392–450 and 470–530 were missed."
+  },
+  "kw": [
+   "실패",
+   "한계",
+   "failure",
+   "손 그림자",
+   "수직 펜",
+   "비선형",
+   "분할 탈락",
+   "오판",
+   "약점"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#6.3",
+   "sources/09_bench_pen_README.md#결과 2: IMG_0002.MOV (30fps 원본, 실내 확산광)"
+  ],
+  "related": [
+   "b-floor-overfit",
+   "b-limits-two-videos"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-overfit",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "수치가 과적합일 수 있나요?",
+    "임계값을 어떻게 정했나요",
+    "다른 환경에서도 같은 성능이 나오나요",
+    "table_like 색 기준이 뭐예요"
+   ],
+   "en": [
+    "Could the numbers be overfitted?",
+    "How were thresholds chosen?",
+    "Will performance hold in other environments?",
+    "What is the table_like colour rule?"
+   ]
+  },
+  "a": {
+   "ko": "가능성이 있다고 문서가 직접 밝힙니다. 임계값은 펜 지름·σ·초·프레임 크기 비율 같은 물리적 단위로 정했지만 설계를 반복하며 pen_test 영상 하나를 보고 조정했습니다(예: gap 2프레임 연속, baseline 시상수 0.08 s). 책상 색 판정 table_like 의 Lab 한계도 이 책상·조명 표본으로 정했고, 무늬 있는 책상, 무채색 책상, 확산광에서 다시 확인해야 합니다.",
+   "en": "The documents say so themselves. Thresholds are expressed in physical units such as pen diameters, σ, seconds and frame-size ratios, but they were tuned over design iterations while watching the single pen_test video (for example gap on 2 consecutive frames, a 0.08 s baseline time constant). The Lab limits of the desk-colour test table_like were also set from samples of this desk and lighting, and need rechecking on patterned desks, neutral-coloured desks and diffuse light."
+  },
+  "kw": [
+   "과적합",
+   "overfitting",
+   "임계값",
+   "table_like",
+   "일반화",
+   "낙관적",
+   "다른 책상",
+   "generalization"
+  ],
+  "src": [
+   "sources/09_bench_pen_README.md#주의 (과적합)",
+   "sources/05_펜_접촉판정_METHOD.md#6.1"
+  ],
+  "related": [
+   "b-limits-two-videos",
+   "b-floor-failure-modes"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-floor-tried-discarded",
+  "cat": "process",
+  "status": "info",
+  "q": {
+   "ko": [
+    "펜 판정에서 시도했다가 버린 방법은?",
+    "실패한 접근들",
+    "왜 오디오나 GrabCut을 안 쓰나요",
+    "개발 중 막혔던 점"
+   ],
+   "en": [
+    "What approaches were tried and dropped for pen detection?",
+    "Failed approaches",
+    "Why not audio or GrabCut?",
+    "What did you get stuck on during development?"
+   ]
+  },
+  "a": {
+   "ko": "METHOD.md 의 기록: HSV 임계 분할은 데님·꽃병·반사상과 혼동됐고, GrabCut 보정은 그림자와 옷으로 번지며 프레임당 570 ms 였습니다. 접촉 그림자 초승달의 어둡기는 손 그림자 앞 호버와 값이 같아 AUC≈0.6 이었고, 로지스틱 증거 합산은 0.5 근처에서 상태가 고착돼 hover 공간의 상태기계로 바꿨습니다. 절대 hover 로 이탈을 판정하면 미끄러질 때 끊겨 베이스라인 대비 상대 상승으로 바꿨고, 펜 소리(오디오)는 주변 소음에 묻히고 영상만 쓴다는 요구에도 맞지 않아 버렸습니다.",
+   "en": "From the METHOD.md log: HSV thresholding was confused by a denim jacket, a vase and reflections; GrabCut refinement bled into shadows and clothes and cost 570 ms per frame. The darkness of a contact-shadow crescent matched that of hovers in front of a hand shadow (AUC≈0.6), and logistic evidence fusion stuck near 0.5, so it was replaced by a state machine in hover space. Releasing on absolute hover broke contacts while sliding, so it became a rise relative to a baseline; pen sound (audio) was drowned out by ambient noise and also conflicts with the video-only requirement."
+  },
+  "kw": [
+   "시도",
+   "실패",
+   "GrabCut",
+   "HSV",
+   "오디오",
+   "audio",
+   "로지스틱",
+   "버린 방법",
+   "개발 과정",
+   "AUC"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#6.4"
+  ],
+  "related": [
+   "b-floor-failure-modes",
+   "b-floor-state-machine"
+  ],
+  "suggest": false
+ }
+]

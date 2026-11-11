@@ -1,0 +1,2295 @@
+[
+ {
+  "q": "처음 왔는데 이게 어떤 서비스인지 알려줘요",
+  "lang": "ko",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "Tell me what this thing is",
+  "lang": "en",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "카메라로 뭘 하는 앱이에요?",
+  "lang": "ko",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "이런 걸 왜 개발하게 됐나요",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "What inspired the project?",
+  "lang": "en",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "어떤 불편함에서 시작했나요",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "어떤 분들께 도움이 되나요",
+  "lang": "ko",
+  "expect": [
+   "g-who-for"
+  ]
+ },
+ {
+  "q": "Who benefits from this?",
+  "lang": "en",
+  "expect": [
+   "g-who-for"
+  ]
+ },
+ {
+  "q": "이거 필요한 사람이 있을까요",
+  "lang": "ko",
+  "expect": [
+   "g-who-for"
+  ]
+ },
+ {
+  "q": "손이 불편해도 컴퓨터를 쓸 수 있을까요",
+  "lang": "ko",
+  "expect": [
+   "g-accessibility"
+  ]
+ },
+ {
+  "q": "Is it useful for assistive use?",
+  "lang": "en",
+  "expect": [
+   "g-accessibility"
+  ]
+ },
+ {
+  "q": "거동이 불편한 분께 괜찮나요",
+  "lang": "ko",
+  "expect": [
+   "g-accessibility"
+  ]
+ },
+ {
+  "q": "박물관 같은 곳에 설치할 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-exhibit"
+  ]
+ },
+ {
+  "q": "Would this work for an interactive display?",
+  "lang": "en",
+  "expect": [
+   "g-exhibit"
+  ]
+ },
+ {
+  "q": "관람객 체험용으로 괜찮아요?",
+  "lang": "ko",
+  "expect": [
+   "g-exhibit"
+  ]
+ },
+ {
+  "q": "마우스를 안 가져왔는데 컴퓨터 쓸 수 있어요",
+  "lang": "ko",
+  "expect": [
+   "g-no-mouse"
+  ]
+ },
+ {
+  "q": "Lost my mouse, any use?",
+  "lang": "en",
+  "expect": [
+   "g-no-mouse"
+  ]
+ },
+ {
+  "q": "트랙패드 없는 기기에서는요",
+  "lang": "ko",
+  "expect": [
+   "g-no-mouse"
+  ]
+ },
+ {
+  "q": "애들 교육용으로 쓰면 어때요",
+  "lang": "ko",
+  "expect": [
+   "g-edu-game-create"
+  ]
+ },
+ {
+  "q": "Can I use it to draw?",
+  "lang": "en",
+  "expect": [
+   "g-pen-mode",
+   "g-edu-game-create"
+  ]
+ },
+ {
+  "q": "게임 컨트롤러 대신 쓸 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-edu-game-create"
+  ]
+ },
+ {
+  "q": "뭘 움직이면 뭐가 되나요",
+  "lang": "ko",
+  "expect": [
+   "g-examples"
+  ]
+ },
+ {
+  "q": "Show me a sample",
+  "lang": "en",
+  "expect": [
+   "g-examples"
+  ]
+ },
+ {
+  "q": "지갑으로 뭘 할 수 있어요",
+  "lang": "ko",
+  "expect": [
+   "g-examples"
+  ]
+ },
+ {
+  "q": "물체 입력이랑 손 입력 차이가 뭐예요",
+  "lang": "ko",
+  "expect": [
+   "g-three-inputs"
+  ]
+ },
+ {
+  "q": "What input modes are available?",
+  "lang": "en",
+  "expect": [
+   "g-three-inputs"
+  ]
+ },
+ {
+  "q": "펜도 입력이 되나요",
+  "lang": "ko",
+  "expect": [
+   "g-three-inputs"
+  ]
+ },
+ {
+  "q": "컵 같은 걸 등록해서 쓸 수 있어요?",
+  "lang": "ko",
+  "expect": [
+   "g-object-mode"
+  ]
+ },
+ {
+  "q": "How do I set up an object?",
+  "lang": "en",
+  "expect": [
+   "g-object-mode"
+  ]
+ },
+ {
+  "q": "물건을 지정하는 방법",
+  "lang": "ko",
+  "expect": [
+   "g-object-mode"
+  ]
+ },
+ {
+  "q": "손가락으로 우클릭도 되나요",
+  "lang": "ko",
+  "expect": [
+   "g-hand-mode"
+  ]
+ },
+ {
+  "q": "Can I click by pinching?",
+  "lang": "en",
+  "expect": [
+   "g-hand-mode"
+  ]
+ },
+ {
+  "q": "장갑 없이 손만으로 되나요",
+  "lang": "ko",
+  "expect": [
+   "g-hand-mode"
+  ]
+ },
+ {
+  "q": "볼펜으로 필기 가능해요?",
+  "lang": "ko",
+  "expect": [
+   "g-pen-mode"
+  ]
+ },
+ {
+  "q": "Is a stylus required?",
+  "lang": "en",
+  "expect": [
+   "g-pen-mode"
+  ]
+ },
+ {
+  "q": "태블릿 대신 쓸 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-pen-mode"
+  ]
+ },
+ {
+  "q": "두 개 이상 물건을 같이 쓸 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-multi-object"
+  ]
+ },
+ {
+  "q": "Is there a limit on the number of objects?",
+  "lang": "en",
+  "expect": [
+   "g-multi-object"
+  ]
+ },
+ {
+  "q": "물건마다 따로 설정돼요?",
+  "lang": "ko",
+  "expect": [
+   "g-multi-object"
+  ]
+ },
+ {
+  "q": "움직임이랑 입력은 내 마음대로 정하나요",
+  "lang": "ko",
+  "expect": [
+   "g-any-motion"
+  ]
+ },
+ {
+  "q": "Can I choose what each movement does?",
+  "lang": "en",
+  "expect": [
+   "g-any-motion"
+  ]
+ },
+ {
+  "q": "설정을 저장해 둘 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-any-motion"
+  ]
+ },
+ {
+  "q": "직접 해 볼 수 있는 게 뭐가 있어요",
+  "lang": "ko",
+  "expect": [
+   "g-demos"
+  ]
+ },
+ {
+  "q": "Can I play a game with it?",
+  "lang": "en",
+  "expect": [
+   "g-demos"
+  ]
+ },
+ {
+  "q": "레이싱 게임도 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-demos"
+  ]
+ },
+ {
+  "q": "왜 이게 더 좋은가요",
+  "lang": "ko",
+  "expect": [
+   "g-vs-others"
+  ]
+ },
+ {
+  "q": "What's your edge?",
+  "lang": "en",
+  "expect": [
+   "g-vs-others"
+  ]
+ },
+ {
+  "q": "마커 없이 되는 게 장점인가요",
+  "lang": "ko",
+  "expect": [
+   "g-vs-others"
+  ]
+ },
+ {
+  "q": "물건을 잠깐 놓쳐도 이어서 추적하나요",
+  "lang": "ko",
+  "expect": [
+   "g-recover"
+  ]
+ },
+ {
+  "q": "Does it recover after losing the object?",
+  "lang": "en",
+  "expect": [
+   "g-recover"
+  ]
+ },
+ {
+  "q": "닮은 물건이 있으면 어때요",
+  "lang": "ko",
+  "expect": [
+   "g-recover"
+  ]
+ },
+ {
+  "q": "성공률이 어느 정도예요",
+  "lang": "ko",
+  "expect": [
+   "g-recover-numbers"
+  ]
+ },
+ {
+  "q": "Any benchmark results?",
+  "lang": "en",
+  "expect": [
+   "g-recover-numbers"
+  ]
+ },
+ {
+  "q": "테스트는 해 봤나요",
+  "lang": "ko",
+  "expect": [
+   "g-recover-numbers"
+  ]
+ },
+ {
+  "q": "맥북만 있으면 돼요",
+  "lang": "ko",
+  "expect": [
+   "g-hardware"
+  ]
+ },
+ {
+  "q": "Do I need special equipment?",
+  "lang": "en",
+  "expect": [
+   "g-hardware"
+  ]
+ },
+ {
+  "q": "웹캠으로도 가능해요",
+  "lang": "ko",
+  "expect": [
+   "g-hardware"
+  ]
+ },
+ {
+  "q": "PC에서도 쓸 수 있나요",
+  "lang": "en",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "Can I run it on a PC?",
+  "lang": "en",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "안드로이드나 아이패드는요",
+  "lang": "ko",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "내 영상이 서버로 가나요",
+  "lang": "ko",
+  "expect": [
+   "g-ondevice"
+  ]
+ },
+ {
+  "q": "Is it private?",
+  "lang": "en",
+  "expect": [
+   "g-ondevice"
+  ]
+ },
+ {
+  "q": "오프라인 사용 가능해요",
+  "lang": "ko",
+  "expect": [
+   "g-ondevice"
+  ]
+ },
+ {
+  "q": "AWS는 어디에 들어가 있어요",
+  "lang": "en",
+  "expect": [
+   "g-aws"
+  ]
+ },
+ {
+  "q": "Any cloud services involved?",
+  "lang": "en",
+  "expect": [
+   "g-aws"
+  ]
+ },
+ {
+  "q": "클라우드 계획이 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-aws"
+  ]
+ },
+ {
+  "q": "대화형 AI가 들어갔나요",
+  "lang": "ko",
+  "expect": [
+   "g-llm"
+  ]
+ },
+ {
+  "q": "Is ChatGPT used here?",
+  "lang": "en",
+  "expect": [
+   "g-llm"
+  ]
+ },
+ {
+  "q": "자연어로 설정되나요",
+  "lang": "ko",
+  "expect": [
+   "g-llm"
+  ]
+ },
+ {
+  "q": "내부 구조를 간단히 알려주세요",
+  "lang": "ko",
+  "expect": [
+   "g-tech-short"
+  ]
+ },
+ {
+  "q": "What's under the hood?",
+  "lang": "en",
+  "expect": [
+   "g-tech-short"
+  ]
+ },
+ {
+  "q": "AI 모델을 쓰나요",
+  "lang": "en",
+  "expect": [
+   "g-tech-short"
+  ]
+ },
+ {
+  "q": "개발자가 누구예요",
+  "lang": "ko",
+  "expect": [
+   "g-team"
+  ]
+ },
+ {
+  "q": "Who's behind AnyControl?",
+  "lang": "en",
+  "expect": [
+   "g-team"
+  ]
+ },
+ {
+  "q": "팀원 정보",
+  "lang": "ko",
+  "expect": [
+   "g-team"
+  ]
+ },
+ {
+  "q": "경진대회 참가작인가요",
+  "lang": "ko",
+  "expect": [
+   "g-contest"
+  ]
+ },
+ {
+  "q": "Is this a hackathon project?",
+  "lang": "en",
+  "expect": [
+   "g-contest"
+  ]
+ },
+ {
+  "q": "어느 대회예요",
+  "lang": "ko",
+  "expect": [
+   "g-contest"
+  ]
+ },
+ {
+  "q": "AI로 코딩했어요",
+  "lang": "en",
+  "expect": [
+   "g-kiro"
+  ]
+ },
+ {
+  "q": "Did you use any AI tools to develop?",
+  "lang": "en",
+  "expect": [
+   "g-kiro"
+  ]
+ },
+ {
+  "q": "개발 방식이 어땠어요",
+  "lang": "ko",
+  "expect": [
+   "g-kiro"
+  ]
+ },
+ {
+  "q": "개발하면서 막혔던 게 뭐예요",
+  "lang": "ko",
+  "expect": [
+   "g-hardest"
+  ]
+ },
+ {
+  "q": "What problems did you run into?",
+  "lang": "en",
+  "expect": [
+   "g-hardest"
+  ]
+ },
+ {
+  "q": "고생한 점",
+  "lang": "ko",
+  "expect": [
+   "g-hardest"
+  ]
+ },
+ {
+  "q": "약점을 솔직히 알려 주세요",
+  "lang": "ko",
+  "expect": [
+   "g-limits"
+  ]
+ },
+ {
+  "q": "What are the downsides?",
+  "lang": "en",
+  "expect": [
+   "g-limits"
+  ]
+ },
+ {
+  "q": "못 하는 게 있어요",
+  "lang": "ko",
+  "expect": [
+   "g-limits"
+  ]
+ },
+ {
+  "q": "스트림덱 대신 쓸 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-tablet-deck"
+  ]
+ },
+ {
+  "q": "Can it replace a Wacom tablet?",
+  "lang": "en",
+  "expect": [
+   "g-tablet-deck"
+  ]
+ },
+ {
+  "q": "전용 기기가 필요 없어지나요",
+  "lang": "ko",
+  "expect": [
+   "g-tablet-deck"
+  ]
+ },
+ {
+  "q": "제품화 계획 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-business"
+  ]
+ },
+ {
+  "q": "Will you sell it?",
+  "lang": "en",
+  "expect": [
+   "g-business"
+  ]
+ },
+ {
+  "q": "창업 아이템으로 어때요",
+  "lang": "ko",
+  "expect": [
+   "g-business"
+  ]
+ },
+ {
+  "q": "돈 내야 해요",
+  "lang": "ko",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "Is it open source?",
+  "lang": "en",
+  "expect": [
+   "h-opensource",
+   "g-open-source"
+  ]
+ },
+ {
+  "q": "요금제가 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "다음 버전엔 뭐가 들어가요",
+  "lang": "ko",
+  "expect": [
+   "g-future"
+  ]
+ },
+ {
+  "q": "What will you add next?",
+  "lang": "en",
+  "expect": [
+   "g-future"
+  ]
+ },
+ {
+  "q": "개선할 점 계획",
+  "lang": "ko",
+  "expect": [
+   "g-future"
+  ]
+ },
+ {
+  "q": "AnyControl 이름 지은 이유",
+  "lang": "en",
+  "expect": [
+   "g-name"
+  ]
+ },
+ {
+  "q": "Why 'Any'?",
+  "lang": "en",
+  "expect": [
+   "g-name"
+  ]
+ },
+ {
+  "q": "이름에 담긴 뜻",
+  "lang": "ko",
+  "expect": [
+   "g-name"
+  ]
+ },
+ {
+  "q": "오작동하면 어떻게 끄죠",
+  "lang": "ko",
+  "expect": [
+   "g-safe-real"
+  ]
+ },
+ {
+  "q": "How do I stop it quickly?",
+  "lang": "en",
+  "expect": [
+   "g-safe-real"
+  ]
+ },
+ {
+  "q": "마우스가 제멋대로 움직이면요",
+  "lang": "ko",
+  "expect": [
+   "g-safe-real"
+  ]
+ },
+ {
+  "q": "집에서 해 볼 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-try"
+  ]
+ },
+ {
+  "q": "Is there a download link?",
+  "lang": "en",
+  "expect": [
+   "g-try"
+  ]
+ },
+ {
+  "q": "설치 방법",
+  "lang": "ko",
+  "expect": [
+   "g-try"
+  ]
+ },
+ {
+  "q": "사용법 알려 주세요",
+  "lang": "ko",
+  "expect": [
+   "g-setup-flow"
+  ]
+ },
+ {
+  "q": "What's the first thing I do?",
+  "lang": "en",
+  "expect": [
+   "g-setup-flow"
+  ]
+ },
+ {
+  "q": "튜토리얼이 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-setup-flow"
+  ]
+ },
+ {
+  "q": "품질 확인은 어떻게 했나요",
+  "lang": "ko",
+  "expect": [
+   "g-tested"
+  ]
+ },
+ {
+  "q": "Is it well tested?",
+  "lang": "en",
+  "expect": [
+   "g-tested"
+  ]
+ },
+ {
+  "q": "검증된 부분이 있어요",
+  "lang": "ko",
+  "expect": [
+   "g-tested"
+  ]
+ },
+ {
+  "q": "얼마나 빨리 반응해요",
+  "lang": "ko",
+  "expect": [
+   "g-speed"
+  ]
+ },
+ {
+  "q": "How responsive is it?",
+  "lang": "en",
+  "expect": [
+   "g-speed"
+  ]
+ },
+ {
+  "q": "끊기지 않나요",
+  "lang": "ko",
+  "expect": [
+   "g-speed"
+  ]
+ },
+ {
+  "q": "영상이 유출될 일은 없나요",
+  "lang": "ko",
+  "expect": [
+   "g-privacy-server"
+  ]
+ },
+ {
+  "q": "Where does my data go?",
+  "lang": "en",
+  "expect": [
+   "g-privacy-server"
+  ]
+ },
+ {
+  "q": "내 얼굴이 어디 올라가나요",
+  "lang": "ko",
+  "expect": [
+   "g-privacy-server"
+  ]
+ },
+ {
+  "q": "조명이 어두우면 되나요",
+  "lang": "ko",
+  "expect": [
+   "g-kids-glasses"
+  ]
+ },
+ {
+  "q": "Does it work for kids?",
+  "lang": "en",
+  "expect": [
+   "g-kids-glasses"
+  ]
+ },
+ {
+  "q": "안경 쓴 사람은요",
+  "lang": "ko",
+  "expect": [
+   "g-kids-glasses"
+  ]
+ },
+ {
+  "q": "소스코드 볼 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "g-open-source"
+  ]
+ },
+ {
+  "q": "Can I see the source?",
+  "lang": "en",
+  "expect": [
+   "g-open-source"
+  ]
+ },
+ {
+  "q": "깃허브 링크",
+  "lang": "ko",
+  "expect": [
+   "g-open-source"
+  ]
+ },
+ {
+  "q": "이거 제일 먼저 뭘 해야 돼요?",
+  "lang": "ko",
+  "expect": [
+   "h-how-to-start"
+  ]
+ },
+ {
+  "q": "Walk me through the first steps",
+  "lang": "en",
+  "expect": [
+   "h-how-to-start"
+  ]
+ },
+ {
+  "q": "쓰려면 뭘 사 와야 하나요?",
+  "lang": "ko",
+  "expect": [
+   "h-need-list"
+  ]
+ },
+ {
+  "q": "What gear do I have to bring?",
+  "lang": "en",
+  "expect": [
+   "h-need-list"
+  ]
+ },
+ {
+  "q": "맥북 프로 M2면 돌아가나요?",
+  "lang": "ko",
+  "expect": [
+   "h-mac-spec"
+  ]
+ },
+ {
+  "q": "Which macOS version is required?",
+  "lang": "en",
+  "expect": [
+   "h-mac-spec"
+  ]
+ },
+ {
+  "q": "램 16기가면 충분한가요?",
+  "lang": "ko",
+  "expect": [
+   "h-memory-disk"
+  ]
+ },
+ {
+  "q": "How many gigabytes of storage should be free?",
+  "lang": "en",
+  "expect": [
+   "h-memory-disk"
+  ]
+ },
+ {
+  "q": "윈도우 노트북으로 해도 돼요?",
+  "lang": "ko",
+  "expect": [
+   "h-windows"
+  ]
+ },
+ {
+  "q": "Can I run it on a Windows laptop?",
+  "lang": "en",
+  "expect": [
+   "h-windows"
+  ]
+ },
+ {
+  "q": "인텔 칩 들어간 맥북은 지원 안 해요?",
+  "lang": "ko",
+  "expect": [
+   "h-intel-mac"
+  ]
+ },
+ {
+  "q": "I have a 2018 MacBook with an Intel processor",
+  "lang": "en",
+  "expect": [
+   "h-intel-mac"
+  ]
+ },
+ {
+  "q": "갤럭시 폰에 설치할 수 있어요?",
+  "lang": "ko",
+  "expect": [
+   "h-phone-app"
+  ]
+ },
+ {
+  "q": "Is there an Android version?",
+  "lang": "en",
+  "expect": [
+   "h-phone-app"
+  ]
+ },
+ {
+  "q": "아이폰을 맥 카메라처럼 연결하고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "h-iphone-camera"
+  ]
+ },
+ {
+  "q": "Can my iPhone act as the webcam?",
+  "lang": "en",
+  "expect": [
+   "h-iphone-camera"
+  ]
+ },
+ {
+  "q": "아이폰 11도 연속성 카메라가 되나요?",
+  "lang": "ko",
+  "expect": [
+   "h-iphone-conditions"
+  ]
+ },
+ {
+  "q": "Which iOS version does the iPhone need?",
+  "lang": "en",
+  "expect": [
+   "h-iphone-conditions"
+  ]
+ },
+ {
+  "q": "그냥 맥북 카메라로 써도 되나요?",
+  "lang": "ko",
+  "expect": [
+   "h-webcam"
+  ]
+ },
+ {
+  "q": "Will a cheap USB webcam work?",
+  "lang": "en",
+  "expect": [
+   "h-webcam"
+  ]
+ },
+ {
+  "q": "카메라 없으면 못 쓰나요?",
+  "lang": "ko",
+  "expect": [
+   "h-camera-required"
+  ]
+ },
+ {
+  "q": "Is a camera absolutely necessary?",
+  "lang": "en",
+  "expect": [
+   "h-camera-required"
+  ]
+ },
+ {
+  "q": "설치 파일 링크가 어디 있어요?",
+  "lang": "ko",
+  "expect": [
+   "h-where-download"
+  ]
+ },
+ {
+  "q": "Where can I get the installer?",
+  "lang": "en",
+  "expect": [
+   "h-where-download"
+  ]
+ },
+ {
+  "q": "설치가 복잡한가요?",
+  "lang": "ko",
+  "expect": [
+   "h-install-how"
+  ]
+ },
+ {
+  "q": "Do I need to install Python myself?",
+  "lang": "en",
+  "expect": [
+   "h-install-how"
+  ]
+ },
+ {
+  "q": "설치에 몇 분이나 걸려요?",
+  "lang": "ko",
+  "expect": [
+   "h-install-time"
+  ]
+ },
+ {
+  "q": "How long should I wait for setup to finish?",
+  "lang": "en",
+  "expect": [
+   "h-install-time"
+  ]
+ },
+ {
+  "q": "설치 중에 와이파이 꺼도 돼요?",
+  "lang": "ko",
+  "expect": [
+   "h-internet-install"
+  ]
+ },
+ {
+  "q": "Does setup need a network connection?",
+  "lang": "en",
+  "expect": [
+   "h-internet-install"
+  ]
+ },
+ {
+  "q": "비행기 안에서도 쓸 수 있어요?",
+  "lang": "ko",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "After setup, can I disconnect from wifi?",
+  "lang": "en",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "구독료 같은 게 있어요?",
+  "lang": "ko",
+  "expect": [
+   "h-free"
+  ]
+ },
+ {
+  "q": "Is there a subscription fee?",
+  "lang": "en",
+  "expect": [
+   "h-free"
+  ]
+ },
+ {
+  "q": "Mac이 이 앱을 열지 못하게 해요",
+  "lang": "ko",
+  "expect": [
+   "h-security-block"
+  ]
+ },
+ {
+  "q": "macOS says it cannot check the app for malware",
+  "lang": "en",
+  "expect": [
+   "h-security-block"
+  ]
+ },
+ {
+  "q": "권한이 없다고 하면서 설치가 시작이 안 돼요",
+  "lang": "ko",
+  "expect": [
+   "h-exec-permission"
+  ]
+ },
+ {
+  "q": "The installer says I lack permission to run it",
+  "lang": "en",
+  "expect": [
+   "h-exec-permission"
+  ]
+ },
+ {
+  "q": "프로그램을 완전히 없애고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "h-uninstall"
+  ]
+ },
+ {
+  "q": "How do I get rid of it completely?",
+  "lang": "en",
+  "expect": [
+   "h-uninstall"
+  ]
+ },
+ {
+  "q": "최신 버전으로 갈아타려면요?",
+  "lang": "ko",
+  "expect": [
+   "h-update"
+  ]
+ },
+ {
+  "q": "Do I lose my data if I install a newer version?",
+  "lang": "en",
+  "expect": [
+   "h-update"
+  ]
+ },
+ {
+  "q": "머그컵을 커서처럼 움직이게 할 수 있어요?",
+  "lang": "ko",
+  "expect": [
+   "h-object-mouse"
+  ]
+ },
+ {
+  "q": "How do I make my mug control the pointer?",
+  "lang": "en",
+  "expect": [
+   "h-object-mouse"
+  ]
+ },
+ {
+  "q": "어떤 종류의 물건이 인식돼요?",
+  "lang": "ko",
+  "expect": [
+   "h-object-kinds"
+  ]
+ },
+ {
+  "q": "Can it track more than one item?",
+  "lang": "en",
+  "expect": [
+   "g-multi-object",
+   "h-object-kinds"
+  ]
+ },
+ {
+  "q": "손가락만으로 컴퓨터를 조작하고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "h-bare-hand"
+  ]
+ },
+ {
+  "q": "Can I click just by using my fingers?",
+  "lang": "en",
+  "expect": [
+   "h-bare-hand"
+  ]
+ },
+ {
+  "q": "펜으로 필기하듯 그릴 수 있나요?",
+  "lang": "ko",
+  "expect": [
+   "h-pen-draw"
+  ]
+ },
+ {
+  "q": "Is drawing with a pen finished or still experimental?",
+  "lang": "en",
+  "expect": [
+   "h-pen-draw"
+  ]
+ },
+ {
+  "q": "물건으로 이동하고 손으로 클릭하는 모드가 있나요?",
+  "lang": "ko",
+  "expect": [
+   "h-hybrid-easy"
+  ]
+ },
+ {
+  "q": "How do I right-click in hybrid mode?",
+  "lang": "en",
+  "expect": [
+   "h-hybrid-easy"
+  ]
+ },
+ {
+  "q": "손 클릭이 얼마나 정확한지 시험해 봤어요?",
+  "lang": "ko",
+  "expect": [
+   "h-hybrid-limit"
+  ]
+ },
+ {
+  "q": "Is hybrid clicking fully tested?",
+  "lang": "en",
+  "expect": [
+   "h-hybrid-limit"
+  ]
+ },
+ {
+  "q": "FPS 게임 할 때 써도 될까요?",
+  "lang": "ko",
+  "expect": [
+   "h-games"
+  ]
+ },
+ {
+  "q": "Could I play games with it?",
+  "lang": "en",
+  "expect": [
+   "h-games"
+  ]
+ },
+ {
+  "q": "처음에 뭘 맞춰 줘야 하나요? 손을 가만히 두라고 하던데",
+  "lang": "ko",
+  "expect": [
+   "h-calibration"
+  ]
+ },
+ {
+  "q": "What are the calibration steps for?",
+  "lang": "en",
+  "expect": [
+   "h-calibration"
+  ]
+ },
+ {
+  "q": "실제 마우스를 건드리지 않고 먼저 해 볼 수 있나요?",
+  "lang": "ko",
+  "expect": [
+   "h-practice-mode"
+  ]
+ },
+ {
+  "q": "Can I test it safely before it controls my computer?",
+  "lang": "en",
+  "expect": [
+   "h-practice-mode"
+  ]
+ },
+ {
+  "q": "내가 만든 세팅을 나중에 다시 쓰고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "h-save-settings"
+  ]
+ },
+ {
+  "q": "Can I keep my setup for later?",
+  "lang": "en",
+  "expect": [
+   "h-save-settings"
+  ]
+ },
+ {
+  "q": "다 쓰고 나서 어떻게 닫아요?",
+  "lang": "ko",
+  "expect": [
+   "h-quit"
+  ]
+ },
+ {
+  "q": "How do I shut it down when I am done?",
+  "lang": "en",
+  "expect": [
+   "h-quit"
+  ]
+ },
+ {
+  "q": "갑자기 커서가 날뛰면 뭘 눌러요?",
+  "lang": "ko",
+  "expect": [
+   "h-emergency-stop"
+  ]
+ },
+ {
+  "q": "Is there a panic key?",
+  "lang": "en",
+  "expect": [
+   "h-emergency-stop"
+  ]
+ },
+ {
+  "q": "카메라로 찍은 게 클라우드에 올라가요?",
+  "lang": "ko",
+  "expect": [
+   "h-privacy"
+  ]
+ },
+ {
+  "q": "Do you upload my camera feed anywhere?",
+  "lang": "en",
+  "expect": [
+   "h-privacy"
+  ]
+ },
+ {
+  "q": "허락해 줘야 하는 게 뭐뭐예요?",
+  "lang": "ko",
+  "expect": [
+   "h-permissions"
+  ]
+ },
+ {
+  "q": "What access does the app ask for?",
+  "lang": "en",
+  "expect": [
+   "h-permissions"
+  ]
+ },
+ {
+  "q": "접근성 허용은 왜 해야 돼요?",
+  "lang": "ko",
+  "expect": [
+   "h-why-accessibility"
+  ]
+ },
+ {
+  "q": "Why does it ask for Accessibility access?",
+  "lang": "en",
+  "expect": [
+   "h-why-accessibility"
+  ]
+ },
+ {
+  "q": "컴퓨터가 막 조종당할까 봐 무서운데 보호 장치가 있나요?",
+  "lang": "ko",
+  "expect": [
+   "h-safety-guards"
+  ]
+ },
+ {
+  "q": "Is there a warning when real input is active?",
+  "lang": "en",
+  "expect": [
+   "h-safety-guards"
+  ]
+ },
+ {
+  "q": "잘 인식되게 하는 요령 좀요",
+  "lang": "ko",
+  "expect": [
+   "h-tip-setup"
+  ]
+ },
+ {
+  "q": "Any advice for better tracking?",
+  "lang": "en",
+  "expect": [
+   "h-tip-setup"
+  ]
+ },
+ {
+  "q": "불 끄고 쓰면 인식이 되나요?",
+  "lang": "ko",
+  "expect": [
+   "h-tip-dark"
+  ]
+ },
+ {
+  "q": "Is a dim room a problem?",
+  "lang": "en",
+  "expect": [
+   "h-tip-dark"
+  ]
+ },
+ {
+  "q": "책상이 번들번들한데 괜찮아요?",
+  "lang": "ko",
+  "expect": [
+   "h-tip-reflection"
+  ]
+ },
+ {
+  "q": "Will a glossy surface cause trouble?",
+  "lang": "en",
+  "expect": [
+   "h-tip-reflection"
+  ]
+ },
+ {
+  "q": "같은 모양 컵이 두 개 있으면 구분하나요?",
+  "lang": "ko",
+  "expect": [
+   "h-similar-objects"
+  ]
+ },
+ {
+  "q": "Can it tell two similar objects apart?",
+  "lang": "en",
+  "expect": [
+   "h-similar-objects"
+  ]
+ },
+ {
+  "q": "물체를 꽉 쥐면 인식이 되나요?",
+  "lang": "ko",
+  "expect": [
+   "h-hand-cover"
+  ]
+ },
+ {
+  "q": "What if something blocks the object for a moment?",
+  "lang": "en",
+  "expect": [
+   "h-hand-cover"
+  ]
+ },
+ {
+  "q": "안경 쓴 사람도 쓸 수 있어요?",
+  "lang": "ko",
+  "expect": [
+   "h-unknown-people"
+  ]
+ },
+ {
+  "q": "Is it suitable for kids?",
+  "lang": "en",
+  "expect": [
+   "h-unknown-people"
+  ]
+ },
+ {
+  "q": "화면에 영상이 안 나와요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-camera"
+  ]
+ },
+ {
+  "q": "The camera feed is just black",
+  "lang": "en",
+  "expect": [
+   "h-ts-camera"
+  ]
+ },
+ {
+  "q": "아이폰이 선택 목록에 없어요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-iphone-missing"
+  ]
+ },
+ {
+  "q": "My iPhone does not show up as a camera",
+  "lang": "en",
+  "expect": [
+   "h-ts-iphone-missing"
+  ]
+ },
+ {
+  "q": "인식이 계속 끊기고 떨려요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-shaky"
+  ]
+ },
+ {
+  "q": "The tracked point wobbles all the time",
+  "lang": "en",
+  "expect": [
+   "h-ts-shaky"
+  ]
+ },
+ {
+  "q": "허용했는데도 커서가 그대로예요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-mouse-no-move"
+  ]
+ },
+ {
+  "q": "My cursor does not respond even though tracking works",
+  "lang": "en",
+  "expect": [
+   "h-ts-mouse-no-move"
+  ]
+ },
+ {
+  "q": "설치 끝났는데 아무 창도 안 열려요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-browser"
+  ]
+ },
+ {
+  "q": "Setup finished but nothing opened",
+  "lang": "en",
+  "expect": [
+   "h-ts-browser"
+  ]
+ },
+ {
+  "q": "설치하다가 에러가 떴어요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-install-fail"
+  ]
+ },
+ {
+  "q": "Setup crashed. What should I try?",
+  "lang": "en",
+  "expect": [
+   "h-ts-install-fail"
+  ]
+ },
+ {
+  "q": "창을 닫았는데 계속 돌아가고 있어요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-wont-quit"
+  ]
+ },
+ {
+  "q": "I closed the browser but it is still running",
+  "lang": "en",
+  "expect": [
+   "h-ts-wont-quit"
+  ]
+ },
+ {
+  "q": "이거 쓰는 AI 모델이 오픈소스예요?",
+  "lang": "ko",
+  "expect": [
+   "h-opensource"
+  ]
+ },
+ {
+  "q": "What license do the bundled models have?",
+  "lang": "en",
+  "expect": [
+   "h-opensource"
+  ]
+ },
+ {
+  "q": "소스코드 공개돼 있나요?",
+  "lang": "ko",
+  "expect": [
+   "h-opensource"
+  ]
+ },
+ {
+  "q": "맥 사양",
+  "lang": "ko",
+  "expect": [
+   "h-mac-spec"
+  ]
+ },
+ {
+  "q": "윈도우",
+  "lang": "ko",
+  "expect": [
+   "h-windows"
+  ]
+ },
+ {
+  "q": "가격",
+  "lang": "ko",
+  "expect": [
+   "h-free"
+  ]
+ },
+ {
+  "q": "AnyControl이 내부적으로 뭘 하는 건가요",
+  "lang": "ko",
+  "expect": [
+   "i-how-simple"
+  ]
+ },
+ {
+  "q": "What is it doing behind the scenes?",
+  "lang": "en",
+  "expect": [
+   "i-how-simple"
+  ]
+ },
+ {
+  "q": "물체 위치가 커서 위치가 되는 건가요",
+  "lang": "ko",
+  "expect": [
+   "i-camera-to-mouse"
+  ]
+ },
+ {
+  "q": "Does the object's position become the cursor position?",
+  "lang": "en",
+  "expect": [
+   "i-camera-to-mouse"
+  ]
+ },
+ {
+  "q": "가벼운 추적에 AI를 곁들인다는 말이 뭐예요",
+  "lang": "ko",
+  "expect": [
+   "i-fast-plus-ai"
+  ]
+ },
+ {
+  "q": "What does combining light tracking with an AI mean?",
+  "lang": "en",
+  "expect": [
+   "i-fast-plus-ai"
+  ]
+ },
+ {
+  "q": "인공지능만 쓰지 않는 이유가 있나요",
+  "lang": "ko",
+  "expect": [
+   "i-why-not-ai-only"
+  ]
+ },
+ {
+  "q": "Is there a reason it doesn't rely on AI alone?",
+  "lang": "en",
+  "expect": [
+   "i-why-not-ai-only"
+  ]
+ },
+ {
+  "q": "앞에 뭐가 지나가면 놓치나요",
+  "lang": "ko",
+  "expect": [
+   "i-occlusion-return"
+  ]
+ },
+ {
+  "q": "If something passes in front, does it lose the object?",
+  "lang": "en",
+  "expect": [
+   "i-occlusion-return"
+  ]
+ },
+ {
+  "q": "화면 밖에 나갔다 오면 복구되나요",
+  "lang": "ko",
+  "expect": [
+   "i-offscreen-return"
+  ]
+ },
+ {
+  "q": "Does it recover after going out of frame?",
+  "lang": "en",
+  "expect": [
+   "i-offscreen-return"
+  ]
+ },
+ {
+  "q": "같은 물체라고 판단하는 기준은요",
+  "lang": "ko",
+  "expect": [
+   "i-why-find-again"
+  ]
+ },
+ {
+  "q": "What decides that it's the same thing?",
+  "lang": "en",
+  "expect": [
+   "i-why-find-again"
+  ]
+ },
+ {
+  "q": "쌍둥이 같은 물건 구분되나요",
+  "lang": "ko",
+  "expect": [
+   "i-lookalike"
+  ]
+ },
+ {
+  "q": "Can it tell twin-like objects apart?",
+  "lang": "en",
+  "expect": [
+   "i-lookalike"
+  ]
+ },
+ {
+  "q": "추측해서 고르지 않는 건 왜인가요",
+  "lang": "ko",
+  "expect": [
+   "i-why-no-guess"
+  ]
+ },
+ {
+  "q": "Why doesn't it make a guess?",
+  "lang": "en",
+  "expect": [
+   "i-why-no-guess"
+  ]
+ },
+ {
+  "q": "추적이 틀어졌을 때 바로잡는 방법",
+  "lang": "ko",
+  "expect": [
+   "i-reselect"
+  ]
+ },
+ {
+  "q": "What can I do when tracking goes wrong?",
+  "lang": "en",
+  "expect": [
+   "i-reselect"
+  ]
+ },
+ {
+  "q": "방 불을 끄거나 켜면 영향이 있나요",
+  "lang": "ko",
+  "expect": [
+   "i-lighting"
+  ]
+ },
+ {
+  "q": "Does switching room lights affect it?",
+  "lang": "en",
+  "expect": [
+   "i-lighting"
+  ]
+ },
+ {
+  "q": "책상이 지저분해도 인식하나요",
+  "lang": "ko",
+  "expect": [
+   "i-background"
+  ]
+ },
+ {
+  "q": "Will it still work on a messy desk?",
+  "lang": "en",
+  "expect": [
+   "i-background"
+  ]
+ },
+ {
+  "q": "빙글 돌려도 놓치지 않나요",
+  "lang": "ko",
+  "expect": [
+   "i-rotation"
+  ]
+ },
+ {
+  "q": "If I spin it, will it lose track?",
+  "lang": "en",
+  "expect": [
+   "i-rotation"
+  ]
+ },
+ {
+  "q": "밤에 써도 되나요",
+  "lang": "ko",
+  "expect": [
+   "i-dark-shiny"
+  ]
+ },
+ {
+  "q": "Can I use it at night?",
+  "lang": "en",
+  "expect": [
+   "i-dark-shiny"
+  ]
+ },
+ {
+  "q": "몇 개까지 동시에 올려놓을 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "i-max-objects"
+  ]
+ },
+ {
+  "q": "How many things can I put on the desk at once?",
+  "lang": "en",
+  "expect": [
+   "i-max-objects"
+  ]
+ },
+ {
+  "q": "물건을 많이 올리면 어떻게 되나요",
+  "lang": "ko",
+  "expect": [
+   "i-many-objects-perf"
+  ]
+ },
+ {
+  "q": "What happens when I use many objects?",
+  "lang": "en",
+  "expect": [
+   "i-many-objects-perf"
+  ]
+ },
+ {
+  "q": "펜이 뜬 건지 닿은 건지 판단 방법",
+  "lang": "ko",
+  "expect": [
+   "i-pen-contact"
+  ]
+ },
+ {
+  "q": "How can it distinguish a hovering pen from a touching one?",
+  "lang": "en",
+  "expect": [
+   "i-pen-contact"
+  ]
+ },
+ {
+  "q": "펜 그림자를 이용하나요",
+  "lang": "ko",
+  "expect": [
+   "i-pen-shadow"
+  ]
+ },
+ {
+  "q": "Is the shadow of the pen used?",
+  "lang": "en",
+  "expect": [
+   "i-pen-shadow"
+  ]
+ },
+ {
+  "q": "펜 기능은 믿을 만한가요",
+  "lang": "ko",
+  "expect": [
+   "i-pen-few-videos"
+  ]
+ },
+ {
+  "q": "Can I trust the pen feature?",
+  "lang": "en",
+  "expect": [
+   "i-pen-few-videos"
+  ]
+ },
+ {
+  "q": "펜이 일부만 보여도 괜찮나요",
+  "lang": "ko",
+  "expect": [
+   "i-pen-hidden"
+  ]
+ },
+ {
+  "q": "Is it okay if only part of the pen shows?",
+  "lang": "en",
+  "expect": [
+   "i-pen-hidden"
+  ]
+ },
+ {
+  "q": "선 끝이 삐죽 튀는 현상 해결",
+  "lang": "ko",
+  "expect": [
+   "i-stroke-flick"
+  ]
+ },
+ {
+  "q": "How did you fix spiky line endings?",
+  "lang": "en",
+  "expect": [
+   "i-stroke-flick"
+  ]
+ },
+ {
+  "q": "튐 방지 때문에 잃는 게 있나요",
+  "lang": "ko",
+  "expect": [
+   "i-stroke-tradeoff"
+  ]
+ },
+ {
+  "q": "What do you lose by smoothing stroke ends?",
+  "lang": "en",
+  "expect": [
+   "i-stroke-tradeoff"
+  ]
+ },
+ {
+  "q": "안 움직일 때 커서가 안 흔들려요?",
+  "lang": "ko",
+  "expect": [
+   "i-still-jitter"
+  ]
+ },
+ {
+  "q": "Is the cursor steady when nothing moves?",
+  "lang": "en",
+  "expect": [
+   "i-still-jitter"
+  ]
+ },
+ {
+  "q": "커서가 흐르는 이유가 뭔가요",
+  "lang": "ko",
+  "expect": [
+   "i-still-why"
+  ]
+ },
+ {
+  "q": "What made the cursor creep?",
+  "lang": "en",
+  "expect": [
+   "i-still-why"
+  ]
+ },
+ {
+  "q": "갑작스런 값 튐 필터",
+  "lang": "ko",
+  "expect": [
+   "i-cursor-spike"
+  ]
+ },
+ {
+  "q": "Is there a filter against sudden spikes?",
+  "lang": "en",
+  "expect": [
+   "i-cursor-spike"
+  ]
+ },
+ {
+  "q": "보정 기능의 체감 효과가 입증됐나요",
+  "lang": "ko",
+  "expect": [
+   "i-spike-unmeasured"
+  ]
+ },
+ {
+  "q": "Is the benefit of the filter proven?",
+  "lang": "en",
+  "expect": [
+   "i-spike-unmeasured"
+  ]
+ },
+ {
+  "q": "들고 있는 물건의 커서 흔들림",
+  "lang": "ko",
+  "expect": [
+   "i-anchor-point"
+  ]
+ },
+ {
+  "q": "Does a hand-held object make the cursor wobble?",
+  "lang": "en",
+  "expect": [
+   "i-anchor-point"
+  ]
+ },
+ {
+  "q": "쥔 물건의 위아래 흔들림은 해결됐나요",
+  "lang": "ko",
+  "expect": [
+   "i-anchor-limit"
+  ]
+ },
+ {
+  "q": "Is up-and-down wobble solved when holding?",
+  "lang": "en",
+  "expect": [
+   "i-anchor-limit"
+  ]
+ },
+ {
+  "q": "가까이 오면 커서가 어떻게 돼요",
+  "lang": "ko",
+  "expect": [
+   "i-depth-how"
+  ]
+ },
+ {
+  "q": "What does the cursor do when the object comes closer?",
+  "lang": "en",
+  "expect": [
+   "i-depth-how"
+  ]
+ },
+ {
+  "q": "카메라를 놓는 각도는 어떻게 하죠",
+  "lang": "ko",
+  "expect": [
+   "i-depth-camera-setup"
+  ]
+ },
+ {
+  "q": "What angle should the camera be at?",
+  "lang": "en",
+  "expect": [
+   "i-depth-camera-setup"
+  ]
+ },
+ {
+  "q": "깊이 추정 인공지능 옵션",
+  "lang": "ko",
+  "expect": [
+   "i-depth-ai"
+  ]
+ },
+ {
+  "q": "Is there an optional depth-estimation AI?",
+  "lang": "en",
+  "expect": [
+   "i-depth-ai"
+  ]
+ },
+ {
+  "q": "크기 기반과 AI 깊이 중 어느 쪽이 정확해요",
+  "lang": "ko",
+  "expect": [
+   "i-depth-not-validated"
+  ]
+ },
+ {
+  "q": "Which is more accurate, size-based or AI depth?",
+  "lang": "en",
+  "expect": [
+   "i-depth-not-validated"
+  ]
+ },
+ {
+  "q": "쓰는 인공지능 이름이 뭔가요",
+  "lang": "ko",
+  "expect": [
+   "i-which-ai"
+  ]
+ },
+ {
+  "q": "What's the name of the AI model?",
+  "lang": "en",
+  "expect": [
+   "i-which-ai"
+  ]
+ },
+ {
+  "q": "그 모델이 선택된 이유가 속도 때문인가요",
+  "lang": "ko",
+  "expect": [
+   "i-why-that-ai"
+  ]
+ },
+ {
+  "q": "Was that model picked for its speed?",
+  "lang": "en",
+  "expect": [
+   "i-why-that-ai"
+  ]
+ },
+ {
+  "q": "손 감지는 어떤 걸 쓰나요",
+  "lang": "ko",
+  "expect": [
+   "i-hand-find"
+  ]
+ },
+ {
+  "q": "What does it use to detect hands?",
+  "lang": "en",
+  "expect": [
+   "i-hand-find"
+  ]
+ },
+ {
+  "q": "예전 추적기보다 두 배 좋다는 게 뭐예요",
+  "lang": "ko",
+  "expect": [
+   "i-vs-classic"
+  ]
+ },
+ {
+  "q": "What does twice as good as the old tracker mean?",
+  "lang": "en",
+  "expect": [
+   "i-vs-classic"
+  ]
+ },
+ {
+  "q": "가장 틀리기 쉬운 장면",
+  "lang": "ko",
+  "expect": [
+   "i-weak-cases"
+  ]
+ },
+ {
+  "q": "Which scenes does it get wrong most often?",
+  "lang": "en",
+  "expect": [
+   "i-weak-cases"
+  ]
+ },
+ {
+  "q": "실사용 영상 검증 정도",
+  "lang": "ko",
+  "expect": [
+   "i-real-video-few"
+  ]
+ },
+ {
+  "q": "How much real-world footage was checked?",
+  "lang": "en",
+  "expect": [
+   "i-real-video-few"
+  ]
+ },
+ {
+  "q": "즉각적으로 반응하나요 지연은 얼마나 돼요",
+  "lang": "ko",
+  "expect": [
+   "i-latency-honest"
+  ]
+ },
+ {
+  "q": "Is there lag between my movement and the cursor?",
+  "lang": "en",
+  "expect": [
+   "i-latency-honest"
+  ]
+ },
+ {
+  "q": "실수 없이 완벽하게 인식하나요",
+  "lang": "ko",
+  "expect": [
+   "i-accuracy-honest"
+  ]
+ },
+ {
+  "q": "Does it recognize things without errors?",
+  "lang": "en",
+  "expect": [
+   "i-accuracy-honest"
+  ]
+ },
+ {
+  "q": "집이나 교실에서도 똑같이 동작하나요",
+  "lang": "ko",
+  "expect": [
+   "i-environment-honest"
+  ]
+ },
+ {
+  "q": "Will it behave the same at home or in a classroom?",
+  "lang": "en",
+  "expect": [
+   "i-environment-honest"
+  ]
+ },
+ {
+  "q": "바로 제품으로 써도 되나요",
+  "lang": "ko",
+  "expect": [
+   "i-commercial"
+  ]
+ },
+ {
+  "q": "Is it ready to ship as a product?",
+  "lang": "en",
+  "expect": [
+   "i-commercial"
+  ]
+ },
+ {
+  "q": "앞으로 더 확인해야 할 것들",
+  "lang": "ko",
+  "expect": [
+   "i-unverified"
+  ]
+ },
+ {
+  "q": "What still needs to be checked?",
+  "lang": "en",
+  "expect": [
+   "i-unverified"
+  ]
+ },
+ {
+  "q": "세계 최고 수준인가요",
+  "lang": "ko",
+  "expect": [
+   "i-no-sota"
+  ]
+ },
+ {
+  "q": "Is it world class?",
+  "lang": "en",
+  "expect": [
+   "i-no-sota"
+  ]
+ },
+ {
+  "q": "오늘 점심 뭐 먹을까요",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "비트코인 가격 알려줘",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "대한민국 대통령이 누구야",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "파이썬으로 퀵정렬 짜줘",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "What is the capital of France?",
+  "lang": "en",
+  "none": true
+ },
+ {
+  "q": "Tell me a joke",
+  "lang": "en",
+  "none": true
+ },
+ {
+  "q": "내일 날씨 어때요",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "Write me a poem about spring",
+  "lang": "en",
+  "none": true
+ },
+ {
+  "q": "What is the stock price of Amazon?",
+  "lang": "en",
+  "none": true
+ },
+ {
+  "q": "Which restaurant is best near here?",
+  "lang": "en",
+  "none": true
+ }
+]

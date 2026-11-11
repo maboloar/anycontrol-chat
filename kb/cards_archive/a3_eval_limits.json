@@ -1,0 +1,1124 @@
+[
+ {
+  "id": "a-eval-method",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "성능은 어떻게 평가했나요?",
+    "평가 방법과 데이터셋",
+    "벤치마크 설계",
+    "왜 자체 평가 세트를 만들었나요"
+   ],
+   "en": [
+    "How was performance evaluated?",
+    "Evaluation method and dataset",
+    "Benchmark design",
+    "Why did you build your own evaluation set?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 공개 벤치마크에는 책상 옆 카메라, 손에 쥔 일상 물체, 입력 장치로서의 안정성이라는 조건이 없어 평가 하네스를 직접 만들었습니다(backend/src/vision_input/eval/). 합성 시퀀스 100개(물체 5종 × 조건 10종 × 2개 세트)와 직접 촬영한 실제 영상을 쓰고, 실영상 정답은 오프라인 SAM 2.1 B+가 전 프레임을 추적한 뒤 사람이 검수 시트로 확인해 5프레임마다 채점합니다. 실시간 모드(--pace realtime)는 트래커가 바쁠 때 들어온 프레임을 건너뛰고 직전 출력으로 채점해 지연으로 인한 정확도 하락까지 반영합니다.",
+   "en": "In the v1.0.0 brochure, public benchmarks lack the team's conditions (a camera beside the desk, everyday objects held in a hand, and stability as an input device), so the team built its own evaluation harness (backend/src/vision_input/eval/). It uses 100 synthetic sequences (5 object types x 10 conditions x 2 sets) and real recorded video; real-video ground truth comes from offline SAM 2.1 B+ tracking every frame, checked by a person on review sheets, and scored every 5 frames. Realtime mode (--pace realtime) skips frames that arrive while the tracker is busy and scores with the previous output, so accuracy loss from latency is included."
+  },
+  "kw": [
+   "평가 방법",
+   "벤치마크",
+   "합성 시퀀스",
+   "평가 세트",
+   "하네스",
+   "evaluation",
+   "benchmark",
+   "synthetic",
+   "ground truth",
+   "realtime mode"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#62-검증-방법-자체-평가-세트"
+  ],
+  "related": [
+   "a-eval-metrics",
+   "a-eval-overfit-split",
+   "a-eval-csrt-summary"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-eval-metrics",
+  "cat": "eval",
+  "status": "info",
+  "q": {
+   "ko": [
+    "성공률은 어떻게 정의하나요?",
+    "지표 정의",
+    "복구 프레임이 뭐예요",
+    "옮겨붙음 지표"
+   ],
+   "en": [
+    "How is success rate defined?",
+    "Metric definitions",
+    "What are recovery frames?",
+    "What is the hijack metric?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 정의: 성공률은 물체가 충분히 보이는 프레임(가시 25% 이상) 중 예측 박스가 정답과 IoU 0.5 이상인 비율, 오검출률은 거의 안 보이는 프레임에서 보인다고 하면서 정답과 겹치지 않는 비율, 복구 프레임은 가림·이탈이 끝난 뒤 다시 성공할 때까지 걸린 프레임의 평균(복구 못 하면 구간 길이), 옮겨붙음은 예측이 정답보다 방해물과 더 겹친 프레임 수, 떨림은 정지 구간 예측 중심의 표준편차를 물체 크기로 나눈 값입니다. 성공률은 공개 벤치마크의 OP0.5와 개념은 같지만 AUC나 EAO와는 다르고, 데이터가 달라 숫자를 그대로 견줄 수 없습니다.",
+   "en": "Definitions in the v1.0.0 brochure: success rate is the share of sufficiently visible frames (visibility of 25% or more) where the predicted box has IoU 0.5 or higher with ground truth; false-positive rate is the share of nearly invisible frames where the system claims it is visible without overlapping ground truth; recovery frames is the average number of frames to succeed again after occlusion or exit ends (the segment length if it never recovers); hijacks counts frames where the prediction overlaps a distractor more than the truth; jitter is the standard deviation of the predicted center in still segments divided by object size. Success rate is conceptually like OP0.5 in public benchmarks but differs from AUC or EAO, and the data differ, so numbers cannot be compared directly."
+  },
+  "kw": [
+   "성공률",
+   "IoU 0.5",
+   "오검출률",
+   "복구 프레임",
+   "옮겨붙음",
+   "떨림",
+   "metrics",
+   "success rate",
+   "OP0.5",
+   "recovery frames",
+   "jitter"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#61-무엇을-재는가-지표-정의"
+  ],
+  "related": [
+   "a-eval-method",
+   "a-eval-csrt-summary",
+   "a-eval-sota-not-compared"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-eval-csrt-summary",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "추적 성능이 기존 추적기보다 얼마나 좋은가요?",
+    "CSRT 대비 성공률",
+    "핵심 성능 수치",
+    "종합 결과 표"
+   ],
+   "en": [
+    "How much better is tracking than a conventional tracker?",
+    "Success rate versus CSRT",
+    "Headline performance numbers",
+    "Overall results table"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0, M3 MacBook Pro 기준 성공률은 합성 tune(50개) CSRT 0.446, Tier 0만 0.765, Tier 0+Tier 1 0.887, 모양 기억 재획득 포함 현재 기본 0.890입니다. 튜닝 금지 합성 eval에서는 CSRT 0.393 대 0.884입니다. 즉 CSRT 대비 tune 약 2.0배, eval 약 2.2배입니다. 실제 영상 1개(test.mov, 손에 쥔 지갑 약 700프레임, 근사 정답)는 CSRT 0.406, Tier 0만 0.841, Tier 0+1 0.986이며 일반화된 성능으로 읽으면 안 됩니다. 포스터의 '2.26배, 39%→89%' 표기는 합성 50개 시퀀스, M3 기준입니다.",
+   "en": "In the v1.0.0 brochure on an M3 MacBook Pro, success rate on the synthetic tune set (50 sequences) is 0.446 for CSRT, 0.765 for Tier 0 only, 0.887 for Tier 0 + Tier 1, and 0.890 with shape-memory re-acquisition (the current default). On the synthetic eval set where tuning is forbidden it is 0.393 for CSRT versus 0.884. That is about 2.0x CSRT on tune and about 2.2x on eval. On one real video (test.mov, a wallet held in a hand, about 700 frames, approximate ground truth) CSRT scores 0.406, Tier 0 only 0.841, and Tier 0 + 1 0.986; this must not be read as generalized performance. The poster's '2.26x, 39% to 89%' refers to synthetic 50 sequences on an M3."
+  },
+  "kw": [
+   "CSRT",
+   "성공률",
+   "2배",
+   "0.890",
+   "0.884",
+   "0.446",
+   "0.393",
+   "기준선",
+   "baseline",
+   "success rate",
+   "2.26배"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과",
+   "sources/11_포스터_텍스트.md#기술-스택"
+  ],
+  "related": [
+   "a-eval-conditions",
+   "a-eval-robust",
+   "a-eval-realvideo"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-eval-robust",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "가림 후 복구 시간 수치는요?",
+    "오검출률과 복구 프레임 비교",
+    "복구 시간이 얼마나 단축됐나요",
+    "강건성 지표"
+   ],
+   "en": [
+    "What are the post-occlusion recovery numbers?",
+    "False-positive rate and recovery frames compared",
+    "How much was recovery time reduced?",
+    "Robustness metrics"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 합성 평가(CSRT → AnyControl)입니다. 평균 복구 프레임은 tune 44.2→7.3, eval 51.2→13.3. 오검출률은 tune 0.486→0.234, eval 0.550→0.074. 완전 가림 후 복구 프레임은 tune 48.6→3.4, eval 62.2→25.6. 화면 이탈 후 복구 프레임은 tune 54.4→10.4, eval 54.8→4.6. 중심 오차(물체 크기 대비)는 tune 0.106→0.069입니다. 합성 시퀀스 결과입니다.",
+   "en": "These are v1.0.0 brochure synthetic-evaluation numbers (CSRT to AnyControl). Mean recovery frames: 44.2 to 7.3 on tune, 51.2 to 13.3 on eval. False-positive rate: 0.486 to 0.234 on tune, 0.550 to 0.074 on eval. Recovery frames after full occlusion: 48.6 to 3.4 on tune, 62.2 to 25.6 on eval. Recovery frames after leaving the frame: 54.4 to 10.4 on tune, 54.8 to 4.6 on eval. Center error relative to object size: 0.106 to 0.069 on tune. These are synthetic-sequence results."
+  },
+  "kw": [
+   "복구 프레임",
+   "오검출률",
+   "recovery frames",
+   "false positive",
+   "완전 가림",
+   "화면 이탈",
+   "중심 오차",
+   "복구 시간",
+   "44.2",
+   "7.3"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과"
+  ],
+  "related": [
+   "a-eval-csrt-summary",
+   "a-lost-and-return",
+   "a-eval-conditions"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-eval-conditions",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "조건별 성공률을 알려주세요",
+    "어떤 상황에서 약한가요",
+    "빠른 이동, 배경 복잡 성능",
+    "twin과 grasp 성공률"
+   ],
+   "en": [
+    "Give me success rates by condition",
+    "In which situations is it weak?",
+    "Performance on fast motion and busy background",
+    "Twin and grasp success rates"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 합성 평가의 조건별 성공률(CSRT → AnyControl, tune / eval)입니다. 배경 복잡 0.648→0.952 / 0.497→0.977, 화면 이탈 0.279→0.902 / 0.345→0.913, 빠른 이동 0.468→0.878 / 0.467→0.836, 완전 가림 0.412→0.777 / 0.295→0.786, 닮은 물체 0.556→0.793 / 0.374→0.748, 손 쥐기 0.561→0.612 / 0.335→0.685입니다. 닮은 물체와 손 쥐기가 가장 어렵고, CSRT는 무늬 있는 물체에서만 잘 됩니다. 조명·반사·회전·당기기 수치는 별도 카드를 보세요.",
+   "en": "Per-condition success rates from the v1.0.0 brochure's synthetic evaluation (CSRT to AnyControl, tune / eval): complex background 0.648 to 0.952 / 0.497 to 0.977, leaving the frame 0.279 to 0.902 / 0.345 to 0.913, fast motion 0.468 to 0.878 / 0.467 to 0.836, full occlusion 0.412 to 0.777 / 0.295 to 0.786, look-alike objects 0.556 to 0.793 / 0.374 to 0.748, hand grasp 0.561 to 0.612 / 0.335 to 0.685. Look-alike objects and hand grasp are hardest, and CSRT only works well on textured objects. See the separate card for lighting, reflection, rotation, and pull numbers."
+  },
+  "kw": [
+   "조건별",
+   "twin",
+   "grasp",
+   "빠른 이동",
+   "배경 복잡",
+   "완전 가림",
+   "per-condition",
+   "약점",
+   "weakness",
+   "fast motion",
+   "full occlusion"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과"
+  ],
+  "related": [
+   "a-lighting-robust",
+   "a-limit-twin",
+   "a-limit-grasp"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-eval-realvideo",
+  "cat": "eval",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "실제 영상에서도 성능이 나오나요?",
+    "실사용 영상 성공률 0.986",
+    "실측 데이터 표본",
+    "test.mov가 뭐예요",
+    "실제 영상으로도 성능을 측정했나요",
+    "실제 촬영 영상 평가 결과"
+   ],
+   "en": [
+    "Does it perform on real video too?",
+    "Real-video success rate 0.986",
+    "Sample size of real data",
+    "What is test.mov?",
+    "Did you measure performance on real video?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 직접 촬영한 영상 1개(test.mov, 손에 쥔 지갑, 약 700프레임)에서 성공률은 정지 0.094, CSRT 0.406, Tier 0만 0.841, Tier 0+Tier 1 0.986입니다. 정답은 오프라인 SAM 2.1 B+가 만든 근사치라 정확한 정답이 아니고 영상이 1개뿐이어서 partial로 표시했으며, 일반화된 성능으로 읽으면 안 됩니다. 소개서는 사람이 검수한 정답으로 평가셋을 늘리는 것을 향후 과제로 둡니다.",
+   "en": "In the v1.0.0 brochure, on one self-recorded video (test.mov, a wallet held in a hand, about 700 frames), success rate is 0.094 for the still baseline, 0.406 for CSRT, 0.841 for Tier 0 only, and 0.986 for Tier 0 + Tier 1. Ground truth is an approximation made by offline SAM 2.1 B+ rather than exact labels, and there is only one video, so it is marked partial and must not be read as generalized performance. The brochure lists expanding the evaluation set with human-verified labels as future work."
+  },
+  "kw": [
+   "실제 영상",
+   "test.mov",
+   "0.986",
+   "실측",
+   "근사 정답",
+   "real video",
+   "single video",
+   "표본",
+   "partial",
+   "지갑"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과",
+   "sources/01_소개서_v1.0.0.md#15-검증-상태-한눈에-보기"
+  ],
+  "related": [
+   "a-eval-csrt-summary",
+   "a-limit-single-machine",
+   "a-eval-method"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-eval-speed",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "프레임 처리 속도는 얼마나 되나요?",
+    "지연 시간은 어느 정도인가요",
+    "fps와 캡처 지연",
+    "메모리 사용량"
+   ],
+   "en": [
+    "How fast is per-frame processing?",
+    "What is the latency?",
+    "fps and capture delay",
+    "Memory usage"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 개발 PC(M3) 측정입니다. iPhone 연속성 카메라 캡처(1280×720)는 약 27~30fps에 캡처 지연 약 53~55ms, 매 프레임 처리(물체 1개, 640px 폭)는 p50 약 8.4ms에 p95 약 13ms, 정지 물체 떨림은 1.12px에서 0.13px, 실행 중 메모리는 약 630MB 관찰입니다. 캡처 지연이 따로 있어 화면 반응에는 카메라 지연이 더해집니다. 다른 기종에서의 측정은 없습니다.",
+   "en": "Measured on the development PC (M3) per the v1.0.0 brochure. Capture from an iPhone Continuity Camera (1280×720) runs at about 27-30 fps with about 53-55 ms capture delay; per-frame processing (one object, 640 px width) is about 8.4 ms at p50 and about 13 ms at p95; stationary-object jitter fell from 1.12 px to 0.13 px; observed memory use while running is about 630 MB. Camera capture delay adds on top of processing time. No measurements exist on other machines."
+  },
+  "kw": [
+   "속도",
+   "지연",
+   "latency",
+   "fps",
+   "p95",
+   "13ms",
+   "캡처 지연",
+   "메모리",
+   "630MB",
+   "프레임 처리",
+   "performance"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과"
+  ],
+  "related": [
+   "a-tier0-detail",
+   "a-why-two-tier",
+   "a-limit-single-machine"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-eval-pen",
+  "cat": "pen",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜 입력 정확도는 어느 정도인가요?",
+    "펜촉 오차와 접촉 판정 F1",
+    "그림자 접촉 보조가 뭐예요",
+    "펜 평가 수치"
+   ],
+   "en": [
+    "How accurate is pen input?",
+    "Pen tip error and contact F1",
+    "What is shadow contact assist?",
+    "Pen evaluation numbers"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 pen_test.mov 영상 1개, 정답은 SAM 2.1 B+ 오프라인 마스크입니다. 펜촉 위치 오차는 1280px 폭 기준 중앙값 8.0px, 90%가 22.9px 이내(초기 27.6px에서 개선), 책상 접촉 판정 F1은 0.944이고 그림자 접촉 보조를 켜면 0.950입니다. 보조를 켜면 정밀도가 0.895에서 0.990으로 올라 헛 획이 5개에서 3개(정답 3개)로 줄지만, 획 시작이 늦어 재현율은 1.00에서 0.914로 내려갑니다. 매 프레임 거르는 방식은 획이 끊겨 F1 0.586이라 기각했습니다.",
+   "en": "In the v1.0.0 brochure this is one video, pen_test.mov, with SAM 2.1 B+ offline masks as ground truth. Pen-tip position error at 1280 px width has a median of 8.0 px, with 90% within 22.9 px (improved from an initial 27.6 px). Desk-contact F1 is 0.944, and 0.950 with shadow contact assist on. The assist raises precision from 0.895 to 0.990 and cuts spurious strokes from 5 to 3 (truth is 3), but strokes start later so recall drops from 1.00 to 0.914. A per-frame filtering variant broke strokes apart (F1 0.586) and was rejected."
+  },
+  "kw": [
+   "펜",
+   "펜촉",
+   "접촉 판정",
+   "F1",
+   "0.950",
+   "8.0px",
+   "그림자",
+   "shadow assist",
+   "pen tip error",
+   "contact detection"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#펜-입력-성능"
+  ],
+  "related": [
+   "a-limit-pen-tablet",
+   "a-rejected-approaches",
+   "a-three-input-modes"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-eval-overfit-split",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "튜닝에 과적합된 것 아닌가요?",
+    "튜닝 세트와 평가 세트를 분리했나요",
+    "회귀를 어떻게 막았나요",
+    "eval 세트가 뭐예요"
+   ],
+   "en": [
+    "Isn't it overfit to the tuning data?",
+    "Did you separate tuning and evaluation sets?",
+    "How did you prevent regressions?",
+    "What is the eval set?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 합성 시퀀스를 튜닝용(tune, 난수 시드 0부터)과 평가 전용(eval, 시드 100000부터, 튜닝 금지)으로 분리했습니다. eval에서도 CSRT 0.393 대 0.884로 같은 경향이 나왔습니다. 기능 추가 때는 eval에서 종합·twin·full_occlusion 성공률이 이전보다 떨어지지 않을 때만 기본값을 켜는 수용 기준을 썼고, 재획득 기능은 끄면 50개 시퀀스가 이전과 같고 켜면 떨어진 시퀀스가 0개임을 확인했습니다. 다만 두 세트 모두 합성 시퀀스입니다.",
+   "en": "In the v1.0.0 brochure, synthetic sequences are split into a tuning set (tune, random seeds from 0) and an evaluation-only set (eval, seeds from 100000, tuning forbidden). The same trend appears on eval, CSRT 0.393 versus 0.884. For new features the acceptance rule was to enable a default only if overall, twin, and full_occlusion success on eval do not fall below before; for re-acquisition the team confirmed that turning it off matches the old code on all 50 sequences and turning it on leaves zero sequences worse. Both sets are still synthetic."
+  },
+  "kw": [
+   "과적합",
+   "overfitting",
+   "tune",
+   "eval",
+   "튜닝 금지",
+   "회귀",
+   "regression",
+   "수용 기준",
+   "seed",
+   "split"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#62-검증-방법-자체-평가-세트",
+   "sources/01_소개서_v1.0.0.md#8-품질과-신뢰성",
+   "sources/01_소개서_v1.0.0.md#66-제안-우리-위치를-확인하고-성능을-끌어올리는-계획-검증-안-됨"
+  ],
+  "related": [
+   "a-eval-method",
+   "a-reacquire-effect",
+   "a-tests"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-eval-sota-not-compared",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "최신 SOTA 추적기보다 성능이 좋은가요?",
+    "SAMURAI나 DAM4SAM과 비교했나요",
+    "SOTA급인가요",
+    "LaSOT 같은 공개 벤치 결과는요"
+   ],
+   "en": [
+    "Is it better than the latest SOTA trackers?",
+    "Did you compare with SAMURAI or DAM4SAM?",
+    "Is it SOTA-level?",
+    "What about public benchmarks like LaSOT?"
+   ]
+  },
+  "a": {
+   "ko": "아직 모릅니다. 소개서 v1.0.0은 SOTA 트래커와 같은 데이터·같은 지표로 돌려 본 적이 없다고 밝히고 SOTA급이라고 주장하지 않습니다. 측정한 상대는 고전 추적기 CSRT이며 약 2배(합성 tune 0.446→0.890)입니다. 대신 LaSOT·GOT-10k·DiDi·VOT2022 어댑터 추가, Tier 1 단독과 전체 파이프라인의 ablation, SAMURAI·DAM4SAM 공개 코드 상대 비교를 계획으로 제안했습니다.",
+   "en": "Not known yet. The v1.0.0 brochure says it has never run SOTA trackers on the same data with the same metrics and does not claim SOTA-level performance. The only baseline measured is the classic CSRT tracker, at roughly 2x (synthetic tune 0.446 to 0.890). Instead it proposes a plan: add adapters for LaSOT, GOT-10k, DiDi, and VOT2022, run an ablation of Tier 1 alone versus the full pipeline, and compare against the public SAMURAI and DAM4SAM code."
+  },
+  "kw": [
+   "SOTA",
+   "SAMURAI",
+   "DAM4SAM",
+   "LaSOT",
+   "공개 벤치마크",
+   "비교 안 함",
+   "not validated",
+   "state of the art",
+   "벤치마크",
+   "상대 비교"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#6-추적-성능과-최신-sota-대비-제안",
+   "sources/01_소개서_v1.0.0.md#16-qa"
+  ],
+  "related": [
+   "a-sota-public",
+   "a-improvement-plan",
+   "a-eval-csrt-summary"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-sota-public",
+  "cat": "eval",
+  "status": "info",
+  "q": {
+   "ko": [
+    "공개된 SOTA 수치는 어떻게 되나요?",
+    "SAMURAI 성능",
+    "EfficientTAM과 EdgeTAM 논문 수치",
+    "참고용 공개 지표"
+   ],
+   "en": [
+    "What are the published SOTA numbers?",
+    "SAMURAI performance",
+    "EfficientTAM and EdgeTAM paper figures",
+    "Reference public metrics"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0이 참고용으로 인용한 논문 보고값이며 팀이 측정한 값이 아니고 데이터셋이 달라 팀 수치와 직접 비교할 수 없습니다. LaSOT AUC / LaSOT_ext AUC / GOT-10k AO는 SAM 2.1-L 68.5 / 58.5 / 81.1, SAMURAI-L 74.2 / 61.0 / 81.7입니다. DiDi 품질은 SAM 2.1 0.649, SAMURAI 0.680, DAM4SAM 0.694. EfficientTAM은 SAM 2 대비 A100에서 약 2배 빠르고 파라미터 약 2.4배 적다고 보고되며, EdgeTAM은 iPhone에서 16FPS로 보고됩니다.",
+   "en": "These are paper-reported figures cited for reference in the v1.0.0 brochure; the team did not measure them, and the datasets differ so they cannot be compared directly with the team's numbers. LaSOT AUC / LaSOT_ext AUC / GOT-10k AO are 68.5 / 58.5 / 81.1 for SAM 2.1-L and 74.2 / 61.0 / 81.7 for SAMURAI-L. DiDi quality is 0.649 for SAM 2.1, 0.680 for SAMURAI, and 0.694 for DAM4SAM. EfficientTAM is reported as about 2x faster than SAM 2 on an A100 with about 2.4x fewer parameters, and EdgeTAM is reported at 16 FPS on iPhone."
+  },
+  "kw": [
+   "SOTA 수치",
+   "LaSOT",
+   "GOT-10k",
+   "SAMURAI",
+   "DAM4SAM",
+   "EdgeTAM",
+   "논문",
+   "published results",
+   "AUC",
+   "DiDi"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#65-공개된-최신-sota-지표-참고용"
+  ],
+  "related": [
+   "a-eval-sota-not-compared",
+   "a-sam21-vs-efficienttam",
+   "a-improvement-plan"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-improvement-plan",
+  "cat": "limits",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "앞으로 성능을 어떻게 개선할 계획인가요?",
+    "향후 개발 로드맵",
+    "개선 방안 제안",
+    "다음 단계는 뭔가요"
+   ],
+   "en": [
+    "How do you plan to improve performance?",
+    "Future development roadmap",
+    "Proposed improvements",
+    "What are the next steps?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0의 제안(검증 안 됨)은 일곱 가지입니다. 방해물 인식 메모리(DAM4SAM식), 외형 임베딩 재식별(DINOv2 등), 백본 확장(EfficientTAM-S, NVIDIA CUDA의 더 큰 모델), 긴 가림용 다중 가설 메모리, Core ML/Neural Engine 가속, 쥔 손 처리 개선, 3D 6DoF 추적입니다. 성공 기준은 SOTA 대비 위치 확정, twin 옮겨붙음을 현재의 절반 이하로 줄이기, eval에서 어떤 변경도 성공률을 떨어뜨리지 않기이며 이는 목표이지 결과가 아닙니다. 포스터는 Windows·Linux 지원, 앱 실행과 단축키 연동, 외부 게임패드 출력도 향후 계획으로 듭니다.",
+   "en": "The v1.0.0 brochure proposes seven unvalidated directions: distractor-aware memory (DAM4SAM style), appearance-embedding re-identification (DINOv2 etc.), larger backbones (EfficientTAM-S, bigger models on NVIDIA CUDA), multi-hypothesis memory for long occlusions, Core ML/Neural Engine acceleration, better handling of held hands, and 3D 6DoF tracking. The success criteria are to pin down the position against SOTA, cut twin hijack frames to half or less of today's, and ensure no change lowers success on eval; these are goals, not results. The poster also lists Windows/Linux support, app-launch and shortcut integration, and external gamepad output as future plans."
+  },
+  "kw": [
+   "향후 계획",
+   "로드맵",
+   "개선",
+   "roadmap",
+   "future work",
+   "6DoF",
+   "Core ML",
+   "CUDA",
+   "DINOv2",
+   "plan",
+   "다음 단계"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#66-제안-우리-위치를-확인하고-성능을-끌어올리는-계획-검증-안-됨",
+   "sources/11_포스터_텍스트.md#향후-계획"
+  ],
+  "related": [
+   "a-eval-sota-not-compared",
+   "a-limit-twin",
+   "a-limit-macos-only"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-twin",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "똑같이 생긴 물체가 두 개면 어떻게 되나요?",
+    "가장 어려운 경우가 뭐예요",
+    "다른 물체로 넘어가는 문제",
+    "추적이 옮겨붙는 한계"
+   ],
+   "en": [
+    "What if there are two identical objects?",
+    "What is the hardest case?",
+    "Tracking jumping to another object",
+    "Hijacking limitation"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0이 가장 어려운 경우로 꼽는 상황입니다. 합성 평가에서 닮은 물체 성공률은 0.793(tune), 0.748(eval)이고 옮겨붙음은 tune 155프레임, eval 147프레임입니다. 재획득은 애매하면 고르지 않는 쪽으로 안전하게 설계했고 [다시 선택]으로 바로 고칠 수 있습니다. 개선안은 방해물 인식 메모리와 외형 임베딩 재식별이며 아직 검증 전입니다. 사용 팁으로도 똑같이 생긴 물체를 여러 개 두지 말라고 안내합니다.",
+   "en": "The v1.0.0 brochure calls this the hardest case. In synthetic evaluation, look-alike success is 0.793 (tune) and 0.748 (eval), with hijacking on 155 frames (tune) and 147 frames (eval). Re-acquisition is designed to choose nothing when ambiguous, and the user can fix it immediately with [Reselect]. Proposed improvements are distractor-aware memory and appearance-embedding re-identification, both still unvalidated. A usage tip also advises against placing several identical objects."
+  },
+  "kw": [
+   "닮은 물체",
+   "twin",
+   "옮겨붙음",
+   "hijack",
+   "한계",
+   "limitation",
+   "똑같은 물체",
+   "identical objects",
+   "155프레임",
+   "look-alike"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획",
+   "sources/01_소개서_v1.0.0.md#16-qa"
+  ],
+  "related": [
+   "a-lookalike-policy",
+   "a-reselect",
+   "a-improvement-plan"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-limit-grasp",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "손으로 쥐면 정확도가 떨어지나요?",
+    "쥔 구간 한계",
+    "grasp 성공률",
+    "손에 쥔 물체 추적의 약점"
+   ],
+   "en": [
+    "Does accuracy drop when the object is held?",
+    "Limitation while grasped",
+    "Grasp success rate",
+    "Weakness when tracking a held object"
+   ]
+  },
+  "a": {
+   "ko": "네. 소개서 v1.0.0의 합성 평가에서 손 쥐기(grasp) 조건 성공률은 CSRT 0.561→0.612(tune), 0.335→0.685(eval)로, 다른 조건보다 낮은 0.61~0.69입니다. 개선 방향은 Apple Vision 엔진과 손 가림 결합이며, 정답 손 마스크를 쓴 상한은 0.796→0.817로 보고됩니다. 손 엔진 오검출이 성능을 해칠 수 있어 해당 결합은 기본으로 꺼 둡니다.",
+   "en": "Yes. In the v1.0.0 brochure's synthetic evaluation, the hand-grasp condition has success of 0.561 to 0.612 (tune) and 0.335 to 0.685 (eval) for CSRT versus AnyControl, a lower 0.61-0.69 than other conditions. The improvement direction is the Apple Vision engine plus hand-occlusion fusion, with an upper bound using ground-truth hand masks reported as 0.796 to 0.817. Hand-engine false detections can hurt performance, so that fusion is off by default."
+  },
+  "kw": [
+   "grasp",
+   "손 쥐기",
+   "쥔 손",
+   "한계",
+   "손 가림",
+   "0.61",
+   "0.69",
+   "hand occlusion",
+   "limitation",
+   "held object"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획",
+   "sources/01_소개서_v1.0.0.md#66-제안-우리-위치를-확인하고-성능을-끌어올리는-계획-검증-안-됨"
+  ],
+  "related": [
+   "a-occlusion-handling",
+   "a-hand-engine",
+   "a-eval-conditions"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-macos-only",
+  "cat": "limits",
+  "status": "info",
+  "q": {
+   "ko": [
+    "윈도우에서도 되나요?",
+    "macOS 전용인가요",
+    "다른 OS 지원 계획",
+    "Intel Mac이나 NVIDIA GPU는요"
+   ],
+   "en": [
+    "Does it work on Windows?",
+    "Is it macOS only?",
+    "Plans for other operating systems",
+    "What about Intel Macs or NVIDIA GPUs?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 macOS 14 이상, Apple Silicon 전용이며 Intel Mac과 Rosetta는 지원하지 않습니다. Apple GPU(MPS) 중심으로 만들었고 카메라·입력·손 인식에 AVFoundation, Quartz, Apple Vision을 씁니다. Windows·Linux 지원과 NVIDIA GPU + CUDA 가속, Core ML 가속은 향후 계획입니다. 참고로 이후 버전 현황은 이 소개서가 아닌 최신 README/HANDOFF 문서를 기준으로 봐야 합니다.",
+   "en": "In the v1.0.0 brochure it requires macOS 14 or later on Apple Silicon; Intel Macs and Rosetta are unsupported. It is built around the Apple GPU (MPS) and uses AVFoundation, Quartz, and Apple Vision for camera, input, and hand recognition. Windows and Linux support, NVIDIA GPU + CUDA acceleration, and Core ML acceleration are future plans. Note that later-version status should be taken from the newer README/HANDOFF documents, not this brochure."
+  },
+  "kw": [
+   "macOS 전용",
+   "Windows",
+   "Linux",
+   "Intel Mac",
+   "CUDA",
+   "Apple Silicon",
+   "platform",
+   "OS 지원",
+   "MPS",
+   "cross-platform"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#11-준비물과-요구사항",
+   "sources/01_소개서_v1.0.0.md#16-qa"
+  ],
+  "related": [
+   "a-requirements",
+   "a-improvement-plan",
+   "a-limit-single-machine"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-limit-realinput",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "실제 마우스 제어도 검증됐나요?",
+    "실제 OS 입력은 테스트했나요",
+    "CGEventPost 실기 검증",
+    "가장 검증이 부족한 부분"
+   ],
+   "en": [
+    "Is real mouse control verified?",
+    "Was real OS input tested?",
+    "Live validation of CGEventPost",
+    "What is least validated?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 실제 macOS 입력(CGEventPost) 라이브 동작은 검증되지 않았습니다. 가짜 백엔드 단위 테스트 10개까지만 통과했고, 손쉬운 사용 권한을 주고 실제 화면에서 시험한 기록이 없으며, 앱 밖 ESC 감지에 입력 모니터링 권한이 필요한지도 확인되지 않았습니다. 앱 안 가상 입력(웹앱 내 마우스·키·게임패드)과 구분해서 이해해야 합니다.",
+   "en": "In the v1.0.0 brochure, live operation of real macOS input (CGEventPost) is not validated. It has passed only 10 unit tests against a fake backend; there is no record of testing on a real screen with Accessibility permission granted, and whether detecting ESC outside the app needs Input Monitoring permission is also unconfirmed. This should be kept distinct from the in-app virtual input (mouse, keys, gamepad inside the web app)."
+  },
+  "kw": [
+   "실제 입력",
+   "CGEventPost",
+   "미검증",
+   "Accessibility",
+   "손쉬운 사용",
+   "real input",
+   "not validated",
+   "macOS 입력",
+   "ESC 감지",
+   "live test"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#15-검증-상태-한눈에-보기"
+  ],
+  "related": [
+   "a-realinput-safety",
+   "a-dualsink",
+   "a-limit-human-checks"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-human-checks",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "사람이 직접 써 보고 확인한 항목은요?",
+    "미완성이거나 확인 안 된 기능",
+    "자동 보정 마법사 검증",
+    "게임 체감 확인"
+   ],
+   "en": [
+    "Which items were confirmed by hands-on use?",
+    "Unfinished or unconfirmed features",
+    "Verification of the auto-calibration wizard",
+    "Game feel confirmation"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0은 브라우저 실사용 항목의 사람이 써 본 확인이 미완이라고 밝힙니다. 해당 항목은 영상 띄우기(PiP), 버튼 색, 자동 보정 마법사, 깊이-y 마우스, Desk View, 게임 체감입니다. 게시 전 확인 목록에도 PiP, 자동 보정 마법사, Desk View를 사람이 써 본 뒤 검증 표를 갱신한다고 적혀 있습니다. 자동 테스트 388개(백엔드 299 + 프론트 89)는 통과했지만 이는 사람의 체감 확인과는 별개입니다.",
+   "en": "The v1.0.0 brochure states that hands-on human confirmation of browser-use items is incomplete: picture-in-picture video, button colors, the auto-calibration wizard, depth-y mouse, Desk View, and how the games feel. Its pre-publication checklist also says to update the verification table after people try PiP, the calibration wizard, and Desk View. The 388 automated tests (299 backend + 89 frontend) pass, but that is separate from human confirmation of the actual experience."
+  },
+  "kw": [
+   "미완",
+   "사람 확인",
+   "PiP",
+   "자동 보정 마법사",
+   "Desk View",
+   "게임 체감",
+   "human testing",
+   "unverified",
+   "usability",
+   "체크리스트"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#15-검증-상태-한눈에-보기",
+   "sources/01_소개서_v1.0.0.md#게시-전-확인-목록"
+  ],
+  "related": [
+   "a-limit-realinput",
+   "a-tests",
+   "a-limit-ui"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-pen-tablet",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜으로 전문 그림 그리기가 되나요?",
+    "와콤 태블릿을 대체하나요",
+    "필압은 지원하나요",
+    "펜 입력의 한계"
+   ],
+   "en": [
+    "Can I do professional drawing with the pen?",
+    "Does it replace a Wacom tablet?",
+    "Is pressure sensitivity supported?",
+    "Limits of pen input"
+   ]
+  },
+  "a": {
+   "ko": "아직 대체하지 못합니다. 소개서 v1.0.0 기준 스케치 수준의 그리기는 되지만 정밀도, 필압, 지연이 전문 태블릿에 못 미칩니다. 필압은 지원하지 않고(그림자·변형 단서 연구는 미검증), 지연은 카메라 약 55ms에 처리 시간이 더해지며 Desk View는 약 120ms입니다. 카메라가 수평이면 접촉이 애매하고 Desk View는 높이가 안 보여 수동 접촉(Space)을 쓰며, 자동 보정 전에는 펜이 공중에서 닿음으로 잘못 판정될 수 있습니다.",
+   "en": "Not yet. In the v1.0.0 brochure, sketch-level drawing works, but precision, pressure sensitivity, and latency fall short of professional tablets. Pressure is not supported (research on shadow/deformation cues is unvalidated), and latency is about 55 ms of camera delay plus processing, or about 120 ms in Desk View. With a horizontal camera contact is ambiguous, Desk View cannot see height so manual contact (Space) is used, and before auto-calibration a pen in mid-air can be misjudged as touching."
+  },
+  "kw": [
+   "펜",
+   "와콤",
+   "태블릿",
+   "필압",
+   "pressure",
+   "정밀도",
+   "limitation",
+   "pen limits",
+   "Desk View",
+   "수동 접촉",
+   "drawing tablet"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#펜-입력-그림용-태블릿와콤-등-대체를-향한-연구",
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획"
+  ],
+  "related": [
+   "a-eval-pen",
+   "a-peripheral-vision",
+   "a-three-input-modes"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-low-light",
+  "cat": "limits",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어두운 곳에서도 되나요?",
+    "추적이 잘되는 조건 팁",
+    "반사 바닥에서는요",
+    "어떤 물체가 좋은가요"
+   ],
+   "en": [
+    "Does it work in the dark?",
+    "Tips for good tracking",
+    "What about reflective floors?",
+    "Which objects work best?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0은 어두운 환경과 반사되는 유리 바닥에서 정확도가 떨어진다고 안내합니다. 잘 되는 조건은 주변과 색이 뚜렷이 구분되고 모양이 변하지 않는 물체나 펜, 밝은 조명, 저반사 바닥, 고정된 카메라, 단순한 배경입니다. 천이나 봉지처럼 형태가 바뀌는 물건과 똑같이 생긴 물체 여러 개는 피하라고 합니다.",
+   "en": "The v1.0.0 brochure says accuracy drops in dark environments and on reflective glass floors. Conditions that work best are objects or pens whose color clearly differs from the surroundings and whose shape does not change, bright lighting, a low-reflection floor, a fixed camera, and a simple background. It advises avoiding objects that deform, such as cloth or bags, and avoiding several identical objects."
+  },
+  "kw": [
+   "어두운",
+   "조명",
+   "반사",
+   "팁",
+   "추적 팁",
+   "low light",
+   "reflective",
+   "tips",
+   "물체 선택",
+   "배경"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#13-잘-추적되게-하는-팁-시작할-때-안내로-표시",
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획"
+  ],
+  "related": [
+   "a-lighting-robust",
+   "a-limit-twin",
+   "a-first-use-steps"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-six-objects",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "물체 6개를 동시에 추적하면 성능은요?",
+    "다중 추적 성능 측정했나요",
+    "많은 물체일 때 지연",
+    "다물체 벤치"
+   ],
+   "en": [
+    "What is performance with 6 objects at once?",
+    "Was multi-object performance measured?",
+    "Latency with many objects",
+    "Multi-object benchmark"
+   ]
+  },
+  "a": {
+   "ko": "6개 동시 추적 시 정확도와 지연은 아직 종합 측정하지 않았습니다(소개서 v1.0.0). 측정된 것은 물체 3개일 때 EfficientTAM-Ti AI 보정 1스텝 138ms(M3 MPS, 물체 1개는 55ms)뿐입니다. 다물체 벤치 추가가 향후 과제로 적혀 있습니다.",
+   "en": "Accuracy and latency with 6 simultaneous objects have not been comprehensively measured (v1.0.0 brochure). The only related measurement is 138 ms for one EfficientTAM-Ti AI-correction step with 3 objects (M3 MPS; 55 ms for one object). Adding a multi-object benchmark is listed as future work."
+  },
+  "kw": [
+   "다중 추적",
+   "6개",
+   "다물체 벤치",
+   "미측정",
+   "multi-object",
+   "benchmark",
+   "138ms",
+   "한계",
+   "scalability"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획",
+   "sources/01_소개서_v1.0.0.md#64-모델-지연-실측"
+  ],
+  "related": [
+   "a-max-objects",
+   "a-multi-object-mapping",
+   "a-model-latency-table"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-single-machine",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "다른 맥이나 환경에서도 검증했나요?",
+    "테스트 환경이 어떻게 되나요",
+    "일반화 가능한가요",
+    "측정 조건이 뭐예요"
+   ],
+   "en": [
+    "Was it validated on other Macs or environments?",
+    "What was the test environment?",
+    "Does it generalize?",
+    "What were the measurement conditions?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0의 측정은 개발 PC(M3 계열 MacBook Pro) 1대 중심입니다. 다른 Mac 기종, macOS 14/15 실기, 다양한 iPhone·조명·물체 환경에서는 아직 검증하지 않았습니다. 실제 영상 평가도 영상 1개(약 700프레임), 펜은 영상 1개, 손 엔진 비교는 129프레임이라 표본이 작습니다. 따라서 수치는 이 조건의 측정값으로만 읽어야 합니다.",
+   "en": "Measurements in the v1.0.0 brochure center on a single development PC (an M3-class MacBook Pro). Other Mac models, real macOS 14/15 machines, and varied iPhones, lighting, and objects have not been validated. Real-video evaluation is one video (about 700 frames), the pen test is one video, and the hand-engine comparison is 129 frames, so samples are small. The numbers should be read only as measurements under these conditions."
+  },
+  "kw": [
+   "테스트 환경",
+   "M3",
+   "일반화",
+   "표본",
+   "개발 PC",
+   "generalization",
+   "test environment",
+   "single machine",
+   "작은 표본",
+   "측정 조건"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#11-준비물과-요구사항",
+   "sources/01_소개서_v1.0.0.md#15-검증-상태-한눈에-보기"
+  ],
+  "related": [
+   "a-eval-realvideo",
+   "a-eval-speed",
+   "a-requirements"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-2d-only",
+  "cat": "limits",
+  "status": "info",
+  "q": {
+   "ko": [
+    "3D 추적이 되나요?",
+    "깊이 정확도 한계",
+    "2D 추적만 하나요",
+    "6DoF 지원 여부"
+   ],
+   "en": [
+    "Does it do 3D tracking?",
+    "Depth accuracy limits",
+    "Is it only 2D tracking?",
+    "Is 6DoF supported?"
+   ]
+  },
+  "a": {
+   "ko": "아니요. 소개서 v1.0.0 기준 2D 비전 추적만 사용하며, 거리는 2D 크기 변화 등으로 추정합니다. 가능하면 3D 6DoF 추적으로 정확도를 높이는 것이 향후 계획이고 연구 난도가 높다고 적혀 있습니다.",
+   "en": "No. The v1.0.0 brochure uses 2D vision tracking only, and distance is estimated from cues like 2D size change. Using 3D 6DoF tracking to improve accuracy is a future plan, noted as high research difficulty."
+  },
+  "kw": [
+   "3D",
+   "6DoF",
+   "2D 추적",
+   "깊이 한계",
+   "depth",
+   "크기 변화",
+   "future",
+   "limitation",
+   "3D tracking"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획",
+   "sources/01_소개서_v1.0.0.md#66-제안-우리-위치를-확인하고-성능을-끌어올리는-계획-검증-안-됨"
+  ],
+  "related": [
+   "a-horizontal-camera-depth",
+   "a-improvement-plan",
+   "a-limit-six-objects"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-app-launch",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "물체로 앱을 실행할 수 있나요?",
+    "스트림덱처럼 쓸 수 있나요",
+    "앱 실행 연동 상태",
+    "게임패드 OS 출력은요"
+   ],
+   "en": [
+    "Can an object launch an app?",
+    "Can it work like a stream deck?",
+    "Status of app-launch integration",
+    "What about OS-level gamepad output?"
+   ]
+  },
+  "a": {
+   "ko": "아직 직접 지원하지 않습니다. 소개서 v1.0.0은 물체 신호를 단축키에 연결하고 그 단축키에 앱 실행을 거는 식으로 가능한 구조이지만, 앱 실행을 직접 다루는 기능은 없고 비전 제시 단계라고 밝힙니다. 게임패드는 웹앱 안에서만 동작하며 OS 게임패드 출력은 없습니다(macOS는 서명된 DriverKit 가상 HID가 필요하며, 가상 HID 드라이버나 USB HID 동글로 확장 계획).",
+   "en": "Not directly supported yet. The v1.0.0 brochure says the structure makes it possible by mapping an object signal to a shortcut key and attaching an app launch to that shortcut, but there is no feature that handles app launching directly, so it is at the vision stage. The gamepad works only inside the web app; there is no OS-level gamepad output (macOS requires a signed DriverKit virtual HID, with a virtual HID driver or USB HID dongle as the planned extension)."
+  },
+  "kw": [
+   "앱 실행",
+   "스트림덱",
+   "런치패드",
+   "단축키",
+   "게임패드 출력",
+   "DriverKit",
+   "HID",
+   "app launch",
+   "stream deck",
+   "미구현"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#31-여러-물체를-동시에-추적하고-하나하나-입력에-연결",
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획",
+   "sources/12_서비스소개서_최종본_텍스트.md#슬라이드-8"
+  ],
+  "related": [
+   "a-peripheral-vision",
+   "a-multi-object-mapping",
+   "a-nl-mapping-plan"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-ui",
+  "cat": "limits",
+  "status": "info",
+  "q": {
+   "ko": [
+    "UI는 완성됐나요?",
+    "사용성 개선 필요한 부분",
+    "알려진 한계 전체 목록",
+    "아직 안 된 것들"
+   ],
+   "en": [
+    "Is the UI finished?",
+    "Usability areas needing improvement",
+    "Full list of known limitations",
+    "What is not done yet?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0은 UI 개선 필요(화면 구성, 설정 흐름, 시각적 완성도)를 한계로 직접 적고 사용성 테스트 후 전면 개선할 계획이라고 합니다. 같은 표의 다른 한계는 닮은 물체 옮겨붙음, 쥔 손 정확도, 2D 추적, 반사 바닥·어두운 환경, 펜의 전문 태블릿 격차, macOS·Apple GPU 중심, OS 게임패드 출력 없음, 입력 장치 없는 기기 미검증, 텍스트 등록·자연어 매핑 미구현, 주변기기 대체 일부만 구현, 6개 동시 추적 미측정입니다.",
+   "en": "The v1.0.0 brochure lists UI improvement (layout, setup flow, visual polish) as a limitation and plans a full overhaul after usability testing. Other limits in the same table are hijacking by look-alikes, accuracy while a hand holds the object, 2D-only tracking, reflective floors and dark environments, the gap to professional pen tablets, macOS and Apple-GPU focus, no OS gamepad output, unverified use on devices without input hardware, unimplemented text-based registration and natural-language mapping, only partial peripheral replacement, and unmeasured 6-object tracking."
+  },
+  "kw": [
+   "UI",
+   "사용성",
+   "한계 목록",
+   "limitations",
+   "알려진 한계",
+   "known issues",
+   "미구현",
+   "개선 필요",
+   "usability"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획"
+  ],
+  "related": [
+   "a-limit-twin",
+   "a-limit-grasp",
+   "a-limit-macos-only"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-limit-market",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "시장성은 검증됐나요?",
+    "사업성 근거가 있나요",
+    "실제 고객 반응은요",
+    "상업성 검증 여부"
+   ],
+   "en": [
+    "Has market viability been validated?",
+    "Is there evidence of business viability?",
+    "What about real customer feedback?",
+    "Has commercial viability been checked?"
+   ]
+  },
+  "a": {
+   "ko": "아니요. 소개서 v1.0.0의 검증 상태 표에서 사업성·시장 규모는 아이디어 단계로 검증되지 않은 항목(⚠️)입니다. 접근성 솔루션, 전시·키오스크 솔루션, SDK/라이선스 등 방향만 제시돼 있고 고객 조사나 시장 데이터는 문서에 없습니다.",
+   "en": "No. In the v1.0.0 brochure's verification table, business viability and market size are at the idea stage and unvalidated (⚠️). Only directions are presented, such as accessibility solutions, exhibition/kiosk solutions, and SDK/licensing; no customer research or market data appear in the documents."
+  },
+  "kw": [
+   "시장성",
+   "사업성",
+   "검증",
+   "market validation",
+   "business viability",
+   "고객",
+   "상업성",
+   "미검증"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#15-검증-상태-한눈에-보기",
+   "sources/01_소개서_v1.0.0.md#사업화-방향-아이디어-단계-시장-검증-전"
+  ],
+  "related": [
+   "a-business",
+   "a-use-cases",
+   "a-limit-single-machine"
+  ],
+  "suggest": false
+ }
+]

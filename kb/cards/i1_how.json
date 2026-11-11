@@ -1,0 +1,2399 @@
+[
+ {
+  "id": "i-how-simple",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어떻게 동작해요?",
+    "원리가 뭐예요?",
+    "쉽게 설명해 주세요",
+    "어떤 방식으로 작동하나요",
+    "작동 원리",
+    "안에서 무슨 일이 일어나요",
+    "내부적으로 뭘 하는 건가요",
+    "작동 방식을 쉽게 알려 주세요",
+    "카메라 영상이 어떻게 처리돼요"
+   ],
+   "en": [
+    "How does it work?",
+    "Explain it simply",
+    "What is the principle behind it?",
+    "How does it work in plain words?",
+    "Explain the mechanism in plain words",
+    "Simple explanation of how it runs",
+    "What happens inside",
+    "What is it doing behind the scenes?",
+    "What happens behind the scenes?",
+    "How does it work inside?"
+   ]
+  },
+  "a": {
+   "ko": "카메라가 책상 위 물건을 계속 지켜보고, 그 움직임을 컴퓨터가 마우스 움직임으로 바꿔 줘요. 물건에 따로 센서를 붙이지 않고 영상만으로 따라가요. 펜이면 그림 그리기, 물건이면 커서 움직이기처럼 쓸 수 있어요.",
+   "en": "A camera keeps watching an object on your desk, and the computer turns its movement into mouse movement. No sensor is attached to the object; it follows it from video alone. A pen can draw, and an everyday object can move the cursor."
+  },
+  "kw": [
+   "원리",
+   "동작",
+   "작동",
+   "카메라",
+   "추적",
+   "마우스",
+   "how it works",
+   "principle",
+   "tracking",
+   "camera",
+   "내부적으로",
+   "안에서",
+   "작동 방식",
+   "behind the scenes",
+   "mechanism",
+   "plain words",
+   "inside"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-camera-to-mouse"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-camera-to-mouse",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "카메라로 본 걸 어떻게 마우스로 바꿔요?",
+    "물건이 움직이면 커서는 어떻게 움직여요?",
+    "영상이 마우스 신호가 되는 과정",
+    "물건 위치를 커서로 바꾸는 과정",
+    "카메라 속 좌표가 화면 좌표가 되나요",
+    "물건을 옮기면 포인터가 따라 움직이나요",
+    "물체 위치가 커서 위치가 되는 건가요"
+   ],
+   "en": [
+    "How does video become mouse movement?",
+    "How does the cursor follow my object?",
+    "How is the picture turned into a mouse signal?",
+    "How is object position turned into a pointer",
+    "Is camera position mapped to screen position",
+    "Pointer follows the item?",
+    "Does the object's position become the cursor position?"
+   ]
+  },
+  "a": {
+   "ko": "카메라 영상에서 물건이 어디 있는지 찾아 위치를 계속 기록해요. 그 위치가 옆으로 움직이면 커서도 옆으로 움직이게 연결해 두는 방식이에요. 앞뒤로 움직이는 것도 읽어서 커서를 위아래로 옮길 수 있어요.",
+   "en": "It finds where the object is in each camera picture and keeps track of its position. When the position moves sideways, the cursor moves sideways too. Forward and back movement can also be read and turned into up and down cursor movement."
+  },
+  "kw": [
+   "위치",
+   "커서",
+   "마우스",
+   "변환",
+   "position",
+   "cursor",
+   "mapping",
+   "video",
+   "좌표",
+   "위치가 커서",
+   "포인터",
+   "coordinates",
+   "position becomes",
+   "pointer follows",
+   "turned into"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-how-simple",
+   "i-fast-plus-ai"
+  ]
+ },
+ {
+  "id": "i-fast-plus-ai",
+  "cat": "arch",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "빠른 추적이랑 AI는 어떻게 같이 써요?",
+    "AI로 가끔 바로잡는다는 게 무슨 뜻이에요?",
+    "두 단계로 나눠 동작한다던데요",
+    "빠른 추적과 AI 보정",
+    "가벼운 방법과 AI를 섞어 쓰나요",
+    "AI가 가끔 도와준다는 게 무슨 말이에요",
+    "추적 두 가지를 조합한다고요"
+   ],
+   "en": [
+    "How do fast tracking and AI work together?",
+    "What does correcting with AI now and then mean?",
+    "Why two steps?",
+    "What is the two-part design?",
+    "Is a lightweight method mixed with AI",
+    "AI helps now and then, what does that mean",
+    "Two methods combined?"
+   ]
+  },
+  "a": {
+   "ko": "내비게이션에 비유할 수 있어요. 평소엔 가벼운 방법(OpenCV로 점과 색을 따라가는 추적)이 눈앞 움직임을 빠르게 따라가고, AI(EfficientTAM)는 가끔 한 번씩 지도를 확인하듯 위치가 어긋나지 않았는지 바로잡아 줘요. 빠른 쪽이 반응을 맡고 AI 쪽이 쌓인 오차를 정리하는 역할이에요.",
+   "en": "Think of a navigation app. A light, fast method (OpenCV tracking points and color) follows movement all the time, and the AI (EfficientTAM) checks now and then, like glancing at the map, to fix any drift. The fast part keeps it responsive and the AI part cleans up built-up errors."
+  },
+  "kw": [
+   "두 단계",
+   "빠른 추적",
+   "AI 보정",
+   "비유",
+   "내비게이션",
+   "two-tier",
+   "fast tracking",
+   "AI correction",
+   "analogy",
+   "곁들",
+   "섞어",
+   "조합",
+   "combining",
+   "mixed",
+   "combined",
+   "lightweight"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-camera-to-mouse",
+   "i-why-not-ai-only"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-why-not-ai-only",
+  "cat": "arch",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "AI만 쓰면 안 되나요?",
+    "왜 AI 하나로 안 하고 나눠요?",
+    "AI가 느린가요?",
+    "모든 화면에 AI를 돌리면 어때요",
+    "AI 하나만 쓰면 안 되는 이유",
+    "AI를 항상 켜 두지 않는 이유",
+    "AI가 너무 무거운가요",
+    "인공지능만 쓰지 않는 이유가 있나요",
+    "왜 큰 AI를 매 프레임 돌리지 않나요",
+    "AI를 계속 돌리면 안 돼요"
+   ],
+   "en": [
+    "Why not use only AI?",
+    "Is the AI too slow to use on every frame?",
+    "Why split the work?",
+    "Why not run the AI all the time",
+    "Is the AI model too heavy",
+    "Why split the work between two methods",
+    "Why not run a big AI on every frame?"
+   ]
+  },
+  "a": {
+   "ko": "AI 모델은 정확하지만 매 화면마다 돌리기엔 시간이 걸려요. 직접 시험했을 때 가장 작은 축에 드는 다른 모델도 초당 두 번쯤밖에 못 돌았어요. 그래서 빠른 추적이 매 화면을 맡고 AI는 틈틈이 보정하도록 나눴어요.",
+   "en": "AI models are accurate but take time to run on every picture. When we tried it, even one of the smallest alternatives only managed about two runs per second. So fast tracking handles every picture and the AI corrects it in the gaps."
+  },
+  "kw": [
+   "AI",
+   "느림",
+   "속도",
+   "나눈 이유",
+   "why",
+   "slow",
+   "AI only",
+   "split",
+   "인공지능만",
+   "항상 켜",
+   "무거운",
+   "rely on ai",
+   "all the time",
+   "heavy",
+   "alone",
+   "인공지능",
+   "매 프레임",
+   "every frame",
+   "SAM"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-fast-plus-ai",
+   "i-occlusion-return"
+  ]
+ },
+ {
+  "id": "i-occlusion-return",
+  "cat": "tracking",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "손으로 가리면 어떻게 돼요?",
+    "물건이 가려졌다가 다시 보이면요?",
+    "가려져도 계속 따라가나요?",
+    "가림 처리",
+    "물체 앞을 가로막으면 어떻게 되나요",
+    "잠깐 가려졌다 나오면 커서는요",
+    "손이 지나가면 따라가나요",
+    "가려지면 어떻게 돼요",
+    "손으로 막으면 어떡해요",
+    "앞에 뭐 지나가면 놓쳐요",
+    "잠깐 안 보이면 어떻게 돼요",
+    "가리면 인식 안 돼요",
+    "손에 가리면 끊겨요"
+   ],
+   "en": [
+    "What happens if something blocks the object?",
+    "If the object is hidden and reappears, what then?",
+    "Does it keep tracking when covered?",
+    "Briefly blocked then visible again",
+    "Does the cursor jump when covered",
+    "Hand passes over the object",
+    "what happens when something blocks it",
+    "if my hand covers it, what then",
+    "what if it's hidden for a moment",
+    "does it lose the object when covered"
+   ]
+  },
+  "a": {
+   "ko": "가려진 것을 알아채면 마지막 움직임을 잠시 천천히 줄이면서 커서가 엉뚱하게 튀지 않게 버텨요. 다시 보이면 이어서 따라가요. 다만 직접 만든 테스트 영상에서 완전히 가려지는 경우는 쉬운 편은 아니었어요.",
+   "en": "When it notices the object is blocked, it slowly eases off the last movement so the cursor doesn't jump somewhere odd. When the object shows up again it carries on. Still, in our own test videos, fully covered objects were not an easy case."
+  },
+  "kw": [
+   "가림",
+   "가려짐",
+   "손",
+   "다시 보임",
+   "occlusion",
+   "hidden",
+   "blocked",
+   "covered",
+   "지나가면",
+   "가로막",
+   "passes in front",
+   "briefly blocked",
+   "passes over",
+   "가리면",
+   "막으면",
+   "blocks",
+   "covers"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-why-not-ai-only",
+   "i-offscreen-return"
+  ]
+ },
+ {
+  "id": "i-offscreen-return",
+  "cat": "tracking",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "화면 밖으로 나갔다 들어오면요?",
+    "카메라 밖으로 나가도 다시 찾아요?",
+    "물건을 잃어버리면 어떻게 해요?",
+    "놓친 물체 재발견",
+    "카메라 시야를 벗어났다 돌아오면",
+    "프레임 밖으로 나가면 어떻게 돼요",
+    "물건이 시야에서 사라졌다 다시 나타나면",
+    "손으로 완전히 가렸다가 다른 위치에 놓아도 다시 찾아요",
+    "가렸다가 다른 곳에 놓으면 찾아요"
+   ],
+   "en": [
+    "What if the object leaves the picture and comes back?",
+    "Can it find the object again after losing it?",
+    "What happens when it loses the object?",
+    "Leaves the camera view then returns",
+    "Object disappears and reappears",
+    "Out of view and back in",
+    "If I fully cover it and place it somewhere else, will it find it again?"
+   ]
+  },
+  "a": {
+   "ko": "일정 시간 못 찾으면 '놓쳤다'고 판단하고, 이후 화면 전체에서 처음에 기억해 둔 모양과 색이 맞는 것을 찾아요. 같은 자리에서 두 번 연속 맞으면 다시 붙잡아요. 직접 만든 테스트 영상에서 이 기능을 켜니 화면 밖으로 나갔다 오는 장면의 성공이 눈에 띄게 늘었어요.",
+   "en": "If it can't find the object for a while, it decides the object is lost and searches the whole picture for the shape and color it remembered. When the same spot matches twice in a row, it locks on again. In our own test videos, turning this on clearly improved scenes where the object leaves and comes back."
+  },
+  "kw": [
+   "다시 찾기",
+   "재발견",
+   "화면 밖",
+   "놓침",
+   "reacquire",
+   "lost",
+   "leave screen",
+   "recover",
+   "복구",
+   "시야",
+   "프레임 밖",
+   "사라졌다",
+   "out of frame",
+   "out of view",
+   "reappears",
+   "returns",
+   "다른 위치",
+   "somewhere else"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-occlusion-return",
+   "i-why-find-again"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-why-find-again",
+  "cat": "tracking",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "어떻게 다시 찾아요?",
+    "뭘 보고 같은 물건인지 알아요?",
+    "기억해 둔 모양이 뭐예요?",
+    "같은 물체인지 어떻게 판단해요",
+    "같은 물건인지 어떻게 알아봐요",
+    "무엇으로 동일 물체를 구분하나요",
+    "기억하는 특징이 뭐예요",
+    "같은 물건인지 어떻게 판단해요"
+   ],
+   "en": [
+    "How does it find it again?",
+    "How does it know it's the same object?",
+    "What does it remember about the object?",
+    "How does it recognize the same object",
+    "What features does it remember",
+    "Criteria for matching",
+    "What decides that it's the same thing?"
+   ]
+  },
+  "a": {
+   "ko": "처음 고를 때 물건의 모양, 색, 크기 비율을 기억해 둬요. 놓쳤을 때는 화면에서 후보를 찾아 이 기억과 모두 비슷한지 따져 보고, 모든 조건을 통과한 것만 같은 물건으로 인정해요. 한 번 맞은 걸로는 옮기지 않고 같은 자리에서 연속으로 맞아야 해요.",
+   "en": "When you first pick the object, it remembers its shape, color and proportions. After losing it, it looks for candidates and checks them all against that memory. Only one that passes every check counts, and it must match at the same spot more than once before it switches."
+  },
+  "kw": [
+   "모양 기억",
+   "색",
+   "후보",
+   "확인",
+   "template",
+   "shape",
+   "color",
+   "match",
+   "기준",
+   "동일",
+   "특징",
+   "criteria",
+   "recognize the same",
+   "features",
+   "matching",
+   "same",
+   "같은 물건"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-offscreen-return",
+   "i-lookalike"
+  ]
+ },
+ {
+  "id": "i-lookalike",
+  "cat": "tracking",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "비슷한 물건이 있으면요?",
+    "똑같이 생긴 물건 두 개가 있으면 헷갈려요?",
+    "비슷한 걸로 옮겨 가지 않나요?",
+    "닮은 물체 구분",
+    "닮은 물건이 옆에 있으면 엉뚱한 걸 따라가요",
+    "비슷하게 생긴 물체가 지나가면",
+    "닮은꼴 물건 문제"
+   ],
+   "en": [
+    "What if there is a similar object?",
+    "Does it mix up two look-alike objects?",
+    "Could it jump to a similar-looking item?",
+    "A similar item passes by, does it follow the wrong one",
+    "Lookalike object problem",
+    "Near-identical items"
+   ]
+  },
+  "a": {
+   "ko": "헷갈릴 만한 후보가 둘 이상이면 일부러 하나를 고르지 않고 기다려요. 잘못된 물건으로 옮겨 가는 것보다 잠시 멈추는 편이 낫다고 보았어요. 잘못 붙었다면 직접 다시 선택해서 바로잡을 수 있어요.",
+   "en": "If there are two or more candidates that could be confused, it deliberately doesn't pick one and waits. It's better to pause than to jump to the wrong object. If it does latch onto the wrong one, you can reselect to fix it."
+  },
+  "kw": [
+   "닮은 물체",
+   "비슷한",
+   "헷갈림",
+   "옮겨붙음",
+   "look-alike",
+   "similar",
+   "confuse",
+   "twin",
+   "쌍둥이",
+   "닮은꼴",
+   "엉뚱한 걸",
+   "twin-like",
+   "wrong one",
+   "near-identical",
+   "lookalike"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-why-find-again",
+   "i-why-no-guess"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-why-no-guess",
+  "cat": "tracking",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "왜 헷갈리면 안 고르고 기다려요?",
+    "그냥 가장 비슷한 걸 고르면 안 돼요?",
+    "멈추는 이유가 뭐예요?",
+    "불확실하면 왜 가만히 있어요",
+    "가장 비슷한 걸 안 고르는 이유",
+    "대충 찍어서 고르지 않는 이유"
+   ],
+   "en": [
+    "Why does it wait instead of guessing?",
+    "Why not pick the closest match?",
+    "Why pause when unsure?",
+    "Why hold still when unsure",
+    "Why not choose the best match",
+    "Reason it avoids guessing"
+   ]
+  },
+  "a": {
+   "ko": "틀린 물건으로 옮겨 가면 커서가 갑자기 엉뚱한 곳으로 가기 때문이에요. 점수 차이가 작을 때는 고르지 않고, 두 번 연속 같은 자리에서 확인되어야 옮겨요. 멈추는 쪽이 덜 불편하다고 판단해 이렇게 설계했어요.",
+   "en": "Jumping to the wrong object would send the cursor somewhere unexpected. When candidates score almost the same it doesn't choose, and it only switches after confirming the same spot twice in a row. Pausing was judged less annoying than jumping."
+  },
+  "kw": [
+   "안 고름",
+   "기다림",
+   "오인",
+   "설계",
+   "wait",
+   "no guess",
+   "wrong object",
+   "design choice",
+   "추측",
+   "불확실",
+   "대충",
+   "guess",
+   "unsure",
+   "avoids guessing",
+   "best match"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-lookalike",
+   "i-reselect"
+  ]
+ },
+ {
+  "id": "i-reselect",
+  "cat": "usage",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "잘못 따라가면 어떻게 고쳐요?",
+    "다시 선택할 수 있나요?",
+    "물체를 바꿔 고르려면요?",
+    "엉뚱한 걸 따라가요",
+    "엉뚱한 물체를 잡았을 때 다시 고르기",
+    "잘못 잡은 걸 고치는 법",
+    "물체를 새로 지정하려면"
+   ],
+   "en": [
+    "How do I fix it if it follows the wrong thing?",
+    "Can I select the object again?",
+    "How do I re-pick an object?",
+    "Fix a wrong lock",
+    "Pick the object again",
+    "Correct a bad selection",
+    "Recover a wrongly tracked object",
+    "Fix a lost or incorrect track",
+    "Correct object tracking after an error"
+   ]
+  },
+  "a": {
+   "ko": "물체 패널의 다시 선택 버튼을 누르거나 영상에서 Shift를 누른 채 드래그해서 새로 고르면 돼요. 이름이나 색, 마우스 연결 같은 설정은 그대로 두고 물체를 알아보는 기억만 새로 바꿔요. 자동으로 판단하기 애매할 때를 위한 안전장치예요.",
+   "en": "Press the reselect button in the object panel, or hold Shift and drag on the video to pick again. Your name, color and mouse settings stay as they are, and only what it remembers about the object is replaced. It's a safety net for moments when automatic judgment is unclear."
+  },
+  "kw": [
+   "다시 선택",
+   "재선택",
+   "고치기",
+   "reselect",
+   "fix",
+   "wrong object",
+   "Shift",
+   "틀어졌",
+   "바로잡",
+   "새로 지정",
+   "goes wrong",
+   "wrong lock",
+   "correct",
+   "pick again",
+   "tracking recovery",
+   "wrong tracking",
+   "tracking repair"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-why-no-guess",
+   "i-lighting"
+  ]
+ },
+ {
+  "id": "i-lighting",
+  "cat": "tracking",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "조명이 바뀌어도 되나요?",
+    "밝기에 강한가요?",
+    "불빛이 달라져도 따라가요?",
+    "빛 변화",
+    "조명 바뀌면 인식이 흔들리나요",
+    "빛이 달라지면 어떻게 돼요",
+    "밝기 변화에 강해요",
+    "방 조명을 바꾸면 영향이 있나요"
+   ],
+   "en": [
+    "Does it cope with lighting changes?",
+    "How well does it handle brightness changes?",
+    "What if the lights change?",
+    "Does changing light shake the tracking",
+    "Robust to brightness changes",
+    "Light turned on or off",
+    "Does switching room lights affect it?",
+    "What if the room lighting changes?"
+   ]
+  },
+  "a": {
+   "ko": "밝기가 조금 바뀌어도 덜 흔들리게 색을 다루도록 만들었어요. 직접 만든 테스트 영상에서는 조명이 바뀌는 장면에서도 대체로 잘 따라갔어요. 다만 실제 여러 방에서 충분히 시험한 것은 아니라서 아주 어둡거나 반짝이는 곳은 조심해 주세요.",
+   "en": "Colors are handled in a way that's less sensitive to brightness shifts. In our own test videos, it mostly kept following through lighting changes. But we haven't tested enough in real rooms, so be careful in very dark or shiny places."
+  },
+  "kw": [
+   "조명",
+   "밝기",
+   "빛",
+   "어두움",
+   "lighting",
+   "brightness",
+   "light change",
+   "dark",
+   "방 불",
+   "불을 끄거나",
+   "빛이 달라",
+   "switching lights",
+   "room lights",
+   "light turned",
+   "robust",
+   "lights"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-reselect",
+   "i-background"
+  ]
+ },
+ {
+  "id": "i-background",
+  "cat": "tracking",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "배경이 복잡해도 돼요?",
+    "주변이 어수선하면요?",
+    "배경에 영향 받나요?",
+    "물건이 어질러진 배경도 되나요",
+    "주변에 잡동사니가 많으면",
+    "배경이 복잡하면 어떻게 돼요"
+   ],
+   "en": [
+    "Does a busy background matter?",
+    "What if the desk is cluttered?",
+    "Is it affected by the background?",
+    "Cluttered surroundings",
+    "Lots of stuff in the background",
+    "Does a busy backdrop hurt"
+   ]
+  },
+  "a": {
+   "ko": "직접 만든 테스트 영상에서는 배경이 복잡한 장면에서도 비교적 잘 따라갔어요. 물건 모양과 색을 함께 기억해 두기 때문이에요. 하지만 실제 환경에서의 시험은 아직 충분하지 않아요.",
+   "en": "In our own test videos, it followed fairly well even against busy backgrounds, because it remembers both shape and color. We haven't tested enough in real settings yet."
+  },
+  "kw": [
+   "배경",
+   "복잡",
+   "어수선",
+   "background",
+   "clutter",
+   "busy",
+   "지저분",
+   "어질러",
+   "잡동사니",
+   "messy desk",
+   "cluttered",
+   "backdrop",
+   "stuff"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-lighting",
+   "i-rotation"
+  ]
+ },
+ {
+  "id": "i-rotation",
+  "cat": "tracking",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "물체를 돌리면요?",
+    "회전해도 따라가요?",
+    "방향이 바뀌어도 되나요?",
+    "물건을 뒤집으면",
+    "물건을 뒤집거나 돌리면요",
+    "돌리면 인식이 풀리나요",
+    "각도가 달라져도 알아봐요",
+    "빙글 돌려도 놓치지 않나요",
+    "돌리면 놓쳐요",
+    "회전해도 괜찮아요"
+   ],
+   "en": [
+    "What if I rotate the object?",
+    "Does it follow when turned?",
+    "Does orientation matter?",
+    "Flip or turn the object",
+    "Does turning break recognition",
+    "Different angles",
+    "If I spin it, will it lose track?",
+    "What if I turn the object around?",
+    "Does rotation matter?"
+   ]
+  },
+  "a": {
+   "ko": "물건의 위치, 크기, 회전이 달라져도 같은 모양으로 알아보도록 비교 방식을 맞췄어요. 직접 만든 테스트 영상에서 회전하는 장면도 대체로 잘 따라갔어요. 다만 물건 전체를 뒤집어 모양이 크게 달라지는 경우까지 확인한 것은 아니에요.",
+   "en": "Its comparison is set up to recognize the same shape even when position, size or rotation changes. In our own test videos, rotating scenes were mostly followed well. We haven't confirmed cases where flipping the object makes its look change a lot."
+  },
+  "kw": [
+   "회전",
+   "돌리기",
+   "방향",
+   "rotate",
+   "rotation",
+   "orientation",
+   "turn",
+   "빙글",
+   "뒤집",
+   "각도",
+   "spin",
+   "flip",
+   "angles",
+   "돌려"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-background",
+   "i-dark-shiny"
+  ]
+ },
+ {
+  "id": "i-dark-shiny",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "어두운 곳에서도 되나요?",
+    "반사되는 바닥은요?",
+    "어떤 환경이 약해요?",
+    "잘 안 되는 상황",
+    "빛이 반사되는 바닥에서는요",
+    "어떤 환경에서 잘 안 돼요",
+    "환경이 나쁘면 어떻게 돼요"
+   ],
+   "en": [
+    "Does it work in the dark?",
+    "What about shiny floors?",
+    "Which conditions are weak?",
+    "On a reflective surface",
+    "Which environments are bad",
+    "Poor conditions"
+   ]
+  },
+  "a": {
+   "ko": "어둡거나 바닥이 반짝이는 곳에서는 정확도가 떨어질 수 있어요. 밝고 무늬가 단순한 책상에서 쓰는 걸 권해요. 어두운 곳에서 얼마나 떨어지는지 수치로 확인한 것은 아니에요.",
+   "en": "In dark places or on shiny surfaces, accuracy may drop. We suggest a bright, plainly patterned desk. We haven't measured by how much it drops in the dark."
+  },
+  "kw": [
+   "어두운",
+   "반사",
+   "약점",
+   "dark",
+   "reflective",
+   "weak",
+   "limits",
+   "밤에",
+   "반사되는",
+   "나쁜 환경",
+   "at night",
+   "reflective surface",
+   "poor conditions"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-rotation",
+   "i-max-objects"
+  ]
+ },
+ {
+  "id": "i-max-objects",
+  "cat": "tracking",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "물체를 몇 개까지 쓸 수 있어요?",
+    "동시에 몇 개 추적해요?",
+    "여러 물건을 한꺼번에 되나요",
+    "개수 제한",
+    "물건 최대 개수",
+    "한꺼번에 몇 개 인식해요",
+    "동시에 올려도 되는 물건 수"
+   ],
+   "en": [
+    "How many objects can it handle?",
+    "How many can be tracked at once?",
+    "Is there a limit on objects?",
+    "Maximum number of items",
+    "How many can it handle together",
+    "Item count limit"
+   ]
+  },
+  "a": {
+   "ko": "지금은 한 번에 최대 6개까지 따라갈 수 있어요. 각 물건은 서로 겹쳐 인식되지 않게 따로 관리해요. 6개로 정한 이유는 확인된 자료가 없어요.",
+   "en": "Right now it can follow up to 6 objects at once. Each one is managed separately so they aren't mixed together. There is no confirmed reason on record for why 6 was chosen."
+  },
+  "kw": [
+   "최대",
+   "6개",
+   "여러 물체",
+   "개수",
+   "max",
+   "six objects",
+   "multiple",
+   "limit",
+   "올려놓",
+   "최대 개수",
+   "한꺼번에",
+   "put on the desk",
+   "maximum number",
+   "item count"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-dark-shiny",
+   "i-many-objects-perf"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-many-objects-perf",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "여러 개 쓰면 느려지나요?",
+    "6개 다 쓰면 괜찮아요?",
+    "물체가 많으면 성능은요?",
+    "물체가 많아지면 반응이 어때요",
+    "여섯 개 다 쓰면 괜찮나요",
+    "개수가 늘면 정확도가 변하나요"
+   ],
+   "en": [
+    "Does it slow down with many objects?",
+    "Is it fine with all 6 objects?",
+    "How is performance with several objects?",
+    "Many items, how is responsiveness",
+    "Is it fine with six items",
+    "Does accuracy change with more items",
+    "What happens when I use many objects?",
+    "Does using many objects slow it down?"
+   ]
+  },
+  "a": {
+   "ko": "여섯 개를 한꺼번에 썼을 때의 정확도나 반응 속도는 아직 재 보지 못했어요. 세 개일 때 AI 보정 한 번이 걸리는 시간만 재 봤어요. 많이 올릴수록 느려질 수 있다고 생각해 주세요.",
+   "en": "We haven't measured accuracy or speed with all six objects at once. We only timed one AI correction with three objects. Assume it can get slower as you add more."
+  },
+  "kw": [
+   "여러 개",
+   "성능",
+   "느려짐",
+   "not measured",
+   "performance",
+   "many objects",
+   "slow",
+   "많이 올리면",
+   "많아지면",
+   "여섯 개",
+   "six items",
+   "more items"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-max-objects",
+   "i-pen-contact"
+  ]
+ },
+ {
+  "id": "i-pen-contact",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "펜이 책상에 닿은 걸 어떻게 알아요?",
+    "펜 접촉 판정은 어떻게 해요?",
+    "그림 그릴 때 닿았는지 어떻게 구분해요",
+    "펜이 떠 있는지 닿았는지",
+    "펜이 종이에 닿았는지 어떻게 알아요",
+    "펜 끝이 책상에 붙었는지 구분",
+    "펜 누름 판정"
+   ],
+   "en": [
+    "How does it know the pen touches the desk?",
+    "How does it tell touching from hovering?",
+    "How is pen contact detected?",
+    "How does it know the pen is down",
+    "Pen up or down detection",
+    "Is the tip on the desk"
+   ]
+  },
+  "a": {
+   "ko": "카메라 하나로는 높이를 바로 알 수 없지만, 펜은 책상을 뚫고 내려갈 수 없다는 점을 이용해요. 펜이 책상에 닿아 있을 때의 화면상 위치와 굵기 사이 규칙을 영상에서 스스로 배우고, 그 규칙에서 얼마나 벗어났는지로 떠 있는지 판단해요. 직접 만든 테스트 영상 하나에서는 예전 방식보다 닿음 판정이 크게 좋아졌어요.",
+   "en": "One camera can't see height directly, but a pen can't go through a desk. The system learns from the video the pattern between where the pen tip appears and how thick the pen looks when touching, and judges hovering by how far it strays from that pattern. In one of our own test videos this beat the earlier method by a wide margin."
+  },
+  "kw": [
+   "펜",
+   "접촉",
+   "책상",
+   "닿음",
+   "pen",
+   "touch",
+   "contact",
+   "desk",
+   "hover",
+   "뜬 건지",
+   "닿은 건지",
+   "누름",
+   "hovering",
+   "touching",
+   "pen down",
+   "tip on the desk"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md"
+  ],
+  "related": [
+   "i-many-objects-perf",
+   "i-pen-shadow"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-pen-shadow",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "그림자도 쓰나요?",
+    "펜 그림자는 어떤 역할이에요?",
+    "빛 방향이 판정에 영향 있어요?",
+    "그림자로 판단하는 부분이 있나요",
+    "빛이 한쪽에서 오면 도움이 되나요",
+    "펜 끝 그림자 활용"
+   ],
+   "en": [
+    "Does it use shadows?",
+    "What role does the pen's shadow play?",
+    "Does lighting affect pen contact?",
+    "Does it judge by shadows",
+    "Does side lighting help",
+    "Pen tip shadow"
+   ]
+  },
+  "a": {
+   "ko": "햇빛이나 스탠드처럼 한 방향에서 센 빛이 올 때는 펜 끝의 그림자도 단서로 써요. 펜 끝 둘레에 빛이 들어오면 떠 있는 것이고, 펜 끝에 그림자가 붙어 있으면 닿은 것으로 봐요. 빛이 사방으로 퍼진 방에서는 자동으로 꺼져요.",
+   "en": "When strong light comes from one direction, like sunlight or a desk lamp, the pen tip's shadow is used as a clue. Light showing around the tip means it's hovering, and a shadow attached to the tip means it's touching. In rooms with soft, spread-out light, this switches itself off."
+  },
+  "kw": [
+   "그림자",
+   "빛",
+   "펜 끝",
+   "shadow",
+   "light",
+   "pen tip",
+   "그림자를 이용",
+   "한쪽에서",
+   "shadow used",
+   "side lighting",
+   "judge by shadows"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md"
+  ],
+  "related": [
+   "i-pen-contact",
+   "i-pen-few-videos"
+  ]
+ },
+ {
+  "id": "i-pen-few-videos",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜은 얼마나 검증됐어요?",
+    "펜 시험은 몇 번 했어요?",
+    "펜 영상이 적다던데요",
+    "펜 검증 샘플이 충분한가요",
+    "펜 테스트 영상이 몇 개예요",
+    "펜은 얼마나 시험해 봤어요"
+   ],
+   "en": [
+    "How well is the pen feature tested?",
+    "How many pen videos were tested?",
+    "Is the pen tested enough?",
+    "Is the pen sample size enough",
+    "How many clips tested the pen",
+    "Pen test coverage"
+   ]
+  },
+  "a": {
+   "ko": "펜 닿음 판정은 직접 찍은 영상 두 개로만 확인했어요. 하나는 밝은 직사광, 하나는 실내 확산광이었고 둘 다 같은 환경이 아니에요. 다른 조명, 각도, 펜, 책상에서의 성능은 아직 보증하기 어려워요.",
+   "en": "Pen contact has been checked with only two videos we shot ourselves: one in bright direct light and one in soft indoor light. Other lighting, angles, pens and desks haven't been tested yet, so we can't say how well it works there."
+  },
+  "kw": [
+   "펜 검증",
+   "영상 두 개",
+   "표본",
+   "pen test",
+   "two videos",
+   "sample size",
+   "믿을 만",
+   "샘플",
+   "테스트 영상",
+   "trust the pen",
+   "clips",
+   "coverage"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-pen-shadow",
+   "i-pen-hidden"
+  ]
+ },
+ {
+  "id": "i-pen-hidden",
+  "cat": "pen",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "손이 펜을 가리면 어떻게 돼요?",
+    "펜 끝이 안 보이면요?",
+    "펜을 쥐면 보이지 않는 부분은요?",
+    "손에 가려진 펜 끝은 어떻게 찾아요",
+    "펜 일부가 안 보이면 추정하나요",
+    "손가락이 펜을 덮으면"
+   ],
+   "en": [
+    "What if my hand hides part of the pen?",
+    "What if the pen tip is hidden?",
+    "How are hidden parts of the pen handled?",
+    "How is a covered pen tip found",
+    "Does it estimate the hidden part of the pen",
+    "Fingers cover the pen"
+   ]
+  },
+  "a": {
+   "ko": "펜은 곧은 막대라는 점을 이용해서 보이는 부분을 이어 하나의 선으로 맞추고, 가려진 구간은 따로 표시해요. 영상에는 보이는 부분이 실선, 가려진 부분이 점선으로 그려져요. 손이 가리고 있다는 근거가 있을 때만 끝이 가려진 것으로 판단해요.",
+   "en": "A pen is a straight stick, so the system fits one line through the visible parts and marks the hidden stretch separately. On the video, visible parts are solid lines and hidden parts are dashed. It only treats the tip as hidden when there's evidence a hand is covering it."
+  },
+  "kw": [
+   "가림",
+   "펜 끝",
+   "점선",
+   "hidden",
+   "occluded",
+   "pen tip",
+   "dashed",
+   "일부만 보여도",
+   "덮으면",
+   "추정",
+   "only part",
+   "covered pen tip",
+   "estimate",
+   "hidden part"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md"
+  ],
+  "related": [
+   "i-pen-few-videos",
+   "i-stroke-flick"
+  ]
+ },
+ {
+  "id": "i-stroke-flick",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "그림 그릴 때 선 끝이 튀지 않게 했다던데요",
+    "획 시작에 이상한 선이 생겨요",
+    "펜 끝이 튀는 걸 어떻게 막았어요",
+    "삐침",
+    "획 끝에 꼬리가 생기는 문제",
+    "그림 선의 시작과 끝이 이상해요",
+    "선 끝 튐 어떻게 고쳤어요"
+   ],
+   "en": [
+    "How did you stop stray marks at stroke ends?",
+    "Why do odd lines appear at stroke starts?",
+    "How are pen flicks reduced?",
+    "Tails at stroke ends",
+    "Weird starts and ends of drawn lines",
+    "Fix for stroke end flicks"
+   ]
+  },
+  "a": {
+   "ko": "펜을 내리고 올리는 순간에는 위치 읽기가 크게 흔들려서 선 시작과 끝에 긴 꼬리가 생겼어요. 그래서 닿은 직후와 떼기 직전의 아주 짧은 순간은 선으로 그리지 않게 했어요. 직접 만든 테스트 영상에서 가장 긴 튐은 약 절반으로 줄었어요.",
+   "en": "When the pen goes down or lifts, position readings wobble a lot, which made long tails at the start and end of strokes. So the very short moments right after touching and just before lifting are left out of the line. In our own test video, the longest stray jump was cut roughly in half."
+  },
+  "kw": [
+   "삐침",
+   "획",
+   "꼬리",
+   "튐",
+   "stroke",
+   "flick",
+   "tail",
+   "pen up down",
+   "삐죽",
+   "선 끝",
+   "spiky",
+   "tails",
+   "line endings",
+   "stroke ends"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-pen-hidden",
+   "i-stroke-tradeoff"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-stroke-tradeoff",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "선 끝을 줄이면 단점은 없나요?",
+    "그림 시작이 조금 잘리나요?",
+    "짧게 찍는 점은 어떻게 되나요",
+    "선 끝을 자르면 손해는 없나요",
+    "짧은 점 찍기가 안 될 수 있나요",
+    "선이 조금 짧아지나요"
+   ],
+   "en": [
+    "Is there a downside to trimming stroke ends?",
+    "Does the start of a line get cut?",
+    "What happens to very short taps?",
+    "Any cost to trimming line ends",
+    "Can short dots disappear",
+    "Do lines get shorter"
+   ]
+  },
+  "a": {
+   "ko": "네, 맞바꾸는 것이 있어요. 선 양 끝을 아주 조금 버리기 때문에 선이 그만큼 짧게 기록되고, 아주 짧게 콕 찍는 점은 사라질 수 있어요. 닿았는지 판정 자체는 그대로예요.",
+   "en": "Yes, there's a trade-off. A tiny bit is dropped from both ends, so lines are recorded slightly shorter and very quick dots can disappear. The touch detection itself is unchanged."
+  },
+  "kw": [
+   "단점",
+   "트레이드오프",
+   "짧은 점",
+   "tradeoff",
+   "downside",
+   "short tap",
+   "잃는",
+   "손해",
+   "짧아지",
+   "lose",
+   "cost",
+   "shorter",
+   "dots"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-stroke-flick",
+   "i-still-jitter"
+  ]
+ },
+ {
+  "id": "i-still-jitter",
+  "cat": "cursor",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "가만히 두면 커서가 떨리지 않나요?",
+    "정지했을 때 흔들림은요?",
+    "물건을 놓아두면 커서가 가만히 있어요?",
+    "정지 안정화",
+    "가만히 놓으면 포인터가 떨리지 않나요",
+    "멈춰 있을 때 안정적이에요",
+    "정지 상태에서 흔들림",
+    "안 움직일 때 커서가 안 흔들려요",
+    "멈춰 있으면 커서가 가만히 있나요",
+    "가만히 둔 물체인데 커서가 떠다니지 않나요",
+    "커서가 떠다녀요",
+    "가만히 두면 커서가 움직여요"
+   ],
+   "en": [
+    "Does the cursor shake when the object is still?",
+    "What about jitter at rest?",
+    "Does the cursor stay put if I leave the object?",
+    "Pointer shaking while resting",
+    "Is it stable when idle",
+    "Jitter when stationary",
+    "Is the cursor steady when nothing moves?",
+    "Does the cursor stay still when idle?",
+    "The cursor drifts when the object is still"
+   ]
+  },
+  "a": {
+   "ko": "물건이 멈춰 있다고 판단되면 위치를 잠그고, 움직임이 확실할 때만 풀어 줘요. 직접 만든 정지 장면 테스트에서 커서가 멋대로 흘러가는 것이 거의 사라졌어요. 다만 이 확인은 주로 만든 영상으로 한 것이에요.",
+   "en": "When the object looks still, its position is locked and only released once movement is clear. In our own still-scene test, the cursor's random drifting nearly disappeared. That check was done mainly on made-up videos, though."
+  },
+  "kw": [
+   "정지",
+   "떨림",
+   "가만히",
+   "고정",
+   "still",
+   "jitter",
+   "stable",
+   "lock",
+   "drift",
+   "안 움직일 때",
+   "놓으면",
+   "멈춰 있을",
+   "nothing moves",
+   "resting",
+   "idle",
+   "stationary",
+   "steady",
+   "가만",
+   "떠다"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-stroke-tradeoff",
+   "i-still-why"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-still-why",
+  "cat": "cursor",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "가만히 있는데 왜 커서가 흘러갔어요?",
+    "커서가 천천히 움직이던 원인은요?",
+    "떨림의 원인이 뭐였어요",
+    "가만히 있는데 천천히 밀려난 원인",
+    "포인터가 슬금슬금 움직인 이유",
+    "표류 원인"
+   ],
+   "en": [
+    "Why did the cursor drift while the object was still?",
+    "What caused the slow drift?",
+    "What was behind the jitter?",
+    "Why did the pointer slowly slide",
+    "Cause of the slow movement",
+    "Reason for drift"
+   ]
+  },
+  "a": {
+   "ko": "원인은 추적이 흔들린 게 아니라, 몇 초마다 물건 윤곽을 새로 그릴 때 크기가 아주 조금 달라지는 것이었어요. 크기를 거리로 쓰는 커서가 이 작은 변화에도 반응해 천천히 흘러갔어요. 그래서 단순히 부드럽게 만드는 대신 정지 상태를 잠그는 방법을 썼어요.",
+   "en": "The cause wasn't shaky tracking. It was that the object's outline was redrawn every few seconds and its size changed very slightly. A cursor that reads size as distance reacted to this and slowly drifted. So instead of just smoothing, we locked the still state."
+  },
+  "kw": [
+   "원인",
+   "크기",
+   "윤곽",
+   "drift",
+   "cause",
+   "size",
+   "refresh",
+   "흐르는",
+   "밀려난",
+   "슬금슬금",
+   "표류",
+   "creep",
+   "slide",
+   "reason for drift"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-still-jitter",
+   "i-cursor-spike"
+  ]
+ },
+ {
+  "id": "i-cursor-spike",
+  "cat": "cursor",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "커서 튐을 줄이는 기능이 있어요?",
+    "커서가 갑자기 튀는 걸 어떻게 막아요?",
+    "손떨림 보정 같은 게 있나요",
+    "커서 부드럽게",
+    "순간적으로 확 튀는 걸 걸러 주나요",
+    "커서 떨림 완화 기능",
+    "손 흔들림을 잡아 주는 기능",
+    "튐 억제가 뭐예요",
+    "EMA가 뭐예요"
+   ],
+   "en": [
+    "Is there anything to reduce cursor jumps?",
+    "How do you prevent sudden cursor spikes?",
+    "Is there a smoothing feature?",
+    "Does it smooth out sudden jumps",
+    "Cursor shake reduction",
+    "Anti-jitter feature",
+    "What is spike suppression?"
+   ]
+  },
+  "a": {
+   "ko": "손떨림 보정 같은 기능이 있어요. 평소에는 위치를 부드럽게 따라가고, 갑자기 크게 튀는 값이 오면 일단 아주 천천히만 따라가요. 그 상태가 잠깐 이어지면 진짜 움직임으로 인정하고 다시 평소처럼 따라가요.",
+   "en": "There's a feature like hand-shake steadying. Normally it follows smoothly, and when a value suddenly jumps a lot, it only follows slowly at first. If the change keeps going for a moment, it accepts it as real movement and goes back to normal following."
+  },
+  "kw": [
+   "튐",
+   "손떨림",
+   "보정",
+   "부드럽게",
+   "spike",
+   "smooth",
+   "shake",
+   "filter",
+   "갑작스런",
+   "걸러",
+   "완화",
+   "sudden spikes",
+   "smooth out",
+   "anti-jitter",
+   "reduction",
+   "튐 억제",
+   "EMA"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-still-why",
+   "i-spike-unmeasured"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-spike-unmeasured",
+  "cat": "cursor",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "튐 줄이는 기능 효과는 확인했어요?",
+    "체감이 얼마나 좋아졌나요?",
+    "부드럽게 해 주면 느려지지 않나요",
+    "튐 필터가 실제로 얼마나 효과 있는지 측정했어요",
+    "부드럽게 하면 반응이 늦어지나요",
+    "필터의 효과를 숫자로 확인했나요"
+   ],
+   "en": [
+    "Has the spike filter been proven?",
+    "How much better does it feel?",
+    "Does smoothing add delay?",
+    "Has the effect of smoothing been measured",
+    "Does smoothing add lag",
+    "Is the filter's improvement quantified"
+   ]
+  },
+  "a": {
+   "ko": "코드가 의도대로 움직이는지는 시험으로 확인했지만, 실제로 마우스를 쓸 때 얼마나 덜 튀는지, 반응이 얼마나 느려지는지는 아직 재지 못했어요. 부드러운 정도를 직접 조절하는 기능도 앞으로 할 일이에요.",
+   "en": "We tested that the code behaves as intended, but we haven't measured how much less the real cursor jumps, or how much slower it responds. Letting you adjust the strength is still on the to-do list."
+  },
+  "kw": [
+   "효과",
+   "체감",
+   "미측정",
+   "지연",
+   "effect",
+   "not measured",
+   "feel",
+   "lag",
+   "입증",
+   "숫자로",
+   "proven",
+   "benefit",
+   "quantified",
+   "smoothing"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-cursor-spike",
+   "i-anchor-point"
+  ]
+ },
+ {
+  "id": "i-anchor-point",
+  "cat": "cursor",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "물건을 쥐면 커서가 흔들리지 않나요?",
+    "손에 들고 쓰면 떨리지 않아요?",
+    "기준점이 뭐예요?",
+    "손에 쥔 물건 커서",
+    "손으로 잡은 물건을 쓰면 포인터가 떨리나요",
+    "잡고 있어도 안정적이에요",
+    "기준 위치는 어디에 두나요",
+    "들고 있는 물건의 커서 흔들림",
+    "쥐고 있을 때 커서 떨림",
+    "물체의 어느 점을 기준으로 커서가 움직여요",
+    "기준점이 뭐예요"
+   ],
+   "en": [
+    "Does the cursor shake when I hold the object?",
+    "Is holding it steady?",
+    "What is the anchor point?",
+    "Is it stable while gripping the item",
+    "Which point of the object is used",
+    "Hand-held jitter",
+    "Cursor shake while holding an object",
+    "Why does the cursor shake when I grip it?",
+    "Which point of the object moves the cursor?"
+   ]
+  },
+  "a": {
+   "ko": "물건을 쥐면 손 때문에 보이는 영역이 계속 달라져서 커서가 같이 떨렸어요. 그래서 물건 아래쪽 가운데 한 점을 기준으로 삼아 영상에 표시하고 커서가 이 점을 따라가게 했어요. 직접 찍은 영상 하나에서 가로 방향 떨림이 절반 이하로 줄었어요.",
+   "en": "When you hold an object, the visible area keeps changing because of your hand, and the cursor shook with it. So a point near the bottom center of the object is used as the reference, shown on the video, and the cursor follows it. In one video we shot, sideways shaking dropped to less than half."
+  },
+  "kw": [
+   "기준점",
+   "앵커",
+   "쥠",
+   "떨림",
+   "anchor",
+   "holding",
+   "hand",
+   "shake",
+   "들고 있는",
+   "잡은 물건",
+   "기준 위치",
+   "hand-held",
+   "gripping",
+   "which point",
+   "wobble",
+   "grip shake"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-spike-unmeasured",
+   "i-anchor-limit"
+  ]
+ },
+ {
+  "id": "i-anchor-limit",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "기준점을 써도 여전히 흔들리는 게 있나요?",
+    "앞뒤 흔들림은 어때요?",
+    "쥐었을 때 남은 문제",
+    "잡고 있을 때 앞뒤로 떨리는 건 남아 있나요",
+    "아직 안 고쳐진 흔들림이 있나요",
+    "쥐었을 때 해결 안 된 부분"
+   ],
+   "en": [
+    "Is anything still shaky with the anchor?",
+    "What about forward-back wobble?",
+    "What problem remains when holding?",
+    "Does forward-back shake remain when gripping",
+    "Any wobble not yet fixed",
+    "What is left unsolved when holding"
+   ]
+  },
+  "a": {
+   "ko": "좌우 떨림은 줄었지만 앞뒤(커서 위아래) 떨림은 그대로였어요. 그 영상은 카메라를 손에 들고 찍어서 진짜 움직임과 흔들림을 가르기도 어려웠어요. 한 영상만 본 결과라서 일반적으로 말하긴 어려워요.",
+   "en": "Sideways shake went down, but forward-back (cursor up and down) shake stayed the same. That video was shot with a hand-held camera, so real movement and wobble were hard to tell apart. It's a single video, so it's hard to generalize."
+  },
+  "kw": [
+   "남은 문제",
+   "앞뒤",
+   "한계",
+   "remaining",
+   "limit",
+   "depth shake",
+   "위아래",
+   "안 고쳐진",
+   "해결 안 된",
+   "up-and-down",
+   "unsolved",
+   "not yet fixed",
+   "remain"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-anchor-point",
+   "i-depth-how"
+  ]
+ },
+ {
+  "id": "i-depth-how",
+  "cat": "depth",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "앞뒤 움직임은 어떻게 알아요?",
+    "카메라로 깊이를 어떻게 재요?",
+    "물건이 가까워지고 멀어지는 걸 인식해요?",
+    "거리 인식",
+    "물건을 앞뒤로 움직이면 인식하나요",
+    "카메라에 가까울수록 어떻게 읽어요",
+    "멀어지면 커서는요"
+   ],
+   "en": [
+    "How does it sense forward and back movement?",
+    "How does it measure depth from a camera?",
+    "Can it tell closer from farther?",
+    "Does it detect moving closer or farther",
+    "How is distance read",
+    "Cursor when object moves away"
+   ]
+  },
+  "a": {
+   "ko": "기본적으로는 물건이 화면에서 커 보이는지 작아 보이는지로 가까운지 먼지를 읽어요. 카메라 쪽으로 오면 커지고 멀어지면 작아지니까요. 이 앞뒤 움직임을 커서의 위아래로 바꿔 써요.",
+   "en": "By default it reads closeness from how big or small the object looks on screen: it grows when it comes toward the camera and shrinks when it moves away. This forward and back movement is turned into the cursor moving up and down."
+  },
+  "kw": [
+   "깊이",
+   "앞뒤",
+   "거리",
+   "크기",
+   "depth",
+   "forward back",
+   "distance",
+   "size",
+   "가까이 오면",
+   "멀어지면",
+   "가까울수록",
+   "comes closer",
+   "moves away",
+   "farther"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-anchor-limit",
+   "i-depth-camera-setup"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-depth-camera-setup",
+  "cat": "depth",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "카메라는 어디에 둬요?",
+    "옆에서 찍어야 해요?",
+    "위에서 내려다보는 것도 되나요?",
+    "카메라 배치",
+    "카메라 높이와 방향",
+    "어디에서 찍어야 잘 돼요",
+    "카메라를 어떻게 세워요"
+   ],
+   "en": [
+    "Where should I put the camera?",
+    "Does it have to film from the side?",
+    "Can it look from above?",
+    "Camera height and direction",
+    "Where should it film from",
+    "How do I position the camera"
+   ]
+  },
+  "a": {
+   "ko": "책상 옆에서 수평에 가깝게 찍는 배치를 기본으로 생각했어요. 이때 좌우는 커서 좌우, 앞뒤는 커서 위아래가 돼요. 위에서 내려다보는 방식이면 영상 위치가 그대로 커서 위치가 돼요. 이 깊이 방식을 실제로 써 본 확인은 아직 부족해요.",
+   "en": "The default idea is a camera beside the desk, roughly level. Then left-right becomes cursor left-right, and forward-back becomes cursor up-down. With a view from above, the position in the picture becomes the cursor position directly. We haven't tried this depth setup enough in real use."
+  },
+  "kw": [
+   "카메라 위치",
+   "옆",
+   "위에서",
+   "배치",
+   "camera placement",
+   "side view",
+   "top view",
+   "각도",
+   "높이",
+   "방향",
+   "angle",
+   "height",
+   "direction",
+   "position the camera"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-depth-how",
+   "i-depth-ai"
+  ]
+ },
+ {
+  "id": "i-depth-ai",
+  "cat": "depth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "깊이용 AI도 있어요?",
+    "깊이를 AI로 재나요?",
+    "Depth Anything을 쓰나요",
+    "물체 크기 말고 다른 방법은요",
+    "거리 추정용 AI 모델이 따로 있나요",
+    "깊이 모델은 선택 사항인가요",
+    "크기 말고 거리 재는 AI",
+    "깊이 추정 인공지능 옵션"
+   ],
+   "en": [
+    "Is there an AI for depth?",
+    "Does AI measure depth?",
+    "Is there an alternative to size-based depth?",
+    "A separate model for distance estimation",
+    "Is the depth model optional",
+    "AI for measuring distance",
+    "Is there an AI option for depth?"
+   ]
+  },
+  "a": {
+   "ko": "네, 깊이를 추정하는 가벼운 AI도 들어 있어요. 책상 기울기를 알아내는 데 쓰이고, 물체 마우스의 앞뒤 신호로 고를 수도 있어요. 다만 기본은 물건 크기 방식이고, Mac에서만 동작해요.",
+   "en": "Yes, a light AI for estimating depth is included. It's used to figure out the desk's tilt, and can also be chosen as the forward-back signal for an object mouse. The default is still the object-size method, and it only works on Mac."
+  },
+  "kw": [
+   "깊이 AI",
+   "Depth Anything",
+   "기울기",
+   "depth model",
+   "tilt",
+   "optional",
+   "깊이 추정",
+   "거리 추정",
+   "선택 사항",
+   "depth-estimation",
+   "distance estimation",
+   "인공지능"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-depth-camera-setup",
+   "i-depth-not-validated"
+  ]
+ },
+ {
+  "id": "i-depth-not-validated",
+  "cat": "depth",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "깊이 AI가 크기 방식보다 좋은가요?",
+    "앞뒤 인식이 얼마나 정확해요?",
+    "깊이 AI 효과 검증됐나요",
+    "깊이 방식 두 가지 중 뭐가 나아요",
+    "깊이 AI 정확도 증명됐나요",
+    "깊이 비교 결과가 있나요",
+    "크기 방식과 깊이 AI 중 뭐가 더 정확해요"
+   ],
+   "en": [
+    "Is the depth AI better than size?",
+    "How accurate is forward-back sensing?",
+    "Is the depth AI proven?",
+    "Which depth method is better",
+    "Has the depth AI's accuracy been proven",
+    "Depth comparison results",
+    "Which is more accurate, size-based or AI depth?"
+   ]
+  },
+  "a": {
+   "ko": "비교해 보지 못했어요. 실제 마우스로 쓰는 영상이 없어서 펜 영상으로만 확인했고, 크기 방식보다 낫다는 근거는 없어요. 그래서 기본값은 물건 크기 방식으로 두었어요.",
+   "en": "We couldn't compare them. Without a video of a real object mouse, we only checked using pen footage, so there's no proof it beats the size method. That's why the size method stays as the default."
+  },
+  "kw": [
+   "미검증",
+   "비교",
+   "깊이",
+   "not validated",
+   "compare",
+   "accuracy",
+   "어느 쪽이",
+   "중 뭐가",
+   "증명",
+   "which is more accurate",
+   "which depth method",
+   "proven",
+   "size-based",
+   "depth AI"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-depth-ai",
+   "i-which-ai"
+  ]
+ },
+ {
+  "id": "i-which-ai",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어떤 AI를 써요?",
+    "인공지능 모델 뭐 써요?",
+    "어떤 모델이에요",
+    "사용한 AI 종류",
+    "AI 모델 이름 알려 주세요",
+    "어떤 AI가 들어가 있나요",
+    "사용된 모델 목록",
+    "인공지능을 쓰나요",
+    "어떤 AI예요"
+   ],
+   "en": [
+    "Which AI does it use?",
+    "What AI model is used?",
+    "What kind of AI is inside?",
+    "Which models are inside",
+    "List of models used",
+    "Name the AI",
+    "Do you use artificial intelligence?",
+    "What kind of AI is it?"
+   ]
+  },
+  "a": {
+   "ko": "3가지 AI를 써요. 물건의 윤곽을 따라가는 EfficientTAM, 손을 찾는 Apple의 손 인식(원하면 MediaPipe로 바꿀 수 있어요), 책상 기울기와 앞뒤 거리를 짐작하는 Depth Anything V2 Small이에요. 모두 이미 공개된 모델이고 내 컴퓨터 안에서만 돌아가서 영상을 클라우드로 보내지 않아요.",
+   "en": "It uses 3 AIs: EfficientTAM, which follows an object's outline; Apple's hand detection, which finds hands (you can switch to MediaPipe if you like); and Depth Anything V2 Small, which estimates desk tilt and front-to-back distance. All are already public models and run only on your own computer, so video is never sent to the cloud."
+  },
+  "kw": [
+   "EfficientTAM",
+   "AI 모델",
+   "MediaPipe",
+   "Depth Anything",
+   "model",
+   "AI used",
+   "인공지능 이름",
+   "모델 이름",
+   "목록",
+   "name of the ai",
+   "models inside",
+   "list of models",
+   "인공지능",
+   "artificial intelligence"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-depth-not-validated",
+   "i-why-that-ai"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-why-that-ai",
+  "cat": "arch",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "왜 그 AI를 골랐어요?",
+    "다른 모델이랑 뭐가 달라요?",
+    "모델 선택 이유",
+    "그 모델을 고른 근거",
+    "다른 모델 대신 이걸 쓴 이유",
+    "왜 하필 그 모델이에요",
+    "속도 때문에 그 모델을 골랐어요",
+    "어떤 AI 모델이 제일 빠르다고 확인했어요",
+    "그 AI는 왜 골랐어요"
+   ],
+   "en": [
+    "Why did you choose that AI?",
+    "How is it different from other models?",
+    "Why this model?",
+    "On what basis was it chosen",
+    "Why this model instead of others",
+    "Reason for choosing that model",
+    "Was that model picked for its speed?",
+    "Why did you choose that model?",
+    "Why that model?",
+    "Which AI model did you find fastest?"
+   ]
+  },
+  "a": {
+   "ko": "직접 속도를 재 봤더니 가장 빨랐기 때문이에요. EfficientTAM은 한 번에 약 55밀리초였고, 같은 조건에서 비교한 큰 모델(SAM 2.1 tiny)은 약 517밀리초라서 약 9배 빨랐어요. 물건이 여러 개여도 동작했지만, 후보 중 하나는 여러 물건에서 오류가 났어요.",
+   "en": "It was the fastest in our own speed test. EfficientTAM took about 55 milliseconds per run, while a larger model compared under the same conditions (SAM 2.1 tiny) took about 517 milliseconds, roughly 9 times slower. It also worked with several objects, but one other candidate hit errors with multiple objects."
+  },
+  "kw": [
+   "선택 이유",
+   "속도",
+   "모델 비교",
+   "EfficientTAM",
+   "speed",
+   "comparison",
+   "choice",
+   "선택된",
+   "근거",
+   "하필",
+   "picked",
+   "basis",
+   "instead of others",
+   "chosen",
+   "제일 빠른",
+   "fastest"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-which-ai",
+   "i-hand-find"
+  ]
+ },
+ {
+  "id": "i-hand-find",
+  "cat": "hand",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "손은 어떻게 찾아요?",
+    "물건 쥔 손을 인식해요?",
+    "손 인식 AI는요?",
+    "손 위치는 무엇으로 찾아요",
+    "손 검출 기술",
+    "잡은 손도 감지되나요"
+   ],
+   "en": [
+    "How does it find the hand?",
+    "Does it detect a hand holding something?",
+    "Which hand detector does it use?",
+    "How is the hand located",
+    "Hand detection method",
+    "Can it detect a gripping hand"
+   ]
+  },
+  "a": {
+   "ko": "기본은 Apple의 손 인식이고, 필요하면 MediaPipe로 바꿀 수 있어요. 직접 찍은 영상 하나에서 물건을 쥔 손을 Apple 쪽은 거의 다 찾았고 MediaPipe는 훨씬 적게 찾았어요. 영상이 하나뿐이라 일반적인 결과는 아니에요.",
+   "en": "The default is Apple's hand detection, and you can switch to MediaPipe if needed. In one video we shot, Apple's found nearly every hand holding the object while MediaPipe found far fewer. That's only one video, so it isn't a general result."
+  },
+  "kw": [
+   "손 인식",
+   "Apple Vision",
+   "MediaPipe",
+   "hand detection",
+   "hand",
+   "grip",
+   "손 감지",
+   "손 검출",
+   "손 위치",
+   "detect hands",
+   "hand located",
+   "detection method"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-why-that-ai",
+   "i-vs-classic"
+  ]
+ },
+ {
+  "id": "i-vs-classic",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "성능이 얼마나 좋아요?",
+    "기존 방식보다 얼마나 나아요?",
+    "다른 추적 방법이랑 비교하면요?",
+    "정확도 비교",
+    "옛날 방식과 비교한 결과",
+    "기존 추적 방식 대비 성능",
+    "두 배라는 건 무슨 수치예요"
+   ],
+   "en": [
+    "How good is the performance?",
+    "How much better than the usual method?",
+    "How does it compare with classic tracking?",
+    "Results versus the old method",
+    "Performance relative to the classic tracker",
+    "What is the 2x figure"
+   ]
+  },
+  "a": {
+   "ko": "직접 만든 테스트 영상에서 널리 쓰이던 기존 추적 방식(CSRT)과 비교했더니, 잘 따라간 비율이 약 2배였어요. 다시 찾기와 가림 상황에서 차이가 컸어요. 어디까지나 우리가 만든 영상 안에서의 결과예요.",
+   "en": "On test videos we made ourselves, the share of frames it followed correctly was about 2 times that of a widely used classic tracking method (CSRT). The gap was biggest in re-finding and blocked scenes. This is a result inside our own videos only."
+  },
+  "kw": [
+   "성능",
+   "약 2배",
+   "비교",
+   "기존",
+   "CSRT",
+   "2x",
+   "comparison",
+   "performance",
+   "두 배",
+   "옛날 방식",
+   "대비",
+   "twice as good",
+   "old tracker",
+   "relative",
+   "2x figure"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-hand-find",
+   "i-weak-cases"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-weak-cases",
+  "cat": "limits",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "어떤 상황에 약해요?",
+    "잘 안 되는 경우는요?",
+    "약점이 뭐예요?",
+    "제일 못하는 상황이 뭐예요",
+    "실패가 많은 경우",
+    "어려운 장면",
+    "어떤 조건에서 제일 잘 되고 제일 못 해요",
+    "잘 되는 상황과 안 되는 상황"
+   ],
+   "en": [
+    "What situations is it weakest in?",
+    "When does it struggle?",
+    "What are the weak points?",
+    "Where does it fail most",
+    "Hardest situations",
+    "Most error-prone cases",
+    "When does it work best and worst?"
+   ]
+  },
+  "a": {
+   "ko": "직접 만든 테스트 영상에서는 비슷하게 생긴 물건이 함께 있을 때와 손으로 쥐고 있을 때가 가장 약했어요. 완전히 가려지는 경우도 쉽지 않았어요. 이런 장면은 아직 개선할 부분이 남아 있어요.",
+   "en": "In our own test videos, the weakest cases were when a similar-looking object was nearby and when the object was held in a hand. Fully hidden objects were also hard. These scenes still have room to improve."
+  },
+  "kw": [
+   "약점",
+   "어려운 경우",
+   "닮은 물체",
+   "쥠",
+   "weak",
+   "hard cases",
+   "struggle",
+   "틀리기 쉬운",
+   "못하는",
+   "실패",
+   "wrong most often",
+   "fail most",
+   "error-prone",
+   "hardest",
+   "제일 못",
+   "best and worst"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-vs-classic",
+   "i-real-video-few"
+  ]
+ },
+ {
+  "id": "i-real-video-few",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "실제 영상으로도 시험했어요?",
+    "실제 촬영 영상 결과는요?",
+    "진짜 환경에서의 검증",
+    "진짜 촬영한 영상으로 검증한 양",
+    "현실 영상 테스트는 충분한가요",
+    "실제 영상 샘플 수",
+    "실제 영상에서도 잘 되나요",
+    "진짜 촬영한 영상으로도 해 봤어요"
+   ],
+   "en": [
+    "Was it tested on real footage?",
+    "What about real recorded video?",
+    "Has it been validated in real settings?",
+    "Amount of real footage tested",
+    "Is real video testing sufficient",
+    "Number of real clips",
+    "Does it work on real footage too?"
+   ]
+  },
+  "a": {
+   "ko": "직접 찍은 실제 영상으로도 해 봤지만 그 수가 아주 적어요. 손에 쥔 지갑을 찍은 영상 하나가 주였고, 정답도 정확한 값이 아니라 근사치였어요. 그래서 실제 환경의 성능이라고 읽으시면 안 돼요.",
+   "en": "We also tried real footage we shot, but there's very little of it. It was mainly one video of a hand-held wallet, and the reference answers were approximations rather than exact ones. So please don't read it as real-world performance."
+  },
+  "kw": [
+   "실제 영상",
+   "표본",
+   "적음",
+   "real video",
+   "few",
+   "validation",
+   "sample",
+   "실사용",
+   "촬영한 영상",
+   "현실 영상",
+   "real-world footage",
+   "real clips",
+   "sufficient",
+   "real footage"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-weak-cases",
+   "i-latency-honest"
+  ]
+ },
+ {
+  "id": "i-latency-honest",
+  "cat": "limits",
+  "status": "partial",
+  "allow_banned": true,
+  "q": {
+   "ko": [
+    "반응 속도는 어때요?",
+    "딜레이가 있나요?",
+    "실시간으로 바로 움직이나요",
+    "얼마나 빨리 반응해요",
+    "지연",
+    "손 움직임과 커서 사이에 시간차가 있나요",
+    "반응이 늦지 않나요",
+    "딜레이는 얼마나 되나요"
+   ],
+   "en": [
+    "How fast does it respond?",
+    "Is there a delay?",
+    "Does it react in real time?",
+    "Is there lag?",
+    "How big is the delay",
+    "Is the response slow",
+    "Is it instantaneous"
+   ]
+  },
+  "a": {
+   "ko": "지연이 있어요. 카메라 영상이 들어오는 데만 약 0.05초가 걸리고, 거기에 계산 시간이 더해져요. 카메라부터 커서까지 전체 지연은 아직 따로 재지 못했어요. 그래서 즉각 반응한다고는 말씀드리기 어려워요.",
+   "en": "There is a delay. Just getting the camera picture in takes about 0.05 seconds, and the computing time comes on top of that. We haven't measured the whole delay from camera to cursor yet, so we can't say it reacts instantly."
+  },
+  "kw": [
+   "지연",
+   "딜레이",
+   "반응 속도",
+   "latency",
+   "lag",
+   "delay",
+   "speed",
+   "real time",
+   "즉각적",
+   "시간차",
+   "늦지",
+   "lag between",
+   "how big is the delay",
+   "instantaneous"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-real-video-few",
+   "i-accuracy-honest"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-accuracy-honest",
+  "cat": "limits",
+  "status": "partial",
+  "allow_banned": true,
+  "q": {
+   "ko": [
+    "정확도가 100%예요?",
+    "틀리지 않나요?",
+    "얼마나 정확해요?",
+    "믿을 수 있어요?",
+    "오류가 전혀 없나요",
+    "항상 정확한가요",
+    "믿어도 되나요",
+    "정확해요",
+    "얼마나 정확해요",
+    "믿을 수 있는 성능이에요",
+    "오차 없어요",
+    "틀릴 때도 있어요"
+   ],
+   "en": [
+    "Is it 100% accurate?",
+    "Does it ever make mistakes?",
+    "How accurate is it?",
+    "Can I rely on it?",
+    "Is it flawless",
+    "Always accurate?",
+    "Can I rely on it",
+    "is it accurate",
+    "how accurate is it",
+    "how reliable is the tracking",
+    "does it ever make mistakes",
+    "is the tracking precise"
+   ]
+  },
+  "a": {
+   "ko": "아니요, 틀릴 수 있어요. 직접 만든 테스트 영상에서도 비슷한 물건이 섞이거나 손에 쥐었을 때 자주 놓쳤어요. 실제 영상 시험은 몇 개 안 되어서 모든 환경에서 정확하다고 말씀드릴 수 없어요.",
+   "en": "No, it can make mistakes. Even in our own test videos it often slipped when similar objects were mixed in or when it was held in a hand. We've tested only a few real videos, so we can't promise it's accurate in every setting."
+  },
+  "kw": [
+   "정확도",
+   "100%",
+   "오류",
+   "틀림",
+   "accuracy",
+   "mistakes",
+   "reliable",
+   "error",
+   "실수 없이",
+   "전혀 없",
+   "항상",
+   "without errors",
+   "flawless",
+   "always accurate",
+   "rely",
+   "정확해",
+   "정밀",
+   "precise"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-latency-honest",
+   "i-environment-honest"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-environment-honest",
+  "cat": "limits",
+  "status": "not_validated",
+  "allow_banned": true,
+  "q": {
+   "ko": [
+    "다른 환경에서도 잘 되나요?",
+    "어디서든 쓸 수 있어요?",
+    "다른 컴퓨터에서도 되나요?",
+    "모든 환경에서 동작해요?",
+    "다른 곳에서도 같은 성능이 나오나요",
+    "장소가 바뀌면 달라지나요",
+    "다른 컴퓨터에서도 시험해 봤나요"
+   ],
+   "en": [
+    "Does it work in other environments?",
+    "Can I use it anywhere?",
+    "Will it work on other computers?",
+    "Does it work in every setting?",
+    "Same performance elsewhere",
+    "Does the place change results",
+    "Was it tested on other computers"
+   ]
+  },
+  "a": {
+   "ko": "다른 환경에서 잘 되는지는 충분히 확인하지 못했어요. 시험은 주로 개발용 Mac 한 대에서 했고, 어두운 곳이나 반짝이는 바닥에서는 정확도가 떨어져요. 물체 터치처럼 실제 카메라로 충분히 확인하지 못한 기능도 있어요.",
+   "en": "We have not checked enough whether it works well elsewhere. Testing was mostly on one development Mac, and accuracy drops in dark places or on shiny surfaces. Some features, such as object touch, have not been checked enough with a real camera."
+  },
+  "kw": [
+   "환경",
+   "다른 컴퓨터",
+   "미확인",
+   "environment",
+   "other devices",
+   "not confirmed",
+   "anywhere",
+   "교실",
+   "집이나",
+   "장소",
+   "classroom",
+   "at home",
+   "elsewhere",
+   "other computers"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-accuracy-honest",
+   "i-commercial"
+  ]
+ },
+ {
+  "id": "i-commercial",
+  "cat": "limits",
+  "status": "info",
+  "q": {
+   "ko": [
+    "상용 수준이에요?",
+    "제품으로 팔아도 돼요?",
+    "바로 쓸 수 있는 완성품인가요?",
+    "실제 서비스 가능해요?",
+    "완성품 수준인가요",
+    "당장 현장에 도입해도 돼요",
+    "출시 가능한 상태인가요",
+    "진짜 쓸 수 있는 거예요",
+    "실제로 쓸 수 있는 수준이에요",
+    "완성품이에요",
+    "시제품이에요",
+    "상용 제품이에요",
+    "믿고 쓸 만해요",
+    "프로토타입이에요"
+   ],
+   "en": [
+    "Is it commercial grade?",
+    "Is it a finished product?",
+    "Can it be sold as a product?",
+    "Is it production quality",
+    "Can I deploy it right now",
+    "Ready for release?",
+    "is this thing legit",
+    "is this a real product",
+    "is it production ready",
+    "is it a finished product",
+    "is this a prototype",
+    "can I rely on it for real work"
+   ]
+  },
+  "a": {
+   "ko": "아니요, 아직 상용 수준은 아니에요. 대회에 내놓은 단계의 프로젝트이고, 아직 확인하지 못한 부분이 남아 있어요. 앞으로 더 폭넓게 시험해 봐야 해요.",
+   "en": "No, it isn't commercial grade yet. It's a contest-stage project with parts still unverified, and it needs much wider testing."
+  },
+  "kw": [
+   "상용",
+   "제품",
+   "완성도",
+   "commercial",
+   "product",
+   "production ready",
+   "제품으로",
+   "완성품",
+   "도입",
+   "ready to ship",
+   "production quality",
+   "deploy",
+   "release",
+   "legit",
+   "진짜",
+   "prototype",
+   "시제품",
+   "production"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-environment-honest",
+   "i-unverified"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-unverified",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "아직 검증 못 한 게 뭐예요?",
+    "확인되지 않은 건요?",
+    "한계가 뭐예요?",
+    "부족한 점",
+    "아직 확인 안 된 부분이 뭐예요",
+    "검증이 필요한 항목",
+    "더 시험해야 할 것",
+    "안 해본 시험은 뭐가 있어요",
+    "아직 시험 안 한 게 뭐예요"
+   ],
+   "en": [
+    "What hasn't been verified yet?",
+    "What are the known gaps?",
+    "What are the limits?",
+    "Which parts are not yet confirmed",
+    "Items that need validation",
+    "What remains to be tested",
+    "Which tests haven't you run?",
+    "Which checks remain unfinished?",
+    "Remaining untested features",
+    "What needs further verification?"
+   ]
+  },
+  "a": {
+   "ko": "실제 환경에서의 폭넓은 시험이 아직 부족해요. 펜 영상이 적고, 깊이 방식 비교와 물체 터치 같은 일부 기능은 실제 카메라로 충분히 확인하지 못했어요. 카메라부터 커서까지의 전체 지연과 물건 여러 개를 한꺼번에 쓸 때도 재지 못했어요.",
+   "en": "Wide testing in real environments is still lacking. There are few pen videos, and some features such as the depth comparison and object touch have not been checked enough with a real camera. The full delay from camera to cursor and using many objects at once have not been measured."
+  },
+  "kw": [
+   "미검증",
+   "한계",
+   "부족",
+   "not validated",
+   "limitations",
+   "gaps",
+   "unverified",
+   "더 확인",
+   "확인 안 된",
+   "검증이 필요",
+   "still needs",
+   "not yet confirmed",
+   "remains to be tested",
+   "안 해본",
+   "still needs checking",
+   "remaining checks"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md"
+  ],
+  "related": [
+   "i-commercial",
+   "i-no-sota"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "i-no-sota",
+  "cat": "eval",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "최신 연구들과 비교했어요?",
+    "최고 성능인가요?",
+    "다른 AI 추적기보다 좋나요",
+    "최첨단 기술과 비교해 봤나요",
+    "업계 1위 성능이에요",
+    "가장 뛰어난 기술인가요"
+   ],
+   "en": [
+    "Was it compared with the latest research?",
+    "Is it state of the art?",
+    "Is it better than other AI trackers?",
+    "Compared with cutting-edge methods",
+    "Top performance in the field",
+    "Best technology available?"
+   ]
+  },
+  "a": {
+   "ko": "아직 모르겠어요. 비교해 본 상대는 예전부터 쓰던 일반 추적 방식뿐이고, 최신 연구 추적기와는 같은 조건으로 비교한 적이 없어요. 그래서 최고 수준이라고 말하지 않아요.",
+   "en": "We don't know yet. The only thing we compared with was a long-standing general tracking method, not recent research trackers under the same conditions. So we don't claim top-level performance."
+  },
+  "kw": [
+   "최신",
+   "비교",
+   "SOTA",
+   "state of the art",
+   "benchmark",
+   "compared",
+   "세계 최고",
+   "최첨단",
+   "1위",
+   "world class",
+   "cutting-edge",
+   "top performance",
+   "best"
+  ],
+  "src": [
+   "sources/01_소개서_v1.8.0.md"
+  ],
+  "related": [
+   "i-unverified"
+  ]
+ }
+]

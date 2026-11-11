@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AnyControl 안내 챗봇</title>
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#q">본문으로 건너뛰기</a>
+  <header class="top">
+    <div class="brand-box">
+      <button id="buddy" type="button" class="header-buddy" aria-label="AnyControl buddy" title="안녕하세요! / Hi there!"></button>
+      <a class="brand" id="brand" href="/" title="처음으로 / Home">
+        <h1 id="title">AnyControl 안내 챗봇</h1>
+      </a>
+    </div>
+    <div class="top-actions">
+      <button id="home" type="button" class="ghost"></button>
+      <button id="lang" type="button" class="ghost" aria-label="Language"><svg class="globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg><span id="lang-label"></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="welcome" aria-live="polite">
+      <p id="welcome-text" class="welcome-text"></p>
+      <nav id="cats" class="chips" aria-label="categories"></nav>
+      <h2 id="suggest-title" class="small-title"></h2>
+      <div id="suggestions" class="suggestions"></div>
+    </section>
+
+    <section id="chat" class="chat" aria-live="polite" aria-relevant="additions"></section>
+  </main>
+
+  <div class="dock">
+    <form id="ask" class="ask" autocomplete="off">
+      <label for="q" class="sr-only">question</label>
+      <input id="q" name="q" type="text" maxlength="300" enterkeyhint="send">
+      <button id="send" type="submit" class="primary"></button>
+    </form>
+    <footer class="foot">
+      <p id="disclaimer" class="disclaimer"></p>
+      <span id="idle" class="idle" hidden></span>
+    </footer>
+  </div>
+  <script src="/buddy.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

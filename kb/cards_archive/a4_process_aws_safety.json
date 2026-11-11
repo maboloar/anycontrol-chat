@@ -1,0 +1,167 @@
+[
+ {
+  "id": "a-kiro-spec",
+  "cat": "process",
+  "status": "info",
+  "q": {"ko": ["Kiro는 어떻게 썼나요?", "스펙 기반 개발을 했나요", "개발 과정이 궁금합니다", "요구사항 EARS 형식"], "en": ["How was Kiro used?", "Did you do spec-driven development?", "How was it developed?", "EARS-format requirements"]},
+  "a": {"ko": "소개서 v1.0.0에 따르면 Kiro 스펙으로 요구사항(수용 기준, EARS 형식)을 먼저 쓰고 구현·검증하는 명세 기반 개발을 했으며, 스펙은 .kiro/specs/에 있습니다. 재획득 기능은 요구사항 → 구현 → 벤치 결과 기록까지 남겼고, 프레임 처리 추가 지연 5ms 이하 같은 요구사항을 실측(+0.06ms)으로 확인했습니다. Kiro를 어떤 작업에 얼마나 썼는지의 세부는 이 소개서·포스터에 적혀 있지 않습니다.", "en": "According to the v1.0.0 brochure, development was spec-driven: requirements with acceptance criteria in EARS format were written first with Kiro specs (kept in .kiro/specs/), then implemented and verified. For the re-acquisition feature, the requirement, implementation, and benchmark results were all recorded, and a requirement such as at most 5 ms of added frame time was checked by measurement (+0.06 ms). The brochure and poster do not detail which tasks used Kiro or how much."},
+  "kw": ["Kiro", "스펙", "명세 기반 개발", "EARS", "수용 기준", "spec-driven", "requirements", ".kiro/specs", "개발 과정", "development process"],
+  "src": ["sources/01_소개서_v1.0.0.md#8-품질과-신뢰성", "sources/01_소개서_v1.0.0.md#54-이-기능이-실제로-낸-효과"],
+  "related": ["a-tests", "a-repro", "a-rejected-approaches"],
+  "suggest": true
+ },
+ {
+  "id": "a-tests",
+  "cat": "process",
+  "status": "verified",
+  "q": {"ko": ["테스트는 어떻게 했나요?", "자동 테스트 개수", "속성 기반 테스트가 뭐예요", "코드 품질 관리"], "en": ["How was it tested?", "Number of automated tests", "What is property-based testing here?", "Code quality management"]},
+  "a": {"ko": "소개서 v1.0.0 기준 2026-09-29 실행에서 백엔드 pytest 299개, 프론트엔드 vitest 89개(합계 388개), 설치기 4개가 통과했습니다. hypothesis 속성 기반 테스트로 이동 불변, 자기 일치, 좌표 범위 불변, 반전 왕복을 무작위 입력으로 검증합니다. 평가 하네스는 종합·twin·가림 성공률이 떨어지지 않을 때만 기본값을 켜는 회귀 방지 기준으로 쓰였습니다. 실제 macOS 입력은 가짜 백엔드 단위 테스트 10개까지만 확인됐습니다.", "en": "In the v1.0.0 brochure, a run on 2026-09-29 passed 299 backend pytest tests, 89 frontend vitest tests (388 in total), and 4 installer tests. Hypothesis property-based tests check translation invariance, self-match, coordinate-range invariance, and flip round-trips on random inputs. The evaluation harness served as a regression guard, enabling a default only when overall, twin, and occlusion success did not fall. Real macOS input has been checked only through 10 unit tests with a fake backend."},
+  "kw": ["테스트", "pytest", "vitest", "388개", "299", "89", "hypothesis", "속성 기반", "회귀 방지", "automated tests", "property-based"],
+  "src": ["sources/01_소개서_v1.0.0.md#8-품질과-신뢰성"],
+  "related": ["a-kiro-spec", "a-repro", "a-eval-overfit-split"],
+  "suggest": true
+ },
+ {
+  "id": "a-repro",
+  "cat": "process",
+  "status": "verified",
+  "q": {"ko": ["결과를 재현할 수 있나요?", "재현성은 어떻게 보장하나요", "평가 명령어", "의존성 고정"], "en": ["Can the results be reproduced?", "How is reproducibility handled?", "Evaluation commands", "Pinned dependencies"]},
+  "a": {"ko": "소개서 v1.0.0 기준 의존 패키지 68개의 버전·해시를 고정(requirements-macos-arm64.lock)하고, EfficientTAM 소스를 동봉하며, 모델·앱 파일은 SHA-256으로 검증하고, 벤치 결과를 JSON/CSV로 저장(bench/results/)합니다. 부록에 python -m vision_input.eval run --tracker vi --split tune|eval 같은 평가 명령과 CSRT 기준선, 실영상 평가 명령이 있습니다. 이 챗봇 환경에서 직접 재실행해 확인한 것은 아니며 문서 기술 기준입니다.", "en": "In the v1.0.0 brochure, 68 dependency packages are pinned by version and hash (requirements-macos-arm64.lock), the EfficientTAM source is bundled, model and app files are SHA-256 verified, and benchmark results are saved as JSON/CSV (bench/results/). The appendix gives evaluation commands such as python -m vision_input.eval run --tracker vi --split tune|eval, plus the CSRT baseline and real-video commands. This is as documented; the commands were not re-run in this chatbot environment."},
+  "kw": ["재현성", "reproducibility", "SHA-256", "lock", "의존성 고정", "eval 명령", "벤치 결과", "bench/results", "pinned versions", "재현"],
+  "src": ["sources/01_소개서_v1.0.0.md#8-품질과-신뢰성", "sources/01_소개서_v1.0.0.md#17-부록"],
+  "related": ["a-tests", "a-eval-method", "a-stack"],
+  "suggest": false
+ },
+ {
+  "id": "a-rejected-approaches",
+  "cat": "process",
+  "status": "info",
+  "q": {"ko": ["시도했다가 버린 방식이 있나요?", "실패한 접근과 이유", "기각한 기능", "시행착오"], "en": ["Were there approaches you tried and dropped?", "Failed approaches and reasons", "Rejected features", "Trial and error"]},
+  "a": {"ko": "소개서 v1.0.0은 시도하고 버린 방식과 이유를 코드 주석과 문서에 남겼다고 합니다. 예: 그림자 접촉을 매 프레임 거르는 방식은 획이 끊겨 F1 0.586이라 기각하고 획 시작만 거르게 했습니다. 모양 기억 갱신 옵션(reseg_refresh)은 닮은 물체가 지날 때 옮겨붙음이 pen-twin 23→75로 늘어 기본으로 껐고, 방해물 기억 상시 사용(distractor_every)은 복구를 막아 껐습니다. MediaPipe는 물체를 쥔 손에서 5%여서 기본 엔진으로 채택하지 않았습니다.", "en": "The v1.0.0 brochure says tried-and-dropped approaches and their reasons were recorded in code comments and documents. For example, filtering shadow contact on every frame broke strokes (F1 0.586), so only stroke starts are filtered. The shape-memory refresh option (reseg_refresh) is off by default because it raised pen-twin hijack frames from 23 to 75, and always-on distractor memory (distractor_every) was turned off because it blocked recovery. MediaPipe was not made the default engine because it detected only 5% of hands holding an object."},
+  "kw": ["기각", "시행착오", "reseg_refresh", "distractor_every", "실패", "rejected", "trial and error", "lessons learned", "버린 방식", "F1 0.586"],
+  "src": ["sources/01_소개서_v1.0.0.md#8-품질과-신뢰성", "sources/01_소개서_v1.0.0.md#53-옮겨붙음을-막는-설계-원칙", "sources/01_소개서_v1.0.0.md#66-제안-우리-위치를-확인하고-성능을-끌어올리는-계획-검증-안-됨"],
+  "related": ["a-lookalike-policy", "a-eval-pen", "a-hardest"],
+  "suggest": false
+ },
+ {
+  "id": "a-hardest",
+  "cat": "process",
+  "status": "partial",
+  "q": {"ko": ["가장 어려웠던 점은 무엇인가요?", "기술적으로 가장 힘든 부분", "개발하면서 겪은 문제", "도전 과제"], "en": ["What was the hardest part?", "Most difficult technical aspect", "Problems encountered during development", "Key challenges"]},
+  "a": {"ko": "문서가 가장 어려운 부분으로 명시하는 것은 닮은 물체가 지나갈 때의 옮겨붙음 문제입니다(소개서 v1.0.0 Q&A: 가장 어려운 경우). 개발 중 실제로 겪은 문제로 문서가 기록한 것은 모델을 매 프레임 돌리면 느린 점(SAM 2.1 tiny 517ms, EdgeTAM의 다물체 MPS 오류), 멀쩡히 추적 중일 때 재탐색이 닮은 물체에 뺏기는 점, 기억 갱신이 옮겨붙음을 늘리는 점입니다. 개인적 소감이나 일정상 어려움은 문서에 없어 답하지 않습니다.", "en": "What the documents name as the hardest part is hijacking when a look-alike object passes (v1.0.0 Q&A: the hardest case). Problems the documents record from development are that running the model every frame is too slow (SAM 2.1 tiny 517 ms, EdgeTAM's multi-object MPS error), that re-search during healthy tracking can be stolen by a look-alike, and that memory refresh increases hijacking. Personal reflections or schedule difficulties are not in the documents, so they are not covered here."},
+  "kw": ["어려웠던 점", "도전 과제", "challenge", "hardest part", "어려움", "문제 해결", "옮겨붙음", "difficulty", "트러블슈팅", "lessons"],
+  "src": ["sources/01_소개서_v1.0.0.md#16-qa", "sources/01_소개서_v1.0.0.md#53-옮겨붙음을-막는-설계-원칙", "sources/01_소개서_v1.0.0.md#64-모델-지연-실측"],
+  "related": ["a-limit-twin", "a-why-two-tier", "a-rejected-approaches"],
+  "suggest": true
+ },
+ {
+  "id": "a-team",
+  "cat": "team",
+  "status": "info",
+  "q": {"ko": ["팀 소개를 해 주세요", "팀 이름과 팀원은요", "누가 만들었나요", "출품 대회가 뭐예요"], "en": ["Tell me about the team", "Team name and members", "Who built this?", "Which competition is this for?"]},
+  "a": {"ko": "팀 이름은 '팀 아무거나'이고 포스터와 소개서 최종본에는 팀원 김삼이 표기돼 있습니다. 출품 대회는 2026 고려대학교 × AWS AI Innovators Challenge입니다. 저장소는 GitHub maboloar/anycontrol입니다. 역할 분담 등 팀 구성의 세부는 제공된 소개서·포스터 문서에 없습니다.", "en": "The team is called 'Team Anything' (팀 아무거나), and the poster and final brochure list the member Kim Sam (김삼). It is an entry to the 2026 Korea University x AWS AI Innovators Challenge. The repository is GitHub maboloar/anycontrol. Details such as role division are not in the provided brochure and poster documents."},
+  "kw": ["팀", "팀 아무거나", "김삼", "팀원", "고려대", "AWS", "AI Innovators Challenge", "team", "대회", "GitHub"],
+  "src": ["sources/11_포스터_텍스트.md#슬라이드-1", "sources/12_서비스소개서_최종본_텍스트.md#슬라이드-10", "sources/11_포스터_텍스트.md#슬라이드-2"],
+  "related": ["a-one-line", "a-kiro-spec", "a-aws-plan"],
+  "suggest": false
+ },
+ {
+  "id": "a-cloud-vs-ondevice",
+  "cat": "arch",
+  "status": "info",
+  "q": {"ko": ["왜 클라우드가 아니라 온디바이스인가요?", "클라우드 서버를 안 쓰는 이유", "온디바이스 처리의 장점", "AWS를 쓰지 않았나요"], "en": ["Why on-device instead of cloud?", "Why not use a cloud server?", "Benefits of on-device processing", "Isn't AWS used?"]},
+  "a": {"ko": "소개서 v1.0.0 기준 이유는 문서에 근거가 있는 세 가지입니다. 첫째, 영상이 외부로 나가지 않아 프라이버시를 지키고 설치 후 인터넷 없이 동작합니다. 둘째, 입력 장치는 실시간 반응이 중요한데 매 프레임 처리를 로컬에서 합니다(프레임 처리 p95 약 13ms). 셋째, 문서는 클라우드 고정밀 모드를 영상이 외부로 나가므로 명시적 동의 방식으로만 제공해야 하고 지연 증가와 프라이버시 trade-off를 검토해야 한다고 봅니다. 이번 출품 범위에서는 AWS·LLM을 쓰지 않았고 클라우드와의 지연을 직접 비교 측정한 데이터는 없습니다.", "en": "In the v1.0.0 brochure there are three documented reasons. First, video never leaves the machine, preserving privacy, and it works without internet after installation. Second, input devices depend on real-time response, and per-frame processing runs locally (p95 about 13 ms). Third, the document notes a cloud high-precision mode would send video out, so it must be offered only with explicit consent and its latency and privacy trade-offs reviewed. AWS and LLMs were not used in this submission, and there is no measured latency comparison against a cloud setup."},
+  "kw": ["온디바이스", "클라우드", "on-device", "cloud", "AWS", "프라이버시", "로컬 처리", "오프라인", "edge", "왜 클라우드 아님"],
+  "src": ["sources/01_소개서_v1.0.0.md#33-그-밖의-혁신-포인트", "sources/01_소개서_v1.0.0.md#aws-llm-연계-방향-미구현", "sources/12_서비스소개서_최종본_텍스트.md#슬라이드-10"],
+  "related": ["a-privacy", "a-aws-plan", "a-offline"],
+  "suggest": true
+ },
+ {
+  "id": "a-aws-plan",
+  "cat": "overview",
+  "status": "plan",
+  "q": {"ko": ["AWS는 어떻게 활용하나요?", "Bedrock이나 LLM을 쓰나요", "AWS 연계 계획", "클라우드 고정밀 모드"], "en": ["How is AWS used?", "Does it use Bedrock or an LLM?", "AWS integration plans", "Cloud high-precision mode"]},
+  "a": {"ko": "현재는 쓰지 않습니다. 소개서 v1.0.0은 이번 출품 범위에서 LLM·AWS Bedrock을 제외하고 모든 처리를 로컬 비전 모델로 했다고 밝힙니다. 확장 방향(미구현)은 Amazon Bedrock LLM으로 자연어 문장을 매핑 프로필 JSON으로 변환(스키마가 검증기 역할), 말로 물체 등록, AWS GPU 인스턴스에서 더 큰 추적 모델을 돌리는 선택형 고정밀 모드입니다. 고정밀 모드는 영상이 외부로 나가므로 명시적 동의가 필요합니다.", "en": "It is not used currently. The v1.0.0 brochure says LLM and AWS Bedrock features were excluded from this submission and all processing runs on local vision models. The extension directions (unimplemented) are converting natural-language sentences into mapping-profile JSON with an Amazon Bedrock LLM (the schema acts as the validator), registering objects by text, and an optional high-precision mode running a larger tracking model on AWS GPU instances. The high-precision mode sends video out, so it needs explicit consent."},
+  "kw": ["AWS", "Bedrock", "LLM", "자연어 매핑", "클라우드 모드", "GPU 인스턴스", "AWS plan", "natural language", "extension", "미구현"],
+  "src": ["sources/01_소개서_v1.0.0.md#aws-llm-연계-방향-미구현", "sources/01_소개서_v1.0.0.md#16-qa"],
+  "related": ["a-nl-mapping-plan", "a-cloud-vs-ondevice", "a-no-llm"],
+  "suggest": true
+ },
+ {
+  "id": "a-nl-mapping-plan",
+  "cat": "overview",
+  "status": "plan",
+  "q": {"ko": ["말로 설정할 수 있나요?", "자연어로 매핑을 만들 수 있나요", "텍스트로 물체 등록", "자동 생성기 계획"], "en": ["Can I configure it by voice or text?", "Can mappings be created with natural language?", "Registering objects by text", "Auto-generator plans"]},
+  "a": {"ko": "아직 구현되지 않았습니다(소개서 v1.0.0). 계획은 '이 컵을 왼쪽으로 기울이면 왼쪽 방향키' 같은 문장을 Amazon Bedrock의 LLM이 매핑 프로필 JSON으로 바꾸는 것이고, 이미 공개된 JSON Schema(/api/mapping/schema)가 검증기 역할을 해 잘못된 출력은 걸러집니다. '빨간 펜을 추적해 줘'처럼 텍스트로 물체를 등록하는 것도 같은 방향이지만 둘 다 미구현입니다.", "en": "Not implemented yet (v1.0.0 brochure). The plan is for an Amazon Bedrock LLM to turn a sentence like 'tilt this cup left to press the left arrow key' into mapping-profile JSON, with the already published JSON Schema (/api/mapping/schema) acting as a validator that filters invalid output. Registering objects by text, like 'track the red pen', is in the same direction; both remain unimplemented."},
+  "kw": ["자연어", "natural language", "Bedrock", "JSON Schema", "텍스트 등록", "음성", "매핑 자동 생성", "text prompt", "미구현", "LLM"],
+  "src": ["sources/01_소개서_v1.0.0.md#aws-llm-연계-방향-미구현", "sources/01_소개서_v1.0.0.md#7-시스템-구조와-기술-스택"],
+  "related": ["a-aws-plan", "a-dualsink", "a-no-llm"],
+  "suggest": false
+ },
+ {
+  "id": "a-no-llm",
+  "cat": "overview",
+  "status": "info",
+  "q": {"ko": ["LLM을 쓰나요?", "생성형 AI가 들어가나요", "어떤 AI 모델을 쓰나요", "AI 기능이 뭔가요"], "en": ["Does it use an LLM?", "Is generative AI involved?", "Which AI models are used?", "What are the AI features?"]},
+  "a": {"ko": "LLM은 쓰지 않습니다. 소개서 v1.0.0 Q&A는 이번 출품 범위에서 제외했고 모든 처리를 로컬 비전 모델로 한다고 답합니다. 사용하는 AI 모델은 마스크 분할·추적용 EfficientTAM-Ti 512(약 68MB), 손 인식용 MediaPipe hand landmarker(약 7.5MB)와 macOS 내장 Apple Vision 손 자세이며, 실행 시 SHA-256으로 검증합니다.", "en": "No LLM is used. The v1.0.0 brochure Q&A states it was excluded from this submission and all processing uses local vision models. The AI models are EfficientTAM-Ti 512 (about 68 MB) for mask segmentation and tracking, the MediaPipe hand landmarker (about 7.5 MB) and the macOS built-in Apple Vision hand pose for hand recognition, all verified by SHA-256 at launch."},
+  "kw": ["LLM", "생성형 AI", "AI 모델", "EfficientTAM", "MediaPipe", "Apple Vision", "models", "로컬 모델", "vision model", "no LLM"],
+  "src": ["sources/01_소개서_v1.0.0.md#16-qa", "sources/01_소개서_v1.0.0.md#7-시스템-구조와-기술-스택"],
+  "related": ["a-aws-plan", "a-stack", "a-why-efficienttam"],
+  "suggest": false
+ },
+ {
+  "id": "a-privacy",
+  "cat": "safety",
+  "status": "verified",
+  "q": {"ko": ["영상이 외부로 전송되나요?", "프라이버시는 어떻게 지키나요", "개인정보 보호", "서버가 외부에서 접속되나요"], "en": ["Is video sent anywhere?", "How is privacy protected?", "Personal data protection", "Can the server be reached from outside?"]},
+  "a": {"ko": "아니요. 소개서 v1.0.0 기준 영상 인식은 모두 로컬에서 처리되고 영상이 외부로 전송되지 않으며, 서버는 127.0.0.1에만 바인딩합니다(--allow-remote 없이는 다른 주소를 거부). 인증 없는 로컬 서버라 Host 헤더 검사(DNS rebinding 방지)와 Origin 검사(CSWSH 방지)를 강제하고, 녹화 재생은 프로젝트 폴더 안 영상만, 프로필 파일 이름은 안전한 글자만 허용해 경로 탈출을 막습니다. 설치 때만 인터넷이 필요합니다.", "en": "No. In the v1.0.0 brochure all video recognition is processed locally and video is not sent externally; the server binds only to 127.0.0.1 (other addresses are rejected without --allow-remote). Because the local server has no authentication, it enforces Host header checks (against DNS rebinding) and Origin checks (against cross-site WebSocket hijacking), restricts recording playback to videos inside the project folder, and allows only safe characters in profile file names to prevent path escape. Internet is needed only at install time."},
+  "kw": ["프라이버시", "개인정보", "로컬 처리", "127.0.0.1", "DNS rebinding", "CSWSH", "privacy", "security", "인증", "외부 전송"],
+  "src": ["sources/01_소개서_v1.0.0.md#9-안전과-프라이버시", "sources/11_포스터_텍스트.md#안전-프라이버시"],
+  "related": ["a-cloud-vs-ondevice", "a-offline", "a-realinput-safety"],
+  "suggest": true
+ },
+ {
+  "id": "a-offline",
+  "cat": "install",
+  "status": "info",
+  "q": {"ko": ["인터넷 없이도 되나요?", "오프라인 동작", "설치할 때만 인터넷이 필요한가요", "네트워크 요구사항"], "en": ["Does it work without internet?", "Offline operation", "Is internet needed only for installation?", "Network requirements"]},
+  "a": {"ko": "소개서 v1.0.0 기준 첫 설치 때는 Python과 라이브러리 다운로드를 위해 인터넷이 필요합니다(모델은 실행파일에 포함). 이후 실행 중에는 인터넷이 필요 없으며 포스터도 설치 후 인터넷 없이 동작한다고 적습니다. 다만 다른 환경에서 오프라인 실행을 따로 검증한 기록은 문서에 없습니다.", "en": "In the v1.0.0 brochure, the first install needs internet to download Python and libraries (the models are bundled in the executable). Afterwards, no internet is needed while running, and the poster also says it works without internet after installation. The documents do not record separate offline-run validation on other environments."},
+  "kw": ["오프라인", "인터넷", "네트워크", "offline", "internet", "설치", "no network", "local", "인터넷 없이"],
+  "src": ["sources/01_소개서_v1.0.0.md#11-준비물과-요구사항", "sources/11_포스터_텍스트.md#안전-프라이버시", "sources/12_서비스소개서_최종본_텍스트.md#슬라이드-10"],
+  "related": ["a-privacy", "a-requirements", "a-cloud-vs-ondevice"],
+  "suggest": false
+ },
+ {
+  "id": "a-realinput-safety",
+  "cat": "safety",
+  "status": "partial",
+  "q": {"ko": ["실제 마우스 제어가 위험하지 않나요?", "긴급 정지는 어떻게 하나요", "ESC로 끄는 기능", "안전장치가 뭐가 있나요"], "en": ["Isn't controlling the real mouse risky?", "How does emergency stop work?", "ESC kill switch", "What safety features exist?"]},
+  "a": {"ko": "소개서 v1.0.0 기준 실제 입력은 기본 꺼짐이고 macOS 손쉬운 사용 권한이 없으면 켤 수 없으며, 켜면 3초 카운트다운 뒤 시작하고 그 사이 취소할 수 있습니다. 켜져 있는 동안 화면 위에 빨간 경고 배너가 뜨고, 브라우저가 포커스를 잃어도 하드웨어 ESC를 매 프레임 확인해 즉시 끕니다. 긴급 정지는 마우스 끄기, 실제 입력 끄기, 눌린 키·버튼 해제, 펜 떼기를 한꺼번에 하고, 끄기·소스 변경·탭 닫기 때도 눌린 키를 모두 놓습니다. 단 실제 화면에서의 라이브 시험은 아직 없습니다.", "en": "In the v1.0.0 brochure real input is off by default and cannot be enabled without macOS Accessibility permission; turning it on starts after a 3-second countdown that can be canceled. A red warning banner shows while it is on, and a hardware ESC check on every frame turns it off immediately even if the browser loses focus. Emergency stop turns off the mouse, disables real input, releases all pressed keys and buttons, and lifts the pen at once; keys are also released on disable, source change, or tab close. However, live testing on a real screen has not been done."},
+  "kw": ["안전", "긴급 정지", "ESC", "3초 유예", "경고 배너", "safety", "emergency stop", "kill switch", "실제 입력", "Accessibility"],
+  "src": ["sources/01_소개서_v1.0.0.md#9-안전과-프라이버시", "sources/01_소개서_v1.0.0.md#15-검증-상태-한눈에-보기"],
+  "related": ["a-limit-realinput", "a-dualsink", "a-privacy"],
+  "suggest": false
+ },
+ {
+  "id": "a-requirements",
+  "cat": "install",
+  "status": "info",
+  "q": {"ko": ["필요한 장비와 사양은?", "준비물이 뭐예요", "iPhone이 꼭 필요한가요", "최소 사양"], "en": ["What equipment and specs are needed?", "What do I need to prepare?", "Is an iPhone required?", "Minimum requirements"]},
+  "a": {"ko": "소개서 v1.0.0 기준 준비물은 Apple Silicon Mac(macOS 14 이상), iPhone Continuity Camera(USB 유선 연결 권장), 거치대 또는 삼각대, 색이 뚜렷한 물체나 펜입니다. 최소 메모리 8GB(권장 16GB), 첫 설치 시 저장공간 4GB 이상, 카메라 권한 필수입니다. Mac 내장 카메라나 웹캠도 동작하지만 정확도와 지연이 떨어집니다. 이 사양은 개발 PC(M3 Pro MacBook Pro) 확인과 라이브러리 공식 요구 기준이며 다른 기종은 미검증입니다.", "en": "In the v1.0.0 brochure you need an Apple Silicon Mac (macOS 14 or later), an iPhone Continuity Camera (USB wired connection recommended), a stand or tripod, and an object with clear color or a pen. Minimum memory is 8 GB (16 GB recommended), at least 4 GB of free storage for the first install, and camera permission is required. A built-in Mac camera or webcam works but with lower accuracy and more latency. These specs come from the development PC (M3 Pro MacBook Pro) and the libraries' official requirements; other models are unverified."},
+  "kw": ["요구사항", "준비물", "iPhone", "Continuity Camera", "macOS 14", "8GB", "사양", "requirements", "minimum specs", "웹캠", "삼각대"],
+  "src": ["sources/01_소개서_v1.0.0.md#11-준비물과-요구사항", "sources/01_소개서_v1.0.0.md#16-qa"],
+  "related": ["a-limit-macos-only", "a-first-use-steps", "a-offline"],
+  "suggest": false
+ },
+ {
+  "id": "a-first-use-steps",
+  "cat": "usage",
+  "status": "info",
+  "q": {"ko": ["처음 어떻게 사용하나요?", "사용 흐름을 알려주세요", "설치하고 실행하는 방법", "자동 보정은 어떻게 하나요"], "en": ["How do I get started?", "What is the usage flow?", "How to install and run", "How does auto-calibration work?"]},
+  "a": {"ko": "소개서 v1.0.0 기준 AnyControl-v1.0.0-macOS.command를 GitHub Releases에서 받아 더블클릭하면 파일·환경 검사 후 필요 시 자동 설치하고 서버와 브라우저가 실행됩니다. 이후 iPhone을 책상 옆에 수평으로 세우고 권한을 허용한 뒤, 자동 보정(마우스는 가만히 두기 → 좌우 → 가까이·멀리 → 집기 3번 → 확인 클릭 2번)을 하고, 물체는 드래그(펜은 두 점)로 등록해 가상 모드에서 연습합니다. 필요하면 실제 입력을 켭니다(3초 뒤 시작, 정지는 ESC). 서명·공증이 없어 처음에는 보안 차단이나 실행 권한 오류가 날 수 있습니다.", "en": "In the v1.0.0 brochure, download AnyControl-v1.0.0-macOS.command from GitHub Releases and double-click it; it checks files and environment, auto-installs if needed, and launches the server and browser. Then set the iPhone horizontally beside the desk, grant permissions, run auto-calibration (for the mouse: stay still, move left-right, move closer and farther, pinch 3 times, click 2 times to confirm), register an object by dragging (two points for a pen), and practice in virtual mode. Enable real input when needed (starts after 3 seconds, ESC to stop). Because the file is unsigned and not notarized, a security block or execute-permission error may appear on first launch."},
+  "kw": ["사용법", "설치", "실행", "자동 보정", "튜토리얼", "처음 사용", "getting started", "install", "calibration", ".command", "how to use"],
+  "src": ["sources/01_소개서_v1.0.0.md#12-설치-실행-처음-사용하는-순서", "sources/11_포스터_텍스트.md#사용-흐름"],
+  "related": ["a-requirements", "a-reselect", "a-realinput-safety"],
+  "suggest": false
+ }
+]

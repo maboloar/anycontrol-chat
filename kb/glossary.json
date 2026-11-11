@@ -1,0 +1,839 @@
+{
+ "optical flow": [
+  "광학 흐름",
+  "광류",
+  "lk"
+ ],
+ "tracking": [
+  "추적",
+  "트래킹"
+ ],
+ "tracker": [
+  "추적기",
+  "트래커"
+ ],
+ "occlusion": [
+  "가림",
+  "가려짐"
+ ],
+ "occluded": [
+  "가림",
+  "가려짐"
+ ],
+ "reacquire": [
+  "재획득",
+  "다시 찾"
+ ],
+ "reacquisition": [
+  "재획득"
+ ],
+ "segmentation": [
+  "분할",
+  "세그멘테이션"
+ ],
+ "mask": [
+  "마스크"
+ ],
+ "cursor": [
+  "커서"
+ ],
+ "mouse": [
+  "마우스"
+ ],
+ "click": [
+  "클릭"
+ ],
+ "drag": [
+  "드래그"
+ ],
+ "scroll": [
+  "스크롤"
+ ],
+ "pen": [
+  "펜"
+ ],
+ "hand": [
+  "손",
+  "맨손"
+ ],
+ "finger": [
+  "손가락"
+ ],
+ "fingertip": [
+  "손끝",
+  "끝점"
+ ],
+ "thumb": [
+  "엄지"
+ ],
+ "index finger": [
+  "검지"
+ ],
+ "middle finger": [
+  "중지"
+ ],
+ "depth": [
+  "깊이"
+ ],
+ "depth map": [
+  "깊이 맵",
+  "깊이 지도"
+ ],
+ "floor": [
+  "바닥"
+ ],
+ "desk": [
+  "책상"
+ ],
+ "table": [
+  "책상"
+ ],
+ "anchor": [
+  "기준점",
+  "앵커"
+ ],
+ "jitter": [
+  "떨림",
+  "흔들림"
+ ],
+ "shake": [
+  "떨림",
+  "흔들림"
+ ],
+ "smoothing": [
+  "스무딩",
+  "평활",
+  "부드럽"
+ ],
+ "latency": [
+  "지연"
+ ],
+ "delay": [
+  "지연"
+ ],
+ "calibrate": [
+  "보정"
+ ],
+ "mapping": [
+  "매핑"
+ ],
+ "profile": [
+  "프로필"
+ ],
+ "gamepad": [
+  "게임패드"
+ ],
+ "keyboard": [
+  "키보드"
+ ],
+ "camera": [
+  "카메라"
+ ],
+ "iphone": [
+  "아이폰",
+  "연속성 카메라"
+ ],
+ "continuity camera": [
+  "연속성 카메라"
+ ],
+ "webcam": [
+  "웹캠"
+ ],
+ "privacy": [
+  "프라이버시",
+  "개인정보"
+ ],
+ "offline": [
+  "오프라인",
+  "로컬"
+ ],
+ "local": [
+  "로컬",
+  "온디바이스"
+ ],
+ "on-device": [
+  "온디바이스",
+  "로컬"
+ ],
+ "install": [
+  "설치"
+ ],
+ "requirement": [
+  "요구사항",
+  "사양"
+ ],
+ "license": [
+  "라이선스"
+ ],
+ "limit": [
+  "한계"
+ ],
+ "limitation": [
+  "한계"
+ ],
+ "accuracy": [
+  "정확도"
+ ],
+ "performance": [
+  "성능"
+ ],
+ "benchmark": [
+  "벤치",
+  "벤치마크",
+  "측정"
+ ],
+ "kalman": [
+  "칼만"
+ ],
+ "ema": [
+  "지수이동평균",
+  "튐 억제"
+ ],
+ "exponential moving average": [
+  "지수이동평균",
+  "ema"
+ ],
+ "spike": [
+  "튐",
+  "스파이크"
+ ],
+ "hybrid": [
+  "하이브리드"
+ ],
+ "object": [
+  "물체"
+ ],
+ "multiple objects": [
+  "여러 물체",
+  "다중"
+ ],
+ "lost": [
+  "놓치",
+  "잃"
+ ],
+ "register": [
+  "등록"
+ ],
+ "memory": [
+  "기억",
+  "메모리"
+ ],
+ "shape": [
+  "모양",
+  "형상"
+ ],
+ "color": [
+  "색",
+  "색상"
+ ],
+ "tilt": [
+  "기울기",
+  "기울임",
+  "롤"
+ ],
+ "roll": [
+  "롤",
+  "기울기"
+ ],
+ "stroke": [
+  "획"
+ ],
+ "draw": [
+  "그리",
+  "드로잉"
+ ],
+ "drawing": [
+  "그리기",
+  "드로잉"
+ ],
+ "kiro": [
+  "키로",
+  "kiro"
+ ],
+ "aws": [
+  "aws",
+  "에이더블유에스"
+ ],
+ "spec": [
+  "스펙",
+  "명세"
+ ],
+ "safety": [
+  "안전"
+ ],
+ "emergency stop": [
+  "긴급 정지",
+  "esc"
+ ],
+ "efficienttam": [
+  "efficienttam",
+  "에피션트"
+ ],
+ "sam": [
+  "sam",
+  "세그먼트 애니씽"
+ ],
+ "depth anything": [
+  "depth anything",
+  "깊이 모델"
+ ],
+ "mediapipe": [
+  "mediapipe",
+  "미디어파이프"
+ ],
+ "vision": [
+  "apple vision",
+  "비전"
+ ],
+ "competitor": [
+  "경쟁",
+  "기존"
+ ],
+ "wacom": [
+  "와콤",
+  "태블릿"
+ ],
+ "tablet": [
+  "태블릿",
+  "와콤"
+ ],
+ "streamdeck": [
+  "스트림덱"
+ ],
+ "racing": [
+  "레이싱"
+ ],
+ "game": [
+  "게임"
+ ],
+ "accessibility": [
+  "접근성",
+  "장애"
+ ],
+ "kiosk": [
+  "키오스크",
+  "전시"
+ ],
+ "windows": [
+  "윈도우",
+  "윈도"
+ ],
+ "mac": [
+  "맥",
+  "macos"
+ ],
+ "macos": [
+  "macos",
+  "맥"
+ ],
+ "gpu": [
+  "gpu",
+  "그래픽"
+ ],
+ "fps": [
+  "fps",
+  "프레임"
+ ],
+ "frame": [
+  "프레임"
+ ],
+ "team": [
+  "팀",
+  "팀원"
+ ],
+ "future": [
+  "향후",
+  "앞으로",
+  "계획"
+ ],
+ "roadmap": [
+  "향후",
+  "계획"
+ ],
+ "cost": [
+  "비용",
+  "가격"
+ ],
+ "price": [
+  "가격",
+  "비용"
+ ],
+ "business": [
+  "사업화",
+  "상업"
+ ],
+ "fast": [
+  "빠르",
+  "속도",
+  "지연",
+  "fps",
+  "latency"
+ ],
+ "speed": [
+  "속도",
+  "빠르",
+  "지연",
+  "fps",
+  "latency"
+ ],
+ "slow": [
+  "느리",
+  "지연",
+  "latency"
+ ],
+ "losing": [
+  "lost",
+  "놓치",
+  "잃"
+ ],
+ "lose": [
+  "lost",
+  "놓치",
+  "잃"
+ ],
+ "find again": [
+  "재획득",
+  "reacquire",
+  "다시 찾"
+ ],
+ "win": [
+  "이기"
+ ],
+ "가격": [
+  "price",
+  "cost",
+  "free"
+ ],
+ "무료": [
+  "free",
+  "price"
+ ],
+ "장애인": [
+  "accessibility",
+  "접근성",
+  "disability"
+ ],
+ "장애": [
+  "accessibility",
+  "접근성",
+  "disability"
+ ],
+ "착각": [
+  "hijack",
+  "옮겨붙",
+  "twin",
+  "닮은"
+ ],
+ "헷갈": [
+  "hijack",
+  "옮겨붙",
+  "twin"
+ ],
+ "hijack": [
+  "옮겨붙",
+  "착각"
+ ],
+ "hidden": [
+  "occlusion",
+  "가림",
+  "occluded"
+ ],
+ "behind": [
+  "occlusion",
+  "가림",
+  "team",
+  "팀"
+ ],
+ "covered": [
+  "occlusion",
+  "가림"
+ ],
+ "가려": [
+  "occlusion",
+  "가림"
+ ],
+ "who made": [
+  "team",
+  "팀",
+  "팀원"
+ ],
+ "made this": [
+  "team",
+  "팀"
+ ],
+ "만든 사람": [
+  "팀",
+  "팀원",
+  "team"
+ ],
+ "how many tests": [
+  "테스트",
+  "개수",
+  "pytest"
+ ],
+ "cursor stay still": [
+  "stilllock",
+  "떨림",
+  "정지"
+ ],
+ "stay still": [
+  "stilllock",
+  "정지",
+  "떨림"
+ ],
+ "가만히": [
+  "stilllock",
+  "정지"
+ ],
+ "calibration": [
+  "보정"
+ ],
+ "도움이 되": [
+  "대상",
+  "누구를 위한"
+ ],
+ "혜택": [
+  "대상",
+  "누구를 위한"
+ ],
+ "필요한 사람": [
+  "대상",
+  "누구를 위한"
+ ],
+ "박물관": [
+  "exhibition",
+  "전시"
+ ],
+ "관람객": [
+  "visitor",
+  "exhibition"
+ ],
+ "개발자": [
+  "team",
+  "팀"
+ ],
+ "장점": [
+  "advantage",
+  "차별점"
+ ],
+ "강점": [
+  "advantage",
+  "차별점"
+ ],
+ "edge": [
+  "차별점",
+  "different"
+ ],
+ "대화형": [
+  "LLM"
+ ],
+ "챗지피티": [
+  "chatgpt",
+  "LLM"
+ ],
+ "비행기": [
+  "offline",
+  "오프라인"
+ ],
+ "와이파이": [
+  "wifi",
+  "internet"
+ ],
+ "윈도우": [
+  "windows"
+ ],
+ "접근성": [
+  "accessibility"
+ ],
+ "혼자 만든": [
+  "team"
+ ],
+ "developer": [
+  "개발자",
+  "만든 사람",
+  "김삼",
+  "kim sam",
+  "creator",
+  "maker",
+  "team member"
+ ],
+ "creator": [
+  "개발자",
+  "만든 사람",
+  "김삼",
+  "developer"
+ ],
+ "wifi": [
+  "wi-fi",
+  "인터넷",
+  "internet",
+  "network",
+  "offline"
+ ],
+ "wi-fi": [
+  "wifi",
+  "인터넷",
+  "internet"
+ ],
+ "internet": [
+  "인터넷",
+  "오프라인",
+  "offline",
+  "wifi"
+ ],
+ "best": [
+  "advantage",
+  "strength",
+  "장점",
+  "좋은 점"
+ ],
+ "worst": [
+  "weakness",
+  "downside",
+  "단점",
+  "한계",
+  "limit"
+ ],
+ "advantage": [
+  "장점",
+  "strength",
+  "best"
+ ],
+ "weakness": [
+  "단점",
+  "한계",
+  "downside",
+  "limit"
+ ],
+ "downside": [
+  "단점",
+  "한계",
+  "weakness"
+ ],
+ "tools": [
+  "tool",
+  "도구",
+  "kiro",
+  "ide"
+ ],
+ "tool": [
+  "도구",
+  "툴",
+  "kiro",
+  "ide"
+ ],
+ "툴": [
+  "도구",
+  "tool",
+  "kiro",
+  "ide"
+ ],
+ "도구": [
+  "툴",
+  "tool",
+  "kiro",
+  "ide"
+ ],
+ "code": [
+  "코딩",
+  "개발",
+  "build",
+  "develop"
+ ],
+ "coding": [
+  "코드",
+  "개발",
+  "kiro",
+  "build"
+ ],
+ "wirelessly": [
+  "wireless",
+  "무선",
+  "wi-fi"
+ ],
+ "wireless": [
+  "무선",
+  "wifi"
+ ],
+ "phone": [
+  "iphone",
+  "아이폰",
+  "폰",
+  "휴대폰"
+ ],
+ "wrong way": [
+  "반대로",
+  "방향",
+  "direction",
+  "반전",
+  "mirror"
+ ],
+ "opposite": [
+  "반대로",
+  "방향",
+  "반전"
+ ],
+ "float": [
+  "공중",
+  "떠 있",
+  "air",
+  "hover"
+ ],
+ "floats": [
+  "공중",
+  "떠 있",
+  "air",
+  "hover"
+ ],
+ "above": [
+  "공중",
+  "떠 있",
+  "air"
+ ],
+ "finished": [
+  "완성",
+  "베타",
+  "beta",
+  "done",
+  "complete"
+ ],
+ "complete": [
+  "완성",
+  "finished"
+ ],
+ "trust": [
+  "믿",
+  "정확",
+  "틀릴",
+  "wrong",
+  "accurate"
+ ],
+ "wrong": [
+  "틀릴",
+  "오류",
+  "잘못",
+  "mistake"
+ ],
+ "chatgpt": [
+  "챗gpt",
+  "llm",
+  "생성형",
+  "generative ai",
+  "chatbot",
+  "챗봇"
+ ],
+ "by name": [
+  "이름",
+  "names",
+  "모델 이름"
+ ],
+ "name": [
+  "이름"
+ ],
+ "real": [
+  "실제",
+  "진짜",
+  "real"
+ ],
+ "booth": [
+  "부스",
+  "현장",
+  "here"
+ ],
+ "home": [
+  "집",
+  "집에서",
+  "install",
+  "download",
+  "설치"
+ ],
+ "practice": [
+  "연습",
+  "가상 모드",
+  "virtual mode",
+  "데모",
+  "demo"
+ ],
+ "quality": [
+  "품질",
+  "테스트",
+  "tested",
+  "tests"
+ ],
+ "make sure": [
+  "테스트",
+  "확인",
+  "tested",
+  "verified"
+ ],
+ "scale": [
+  "규모",
+  "size"
+ ],
+ "codebase": [
+  "코드",
+  "규모",
+  "size"
+ ],
+ "age": [
+  "나이",
+  "old"
+ ],
+ "old": [
+  "나이",
+  "age"
+ ],
+ "phone number": [
+  "전화번호",
+  "연락처",
+  "contact"
+ ],
+ "contact": [
+  "연락처",
+  "문의",
+  "연락"
+ ],
+ "developer mode": [
+  "개발자 모드",
+  "렌치",
+  "wrench"
+ ],
+ "mode": [
+  "모드"
+ ],
+ "steer": [
+  "핸들",
+  "조향",
+  "racing",
+  "레이싱"
+ ],
+ "type": [
+  "타자",
+  "입력",
+  "글자",
+  "typing"
+ ],
+ "talk": [
+  "음성",
+  "목소리",
+  "말로",
+  "voice"
+ ],
+ "speak": [
+  "음성",
+  "목소리",
+  "말로",
+  "voice"
+ ],
+ "follow": [
+  "추적",
+  "따라",
+  "track"
+ ],
+ "disappears": [
+  "사라지",
+  "안 보이",
+  "놓치",
+  "lost"
+ ]
+}

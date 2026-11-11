@@ -1,0 +1,1371 @@
+[
+ {
+  "id": "v-project-size",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "얼마나 큰 프로젝트예요?",
+    "코드가 얼마나 돼요",
+    "규모가 어느 정도예요",
+    "얼마나 만들었어요",
+    "개발 분량이 많아요"
+   ],
+   "en": [
+    "How big is the project?",
+    "How much code is there?",
+    "What is the scale?",
+    "How much work went into it?"
+   ]
+  },
+  "a": {
+   "ko": "화면과 추적 엔진을 합쳐 코드가 만 줄을 훌쩍 넘고, 프로그램이 잘 동작하는지 확인하는 자동 시험도 수백 개 있어요. 일부 기능은 아직 계획 단계예요.",
+   "en": "Counting the screens and the tracking engine, the code runs well past ten thousand lines, and there are several hundred automatic tests that check the program works. Some features are still at the planning stage."
+  },
+  "kw": [
+   "규모",
+   "코드 양",
+   "줄",
+   "분량",
+   "size",
+   "scale",
+   "lines of code",
+   "how much"
+  ],
+  "src": [
+   "소개서 §1, anycontrol-web/HANDOFF.md"
+  ],
+  "related": [
+   "v-code-quality",
+   "v-version"
+  ]
+ },
+ {
+  "id": "v-mascot",
+  "cat": "overview",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "포스터에 있는 캐릭터는 뭐예요?",
+    "마스코트가 있어요",
+    "캐릭터 이름이 뭐예요",
+    "귀여운 캐릭터",
+    "포스터 가운데 그림"
+   ],
+   "en": [
+    "What is the character on the poster?",
+    "Is there a mascot?",
+    "What's the character's name?",
+    "The cute character",
+    "The picture in the middle of the poster"
+   ]
+  },
+  "a": {
+   "ko": "포스터와 발표 자료에 AnyControl 캐릭터 그림이 쓰였지만, 이름이나 설정에 대해 확인된 내용은 없어요. 궁금하면 발표자에게 물어봐 주세요.",
+   "en": "A character illustration is used on the poster and presentation, but there's no confirmed information about its name or backstory. Please ask the presenter."
+  },
+  "kw": [
+   "캐릭터",
+   "마스코트",
+   "포스터",
+   "그림",
+   "character",
+   "mascot",
+   "poster",
+   "illustration"
+  ],
+  "src": [
+   "본선 및 발표/AnyControl_캐릭터.png"
+  ],
+  "related": [
+   "v-poster-demo-video"
+  ]
+ },
+ {
+  "id": "v-wow",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "신기해요! 진짜 되는 거예요?",
+    "대단하네요",
+    "마법 같아요",
+    "어떻게 이런 게 가능해요",
+    "와 신기하다"
+   ],
+   "en": [
+    "Wow, is this real?",
+    "That's amazing",
+    "It feels like magic",
+    "How is this even possible?",
+    "So cool"
+   ]
+  },
+  "a": {
+   "ko": "감사합니다! 마법은 아니고 카메라 영상을 AI가 계속 분석하는 기술이에요. 그래서 조명이나 배경, 물건 종류에 따라 잘 안 될 때도 있어요. 그런 한계도 숨기지 않고 알려 드리고 있어요. 어떻게 동작하는지 궁금하면 \"어떻게 동작해요?\"라고 물어보세요.",
+   "en": "Thank you! It isn't magic: an AI keeps analyzing the camera picture. That's also why it sometimes struggles depending on lighting, background and the kind of object, and we're open about those limits. If you're curious how it works, ask \"How does it work?\""
+  },
+  "kw": [
+   "신기",
+   "대단",
+   "마법",
+   "와",
+   "wow",
+   "amazing",
+   "magic",
+   "cool",
+   "awesome"
+  ],
+  "src": [
+   "—"
+  ],
+  "related": [
+   "i-how-simple",
+   "g-limits"
+  ]
+ },
+ {
+  "id": "v-already-exists",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "이런 건 이미 있지 않아요?",
+    "비슷한 앱 많지 않아요",
+    "새로운 게 뭐예요",
+    "기존에도 있었잖아요",
+    "뭐가 특별해요"
+   ],
+   "en": [
+    "Doesn't something like this already exist?",
+    "Aren't there many similar apps?",
+    "What's new here?",
+    "What makes it special?"
+   ]
+  },
+  "a": {
+   "ko": "손 동작으로 커서를 움직이는 웹캠 데모는 많아요. 하지만 대부분 손 하나에만 묶여 있거나, 물건에 표시를 붙여야 하거나, 가려지면 추적을 잃어요. AnyControl은 아무 물건·펜·손을 같은 방식으로 쓰고, 가려져도 다시 찾고, 여러 개를 동시에 서로 다른 입력에 연결한다는 점이 달라요.",
+   "en": "There are plenty of webcam demos that move a cursor with hand gestures. But most are tied to the hand alone, need marks stuck on objects, or lose tracking when something is hidden. AnyControl treats any object, pen or hand the same way, finds things again after they're hidden, and connects several at once to different inputs."
+  },
+  "kw": [
+   "이미 있는",
+   "비슷한 앱",
+   "차별점",
+   "새로운",
+   "already exists",
+   "similar apps",
+   "novelty",
+   "different"
+  ],
+  "src": [
+   "소개서 §2, §3.0"
+  ],
+  "related": [
+   "g-vs-others",
+   "v-top-strengths"
+  ]
+ },
+ {
+  "id": "v-vs-products",
+  "cat": "overview",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "다른 회사 제품과 비교하면 어때요?",
+    "특정 제품과 성능 차이",
+    "립모션이랑 비교",
+    "키넥트랑 비교",
+    "마커 방식이랑 뭐가 달라요",
+    "전용 컨트롤러와 비교하면"
+   ],
+   "en": [
+    "How does it compare with other companies' products?",
+    "Performance against a specific product",
+    "Compared with Leap Motion",
+    "Compared with Kinect",
+    "How is it different from marker-based tracking?",
+    "Compared with dedicated controllers"
+   ]
+  },
+  "a": {
+   "ko": "특정 제품과 직접 맞대어 측정한 적은 없어요. 방식으로만 비교하면, 마커(QR 같은 표시)를 붙이는 방식은 표시가 보여야 하고, 전용 장비는 비싸고 그 장비에만 쓸 수 있어요. AnyControl은 표시도 전용 장비도 없이 카메라와 평범한 물건만 써요. 대신 전용 장비의 정밀도나 필압까지 대신한다고는 하지 않아요.",
+   "en": "We've never measured it head-to-head against a specific product. Comparing only the approaches: marker methods (QR-style marks) need the mark to stay visible, and dedicated hardware is expensive and works only with itself. AnyControl needs no marks or special hardware, just a camera and ordinary objects. We don't claim to match the precision or pressure sensing of specialized gear."
+  },
+  "kw": [
+   "비교",
+   "제품",
+   "립모션",
+   "키넥트",
+   "마커",
+   "QR",
+   "전용 장비",
+   "compare",
+   "product",
+   "marker",
+   "Leap Motion",
+   "Kinect",
+   "controller"
+  ],
+  "src": [
+   "소개서 §2"
+  ],
+  "related": [
+   "g-vs-others",
+   "v-already-exists"
+  ]
+ },
+ {
+  "id": "v-desk-controller",
+  "cat": "overview",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "책상 위 물건이 곧 컨트롤러라는 게 무슨 뜻이에요?",
+    "쓰잘데기없는 물건",
+    "주변기기를 대체한다는 게 뭐예요",
+    "비싼 장비 필요 없다는 게",
+    "장비를 사지 않아도 된다는 뜻이에요"
+   ],
+   "en": [
+    "What does it mean that objects on the desk become the controller?",
+    "What do you mean by replacing peripherals?",
+    "No expensive gear needed?",
+    "Do I not need to buy equipment?"
+   ]
+  },
+  "a": {
+   "ko": "그림 태블릿, 스트림덱, 레이싱 휠, 런치패드처럼 용도마다 장비를 사서 책상에 늘어놓는 대신, 카메라 한 대와 책상 위 평범한 물건에 역할을 맡기자는 구상이에요. 다만 모든 장치를 완전히 만든 것은 아니고, 지금은 마우스·키보드·앱 안의 게임패드까지 동작하며 나머지는 앞으로의 과제예요.",
+   "en": "Instead of buying a separate device for every job (drawing tablet, stream deck, racing wheel, launchpad) and lining them up on the desk, the idea is to give those roles to one camera and ordinary objects on the desk. We haven't fully built every device, though: today mouse, keyboard and an in-app gamepad work, and the rest is future work."
+  },
+  "kw": [
+   "주변기기",
+   "대체",
+   "컨트롤러",
+   "장비",
+   "책상",
+   "peripherals",
+   "replace",
+   "controller",
+   "gear",
+   "desk"
+  ],
+  "src": [
+   "소개서 §3.2"
+  ],
+  "related": [
+   "g-tablet-deck",
+   "g-why-made"
+  ]
+ },
+ {
+  "id": "v-why-ai",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "이게 왜 AI 프로젝트예요?",
+    "AI가 어디에 들어갔어요",
+    "인공지능 대회에 맞아요",
+    "AI 기술은 어디에 쓰였어요"
+   ],
+   "en": [
+    "Why is this an AI project?",
+    "Where is the AI in it?",
+    "Does it fit an AI challenge?",
+    "Where is AI used?"
+   ]
+  },
+  "a": {
+   "ko": "물건의 윤곽을 찾아 따라가는 AI, 손을 찾는 AI, 앞뒤 거리를 짐작하는 AI가 핵심이에요. 이 AI를 반응이 느려지지 않게 빠른 추적과 나눠서 돌리고, 놓친 물건을 기억으로 다시 찾는 방법이 이 프로젝트의 기술적인 핵심이에요.",
+   "en": "The core is an AI that finds and follows an object's outline, an AI that finds hands, and an AI that estimates how far away things are. Running them alongside a fast tracker so response doesn't lag, and finding lost objects again from memory, is the technical heart of the project."
+  },
+  "kw": [
+   "AI",
+   "인공지능",
+   "기술",
+   "어디에",
+   "why AI",
+   "where AI",
+   "technology"
+  ],
+  "src": [
+   "소개서 §5, §7"
+  ],
+  "related": [
+   "i-which-ai",
+   "g-tech-short"
+  ]
+ },
+ {
+  "id": "v-proud",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "가장 자랑스러운 점은 뭐예요?",
+    "어떤 점에 공을 들였어요",
+    "노력한 부분",
+    "가장 신경 쓴 부분"
+   ],
+   "en": [
+    "What are you proudest of?",
+    "What did you put the most effort into?",
+    "What did you pay most attention to?"
+   ]
+  },
+  "a": {
+   "ko": "세 가지를 꼽을 수 있어요. 가려지거나 사라져도 스스로 다시 찾는 추적, 실제 컴퓨터를 움직이는 기능의 안전장치, 그리고 확인된 것과 아직 확인하지 못한 것을 숨기지 않고 나눠 알리는 정직한 설명이에요.",
+   "en": "Three things: tracking that finds objects again by itself after they are hidden or vanish, safeguards around the feature that moves the real computer, and honest explanations that clearly separate what is confirmed from what isn't yet."
+  },
+  "kw": [
+   "자랑",
+   "노력",
+   "공들인",
+   "신경",
+   "proud",
+   "effort",
+   "highlight"
+  ],
+  "src": [
+   "소개서 §3, §9, §15"
+  ],
+  "related": [
+   "v-honesty-why",
+   "v-top-strengths"
+  ]
+ },
+ {
+  "id": "v-honesty-why",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "왜 이렇게 단점과 한계를 솔직하게 알려 줘요?",
+    "약점을 왜 공개해요",
+    "확인 정도 표시는 왜 있어요",
+    "답 아래 배지는 뭐예요",
+    "왜 단점을 솔직하게 적었어요"
+   ],
+   "en": [
+    "Why are you so open about the weaknesses and limits?",
+    "Why disclose the weak points?",
+    "Why is there a label showing how well something is confirmed?",
+    "What is the badge under each answer?"
+   ]
+  },
+  "a": {
+   "ko": "입력 장치는 믿을 수 있어야 하고, 어디까지가 확인된 사실인지 알아야 더 좋게 만들 수 있다고 생각해서예요. 그래서 답마다 \"직접 재 본 결과\", \"동작 확인됨\", \"일부만 확인\", \"아직 확인 못 함\", \"앞으로의 계획\", \"설명\" 중 하나가 붙어 있어요.",
+   "en": "An input device has to be trustworthy, and you can only improve something if you know what is actually confirmed. So every answer carries one label: \"Measured in our tests\", \"Confirmed working\", \"Partly confirmed\", \"Not confirmed yet\", \"Future plan\" or \"Overview\"."
+  },
+  "kw": [
+   "솔직",
+   "한계 공개",
+   "배지",
+   "확인 정도",
+   "라벨",
+   "honest",
+   "disclosure",
+   "badge",
+   "label",
+   "confirmed"
+  ],
+  "src": [
+   "소개서 머리말, §15"
+  ],
+  "related": [
+   "v-confirmed-vs-not",
+   "v-proud"
+  ]
+ },
+ {
+  "id": "v-confirmed-vs-not",
+  "cat": "overview",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "확실히 확인된 것과 아닌 것을 정리해 주세요",
+    "어디까지 믿어도 돼요",
+    "검증된 것과 안 된 것",
+    "뭐가 사실이에요",
+    "확인 상태 요약"
+   ],
+   "en": [
+    "Can you summarize what is confirmed and what isn't?",
+    "How far can I trust it?",
+    "What is verified and what isn't?",
+    "What is fact?",
+    "Confirmation status summary"
+   ]
+  },
+  "a": {
+   "ko": "확인된 것: 직접 만든 테스트 영상에서 기존 방식보다 약 2배 잘 따라간다는 점, 반응 속도, 자동 시험 통과. 일부만 확인: 실제 촬영 영상과 펜 정확도(영상이 적음). 아직 확인 못 함: 실제 컴퓨터를 오래 움직여 본 시험, 최신 연구들과의 비교, 다양한 환경, 사업성이에요.",
+   "en": "Confirmed: in our own test videos it tracks about 2 times as well as an older common method, the response speed, and the automatic tests passing. Partly confirmed: real filmed footage and pen accuracy (few videos). Not confirmed yet: long use moving a real computer, comparison with the latest research, many different environments, and commercial viability."
+  },
+  "kw": [
+   "검증",
+   "확인",
+   "요약",
+   "신뢰",
+   "사실",
+   "verified",
+   "confirmed",
+   "summary",
+   "trust",
+   "facts"
+  ],
+  "src": [
+   "소개서 §15"
+  ],
+  "related": [
+   "v-honesty-why",
+   "i-unverified"
+  ]
+ },
+ {
+  "id": "v-fair-comparison",
+  "cat": "overview",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "평가에서 일부러 유리한 조건만 고른 건 아닌가요?",
+    "조작 아닌가요",
+    "편향된 시험 아닌가요",
+    "공정한 비교인가요"
+   ],
+   "en": [
+    "Didn't you pick only favorable conditions for the evaluation?",
+    "Isn't it rigged?",
+    "Isn't the test biased?",
+    "Is it a fair comparison?"
+   ]
+  },
+  "a": {
+   "ko": "조정하는 데 쓴 영상과 평가에만 쓴 영상을 따로 나눴고, 같은 시험으로 기존 방식도 돌려 비교했어요. 약한 상황(닮은 물건, 꽉 쥔 손)의 낮은 성적도 숨기지 않았어요. 다만 컴퓨터로 만든 영상 위주라는 한계는 있어요.",
+   "en": "We separated the videos used for tuning from videos used only for evaluation, and ran the older method through the same test for comparison. We also reported the low scores in hard situations (look-alikes, a tight grip). The limit is that the tests rely mostly on computer-made videos."
+  },
+  "kw": [
+   "공정",
+   "유리",
+   "조작",
+   "편향",
+   "비교",
+   "fair",
+   "favorable",
+   "biased",
+   "rigged"
+  ],
+  "src": [
+   "소개서 §6.2~6.3"
+  ],
+  "related": [
+   "v-trust-numbers"
+  ]
+ },
+ {
+  "id": "v-model-names",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "정확히 어떤 AI 모델을 써요? 모델 이름이 뭐예요?",
+    "EfficientTAM을 써요",
+    "MediaPipe 써요",
+    "Depth Anything이 뭐예요",
+    "사용한 모델 목록",
+    "SAM을 쓰나요"
+   ],
+   "en": [
+    "Which exact AI models do you use? What are their names?",
+    "Do you use EfficientTAM?",
+    "Do you use MediaPipe?",
+    "What is Depth Anything?",
+    "List of models used",
+    "Do you use SAM?",
+    "Which AI models are used, by name?",
+    "Name the AI models"
+   ]
+  },
+  "a": {
+   "ko": "물건 윤곽을 따라가는 데는 EfficientTAM, 손 찾기에는 Apple Vision(선택하면 MediaPipe), 책상 기울기와 앞뒤 거리를 짐작하는 데는 Depth Anything V2 Small을 써요. 모두 공개된 모델이고 내 컴퓨터 안에서만 돌아가요.",
+   "en": "EfficientTAM follows an object's outline, Apple Vision finds hands (MediaPipe if you choose it), and Depth Anything V2 Small estimates desk tilt and front-to-back distance. All are openly available models and run only on your own computer."
+  },
+  "kw": [
+   "EfficientTAM",
+   "MediaPipe",
+   "Apple Vision",
+   "Depth Anything",
+   "SAM",
+   "모델 이름",
+   "모델 목록",
+   "model names",
+   "models",
+   "by name",
+   "named"
+  ],
+  "src": [
+   "소개서 §7, THIRD_PARTY.md"
+  ],
+  "related": [
+   "i-which-ai",
+   "i-why-that-ai"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "v-deep-tech",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "전문 용어(칼만 필터, 광학 흐름, 마스크 등)를 쉽게 설명해 주세요",
+    "칼만 필터가 뭐예요",
+    "광학 흐름이 뭐예요",
+    "마스크가 뭐예요",
+    "Tier 0 Tier 1이 뭐예요",
+    "분할이 뭐예요",
+    "기술 용어 풀이"
+   ],
+   "en": [
+    "Can you explain the technical terms (Kalman filter, optical flow, mask) simply?",
+    "What is a Kalman filter?",
+    "What is optical flow?",
+    "What is a mask?",
+    "What are Tier 0 and Tier 1?",
+    "What is segmentation?",
+    "Plain-language glossary"
+   ]
+  },
+  "a": {
+   "ko": "쉬운 말로 풀면 이래요. 광학 흐름은 화면 속 눈에 띄는 점들이 다음 장면에서 어디로 갔는지 따라가는 방법이에요. 칼만 필터는 지금까지의 움직임으로 다음 위치를 미리 짐작하고 실제와 비교해 바로잡는 방법이에요. 마스크는 물건 모양 그대로 칠한 영역이에요. 빠른 추적(Tier 0)이 매 장면을 맡고 AI(Tier 1)가 가끔 오차를 바로잡는 구조예요.",
+   "en": "In plain words: optical flow follows where eye-catching points in the picture moved in the next frame. A Kalman filter guesses the next position from the movement so far and corrects it against what is actually seen. A mask is an area painted in exactly the object's shape. The fast tracker (Tier 0) handles every frame and the AI (Tier 1) occasionally corrects the drift."
+  },
+  "kw": [
+   "칼만 필터",
+   "광학 흐름",
+   "마스크",
+   "분할",
+   "Tier",
+   "전문 용어",
+   "Kalman",
+   "optical flow",
+   "mask",
+   "segmentation",
+   "glossary",
+   "jargon"
+  ],
+  "src": [
+   "소개서 §7, 용어"
+  ],
+  "related": [
+   "g-tech-short",
+   "i-fast-plus-ai"
+  ]
+ },
+ {
+  "id": "v-recovery-meaning",
+  "cat": "arch",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "복구 시간이 뭐예요? 단축됐다는 게 무슨 뜻이에요?",
+    "복구 프레임이 뭐예요",
+    "73% 단축이 뭐예요",
+    "얼마나 빨리 되찾아요",
+    "다시 찾는 시간"
+   ],
+   "en": [
+    "What is recovery time? What does it mean that it got shorter?",
+    "What are recovery frames?",
+    "What does a 73% reduction mean?",
+    "How fast does it get the object back?",
+    "Time to find it again"
+   ]
+  },
+  "a": {
+   "ko": "물건이 가려지거나 화면 밖으로 나갔다 돌아온 뒤 다시 따라잡기까지 걸린 장면 수예요. 직접 만든 테스트에서 기존 방식은 평균 약 51장면, AnyControl은 약 14장면이라서 약 73% 줄었어요.",
+   "en": "It is the number of frames it takes to catch the object again after it was hidden or left the picture and came back. In our own tests the older method averaged about 51 frames and AnyControl about 14, which is about 73% fewer."
+  },
+  "kw": [
+   "복구",
+   "복구 시간",
+   "단축",
+   "되찾는",
+   "recovery",
+   "frames",
+   "faster",
+   "reacquire"
+  ],
+  "src": [
+   "소개서 §6.3, 포스터"
+  ],
+  "related": [
+   "v-success-rate-meaning",
+   "g-recover-numbers"
+  ]
+ },
+ {
+  "id": "v-no-search-while-tracking",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "잘 따라가는 동안에는 왜 다시 찾지 않아요?",
+    "정상 추적 중에는 탐색을 안 해요",
+    "계속 확인하면 안 돼요",
+    "왜 놓쳤을 때만 찾아요"
+   ],
+   "en": [
+    "Why doesn't it search again while tracking is going well?",
+    "It doesn't search during normal tracking",
+    "Why not keep checking?",
+    "Why search only when lost?"
+   ]
+  },
+  "a": {
+   "ko": "잘 따라가고 있을 때 다시 찾기가 끼어들면 닮은 다른 물건에 추적을 빼앗길 수 있다는 걸 실험에서 겪었어요. 그래서 놓쳤거나 가려졌을 때만 찾아요.",
+   "en": "In our experiments we found that a re-search kicking in while tracking is fine can let a look-alike object steal the tracking. So it only searches when the object is lost or hidden."
+  },
+  "kw": [
+   "탐색",
+   "재탐색",
+   "정상 추적",
+   "놓쳤을 때만",
+   "search",
+   "tracking",
+   "only when lost"
+  ],
+  "src": [
+   "소개서 §5.3"
+  ],
+  "related": [
+   "i-why-no-guess",
+   "v-hijack"
+  ]
+ },
+ {
+  "id": "v-hand-not-in-memory",
+  "cat": "arch",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "물건을 쥐어도 손 모양이 물건의 기억에 섞이지 않아요?",
+    "손이 기억에 들어가면 어떡해요",
+    "손을 물건으로 착각하지 않나요",
+    "쥔 손이 방해되지 않나요"
+   ],
+   "en": [
+    "When I grip an object, doesn't my hand get mixed into the memory of it?",
+    "What if the hand gets into the memory?",
+    "Won't it confuse the hand with the object?",
+    "Doesn't a gripping hand interfere?"
+   ]
+  },
+  "a": {
+   "ko": "등록할 때의 물체 모양을 기준으로 삼고, 가림이나 겹침 중에는 잘못된 모습을 덜 배우도록 보호해요. 손 가림 처리 옵션을 쓰면 인식한 손 영역도 추적에서 제외하는 단서로 사용해요. 물체끼리 겹칠 때는 새 외형 학습과 윤곽 보정을 잠시 보류해요. 그래도 손이 크게 가리거나 비슷한 물체가 지나가면 잘못 따라갈 수 있어요.",
+   "en": "The registered shape remains the identity reference, with protections against learning the wrong appearance during occlusion or overlap. The hand-occlusion option uses detected hand regions as an exclusion cue. Object overlap pauses new appearance learning and outline corrections. Strong hand cover or lookalike objects can still cause wrong tracking."
+  },
+  "kw": [
+   "손",
+   "기억",
+   "섞임",
+   "쥔 손",
+   "hand",
+   "memory",
+   "mixed",
+   "grip",
+   "contaminate"
+  ],
+  "src": [
+   "소개서 §5.1, §5.3"
+  ],
+  "related": [
+   "v-hold-object",
+   "v-memory-fixed"
+  ]
+ },
+ {
+  "id": "v-dev-mode",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "개발자 모드가 뭐예요?",
+    "렌치 버튼이 뭐예요",
+    "숨겨진 기능이 있어요",
+    "물체가 뭘 기억하는지 볼 수 있어요",
+    "내부 상태를 볼 수 있나요",
+    "개발자 모드는 뭐 하는 거예요",
+    "개발자 모드 설명"
+   ],
+   "en": [
+    "What is developer mode?",
+    "What is the wrench button?",
+    "Are there hidden features?",
+    "Can I see what the object has memorized?",
+    "Can I look at its inner workings?",
+    "What does developer mode do?"
+   ]
+  },
+  "a": {
+   "ko": "위쪽 기본·고급 전환으로 고급 모드를 켜면 세부 설정과 진단 표시가 나타나요. 깊이 지도와 터치 감지 표시 등을 필요할 때만 켜 볼 수 있어요. 입력 좌우 반전과 성능 패널, 맨손 카드와 주요 데모는 기본 모드에서도 쓸 수 있어요. 펜에는 기본 모드에서도 베타 표시가 붙어요. 고급 모드를 끄는 것만으로 현재 매핑이 초기화되지는 않아요.",
+   "en": "The Basic/Advanced switch reveals detailed controls and diagnostics. You can enable depth maps or touch diagnostics when needed. Input flipping, the performance panel, hand card and main demos are available in basic mode too. Pen input is labeled beta in basic mode as well. Leaving advanced mode does not reset current mappings."
+  },
+  "kw": [
+   "개발자 모드",
+   "렌치",
+   "내부 상태",
+   "기억 보기",
+   "developer mode",
+   "wrench",
+   "debug",
+   "internals",
+   "하는 거"
+  ],
+  "src": [
+   "anycontrol-web/HANDOFF.md §3.4"
+  ],
+  "related": [
+   "i-why-find-again"
+  ]
+ },
+ {
+  "id": "v-code-quality",
+  "cat": "arch",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "코드 품질은 어떻게 관리했어요?",
+    "테스트가 얼마나 많아요",
+    "버그 점검은 어떻게 했어요",
+    "유지보수는 쉬워요",
+    "시험 코드가 있어요"
+   ],
+   "en": [
+    "How did you manage code quality?",
+    "How many tests are there?",
+    "How did you check for bugs?",
+    "Is it easy to maintain?",
+    "Is there test code?",
+    "How do you make sure the code is good?",
+    "How do you ensure the code quality?"
+   ]
+  },
+  "a": {
+   "ko": "프로그램의 입력과 설정이 의도대로 동작하는지 확인하는 자동 시험이 수백 개 있어요. 손 없는 터치 오인식, 이름 변경 뒤 연결 유지, 초기화 순서, 물체 겹침 같은 경우도 검사해요. 다만 자동 시험 통과가 실제 카메라의 모든 상황이나 모든 사용자의 성공을 보장하지는 않아요. 다양한 실제 환경과 장시간 사용 검증은 별도로 필요해요.",
+   "en": "There are hundreds of automatic tests for input and settings behavior. They cover touch without a detected hand, connection preservation after renaming, reset order and object overlap. Passing these tests does not guarantee success for every camera scene or user. Wider real-world and long-duration testing is still needed."
+  },
+  "kw": [
+   "코드 품질",
+   "테스트",
+   "자동 시험",
+   "버그",
+   "유지보수",
+   "code quality",
+   "tests",
+   "bugs",
+   "maintainability",
+   "make sure"
+  ],
+  "src": [
+   "anycontrol-web/HANDOFF.md §11, 소개서 §8"
+  ],
+  "related": [
+   "g-tested",
+   "v-project-size"
+  ]
+ },
+ {
+  "id": "v-modify-code",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "코드를 직접 고쳐서 써 볼 수 있어요?",
+    "소스를 받아서 수정할 수 있나요",
+    "개발자용 실행 방법",
+    "커스터마이징",
+    "직접 빌드할 수 있나요"
+   ],
+   "en": [
+    "Can I modify the code and run my own version?",
+    "Can I download the source and edit it?",
+    "How do developers run it?",
+    "Customization",
+    "Can I build it myself?"
+   ]
+  },
+  "a": {
+   "ko": "코드는 GitHub에서 볼 수 있어요. 소스에서 직접 실행하려면 Python 3.12 이상과 Node.js 22 이상이 필요하고, 개발자용 안내에 방법이 있어요. 다만 코드를 고쳐 다시 배포해도 되는지 같은 사용 조건은 확인된 내용이 없어요.",
+   "en": "The code is on GitHub. To run it from source you need Python 3.12 or newer and Node.js 22 or newer, and the developer guide explains how. Whether you may modify and redistribute it has no confirmed terms."
+  },
+  "kw": [
+   "수정",
+   "커스터마이징",
+   "소스",
+   "빌드",
+   "개발자",
+   "modify",
+   "customize",
+   "source",
+   "build",
+   "developer"
+  ],
+  "src": [
+   "README, anycontrol-web/DEVELOPMENT.md"
+  ],
+  "related": [
+   "h-opensource",
+   "g-open-source"
+  ]
+ },
+ {
+  "id": "v-camera-distance",
+  "cat": "usage",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "카메라는 책상에서 얼마나 떨어져 있어야 해요?",
+    "카메라 거리가 얼마예요",
+    "몇 센티 떨어져야 해요",
+    "너무 멀면 어떻게 돼요",
+    "가까이 놓아도 돼요"
+   ],
+   "en": [
+    "How far from the desk should the camera be?",
+    "What distance for the camera?",
+    "How many centimeters away?",
+    "What if it's too far?",
+    "Can I put it close?"
+   ]
+  },
+  "a": {
+   "ko": "정해진 거리는 확인된 게 없어요. 책상 옆에서 수평에 가깝게 놓고, 움직일 영역이 화면 가운데에 크게 보이게 맞춰 주세요. 펜은 가까이 놓을수록 정밀해질 수 있다고 보고 있어요.",
+   "en": "There's no confirmed distance. Place it beside the desk close to level, with the area you will move in large and in the middle of the picture. For pens, closer placement may improve precision."
+  },
+  "kw": [
+   "거리",
+   "센티",
+   "가까이",
+   "멀리",
+   "distance",
+   "cm",
+   "close",
+   "far",
+   "camera distance"
+  ],
+  "src": [
+   "팀 확인, 소개서 §4"
+  ],
+  "related": [
+   "v-camera-place"
+  ]
+ },
+ {
+  "id": "v-desk-area",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "책상 영역을 설정한다는 건 뭐예요?",
+    "A4 종이로 보정한다는 게 뭐예요",
+    "책상 범위 설정",
+    "수평 기준이 뭐예요"
+   ],
+   "en": [
+    "What does setting the desk area mean?",
+    "What is calibrating with A4 paper?",
+    "Setting the desk range",
+    "What is the horizontal reference?"
+   ]
+  },
+  "a": {
+   "ko": "예전에 종이 모서리나 수평선을 직접 찍는 화면이 있었지만 지금은 그 등록 화면을 제공하지 않아요. 일반 물체나 맨손은 대상을 고른 뒤 자동 보정을 사용하면 돼요. 지원되는 카메라의 책상 보기 방식과 펜 접촉 보정은 별도로 남아 있어요. 없어진 종이 선택 버튼을 찾느라 설정을 진행하지 못할 필요는 없어요.",
+   "en": "There used to be controls for marking paper corners or a horizontal line, but those registration controls are no longer available. Select your object or hand target and use automatic calibration instead. Supported desk-view capture and pen contact calibration remain separate features. You do not need to find the removed paper-selection button to continue."
+  },
+  "kw": [
+   "책상 영역",
+   "A4",
+   "수평",
+   "기준",
+   "보정",
+   "desk area",
+   "A4 paper",
+   "level",
+   "horizontal",
+   "calibration"
+  ],
+  "src": [
+   "소개서 §4"
+  ],
+  "related": [
+   "h-calibration",
+   "v-camera-place"
+  ]
+ },
+ {
+  "id": "v-resolution",
+  "cat": "usage",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "카메라 화질이나 해상도는 어느 정도여야 해요?",
+    "4K 카메라가 필요해요",
+    "화질이 좋아야 해요",
+    "해상도 지원",
+    "몇 p예요"
+   ],
+   "en": [
+    "How good does the camera quality or resolution need to be?",
+    "Do I need a 4K camera?",
+    "Does quality matter?",
+    "Supported resolutions",
+    "How many pixels?"
+   ]
+  },
+  "a": {
+   "ko": "iPhone 카메라로 1280×720 크기의 영상을 받아 쓰는 것으로 시험했어요. 해상도별로 성능을 비교한 결과는 없어요. 펜은 화질이 좋고 가까울수록 정밀해질 수 있다고 보고 연구 중이에요.",
+   "en": "We tested with 1280×720 video from an iPhone camera. There is no comparison of performance across resolutions. For pens we think a sharper, closer picture could help precision, and we're researching it."
+  },
+  "kw": [
+   "화질",
+   "해상도",
+   "4K",
+   "720p",
+   "resolution",
+   "quality",
+   "pixels",
+   "1080p"
+  ],
+  "src": [
+   "소개서 §6.3, §4"
+  ],
+  "related": [
+   "h-webcam"
+  ]
+ },
+ {
+  "id": "v-phone-call",
+  "cat": "usage",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "iPhone에 전화가 오거나 화면이 잠기면 어떻게 돼요?",
+    "전화 오면",
+    "폰이 잠기면",
+    "알림이 오면",
+    "아이폰 배터리는요"
+   ],
+   "en": [
+    "What happens if the iPhone gets a call or locks?",
+    "If a call comes in",
+    "If the phone locks",
+    "If a notification arrives",
+    "What about the iPhone battery?"
+   ]
+  },
+  "a": {
+   "ko": "그런 상황을 시험한 결과는 없어요. 안내로는 USB로 연결한 iPhone을 잠근 채 거치대에 고정해 두고 쓰라고 해요.",
+   "en": "We have no test results for those situations. The guidance is to connect the iPhone by USB, lock it, and keep it fixed in its holder."
+  },
+  "kw": [
+   "전화",
+   "잠금",
+   "알림",
+   "배터리",
+   "call",
+   "lock",
+   "notification",
+   "battery"
+  ],
+  "src": [
+   "README"
+  ],
+  "related": [
+   "h-iphone-camera"
+  ]
+ },
+ {
+  "id": "v-click-styles",
+  "cat": "hand",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "클릭 방식이 두 가지라던데요?",
+    "집기 말고 다른 클릭",
+    "손가락 클릭이 뭐예요",
+    "클릭 방식 바꾸기"
+   ],
+   "en": [
+    "I heard there are two click styles?",
+    "A click other than pinching",
+    "What is finger-down click?",
+    "Changing the click style"
+   ]
+  },
+  "a": {
+   "ko": "맨손 마우스의 기본은 엄지 집게예요. 엄지+검지로 왼쪽 누름·드래그, 엄지+중지로 오른쪽 누름을 해요. 고급 설정에는 손가락을 내려 누르는 대체 방식도 남아 있지만 기본 안내와는 달라요. 예전에 있던 물체 마우스의 손가락 클릭은 없어졌고, 지금 물체 마우스는 커서 이동만 해요.",
+   "en": "The hand mouse uses thumb pinches by default: thumb + index for left press and drag, thumb + middle for right press. Advanced settings keep an alternative where you lower a finger to press, but it differs from the default guide. The old finger click for the object mouse was removed; the object mouse now only moves the cursor."
+  },
+  "kw": [
+   "클릭 방식",
+   "손가락 클릭",
+   "click style",
+   "finger click"
+  ],
+  "src": [
+   "anycontrol-web/HANDOFF.md §10"
+  ],
+  "related": [
+   "v-click-drag-scroll",
+   "h-hybrid-limit"
+  ]
+ },
+ {
+  "id": "v-pinch-sensitivity",
+  "cat": "hand",
+  "status": "info",
+  "q": {
+   "ko": [
+    "집기 민감도가 뭐예요?",
+    "클릭이 너무 잘 돼요",
+    "클릭이 잘 안 돼요",
+    "집기 감도 조절"
+   ],
+   "en": [
+    "What is pinch sensitivity?",
+    "Clicks trigger too easily",
+    "Clicks don't trigger",
+    "Adjusting pinch sensitivity"
+   ]
+  },
+  "a": {
+   "ko": "엄지와 손가락 끝이 얼마나 가까워져야 집은 것으로 볼지 정하는 값이에요. 맨손 마우스에서 클릭이 잘 안 되면 높이고, 저절로 눌리면 낮춰 볼 수 있어요. 자동 보정은 기본적으로 이동만 맞추므로 집기도 맞추려면 클릭·스크롤 보정을 선택해 주세요. 손가락이 가려진 상태를 감도만으로 해결할 수는 없어요.",
+   "en": "It sets how close the thumb and fingertip must be to count as a pinch. Raise it for missed hand-mouse clicks or lower it for accidental presses. Automatic calibration tunes movement by default, so select optional click/scroll tuning if you want pinch calibrated too. Sensitivity alone cannot fix hidden fingertips."
+  },
+  "kw": [
+   "집기",
+   "민감도",
+   "감도",
+   "클릭 민감도",
+   "pinch",
+   "sensitivity",
+   "threshold"
+  ],
+  "src": [
+   "소개서 §4, §12"
+  ],
+  "related": [
+   "v-click-styles",
+   "h-calibration"
+  ]
+ },
+ {
+  "id": "v-3sec",
+  "cat": "usage",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "3초 유예가 뭐예요?",
+    "카운트다운이 뭐예요",
+    "켜자마자 움직이나요",
+    "실제 입력을 켜면 뭐가 보여요",
+    "빨간 경고가 뭐예요"
+   ],
+   "en": [
+    "What is the 3-second delay?",
+    "What is the countdown?",
+    "Does it move as soon as I switch it on?",
+    "What do I see when real input is on?",
+    "What is the red warning?"
+   ]
+  },
+  "a": {
+   "ko": "실제 입력을 켜면 바로 시작하지 않고 3초 카운트다운 뒤에 시작해서, 그 사이에 취소할 수 있어요. 켜져 있는 동안은 화면 위에 빨간 경고 막대가 보이고, Esc를 누르면 바로 멈춰요.",
+   "en": "When you turn on real input it doesn't start immediately: a 3-second countdown runs first and you can cancel during it. While it's on, a red warning bar shows at the top of the screen, and pressing Esc stops it at once."
+  },
+  "kw": [
+   "3초",
+   "유예",
+   "카운트다운",
+   "빨간 경고",
+   "배너",
+   "3 seconds",
+   "countdown",
+   "red warning",
+   "banner",
+   "Esc"
+  ],
+  "src": [
+   "소개서 §9"
+  ],
+  "related": [
+   "g-safe-real",
+   "h-emergency-stop"
+  ]
+ },
+ {
+  "id": "v-ipad-macmini",
+  "cat": "usage",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "아이패드나 맥 미니에서도 쓸 수 있어요?",
+    "입력 장치가 없는 기기",
+    "iPad에서 돼요",
+    "맥미니는요",
+    "키보드 마우스 없는 기기"
+   ],
+   "en": [
+    "Can it be used on an iPad or a Mac mini?",
+    "Devices without input devices",
+    "Does it work on iPad?",
+    "What about Mac mini?",
+    "Devices with no keyboard or mouse"
+   ]
+  },
+  "a": {
+   "ko": "마우스나 키보드가 기본으로 없는 기기에도 쓰고 싶다는 것이 앞으로의 방향이에요. 아직 시험하지 않았고, iPad용 앱도 없어요.",
+   "en": "Using it on devices that come without a mouse or keyboard is a direction we'd like to go. We haven't tested it, and there is no iPad app."
+  },
+  "kw": [
+   "아이패드",
+   "맥미니",
+   "iPad",
+   "Mac mini",
+   "입력 장치 없는",
+   "no keyboard",
+   "tablet"
+  ],
+  "src": [
+   "소개서 §10, §14"
+  ],
+  "related": [
+   "g-os-support",
+   "g-no-mouse"
+  ]
+ },
+ {
+  "id": "v-presentation",
+  "cat": "usage",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "발표할 때 슬라이드를 넘기는 데 쓸 수 있어요?",
+    "발표용 리모컨 대신",
+    "제스처로 발표",
+    "프레젠테이션에 쓸 수 있나요"
+   ],
+   "en": [
+    "Can I use it to change slides during a presentation?",
+    "Instead of a presentation clicker",
+    "Present with gestures",
+    "Use in presentations"
+   ]
+  },
+  "a": {
+   "ko": "제스처로 발표하는 것을 활용 아이디어로 소개해요. 물건이나 손의 움직임을 방향키에 연결하면 구조상 가능하지만, 발표 전용 기능이나 실제로 써 본 확인은 없어요.",
+   "en": "Presenting with gestures is listed as a possible use. Connecting an object's or hand's movement to the arrow keys should work in principle, but there's no presentation-specific feature or real-world check."
+  },
+  "kw": [
+   "발표",
+   "프레젠테이션",
+   "슬라이드",
+   "제스처",
+   "presentation",
+   "slides",
+   "clicker",
+   "gesture"
+  ],
+  "src": [
+   "소개서 §10"
+  ],
+  "related": [
+   "g-edu-game-create"
+  ]
+ },
+ {
+  "id": "v-body-foot",
+  "cat": "usage",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "발이나 몸으로도 조작할 수 있어요?",
+    "발로 조작",
+    "페달 대신 발",
+    "전신 인식",
+    "발판"
+   ],
+   "en": [
+    "Can it be controlled by feet or body?",
+    "Control with my foot",
+    "Foot as a pedal",
+    "Full-body recognition",
+    "Foot pedal"
+   ]
+  },
+  "a": {
+   "ko": "바닥의 물건이나 발의 움직임을 입력으로 쓰는 것은 아이디어로만 제시했고 아직 만들지 않았어요.",
+   "en": "Using objects on the floor or foot movement as input is only an idea so far and hasn't been built."
+  },
+  "kw": [
+   "발",
+   "몸",
+   "페달",
+   "발판",
+   "foot",
+   "body",
+   "pedal",
+   "full body"
+  ],
+  "src": [
+   "소개서 §3.2"
+  ],
+  "related": [
+   "g-future"
+  ]
+ },
+ {
+  "id": "v-pen-accuracy",
+  "cat": "pen",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜 입력은 얼마나 정확해요?",
+    "펜 정확도",
+    "펜 끝 위치가 얼마나 정확해요",
+    "닿는 순간을 잘 맞혀요",
+    "펜 성능이 어느 정도예요",
+    "펜은 정확해요",
+    "펜 정확도는요",
+    "그건 정확해요 펜",
+    "펜 끝 잘 따라가요"
+   ],
+   "en": [
+    "How accurate is the pen input?",
+    "Pen accuracy",
+    "How precise is the pen tip position?",
+    "Does it catch the moment of touch well?",
+    "How well does the pen perform?",
+    "Is pen input reliable enough for drawing?",
+    "Can pen contact detection be trusted?",
+    "Can you trust pen input for writing?",
+    "How much can I trust pen contact?",
+    "Is the pen feature trustworthy?",
+    "is the pen precise",
+    "does the pen follow well",
+    "how precise is the pen"
+   ]
+  },
+  "a": {
+   "ko": "직접 찍은 영상 한두 개에서는 펜 끝 위치를 꽤 가깝게 따라갔고, 펜이 책상에 닿은 순간도 대부분 맞혔어요. 하지만 영상이 아주 적고 전문 그림 태블릿 수준은 아니라서, 다른 환경에서도 그렇다고 말씀드릴 수는 없어요.",
+   "en": "In one or two videos we filmed ourselves, it followed the pen tip fairly closely and caught most of the moments the pen touched the desk. But there are very few videos and it is not at professional-tablet level, so I can't say it holds up in other settings."
+  },
+  "kw": [
+   "펜 정확도",
+   "오차",
+   "접촉",
+   "정밀",
+   "pen accuracy",
+   "precision",
+   "touch",
+   "error",
+   "pen reliability",
+   "pen trust",
+   "pen feature",
+   "trust pen",
+   "pen feature reliability",
+   "펜 정확",
+   "precise"
+  ],
+  "src": [
+   "소개서 §4, 팀 확인"
+  ],
+  "related": [
+   "i-pen-few-videos",
+   "g-tablet-deck"
+  ]
+ },
+ {
+  "id": "v-pen-flip",
+  "cat": "pen",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜을 거꾸로 잡으면 어떻게 돼요?",
+    "펜촉 방향이 뒤집혀요",
+    "펜이 다시 나타났을 때 방향이 바뀌면",
+    "펜 뒤집기"
+   ],
+   "en": [
+    "What happens if I hold the pen upside down?",
+    "The pen tip direction flips",
+    "If its direction changes after it reappears",
+    "Flipping the pen"
+   ]
+  },
+  "a": {
+   "ko": "펜이 다시 보일 때 앞뒤가 뒤집혔다고 판단되면, 처음에 기억해 둔 펜촉과 반대쪽 끝의 색 차이로 바로잡는 기능이 있어요. 두 끝의 색이 비슷한 펜에서는 쓸 수 없고, 이 기능은 컴퓨터로 만든 시험으로만 확인했어요.",
+   "en": "If the pen appears flipped front-to-back when it reappears, there's a feature that corrects it using the color difference between the pen tip and the opposite end remembered earlier. It can't work for pens whose two ends look alike, and we've only verified it with computer-made tests."
+  },
+  "kw": [
+   "거꾸로",
+   "뒤집힘",
+   "방향",
+   "펜 뒤집기",
+   "upside down",
+   "flipped",
+   "direction",
+   "reversed"
+  ],
+  "src": [
+   "anycontrol-web/HANDOFF.md §3.7"
+  ],
+  "related": [
+   "i-pen-hidden"
+  ]
+ },
+ {
+  "id": "v-pen-color",
+  "cat": "pen",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "펜 색이나 굵기를 바꿀 수 있어요?",
+    "그림판 색 바꾸기",
+    "붓 굵기",
+    "그림 저장할 수 있어요",
+    "지우개가 있어요"
+   ],
+   "en": [
+    "Can I change the pen color or thickness?",
+    "Changing colors in the drawing pad",
+    "Brush size",
+    "Can I save the drawing?",
+    "Is there an eraser?"
+   ]
+  },
+  "a": {
+   "ko": "현재 그림판은 펜이나 맨손 입력을 연습하고 그린 내용을 지우는 기능을 중심으로 제공해요. 전문 그림 도구처럼 다양한 색·브러시·저장 기능을 갖췄다고 안내할 수는 없어요. 펜을 쓰려면 먼저 등록하고 접촉 보정을 확인해 주세요. 맨손은 그리기 활성화 뒤 엄지와 검지를 맞댄 채 검지를 움직여요.",
+   "en": "The current drawing pad focuses on practicing pen or hand input and clearing strokes. It is not presented as a full painting tool with extensive colors, brushes or export features. Register a pen and check contact calibration before using it. For hand drawing, enable it and move the index while pinching thumb and index."
+  },
+  "kw": [
+   "색",
+   "굵기",
+   "저장",
+   "지우개",
+   "그림판",
+   "color",
+   "thickness",
+   "save",
+   "eraser",
+   "drawing pad"
+  ],
+  "src": [
+   "팀 확인"
+  ],
+  "related": [
+   "g-demos",
+   "g-pen-mode"
+  ]
+ }
+]

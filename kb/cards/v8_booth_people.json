@@ -1,0 +1,1139 @@
+[
+ {
+  "id": "w-passerby",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "지나가다가 들렀어요. 간단히 알려 주세요",
+    "그냥 구경 왔어요",
+    "우연히 들렀는데 뭐 하는 거예요",
+    "잘 모르고 왔어요",
+    "처음 보는데 한마디로 뭐예요"
+   ],
+   "en": [
+    "I just stopped by. Can you give me a quick overview?",
+    "I'm just browsing",
+    "I wandered in, what is this?",
+    "I know nothing about this",
+    "I've never seen it, what is it in short?"
+   ]
+  },
+  "a": {
+   "ko": "반가워요! AnyControl은 카메라 한 대로 책상 위 물건, 평범한 펜, 맨손을 마우스나 키보드처럼 쓰게 해 주는 프로그램이에요. 컵을 밀면 화면의 화살표가 움직이고, 펜으로 그리면 그림이 그려지는 식이에요. 더 알고 싶으면 \"어떻게 동작해요?\"나 \"아쉬운 점은요?\"를 눌러 보세요.",
+   "en": "Welcome! AnyControl is a program that lets one camera turn objects on a desk, an ordinary pen or a bare hand into a mouse or keyboard. Slide a cup and the arrow on the screen moves; draw with a pen and a picture appears. To learn more, tap \"How does it work?\" or \"What are the limits?\""
+  },
+  "kw": [
+   "지나가다",
+   "구경",
+   "처음",
+   "우연히",
+   "잘 몰라",
+   "간단히",
+   "passing by",
+   "browsing",
+   "quick overview",
+   "no idea",
+   "just looking"
+  ],
+  "src": [
+   "소개서 §1"
+  ],
+  "related": [
+   "g-what-is",
+   "v-summary-30s",
+   "v-explain-easy"
+  ]
+ },
+ {
+  "id": "w-judge",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "심사위원인데 핵심 평가 포인트만 알려 주세요",
+    "심사 기준별로 정리해 주세요",
+    "평가자에게 어필할 점이 뭐예요",
+    "심사할 때 볼 만한 것",
+    "가장 강조하고 싶은 게 뭐예요"
+   ],
+   "en": [
+    "I'm a judge. Can you give me the key points to evaluate?",
+    "Summarize it by judging criteria",
+    "What would you like evaluators to notice?",
+    "What should I look at when judging?",
+    "What do you want to emphasize most?"
+   ]
+  },
+  "a": {
+   "ko": "네 가지 기준에 맞춰 말씀드릴게요. 첫째, 문제 접근: 용도마다 늘어나는 주변기기를 카메라 한 대와 평범한 물건으로 풀어 보려 했어요. 둘째, 기술: 빠른 추적과 AI 보정을 나누고, 가려져도 기억한 모양으로 다시 찾아요. 셋째, 쓸모: 접근성·전시·교육·창작에 쓸 수 있지만 사용자 시험은 아직 없어요. 넷째, 완성도: 자동 시험과 정직한 한계 공개에 신경 썼어요.",
+   "en": "Here are the four criteria in turn. First, approach: we tried to solve the growing pile of peripherals with one camera and ordinary objects. Second, technology: it splits fast tracking from AI correction and finds hidden objects again from a remembered shape. Third, usefulness: it could serve accessibility, exhibitions, education and creativity, but there are no user studies yet. Fourth, completeness: we focused on automated tests and honest disclosure of limits."
+  },
+  "kw": [
+   "심사위원",
+   "평가",
+   "핵심",
+   "기준별",
+   "어필",
+   "포인트",
+   "judge",
+   "evaluator",
+   "criteria",
+   "key points",
+   "emphasize"
+  ],
+  "src": [
+   "소개서 §1 심사 기준별 안내"
+  ],
+  "related": [
+   "v-judging",
+   "v-proud",
+   "v-confirmed-vs-not"
+  ]
+ },
+ {
+  "id": "w-professor",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "교수님이나 전문가가 볼 만한 기술적인 부분이 있어요?",
+    "전문가용으로 기술적으로 설명해 주세요",
+    "좀 더 깊이 있게 알려 주세요",
+    "기술적인 내용을 자세히 알고 싶어요",
+    "연구자 입장에서 흥미로운 점"
+   ],
+   "en": [
+    "Is there anything technical an expert would find interesting?",
+    "Can you explain it more technically for an expert?",
+    "Can you go a bit deeper?",
+    "I would like to know the technical details",
+    "What is interesting from a researcher's point of view?"
+   ]
+  },
+  "a": {
+   "ko": "연구자분들이 흥미로워할 만한 점은 세 가지예요. 빠른 추적(점 추적과 색 모델, 칼만 필터)과 비동기 AI 마스크 보정의 두 단계 구조, 등록한 모양 기억으로 다시 찾을 때 후보를 여러 조건으로 검증하고 애매하면 거부하는 설계, 그리고 합성 영상으로 만든 평가 체계예요. 더 깊은 내용은 발표자에게 물어봐 주세요.",
+   "en": "Three things might interest researchers: the two-step structure of fast tracking (point tracking, a color model and a Kalman filter) plus asynchronous AI mask correction; the design that checks re-found candidates against several conditions and rejects ambiguous ones; and the evaluation setup built on synthetic videos. For more depth, please ask the presenter."
+  },
+  "kw": [
+   "교수님",
+   "전문가",
+   "연구자",
+   "기술적",
+   "깊이",
+   "자세히",
+   "professor",
+   "expert",
+   "researcher",
+   "technical",
+   "in depth",
+   "details"
+  ],
+  "src": [
+   "논문 §4~§7"
+  ],
+  "related": [
+   "v-deep-tech"
+  ]
+ },
+ {
+  "id": "w-student-report",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "과제나 리포트에 이 내용을 인용해도 돼요?",
+    "레포트 쓰는데 참고해도 돼요",
+    "이 챗봇 답을 출처로 써도 되나요",
+    "발표 자료에 넣어도 돼요",
+    "학교 과제에 이 설명을 써도 될까요"
+   ],
+   "en": [
+    "May I cite this in a school assignment or report?",
+    "Can I use it as a reference for my report?",
+    "Can I use this chatbot's answers as a source?",
+    "Can I put it in my slides?",
+    "Is it fine to use this explanation for homework?"
+   ]
+  },
+  "a": {
+   "ko": "챗봇은 틀릴 수 있어서 이 대화를 그대로 출처로 쓰시는 건 권하지 않아요. 정확한 내용은 공식 GitHub 저장소(maboloar/anycontrol)와 발표자에게 확인하시고 인용해 주세요. 사용 조건(라이선스)에 대해서는 확인된 안내가 없어요.",
+   "en": "This chatbot can be wrong, so I don't recommend citing this conversation directly. Please verify with the official GitHub repository (maboloar/anycontrol) and the presenter before citing. There is no confirmed guidance on the license terms."
+  },
+  "kw": [
+   "과제",
+   "리포트",
+   "레포트",
+   "인용",
+   "출처",
+   "참고",
+   "숙제",
+   "cite",
+   "report",
+   "assignment",
+   "source",
+   "reference",
+   "homework"
+  ],
+  "src": [
+   "챗봇 한계, README"
+  ],
+  "related": [
+   "v-chatbot-wrong",
+   "g-open-source",
+   "w-materials"
+  ]
+ },
+ {
+  "id": "w-press",
+  "cat": "booth",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "취재나 기사 때문에 문의하고 싶어요",
+    "기자인데요",
+    "인터뷰 가능해요",
+    "홍보 담당자가 있어요",
+    "언론 문의는 어떻게 해요"
+   ],
+   "en": [
+    "I'd like to ask about press coverage",
+    "I'm a reporter",
+    "Can I do an interview?",
+    "Is there a PR contact?",
+    "How do I make a media inquiry?"
+   ]
+  },
+  "a": {
+   "ko": "취재나 인터뷰 가능 여부에 관한 안내는 제가 가진 자료에 없어요. 부스의 발표자에게 직접 문의해 주세요. 개인 연락처는 안내해 드리지 않아요.",
+   "en": "I have no information about press coverage or interviews. Please ask the presenter at the booth directly. I don't share personal contact details."
+  },
+  "kw": [
+   "취재",
+   "기사",
+   "기자",
+   "인터뷰",
+   "언론",
+   "홍보",
+   "press",
+   "reporter",
+   "interview",
+   "media",
+   "PR"
+  ],
+  "src": [
+   "확인된 내용 없음"
+  ],
+  "related": [
+   "w-presenter",
+   "w-email"
+  ]
+ },
+ {
+  "id": "w-venue",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "화장실이나 와이파이는 어디에 있어요?",
+    "충전할 수 있는 곳이 있어요",
+    "음료는 어디서 살 수 있어요",
+    "행사장 안내 부탁해요",
+    "주차는 어디에 해요"
+   ],
+   "en": [
+    "Where are the restrooms or the Wi-Fi?",
+    "Is there somewhere to charge my phone?",
+    "Where can I buy a drink?",
+    "Can you guide me around the venue?",
+    "Where do I park?"
+   ]
+  },
+  "a": {
+   "ko": "행사장의 시설 안내는 제가 알지 못해요. 저는 AnyControl 안내만 맡고 있어요. 현장 안내판이나 행사 스태프에게 물어봐 주세요.",
+   "en": "I don't know the venue's facilities. I only guide visitors through AnyControl. Please check the signs or ask event staff."
+  },
+  "kw": [
+   "화장실",
+   "와이파이",
+   "충전",
+   "음료",
+   "주차",
+   "행사장",
+   "안내",
+   "restroom",
+   "Wi-Fi",
+   "charging",
+   "drink",
+   "parking",
+   "venue"
+  ],
+  "src": [
+   "챗봇 범위"
+  ],
+  "related": [
+   "w-presenter",
+   "w-other-teams"
+  ]
+ },
+ {
+  "id": "w-english-visitor",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "영어로 설명해 줄 수 있어요?",
+    "한국어를 못 해요",
+    "외국인인데 도와줄 수 있어요",
+    "영어로 바꿔 주세요",
+    "다른 언어도 돼요"
+   ],
+   "en": [
+    "Can you explain in English?",
+    "I don't speak Korean",
+    "I'm a foreigner, can you help?",
+    "Can you switch to English?",
+    "Do you support other languages?",
+    "Please help me in English only",
+    "I need English explanations",
+    "Could you help me if I speak English?",
+    "Speak English with me please",
+    "I speak English only and need assistance",
+    "Can you assist someone who speaks only English?"
+   ]
+  },
+  "a": {
+   "ko": "네, 영어로 질문하시면 영어로 답해요. 오른쪽 위의 \"English\" 버튼을 누르면 화면과 질문 버튼도 모두 영어로 바뀌어요. 지원하는 언어는 한국어와 영어 두 가지예요.",
+   "en": "Yes, if you ask in English I reply in English. Tap the \"English\" button at the top right and the whole screen and the question buttons switch to English. The supported languages are Korean and English."
+  },
+  "kw": [
+   "영어",
+   "외국인",
+   "언어",
+   "일본어",
+   "중국어",
+   "English",
+   "foreigner",
+   "language",
+   "Japanese",
+   "Chinese",
+   "switch language",
+   "speak English",
+   "English help",
+   "only English",
+   "help in English"
+  ],
+  "src": [
+   "챗봇 화면"
+  ],
+  "related": [
+   "v-chatbot-languages"
+  ]
+ },
+ {
+  "id": "w-text-size",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "글씨가 너무 작아요. 크게 볼 수 있어요?",
+    "화면 글자 크게 하고 싶어요",
+    "확대하는 방법",
+    "글자가 안 보여요",
+    "화면이 작아서 불편해요"
+   ],
+   "en": [
+    "The text is too small. Can I make it bigger?",
+    "I want larger text",
+    "How do I zoom in?",
+    "I can't read the text",
+    "The screen is too small"
+   ]
+  },
+  "a": {
+   "ko": "이 화면에는 글자 크기 버튼이 따로 없지만, 브라우저의 확대 기능을 쓰면 돼요. Mac에서는 Command 키와 + 키를, Windows에서는 Ctrl 키와 + 키를 함께 누르면 커져요.",
+   "en": "There is no text-size button on this screen, but you can use your browser's zoom. Press Command and + together on a Mac, or Ctrl and + together on Windows."
+  },
+  "kw": [
+   "글씨",
+   "글자 크기",
+   "확대",
+   "작아요",
+   "안 보여요",
+   "크게",
+   "text size",
+   "zoom",
+   "too small",
+   "bigger",
+   "can't read"
+  ],
+  "src": [
+   "챗봇 화면(브라우저 기능)"
+  ],
+  "related": [
+   "w-chat-how-use"
+  ]
+ },
+ {
+  "id": "w-my-name",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "제 이름은 민수예요",
+    "저는 ○○라고 해요",
+    "내 이름 기억해 줘",
+    "제 이름 알려 줄게요",
+    "My name is Alex"
+   ],
+   "en": [
+    "My name is Alex",
+    "I'm called Sam",
+    "Remember my name",
+    "Let me tell you my name",
+    "Call me Chris"
+   ]
+  },
+  "a": {
+   "ko": "반가워요! 이름을 기억하지는 못하지만, 궁금한 점을 편하게 물어보세요.",
+   "en": "Nice to meet you! I can't remember names, but feel free to ask me anything."
+  },
+  "kw": [
+   "이름",
+   "제 이름",
+   "기억해",
+   "저는",
+   "my name",
+   "I'm called",
+   "remember me",
+   "call me"
+  ],
+  "src": [
+   "챗봇 설명"
+  ],
+  "related": [
+   "w-bot-human"
+  ]
+ },
+ {
+  "id": "w-quiz",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "AnyControl 퀴즈를 내 주세요",
+    "퀴즈 하나만 풀어 볼래요",
+    "문제 내 줘",
+    "재미있는 퀴즈 있어요",
+    "맞히기 게임 해요"
+   ],
+   "en": [
+    "Quiz me about AnyControl",
+    "Give me a quiz question",
+    "Let me try a quiz",
+    "Is there a fun quiz?",
+    "Let's play a guessing game"
+   ]
+  },
+  "a": {
+   "ko": "문제는 세 개예요! 첫째, AnyControl이 한 번에 따라갈 수 있는 물건은 최대 몇 개일까요? 둘째, 물건이 손에 가려졌다 다시 보일 때 무엇을 이용해 다시 찾을까요? 셋째, 실제 마우스가 멈추지 않을 때 누르는 키는? 정답은 첫째 6개, 둘째 처음 등록할 때 기억해 둔 모양과 색, 셋째 Esc 키예요.",
+   "en": "Three questions! First, what is the maximum number of objects AnyControl can follow at once? Second, when an object is hidden by a hand and reappears, what does it use to find it again? Third, which key do you press if the real mouse won't stop? Answers: first, 6 objects; second, the shape and color remembered at registration; third, the Esc key."
+  },
+  "kw": [
+   "퀴즈",
+   "문제",
+   "맞히기",
+   "게임",
+   "정답",
+   "quiz",
+   "question",
+   "guessing game",
+   "trivia",
+   "answer"
+  ],
+  "src": [
+   "소개서 §3.1, §5, §9"
+  ],
+  "related": [
+   "i-max-objects",
+   "g-recover",
+   "h-emergency-stop"
+  ]
+ },
+ {
+  "id": "w-fun-facts",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "재미있는 사실 하나만 알려 주세요",
+    "몰랐던 사실이 뭐예요",
+    "신기한 사실",
+    "흥미로운 이야기 하나",
+    "트리비아 알려 줘"
+   ],
+   "en": [
+    "Tell me one fun fact",
+    "What is something I probably don't know?",
+    "A surprising fact",
+    "An interesting story",
+    "Give me a trivia fact"
+   ]
+  },
+  "a": {
+   "ko": "이런 건 어때요? AnyControl은 닮은 물건으로 잘못 옮겨 가는 것보다 잠깐 멈추는 쪽이 낫다고 보고, 헷갈리면 일부러 고르지 않고 기다리도록 만들었어요. 또 개발 중 \"AI 모델을 매 장면 돌리면 너무 느리다\"는 걸 직접 재 보고, 빠른 추적과 AI를 나눠 쓰게 됐어요.",
+   "en": "How about this? AnyControl was built to wait rather than pick when it is unsure, because pausing briefly beats jumping to a lookalike object. Also, during development the team measured that running the AI model on every frame was too slow, which is why a fast tracker and the AI share the work."
+  },
+  "kw": [
+   "재미있는 사실",
+   "신기한",
+   "트리비아",
+   "흥미",
+   "fun fact",
+   "trivia",
+   "interesting",
+   "surprising"
+  ],
+  "src": [
+   "소개서 §5, §6.4"
+  ],
+  "related": [
+   "i-why-no-guess",
+   "i-why-not-ai-only",
+   "w-first-impression"
+  ]
+ },
+ {
+  "id": "w-why-mac-only",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "왜 Mac에서만 되는 거예요?",
+    "Mac 전용인 이유가 뭐예요",
+    "Apple 칩이 꼭 필요한 이유",
+    "왜 맥만 지원해요",
+    "다른 컴퓨터는 왜 안 돼요"
+   ],
+   "en": [
+    "Why does it only work on Mac?",
+    "Why is it Mac-only?",
+    "Why is an Apple chip required?",
+    "Why do you only support Macs?",
+    "Why not other computers?"
+   ]
+  },
+  "a": {
+   "ko": "지금 쓰는 카메라 연결, 손 인식, 실제 마우스·키보드 입력과 AI 계산 가속이 Apple의 기술(Apple 칩의 그래픽 기능 포함)에 기대고 있기 때문이에요. 다른 컴퓨터에서 쓰려면 이 부분을 대신할 방법을 찾아야 해서 Windows와 Linux 지원은 계획으로만 있어요.",
+   "en": "The camera connection, hand detection, real mouse and keyboard input and the AI speed-up all currently rely on Apple technology, including the graphics features of Apple chips. To work on other computers, replacements for those parts are needed, so Windows and Linux support exists only as a plan."
+  },
+  "kw": [
+   "Mac 전용",
+   "맥만",
+   "Apple 칩",
+   "왜",
+   "다른 컴퓨터",
+   "Mac only",
+   "Apple silicon",
+   "why",
+   "other computers"
+  ],
+  "src": [
+   "논문 §19, 소개서 §14"
+  ],
+  "related": [
+   "g-os-support",
+   "v-windows-when",
+   "h-mac-spec"
+  ]
+ },
+ {
+  "id": "w-cloud-mode",
+  "cat": "arch",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "나중에 클라우드로 더 정확하게 만들 수 있어요?",
+    "클라우드 고정밀 모드가 뭐예요",
+    "AWS 서버에서 돌리면 더 좋아져요",
+    "영상을 서버로 보내는 선택 기능",
+    "클라우드 GPU로 추적"
+   ],
+   "en": [
+    "Could it get more accurate with the cloud later?",
+    "What is the cloud high-precision mode?",
+    "Would running on AWS servers make it better?",
+    "An optional feature that sends video to a server",
+    "Tracking on cloud GPUs"
+   ]
+  },
+  "a": {
+   "ko": "선택 기능으로 AWS의 GPU에서 더 큰 AI 모델을 돌리는 아이디어가 있어요. 하지만 그러면 영상이 밖으로 나가기 때문에 사용자의 동의가 꼭 필요하고, 반응이 느려지는 문제도 따져 봐야 해요. 아직 만들지 않은 아이디어이고, 지금 버전은 모두 내 컴퓨터 안에서만 처리해요.",
+   "en": "There is an idea for an optional feature that runs a larger AI model on AWS GPUs. But that would send video out, so it would need your explicit consent, and slower response would have to be weighed. It is not built yet, and the current version processes everything inside your own computer."
+  },
+  "kw": [
+   "클라우드",
+   "AWS 서버",
+   "GPU",
+   "고정밀",
+   "선택 기능",
+   "cloud",
+   "AWS",
+   "server",
+   "GPU",
+   "high precision",
+   "optional"
+  ],
+  "src": [
+   "소개서 §14, 논문 §21.1"
+  ],
+  "related": [
+   "g-aws",
+   "g-ondevice",
+   "g-privacy-server"
+  ]
+ },
+ {
+  "id": "w-text-register",
+  "cat": "arch",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "말로 \"빨간 펜을 추적해 줘\"처럼 등록할 수 있어요?",
+    "문장으로 물체를 등록해요",
+    "텍스트로 물체를 지정할 수 있어요",
+    "말로 설정하면 알아서 연결해 줘요",
+    "자연어로 매핑해 줘요"
+   ],
+   "en": [
+    "Can I register things by saying \"track the red pen\"?",
+    "Can I register objects with a sentence?",
+    "Can I pick an object using text?",
+    "Can I just describe the setup and have it connect?",
+    "Can I set mappings in plain language?"
+   ]
+  },
+  "a": {
+   "ko": "아직 안 돼요. 지금은 화면에서 물체를 드래그해서 등록하고 연결을 직접 골라야 해요. 문장으로 설정하거나 말로 물체를 등록하는 건 앞으로의 아이디어일 뿐 만들지 않았어요. 그 아이디어에는 AWS의 AI 서비스(Amazon Bedrock)를 쓰는 방향이 있어요.",
+   "en": "Not yet. Right now you drag an object on the screen to register it and choose the connections yourself. Setting things up with a sentence or registering objects by describing them is only an idea for the future and has not been built. One direction for that idea is using an AWS AI service (Amazon Bedrock)."
+  },
+  "kw": [
+   "말로 등록",
+   "텍스트",
+   "자연어",
+   "문장으로 설정",
+   "Bedrock",
+   "natural language",
+   "text registration",
+   "describe",
+   "Bedrock"
+  ],
+  "src": [
+   "소개서 §14"
+  ],
+  "related": [
+   "v-voice",
+   "g-aws",
+   "g-llm"
+  ]
+ },
+ {
+  "id": "w-ground-truth",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "시험의 정답은 어떻게 정했어요?",
+    "정답 위치를 어떻게 알아요",
+    "정답 라벨은 누가 만들었어요",
+    "정답이 정확한가요",
+    "사람이 정답을 달았어요"
+   ],
+   "en": [
+    "How did you decide the correct answers for testing?",
+    "How do you know the true position?",
+    "Who made the labels?",
+    "Are the answers accurate?",
+    "Did a person label them?"
+   ]
+  },
+  "a": {
+   "ko": "컴퓨터로 만든 시험 영상은 물체가 어디 있는지 만들 때부터 정확히 알고 있어서 그대로 정답으로 써요. 직접 찍은 실제 영상은 정답을 AI로 만든 근사치라 사람이 한 장면씩 달아 준 정답은 아니에요. 그래서 실제 영상 결과는 참고 정도로 봐 주세요.",
+   "en": "Computer-made test videos are built knowing exactly where the object is, so that is used as the answer. For real footage we filmed, the answers are approximations made by AI rather than labels a person marked frame by frame. So please read real-video results as a rough reference."
+  },
+  "kw": [
+   "정답",
+   "라벨",
+   "정답 위치",
+   "근사치",
+   "사람이 달았",
+   "ground truth",
+   "label",
+   "answer key",
+   "approximation",
+   "annotated"
+  ],
+  "src": [
+   "논문 §12.1, §16"
+  ],
+  "related": [
+   "v-synthetic",
+   "w-real-video-result",
+   "v-trust-numbers"
+  ]
+ },
+ {
+  "id": "w-reproduce",
+  "cat": "arch",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "결과를 직접 다시 재현해 볼 수 있어요?",
+    "성능 시험을 내가 돌려 볼 수 있어요",
+    "평가 도구가 공개돼 있어요",
+    "재현 방법이 있어요",
+    "시험 영상을 받을 수 있어요"
+   ],
+   "en": [
+    "Can I reproduce the results myself?",
+    "Can I run the performance tests myself?",
+    "Are the evaluation tools public?",
+    "Is there a way to reproduce them?",
+    "Can I get the test videos?"
+   ]
+  },
+  "a": {
+   "ko": "코드와 평가 도구는 GitHub에 있고, 개발자용 안내에 평가를 돌리는 방법이 있어요. 다만 시험 결과 파일과 정답은 따로 보관되어 있어서 그대로 다시 얻으려면 당시의 코드와 설정을 맞춰야 해요. 지금 코드로 새로 돌리면 별도의 새 결과로 봐야 해요.",
+   "en": "The code and evaluation tools are on GitHub, and the developer guide explains how to run the evaluation. The result files and answer keys are archived separately, though, so getting the same numbers again requires matching the code and settings of that time. Running with today's code should be treated as a new, separate result."
+  },
+  "kw": [
+   "재현",
+   "다시 돌려",
+   "평가 도구",
+   "시험 영상",
+   "결과 파일",
+   "reproduce",
+   "rerun",
+   "evaluation tool",
+   "test videos",
+   "replicate"
+  ],
+  "src": [
+   "논문 §19, 부록 D"
+  ],
+  "related": [
+   "g-open-source",
+   "v-modify-code",
+   "v-trust-numbers"
+  ]
+ },
+ {
+  "id": "w-quit-time",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "브라우저를 닫으면 얼마 뒤에 꺼져요?",
+    "탭 닫고 프로그램이 꺼지기까지 시간",
+    "몇 초 있다가 종료돼요",
+    "창을 닫았는데 바로 안 꺼져요",
+    "바로 종료 안 되는 이유"
+   ],
+   "en": [
+    "How long after I close the browser does it shut down?",
+    "How long until the program stops after closing the tab?",
+    "Does it quit after a few seconds?",
+    "I closed the window but it didn't stop right away",
+    "Why doesn't it quit immediately?"
+   ]
+  },
+  "a": {
+   "ko": "모든 AnyControl 탭을 닫으면 약 5초 뒤에 프로그램이 자동으로 종료돼요. 새로고침이나 다른 탭 때문에 잠깐 닫혔다 열리는 경우를 구분하려고 잠시 기다리는 거예요.",
+   "en": "Once all AnyControl tabs are closed, the program shuts down automatically after about 5 seconds. The short wait is there to tell a refresh or another tab from a real close."
+  },
+  "kw": [
+   "종료",
+   "닫으면",
+   "몇 초",
+   "5초",
+   "자동 종료",
+   "탭",
+   "quit",
+   "close",
+   "seconds",
+   "5 seconds",
+   "auto shutdown"
+  ],
+  "src": [
+   "논문 §18.3, 소개서 §16"
+  ],
+  "related": [
+   "h-quit",
+   "h-ts-wont-quit"
+  ]
+ },
+ {
+  "id": "w-install-where",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "설치하면 어느 폴더에 깔려요?",
+    "설치 위치가 어디예요",
+    "프로그램이 저장되는 곳",
+    "설정 파일 위치",
+    "지우려면 어디를 봐야 해요"
+   ],
+   "en": [
+    "Which folder does it install into?",
+    "Where is it installed?",
+    "Where are the files stored?",
+    "Where is the settings file?",
+    "Where do I look to remove it?"
+   ]
+  },
+  "a": {
+   "ko": "내 사용자 폴더 안(라이브러리의 Application Support 아래 AnyControl 폴더)에만 설치돼요. 프로그램, 필요한 구성요소, 저장한 설정, 기록이 그곳에 모여 있어서 관리자 암호는 필요 없어요. 삭제용 파일로 깨끗이 지울 수 있어요.",
+   "en": "It installs only inside your own user folder, in an AnyControl folder under Application Support in the Library. The program, its components, saved settings and logs all gather there, so no administrator password is needed. The uninstall file removes it cleanly."
+  },
+  "kw": [
+   "설치 위치",
+   "폴더",
+   "경로",
+   "Application Support",
+   "라이브러리",
+   "install location",
+   "folder",
+   "path",
+   "files stored"
+  ],
+  "src": [
+   "논문 §19, README"
+  ],
+  "related": [
+   "v-install-changes",
+   "h-uninstall"
+  ]
+ },
+ {
+  "id": "w-better-than-mouse",
+  "cat": "usage",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "그냥 마우스를 쓰는 것보다 더 좋아요?",
+    "마우스를 완전히 대체해요",
+    "마우스가 더 편하지 않아요",
+    "왜 마우스 대신 이걸 써요"
+   ],
+   "en": [
+    "Is it better than just using a mouse?",
+    "Does it fully replace the mouse?",
+    "Isn't a mouse more convenient?",
+    "Why use this instead of a mouse?",
+    "Is this better than a $10 mouse?",
+    "Be honest about the trade-offs",
+    "Why not just buy a cheap mouse?"
+   ]
+  },
+  "a": {
+   "ko": "평소 쓰는 마우스를 완전히 대체하려는 건 아니에요. 마우스가 없거나 쓰기 어려울 때, 전시나 교육에서 소품으로 화면을 조작할 때, 하나의 장비로 그림·게임·단축키 같은 여러 용도를 바꿔 쓰고 싶을 때 의미가 있다고 생각해요. 정밀도와 반응 속도는 마우스를 따라가지 못해요.",
+   "en": "It is not meant to fully replace the mouse you normally use. We think it makes sense when you have no mouse or find one hard to use, when using props to control a screen at exhibitions or in education, or when you want one setup to switch between drawing, games and shortcuts. It cannot match a mouse's precision and response speed."
+  },
+  "kw": [
+   "마우스보다",
+   "대체",
+   "편한",
+   "더 좋아",
+   "better than mouse",
+   "replace",
+   "convenient",
+   "cheap mouse",
+   "trade-offs"
+  ],
+  "src": [
+   "소개서 §2, §10"
+  ],
+  "related": [
+   "g-no-mouse",
+   "g-who-for",
+   "v-top-weakness"
+  ]
+ },
+ {
+  "id": "w-arm-fatigue",
+  "cat": "usage",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "오래 쓰면 팔이나 손이 안 아파요?",
+    "피곤하지 않아요",
+    "손목에 무리가 가요",
+    "장시간 써도 괜찮아요",
+    "편한 자세가 뭐예요"
+   ],
+   "en": [
+    "Won't my arm or hand get tired after long use?",
+    "Is it tiring?",
+    "Does it strain the wrist?",
+    "Is it fine for long sessions?",
+    "What is a comfortable posture?"
+   ]
+  },
+  "a": {
+   "ko": "오래 썼을 때 몸이 얼마나 편한지는 시험하지 않아서 말씀드릴 수 없어요. 감도와 움직이는 범위를 조절할 수 있으니 작은 동작으로 쓰도록 맞춰 볼 수 있어요. 불편하면 쉬어 가면서 쓰세요.",
+   "en": "We haven't tested how comfortable it is over long use, so I can't say. Sensitivity and the range of movement are adjustable, so you can set it up for small movements. If it feels uncomfortable, take breaks."
+  },
+  "kw": [
+   "팔",
+   "손목",
+   "피곤",
+   "아파요",
+   "장시간",
+   "자세",
+   "tired",
+   "wrist",
+   "strain",
+   "long use",
+   "posture",
+   "comfortable"
+  ],
+  "src": [
+   "확인된 내용 없음, 소개서 §4(감도 조절)"
+  ],
+  "related": [
+   "v-sensitivity",
+   "g-accessibility"
+  ]
+ },
+ {
+  "id": "w-other-surface",
+  "cat": "usage",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "책상이 아니라 벽이나 바닥에서도 써요?",
+    "침대 위에서도 돼요",
+    "무릎 위에서 쓸 수 있어요",
+    "책상이 좁아도 돼요",
+    "다른 곳에서도 돼요"
+   ],
+   "en": [
+    "Can I use it on a wall or the floor instead of a desk?",
+    "Does it work on a bed?",
+    "Can I use it on my lap?",
+    "What if my desk is small?",
+    "Does it work elsewhere?"
+   ]
+  },
+  "a": {
+   "ko": "책상 위에서 쓰는 것을 기본으로 만들었어요. 벽이나 침대, 무릎에서 시험한 결과는 없어요. 책상이 좁아도 움직일 영역이 카메라 화면 안에 잘 보이면 쓸 수 있을 거예요.",
+   "en": "It is designed for use on a desk. We have no test results on walls, beds or laps. If your desk is small, it should still be usable as long as the area you move in is clearly visible in the camera view."
+  },
+  "kw": [
+   "벽",
+   "바닥",
+   "침대",
+   "무릎",
+   "좁은 책상",
+   "다른 곳",
+   "wall",
+   "floor",
+   "bed",
+   "lap",
+   "small desk",
+   "elsewhere"
+  ],
+  "src": [
+   "소개서 §13(책상 기준), 확인된 내용 없음"
+  ],
+  "related": [
+   "v-camera-place",
+   "v-desk-area",
+   "h-tip-setup"
+  ]
+ },
+ {
+  "id": "w-why-not-phone-app",
+  "cat": "limits",
+  "status": "info",
+  "q": {
+   "ko": [
+    "왜 아이폰 앱으로 만들지 않았어요?",
+    "폰만으로는 안 돼요",
+    "모바일 앱이 아닌 이유",
+    "안드로이드 앱 계획은 없어요",
+    "컴퓨터 없이 폰으로만 쓸 수 있어요"
+   ],
+   "en": [
+    "Why didn't you build it as an iPhone app?",
+    "Can't it work with just a phone?",
+    "Why isn't it a mobile app?",
+    "Are there plans for an Android app?",
+    "Can I use it with only a phone?"
+   ]
+  },
+  "a": {
+   "ko": "AnyControl은 컴퓨터의 마우스와 키보드를 대신 움직이는 프로그램이라 Mac에서 돌아가고, iPhone은 Mac의 카메라 역할로 써요. 휴대폰 앱에 대해서는 확인된 계획이나 내용이 없어요.",
+   "en": "AnyControl moves a computer's mouse and keyboard, so it runs on the Mac, and the iPhone serves as the Mac's camera. There is no confirmed plan or information about a phone app."
+  },
+  "kw": [
+   "폰 앱",
+   "아이폰 앱",
+   "안드로이드",
+   "모바일",
+   "휴대폰만",
+   "phone app",
+   "iPhone app",
+   "Android",
+   "mobile",
+   "only a phone"
+  ],
+  "src": [
+   "README"
+  ],
+  "related": [
+   "h-phone-app",
+   "h-iphone-camera",
+   "w-why-mac-only"
+  ]
+ },
+ {
+  "id": "w-gpu-need",
+  "cat": "limits",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "그래픽 카드가 꼭 있어야 해요?",
+    "GPU가 필요해요",
+    "엔비디아 카드로 돌려도 돼요",
+    "외장 그래픽이 필요한가요",
+    "게이밍 PC 사양이어야 해요"
+   ],
+   "en": [
+    "Do I need a graphics card?",
+    "Is a GPU required?",
+    "Can I run it with an NVIDIA card?",
+    "Do I need a dedicated graphics card?",
+    "Does it need a gaming PC?"
+   ]
+  },
+  "a": {
+   "ko": "별도의 그래픽 카드를 사실 필요는 없어요. 지금은 Apple 칩 Mac에 들어 있는 그래픽 기능을 쓰도록 만들어져 있어요. NVIDIA 그래픽 카드를 쓰는 것은 Windows·Linux 지원과 함께 앞으로의 계획이에요.",
+   "en": "You don't need to buy a separate graphics card. It is currently built to use the graphics features that are already inside Apple-chip Macs. Using NVIDIA graphics cards is a future plan, together with Windows and Linux support."
+  },
+  "kw": [
+   "그래픽 카드",
+   "GPU",
+   "엔비디아",
+   "NVIDIA",
+   "외장 그래픽",
+   "graphics card",
+   "GPU",
+   "NVIDIA",
+   "dedicated graphics"
+  ],
+  "src": [
+   "논문 §19, 소개서 §14"
+  ],
+  "related": [
+   "g-os-support",
+   "w-why-mac-only",
+   "h-mac-spec"
+  ]
+ },
+ {
+  "id": "w-first-fail",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "가장 먼저 실패하는 상황은 뭐예요?",
+    "가장 약한 순간이 언제예요",
+    "일부러 실패시키려면 어떻게 해요",
+    "제일 잘 안 되는 경우",
+    "이걸 곤란하게 만드는 법"
+   ],
+   "en": [
+    "What is the first situation where it fails?",
+    "When is it weakest?",
+    "How would I make it fail on purpose?",
+    "What is the hardest case?",
+    "How can I trip it up?"
+   ]
+  },
+  "a": {
+   "ko": "거의 똑같이 생긴 물건 두 개를 가까이 두는 것, 물건을 손으로 꽉 쥐는 것, 물건을 완전히 가렸다가 아주 빨리 움직이는 것이 가장 어려워요. 또 어둡거나 반짝이는 바닥에서는 정확도가 떨어져요. 이런 약점은 숨기지 않고 알려 드리고 있어요.",
+   "en": "The hardest cases are putting two almost identical objects close together, gripping an object tightly, and fully hiding an object then moving it very fast. Accuracy also drops on dark or shiny surfaces. We state these weaknesses openly rather than hiding them."
+  },
+  "kw": [
+   "실패",
+   "약한 순간",
+   "곤란",
+   "일부러",
+   "어려운 경우",
+   "fail",
+   "weakest",
+   "trip up",
+   "hardest case",
+   "break it",
+   "on purpose"
+  ],
+  "src": [
+   "소개서 §14, 논문 §14"
+  ],
+  "related": [
+   "i-weak-cases",
+   "v-hijack",
+   "i-dark-shiny"
+  ]
+ },
+ {
+  "id": "w-how-to-use",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어떻게 써요?",
+    "사용법이 뭐예요",
+    "사용 방법 알려 주세요",
+    "쓰는 법 알려 줘",
+    "이거 어떻게 사용해요",
+    "어케 써"
+   ],
+   "en": [
+    "How do I use it?",
+    "How to use this?",
+    "How does it work in use?",
+    "Can you tell me how to operate it?",
+    "How do I get started with it?"
+   ]
+  },
+  "a": {
+   "ko": "가장 쉬운 방법은 제목 오른쪽 [? 안내]를 눌러 따라 하기 튜토리얼을 하는 거예요. 직접 하려면 카메라를 고정하고 AnyControl에서 장치를 선택해 주세요. 물체는 영상에서 드래그해 등록하고, 맨손은 기본 맨손 카드를 쓰면 돼요. 게임은 데모 줄에서 고른 뒤 [자동 매핑]을 누르고, 마우스로 쓰려면 마우스 패널에서 모드와 대상을 골라요. 버튼으로 쓰려면 카드의 잭을 기능 잭에 연결해요. 실제 Mac 조작은 손쉬운 사용 권한과 출력 켜기가 따로 필요하고, 멈출 때는 Esc를 누르세요.",
+   "en": "The easiest way is to press Guide next to the title and follow the tutorial. To do it yourself, fix the camera and choose it in AnyControl. Register an object by dragging around it in the video, or use the built-in hand card. For games, pick one in the demo row and press Auto-map; for a mouse, choose a mode and target in the Mouse panel. To use something as a button, connect its card jack to a function jack. Real Mac control needs Accessibility permission and output turned on, and Esc stops it."
+  },
+  "kw": [
+   "사용법",
+   "사용 방법",
+   "어떻게 써",
+   "쓰는 법",
+   "안내 버튼",
+   "튜토리얼",
+   "how to use",
+   "usage",
+   "tutorial",
+   "guide button",
+   "instructions"
+  ],
+  "src": [
+   "앱 화면의 [? 안내] 버튼(frontend App.tsx), 튜토리얼"
+  ],
+  "related": [
+   "v-tutorial",
+   "h-how-to-start",
+   "g-setup-flow",
+   "w-chat-how-use"
+  ]
+ }
+]

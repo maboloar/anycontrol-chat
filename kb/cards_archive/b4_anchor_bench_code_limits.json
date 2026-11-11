@@ -1,0 +1,797 @@
+[
+ {
+  "id": "b-anchor-why",
+  "cat": "cursor",
+  "status": "info",
+  "q": {
+   "ko": [
+    "물체를 쥐면 커서가 왜 떨리나요?",
+    "바닥 기준점(anchor)이 뭐예요",
+    "anchor_cursor는 뭘 하는 설정인가요",
+    "물체 아래 점으로 커서를 움직이는 이유"
+   ],
+   "en": [
+    "Why does the cursor shake when the object is gripped?",
+    "What is the floor anchor point?",
+    "What does the anchor_cursor setting do?",
+    "Why move the cursor by a point at the bottom of the object?"
+   ]
+  },
+  "a": {
+   "ko": "물체를 쥐면 분할 영역이 손 때문에 늘었다 줄었다 해서 영역 중심(포즈)과 크기로 정한 커서가 같이 떨렸습니다. 그래서 물체마다(펜 제외) 바닥에 가까운 가장 가운데 아랫부분 한 점을 기준점으로 잡아 영상에 항상 표시하고, 커서는 이 점으로 움직입니다. MouseSettings.anchor_cursor 가 기본 켬이고, 끄면 예전 분할 중심·크기로 돌아갑니다. 코드는 tracking/anchor.py 입니다(HANDOFF §11.3).",
+   "en": "When an object is gripped, the segmented region grows and shrinks because of the hand, so a cursor driven by region centre (pose) and size shook with it. So for each object (not the pen), a point at the bottom centre close to the desk is picked as an anchor, always shown on the video, and the cursor follows that point. MouseSettings.anchor_cursor is on by default; turning it off returns to the earlier segmentation centre and size. The code is in tracking/anchor.py (HANDOFF §11.3)."
+  },
+  "kw": [
+   "anchor",
+   "기준점",
+   "바닥 기준점",
+   "anchor_cursor",
+   "커서 떨림",
+   "쥐기",
+   "grip",
+   "anchor.py",
+   "물체 마우스"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#11.3",
+   "backend/src/vision_input/tracking/anchor.py"
+  ],
+  "related": [
+   "b-anchor-how",
+   "b-anchor-measured",
+   "b-anchor-limits"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-anchor-how",
+  "cat": "cursor",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "기준점은 어떻게 추적하나요?",
+    "광학 흐름으로 기준점을 옮기는 방법",
+    "점 하나만 쓰면 왜 안 되나요",
+    "기준점 크기 신호는 어떻게 만드나요",
+    "앵커(바닥 기준점)가 뭐예요?",
+    "floor anchor가 뭐예요?"
+   ],
+   "en": [
+    "How is the anchor point tracked?",
+    "How is the anchor moved with optical flow?",
+    "Why not use a single point?",
+    "How is the anchor's size signal made?",
+    "What is the floor anchor?"
+   ]
+  },
+  "a": {
+   "ko": "시작점은 마스크 아래 20% 띠의 x 중앙값, 맨 아랫행에서 높이의 10% 안쪽입니다. 추적은 기준점 둘레(아래 가운데)의 모서리 특징점 최대 40개를 LK 광학 흐름(앞뒤 오차 검사)으로 따라가 유사변환(이동·확대·회전)을 구해 기준점을 옮깁니다. 점 하나만 쓰면 곧은 아랫 모서리를 따라 미끄러졌고(조리개 문제) 여러 점으로 해결했습니다. 같은 변환의 확대율을 누적한 흐름 크기(출력 필터 α=0.3)를 크기 기반 깊이 신호로 쓰므로 마스크 크기가 흔들려도 영향이 없습니다.",
+   "en": "The starting point is the x median of the bottom 20% band of the mask, placed inside the bottom row by 10% of the object's height. Tracking follows up to 40 corner features around the anchor (bottom centre) with LK optical flow (forward-backward error check), solves a similarity transform (translation, scale, rotation) and moves the anchor with it. A single point slid along a straight bottom edge (the aperture problem), which multiple points fixed. The accumulated scale of the same transform (output filtered with α=0.3) serves as the size-based depth signal, so a jittery mask size does not affect it."
+  },
+  "kw": [
+   "LK",
+   "광학 흐름",
+   "optical flow",
+   "특징점",
+   "유사변환",
+   "조리개 문제",
+   "aperture",
+   "흐름 크기",
+   "α=0.3",
+   "ObjectAnchor"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#11.3",
+   "backend/src/vision_input/tracking/anchor.py#AnchorConfig"
+  ],
+  "related": [
+   "b-anchor-why",
+   "b-anchor-correction"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-anchor-correction",
+  "cat": "cursor",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "기준점이 드리프트하면 어떻게 보정하나요?",
+    "마스크로 기준점을 언제 당기나요",
+    "기준점을 다시 찍는 조건",
+    "쥐고 있는 동안은 어떻게 하나요"
+   ],
+   "en": [
+    "How is anchor drift corrected?",
+    "When is the anchor pulled toward the mask?",
+    "Conditions for re-seeding the anchor",
+    "What happens while the object is gripped?"
+   ]
+  },
+  "a": {
+   "ko": "마스크의 아래-가운데 측정으로 프레임당 5%(pull) 씩 당기되 세 조건을 모두 만족할 때만입니다. 손이 덮은 비율이 15% 미만(손 가림 처리를 켠 경우), 마스크 높이·너비가 기대값(처음 크기 × 흐름으로 잰 크기 변화)과 3프레임 연속 맞음, 측정이 기준점에서 물체 높이의 30% 이내입니다. 쥐는 동안에는 당기지 않고 흐름만 씁니다. 흐름을 6프레임 못 믿거나 45프레임 어긋나면 마스크에서 다시 찍고, 재검출 순간이동이나 45프레임 이상 안 보이면 초기화합니다.",
+   "en": "The anchor is pulled toward the mask's bottom-centre measurement by 5% per frame (pull), but only when all three conditions hold: the hand covers under 15% (when hand-occlusion handling is on); the mask height and width match the expected values (initial size × flow-measured scale change) for 3 consecutive frames; and the measurement lies within 30% of the object's height from the anchor. While gripped, no pull is applied and only flow is used. If flow is untrusted for 6 frames or the anchor is off for 45 frames, it is re-seeded from the mask; a re-detection teleport or invisibility for more than 45 frames resets it."
+  },
+  "kw": [
+   "pull",
+   "보정",
+   "재시작",
+   "reinit",
+   "held",
+   "신뢰 조건",
+   "15%",
+   "30%",
+   "45프레임",
+   "드리프트"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#11.3"
+  ],
+  "related": [
+   "b-anchor-how",
+   "b-anchor-limits"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-anchor-measured",
+  "cat": "cursor",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "기준점으로 커서 떨림이 얼마나 줄었나요?",
+    "anchor 벤치 수치",
+    "분할 중심과 기준점 비교",
+    "지갑 영상 측정 결과"
+   ],
+   "en": [
+    "How much did the anchor reduce cursor jitter?",
+    "Anchor bench numbers",
+    "Segmentation centre vs anchor",
+    "Wallet video measurement"
+   ]
+  },
+  "a": {
+   "ko": "bench/anchor/run.py, samples/test.mov(지갑을 쥐고 움직이는 290프레임, Tier‑0 추적, 손 마스크 없음)에서 분할 중심 → 바닥 기준점으로 위치 고주파 떨림이 1280 폭 px 기준 41.9→16.2, 커서 x 떨림(화면 1000 기준)이 37.2→15.1 로 줄었습니다. 쥐고 있는 모든 샘플 프레임에서 기준점이 지갑 아래-가운데에 머무는 것을 눈으로 확인했습니다. 한 영상의 결과이고 정답 좌표가 없어 떨림 지표와 눈 확인으로만 평가했습니다.",
+   "en": "On bench/anchor/run.py with samples/test.mov (290 frames of a wallet being gripped and moved, Tier‑0 tracking, no hand mask), switching from segmentation centre to the floor anchor reduced high-frequency position jitter from 41.9 to 16.2 px (1280-px-wide frame) and cursor x jitter from 37.2 to 15.1 (screen width 1000). By eye (--png), in every sampled frame while gripped the anchor stayed at the bottom centre of the wallet. This is one video, and with no ground-truth coordinates it was judged only by jitter metrics and visual inspection."
+  },
+  "kw": [
+   "41.9",
+   "16.2",
+   "37.2",
+   "15.1",
+   "bench/anchor",
+   "test.mov",
+   "290프레임",
+   "떨림 감소",
+   "지갑",
+   "고주파"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#11.3"
+  ],
+  "related": [
+   "b-anchor-limits",
+   "b-anchor-why"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-anchor-limits",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "기준점의 한계는?",
+    "깊이축(세로) 떨림은 줄었나요",
+    "기준점이 안 맞는 경우",
+    "앵커 방식의 단점"
+   ],
+   "en": [
+    "What are the limits of the anchor?",
+    "Was depth-axis (vertical) jitter reduced?",
+    "When does the anchor fail?",
+    "Downsides of the anchor method"
+   ]
+  },
+  "a": {
+   "ko": "깊이(세로) 떨림은 그대로입니다: 커서 y 떨림(깊이=크기)은 36.4→36.6 으로 변화가 없었고 log-크기 떨림은 0.0196→0.0179 였습니다. 이 영상은 손에 든 카메라라 실제 크기 변화가 섞여 있어 어느 쪽이 진짜 흔들림인지 정답 없이 가를 수 없습니다. 그 밖에 손 마스크 없이 측정했고, 무늬 없는 바닥 가장자리(검은 물체 등)에서는 특징점이 적어 held/재시작이 늘 수 있으며(이 영상에서 held 18/290프레임), 크게 회전해 너비가 변하면 마스크 보정이 꺼져 흐름만으로 드리프트를 견뎁니다. 개선 후보는 기준점 y 위치를 깊이 신호에 섞는 것입니다.",
+   "en": "Depth-axis (vertical) jitter is unchanged: cursor y jitter (depth = size) went 36.4 to 36.6, and log-size jitter 0.0196 to 0.0179. The video was shot with a handheld camera, so genuine size change is mixed in and, without ground truth, it cannot be said which part is real shake. Also, it was measured without a hand mask; on textureless bottom edges (such as black objects) there are few features so held or restarts can increase (18 of 290 frames in this video); and when an object rotates enough to change its width, mask correction switches off and drift is tolerated using flow alone. A listed candidate fix is blending the anchor's y position into the depth signal."
+  },
+  "kw": [
+   "깊이 떨림",
+   "세로 떨림",
+   "36.4",
+   "36.6",
+   "held",
+   "한계",
+   "특징점 부족",
+   "회전",
+   "미해결",
+   "limits"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#11.3"
+  ],
+  "related": [
+   "b-anchor-measured",
+   "b-anchor-correction"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-bench-pen-howto",
+  "cat": "eval",
+  "status": "info",
+  "q": {
+   "ko": [
+    "펜 벤치는 어떻게 재현하나요?",
+    "펜 접촉 벤치 실행 방법",
+    "라벨은 어떻게 만들었나요",
+    "새 영상을 벤치에 추가하려면"
+   ],
+   "en": [
+    "How is the pen bench reproduced?",
+    "How to run the pen contact bench",
+    "How were the labels made?",
+    "How do I add a new video to the bench?"
+   ]
+  },
+  "a": {
+   "ko": "작업 폴더 anycontrol-web 에서 PYTHONPATH=backend/src:third_party/EfficientTAM 을 두고 bench/pen/track_cache.py <config> [--step 2] 로 트래커 캐시를 만든 뒤 bench/pen/run.py <config> --step 2 --variant legacy floor+all … 로 비교합니다(Tier 1 sim 이라 결정적). 라벨은 사람이 펜촉 확대 크롭을 보고 판정했고 F1 은 프레임 단위로 경계 ±2프레임을 제외합니다. 새 영상은 configs/<name>.json 에 영상 경로, 등록 프레임과 펜촉·반대쪽 끝 두 점(1280 폭 px), 라벨 경로를 적고 labels/ 에 라벨을 추가합니다. IMG_0002 의 라벨은 Kiro 가 판정했고 사람 검수 전입니다.",
+   "en": "From the anycontrol-web folder, set PYTHONPATH=backend/src:third_party/EfficientTAM, build a tracker cache with bench/pen/track_cache.py <config> [--step 2], then compare variants with bench/pen/run.py <config> --step 2 --variant legacy floor+all … (Tier 1 sim, so deterministic). Labels were judged by a human from magnified crops of the pen tip, and F1 is frame-level with ±2 frames around boundaries excluded. For a new video, put the video path, registration frame, two points (tip and the other end, in px at 1280 width) and the label path in configs/<name>.json and add labels under labels/. The IMG_0002 labels were judged by Kiro and have not been human-reviewed."
+  },
+  "kw": [
+   "벤치 재현",
+   "track_cache.py",
+   "run.py",
+   "configs",
+   "labels",
+   "step 2",
+   "재현 방법",
+   "라벨링",
+   "sweep.py"
+  ],
+  "src": [
+   "sources/09_bench_pen_README.md#실행",
+   "sources/04_HANDOFF_개발기록.md#8",
+   "sources/04_HANDOFF_개발기록.md#7"
+  ],
+  "related": [
+   "b-bench-samples",
+   "b-bench-still-howto"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-bench-samples",
+  "cat": "eval",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "벤치 표본은 몇 개인가요?",
+    "몇 개 영상으로 검증했나요",
+    "검증 영상 구성",
+    "라벨은 몇 개 구간인가요"
+   ],
+   "en": [
+    "How many samples does the bench use?",
+    "How many videos were used for validation?",
+    "Composition of validation videos",
+    "How many labelled intervals are there?"
+   ]
+  },
+  "a": {
+   "ko": "펜 접촉 검증 영상은 2개입니다. pen_test.mov(iPhone 1920×1080 60fps, 접촉 구간 3개 147–305/354–451/504–576, 30fps 벤치 267프레임, 직사광)와 IMG_0002.MOV(30fps 원본, 실내 확산광, 정답 획 9개)이며, 기운 영상은 pen_test 를 ±4° 회전한 파생본입니다. 멈춘 물체 벤치는 합성 장면과 real-still(test.mov 0–24프레임, 694프레임 영상) 등이고, 기준점은 test.mov 290프레임 한 구간입니다. 표본이 적어 수치를 일반화하면 안 됩니다.",
+   "en": "Pen contact is validated on 2 videos: pen_test.mov (iPhone 1920×1080 at 60 fps, 3 contact intervals 147–305 / 354–451 / 504–576, 267 frames in the 30 fps bench, direct sunlight) and IMG_0002.MOV (30 fps original, diffuse indoor light, 9 ground-truth strokes). The tilted videos are pen_test rotated by ±4°. The still-object bench uses synthetic scenes plus real-still (test.mov frames 0–24 of a 694-frame video), and the anchor bench is one 290-frame stretch of test.mov. The samples are few, so the figures should not be generalised."
+  },
+  "kw": [
+   "표본 수",
+   "영상 2개",
+   "pen_test",
+   "IMG_0002",
+   "267프레임",
+   "290프레임",
+   "694프레임",
+   "9개 획",
+   "샘플",
+   "검증 데이터"
+  ],
+  "src": [
+   "sources/05_펜_접촉판정_METHOD.md#4.1",
+   "sources/09_bench_pen_README.md#결과 2: IMG_0002.MOV (30fps 원본, 실내 확산광)",
+   "sources/04_HANDOFF_개발기록.md#3.7",
+   "sources/04_HANDOFF_개발기록.md#11.3"
+  ],
+  "related": [
+   "b-limits-two-videos",
+   "b-bench-pen-howto"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-bench-still-howto",
+  "cat": "eval",
+  "status": "info",
+  "q": {
+   "ko": [
+    "정지 안정화 벤치는 어떻게 돌리나요?",
+    "bench/still 실행 방법",
+    "variant가 뭐예요",
+    "기준점 벤치는 어떻게 재현하나요"
+   ],
+   "en": [
+    "How is the still-stabilisation bench run?",
+    "How to run bench/still",
+    "What are the variants?",
+    "How is the anchor bench reproduced?"
+   ]
+  },
+  "a": {
+   "ko": "PYTHONPATH=backend/src:third_party/EfficientTAM backend/.venv/bin/python bench/still/run.py --variant baseline still_lock 으로 돌립니다. --scene synthetic-still synthetic-move real-still 로 장면을 고르고 --csv 로 결과를 저장하며 variant 는 baseline(StillLock 끔), still_lock(기본), no_refresh, tier0_only 입니다. 기준점 벤치는 bench/anchor/run.py 이고 --png 로 기준점 위치를 그림으로 확인합니다.",
+   "en": "Run PYTHONPATH=backend/src:third_party/EfficientTAM backend/.venv/bin/python bench/still/run.py --variant baseline still_lock. Pick scenes with --scene synthetic-still synthetic-move real-still and save results with --csv; the variants are baseline (StillLock off), still_lock (default), no_refresh and tier0_only. The anchor bench is bench/anchor/run.py, and --png draws the anchor positions for visual checking."
+  },
+  "kw": [
+   "bench/still",
+   "run.py",
+   "variant",
+   "baseline",
+   "still_lock",
+   "no_refresh",
+   "tier0_only",
+   "재현",
+   "anchor bench"
+  ],
+  "src": [
+   "sources/10_bench_still_README.md",
+   "sources/04_HANDOFF_개발기록.md#8",
+   "sources/04_HANDOFF_개발기록.md#11.3"
+  ],
+  "related": [
+   "b-stilllock-numbers",
+   "b-bench-pen-howto"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-code-structure",
+  "cat": "code",
+  "status": "info",
+  "q": {
+   "ko": [
+    "코드 구조가 어떻게 되나요?",
+    "펜 관련 모듈은 어디에 있나요",
+    "백엔드와 프론트엔드 기술 스택",
+    "추적 모듈 위치"
+   ],
+   "en": [
+    "How is the code structured?",
+    "Where are the pen-related modules?",
+    "Backend and frontend stack",
+    "Where are the tracking modules?"
+   ]
+  },
+  "a": {
+   "ko": "Python/FastAPI 백엔드(backend/src/vision_input)와 React/TypeScript 프론트엔드(frontend/src)로 이뤄진 웹앱입니다. 추적은 tracking/vi_tracker.py(ViTracker: Tier 0 경량 + Tier 1 EfficientTAM + 주기적 재분할)가, 펜은 pen.py(펜촉·접촉·획)와 pen_floor.py(바닥 기하 접촉 판정)가 맡습니다. 이 작업에서 추가된 백엔드 모듈은 tracking/still.py, tracking/anchor.py, tracking/memory_view.py, pen_skeleton.py, depth_model.py, server/dev.py 이고 smooth.py 에 SpikeEma 가 있습니다.",
+   "en": "It is a web app with a Python/FastAPI backend (backend/src/vision_input) and a React/TypeScript frontend (frontend/src). Tracking is in tracking/vi_tracker.py (ViTracker: lightweight Tier 0, EfficientTAM Tier 1 and periodic re-segmentation), and the pen is handled by pen.py (tip, contact, strokes) and pen_floor.py (floor-geometry contact detection). Backend modules added in this work are tracking/still.py, tracking/anchor.py, tracking/memory_view.py, pen_skeleton.py, depth_model.py and server/dev.py, and SpikeEma lives in smooth.py."
+  },
+  "kw": [
+   "코드 구조",
+   "모듈",
+   "vi_tracker",
+   "pen.py",
+   "pen_floor.py",
+   "FastAPI",
+   "React",
+   "파일 지도",
+   "아키텍처",
+   "vision_input"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#1",
+   "sources/04_HANDOFF_개발기록.md#4"
+  ],
+  "related": [
+   "b-code-tests",
+   "b-code-dev-mode"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-code-tests",
+  "cat": "code",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "테스트는 몇 개인가요?",
+    "테스트 통과 현황",
+    "백엔드 452 프론트 131이 뭐예요",
+    "테스트는 어떻게 돌리나요"
+   ],
+   "en": [
+    "How many tests are there?",
+    "Test pass status",
+    "What are backend 452 and frontend 131?",
+    "How are the tests run?"
+   ]
+  },
+  "a": {
+   "ko": "HANDOFF 의 가장 최근 기록 기준으로 백엔드 pytest 452개(§11.3), 프론트엔드 131개(§11.4)가 통과했고 tsc 오류 0건이며 npm run build 가 성공했습니다. 문서 앞부분의 371/120, 382/123, 444/132 같은 값은 이전 시점의 숫자입니다. 백엔드는 PYTHONPATH=backend/src:third_party/EfficientTAM backend/.venv/bin/python -m pytest backend/tests, 프론트는 npm --prefix frontend test 로 돌립니다. 단위 테스트가 통과한다는 뜻이며 실제 카메라 검증은 아닙니다.",
+   "en": "As of the most recent HANDOFF records, the backend has 452 passing pytest tests (§11.3) and the frontend 131 (§11.4), with 0 tsc errors and a successful npm run build. Figures like 371/120, 382/123 and 444/132 earlier in the document are from earlier points in time. Run the backend with PYTHONPATH=backend/src:third_party/EfficientTAM backend/.venv/bin/python -m pytest backend/tests and the frontend with npm --prefix frontend test. This means unit tests pass; it is not real-camera validation."
+  },
+  "kw": [
+   "테스트",
+   "452",
+   "131",
+   "pytest",
+   "vitest",
+   "tsc",
+   "npm run build",
+   "통과",
+   "test count",
+   "단위 테스트"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#11.3",
+   "sources/04_HANDOFF_개발기록.md#11.4",
+   "sources/04_HANDOFF_개발기록.md#0"
+  ],
+  "related": [
+   "b-code-structure",
+   "b-limits-overview"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-code-dev-mode",
+  "cat": "code",
+  "status": "info",
+  "q": {
+   "ko": [
+    "개발자 모드가 뭐예요?",
+    "렌치 버튼은 무슨 기능인가요",
+    "바닥 맵과 깊이 맵 오버레이",
+    "개발자 모드에서만 보이는 것"
+   ],
+   "en": [
+    "What is developer mode?",
+    "What does the wrench button do?",
+    "Floor map and depth-map overlay",
+    "What is only visible in developer mode?"
+   ]
+  },
+  "a": {
+   "ko": "상단 렌치 버튼으로 켜는 개발자 모드(localStorage anycontrol.devMode, 기본 꺼짐)에서는 진한 녹색(--dev:#1f7a3d) 표시와 함께 물체 기억 보기, 바닥 그라데이션 맵(GET /api/objects/{id}/pen/floor-map), 깊이 맵 카메라 오버레이(GET /api/dev/depth-map, 350ms 폴링), 깊이 모델 비교 이미지가 보입니다. 끄면 열린 보기들을 닫고 오버레이를 지웁니다. 바닥 맵은 학습된 바닥 평면을 PNG 로 시각화하는 디버깅 도구입니다.",
+   "en": "Developer mode is switched on with the wrench button at the top (localStorage anycontrol.devMode, off by default) and marked in dark green (--dev:#1f7a3d). It reveals the object memory view, the floor gradient map (GET /api/objects/{id}/pen/floor-map), a depth-map camera overlay (GET /api/dev/depth-map, polled every 350 ms) and the depth-model comparison image. Turning it off closes open views and clears overlays. The floor map is a debugging tool that visualises the learned floor plane as a PNG."
+  },
+  "kw": [
+   "개발자 모드",
+   "dev mode",
+   "렌치",
+   "바닥 그라데이션 맵",
+   "깊이 맵 오버레이",
+   "물체 기억 보기",
+   "floor-map",
+   "depth-map",
+   "디버그"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.4",
+   "sources/04_HANDOFF_개발기록.md#9.3",
+   "sources/09_bench_pen_README.md#개발자 도구"
+  ],
+  "related": [
+   "b-code-structure",
+   "b-depth-tilt-how"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-process-issues-pen",
+  "cat": "process",
+  "status": "info",
+  "q": {
+   "ko": [
+    "펜 개발 중 겪은 문제와 해결은?",
+    "개발 중 막혔던 문제 (펜)",
+    "피부색 때문에 뭐가 틀어졌나요",
+    "해결 과정에서 되돌린 결정"
+   ],
+   "en": [
+    "What problems came up during pen development, and how were they solved?",
+    "Development issues (pen)",
+    "What went wrong because of skin colour?",
+    "Decisions that were reverted"
+   ]
+  },
+  "a": {
+   "ko": "대표 사례: 포즈 예측만으로 펜촉을 늘렸더니 짧아 보이는 펜을 가림으로 착각해 제거했고, 피부색 기반 펜촉 판정은 베이지 책상 때문에 IMG_0002 F1 이 0.889→0.772 로 떨어져 꼬리 쪽 표시 전용으로 제한했습니다. 책상 모서리 추적은 IMG_0002 에서 해로워 기본 off 로 바꿨고, 삐침 수정(draw_project)을 처음에 항상 적용하자 획이 들쭉날쭉해져 안정 접촉 중에는 끄도록 고쳤습니다. 깊이 롤은 벤치로 이득이 보이지 않았지만 사용자 체감 보고와 함께 기본값으로 올렸습니다.",
+   "en": "Typical cases: extending the tip from pose prediction alone mistook a short-looking pen for an occluded one, so it was removed; skin-colour tip detection dropped IMG_0002 F1 from 0.889 to 0.772 because of the beige desk and was limited to marking the tail. Desk-edge tracking hurt on IMG_0002 and became off by default, and applying the flick fix (draw_project) always made strokes jagged, so it was disabled during stable contact. The depth roll showed no benefit in the bench but was made the default alongside a user's report of better behaviour."
+  },
+  "kw": [
+   "문제 해결",
+   "개발 과정",
+   "되돌림",
+   "롤백",
+   "trial and error",
+   "시행착오",
+   "피부색",
+   "draw_project",
+   "개발 중 문제"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.7",
+   "sources/04_HANDOFF_개발기록.md#9.5",
+   "sources/09_bench_pen_README.md#결과 2: IMG_0002.MOV (30fps 원본, 실내 확산광)",
+   "sources/04_HANDOFF_개발기록.md#3.5"
+  ],
+  "related": [
+   "b-floor-tried-discarded",
+   "b-process-issues-cursor"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-process-issues-cursor",
+  "cat": "process",
+  "status": "info",
+  "q": {
+   "ko": [
+    "커서 안정화 개발 중 겪은 문제는?",
+    "기준점 첫 구현이 왜 실패했나요",
+    "예전 방식으로 되돌린 이유",
+    "개발 중 막혔던 문제 (커서)"
+   ],
+   "en": [
+    "What problems came up while stabilising the cursor?",
+    "Why did the first anchor implementation fail?",
+    "Why was the earlier method restored?",
+    "Development issues (cursor)"
+   ]
+  },
+  "a": {
+   "ko": "정지 떨림은 추적 잡음이 아니라 2초마다의 재분할이 크기를 바꾸는 것이 원인이어서, 평활만 세게 하는 대신 StillLock 으로 푼 것이 핵심 전환이었습니다. 바닥 기준점의 첫 구현은 점 하나라 곧은 아랫 모서리를 따라 미끄러졌고 여러 특징점의 유사변환으로 교체했습니다. 마우스 깊이는 깊이 모델을 기본으로 올렸다가 마우스 영상으로 정확도를 비교하지 못해 기본값을 다시 물체 크기로 되돌렸습니다. 마우스 깊이 모델에서 첫 시도의 평면 내점비율 하한 0.5 는 pen_test 129프레임 중 4프레임만 성공해 0.35 로 낮췄습니다.",
+   "en": "The still jitter turned out to come from the 2-second re-segmentation changing size rather than from tracking noise, so the key shift was solving it with StillLock instead of just smoothing harder. The first anchor implementation used a single point and slid along the straight bottom edge; it was replaced by a similarity transform over many features. For mouse depth, the depth model was promoted to default and then the default was reverted to object size because accuracy could not be compared on mouse video. And a plane inlier-ratio floor of 0.5 succeeded on only 4 of 129 pen_test frames, so it was lowered to 0.35."
+  },
+  "kw": [
+   "문제 해결",
+   "StillLock 전환",
+   "기준점 개선",
+   "기본값 되돌림",
+   "내점비율",
+   "0.35",
+   "개발 과정",
+   "시행착오"
+  ],
+  "src": [
+   "sources/10_bench_still_README.md#원인",
+   "sources/04_HANDOFF_개발기록.md#11.3",
+   "sources/04_HANDOFF_개발기록.md#11.2",
+   "sources/04_HANDOFF_개발기록.md#3.8"
+  ],
+  "related": [
+   "b-process-issues-pen",
+   "b-stilllock-why",
+   "b-anchor-how"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-limits-overview",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "아직 검증되지 않은 것은 무엇인가요?",
+    "한계를 한눈에 알려주세요",
+    "이 프로젝트의 미검증 사항",
+    "솔직한 한계"
+   ],
+   "en": [
+    "What has not been validated yet?",
+    "Summarise the limitations",
+    "Unvalidated items in this project",
+    "Honest limitations"
+   ]
+  },
+  "a": {
+   "ko": "HANDOFF 가 명시한 미검증·한계: 펜 접촉 검증은 영상 2개뿐이고 IMG_0002 라벨은 사람 검수 전, 깊이 롤은 정답 롤 없이 벤치 F1 이 터치 롤과 같음, 롤 항은 60fps +4° 에서 오히려 낮음, StillLock 은 합성 중심 검증으로 비동기 Tier‑1 미검증, EMA 는 실제 체감 지연·튐 개선 미측정, 마우스 깊이 모델은 마우스 영상으로 비교한 적 없음, 기준점은 깊이축 떨림이 그대로, 손 가림 처리 켠 실영상과 방향 뒤집힘 재등장 영상 없음, 깊이 모델은 macOS 전용입니다. 병합한 손가락 클릭 등도 실제 카메라·손 검증은 하지 않았고 문턱값은 합성 기준입니다.",
+   "en": "Limits and unvalidated items stated in HANDOFF: pen contact is validated on only 2 videos and the IMG_0002 labels are not human-reviewed; the depth roll has no ground-truth roll and bench F1 equals the touch roll; the roll term is lower at 60 fps +4°; StillLock is validated mostly on synthetic scenes and asynchronous Tier‑1 is untested; the EMA's real perceived latency and spike improvement are unmeasured; the depth-model mouse has never been compared on mouse video; the anchor leaves depth-axis jitter unchanged; there is no real video with hand-occlusion handling on or of a flipped-direction reappearance; and the depth model is macOS-only. For the merged finger-click features and the like, real camera and hand validation was not done and thresholds are based on synthetic data."
+  },
+  "kw": [
+   "한계",
+   "미검증",
+   "not validated",
+   "limitations",
+   "검증 안 됨",
+   "정직",
+   "HANDOFF",
+   "리스크",
+   "다음 할 일"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#6",
+   "sources/04_HANDOFF_개발기록.md#9.8",
+   "sources/04_HANDOFF_개발기록.md#10.4",
+   "sources/04_HANDOFF_개발기록.md#11.3"
+  ],
+  "related": [
+   "b-limits-two-videos",
+   "b-limits-real-camera",
+   "b-limits-latency"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-limits-two-videos",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜 검증이 영상 2개뿐인가요?",
+    "다른 조명·펜·책상에서도 되나요",
+    "일반화 가능한가요",
+    "새 영상으로 재검증했나요"
+   ],
+   "en": [
+    "Is pen validation really only two videos?",
+    "Does it work with other lighting, pens and desks?",
+    "Can the results be generalised?",
+    "Was it re-validated on new videos?"
+   ]
+  },
+  "a": {
+   "ko": "네, 펜 접촉 검증 영상은 pen_test(직사광)와 IMG_0002(실내 확산광) 두 개뿐이고 롤 영상은 pen_test 의 회전본입니다. IMG_0002 의 라벨은 Kiro 가 확대 크롭으로 판정했고 사람 검수 전입니다. 다른 조명·각도·펜·책상의 새 영상으로 legacy 와 floor, 깊이 롤 on/off 를 다시 비교하는 일은 다음 할 일에 남아 있어, 현재 수치는 다른 환경의 성능을 보장하지 않습니다.",
+   "en": "Yes. Pen contact is validated on just two videos, pen_test (direct light) and IMG_0002 (diffuse indoor light), and the tilted videos are rotated copies of pen_test. The IMG_0002 labels were judged by Kiro from magnified crops and are not human-reviewed. Re-comparing legacy against floor, and depth roll on and off, on new videos with different lighting, angles, pens and desks remains on the to-do list, so the present figures do not tell us how it performs in other environments."
+  },
+  "kw": [
+   "영상 2개",
+   "일반화",
+   "재검증",
+   "다른 조명",
+   "다른 책상",
+   "pen_test",
+   "IMG_0002",
+   "사람 검수",
+   "표본 적음"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#6",
+   "sources/04_HANDOFF_개발기록.md#7",
+   "sources/09_bench_pen_README.md#결과 2: IMG_0002.MOV (30fps 원본, 실내 확산광)"
+  ],
+  "related": [
+   "b-floor-overfit",
+   "b-limits-overview"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-limits-real-camera",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "실제 카메라로 검증했나요?",
+    "손가락 클릭이나 하이브리드는 실카메라 테스트를 했나요",
+    "실사용 리허설은 했나요",
+    "합성 기준 문턱값이 무슨 뜻이에요",
+    "실제 카메라로 테스트했어요?"
+   ],
+   "en": [
+    "Was it validated with a real camera?",
+    "Were finger click and hybrid tested on a real camera?",
+    "Was a live rehearsal done?",
+    "What does 'thresholds based on synthetic data' mean?"
+   ]
+  },
+  "a": {
+   "ko": "손가락 클릭·끝점 추적·한 손 하이브리드(포크에서 병합)에 대해 HANDOFF §10.4 는 실제 카메라·손 검증이 없고 문턱값이 합성 기준이라고 적습니다. 접촉은 영상상 박스 거리 추정이며 하이브리드는 쥠 분류기가 아닌 영상 근접·분리 기반이고, EfficientTAM 손끝 보정 효과는 입증되지 않았습니다. 서버 재시작 후 실카메라로 물체 마우스, 하이브리드, 펜 순서의 화면 리허설을 하는 일이 다음 할 일로 남아 있습니다. 펜 영상은 실제 촬영본(pen_test, IMG_0002)이지만 그 외 기능은 단위 테스트와 합성 장면 중심입니다.",
+   "en": "For finger click, fingertip tracking and one-hand hybrid (merged from the fork), HANDOFF §10.4 says there was no real camera or hand validation and thresholds are based on synthetic data. Contact is a box-distance estimate from the image, hybrid relies on image proximity and separation rather than a grip classifier, and the effect of EfficientTAM fingertip refinement is unproven. A live rehearsal on a real camera (object mouse, hybrid, then pen) after restarting the server remains on the to-do list. The pen videos are real recordings (pen_test, IMG_0002), but the other features rest mainly on unit tests and synthetic scenes."
+  },
+  "kw": [
+   "실카메라",
+   "real camera",
+   "미검증",
+   "합성 기준",
+   "손가락 클릭",
+   "하이브리드",
+   "리허설",
+   "끝점 추적",
+   "not validated"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#10.4",
+   "sources/04_HANDOFF_개발기록.md#10.5"
+  ],
+  "related": [
+   "b-limits-overview",
+   "b-code-tests"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-limits-latency",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "전체 지연 시간은 얼마인가요?",
+    "카메라에서 커서까지 지연을 측정했나요",
+    "end-to-end 지연",
+    "실시간성은 검증됐나요"
+   ],
+   "en": [
+    "What is the overall latency?",
+    "Was camera-to-cursor delay measured?",
+    "End-to-end latency",
+    "Has real-time performance been verified?"
+   ]
+  },
+  "a": {
+   "ko": "카메라부터 커서까지의 종단 지연은 이 문서들에 측정값이 없습니다. 있는 것은 모듈 단위 처리 시간(pen.update p95 가 legacy 2.1 ms, floor+all 6.0 ms; 독립 알고리즘의 TableModel 약 4.7 ms, ContactDetector 약 8.1 ms)과 이벤트 지연 일부(터치다운 +3프레임 = 50 ms, 30fps pen_test 한 영상)뿐입니다. 정지 안정화의 움직임 시작 지연 5→4프레임은 합성 장면 값이고, EMA 가 더하는 체감 지연은 측정하지 않았습니다.",
+   "en": "The documents contain no measurement of end-to-end delay from camera to cursor. What exists is per-module processing time (pen.update p95 of 2.1 ms for legacy and 6.0 ms for floor+all; about 4.7 ms for TableModel and about 8.1 ms for ContactDetector in the standalone algorithm) and a few event delays (touch-down +3 frames = 50 ms, on one 30 fps pen_test video). The movement-start delay of 5 to 4 frames for still stabilisation is from a synthetic scene, and the perceived delay the EMA adds was not measured."
+  },
+  "kw": [
+   "지연",
+   "latency",
+   "end-to-end",
+   "종단 지연",
+   "미측정",
+   "실시간",
+   "ms",
+   "not measured",
+   "응답 시간"
+  ],
+  "src": [
+   "sources/09_bench_pen_README.md#결과 (pen_test.mov, 라벨: 사람이 펜촉 확대 크롭으로 판정)",
+   "sources/10_bench_still_README.md#결과 (최신 실행)",
+   "sources/04_HANDOFF_개발기록.md#6"
+  ],
+  "related": [
+   "b-floor-cost",
+   "b-spikeema-unmeasured"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-limits-bundle-stale",
+  "cat": "limits",
+  "status": "info",
+  "q": {
+   "ko": [
+    "배포 파일에 최신 변경이 들어 있나요?",
+    "릴리스 빌드가 최신인가요",
+    "v1.3.0 배포본과 소스 차이"
+   ],
+   "en": [
+    "Does the release build include the latest changes?",
+    "Is the release build up to date?",
+    "Difference between the v1.3.0 build and the source"
+   ]
+  },
+  "a": {
+   "ko": "HANDOFF §11.3 에 따르면 releases/AnyControl-v1.3.0-* 배포 파일은 바닥 기준점(anchor) 변경 이전의 빌드이며, 필요하면 다시 빌드해야 합니다. 번들 빌드(packaging/build_bundle.py)는 깊이 가중치 필수 자산 검사를 포함한 코드 수정 후 py_compile 만 확인했고 실제 빌드는 그 세션에서 실행하지 않았습니다. 따라서 소스 기능과 배포본의 내용이 다를 수 있습니다.",
+   "en": "According to HANDOFF §11.3, the releases/AnyControl-v1.3.0-* files were built before the floor-anchor change and must be rebuilt if needed. The bundle script (packaging/build_bundle.py) was only checked with py_compile after being updated to check for the required depth weights; an actual build was not run in that session. So the source features and the distributed build may differ."
+  },
+  "kw": [
+   "배포본",
+   "릴리스",
+   "release",
+   "v1.3.0",
+   "build_bundle",
+   "재빌드",
+   "번들",
+   "최신 여부"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#11.3",
+   "sources/04_HANDOFF_개발기록.md#9.1"
+  ],
+  "related": [
+   "b-limits-overview",
+   "b-depth-model-bundled"
+  ],
+  "suggest": false
+ }
+]

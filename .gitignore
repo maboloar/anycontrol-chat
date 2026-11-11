@@ -1,0 +1,9 @@
+# 방문객 질문 기록(개인정보 가능성) — 로컬에만 보관, GitHub 에는 올리지 않음
+log/
+# 큰 모델 파일(GitHub 100MB 제한 초과) — README 의 안내대로 따로 받기
+models/*.gguf
+# 배포용 zip 은 GitHub Releases 로
+dist/
+__pycache__/
+*.py[cod]
+.DS_Store

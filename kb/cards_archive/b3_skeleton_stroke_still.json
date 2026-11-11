@@ -1,0 +1,730 @@
+[
+ {
+  "id": "b-skeleton-what",
+  "cat": "pen",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "펜 뼈대(pen_skeleton)가 뭐예요?",
+    "손에 가려진 펜 부분은 어떻게 처리하나요",
+    "펜 뼈대 표시는 무엇을 보여주나요",
+    "가려진 구간 주황 점선",
+    "pen skeleton이 뭐예요?"
+   ],
+   "en": [
+    "What is the pen skeleton (pen_skeleton)?",
+    "How is the part of the pen hidden by the hand handled?",
+    "What does the pen skeleton overlay show?",
+    "The orange dashed hidden segment",
+    "What is the pen skeleton?"
+   ]
+  },
+  "a": {
+   "ko": "펜은 곧은 막대라는 점을 이용해 PenSkeleton 이 마스크를 PCA 로 직선에 맞추고, 보이는 구간 사이에서 펜 굵기보다 큰 틈을 '가려진 구간'으로 표시합니다. 상태는 seen, middle_hidden, tip_hidden, tail_hidden 입니다. 영상에는 보이는 구간이 청록 실선, 가려진 구간이 주황 점선, 가려진 끝이 속 빈 원으로 그려집니다. 합성 장면 테스트(test_pen_skeleton.py)로 검증했습니다.",
+   "en": "Since a pen is a straight rod, PenSkeleton fits a line to the mask with PCA and marks any gap wider than the pen's thickness between visible spans as a hidden segment. The states are seen, middle_hidden, tip_hidden and tail_hidden. On the video, visible spans are drawn as solid cyan lines, hidden spans as dashed orange lines and hidden ends as hollow circles. It is verified with synthetic-scene tests (test_pen_skeleton.py)."
+  },
+  "kw": [
+   "pen_skeleton",
+   "PenSkeleton",
+   "뼈대",
+   "가림",
+   "occlusion",
+   "middle_hidden",
+   "tip_hidden",
+   "tail_hidden",
+   "점선",
+   "skeleton"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.7",
+   "sources/09_bench_pen_README.md#펜 뼈대 (pen_skeleton.py)"
+  ],
+  "related": [
+   "b-skeleton-evidence",
+   "b-skeleton-dist",
+   "b-skeleton-limits"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-skeleton-evidence",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "펜촉이 가려졌다는 걸 어떻게 판단하나요?",
+    "왜 포즈 예측만으로 펜을 늘리지 않나요",
+    "피부색은 왜 제한적으로 쓰나요",
+    "손 가림 처리를 꺼도 되나요"
+   ],
+   "en": [
+    "How does it decide the pen tip is hidden?",
+    "Why not extend the pen from pose prediction alone?",
+    "Why is skin colour used only in a limited way?",
+    "Can hand-occlusion handling stay off?"
+   ]
+  },
+  "a": {
+   "ko": "끝이 가려졌다는 판정은 손의 증거가 있을 때만 합니다: 손 가림 처리의 손 마스크(펜촉·꼬리 모두) 또는 피부색(꼬리 쪽만). 포즈 예측만으로 늘리면 pen_test 에서 카메라 쪽으로 기울어 짧아 보이는 펜을 가림으로 착각해 펜촉을 책상 위로 늘려서 제거했습니다. 피부색으로 펜촉 쪽 판정까지 하면 베이지색 책상 때문에 IMG_0002 접촉 F1 이 0.889→0.772 로 떨어져 꼬리 쪽 표시 전용으로 제한했습니다. 손 가림 처리는 기본 꺼짐이며 꺼져 있으면 펜촉은 늘리지 않습니다.",
+   "en": "A hidden end is declared only when there is evidence from the hand: the hand mask from hand-occlusion handling (for tip or tail) or skin colour (tail side only). Extending from pose prediction alone was removed because on pen_test it mistook a pen tilted toward the camera, which looks short, for an occluded one and stretched the tip across the desk. Using skin colour for the tip side dropped IMG_0002 contact F1 from 0.889 to 0.772 because of the beige desk, so it is limited to marking the tail. Hand-occlusion handling is off by default, and while it is off the tip is not extended."
+  },
+  "kw": [
+   "손 가림",
+   "hand_occlusion",
+   "occluder",
+   "피부색",
+   "evidence",
+   "펜촉 가림",
+   "0.772",
+   "베이지 책상",
+   "뼈대 증거"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.7",
+   "sources/09_bench_pen_README.md#펜 뼈대 (pen_skeleton.py)"
+  ],
+  "related": [
+   "b-skeleton-what",
+   "b-skeleton-limits"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-skeleton-dist",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "펜 뼈대 상태는 실제 영상에서 어떻게 분포하나요?",
+    "뼈대가 접촉 판정에 영향을 주나요",
+    "pen_test에서 몇 프레임이 가려졌나요"
+   ],
+   "en": [
+    "How are skeleton states distributed on real video?",
+    "Does the skeleton affect contact detection?",
+    "How many pen_test frames were occluded?"
+   ]
+  },
+  "a": {
+   "ko": "pen_test(30fps, 267프레임)에서 seen 210, middle_hidden 16, tail_hidden 24(대부분 엄지에 가림), tip_hidden 8 이었습니다. 뼈대를 넣은 뒤에도 접촉 F1 은 변하지 않았습니다(pen_test 0.946, IMG_0002 0.889). 영상 1개의 분포일 뿐이고 손 가림 처리를 켠 상태의 실영상 검증은 아직 없습니다.",
+   "en": "On pen_test (30 fps, 267 frames) the counts were seen 210, middle_hidden 16, tail_hidden 24 (mostly the thumb covering it) and tip_hidden 8. Contact F1 did not change after adding the skeleton (pen_test 0.946, IMG_0002 0.889). This is the distribution of one video, and there is no real-video check yet with hand-occlusion handling turned on."
+  },
+  "kw": [
+   "seen",
+   "210",
+   "267프레임",
+   "뼈대 분포",
+   "F1 불변",
+   "엄지",
+   "pen_test",
+   "tail_hidden"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.7",
+   "sources/09_bench_pen_README.md#펜 뼈대 (pen_skeleton.py)"
+  ],
+  "related": [
+   "b-skeleton-what",
+   "b-skeleton-limits"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-skeleton-flip",
+  "cat": "pen",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜이 다시 나타났을 때 방향이 뒤집히면 어떻게 하나요?",
+    "펜 끝 색 기억이 뭐예요",
+    "learn_ends는 뭘 하나요"
+   ],
+   "en": [
+    "What if the pen's direction flips when it reappears?",
+    "What is the end-colour memory?",
+    "What does learn_ends do?"
+   ]
+  },
+  "a": {
+   "ko": "처음 온전히 보인 모습에서 펜촉과 꼬리 끝의 색(Lab)을 기억하고, 두 색이 14 이상 다를 때만 재등장 시 방향이 뒤집힌 것을 should_flip(마진 10)으로 바로잡습니다. 두 끝 색이 비슷한 펜에서는 작동하지 않습니다. 이 방향 뒤집힘 보정은 합성 테스트만으로 검증했고 실영상 재등장 시나리오 영상은 없습니다.",
+   "en": "From the first fully visible view it remembers the colours (Lab) of the pen tip and tail, and only when the two differ by 14 or more does should_flip (margin 10) correct a direction flip on reappearance. It does not work for pens whose two ends have similar colours. This flip correction was verified with synthetic tests only; there is no real video of a reappearance scenario."
+  },
+  "kw": [
+   "방향 뒤집힘",
+   "should_flip",
+   "learn_ends",
+   "Lab",
+   "끝 색",
+   "재등장",
+   "flip",
+   "펜 방향"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.7",
+   "sources/04_HANDOFF_개발기록.md#6"
+  ],
+  "related": [
+   "b-skeleton-what",
+   "b-skeleton-limits"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-skeleton-limits",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜 뼈대의 한계는?",
+    "손에 가린 펜촉 복원이 실제로 검증됐나요",
+    "뼈대 기능 미검증 부분"
+   ],
+   "en": [
+    "What are the limits of the pen skeleton?",
+    "Has hidden-tip recovery been verified on real video?",
+    "What is unverified about the skeleton?"
+   ]
+  },
+  "a": {
+   "ko": "문서에 적힌 한계: 손 가림 처리를 끄면 펜촉 가림의 근거가 없어 펜촉을 늘리지 않습니다. 피부색은 베이지 책상과 혼동될 수 있습니다. 끝 색 방향 보정은 두 끝 색이 비슷한 펜에서 안 됩니다. 손 가림 처리를 켠 실영상으로 펜촉 복원(occluder 경로)을 확인하는 일은 다음 할 일로 남아 있으며, 방향 뒤집힘 보정도 합성 테스트로만 확인됐습니다.",
+   "en": "Limits stated in the documents: with hand-occlusion handling off there is no evidence for a hidden tip, so the tip is not extended; skin colour can be confused with a beige desk; the end-colour flip correction fails for pens with similar end colours. Verifying tip recovery (the occluder path) on real video with hand-occlusion handling on is still a to-do, and the flip correction was checked with synthetic tests only."
+  },
+  "kw": [
+   "한계",
+   "미검증",
+   "occluder",
+   "손 가림 처리",
+   "베이지",
+   "뼈대 한계",
+   "limits",
+   "다음 할 일"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#6",
+   "sources/04_HANDOFF_개발기록.md#9.8"
+  ],
+  "related": [
+   "b-skeleton-what",
+   "b-skeleton-evidence"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-stroke-flick-cause",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "획의 처음과 끝에 삐침이 왜 생기나요?",
+    "펜 획 끝이 튀는 원인",
+    "그리기에서 세로로 긴 선이 생기는 이유"
+   ],
+   "en": [
+    "Why do flicks appear at the start and end of strokes?",
+    "What causes the stroke-end jump?",
+    "Why do long vertical lines show up when drawing?"
+   ]
+  },
+  "a": {
+   "ko": "bench/pen/strokes.py 로 획을 그려 확인한 원인입니다. 펜을 내리고 올릴 때 펜촉 y 가 변하는데, 책상 좌표 변환 Z = f/(y − 소실선)이 소실선 근처에서 몇 px 를 크게 증폭해 세로로 긴 선이 획 처음·끝에 생겼습니다. 접촉 직후 몇 프레임은 펜이 아직 안착하지 않았고, 디바운스 때문에 접촉이 유지되는 동안 이미 들어 올리는 점이 찍히기도 했습니다.",
+   "en": "This is the cause found by drawing strokes with bench/pen/strokes.py. The tip's y changes while the pen is put down or lifted, and the desk-coordinate transform Z = f/(y − vanishing line) amplifies a few pixels strongly near the vanishing line, producing long vertical lines at stroke starts and ends. The first frames after contact are before the pen has settled, and because of debouncing, lift-off points were sometimes still recorded while contact was held."
+  },
+  "kw": [
+   "삐침",
+   "flick",
+   "획 끝",
+   "소실선",
+   "튐",
+   "strokes.py",
+   "Z=f/(y−소실선)",
+   "그리기 좌표",
+   "획 시작"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#9.5",
+   "sources/09_bench_pen_README.md#획 삐침 벤치 (strokes.py)"
+  ],
+  "related": [
+   "b-stroke-fix-params",
+   "b-stroke-result"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-stroke-fix-params",
+  "cat": "pen",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "획 삐침을 어떻게 고쳤나요?",
+    "stroke_start_delay_s와 end_trim이 뭐예요",
+    "hover gate는 뭐예요",
+    "삐침 방지 설정 값"
+   ],
+   "en": [
+    "How were stroke flicks fixed?",
+    "What are stroke_start_delay_s and end_trim?",
+    "What is the hover gate?",
+    "Flick-prevention settings"
+   ]
+  },
+  "a": {
+   "ko": "PenConfig 의 설정으로, floor 자동 판정일 때만 적용되고 수동·legacy 는 그대로입니다. stroke_start_delay_s=0.07 은 접촉 근거 시각부터 0.07초 동안의 점을 건너뛰고, stroke_end_trim_s=0.07 은 이탈 근거 시각 직전 0.07초의 점을 뺍니다. stroke_hover_gate=0.35 는 접촉이 유지돼도 펜촉이 0.35D 이상 떠 있으면 점을 찍지 않습니다. 30fps 에서는 0.07~0.10초가 같은 2프레임이라 효과가 같습니다. 테스트는 test_pen_strokes.py 입니다.",
+   "en": "These are PenConfig settings that apply only to automatic floor-based detection; manual and legacy modes are unchanged. stroke_start_delay_s=0.07 skips points for 0.07 s from the time contact evidence first appeared, stroke_end_trim_s=0.07 drops points in the 0.07 s before the time of lift evidence, and stroke_hover_gate=0.35 stops recording points while the tip is 0.35 D or more above the desk even if contact is held. At 30 fps, 0.07 to 0.10 s is the same 2 frames, so the effect is identical. Tests are in test_pen_strokes.py."
+  },
+  "kw": [
+   "stroke_start_delay_s",
+   "stroke_end_trim_s",
+   "stroke_hover_gate",
+   "0.07",
+   "0.35",
+   "시작 지연",
+   "끝 트림",
+   "hover gate",
+   "PenConfig"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#9.5",
+   "sources/04_HANDOFF_개발기록.md#9.6"
+  ],
+  "related": [
+   "b-stroke-draw-project",
+   "b-stroke-result",
+   "b-stroke-tradeoff"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-stroke-draw-project",
+  "cat": "pen",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "draw_project는 뭘 하나요?",
+    "떠 있는 펜촉을 어떻게 보정하나요",
+    "왜 항상 적용하지 않나요"
+   ],
+   "en": [
+    "What does draw_project do?",
+    "How is a hovering tip corrected?",
+    "Why isn't it always applied?"
+   ]
+  },
+  "a": {
+   "ko": "draw_project=True(draw_project_dead=0.2, draw_project_max=3.0)는 떠 있는 펜촉을 같은 굵기에서 닿았을 y 로 내려 그림 좌표를 계산합니다. 높이는 바닥 모델의 hover_px() 에서 얻습니다. 안정적으로 닿은 동안(hover<0.35D)에는 적용하지 않습니다. 처음에 항상 적용했더니 평면 잡음이 계단으로 새서 획이 들쭉날쭉해졌기 때문입니다.",
+   "en": "draw_project=True (draw_project_dead=0.2, draw_project_max=3.0) projects a hovering tip down to the y it would have if it touched at the same width, to compute the drawing coordinate; the height comes from the floor model's hover_px(). It is not applied while the pen is stably touching (hover<0.35D), because applying it always let plane noise leak into the stroke as steps and made strokes jagged."
+  },
+  "kw": [
+   "draw_project",
+   "투영",
+   "hover_px",
+   "계단",
+   "들쭉날쭉",
+   "draw_project_dead",
+   "draw_project_max",
+   "그리기 좌표"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#9.5"
+  ],
+  "related": [
+   "b-stroke-fix-params",
+   "b-stroke-result"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-stroke-result",
+  "cat": "pen",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "삐침 수정 효과가 수치로 얼마인가요?",
+    "획 끝 꼬리가 아직 남나요",
+    "삐침이 완전히 사라졌나요"
+   ],
+   "en": [
+    "How much did the flick fix improve things, numerically?",
+    "Do tail artifacts remain at stroke ends?",
+    "Are flicks completely gone?"
+   ]
+  },
+  "a": {
+   "ko": "bench/pen/strokes.py(30fps, pen_test 한 영상)에서 시작·끝 걸음의 최대 길이비는 5.12→2.46, 중앙값은 2.0→0.78 로 줄었습니다. 획 시작의 긴 세로선은 사라졌지만 첫 획 끝에 짧은 꼬리가 남았는데, 들어 올릴 때 펜 굵기 측정이 흔들려 바닥 모델의 높이가 0 으로 보이는 구간이 있는 굵기 기반 높이의 한계입니다. 삐침 지표(flick_len)는 합성 라벨이 없어 정답 획 없이 그림과 걸음 길이로만 봤습니다.",
+   "en": "In bench/pen/strokes.py (30 fps, one pen_test video) the maximum step-length ratio at stroke starts and ends fell from 5.12 to 2.46 and the median from 2.0 to 0.78. The long vertical line at stroke starts disappeared, but a short tail remains at the end of the first stroke: while lifting, the width measurement wobbles and the floor model's height reads as 0 in a span, a limit of width-based height. The flick metric (flick_len) has no ground-truth strokes, so it was judged only from the drawings and step lengths."
+  },
+  "kw": [
+   "5.12",
+   "2.46",
+   "0.78",
+   "걸음 길이비",
+   "flick_len",
+   "꼬리",
+   "남은 문제",
+   "획 끝",
+   "strokes.py"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#9.5",
+   "sources/04_HANDOFF_개발기록.md#9.8"
+  ],
+  "related": [
+   "b-stroke-tradeoff",
+   "b-stroke-fix-params"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-stroke-tradeoff",
+  "cat": "pen",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "삐침 방지의 단점은 뭔가요?",
+    "획 시작과 끝을 버리면 손해가 있나요",
+    "기록된 획 F1이 왜 떨어졌나요",
+    "트레이드오프"
+   ],
+   "en": [
+    "What is the downside of flick prevention?",
+    "Is there a cost to dropping stroke ends?",
+    "Why did recorded-stroke F1 fall?",
+    "The trade-off"
+   ]
+  },
+  "a": {
+   "ko": "양 끝 약 0.14초를 일부러 버리는 비용이 있습니다. 기록된 획의 프레임 F1 이 pen_test 0.946→0.924, IMG_0002 0.878→0.823 으로 낮아졌고, 3~4점짜리 조각 획은 사라져 획이 5개→3개가 됐습니다(30fps 벤치, 영상 2개). 접촉 판정 F1(0.946 / 0.889)은 변하지 않았습니다. 더 짧게 또는 길게 하려면 stroke_* 값을 조정하고, 짧은 탭(<0.25초)은 지연·정리에서 제외하는 완화책은 다음 할 일입니다.",
+   "en": "The cost is deliberately discarding about 0.14 s at the two ends of a stroke. Frame F1 of the recorded strokes fell from 0.946 to 0.924 on pen_test and from 0.878 to 0.823 on IMG_0002, and 3–4-point fragment strokes vanish, taking the stroke count from 5 to 3 (30 fps bench, 2 videos). Contact-detection F1 (0.946 / 0.889) did not change. The stroke_* values can be tuned, and excluding short taps (under 0.25 s) from the delay and trimming is a listed to-do."
+  },
+  "kw": [
+   "트레이드오프",
+   "tradeoff",
+   "F1 하락",
+   "0.924",
+   "0.823",
+   "0.14초",
+   "짧은 탭",
+   "획 수",
+   "비용"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#9.5",
+   "sources/04_HANDOFF_개발기록.md#9.8"
+  ],
+  "related": [
+   "b-stroke-result",
+   "b-stroke-fix-params"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-stilllock-why",
+  "cat": "stable",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "가만히 둔 물체인데 커서가 왜 흔들렸나요?",
+    "정지 시 커서 drift 원인",
+    "2초마다 재분할이 뭐예요",
+    "StillLock이 왜 필요한가요"
+   ],
+   "en": [
+    "Why did the cursor drift for a stationary object?",
+    "Cause of cursor drift while still",
+    "What is the 2-second resegmentation?",
+    "Why is StillLock needed?"
+   ]
+  },
+  "a": {
+   "ko": "원인은 추적 잡음이 아니라 2초마다 도는 분할 갱신(refresh)이 물체 크기를 약 0.7% 바꾸는 것이었습니다. 크기 기반 깊이 커서는 크기에 비례하므로 합성 정지 장면(10초)에서 초당 24 px 움직이고 10초에 50 px 흘렀습니다. 평활을 세게 해도 지연만 늘고 이 drift 는 사라지지 않았습니다. 그래서 정지 상태를 잠그는 StillLock 을 만들었습니다.",
+   "en": "The cause was not tracking noise but the segmentation refresh that runs every 2 seconds and changes the object's size by about 0.7%. The size-based depth cursor is proportional to size, so on the 10-second synthetic still scene it moved 24 px per second and drifted 50 px over 10 seconds. Heavier smoothing only added delay without removing the drift. That is why StillLock, which freezes the still state, was built."
+  },
+  "kw": [
+   "StillLock",
+   "drift",
+   "정지",
+   "떨림",
+   "재분할",
+   "refresh",
+   "0.7%",
+   "24 px/s",
+   "크기 기반 깊이",
+   "원인"
+  ],
+  "src": [
+   "sources/10_bench_still_README.md#원인",
+   "sources/04_HANDOFF_개발기록.md#3.2"
+  ],
+  "related": [
+   "b-stilllock-how",
+   "b-stilllock-numbers"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-stilllock-how",
+  "cat": "stable",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "StillLock은 어떻게 동작하나요?",
+    "언제 잠기고 언제 풀리나요",
+    "정지 잠금 조건",
+    "잠금이 느린 움직임을 놓치나요",
+    "StillLock이 뭐예요?",
+    "StillLock 설명해 주세요"
+   ],
+   "en": [
+    "How does StillLock work?",
+    "When does it lock and unlock?",
+    "Lock conditions",
+    "Does the lock miss slow movement?",
+    "What is StillLock?",
+    "Explain StillLock"
+   ]
+  },
+  "a": {
+   "ko": "LK 점이 10프레임(enter_frames, 30fps 에서 약 0.33초) 이상 조용하면 잠그고, 그동안 LK 증분을 쌓아 잡음을 넘을 때만 반영합니다. 영역·Tier‑1·갱신 측정은 3번 연속(confirm) 어긋남이 확인될 때까지 막고 마스크는 다수결(9프레임)로 고정합니다. 움직임, 손 접촉(덮임 5% 이상), 상태 변화, 순간이동, 재개, 점 소실(15프레임)이면 해제합니다. 펜은 잠그지 않고 기본 켬이며 끄려면 TrackerConfig.still.enabled=False(vi_nostill)입니다. 구현은 tracking/still.py 입니다.",
+   "en": "It locks when the LK points have been quiet for 10 frames (enter_frames, about 0.33 s at 30 fps) and, while locked, accumulates LK increments and applies them only when they exceed noise. Region, Tier‑1 and refresh measurements are blocked until a mismatch is confirmed 3 times in a row (confirm), and the mask is fixed by a 9-frame majority vote. It releases on motion, hand contact (5% or more covered), state change, teleport, resume or lost points (15 frames). The pen is never locked. It is on by default and TrackerConfig.still.enabled=False (vi_nostill) turns it off. Implementation is in tracking/still.py."
+  },
+  "kw": [
+   "StillLock",
+   "enter_frames",
+   "LK",
+   "잠금",
+   "해제",
+   "다수결",
+   "still.py",
+   "vi_nostill",
+   "ZUPT",
+   "정지 안정화"
+  ],
+  "src": [
+   "sources/10_bench_still_README.md#해결: tracking/still.py 의 StillLock",
+   "backend/src/vision_input/tracking/still.py#StillConfig",
+   "sources/04_HANDOFF_개발기록.md#3.2"
+  ],
+  "related": [
+   "b-stilllock-why",
+   "b-stilllock-limits"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-stilllock-numbers",
+  "cat": "stable",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "StillLock으로 떨림이 얼마나 줄었나요?",
+    "정지 안정화 수치",
+    "커서 경로와 drift가 얼마나 줄었나요",
+    "움직임 반응은 느려지지 않나요"
+   ],
+   "en": [
+    "How much did StillLock reduce jitter?",
+    "Still-stabilisation numbers",
+    "How much did cursor path and drift shrink?",
+    "Doesn't it slow down response to movement?"
+   ]
+  },
+  "a": {
+   "ko": "합성 정지 장면(bench/still, 합성 10초 정지)에서 baseline(StillLock 끔) → still_lock 으로 커서 경로 24.2→0.37 px/s, 커서 drift 50.6→3.5 px, 마스크 중심 표준편차 0.54→0, 자세 표준편차 0.356→0.010 입니다. 합성 이동 장면에서는 움직임 시작 지연이 5→4프레임, 멈춘 뒤 꼬리가 3.6→2.6 px 이었습니다. 합성 평가 모음(tune 50 시퀀스)은 변화가 없었습니다(3개 시퀀스만 ±0.002). 모두 합성 장면 수치입니다.",
+   "en": "On the synthetic still scene (bench/still, 10 seconds of synthetic stillness), going from baseline (StillLock off) to still_lock changed cursor path from 24.2 to 0.37 px/s, cursor drift from 50.6 to 3.5 px, mask-centre standard deviation from 0.54 to 0, and pose standard deviation from 0.356 to 0.010. On the synthetic move scene, movement-start delay went from 5 to 4 frames and the tail after stopping from 3.6 to 2.6 px. The synthetic evaluation suite (tune, 50 sequences) was unchanged (only 3 sequences moved, by ±0.002). All of these are synthetic-scene figures."
+  },
+  "kw": [
+   "24.2",
+   "0.37",
+   "50.6",
+   "3.5",
+   "bench/still",
+   "합성 정지",
+   "커서 경로",
+   "drift 감소",
+   "synthetic-still",
+   "수치"
+  ],
+  "src": [
+   "sources/10_bench_still_README.md#결과 (최신 실행)",
+   "sources/04_HANDOFF_개발기록.md#3.2"
+  ],
+  "related": [
+   "b-stilllock-limits",
+   "b-bench-still-howto"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "b-stilllock-limits",
+  "cat": "limits",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "StillLock은 실제 영상에서도 효과가 있나요?",
+    "StillLock의 한계",
+    "실영상 검증 결과",
+    "비동기 Tier‑1에서는 어때요"
+   ],
+   "en": [
+    "Does StillLock help on real video?",
+    "Limits of StillLock",
+    "Real-video validation",
+    "What about asynchronous Tier‑1?"
+   ]
+  },
+  "a": {
+   "ko": "검증은 합성 장면 중심입니다. 실영상 test.mov(694프레임)는 카메라를 손으로 들고 있어 잠금이 69프레임에만 걸렸고, 독립 Tier‑1 기준 중심 대비 평균 오차는 15.5→12.7 px 였습니다. real-still(0–24프레임)의 지표는 baseline 과 동일했습니다. 느린 움직임은 잠금 중 약 1 px 단위로 한꺼번에 반영(양자화)되고, 비동기 Tier‑1 실시간 모드는 따로 검증하지 않았습니다.",
+   "en": "Validation is mostly on synthetic scenes. On the real video test.mov (694 frames) the camera was handheld, so the lock engaged on only 69 frames, and mean error against the independent Tier‑1 centre went from 15.5 to 12.7 px. On real-still (frames 0–24) every metric matched the baseline. Slow movement is applied in steps of roughly 1 px or more while locked (quantisation), and the asynchronous real-time Tier‑1 mode was not verified separately."
+  },
+  "kw": [
+   "한계",
+   "test.mov",
+   "69/694",
+   "양자화",
+   "비동기",
+   "실영상",
+   "합성 중심",
+   "15.5",
+   "12.7"
+  ],
+  "src": [
+   "sources/10_bench_still_README.md#한계",
+   "sources/04_HANDOFF_개발기록.md#3.2",
+   "sources/04_HANDOFF_개발기록.md#6"
+  ],
+  "related": [
+   "b-stilllock-numbers",
+   "b-stilllock-how"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-spikeema-params",
+  "cat": "stable",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "튐 억제 EMA는 어떻게 동작하나요?",
+    "SpikeEma 파라미터가 뭐예요",
+    "실시간 EMA 설정값",
+    "튐을 어떻게 구분하나요",
+    "SpikeEma가 뭐예요?",
+    "EMA가 뭐예요?"
+   ],
+   "en": [
+    "How does the spike-suppressing EMA work?",
+    "What are the SpikeEma parameters?",
+    "Real-time EMA settings",
+    "How are spikes distinguished?",
+    "What is SpikeEma?",
+    "What is the EMA spike guard?"
+   ]
+  },
+  "a": {
+   "ko": "SpikeEma(tau=0.08, spike_k=5, spike_tau=0.8, confirm_s=0.18)는 평소엔 시간상수 0.08초 EMA 로 따라가고, 새 값이 평소 변화량×5 를 넘으면 튐으로 보고 시간상수 0.8초로 아주 느리게만 따라갑니다. 그 상태가 0.18초 넘게 지속되면 진짜 이동으로 인정하고 평소 tau 로 돌아갑니다. 프레임 간격이 달라도 a = 1 − exp(−dt/tau) 로 같은 느낌을 냅니다. 긴 가림 후 재등장(0.3초 초과)·재정의·소실 시에는 필터를 리셋합니다. 테스트는 test_ema.py 입니다.",
+   "en": "SpikeEma(tau=0.08, spike_k=5, spike_tau=0.8, confirm_s=0.18) follows with a 0.08 s time-constant EMA normally; if a new value exceeds the typical change × 5 it is treated as a spike and followed only very slowly with a 0.8 s time constant. If that persists for more than 0.18 s it is accepted as real movement and the normal tau resumes. Using a = 1 − exp(−dt/tau) keeps the feel the same when frame intervals differ. The filter resets after a long occlusion (over 0.3 s), re-definition or loss. Tests are in test_ema.py."
+  },
+  "kw": [
+   "SpikeEma",
+   "EMA",
+   "tau",
+   "spike_k",
+   "spike_tau",
+   "confirm_s",
+   "튐 억제",
+   "smooth.py",
+   "필터",
+   "스파이크"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.6",
+   "backend/src/vision_input/tracking/smooth.py#SpikeEma"
+  ],
+  "related": [
+   "b-spikeema-where",
+   "b-spikeema-unmeasured"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-spikeema-where",
+  "cat": "stable",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "EMA는 어디에 적용되나요?",
+    "튐 억제를 끌 수 있나요",
+    "펜 접촉 판정도 EMA를 거치나요"
+   ],
+   "en": [
+    "Where is the EMA applied?",
+    "Can spike suppression be turned off?",
+    "Does pen contact detection go through the EMA?"
+   ]
+  },
+  "a": {
+   "ko": "세 곳에 적용됩니다. 물체 축(cx, cy, log scale, angle, log elongation, bottom; 중립을 빼기 전 절대 값), 펜촉(PenTracker.ema_x/ema_y, tau 0.04, 단위=펜 굵기×0.3), 물체 마우스 좌표(VisionProcessor._mouse_ema)입니다. 펜 접촉 판정은 원시 측정을 쓰기 때문에 접촉 F1 이 변하지 않습니다. 기본 켬이며 PUT /api/tracking {\"ema\": bool} 이나 물체 패널의 '튐 억제 (실시간 EMA)' 체크박스로 끕니다.",
+   "en": "It is applied in three places: the object axes (cx, cy, log scale, angle, log elongation, bottom, on absolute values before the neutral point is subtracted), the pen tip (PenTracker.ema_x/ema_y, tau 0.04, unit = pen width × 0.3), and the object-mouse coordinates (VisionProcessor._mouse_ema). Pen contact detection uses raw measurements, so contact F1 is unchanged. It is on by default and can be switched off with PUT /api/tracking {\"ema\": bool} or the 'Spike suppression (real-time EMA)' checkbox in the object panel."
+  },
+  "kw": [
+   "EMA 적용",
+   "ema_x",
+   "_mouse_ema",
+   "AxisState",
+   "튐 억제 체크박스",
+   "PUT /api/tracking",
+   "토글",
+   "끄기"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#3.6"
+  ],
+  "related": [
+   "b-spikeema-params",
+   "b-spikeema-unmeasured"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "b-spikeema-unmeasured",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "EMA로 커서 튐이 실제로 줄었나요?",
+    "EMA 지연은 얼마인가요",
+    "EMA 체감 효과는 측정했나요",
+    "EMA 파라미터 튜닝은 끝났나요"
+   ],
+   "en": [
+    "Did the EMA actually reduce cursor spikes?",
+    "How much delay does the EMA add?",
+    "Was the EMA's perceived effect measured?",
+    "Is EMA parameter tuning done?"
+   ]
+  },
+  "a": {
+   "ko": "측정하지 않았습니다. EMA 는 합성 단위 테스트와 펜 접촉 F1 불변만 확인됐고, 실제 마우스 커서의 체감 지연이나 튐 개선은 미측정입니다. 합성 평가 모음(vision_input.eval)은 ViTracker 단에서 돌아 EMA 영향을 받지 않습니다. tau, spike_k, confirm_s 의 실제 체감 튜닝과 강도 슬라이더는 다음 할 일입니다.",
+   "en": "It was not measured. The EMA has been checked only with synthetic unit tests and by confirming pen contact F1 is unchanged; the perceived latency or spike improvement of the real mouse cursor has not been measured. The synthetic evaluation suite (vision_input.eval) runs at the ViTracker level, so it is not affected by the EMA. Tuning tau, spike_k and confirm_s by feel, and a strength slider, are listed as to-dos."
+  },
+  "kw": [
+   "미측정",
+   "EMA 지연",
+   "체감",
+   "튜닝",
+   "not validated",
+   "커서 튐",
+   "latency",
+   "강도 슬라이더"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#6",
+   "sources/04_HANDOFF_개발기록.md#7"
+  ],
+  "related": [
+   "b-spikeema-params",
+   "b-limits-latency"
+  ],
+  "suggest": false
+ }
+]

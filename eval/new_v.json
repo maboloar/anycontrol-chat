@@ -1,0 +1,1635 @@
+[
+ {
+  "q": "Is this a program I install or a website?",
+  "lang": "en",
+  "expect": [
+   "v-app-or-web"
+  ]
+ },
+ {
+  "q": "Give me a quick summary",
+  "lang": "en",
+  "expect": [
+   "v-summary-30s"
+  ]
+ },
+ {
+  "q": "what is the best thing about it",
+  "lang": "en",
+  "expect": [
+   "v-top-strengths"
+  ]
+ },
+ {
+  "q": "and what's the worst thing",
+  "lang": "en",
+  "expect": [
+   "v-top-weakness"
+  ]
+ },
+ {
+  "q": "which version are you running",
+  "lang": "en",
+  "expect": [
+   "v-version"
+  ]
+ },
+ {
+  "q": "Can I try it without being at the booth?",
+  "lang": "en",
+  "expect": [
+   "g-try"
+  ]
+ },
+ {
+  "q": "what do i need to buy",
+  "lang": "en",
+  "expect": [
+   "g-hardware"
+  ]
+ },
+ {
+  "q": "how do I turn it off",
+  "lang": "en",
+  "expect": [
+   "h-quit"
+  ]
+ },
+ {
+  "q": "is there a practice mode",
+  "lang": "en",
+  "expect": [
+   "v-virtual-vs-real"
+  ]
+ },
+ {
+  "q": "how do I steer in the racing demo",
+  "lang": "en",
+  "expect": [
+   "v-racing-how"
+  ]
+ },
+ {
+  "q": "can I save my settings for next time",
+  "lang": "en",
+  "expect": [
+   "h-save-settings"
+  ]
+ },
+ {
+  "q": "the cursor moves the wrong way",
+  "lang": "en",
+  "expect": [
+   "v-sensitivity",
+   "v180-flip"
+  ]
+ },
+ {
+  "q": "does it have a tutorial",
+  "lang": "en",
+  "expect": [
+   "v-tutorial"
+  ]
+ },
+ {
+  "q": "can I type words with it",
+  "lang": "en",
+  "expect": [
+   "v-typing"
+  ]
+ },
+ {
+  "q": "can I talk to it",
+  "lang": "en",
+  "expect": [
+   "v-voice"
+  ]
+ },
+ {
+  "q": "why does moving an object closer move the cursor up",
+  "lang": "en",
+  "expect": [
+   "v-why-depth-updown"
+  ]
+ },
+ {
+  "q": "where should I put my phone",
+  "lang": "en",
+  "expect": [
+   "v-camera-place"
+  ]
+ },
+ {
+  "q": "can I use a glass cup",
+  "lang": "en",
+  "expect": [
+   "v-transparent-shiny"
+  ]
+ },
+ {
+  "q": "what if the object disappears, does the key stay pressed",
+  "lang": "en",
+  "expect": [
+   "v-lost-input"
+  ]
+ },
+ {
+  "q": "how do I right click",
+  "lang": "en",
+  "expect": [
+   "v-click-drag-scroll"
+  ]
+ },
+ {
+  "q": "my clicks are going wrong",
+  "lang": "en",
+  "expect": [
+   "v-hand-wrong-click"
+  ]
+ },
+ {
+  "q": "is the pen feature finished",
+  "lang": "en",
+  "expect": [
+   "v-pen-beta"
+  ]
+ },
+ {
+  "q": "does the pen support pressure",
+  "lang": "en",
+  "expect": [
+   "v-pen-pressure"
+  ]
+ },
+ {
+  "q": "does it draw while the pen floats above the paper",
+  "lang": "en",
+  "expect": [
+   "v-pen-air"
+  ]
+ },
+ {
+  "q": "what if two things overlap",
+  "lang": "en",
+  "expect": [
+   "v-objects-overlap"
+  ]
+ },
+ {
+  "q": "can moving a thing open an app",
+  "lang": "en",
+  "expect": [
+   "v-launch-apps"
+  ]
+ },
+ {
+  "q": "will it follow fast movement",
+  "lang": "en",
+  "expect": [
+   "v-fast-move"
+  ]
+ },
+ {
+  "q": "does it ever lose the object",
+  "lang": "en",
+  "expect": [
+   "v-never-lose"
+  ]
+ },
+ {
+  "q": "it jumped to another object",
+  "lang": "en",
+  "expect": [
+   "v-hijack"
+  ]
+ },
+ {
+  "q": "what do the tracking states mean",
+  "lang": "en",
+  "expect": [
+   "v-states-simple"
+  ]
+ },
+ {
+  "q": "how many frames per second",
+  "lang": "en",
+  "expect": [
+   "v-fps"
+  ]
+ },
+ {
+  "q": "what does success rate mean",
+  "lang": "en",
+  "expect": [
+   "v-success-rate-meaning"
+  ]
+ },
+ {
+  "q": "were the test videos real",
+  "lang": "en",
+  "expect": [
+   "v-synthetic"
+  ]
+ },
+ {
+  "q": "how much memory does it use",
+  "lang": "en",
+  "expect": [
+   "v-resource-use"
+  ]
+ },
+ {
+  "q": "can I connect the iPhone wirelessly",
+  "lang": "en",
+  "expect": [
+   "v-iphone-wireless"
+  ]
+ },
+ {
+  "q": "what is Desk View",
+  "lang": "en",
+  "expect": [
+   "v-desk-view"
+  ]
+ },
+ {
+  "q": "what happens if I deny camera permission",
+  "lang": "en",
+  "expect": [
+   "v-permission-denied"
+  ]
+ },
+ {
+  "q": "is the download safe",
+  "lang": "en",
+  "expect": [
+   "v-safe-download"
+  ]
+ },
+ {
+  "q": "is the camera always recording",
+  "lang": "en",
+  "expect": [
+   "v-camera-always-on"
+  ]
+ },
+ {
+  "q": "can someone hack into it",
+  "lang": "en",
+  "expect": [
+   "v-remote-hack"
+  ]
+ },
+ {
+  "q": "have you tested real mouse control",
+  "lang": "en",
+  "expect": [
+   "v-real-input-verified"
+  ]
+ },
+ {
+  "q": "is the user interface finished",
+  "lang": "en",
+  "expect": [
+   "v-ui-state"
+  ]
+ },
+ {
+  "q": "what are the judging criteria",
+  "lang": "en",
+  "expect": [
+   "v-judging"
+  ]
+ },
+ {
+  "q": "when will windows be supported",
+  "lang": "en",
+  "expect": [
+   "v-windows-when"
+  ]
+ },
+ {
+  "q": "who is Kim Sam",
+  "lang": "en",
+  "expect": [
+   "v-kimsam"
+  ]
+ },
+ {
+  "q": "tell me about the developer",
+  "lang": "en",
+  "expect": [
+   "v-kimsam"
+  ]
+ },
+ {
+  "q": "how old is Kim Sam",
+  "lang": "en",
+  "expect": [
+   "v-kimsam"
+  ]
+ },
+ {
+  "q": "what tools did the team use to code this",
+  "lang": "en",
+  "expect": [
+   "v-tools-used"
+  ]
+ },
+ {
+  "q": "did you use Kiro",
+  "lang": "en",
+  "expect": [
+   "g-kiro"
+  ]
+ },
+ {
+  "q": "how was this chatbot built",
+  "lang": "en",
+  "expect": [
+   "v-chatbot-how"
+  ]
+ },
+ {
+  "q": "how does this chatbot find answers",
+  "lang": "en",
+  "expect": [
+   "v-chatbot-structure"
+  ]
+ },
+ {
+  "q": "can I trust what you say",
+  "lang": "en",
+  "expect": [
+   "v-chatbot-wrong"
+  ]
+ },
+ {
+  "q": "do you need wifi",
+  "lang": "en",
+  "expect": [
+   "v-chatbot-offline"
+  ]
+ },
+ {
+  "q": "are you ChatGPT",
+  "lang": "en",
+  "expect": [
+   "v-chatbot-llm"
+  ]
+ },
+ {
+  "q": "can I ask in Korean",
+  "lang": "en",
+  "expect": [
+   "v-chatbot-languages"
+  ]
+ },
+ {
+  "q": "which AI models are used by name",
+  "lang": "en",
+  "expect": [
+   "v-model-names"
+  ]
+ },
+ {
+  "q": "what is a Kalman filter",
+  "lang": "en",
+  "expect": [
+   "v-deep-tech"
+  ]
+ },
+ {
+  "q": "what does recovery time mean",
+  "lang": "en",
+  "expect": [
+   "v-recovery-meaning"
+  ]
+ },
+ {
+  "q": "how big is the codebase",
+  "lang": "en",
+  "expect": [
+   "v-project-size"
+  ]
+ },
+ {
+  "q": "how do you make sure the code is good",
+  "lang": "en",
+  "expect": [
+   "v-code-quality"
+  ]
+ },
+ {
+  "q": "김삼이 누구예요?",
+  "lang": "ko",
+  "expect": [
+   "v-kimsam"
+  ]
+ },
+ {
+  "q": "김삼 나이가 어떻게 돼요",
+  "lang": "ko",
+  "expect": [
+   "v-kimsam"
+  ]
+ },
+ {
+  "q": "김삼 전화번호 알려주세요",
+  "lang": "ko",
+  "expect": [
+   "v-kimsam"
+  ]
+ },
+ {
+  "q": "어떤 툴로 코딩했어요?",
+  "lang": "ko",
+  "expect": [
+   "v-tools-used"
+  ]
+ },
+ {
+  "q": "키로 IDE로 만들었나요",
+  "lang": "ko",
+  "expect": [
+   "v-tools-used"
+  ]
+ },
+ {
+  "q": "이 챗봇 어떻게 돌아가요?",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-structure"
+  ]
+ },
+ {
+  "q": "챗봇 답이 틀릴 수도 있나요",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-wrong"
+  ]
+ },
+ {
+  "q": "이 챗봇 인터넷 연결해야 돼요?",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-offline"
+  ]
+ },
+ {
+  "q": "영어로 물어봐도 돼요",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-languages"
+  ]
+ },
+ {
+  "q": "펜을 거꾸로 들면요",
+  "lang": "ko",
+  "expect": [
+   "v-pen-flip"
+  ]
+ },
+ {
+  "q": "실제 입력 켜면 3초 기다리는 이유",
+  "lang": "ko",
+  "expect": [
+   "v-3sec"
+  ]
+ },
+ {
+  "q": "카메라 몇 센티 거리에 둬요",
+  "lang": "ko",
+  "expect": [
+   "v-camera-distance"
+  ]
+ },
+ {
+  "q": "발로도 조작되나요",
+  "lang": "ko",
+  "expect": [
+   "v-body-foot"
+  ]
+ },
+ {
+  "q": "맥 미니에서 되나요",
+  "lang": "ko",
+  "expect": [
+   "v-ipad-macmini"
+  ]
+ },
+ {
+  "q": "복구 시간 단축이 뭐예요",
+  "lang": "ko",
+  "expect": [
+   "v-recovery-meaning"
+  ]
+ },
+ {
+  "q": "칼만 필터가 뭔가요",
+  "lang": "ko",
+  "expect": [
+   "v-deep-tech"
+  ]
+ },
+ {
+  "q": "개발자 모드는 뭐 하는 거예요",
+  "lang": "ko",
+  "expect": [
+   "v-dev-mode"
+  ]
+ },
+ {
+  "q": "프로젝트 규모가 궁금해요",
+  "lang": "ko",
+  "expect": [
+   "v-project-size"
+  ]
+ },
+ {
+  "q": "이 부스는 뭐 하는 곳인가요",
+  "lang": "ko",
+  "expect": [
+   "w-booth-what"
+  ]
+ },
+ {
+  "q": "What is going on at this stand?",
+  "lang": "en",
+  "expect": [
+   "w-booth-what"
+  ]
+ },
+ {
+  "q": "처음 왔는데 어디부터 구경할까요",
+  "lang": "ko",
+  "expect": [
+   "w-what-to-see"
+  ]
+ },
+ {
+  "q": "발표하는 분이랑 얘기하고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "w-presenter"
+  ]
+ },
+ {
+  "q": "시연은 몇 시부터인가요",
+  "lang": "ko",
+  "expect": [
+   "w-schedule"
+  ]
+ },
+ {
+  "q": "직접 만져 봐도 되나요",
+  "lang": "ko",
+  "expect": [
+   "w-demo-here"
+  ]
+ },
+ {
+  "q": "Can I take a picture of your poster?",
+  "lang": "en",
+  "expect": [
+   "w-photo"
+  ]
+ },
+ {
+  "q": "포스터 pdf 받을 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "w-materials"
+  ]
+ },
+ {
+  "q": "대회 주최가 어디예요",
+  "lang": "ko",
+  "expect": [
+   "w-contest-more"
+  ]
+ },
+ {
+  "q": "1등 하셨어요?",
+  "lang": "ko",
+  "expect": [
+   "w-prize"
+  ]
+ },
+ {
+  "q": "옆 팀 작품은 뭔가요",
+  "lang": "ko",
+  "expect": [
+   "w-other-teams"
+  ]
+ },
+ {
+  "q": "포스터 맨 위부터 설명해 주세요",
+  "lang": "ko",
+  "expect": [
+   "w-poster-explain"
+  ]
+ },
+ {
+  "q": "약 2.2배라는 숫자는 어떻게 나왔어요",
+  "lang": "ko",
+  "expect": [
+   "w-poster-numbers"
+  ]
+ },
+ {
+  "q": "닮은 물체 오류가 더 늘었다던데요",
+  "lang": "ko",
+  "expect": [
+   "w-more-confusion"
+  ]
+ },
+ {
+  "q": "포스터 하단의 앞으로 할 일은요",
+  "lang": "ko",
+  "expect": [
+   "w-poster-limits"
+  ]
+ },
+ {
+  "q": "어떤 선행 연구를 기반으로 했나요",
+  "lang": "ko",
+  "expect": [
+   "w-research-refs"
+  ]
+ },
+ {
+  "q": "개선 1순위가 뭔가요",
+  "lang": "ko",
+  "expect": [
+   "w-next-steps"
+  ]
+ },
+ {
+  "q": "챗봇 쓰는 방법 좀요",
+  "lang": "ko",
+  "expect": [
+   "w-chat-how-use"
+  ]
+ },
+ {
+  "q": "가볍게 수다 떨어도 돼요?",
+  "lang": "ko",
+  "expect": [
+   "w-chat-smalltalk"
+  ]
+ },
+ {
+  "q": "which AI model does the chatbot use",
+  "lang": "en",
+  "expect": [
+   "w-chat-model"
+  ]
+ },
+ {
+  "q": "답변이 왜 이렇게 안 와요",
+  "lang": "ko",
+  "expect": [
+   "w-chat-slow"
+  ]
+ },
+ {
+  "q": "너 진짜 사람 아니지?",
+  "lang": "ko",
+  "expect": [
+   "w-bot-human"
+  ]
+ },
+ {
+  "q": "나이 몇이야",
+  "lang": "ko",
+  "expect": [
+   "w-bot-age"
+  ]
+ },
+ {
+  "q": "한 줄로 소개해 줘",
+  "lang": "ko",
+  "expect": [
+   "w-one-line"
+  ]
+ },
+ {
+  "q": "초등학생한테 가르치듯이 알려줘",
+  "lang": "ko",
+  "expect": [
+   "w-explain-child"
+  ]
+ },
+ {
+  "q": "과일로도 조작할 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "w-object-fruit"
+  ]
+ },
+ {
+  "q": "레고 블록으로도 돼요?",
+  "lang": "ko",
+  "expect": [
+   "w-object-toy"
+  ]
+ },
+ {
+  "q": "지우개로 마우스 쓸 수 있어?",
+  "lang": "ko",
+  "expect": [
+   "w-object-stationery"
+  ]
+ },
+ {
+  "q": "두 손으로 동시에 쓰면 어떻게 되죠",
+  "lang": "ko",
+  "expect": [
+   "w-two-hands"
+  ]
+ },
+ {
+  "q": "등불지기 게임이 뭐죠",
+  "lang": "ko",
+  "expect": [
+   "w-lantern-game"
+  ]
+ },
+ {
+  "q": "가상 데스크톱이 뭔가요",
+  "lang": "ko",
+  "expect": [
+   "w-virtual-desktop-demo"
+  ]
+ },
+ {
+  "q": "which school does the creator attend",
+  "lang": "en",
+  "expect": [
+   "w-who-school"
+  ]
+ },
+ {
+  "q": "개발 기간은 얼마나 돼요",
+  "lang": "ko",
+  "expect": [
+   "w-howlong-built"
+  ]
+ },
+ {
+  "q": "API로 가져다 쓸 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "w-developer-use"
+  ]
+ },
+ {
+  "q": "부모님도 쓰실 수 있을까요",
+  "lang": "ko",
+  "expect": [
+   "w-elderly"
+  ]
+ },
+ {
+  "q": "아이가 혼자 해도 위험하지 않나요",
+  "lang": "ko",
+  "expect": [
+   "w-child-safe"
+  ]
+ },
+ {
+  "q": "AI 모델을 새로 학습시켰나요",
+  "lang": "ko",
+  "expect": [
+   "w-learn-ai"
+  ]
+ },
+ {
+  "q": "MediaPipe랑 Apple Vision 중 뭐가 더 좋아요",
+  "lang": "ko",
+  "expect": [
+   "w-hand-engines"
+  ]
+ },
+ {
+  "q": "깊이 카메라 필요 없나요",
+  "lang": "ko",
+  "expect": [
+   "w-vs-depth-camera"
+  ]
+ },
+ {
+  "q": "합성 영상은 어떤 조건으로 만들었나요",
+  "lang": "ko",
+  "expect": [
+   "w-test-videos-design"
+  ]
+ },
+ {
+  "q": "실제 지갑 영상 결과는 어땠나요",
+  "lang": "ko",
+  "expect": [
+   "w-real-video-result"
+  ]
+ },
+ {
+  "q": "펜촉 오차가 몇 픽셀이에요",
+  "lang": "ko",
+  "expect": [
+   "w-pen-numbers"
+  ]
+ },
+ {
+  "q": "처리 시간이 몇 ms예요",
+  "lang": "ko",
+  "expect": [
+   "w-speed-numbers"
+  ]
+ },
+ {
+  "q": "창가 직사광선에서도 되나요",
+  "lang": "ko",
+  "expect": [
+   "w-sunlight"
+  ]
+ },
+ {
+  "q": "패드 출력은 다른 게임에서도 돼요",
+  "lang": "ko",
+  "expect": [
+   "w-gamepad-limit"
+  ]
+ },
+ {
+  "q": "개인 이메일 알려주세요",
+  "lang": "ko",
+  "expect": [
+   "w-email"
+  ]
+ },
+ {
+  "q": "I'm a judge, summarize the key points",
+  "lang": "en",
+  "expect": [
+   "w-judge"
+  ]
+ },
+ {
+  "q": "진짜 몰래 촬영하는 데 악용될 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "w-misuse"
+  ]
+ },
+ {
+  "q": "영상이 파일로 남나요",
+  "lang": "ko",
+  "expect": [
+   "w-recorded-video"
+  ]
+ },
+ {
+  "q": "왜 맥에서만 지원해요",
+  "lang": "ko",
+  "expect": [
+   "w-why-mac-only"
+  ]
+ },
+ {
+  "q": "클라우드에서 돌리는 모드가 있나요",
+  "lang": "ko",
+  "expect": [
+   "w-cloud-mode"
+  ]
+ },
+ {
+  "q": "다시 찾기 끄면 얼마나 나빠져요",
+  "lang": "ko",
+  "expect": [
+   "w-reacq-effect"
+  ]
+ },
+ {
+  "q": "마우스보다 낫나요",
+  "lang": "ko",
+  "expect": [
+   "w-better-than-mouse"
+  ]
+ },
+ {
+  "q": "I only speak English, can you help?",
+  "lang": "en",
+  "expect": [
+   "w-english-visitor"
+  ]
+ },
+ {
+  "q": "그래픽카드 없어도 돼요",
+  "lang": "ko",
+  "expect": [
+   "w-gpu-need"
+  ]
+ },
+ {
+  "q": "퀴즈 하나 내 봐",
+  "lang": "ko",
+  "expect": [
+   "w-quiz"
+  ]
+ },
+ {
+  "q": "발표하는 사람이 누구죠",
+  "lang": "ko",
+  "expect": [
+   "w-presenter-who"
+  ]
+ },
+ {
+  "q": "Who is the speaker here?",
+  "lang": "en",
+  "expect": [
+   "w-presenter-who"
+  ]
+ },
+ {
+  "q": "설명해 주시던 분 어디 가셨어요",
+  "lang": "ko",
+  "expect": [
+   "w-presenter-away"
+  ]
+ },
+ {
+  "q": "김삼 지금 어디 갔어?",
+  "lang": "ko",
+  "expect": [
+   "w-presenter-away"
+  ]
+ },
+ {
+  "q": "Where did the presenter go?",
+  "lang": "en",
+  "expect": [
+   "w-presenter-away"
+  ]
+ },
+ {
+  "q": "이거 어떻게 쓰는 거예요",
+  "lang": "ko",
+  "expect": [
+   "w-how-to-use"
+  ]
+ },
+ {
+  "q": "사용법 좀 알려줘",
+  "lang": "ko",
+  "expect": [
+   "w-how-to-use"
+  ]
+ },
+ {
+  "q": "How do I use this?",
+  "lang": "en",
+  "expect": [
+   "w-how-to-use"
+  ]
+ },
+ {
+  "q": "카드에 있는 동그라미로 조작 기능을 이어 쓰는 순서가 궁금해요",
+  "lang": "ko",
+  "expect": [
+   "v180-patch-connect"
+  ]
+ },
+ {
+  "q": "Explain connecting a registered controller to a patch socket",
+  "lang": "en",
+  "expect": [
+   "v180-patch-connect"
+  ]
+ },
+ {
+  "q": "이미 이어 둔 선 하나의 입력 동작만 바꾸고 싶습니다",
+  "lang": "ko",
+  "expect": [
+   "v180-patch-edit"
+  ]
+ },
+ {
+  "q": "Can I adjust an existing connection without removing every mapping?",
+  "lang": "en",
+  "expect": [
+   "v180-patch-edit"
+  ]
+ },
+ {
+  "q": "손 집기를 스페이스 버튼 역할로 지정하고 중지 쪽으로 바꿔보고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "v180-hand-jack"
+  ]
+ },
+ {
+  "q": "Assign a thumb pinch to a function socket and choose the middle finger",
+  "lang": "en",
+  "expect": [
+   "v180-hand-jack"
+  ]
+ },
+ {
+  "q": "아무 물건도 등록하지 않았는데 보이는 손 항목을 꺼도 되나요",
+  "lang": "ko",
+  "expect": [
+   "v180-hand-enable"
+  ]
+ },
+ {
+  "q": "Can the built-in hand controller be turned off without removing objects?",
+  "lang": "en",
+  "expect": [
+   "v180-hand-enable"
+  ]
+ },
+ {
+  "q": "등록한 물건을 손끝으로 건드려 버튼 신호를 만들려면 어떻게 시작하죠",
+  "lang": "ko",
+  "expect": [
+   "v180-touch-how"
+  ]
+ },
+ {
+  "q": "Walk me through setting a registered object up as a touch button",
+  "lang": "en",
+  "expect": [
+   "v180-touch-how"
+  ]
+ },
+ {
+  "q": "책상 뒤쪽만 달라졌는데 손 없이 누른 것처럼 처리되는 걸 막나요",
+  "lang": "ko",
+  "expect": [
+   "v180-touch-false"
+  ]
+ },
+ {
+  "q": "Will skin-colored background movement activate touch when no hand is detected?",
+  "lang": "en",
+  "expect": [
+   "v180-touch-false"
+  ]
+ },
+ {
+  "q": "영상 위에 뜨는 접촉 변화 표시만 안 보이게 하고 싶습니다",
+  "lang": "ko",
+  "expect": [
+   "v180-touch-debug"
+  ]
+ },
+ {
+  "q": "Hide contact diagnostics without disabling the actual button detection",
+  "lang": "en",
+  "expect": [
+   "v180-touch-debug"
+  ]
+ },
+ {
+  "q": "등록된 컨트롤러 이름만 고칠 때 원래 선도 남아 있나요",
+  "lang": "ko",
+  "expect": [
+   "v180-rename"
+  ]
+ },
+ {
+  "q": "Do the existing patch connections survive changing an object label?",
+  "lang": "en",
+  "expect": [
+   "v180-rename"
+  ]
+ },
+ {
+  "q": "대상 물체는 살리고 지금 이어 둔 매핑만 전부 비우고 싶습니다",
+  "lang": "ko",
+  "expect": [
+   "v180-mapping-reset"
+  ]
+ },
+ {
+  "q": "Clear current patch wiring while retaining registered objects",
+  "lang": "en",
+  "expect": [
+   "v180-mapping-reset"
+  ]
+ },
+ {
+  "q": "처음 상태로 만드는 붉은 버튼을 쓰면 카메라 선택도 날아가나요",
+  "lang": "ko",
+  "expect": [
+   "v180-all-reset"
+  ]
+ },
+ {
+  "q": "Explain which data stays after resetting the entire setup",
+  "lang": "en",
+  "expect": [
+   "v180-all-reset"
+  ]
+ },
+ {
+  "q": "패널 정리 버튼과 빨간 전체 설정 복원 버튼의 범위가 궁금해요",
+  "lang": "ko",
+  "expect": [
+   "v180-layout-reset"
+  ]
+ },
+ {
+  "q": "Which reset restores display arrangement without removing input connections?",
+  "lang": "en",
+  "expect": [
+   "v180-layout-reset"
+  ]
+ },
+ {
+  "q": "오른쪽 설정 패널을 왼쪽 열의 다른 위치로 보내고 싶습니다",
+  "lang": "ko",
+  "expect": [
+   "v180-panels"
+  ]
+ },
+ {
+  "q": "Can I drag a panel heading to change its column and order?",
+  "lang": "en",
+  "expect": [
+   "v180-panels"
+  ]
+ },
+ {
+  "q": "무입력으로 홍보 화면에 들어갔다가 돌아오니 등록한 물건이 없어졌어요",
+  "lang": "ko",
+  "expect": [
+   "v180-idle"
+  ]
+ },
+ {
+  "q": "Why does returning from the idle showcase leave a fresh setup?",
+  "lang": "en",
+  "expect": [
+   "v180-idle"
+  ]
+ },
+ {
+  "q": "촬영 속도와 화면 지연을 기본 화면에서 따로 확인할 수 있나요",
+  "lang": "ko",
+  "expect": [
+   "v180-performance"
+  ]
+ },
+ {
+  "q": "Explain the capture, processing and display readings shown in the performance panel",
+  "lang": "en",
+  "expect": [
+   "v180-performance"
+  ]
+ },
+ {
+  "q": "거울처럼 보이기만 하는 옵션과 실제 조작 방향을 뒤집는 옵션이 같은가요",
+  "lang": "ko",
+  "expect": [
+   "v180-flip",
+   "v-sensitivity"
+  ]
+ },
+ {
+  "q": "Does mirroring the camera picture also reverse all controls?",
+  "lang": "en",
+  "expect": [
+   "v180-flip",
+   "v-sensitivity"
+  ]
+ },
+ {
+  "q": "음악 데모에서 물건과 집게 동작을 재생이나 믹서에 연결해 보고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "v180-dj-how"
+  ]
+ },
+ {
+  "q": "Walk me through patching physical controllers into the DJ mixer",
+  "lang": "en",
+  "expect": [
+   "v180-dj-how"
+  ]
+ },
+ {
+  "q": "디제이 데모에 나오는 소리는 외부 음원인가요 차임은 뭔가요",
+  "lang": "ko",
+  "expect": [
+   "v180-dj-sound"
+  ]
+ },
+ {
+  "q": "Describe the generated house groove and replacement for the loud horn",
+  "lang": "en",
+  "expect": [
+   "v180-dj-sound"
+  ]
+ },
+ {
+  "q": "그물로 떨어지는 과일을 받는 데모에서 물건을 어디로 움직이나요",
+  "lang": "ko",
+  "expect": [
+   "v180-fruit"
+  ]
+ },
+ {
+  "q": "Explain how physical handles control the net in the catching game",
+  "lang": "en",
+  "expect": [
+   "v180-fruit"
+  ]
+ },
+ {
+  "q": "공을 튕기는 패들 데모의 물체 조작과 아이템 효과가 궁금합니다",
+  "lang": "ko",
+  "expect": [
+   "v180-pong"
+  ]
+ },
+ {
+  "q": "How does bringing a controller closer affect a Pong paddle?",
+  "lang": "en",
+  "expect": [
+   "v180-pong"
+  ]
+ },
+ {
+  "q": "바닥 격자나 종이 네 점을 고르는 화면이 지금도 있나요",
+  "lang": "ko",
+  "expect": [
+   "v180-removed"
+  ]
+ },
+ {
+  "q": "Are the floor-button grid and paper-corner registration still in the interface?",
+  "lang": "en",
+  "expect": [
+   "v180-removed"
+  ]
+ },
+ {
+  "q": "자동 설정 중 오른쪽으로 갔다가 원래 시작점까지 꼭 되돌려야 하나요",
+  "lang": "ko",
+  "expect": [
+   "v180-calibration-center"
+  ]
+ },
+ {
+  "q": "May I reverse a calibration stroke without going back to its original center?",
+  "lang": "en",
+  "expect": [
+   "v180-calibration-center"
+  ]
+ },
+ {
+  "q": "방향과 이동 감도만 맞추고 클릭 검사는 나중에 하고 싶습니다",
+  "lang": "ko",
+  "expect": [
+   "v180-calibration-options"
+  ]
+ },
+ {
+  "q": "Can movement tuning be done without also retuning click and scroll gestures?",
+  "lang": "en",
+  "expect": [
+   "v180-calibration-options"
+  ]
+ },
+ {
+  "q": "설정 화면과 DJ를 오갈 때 원래 케이블을 잃는 문제를 고쳤나요",
+  "lang": "ko",
+  "expect": [
+   "v180-missing-jacks"
+  ]
+ },
+ {
+  "q": "Were stale saves and panel switching that hid jacks addressed?",
+  "lang": "en",
+  "expect": [
+   "v180-missing-jacks"
+  ]
+ },
+ {
+  "q": "맨손 카드를 이어서 집는 것과 물건을 터치하도록 연결한 것의 차이는요",
+  "lang": "ko",
+  "expect": [
+   "v180-object-touch-or-hand"
+  ]
+ },
+ {
+  "q": "Compare a pinch from the hand card with contact on a registered object",
+  "lang": "en",
+  "expect": [
+   "v180-object-touch-or-hand"
+  ]
+ },
+ {
+  "q": "안내 따라 하기 하면 몇 단계예요?",
+  "lang": "ko",
+  "expect": [
+   "v181-tutorial-steps",
+   "v-tutorial"
+  ]
+ },
+ {
+  "q": "What steps are in the follow-along guide?",
+  "lang": "en",
+  "expect": [
+   "v181-tutorial-steps",
+   "v-tutorial"
+  ]
+ },
+ {
+  "q": "화면 위에 보라색 안내 문구 없애고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "v181-guide-prompt"
+  ]
+ },
+ {
+  "q": "How do I hide the purple first-time hint?",
+  "lang": "en",
+  "expect": [
+   "v181-guide-prompt"
+  ]
+ },
+ {
+  "q": "물체로 퐁 하려면 뭘 눌러야 돼요",
+  "lang": "ko",
+  "expect": [
+   "v181-auto-map",
+   "v180-pong"
+  ]
+ },
+ {
+  "q": "How do I hook my object up to a game quickly?",
+  "lang": "en",
+  "expect": [
+   "v181-auto-map"
+  ]
+ },
+ {
+  "q": "연결 대기라고 뜨고 게임이 안 시작돼요",
+  "lang": "ko",
+  "expect": [
+   "v181-game-not-start"
+  ]
+ },
+ {
+  "q": "Why won't the game start when I press start?",
+  "lang": "en",
+  "expect": [
+   "v181-game-not-start"
+  ]
+ },
+ {
+  "q": "게임에서 패들이 너무 많이 움직여요",
+  "lang": "ko",
+  "expect": [
+   "v181-game-sensitivity"
+  ]
+ },
+ {
+  "q": "The game reacts too much to small moves",
+  "lang": "en",
+  "expect": [
+   "v181-game-sensitivity"
+  ]
+ },
+ {
+  "q": "게임 잠깐 멈추는 키",
+  "lang": "ko",
+  "expect": [
+   "v181-game-pause"
+  ]
+ },
+ {
+  "q": "Which key pauses the game?",
+  "lang": "en",
+  "expect": [
+   "v181-game-pause"
+  ]
+ },
+ {
+  "q": "하키 컴퓨터가 너무 잘해요",
+  "lang": "ko",
+  "expect": [
+   "v181-hockey"
+  ]
+ },
+ {
+  "q": "How do I win at air hockey?",
+  "lang": "en",
+  "expect": [
+   "v181-hockey"
+  ]
+ },
+ {
+  "q": "데모 게임 탭이 어디 있죠",
+  "lang": "ko",
+  "expect": [
+   "v181-demo-row",
+   "g-demos"
+  ]
+ },
+ {
+  "q": "가상 데스크톱이 회색으로 막혀 있어요",
+  "lang": "ko",
+  "expect": [
+   "v181-vdesk-lock"
+  ]
+ },
+ {
+  "q": "Virtual desktop says turn on the mouse first",
+  "lang": "en",
+  "expect": [
+   "v181-vdesk-lock"
+  ]
+ },
+ {
+  "q": "물체 마우스로는 클릭 못 해요?",
+  "lang": "ko",
+  "expect": [
+   "v181-object-mouse-click",
+   "g-object-mode",
+   "h-object-mouse"
+  ]
+ },
+ {
+  "q": "Can the object mouse click?",
+  "lang": "en",
+  "expect": [
+   "v181-object-mouse-click",
+   "g-object-mode",
+   "h-object-mouse"
+  ]
+ },
+ {
+  "q": "터치 막대는 올라가는데 반응이 없어요",
+  "lang": "ko",
+  "expect": [
+   "v181-touch-gauge"
+  ]
+ },
+ {
+  "q": "Touch bar fills up but nothing happens",
+  "lang": "en",
+  "expect": [
+   "v181-touch-gauge"
+  ]
+ },
+ {
+  "q": "손바닥 위치를 게임 스틱으로 쓰고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "v181-hand-xy"
+  ]
+ },
+ {
+  "q": "Use my palm as a joystick",
+  "lang": "en",
+  "expect": [
+   "v181-hand-xy"
+  ]
+ },
+ {
+  "q": "내가 원하는 키에 물체 연결하기",
+  "lang": "ko",
+  "expect": [
+   "v181-add-mapping"
+  ]
+ },
+ {
+  "q": "How do I make a new mapping to a key?",
+  "lang": "en",
+  "expect": [
+   "v181-add-mapping"
+  ]
+ },
+ {
+  "q": "카메라 영상에서 물체 눌러서 잭 연결",
+  "lang": "ko",
+  "expect": [
+   "v181-video-click"
+  ]
+ },
+ {
+  "q": "Connect a function by clicking the object on camera",
+  "lang": "en",
+  "expect": [
+   "v181-video-click"
+  ]
+ },
+ {
+  "q": "DJ 자동 매핑 했는데 매핑 패널에 없어요",
+  "lang": "ko",
+  "expect": [
+   "v181-dj-hidden"
+  ]
+ },
+ {
+  "q": "Where are my DJ cables in the mapping panel?",
+  "lang": "en",
+  "expect": [
+   "v181-dj-hidden"
+  ]
+ },
+ {
+  "q": "내장 카메라 말고 다른 카메라 쓰기",
+  "lang": "ko",
+  "expect": [
+   "v181-camera-order"
+  ]
+ },
+ {
+  "q": "다른 후보 선택하면 매핑 날아가요?",
+  "lang": "ko",
+  "expect": [
+   "v181-candidate-keep"
+  ]
+ },
+ {
+  "q": "실제 입력 켜면 상단이 빨간색이에요",
+  "lang": "ko",
+  "expect": [
+   "v181-real-output-bar"
+  ]
+ },
+ {
+  "q": "Why is the top bar red?",
+  "lang": "en",
+  "expect": [
+   "v181-real-output-bar"
+  ]
+ },
+ {
+  "q": "부스에서 하루 6시간 켜 놔도 돼요?",
+  "lang": "ko",
+  "expect": [
+   "v181-long-session",
+   "w-long-run"
+  ]
+ },
+ {
+  "q": "Can it run for six hours straight?",
+  "lang": "en",
+  "expect": [
+   "v181-long-session",
+   "w-long-run"
+  ]
+ },
+ {
+  "q": "게임 시작 전에 나오는 조작 설명 카드",
+  "lang": "ko",
+  "expect": [
+   "v182-game-start-guide"
+  ]
+ },
+ {
+  "q": "What does the controls card before a game show?",
+  "lang": "en",
+  "expect": [
+   "v182-game-start-guide"
+  ]
+ },
+ {
+  "q": "시연 영상 나오기까지 시간 바꾸고 싶어요",
+  "lang": "ko",
+  "expect": [
+   "v182-demo-video",
+   "v180-idle"
+  ]
+ },
+ {
+  "q": "How long until the demo video starts?",
+  "lang": "en",
+  "expect": [
+   "v182-demo-video",
+   "v180-idle"
+  ]
+ },
+ {
+  "q": "아이폰이 카메라 목록에 안 떠요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-camera",
+   "h-iphone-camera"
+  ]
+ },
+ {
+  "q": "DJ 자동 매핑 누르면 다른 연결은 어떻게 돼요",
+  "lang": "ko",
+  "expect": [
+   "v180-dj-how"
+  ]
+ }
+]

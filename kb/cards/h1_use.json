@@ -1,0 +1,1288 @@
+[
+  {
+    "id": "h-how-to-start",
+    "cat": "usage",
+    "status": "info",
+    "q": {
+      "ko": [
+        "처음에 어떻게 시작하나요?",
+        "사용 순서가 어떻게 돼요?",
+        "처음 쓰는 방법 알려 주세요",
+        "어떻게 쓰는 거예요?",
+        "시작하기",
+        "제일 먼저 뭘 해야 하나요",
+        "맨 처음 할 일이 뭐예요",
+        "써 보려면 어떤 순서로 해요",
+        "첫 단계가 뭐예요",
+        "시작 방법 간단히",
+        "어떻게 써요",
+        "어떻게 시작해요",
+        "사용법 알려주세요",
+        "처음에 뭐부터 해요",
+        "쓰는 법이 뭐예요",
+        "어떻게 사용해요",
+        "시작은 어떻게 해요"
+      ],
+      "en": [
+        "How do I get started?",
+        "What are the steps to use it?",
+        "How do I use this for the first time?",
+        "getting started guide",
+        "What should I do first",
+        "Walk me through step one",
+        "How do I begin using it",
+        "First steps to take",
+        "how do I use it",
+        "how do I get started",
+        "how do I begin",
+        "how does one use this",
+        "where do I start",
+        "how to use"
+      ]
+    },
+    "a": {
+      "ko": "처음이라면 제목 오른쪽 [? 안내]를 눌러 따라 하기 튜토리얼을 해 보세요. 직접 하려면 카메라를 고정하고 AnyControl에서 장치를 선택해 주세요. 물체는 영상에서 드래그해 등록하고, 맨손은 기본 맨손 카드를 쓰면 돼요. 마우스로 쓰려면 마우스 모드와 대상을 고르고, 버튼이나 게임 조작에 쓰려면 카드의 잭을 기능 잭에 연결하거나 게임의 [자동 매핑]을 눌러요. 필요하면 자동 보정을 하고 앱 안의 데모에서 먼저 확인하세요. 실제 Mac 조작은 손쉬운 사용 권한과 출력 켜기가 따로 필요하고, 멈출 때는 Esc를 누르세요.",
+      "en": "If it is your first time, press Guide next to the title and follow the tutorial. To do it yourself, fix the camera and choose it in AnyControl. Register an object by dragging around it in the video, or use the built-in hand card. For a mouse, choose a mouse mode and target; for buttons or games, connect a card jack to a function jack or press a game's Auto-map. Calibrate if needed and try it in the in-app demos first. Real Mac control needs Accessibility permission and output turned on, and Esc stops it."
+    },
+    "kw": [
+      "시작",
+      "사용법",
+      "순서",
+      "처음",
+      "how to use",
+      "getting started",
+      "튜토리얼",
+      "tutorial",
+      "첫 사용",
+      "먼저",
+      "첫 단계",
+      "맨 처음",
+      "시작 방법",
+      "first",
+      "begin",
+      "step one",
+      "walk through",
+      "어떻게 써",
+      "쓰는 법",
+      "get started"
+    ],
+    "src": [
+      "sources/02_README_ko.md#다운로드 및 설치",
+      "sources/03_README_en.md#Download and install"
+    ],
+    "related": [
+      "h-install-how",
+      "h-permissions",
+      "h-object-mouse"
+    ],
+    "suggest": true
+  },
+  {
+    "id": "h-need-list",
+    "cat": "usage",
+    "status": "info",
+    "q": {
+      "ko": [
+        "준비물이 뭐예요?",
+        "뭐가 필요해요?",
+        "쓰려면 뭘 준비해야 해요?",
+        "필요한 장비",
+        "미리 챙길 물건이 뭐예요",
+        "필요한 물품",
+        "구매해야 할 게 있나요",
+        "무엇이 있어야 해요"
+      ],
+      "en": [
+        "What do I need to prepare?",
+        "What equipment is required?",
+        "What do I need to use it?",
+        "requirements checklist",
+        "What do I have to buy",
+        "What should I get ready",
+        "List of things needed"
+      ]
+    },
+    "a": {
+      "ko": "M1 이후 칩이 들어간 Mac, 카메라 한 대, 그리고 마우스처럼 쓸 물체나 펜(또는 맨손)이 필요해요. 카메라는 iPhone을 거치대에 세워 쓰는 방법을 권장해요. 처음 설치할 때는 인터넷도 필요해요.",
+      "en": "You need a Mac with an M1 or later chip, one camera, and something to use as a mouse: an object, a pen, or just your bare hand. Using an iPhone on a stand as the camera is recommended. You also need internet for the first installation."
+    },
+    "kw": [
+      "준비물",
+      "필요한 것",
+      "장비",
+      "requirements",
+      "equipment",
+      "iPhone",
+      "거치대",
+      "stand",
+      "카메라",
+      "사 와야",
+      "챙길",
+      "물품",
+      "구매",
+      "buy",
+      "bring",
+      "gear",
+      "get ready",
+      "shopping"
+    ],
+    "src": [
+      "sources/02_README_ko.md#요구사항",
+      "sources/02_README_ko.md#iPhone 연결 — 연속성 카메라",
+      "sources/01_소개서_v1.8.0.md#11-준비물과-요구사항"
+    ],
+    "related": [
+      "h-mac-spec",
+      "h-iphone-camera",
+      "h-camera-required"
+    ]
+  },
+  {
+    "id": "h-mac-spec",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "컴퓨터 사양이 어떻게 돼요?",
+        "어떤 맥에서 돌아가요?",
+        "맥북 에어도 되나요?",
+        "최소 사양이 뭐예요?",
+        "M1 이상이어야 해요?",
+        "맥OS 몇 버전부터 되나요",
+        "내 맥에서 돼요",
+        "어떤 맥북이 필요해요",
+        "M1 맥북 에어 8GB에서도 돌아가요"
+      ],
+      "en": [
+        "What computer specs do I need?",
+        "Which Mac can run it?",
+        "Does it work on a MacBook Air?",
+        "minimum specs",
+        "Do I need an M1 chip or newer?",
+        "Will my MacBook Pro run it",
+        "Mac requirements",
+        "Does an M2 Mac work",
+        "Minimum macOS",
+        "Does it run on an M1 MacBook Air with 8GB?"
+      ]
+    },
+    "a": {
+      "ko": "Mac이어야 하고, macOS 14 이상에 M1 이후 칩(Apple Silicon)이 들어간 모델이 필요해요. 메모리는 8GB 이상이고 16GB를 권장해요. 맥북 에어처럼 구체적인 기종별로 직접 써 본 확인 결과는 없어요.",
+      "en": "You need a Mac running macOS 14 or later with an M1 or later chip (Apple Silicon). Memory should be at least 8GB, and 16GB is recommended. There are no results from trying specific models such as the MacBook Air."
+    },
+    "kw": [
+      "사양",
+      "맥",
+      "Mac",
+      "맥북",
+      "MacBook",
+      "M1",
+      "M2",
+      "M3",
+      "Apple Silicon",
+      "macOS 14",
+      "메모리",
+      "8GB",
+      "16GB",
+      "specs",
+      "맥OS",
+      "버전",
+      "프로",
+      "macos version",
+      "requirements",
+      "macbook pro",
+      "minimum",
+      "맥북 에어",
+      "MacBook Air"
+    ],
+    "src": [
+      "sources/02_README_ko.md#요구사항",
+      "sources/03_README_en.md#Requirements"
+    ],
+    "related": [
+      "h-memory-disk",
+      "h-windows",
+      "h-intel-mac"
+    ],
+    "suggest": true
+  },
+  {
+    "id": "h-memory-disk",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "용량은 얼마나 필요해요?",
+        "메모리랑 저장공간은 얼마나 필요해요?",
+        "램이 8GB면 되나요?",
+        "저장 공간 얼마나 써요?",
+        "디스크 공간 얼마나 비워야 해요",
+        "저장 공간이 부족해도 돼요",
+        "기가바이트 몇 필요해요",
+        "메모리 최소 요구"
+      ],
+      "en": [
+        "How much space do I need?",
+        "How much memory and storage is needed?",
+        "Is 8GB of RAM enough?",
+        "disk space",
+        "Is 16 GB of RAM enough",
+        "Disk space needed",
+        "Minimum memory",
+        "How much RAM"
+      ]
+    },
+    "a": {
+      "ko": "메모리는 8GB 이상이면 되고 16GB를 권장해요. 처음 설치할 때는 저장 공간이 4GB 이상 비어 있어야 해요.",
+      "en": "Memory of 8GB or more works, and 16GB is recommended. For the first installation you need at least 4GB of free storage."
+    },
+    "kw": [
+      "용량",
+      "메모리",
+      "램",
+      "RAM",
+      "저장공간",
+      "디스크",
+      "disk",
+      "storage",
+      "4GB",
+      "8GB",
+      "기가",
+      "기가바이트",
+      "충분",
+      "gigabytes",
+      "gb",
+      "free space",
+      "ram",
+      "enough"
+    ],
+    "src": [
+      "sources/02_README_ko.md#요구사항"
+    ],
+    "related": [
+      "h-mac-spec",
+      "h-internet-install"
+    ]
+  },
+  {
+    "id": "h-windows",
+    "cat": "limits",
+    "status": "info",
+    "q": {
+      "ko": [
+        "윈도우에서도 되나요?",
+        "Windows 지원하나요?",
+        "리눅스는요?",
+        "맥이 없어도 쓸 수 있나요?",
+        "윈도우",
+        "Windows PC에서 쓸 수 있나요",
+        "맥이 아니라 윈도우인데요",
+        "리눅스 컴퓨터도 돼요"
+      ],
+      "en": [
+        "Does it work on Windows?",
+        "Is Windows supported?",
+        "What about Linux?",
+        "Can I use it without a Mac?",
+        "Windows",
+        "I only have a Windows PC",
+        "Is Linux OK",
+        "Does it run on non-Mac computers"
+      ]
+    },
+    "a": {
+      "ko": "지금은 Mac용이에요. 확인된 사양이 macOS 14 이상에 M1 이후 칩이고, Windows나 Linux에서 된다는 내용은 없어요. 일부 기능은 Mac 전용 기술을 쓰기 때문에 다른 컴퓨터에서는 쓰기 어려워요.",
+      "en": "Right now it is made for Mac. The confirmed requirement is macOS 14 or later with an M1 or later chip, and nothing says it works on Windows or Linux. Some features rely on Mac-only technology, so other computers are unlikely to work."
+    },
+    "kw": [
+      "윈도우",
+      "Windows",
+      "리눅스",
+      "Linux",
+      "운영체제",
+      "OS",
+      "다른 컴퓨터",
+      "맥 전용",
+      "Mac only",
+      "PC",
+      "윈도우 노트북",
+      "윈도우 PC",
+      "맥이 아니",
+      "windows laptop",
+      "windows pc",
+      "non-mac",
+      "not a mac"
+    ],
+    "src": [
+      "sources/02_README_ko.md#요구사항",
+      "sources/04_HANDOFF_개발기록.md#6. 알려진 한계 / 주의"
+    ],
+    "related": [
+      "h-mac-spec",
+      "h-intel-mac",
+      "h-phone-app"
+    ],
+    "suggest": true
+  },
+  {
+    "id": "h-intel-mac",
+    "cat": "limits",
+    "status": "info",
+    "q": {
+      "ko": [
+        "인텔 맥에서도 되나요?",
+        "오래된 맥북은요?",
+        "M1보다 예전 맥은 안 되나요?",
+        "Intel Mac",
+        "2018년 맥북인데 되나요",
+        "인텔 프로세서 맥",
+        "M1 아닌 맥북",
+        "예전 맥북에서 돌려도 되나요"
+      ],
+      "en": [
+        "Does it work on an Intel Mac?",
+        "What about an older MacBook?",
+        "Does it fail on Macs older than M1?",
+        "Intel Mac",
+        "Is an Intel-based Mac supported",
+        "Older Mac with Intel chip",
+        "Non-M1 MacBook"
+      ]
+    },
+    "a": {
+      "ko": "필요한 사양에 M1 이후 칩이라고 적혀 있어요. 인텔 칩 Mac에서 된다는 확인된 내용은 없어요.",
+      "en": "The stated requirement is an M1 or later chip. There is no confirmed information that it works on Macs with an Intel chip."
+    },
+    "kw": [
+      "인텔",
+      "Intel",
+      "구형 맥",
+      "오래된 맥",
+      "older Mac",
+      "M1",
+      "Apple Silicon",
+      "칩",
+      "인텔 칩",
+      "인텔 프로세서",
+      "2018",
+      "intel chip",
+      "intel processor",
+      "non-m1",
+      "older macbook"
+    ],
+    "src": [
+      "sources/02_README_ko.md#요구사항"
+    ],
+    "related": [
+      "h-mac-spec",
+      "h-windows"
+    ]
+  },
+  {
+    "id": "h-phone-app",
+    "cat": "limits",
+    "status": "info",
+    "q": {
+      "ko": [
+        "아이폰이나 안드로이드에서 앱으로 쓸 수 있나요?",
+        "폰에서 직접 돌아가나요?",
+        "안드로이드 폰도 되나요?",
+        "스마트폰 앱이 있나요?",
+        "갤럭시도 돼요?",
+        "폰 앱 버전이 있나요",
+        "스마트폰만으로 쓸 수 있나요",
+        "아이폰 앱으로도 나와요",
+        "안드로이드 버전"
+      ],
+      "en": [
+        "Can I run it as an app on iPhone or Android?",
+        "Does it run directly on a phone?",
+        "Does it work with Android phones?",
+        "Is there a smartphone app?",
+        "Does it work with a Galaxy phone?",
+        "Can I install it on a Galaxy phone",
+        "Is there a mobile app",
+        "Phone-only usage",
+        "Does an iOS app exist"
+      ]
+    },
+    "a": {
+      "ko": "휴대폰 앱은 확인된 게 없어요. AnyControl은 Mac에서 돌아가고, iPhone은 Mac의 카메라 역할로 쓰는 방식이에요. 안드로이드 폰을 카메라로 쓰는 방법도 확인된 내용이 없어요.",
+      "en": "No phone app has been confirmed. AnyControl runs on a Mac, and the iPhone serves as the Mac's camera. Using an Android phone as the camera is also not covered by any confirmed information."
+    },
+    "kw": [
+      "아이폰 앱",
+      "안드로이드",
+      "Android",
+      "갤럭시",
+      "Galaxy",
+      "스마트폰",
+      "smartphone",
+      "모바일",
+      "휴대폰",
+      "phone app",
+      "갤럭시 폰",
+      "폰 앱",
+      "설치할 수",
+      "android version",
+      "mobile app",
+      "galaxy phone",
+      "ios app",
+      "iOS 앱"
+    ],
+    "src": [
+      "sources/02_README_ko.md#iPhone 연결 — 연속성 카메라",
+      "sources/02_README_ko.md#요구사항"
+    ],
+    "related": [
+      "h-iphone-camera",
+      "h-windows"
+    ]
+  },
+  {
+    "id": "h-iphone-camera",
+    "cat": "usage",
+    "status": "info",
+    "q": {
+      "ko": [
+        "아이폰을 카메라로 쓸 수 있나요?",
+        "아이폰 연결하는 법",
+        "iPhone 웹캠으로 쓰는 방법",
+        "아이폰이 꼭 필요한가요?",
+        "연속성 카메라가 뭐예요?",
+        "아이폰을 웹캠 대신 쓰려면",
+        "폰 카메라를 연결하는 방법",
+        "아이폰으로 촬영해서 쓸 수 있나요",
+        "아이폰 연결은 어떻게 해요",
+        "아이폰을 웹캠처럼 써요",
+        "폰을 카메라로 어떻게 써요"
+      ],
+      "en": [
+        "Can I use my iPhone as the camera?",
+        "How do I connect an iPhone?",
+        "How do I use an iPhone as a webcam?",
+        "Is an iPhone required?",
+        "What is Continuity Camera?",
+        "Use my phone camera with the Mac",
+        "Connect iPhone as camera",
+        "How to hook up an iPhone camera",
+        "how do I connect my iphone",
+        "how do I use my phone as the camera",
+        "using an iphone as a webcam"
+      ]
+    },
+    "a": {
+      "ko": "네, iPhone을 Mac의 웹캠으로 쓰는 Apple 기능(연속성 카메라)을 권장하고, USB 케이블로 연결하는 방법이 가장 좋아요. iPhone을 거치대에 고정해 뒷면 카메라가 물체나 손을 보게 놓으세요. 연결된 iPhone이 있으면 앱을 켤 때 자동으로 먼저 선택되고, 다른 카메라는 카메라 패널의 목록에서 고를 수 있어요. 목록에 안 보이면 유선으로 연결한 뒤 장치 새로고침을 눌러 보세요.",
+      "en": "Yes. Apple's Continuity Camera, which turns an iPhone into a Mac webcam, is recommended, and a USB cable is the best way to connect. Mount the iPhone so its back camera faces your object or hand. A connected iPhone is picked automatically when the app starts, and you can choose other cameras from the Camera panel list. If it is not listed, connect it by cable and press Refresh devices."
+    },
+    "kw": [
+      "아이폰",
+      "iPhone",
+      "연속성 카메라",
+      "Continuity Camera",
+      "웹캠",
+      "USB",
+      "거치대",
+      "카메라 연결",
+      "iPhone camera",
+      "맥 카메라처럼",
+      "폰 카메라",
+      "웹캠 대신",
+      "act as webcam",
+      "phone camera",
+      "hook up",
+      "연결",
+      "connect",
+      "as a webcam"
+    ],
+    "src": [
+      "sources/02_README_ko.md#iPhone 연결 — 연속성 카메라",
+      "sources/03_README_en.md#Connect an iPhone"
+    ],
+    "related": [
+      "h-iphone-conditions",
+      "h-webcam",
+      "h-ts-iphone-missing"
+    ],
+    "suggest": true
+  },
+  {
+    "id": "h-iphone-conditions",
+    "cat": "usage",
+    "status": "info",
+    "q": {
+      "ko": [
+        "아이폰은 어떤 모델이어야 해요?",
+        "iPhone 연결 조건이 뭐예요?",
+        "아이폰 설정에서 뭘 켜야 해요?",
+        "구형 아이폰도 되나요?",
+        "같은 애플 계정이어야 하나요?",
+        "아이폰 iOS 버전 조건",
+        "몇 년식 아이폰부터 돼요",
+        "아이폰 11이나 12도 되나요",
+        "아이폰 설정 요건"
+      ],
+      "en": [
+        "Which iPhone models work?",
+        "What are the conditions to connect an iPhone?",
+        "What do I turn on in iPhone settings?",
+        "Does an older iPhone work?",
+        "Do both devices need the same Apple Account?",
+        "Does an iPhone 11 work with Continuity Camera",
+        "Minimum iPhone model",
+        "iPhone requirements for connecting"
+      ]
+    },
+    "a": {
+      "ko": "Apple 안내에 따른 조건은 이래요. iPhone XR 이후 모델에 iOS 16 이상이어야 해요. Mac과 iPhone이 이중 인증을 쓰는 같은 Apple 계정으로 로그인되어 있어야 하고, iPhone 설정에서 연속성 카메라를 켜야 해요. 두 기기를 가까이 두고 Wi-Fi와 Bluetooth도 켜 두세요. USB로 연결하면 iPhone에서 이 컴퓨터를 신뢰한다고 눌러 줘야 해요.",
+      "en": "These are the conditions in Apple's guide. You need an iPhone XR or later with iOS 16 or later. Both the Mac and iPhone must be signed in to the same Apple Account with two-factor authentication, and Continuity Camera must be turned on in iPhone settings. Keep the devices close with Wi-Fi and Bluetooth on. If you connect by USB, tap to trust this computer on the iPhone."
+    },
+    "kw": [
+      "iPhone XR",
+      "iOS 16",
+      "아이폰 모델",
+      "Apple 계정",
+      "이중 인증",
+      "신뢰",
+      "Wi-Fi",
+      "Bluetooth",
+      "연속성 카메라 켜기",
+      "trust",
+      "아이폰 11",
+      "iOS 버전",
+      "몇 년식",
+      "iphone 11",
+      "ios version",
+      "minimum model",
+      "iphone requirements"
+    ],
+    "src": [
+      "sources/02_README_ko.md#iPhone 연결 — 연속성 카메라",
+      "sources/03_README_en.md#Connect an iPhone"
+    ],
+    "related": [
+      "h-iphone-camera",
+      "h-ts-iphone-missing"
+    ]
+  },
+  {
+    "id": "h-webcam",
+    "cat": "usage",
+    "status": "partial",
+    "q": {
+      "ko": [
+        "일반 웹캠도 되나요?",
+        "노트북 내장 카메라로도 되나요?",
+        "USB 카메라 써도 돼요?",
+        "아이폰 없이 쓸 수 있나요?",
+        "웹캠",
+        "저렴한 USB 웹캠도 돼요",
+        "아이폰 없으면 어떻게 해요",
+        "내장 카메라 정확도는 어때요",
+        "싸구려 웹캠도 괜찮나요",
+        "아이폰 없으면 안 돼요",
+        "웹캠으로도 돼요",
+        "노트북 카메라로 돼요",
+        "폰 없이도 돼요",
+        "아이폰 꼭 필요해요",
+        "카메라는 아무거나 돼요"
+      ],
+      "en": [
+        "Does a regular webcam work?",
+        "Can I use the built-in laptop camera?",
+        "Can I use a USB camera?",
+        "Can I use it without an iPhone?",
+        "webcam",
+        "Can I just use the MacBook camera",
+        "No iPhone, what then",
+        "Is the built-in camera accurate enough",
+        "do I need an iphone",
+        "can I use my laptop camera",
+        "does a normal webcam work",
+        "is an iphone required",
+        "can I skip the iphone"
+      ]
+    },
+    "a": {
+      "ko": "Mac에 내장된 카메라나 웹캠으로도 동작해요. 다만 iPhone을 썼을 때보다 정확도가 떨어지고 반응이 느려질 수 있어요. 기종별로 직접 비교해 본 결과는 없어요.",
+      "en": "It also works with a Mac's built-in camera or a webcam. Accuracy may be lower and response slower than with an iPhone. There are no results from comparing specific camera models."
+    },
+    "kw": [
+      "웹캠",
+      "webcam",
+      "내장 카메라",
+      "built-in camera",
+      "USB 카메라",
+      "노트북 카메라",
+      "FaceTime 카메라",
+      "아이폰 없이",
+      "카메라 종류",
+      "맥북 카메라",
+      "저렴한",
+      "싸구려",
+      "cheap",
+      "usb webcam",
+      "macbook camera",
+      "no iphone",
+      "아이폰 없으면",
+      "iphone required",
+      "laptop camera"
+    ],
+    "src": [
+      "sources/01_소개서_v1.8.0.md#11-준비물과-요구사항",
+      "sources/02_README_ko.md#요구사항"
+    ],
+    "related": [
+      "h-iphone-camera",
+      "h-camera-required"
+    ]
+  },
+  {
+    "id": "h-camera-required",
+    "cat": "usage",
+    "status": "info",
+    "q": {
+      "ko": [
+        "카메라가 꼭 있어야 해요?",
+        "카메라 없이도 되나요?",
+        "카메라는 몇 대 필요해요?",
+        "카메라 필수인가요?",
+        "카메라 꼭 필요한가요",
+        "카메라 없이 쓸 수 있는 방법",
+        "카메라가 반드시 있어야 하나요"
+      ],
+      "en": [
+        "Do I really need a camera?",
+        "Can it work without a camera?",
+        "How many cameras do I need?",
+        "Is a camera mandatory?",
+        "Can I use it with no camera at all",
+        "Is a camera mandatory",
+        "Does it need a camera"
+      ]
+    },
+    "a": {
+      "ko": "네, 카메라는 꼭 필요하고 사용을 허용해 줘야 해요. AnyControl은 카메라가 보는 물체와 손의 움직임을 마우스나 키보드 입력으로 바꾸는 방식이에요. 한 대면 충분하다고 소개해요.",
+      "en": "Yes, a camera is required and you need to allow access to it. AnyControl turns the movement of objects and hands that the camera sees into mouse or keyboard input. One camera is described as enough."
+    },
+    "kw": [
+      "카메라 필수",
+      "camera required",
+      "카메라 없이",
+      "카메라 한 대",
+      "one camera",
+      "카메라 권한",
+      "필수",
+      "없으면 못",
+      "반드시",
+      "absolutely",
+      "mandatory",
+      "no camera",
+      "necessary"
+    ],
+    "src": [
+      "sources/02_README_ko.md#요구사항",
+      "sources/02_README_ko.md#AnyControl v1.3.0"
+    ],
+    "related": [
+      "h-webcam",
+      "h-permissions"
+    ]
+  },
+  {
+    "id": "h-where-download",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "어디서 다운로드해요?",
+        "설치 파일은 어디서 받아요?",
+        "써 보고 싶은데 어떻게 받아요?",
+        "다운로드 링크",
+        "다운받는 곳 알려 주세요",
+        "어디서 받으면 되나요",
+        "공식 다운로드 페이지",
+        "설치 프로그램 받는 주소"
+      ],
+      "en": [
+        "Where do I download it?",
+        "Where do I get the installer?",
+        "I want to try it. How do I get it?",
+        "download link",
+        "Download page",
+        "Link to download",
+        "Where do I grab the setup file"
+      ]
+    },
+    "a": {
+      "ko": "공식 GitHub의 Releases 페이지에서 Mac용 설치 파일(.command)을 내려받아요. 이름에 'Source code'가 붙은 압축 파일은 일반 사용자용 설치 파일이 아니니 받지 마세요. 삭제용 파일도 함께 받아 두면 편해요.",
+      "en": "Download the Mac installer (.command file) from the official GitHub Releases page. Do not take the archives labeled 'Source code'; they are not installers for regular users. It is handy to also download the uninstaller file."
+    },
+    "kw": [
+      "다운로드",
+      "download",
+      "GitHub",
+      "Releases",
+      "설치 파일",
+      "받는 곳",
+      ".command",
+      "링크",
+      "체험",
+      "try",
+      "다운받",
+      "받는 주소",
+      "installer",
+      "grab",
+      "setup file",
+      "download page"
+    ],
+    "src": [
+      "sources/02_README_ko.md#다운로드 및 설치",
+      "sources/03_README_en.md#Download and install"
+    ],
+    "related": [
+      "h-install-how",
+      "h-free"
+    ],
+    "suggest": true
+  },
+  {
+    "id": "h-install-how",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "설치는 어떻게 하나요?",
+        "설치 방법이 어려워요?",
+        "더블클릭만 하면 되나요?",
+        "설치하면 뭐가 일어나요?",
+        "미리 설치할 프로그램이 있나요?",
+        "파이썬을 미리 깔아야 하나요",
+        "미리 설치할 프로그램이 있나요",
+        "설치 과정이 쉬워요",
+        "클릭 한 번이면 되나요",
+        "설치법 알려줘",
+        "설치법"
+      ],
+      "en": [
+        "How do I install it?",
+        "Is installation difficult?",
+        "Do I just double-click?",
+        "What happens during installation?",
+        "Do I need to install anything first?",
+        "Is the setup complicated",
+        "Do I need to install anything first",
+        "Is installation easy",
+        "How to install"
+      ]
+    },
+    "a": {
+      "ko": "내려받은 설치 파일을 더블클릭하면 돼요. 설치에 필요한 것은 알아서 설치되니 미리 깔 프로그램은 없어요. 설치가 끝나면 브라우저에서 AnyControl이 저절로 열려요. 처음에는 Mac의 보안 안내가 나올 수 있어요.",
+      "en": "Double-click the installer you downloaded. Everything it needs is installed automatically, so there is nothing to install beforehand. When it finishes, AnyControl opens by itself in your browser. A Mac security message may appear the first time."
+    },
+    "kw": [
+      "설치",
+      "install",
+      "더블클릭",
+      "double-click",
+      "설치 방법",
+      "자동 설치",
+      "사전 설치",
+      "prerequisites",
+      "setup",
+      "복잡",
+      "파이썬",
+      "미리 깔",
+      "쉬워",
+      "python",
+      "complicated",
+      "easy",
+      "anything first",
+      "설치법"
+    ],
+    "src": [
+      "sources/02_README_ko.md#다운로드 및 설치",
+      "sources/03_README_en.md#Download and install"
+    ],
+    "related": [
+      "h-install-time",
+      "h-security-block",
+      "h-internet-install"
+    ],
+    "suggest": true
+  },
+  {
+    "id": "h-install-time",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "설치하는 데 얼마나 걸려요?",
+        "설치가 오래 걸려요",
+        "설치 시간",
+        "처음 실행이 느려요",
+        "설치 끝나려면 얼마나 기다려야 해요",
+        "설치가 너무 느린데 정상인가요",
+        "설치하는 데 시간이 오래 드나요",
+        "설치 오래 걸려요",
+        "설치하는 데 시간 얼마나 걸려요",
+        "설치 몇 분 걸려요",
+        "얼마나 걸려요 설치"
+      ],
+      "en": [
+        "How long does installation take?",
+        "Installation is taking a long time",
+        "install time",
+        "The first launch is slow",
+        "How many minutes does setup take",
+        "Is a slow install normal",
+        "Setup duration",
+        "how long does installation take",
+        "does it take long to install",
+        "how many minutes to install"
+      ]
+    },
+    "a": {
+      "ko": "처음 설치할 때는 인터넷 속도에 따라 몇 분 걸릴 수 있어요. 필요한 것을 내려받아 설치하는 시간이라 정상이에요. 이후에는 다시 설치하지 않아요.",
+      "en": "The first installation can take a few minutes depending on your internet speed. That is the time spent downloading and setting up what it needs, which is normal. You do not install again afterwards."
+    },
+    "kw": [
+      "설치 시간",
+      "오래 걸림",
+      "몇 분",
+      "install time",
+      "minutes",
+      "느림",
+      "처음 실행",
+      "slow install",
+      "몇 분이나",
+      "기다려야",
+      "정상",
+      "how long",
+      "wait",
+      "duration",
+      "normal",
+      "오래 걸려"
+    ],
+    "src": [
+      "sources/02_README_ko.md#다운로드 및 설치"
+    ],
+    "related": [
+      "h-install-how",
+      "h-ts-install-fail"
+    ]
+  },
+  {
+    "id": "h-internet-install",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "설치할 때 인터넷이 필요해요?",
+        "와이파이가 있어야 설치돼요?",
+        "처음에만 인터넷이 필요한가요?",
+        "인터넷 없이 설치할 수 있나요?",
+        "설치하려면 네트워크 연결이 있어야 하나요",
+        "오프라인 상태에서 설치 가능해요",
+        "설치할 때 온라인이어야 하나요"
+      ],
+      "en": [
+        "Do I need internet to install?",
+        "Do I need wifi to install?",
+        "Is internet needed only the first time?",
+        "Can I install without internet?",
+        "Can I install while offline",
+        "Is online access required for setup",
+        "Can I turn wifi off during setup"
+      ]
+    },
+    "a": {
+      "ko": "네, 처음 설치할 때는 인터넷이 필요해요. 필요한 구성요소를 내려받기 때문이에요. 인터넷 없이 설치할 수 있다는 확인된 내용은 없어요.",
+      "en": "Yes, the first installation needs internet because it downloads the components it needs. There is no confirmed information that you can install without internet."
+    },
+    "kw": [
+      "인터넷",
+      "와이파이",
+      "wifi",
+      "internet",
+      "설치 인터넷",
+      "네트워크",
+      "처음",
+      "online install",
+      "꺼도",
+      "네트워크 연결",
+      "온라인",
+      "network connection",
+      "turn off wifi",
+      "offline install"
+    ],
+    "src": [
+      "sources/02_README_ko.md#요구사항",
+      "sources/02_README_ko.md#다운로드 및 설치"
+    ],
+    "related": [
+      "h-offline",
+      "h-install-how"
+    ]
+  },
+  {
+    "id": "h-offline",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "인터넷 없이도 쓸 수 있어요?",
+        "설치한 뒤에도 인터넷이 필요해요?",
+        "오프라인에서도 돼요?",
+        "와이파이 없는 곳에서도 되나요?",
+        "설치 후 와이파이 끊어도 돼요",
+        "인터넷 연결 없이 계속 쓸 수 있나요",
+        "네트워크가 끊겨도 동작하나요",
+        "인터넷 없어도 돼요",
+        "와이파이 없이도 돼요",
+        "온라인이어야 해요",
+        "네트워크 필요해요",
+        "인터넷 끊겨도 돼요",
+        "오프라인으로도 쓸 수 있어요",
+        "인터넷을 끊어도 추적과 마우스 제어가 계속 되나요"
+      ],
+      "en": [
+        "Can I use it without internet?",
+        "Do I need internet after installing?",
+        "Does it work offline?",
+        "Does it work somewhere without wifi?",
+        "Can I use it on a plane",
+        "Does it keep working with no network",
+        "Works without internet after install",
+        "does it need wifi",
+        "do I need internet to use it",
+        "can I use it offline",
+        "does it work without a connection",
+        "do I have to be online",
+        "If I disconnect the internet, does tracking keep working?"
+      ]
+    },
+    "a": {
+      "ko": "네, 처음 설치만 끝나면 인터넷 없이 쓸 수 있어요. 추적에 쓰는 AI 모델과 화면이 프로그램에 함께 들어 있어요. 모든 처리가 내 컴퓨터 안에서 이뤄져요.",
+      "en": "Yes. Once the first installation is done, you can use it without internet. The AI tracking models and the interface come with the program, and all processing happens on your own computer."
+    },
+    "kw": [
+      "오프라인",
+      "offline",
+      "인터넷 없이",
+      "와이파이 없이",
+      "내 컴퓨터에서",
+      "온디바이스",
+      "on-device",
+      "네트워크 없이",
+      "비행기",
+      "끊어도",
+      "끊겨도",
+      "airplane",
+      "plane",
+      "disconnect",
+      "no network",
+      "와이파이",
+      "온라인",
+      "wifi",
+      "online",
+      "connection"
+    ],
+    "src": [
+      "sources/02_README_ko.md#AnyControl v1.3.0",
+      "sources/02_README_ko.md#요구사항"
+    ],
+    "related": [
+      "h-internet-install",
+      "h-privacy"
+    ],
+    "suggest": true
+  },
+  {
+    "id": "h-free",
+    "cat": "limits",
+    "status": "not_validated",
+    "q": {
+      "ko": [
+        "무료인가요?",
+        "가격이 얼마예요?",
+        "돈 내야 하나요?",
+        "유료인가요?",
+        "가격",
+        "결제해야 쓰나요",
+        "무료로 쓸 수 있나요",
+        "얼마 내야 해요",
+        "요금이 있나요"
+      ],
+      "en": [
+        "Is it free?",
+        "How much does it cost?",
+        "Do I have to pay?",
+        "Is it paid?",
+        "price",
+        "Do I need to pay to use it",
+        "Can I use it for free",
+        "What does it cost",
+        "Price"
+      ]
+    },
+    "a": {
+      "ko": "가격이나 유료 여부는 확인된 내용이 없어요. 확인되는 건 공식 GitHub 페이지에서 설치 파일을 내려받는다는 점뿐이에요. 사용 조건은 팀에 직접 물어봐 주세요.",
+      "en": "There is no confirmed information about the price or whether it is paid. All that is confirmed is that you download the installer from the official GitHub page. Please ask the team about the terms of use."
+    },
+    "kw": [
+      "무료",
+      "유료",
+      "가격",
+      "price",
+      "free",
+      "cost",
+      "비용",
+      "돈",
+      "구매",
+      "pay",
+      "구독료",
+      "결제",
+      "얼마 내야",
+      "요금",
+      "subscription",
+      "fee"
+    ],
+    "src": [
+      "sources/02_README_ko.md#다운로드 및 설치",
+      "sources/08_THIRD_PARTY.md"
+    ],
+    "related": [
+      "h-where-download",
+      "h-opensource"
+    ],
+    "suggest": true
+  },
+  {
+    "id": "h-security-block",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "처음 열 때 보안 때문에 막혀요",
+        "개발자를 확인할 수 없다고 나와요",
+        "'그래도 열기'가 뭐예요?",
+        "설치 파일이 안 열려요",
+        "Mac이 실행을 막아요",
+        "악성 소프트웨어 확인 못 한다고 떠요",
+        "보안 경고 때문에 못 열어요",
+        "확인되지 않은 개발자라고 나와요"
+      ],
+      "en": [
+        "It is blocked for security when I first open it",
+        "It says the developer cannot be verified",
+        "What is Open Anyway?",
+        "The installer will not open",
+        "My Mac blocks it from running",
+        "Mac refuses to open the app",
+        "Security warning stops me from opening",
+        "Unidentified developer message"
+      ]
+    },
+    "a": {
+      "ko": "이 설치 파일은 Apple의 서명 확인을 받지 않아서 Mac이 막을 수 있어요. 공식 GitHub에서 받은 파일인지 확인하고, 한 번 열어서 안내를 닫은 뒤 시스템 설정의 '개인정보 보호 및 보안'에서 '그래도 열기'를 누르면 돼요. 학교나 회사에서 관리하는 Mac은 허용되지 않을 수 있어요.",
+      "en": "This installer has not been through Apple's signing check, so your Mac may block it. Make sure you got it from the official GitHub, open it once and close the message, then press Open Anyway in Privacy & Security under System Settings. A Mac managed by a school or company may not allow it."
+    },
+    "kw": [
+      "보안 차단",
+      "그래도 열기",
+      "Open Anyway",
+      "개발자 확인",
+      "서명",
+      "Gatekeeper",
+      "열리지 않음",
+      "blocked",
+      "unidentified developer",
+      "악성",
+      "열지 못하게",
+      "보안 경고",
+      "미확인",
+      "malware",
+      "refuses",
+      "security warning"
+    ],
+    "src": [
+      "sources/02_README_ko.md#1. macOS 보안 설정으로 차단될 때",
+      "sources/03_README_en.md#1. Allow the file through macOS security"
+    ],
+    "related": [
+      "h-exec-permission",
+      "h-install-how"
+    ]
+  },
+  {
+    "id": "h-exec-permission",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "'적절한 접근 권한이 없기 때문에' 라고 나와요",
+        "더블클릭해도 실행이 안 돼요",
+        "접근 권한 오류는 어떻게 해결해요?",
+        "설치 파일 실행 권한 오류",
+        "실행 권한이 없다고 나와요",
+        "더블클릭했더니 권한 오류가 떠요",
+        "설치 파일이 권한 때문에 실행이 안 돼요"
+      ],
+      "en": [
+        "It says I do not have the appropriate access privileges",
+        "Double-clicking does not run it",
+        "How do I fix the access permission error?",
+        "installer permission error",
+        "Permission denied when I open the installer",
+        "Setup file will not run because of permissions",
+        "Double click gives a permission error"
+      ]
+    },
+    "a": {
+      "ko": "내려받은 파일에 실행 허용이 빠져 있을 때 나오는 안내예요. 이때만 터미널에서 짧은 명령을 한 번 입력해 그 파일을 실행 가능하게 바꿔 줘야 해요. 어렵게 느껴지면 도움을 받아 하세요. 명령은 그 파일에만 실행 허용을 더하고 프로그램을 설치하지는 않아요.",
+      "en": "This message appears when the downloaded file is missing permission to run. Only in this case you need to type one short command in Terminal to make that file runnable. If that feels hard, ask someone to help. The command only adds permission to that file and does not install anything."
+    },
+    "kw": [
+      "접근 권한",
+      "실행 권한",
+      "access privileges",
+      "execution permission",
+      "오류",
+      "더블클릭 안 됨",
+      "chmod",
+      "터미널",
+      "권한이 없다",
+      "권한 오류",
+      "permission denied",
+      "lack permission",
+      "permission error"
+    ],
+    "src": [
+      "sources/02_README_ko.md#2. “적절한 접근 권한이 없기 때문에…”라고 나올 때",
+      "sources/03_README_en.md#2. Grant execution permission"
+    ],
+    "related": [
+      "h-security-block",
+      "h-install-how"
+    ]
+  },
+  {
+    "id": "h-uninstall",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "어떻게 삭제해요?",
+        "지우고 싶어요",
+        "삭제하면 내 설정도 지워지나요?",
+        "제거하는 방법",
+        "언인스톨",
+        "설치한 걸 깨끗이 지우려면",
+        "앱 삭제 방법",
+        "컴퓨터에서 제거하려면",
+        "프로그램을 완전히 없애고 싶어요",
+        "완전히 지우고 싶어요",
+        "앱을 없애려면"
+      ],
+      "en": [
+        "How do I uninstall it?",
+        "I want to remove it",
+        "Will uninstalling erase my settings?",
+        "how to remove",
+        "uninstall",
+        "Remove the app from my computer",
+        "Clean uninstall",
+        "Delete the program",
+        "I want to remove it completely",
+        "how do I get rid of it"
+      ]
+    },
+    "a": {
+      "ko": "함께 받아 둔 삭제용 파일을 더블클릭하고 나오는 안내를 따르면 돼요. 저장해 둔 설정은 지울지 따로 물어보고, 기본은 남겨 둬요. 내려받은 설치 파일 자체와 Mac의 권한 목록은 남으니 필요하면 직접 정리하세요.",
+      "en": "Double-click the uninstaller file you downloaded alongside the installer and follow the prompts. It asks separately whether to delete your saved settings, and keeps them by default. The downloaded installer file and Mac's permission list entries remain, so tidy them up yourself if you want."
+    },
+    "kw": [
+      "삭제",
+      "제거",
+      "uninstall",
+      "remove",
+      "지우기",
+      "설정 삭제",
+      "삭제 파일",
+      "정리",
+      "프로필 삭제",
+      "완전히",
+      "없애",
+      "깨끗이",
+      "get rid of",
+      "completely",
+      "clean uninstall",
+      "delete",
+      "get rid"
+    ],
+    "src": [
+      "sources/02_README_ko.md#삭제",
+      "sources/07_INSTALL.md"
+    ],
+    "related": [
+      "h-save-settings",
+      "h-update"
+    ]
+  },
+  {
+    "id": "h-update",
+    "cat": "install",
+    "status": "info",
+    "q": {
+      "ko": [
+        "업데이트는 어떻게 해요?",
+        "새 버전이 나오면 어떻게 바꿔요?",
+        "업데이트하면 설정이 없어져요?",
+        "다시 쓰려면 어떻게 해요?",
+        "새 버전으로 바꾸면 내 설정은 남아요",
+        "버전 올리는 방법",
+        "새로 나온 버전 설치하기"
+      ],
+      "en": [
+        "How do I update?",
+        "How do I switch when a new version comes out?",
+        "Will updating erase my settings?",
+        "How do I run it again later?",
+        "How do I move to the latest version",
+        "Upgrade steps",
+        "Install the newest release"
+      ]
+    },
+    "a": {
+      "ko": "쓰던 앱을 끄고 새 버전 설치 파일을 열면 돼요. 저장해 둔 설정은 그대로 남아요. 나중에 다시 쓸 때는 쓰던 설치 파일을 다시 더블클릭하면 돼요.",
+      "en": "Quit the running app and open the installer of the new version. Your saved settings are kept. To use it again later, just double-click the same installer file again."
+    },
+    "kw": [
+      "업데이트",
+      "update",
+      "새 버전",
+      "new version",
+      "다시 실행",
+      "재실행",
+      "설정 유지",
+      "upgrade",
+      "최신 버전",
+      "갈아타",
+      "버전 올리",
+      "latest version",
+      "newer version",
+      "newest release"
+    ],
+    "src": [
+      "sources/02_README_ko.md#사용 및 종료",
+      "sources/03_README_en.md#Use and quit"
+    ],
+    "related": [
+      "h-save-settings",
+      "h-install-how",
+      "h-quit"
+    ],
+    "suggest": true
+  }
+]

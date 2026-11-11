@@ -1,0 +1,896 @@
+[
+ {
+  "id": "a-two-tier",
+  "cat": "arch",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "시스템 구조가 어떻게 되나요?",
+    "Tier 0, Tier 1이 뭐예요",
+    "2단 추적 구조",
+    "파이프라인 설명"
+   ],
+   "en": [
+    "What is the system architecture?",
+    "What are Tier 0 and Tier 1?",
+    "Two-tier tracking design",
+    "Explain the pipeline"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 2단 구조입니다. Tier 0은 매 프레임 도는 가벼운 추적으로, LK 광류 점 추적, Lab 색 모델, 등록 모양, 8상태 칼만 필터와 상태 기계로 구성되고 프레임 처리 p95가 약 13ms입니다. Tier 1은 GPU 전용 스레드에서 비동기로 EfficientTAM-Ti 마스크 보정, 주기적 재분할, 모양 기억 재획득을 합니다. 카메라 캡처는 최신 프레임 슬롯만 처리해 지연이 누적되지 않게 합니다.",
+   "en": "In the v1.0.0 brochure the design has 2 tiers. Tier 0 runs every frame and consists of LK optical-flow point tracking, a Lab color model, the registered shape, an 8-state Kalman filter, and a state machine, with a per-frame p95 of about 13 ms. Tier 1 runs asynchronously on a dedicated GPU thread and does EfficientTAM-Ti mask correction, periodic re-segmentation, and shape-memory re-acquisition. Capture uses a latest-frame slot so stale frames are dropped and delay does not accumulate."
+  },
+  "kw": [
+   "Tier 0",
+   "Tier 1",
+   "2단 구조",
+   "파이프라인",
+   "아키텍처",
+   "architecture",
+   "pipeline",
+   "two-tier",
+   "칼만",
+   "광류",
+   "LK"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#7-시스템-구조와-기술-스택",
+   "sources/11_포스터_텍스트.md#2단-추적-구조"
+  ],
+  "related": [
+   "a-why-two-tier",
+   "a-tier0-detail",
+   "a-tier1-detail"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-why-two-tier",
+  "cat": "arch",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "왜 AI 모델을 매 프레임 돌리지 않나요?",
+    "2단 구조로 만든 이유",
+    "모델 하나로 하면 안 되나요",
+    "최신 모델을 매 프레임 돌리면 되지 않나요"
+   ],
+   "en": [
+    "Why not run the AI model every frame?",
+    "Why a two-tier design?",
+    "Why not use a single model?",
+    "Can't we just run the newest model each frame?"
+   ]
+  },
+  "a": {
+   "ko": "실측 때문입니다. 소개서 v1.0.0에서 가장 작은 SAM 2.1 tiny도 M3에서 물체 1개 fp16 기준 517ms(약 2Hz)여서 30~60fps 입력을 모델만으로 따라갈 수 없습니다. 채택한 EfficientTAM-Ti도 물체 1개 55ms입니다. 그래서 매 프레임은 가벼운 Tier 0(p95 약 13ms)이 맡고, 모델은 비동기(약 15Hz)로 누적 오차를 바로잡습니다. (Apple M3 MPS, 1280×720 입력, 마스크를 CPU로 읽기까지 1스텝 기준)",
+   "en": "Because of measurements. In the v1.0.0 brochure, even the smallest SAM 2.1 tiny takes 517 ms (about 2 Hz) for one object at fp16 on an M3, so a model alone cannot follow 30-60 fps input. The adopted EfficientTAM-Ti still takes 55 ms for one object. So a lightweight Tier 0 (p95 about 13 ms) handles every frame, and the model runs asynchronously (about 15 Hz) to correct accumulated drift. (Apple M3 MPS, 1280×720 input, one streaming step including the mask readback to CPU.)"
+  },
+  "kw": [
+   "2단 구조 이유",
+   "지연",
+   "모델 지연",
+   "SAM 2.1 tiny",
+   "517ms",
+   "비동기",
+   "latency",
+   "why two-tier",
+   "per-frame",
+   "실시간"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#64-모델-지연-실측",
+   "sources/11_포스터_텍스트.md#2단-추적-구조"
+  ],
+  "related": [
+   "a-model-latency-table",
+   "a-why-efficienttam",
+   "a-two-tier"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-model-latency-table",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "모델별 속도 비교 수치를 알려주세요",
+    "EfficientTAM과 SAM 2.1, EdgeTAM 지연",
+    "모델 지연 실측 표",
+    "물체 3개일 때 속도"
+   ],
+   "en": [
+    "Give me the model speed comparison numbers",
+    "EfficientTAM vs SAM 2.1 vs EdgeTAM latency",
+    "Model latency benchmark table",
+    "Latency with three objects"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0의 실측입니다(Apple M3 MPS, 1280×720, fp16, 스트리밍 1스텝, 실제 iPhone 프레임과 녹화 영상에서 차이 5% 이내). 물체 1개 기준 EfficientTAM-Ti(512) 55ms, EfficientTAM-S(512) 71ms, EdgeTAM(1024) 142ms, SAM 2.1 tiny(1024) 517ms입니다. 물체 3개는 순서대로 138ms, 158ms, EdgeTAM은 MPS 오류(view size), SAM 2.1 tiny 1,426ms입니다.",
+   "en": "These are the v1.0.0 brochure's measurements (Apple M3 MPS, 1280×720, fp16, one streaming step, with real iPhone frames and recorded video agreeing within 5%). For one object: EfficientTAM-Ti (512) 55 ms, EfficientTAM-S (512) 71 ms, EdgeTAM (1024) 142 ms, SAM 2.1 tiny (1024) 517 ms. For three objects: 138 ms, 158 ms, an MPS error (view size) for EdgeTAM, and 1,426 ms for SAM 2.1 tiny."
+  },
+  "kw": [
+   "모델 지연",
+   "55ms",
+   "71ms",
+   "142ms",
+   "517ms",
+   "138ms",
+   "EfficientTAM-Ti",
+   "EdgeTAM",
+   "SAM 2.1 tiny",
+   "benchmark",
+   "latency table"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#64-모델-지연-실측"
+  ],
+  "related": [
+   "a-why-efficienttam",
+   "a-why-two-tier",
+   "a-sam21-vs-efficienttam"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-why-efficienttam",
+  "cat": "arch",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "왜 EfficientTAM을 선택했나요?",
+    "모델 선택 이유",
+    "EfficientTAM-Ti를 쓴 이유",
+    "다른 모델은 안 됐나요"
+   ],
+   "en": [
+    "Why did you choose EfficientTAM?",
+    "Reason for the model choice",
+    "Why EfficientTAM-Ti?",
+    "Why not other models?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0의 실측 지연 비교에서 가장 빨랐기 때문입니다. M3 MPS, 물체 1개 fp16에서 EfficientTAM-Ti는 55ms로 SAM 2.1 tiny(517ms)보다 약 9.4배 빠르고, 물체 3개에서도 138ms로 동작했습니다. EdgeTAM은 물체 여러 개에서 MPS 오류가 났습니다. 모델 단독 오프라인 실영상 평가에서는 정답 대비 성공률 100%, 평균 IoU 0.956입니다(영상 1개, 근사 정답).",
+   "en": "Because it was fastest in the v1.0.0 brochure's measured latency comparison. On M3 MPS with one object at fp16, EfficientTAM-Ti takes 55 ms, about 9.4 times faster than SAM 2.1 tiny (517 ms), and it ran at 138 ms with three objects. EdgeTAM hit an MPS error with multiple objects. Run alone offline on the real video, it scored 100 percent success and mean IoU 0.956 against the reference (one video, approximate ground truth)."
+  },
+  "kw": [
+   "EfficientTAM",
+   "모델 선택",
+   "SAM 2.1",
+   "EdgeTAM",
+   "9.4배",
+   "model choice",
+   "why EfficientTAM",
+   "MPS",
+   "경량 모델"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#64-모델-지연-실측",
+   "sources/11_포스터_텍스트.md#2단-추적-구조"
+  ],
+  "related": [
+   "a-model-latency-table",
+   "a-sam21-vs-efficienttam",
+   "a-why-two-tier"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-sam21-vs-efficienttam",
+  "cat": "arch",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "SAM 2.1과 EfficientTAM 차이",
+    "SAM 2.1은 어디에 쓰였나요",
+    "SAM 2.1을 안 쓴 이유",
+    "SAMURAI나 DAM4SAM과는 어떤 관계인가요"
+   ],
+   "en": [
+    "Difference between SAM 2.1 and EfficientTAM",
+    "Where is SAM 2.1 used?",
+    "Why not use SAM 2.1?",
+    "How does it relate to SAMURAI or DAM4SAM?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 SAM 2.1은 실시간 경로가 아니라 오프라인 정답 생성에 쓰입니다(실영상 정답은 SAM 2.1 B+가 전 프레임을 추적하고 사람이 검수). 실시간에는 SAM 2.1 tiny가 M3에서 물체 1개 517ms라 쓰지 못하고 EfficientTAM-Ti(55ms)를 씁니다. SAMURAI와 DAM4SAM은 SAM 2에 움직임 예측과 메모리 선택을 얹은 연구로, Tier 1은 그 아이디어(움직임을 고려한 후보 선택, 게이트된 메모리 저장, 앵커)를 가벼운 EfficientTAM-Ti 위에 옮겨 구현했다고 설명합니다.",
+   "en": "In the v1.0.0 brochure, SAM 2.1 is used for offline ground-truth generation, not the real-time path (SAM 2.1 B+ tracks every frame of the real video and a person reviews it). For real time, SAM 2.1 tiny is unusable at 517 ms per object on an M3, so EfficientTAM-Ti (55 ms) is used. SAMURAI and DAM4SAM add motion prediction and memory selection to SAM 2; the brochure says Tier 1 ports those ideas (motion-aware candidate selection, gated memory storage, anchors) onto the lightweight EfficientTAM-Ti."
+  },
+  "kw": [
+   "SAM 2.1",
+   "SAMURAI",
+   "DAM4SAM",
+   "EfficientTAM",
+   "정답 생성",
+   "오프라인",
+   "ground truth",
+   "SAM2",
+   "비교"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#62-검증-방법-자체-평가-세트",
+   "sources/01_소개서_v1.0.0.md#65-공개된-최신-sota-지표-참고용"
+  ],
+  "related": [
+   "a-why-efficienttam",
+   "a-sota-public",
+   "a-model-latency-table"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-tier0-detail",
+  "cat": "arch",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "Tier 0은 구체적으로 뭘 하나요?",
+    "빠른 추적에 쓰는 기술",
+    "칼만 필터와 광류를 어떻게 쓰나요",
+    "ZUPT가 뭐예요",
+    "Tier 0가 뭐예요?"
+   ],
+   "en": [
+    "What exactly does Tier 0 do?",
+    "What techniques are used in fast tracking?",
+    "How are Kalman filter and optical flow used?",
+    "What is ZUPT?",
+    "What is Tier 0?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 Tier 0은 피라미드 LK 광류 점 추적, Lab 색 확률 모델, 등록 모양(amodal), 8상태 칼만 필터, 상태 기계로 구성됩니다. 점 추적의 프레임 간 상대 이동은 절대 측정이 아니라 칼만 필터의 process(예측) 단계에 넣어, 누적 드리프트를 과신해 AI 모델의 절대 보정이 묻히는 것을 막습니다. ZUPT는 잡음 수준 이하 움직임을 0으로 보는 정지 판정으로, 정지 물체 떨림을 1.12px에서 0.13px로 줄였습니다.",
+   "en": "In the v1.0.0 brochure, Tier 0 consists of pyramid LK optical-flow point tracking, a Lab color probability model, the registered (amodal) shape, an 8-state Kalman filter, and a state machine. Frame-to-frame relative motion from point tracking is fed into the Kalman filter's process (prediction) step rather than as an absolute measurement, so accumulated drift is not over-trusted and the model's absolute correction is not drowned out. ZUPT treats motion below the noise level as zero, which reduced stationary-object jitter from 1.12 px to 0.13 px."
+  },
+  "kw": [
+   "Tier 0",
+   "칼만 필터",
+   "광류",
+   "LK",
+   "ZUPT",
+   "정지 판정",
+   "Lab",
+   "RANSAC",
+   "optical flow",
+   "Kalman",
+   "jitter"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#7-시스템-구조와-기술-스택",
+   "sources/11_포스터_텍스트.md#기술-스택"
+  ],
+  "related": [
+   "a-two-tier",
+   "a-eval-speed",
+   "a-tier1-detail"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-tier1-detail",
+  "cat": "arch",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "Tier 1은 구체적으로 뭘 하나요?",
+    "AI 보정은 어떻게 동작하나요",
+    "재분할이 뭐예요",
+    "비동기 GPU 스레드",
+    "Tier 1이 뭐예요?"
+   ],
+   "en": [
+    "What exactly does Tier 1 do?",
+    "How does the AI correction work?",
+    "What is periodic re-segmentation?",
+    "Asynchronous GPU thread",
+    "What is Tier 1?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 Tier 1은 GPU 전용 스레드 하나에서 EfficientTAM-Ti 512 스트리밍 마스크로 물체 영역을 재추정해 Tier 0의 누적 오차를 보정합니다(비동기 약 15Hz). 추가로 2초마다(0.5Hz, GPU 약 2%) 현재 위치 박스를 다시 분할해 누적 오차를 끊고, 가림 중이면 넓은 박스로 재발견을 시도하며, LOST/OCCLUDED일 때 0.3초마다 모양 기억 재획득을 합니다. 무거운 모델 작업을 한 스레드로 몰아 프레임 처리가 막히지 않게 하는 것이 설계 결정입니다.",
+   "en": "In the v1.0.0 brochure, Tier 1 runs on a single dedicated GPU thread and re-estimates the object region with EfficientTAM-Ti 512 streaming masks to correct Tier 0's accumulated error (asynchronous, about 15 Hz). Every 2 seconds (0.5 Hz, about 2% GPU) it also re-segments the box at the current position to cut drift and, during occlusion, tries re-discovery with a wider box; in LOST/OCCLUDED it runs shape-memory re-acquisition every 0.3 s. Confining the heavy model work to one thread so frame processing is not blocked is a deliberate design decision."
+  },
+  "kw": [
+   "Tier 1",
+   "재분할",
+   "resegment",
+   "EfficientTAM",
+   "GPU 스레드",
+   "0.5Hz",
+   "비동기",
+   "mask correction",
+   "보정",
+   "reanchor"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#7-시스템-구조와-기술-스택",
+   "sources/01_소개서_v1.0.0.md#52-어떻게-동작하나"
+  ],
+  "related": [
+   "a-two-tier",
+   "a-why-efficienttam",
+   "a-reacquire-steps"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-stack",
+  "cat": "arch",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어떤 기술 스택을 쓰나요?",
+    "사용 언어와 프레임워크",
+    "백엔드 프론트엔드 구성",
+    "라이브러리 버전"
+   ],
+   "en": [
+    "What tech stack is used?",
+    "Languages and frameworks",
+    "Backend and frontend composition",
+    "Library versions"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 백엔드는 Python 3.13, FastAPI, PyTorch(Apple MPS), EfficientTAM-Ti, MediaPipe/Apple Vision, OpenCV, pyobjc(AVFoundation, Quartz, Vision), pydantic이고, 프론트엔드는 React 19, TypeScript, Vite, zustand입니다. 서버와 웹앱은 WebSocket(/ws)으로 연결됩니다. 규모는 백엔드 약 10,800줄(Python), 프론트엔드 약 4,700줄(TypeScript, 테스트 제외)입니다. 모든 의존성은 버전이 고정돼 있습니다.",
+   "en": "In the v1.0.0 brochure, the backend uses Python 3.13, FastAPI, PyTorch (Apple MPS), EfficientTAM-Ti, MediaPipe/Apple Vision, OpenCV, pyobjc (AVFoundation, Quartz, Vision), and pydantic, while the frontend uses React 19, TypeScript, Vite, and zustand. The server and web app communicate over WebSocket (/ws). Size is about 10,800 lines of Python in the backend and about 4,700 lines of TypeScript in the frontend (excluding tests). All dependencies are version-pinned."
+  },
+  "kw": [
+   "기술 스택",
+   "Python",
+   "FastAPI",
+   "PyTorch",
+   "React",
+   "TypeScript",
+   "pyobjc",
+   "OpenCV",
+   "tech stack",
+   "코드 규모",
+   "lines of code"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#7-시스템-구조와-기술-스택",
+   "sources/11_포스터_텍스트.md#기술-스택"
+  ],
+  "related": [
+   "a-two-tier",
+   "a-tests",
+   "a-repro"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-dualsink",
+  "cat": "arch",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "가상 입력과 실제 입력은 어떻게 구분하나요?",
+    "DualSink가 뭐예요",
+    "매핑 스키마는 어떻게 되어 있나요",
+    "출력 구조"
+   ],
+   "en": [
+    "How are virtual and real input separated?",
+    "What is DualSink?",
+    "How is the mapping schema structured?",
+    "Output architecture"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 DualSink 패턴은 가상 출력(VirtualSink, 웹앱 안)에는 항상 전달하고 실제 출력(MacSink, Quartz CGEventPost)에는 켰을 때만 전달해, 기존 가상 출력 코드를 한 줄도 바꾸지 않고 실제 OS 입력을 얹었습니다. 매핑은 pydantic 모델이 곧 JSON Schema(/api/mapping/schema)여서 프론트엔드, 저장 프로필, 향후 자동 생성기가 같은 계약을 씁니다.",
+   "en": "In the v1.0.0 brochure, the DualSink pattern always sends to the virtual output (VirtualSink, inside the web app) and sends to the real output (MacSink, Quartz CGEventPost) only when enabled, so real OS input was layered on without changing a line of the existing virtual-output code. The mapping uses pydantic models that double as a JSON Schema (/api/mapping/schema), so the frontend, saved profiles, and a future auto-generator share one contract."
+  },
+  "kw": [
+   "DualSink",
+   "VirtualSink",
+   "MacSink",
+   "매핑 스키마",
+   "JSON Schema",
+   "pydantic",
+   "CGEventPost",
+   "output",
+   "sink",
+   "mapping schema"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#7-시스템-구조와-기술-스택"
+  ],
+  "related": [
+   "a-realinput-safety",
+   "a-limit-realinput",
+   "a-nl-mapping-plan"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-hand-engine",
+  "cat": "hand",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "손 인식 엔진은 뭘 쓰나요?",
+    "Apple Vision과 MediaPipe 비교",
+    "왜 Apple Vision이 기본인가요",
+    "손 검출률 수치"
+   ],
+   "en": [
+    "Which hand-recognition engine is used?",
+    "Apple Vision vs MediaPipe",
+    "Why is Apple Vision the default?",
+    "Hand detection rate numbers"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0에서 물체를 쥔 손 검출률(test.mov, 손이 보이는 129프레임)은 Apple Vision 100%(오검출 0, 프레임당 9ms), MediaPipe 5%(신뢰도 기준을 0.2로 낮추면 61%, 프레임당 27ms)였습니다. 그래서 Apple Vision을 기본으로 하고 실행 중 MediaPipe로 전환할 수 있게 했습니다. 영상 1개(129프레임) 결과라 partial이며, Apple Vision은 가려진 엄지를 추측해 왼쪽 누름으로 오인할 수 있어 그럴 땐 MediaPipe로 바꾸라고 안내합니다.",
+   "en": "In the v1.0.0 brochure, detection of a hand holding an object (test.mov, 129 frames where the hand is visible) was 100% for Apple Vision (zero false detections, 9 ms per frame) versus 5% for MediaPipe (61% with the confidence threshold lowered to 0.2, 27 ms per frame). So Apple Vision is the default, with runtime switching to MediaPipe. This comes from one video (129 frames), hence partial. Apple Vision can guess an occluded thumb and misread it as a left press; in that case the brochure advises switching to MediaPipe."
+  },
+  "kw": [
+   "손 인식",
+   "Apple Vision",
+   "MediaPipe",
+   "검출률",
+   "hand tracking",
+   "엔진 비교",
+   "hand engine",
+   "129프레임",
+   "thumb"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#손-인식-엔진-선택",
+   "sources/11_포스터_텍스트.md#기술-스택"
+  ],
+  "related": [
+   "a-three-input-modes",
+   "a-limit-grasp",
+   "a-stack"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-horizontal-camera-depth",
+  "cat": "depth",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "깊이는 어떻게 커서 Y로 바뀌나요?",
+    "수평 카메라에서 앞뒤 움직임 처리",
+    "거리를 어떻게 알아내나요",
+    "Desk View도 되나요"
+   ],
+   "en": [
+    "How does depth become cursor Y?",
+    "Handling front-back motion with a horizontal camera",
+    "How is distance estimated?",
+    "Does Desk View work?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0은 카메라를 책상 옆에 수평으로 두는 배치를 전제로, 좌우 움직임은 커서 좌우로, 카메라에 가까워지고 멀어지는 움직임은 커서 위아래로 바꿉니다. 손은 손바닥 삼각형(손목·검지 뿌리·새끼 뿌리)의 크기로, 물체는 크기·바닥 접촉선·책상 앞뒤(보정 시) 중 하나로 거리를 재며, 자동 보정이 잡음 대비 신호가 가장 좋은 것을 고릅니다. 위에서 내려다보는 Desk View에서는 영상의 x·y가 그대로 커서가 됩니다. 이 깊이 기반 마우스는 사람이 써 본 확인이 아직 미완입니다.",
+   "en": "The v1.0.0 brochure assumes a camera placed horizontally beside the desk: left-right motion becomes cursor left-right, and moving toward or away from the camera becomes cursor up-down. For hands, distance comes from the size of the palm triangle (wrist, index base, pinky base); for objects, from size, the floor-contact line, or desk front-back position (when calibrated), and auto-calibration picks whichever has the best signal-to-noise. In Desk View, a top-down camera, image x and y map directly to the cursor. Human confirmation of this depth-based mouse is not yet complete."
+  },
+  "kw": [
+   "깊이",
+   "depth",
+   "수평 카메라",
+   "Desk View",
+   "거리 추정",
+   "커서 Y",
+   "손바닥 삼각형",
+   "크기 변화",
+   "자동 보정",
+   "horizontal camera"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#차별점-수평-카메라를-위한-입력-방식",
+   "sources/01_소개서_v1.0.0.md#15-검증-상태-한눈에-보기"
+  ],
+  "related": [
+   "a-three-input-modes",
+   "a-limit-2d-only",
+   "a-limit-human-checks"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-state-machine",
+  "cat": "tracking",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "추적 상태는 어떻게 바뀌나요?",
+    "TRACKING OCCLUDED LOST 상태",
+    "상태 기계 설명",
+    "추적 메커니즘"
+   ],
+   "en": [
+    "How do tracking states change?",
+    "TRACKING, OCCLUDED, LOST states",
+    "Explain the state machine",
+    "Tracking mechanism"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 정상 추적은 TRACKING, 가림이 감지되면 OCCLUDED(마지막 움직임을 감쇠시키며 값 유지), 2초 넘게 못 찾으면 LOST, 손에 쥔 상태는 GRASPED입니다. OCCLUDED/LOST에서는 재발견이나 전역 모양 기억 재획득으로 같은 곳에서 연속 확인되면 복구되고, TRACKING 중에는 탐색하지 않습니다. 가림은 점 추적과 색 영역 신뢰도 저하, 또는 AI 모델이 두 번 연속 없음이라 하고 색 근거도 약할 때 판정합니다.",
+   "en": "In the v1.0.0 brochure, normal tracking is TRACKING; when occlusion is detected it becomes OCCLUDED (the last motion is damped and the value held); after more than 2 seconds without finding it, LOST; and holding the object in a hand is GRASPED. From OCCLUDED/LOST, re-discovery or global shape-memory re-acquisition restores tracking once confirmed at the same location consecutively, and no searching happens during TRACKING. Occlusion is declared when point-tracking and color-region confidence drop, or when the AI model says absent twice in a row and the color evidence is also weak."
+  },
+  "kw": [
+   "상태 기계",
+   "TRACKING",
+   "OCCLUDED",
+   "LOST",
+   "GRASPED",
+   "state machine",
+   "추적 메커니즘",
+   "tracking states",
+   "복구"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#52-어떻게-동작하나",
+   "sources/11_포스터_텍스트.md#물체-기억과-재획득"
+  ],
+  "related": [
+   "a-reacquire-steps",
+   "a-occlusion-handling",
+   "a-lost-and-return"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-reacquire-steps",
+  "cat": "tracking",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "재획득은 어떻게 하나요?",
+    "모양 기억 재획득 절차",
+    "놓친 물체를 다시 찾는 방법",
+    "물체 기억은 무엇을 저장하나요"
+   ],
+   "en": [
+    "How does re-acquisition work?",
+    "Shape-memory re-acquisition procedure",
+    "How is a lost object found again?",
+    "What does the object memory store?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 등록 시 64×64 정규화 모양 템플릿, Hu 모멘트, 기준 면적과 주축 길이비, Lab 색 히스토그램, 등록 마스크 잘라낸 그림을 저장합니다. LOST/OCCLUDED에서 0.3초마다 색 확률 지도와 템플릿 매칭으로 후보 박스를 최대 3개 만들고 EfficientTAM으로 분할한 뒤, 정렬 IoU ≥ 0.72, Hu 거리 ≤ 0.5, 면적비 0.4~2.5배, 색 유사도 ≥ 0.6, 모델 품질 ≥ 0.7을 모두 통과해야 합격입니다. 같은 곳에서 연속 2번 합격하면 추적을 복구하고 AI 메모리를 재고정합니다.",
+   "en": "In the v1.0.0 brochure, registration stores a 64×64 normalized shape template, Hu moments, a reference area and principal-axis ratio, a Lab color histogram, and a cropped registration mask image. In LOST/OCCLUDED, every 0.3 s it builds up to 3 candidate boxes from a color probability map and template matching, segments them with EfficientTAM, and a candidate must pass all checks: aligned IoU ≥ 0.72, Hu distance ≤ 0.5, area ratio 0.4-2.5x, color similarity ≥ 0.6, and model quality ≥ 0.7. After 2 consecutive passes at the same place, tracking is restored and the AI memory is re-anchored."
+  },
+  "kw": [
+   "재획득",
+   "reacquire",
+   "모양 기억",
+   "Hu 모멘트",
+   "템플릿 매칭",
+   "히스토그램",
+   "reanchor",
+   "재발견",
+   "shape memory",
+   "re-acquisition"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#52-어떻게-동작하나"
+  ],
+  "related": [
+   "a-state-machine",
+   "a-lookalike-policy",
+   "a-reacquire-effect"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-occlusion-handling",
+  "cat": "tracking",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "가려지면 어떻게 되나요?",
+    "손에 가려져도 추적이 유지되나요",
+    "가림 처리 방법",
+    "물체를 손으로 쥐면요"
+   ],
+   "en": [
+    "What happens when it is occluded?",
+    "Does tracking survive a hand covering the object?",
+    "How is occlusion handled?",
+    "What if I hold the object in my hand?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 가림을 스스로 인식(OCCLUDED)하고 마지막 움직임을 감쇠시키며 값을 유지해, 입력이 튀거나 엉뚱한 곳으로 옮겨 가지 않게 합니다. 손이 덮은 만큼은 안 보이는 게 정상으로 보고 손이 안 덮은 부분으로 가시 비율을 판단하며, 다시 보이면 이어서 추적합니다. 쥔 채 움직이면 GRASPED로 이어 가고, 마스크 모델은 가리는 손을 제외하고 물체만 보게 합니다. 다만 합성 평가에서 손 쥐기 성공률은 0.61~0.69, 완전 가림은 0.78 수준으로 약한 편입니다.",
+   "en": "In the v1.0.0 brochure, the system recognizes occlusion (OCCLUDED) and holds the value while damping the last motion, so the input does not jump or wander. The part covered by a hand is treated as normally invisible, visibility is judged from the uncovered part, and tracking continues once the object reappears. While held and moving it continues as GRASPED, and the mask model excludes the occluding hand. However, in synthetic evaluation, grasp success is 0.61-0.69 and full occlusion is about 0.78, which is relatively weak."
+  },
+  "kw": [
+   "가림",
+   "occlusion",
+   "손에 가려짐",
+   "GRASPED",
+   "쥔 상태",
+   "완전 가림",
+   "hand occlusion",
+   "가림 복구",
+   "유지"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#51-어떤-상황을-견디나",
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과"
+  ],
+  "related": [
+   "a-state-machine",
+   "a-limit-grasp",
+   "a-eval-conditions"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-lost-and-return",
+  "cat": "tracking",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "화면 밖으로 나갔다 오면 다시 찾나요?",
+    "이탈 후 복귀 처리",
+    "펜이 화면 밖에 나갔다 오면",
+    "2초 이상 안 보이면"
+   ],
+   "en": [
+    "Does it find the object after it leaves and re-enters the frame?",
+    "Handling exit and return",
+    "What if the pen leaves the frame and returns?",
+    "What if it is not visible for over 2 seconds?"
+   ]
+  },
+  "a": {
+   "ko": "네. 소개서 v1.0.0 기준 2초 넘게 못 찾으면 LOST가 되고, 화면 전체에서 기억한 모양·색과 맞는 후보를 찾아 같은 곳에서 두 번 연속 맞으면 되살립니다. 합성 평가(tune 50개, M3)에서 재획득 기능을 켜자 화면 이탈 성공률이 0.8567에서 0.9024로, 펜 이탈이 0.5877에서 0.8158로 올랐고 펜 이탈 복구 프레임은 36에서 21로 줄었습니다.",
+   "en": "Yes. In the v1.0.0 brochure, after more than 2 seconds without finding the object it becomes LOST; the system searches the whole frame for a candidate matching the remembered shape and color and revives tracking after two consecutive matches at the same place. In synthetic evaluation (tune 50 sequences, M3), enabling re-acquisition raised exit success from 0.8567 to 0.9024 and pen-exit success from 0.5877 to 0.8158, and cut pen-exit recovery frames from 36 to 21."
+  },
+  "kw": [
+   "화면 이탈",
+   "복귀",
+   "exit",
+   "LOST",
+   "전역 탐색",
+   "pen-exit",
+   "재진입",
+   "re-enter",
+   "화면 밖"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#51-어떤-상황을-견디나",
+   "sources/01_소개서_v1.0.0.md#54-이-기능이-실제로-낸-효과"
+  ],
+  "related": [
+   "a-reacquire-effect",
+   "a-reacquire-steps",
+   "a-state-machine"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-lookalike-policy",
+  "cat": "tracking",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "닮은 물체가 있으면 어떻게 하나요?",
+    "옮겨붙음을 어떻게 막나요",
+    "왜 애매하면 아무것도 고르지 않나요",
+    "hijack 방지 원칙"
+   ],
+   "en": [
+    "What if there is a similar-looking object?",
+    "How do you prevent hijacking?",
+    "Why does it pick nothing when ambiguous?",
+    "Hijack-prevention principles"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0의 원칙은 다섯 가지입니다. TRACKING 중에는 탐색하지 않고, 합격 후보가 둘 이상이고 점수 차가 0.04 미만이면 일부러 고르지 않으며, 같은 곳에서 연속 2회 확인 후에만 옮기고, 손이 물체를 30% 이상 덮은 동안에는 탐색하지 않으며, 모양 기억 갱신 옵션(reseg_refresh)은 기본 끕니다(켜면 합성 세트 pen-twin 옮겨붙음이 23→75로 늘어남). 잘못 옮겨붙느니 기다리고 사용자가 [다시 선택]으로 고치게 한 설계입니다.",
+   "en": "The v1.0.0 brochure lists five principles: no searching while TRACKING; deliberately choosing nothing when two or more candidates pass and their score gap is under 0.04; moving only after 2 consecutive confirmations at the same place; no searching while a hand covers 30% or more of the object; and the shape-memory refresh option (reseg_refresh) is off by default (turning it on raised pen-twin hijack frames from 23 to 75 in the synthetic set). The design prefers waiting over a wrong switch and lets the user fix it with [Reselect]."
+  },
+  "kw": [
+   "닮은 물체",
+   "옮겨붙음",
+   "hijack",
+   "twin",
+   "reseg_refresh",
+   "점수 차 0.04",
+   "distractor",
+   "애매하면 안 고름",
+   "similar object"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#53-옮겨붙음을-막는-설계-원칙"
+  ],
+  "related": [
+   "a-reselect",
+   "a-limit-twin",
+   "a-reacquire-steps"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-reselect",
+  "cat": "tracking",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "추적이 어긋나면 어떻게 고치나요?",
+    "다시 선택 기능이 뭐예요",
+    "물체 재등록은 어떻게 하나요",
+    "Shift 드래그",
+    "Reselect가 뭐예요?"
+   ],
+   "en": [
+    "How do I fix a drifted track?",
+    "What is the Reselect feature?",
+    "How do I re-register an object?",
+    "Shift+drag",
+    "What is Reselect?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 물체 패널의 [다시 선택] 또는 영상에서 Shift+드래그로 바로 고칠 수 있습니다. id, 이름, 색, 매핑, 마우스 연결은 그대로 두고 모양 기억, 색 모델, AI 메모리만 새 마스크로 교체합니다. 자동 재획득이 애매할 때 고르지 않는 설계의 보완 수단입니다.",
+   "en": "In the v1.0.0 brochure, you can fix tracking immediately with [Reselect] in the object panel or Shift+drag on the video. The id, name, color, mapping, and mouse link stay the same, and only the shape memory, color model, and AI memory are replaced with the new mask. It complements the design choice to pick nothing when automatic re-acquisition is ambiguous."
+  },
+  "kw": [
+   "다시 선택",
+   "reselect",
+   "재등록",
+   "Shift 드래그",
+   "수동 복구",
+   "re-register",
+   "추적 어긋남",
+   "fix tracking"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#51-어떤-상황을-견디나"
+  ],
+  "related": [
+   "a-lookalike-policy",
+   "a-limit-twin",
+   "a-first-use-steps"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-lighting-robust",
+  "cat": "stable",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "조명이 바뀌어도 되나요?",
+    "크기나 회전이 바뀌어도 추적되나요",
+    "반사나 복잡한 배경은요",
+    "조건별 강건성"
+   ],
+   "en": [
+    "Does it handle lighting changes?",
+    "Does it track through size or rotation changes?",
+    "What about reflections or busy backgrounds?",
+    "Robustness by condition"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 설계상 색은 밝기 변화에 덜 민감한 Lab 색공간으로 다루고, 모양 비교는 위치·크기·회전에 불변이 되도록 정규화합니다. 합성 평가(성공률, CSRT→AnyControl)에서 조명 변화 tune 0.522→0.999, eval 0.456→1.000, 반사 0.307→1.000 / 0.600→1.000, 회전 0.383→0.993 / 0.277→0.960, 당기기(크기 변화) 0.318→0.997 / 0.281→0.936입니다. 합성 시퀀스 결과이며 실제 환경 전반의 성능이 아닙니다. 어두운 환경과 반사 바닥은 실사용에서 정확도가 떨어질 수 있다고 안내합니다.",
+   "en": "By design in the v1.0.0 brochure, color is handled in the Lab color space, which is less sensitive to brightness, and shape comparison is normalized to be invariant to position, size, and rotation. In synthetic evaluation (success rate, CSRT to AnyControl): lighting change 0.522 to 0.999 on tune and 0.456 to 1.000 on eval; reflection 0.307 to 1.000 and 0.600 to 1.000; rotation 0.383 to 0.993 and 0.277 to 0.960; pulling (size change) 0.318 to 0.997 and 0.281 to 0.936. These are synthetic-sequence results, not performance across real environments; the brochure warns accuracy can drop in dark rooms and on reflective floors."
+  },
+  "kw": [
+   "조명",
+   "회전",
+   "크기 변화",
+   "반사",
+   "배경 복잡",
+   "Lab",
+   "lighting",
+   "rotation",
+   "scale",
+   "reflection",
+   "강건성"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#51-어떤-상황을-견디나",
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과"
+  ],
+  "related": [
+   "a-eval-conditions",
+   "a-limit-low-light",
+   "a-occlusion-handling"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-max-objects",
+  "cat": "tracking",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "최대 몇 개까지 추적하나요?",
+    "동시 추적 물체 수 제한",
+    "물체끼리 겹치면 서로 헷갈리지 않나요",
+    "6개 제한 이유"
+   ],
+   "en": [
+    "How many objects can it track at most?",
+    "Limit on simultaneous objects",
+    "Don't overlapping objects get confused?",
+    "Why is the limit 6?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 현재 최대 6개(코드 상수 MAX_OBJECTS)입니다. 물체들은 서로 배타적으로 추적되어, 다른 물체가 보이는 영역은 이 물체의 점·마스크에서 제외하고 다른 물체의 추적 영역과 절반 이상 겹치는 후보는 재획득 후보에서 뺍니다. 6개로 정한 이유는 문서에 기술돼 있지 않습니다. 6개 동시 추적 시 정확도·지연은 미측정이고, 물체 3개일 때 AI 보정 지연 138ms만 측정했습니다.",
+   "en": "In the v1.0.0 brochure the current maximum is 6 objects (the code constant MAX_OBJECTS). Objects are tracked exclusively: regions where another object is visible are excluded from this object's points and mask, and candidates overlapping another object's tracked region by half or more are removed from re-acquisition. The documents do not explain why 6 was chosen. Accuracy and latency with 6 simultaneous objects are unmeasured; only the 138 ms AI-correction latency for 3 objects was measured."
+  },
+  "kw": [
+   "최대 6개",
+   "MAX_OBJECTS",
+   "동시 추적",
+   "배타 추적",
+   "다중 물체",
+   "max objects",
+   "exclusive tracking",
+   "overlap"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#31-여러-물체를-동시에-추적하고-하나하나-입력에-연결",
+   "sources/01_소개서_v1.0.0.md#51-어떤-상황을-견디나"
+  ],
+  "related": [
+   "a-multi-object-mapping",
+   "a-limit-six-objects",
+   "a-lookalike-policy"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-reacquire-effect",
+  "cat": "eval",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "모양 기억 재획득의 효과는 얼마나 되나요?",
+    "재획득을 켜기 전후 비교",
+    "튜닝 전후 수치",
+    "재획득 때문에 느려지지는 않나요"
+   ],
+   "en": [
+    "How effective is shape-memory re-acquisition?",
+    "Before and after enabling re-acquisition",
+    "Before/after tuning numbers",
+    "Does re-acquisition slow things down?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 합성 평가 세트 tune 50개, Apple M3에서 기능 이전→켬: 종합 성공률 0.8858→0.8903, 화면 이탈 0.8567→0.9024, 펜 이탈 0.5877→0.8158, 펜 이탈 복구 프레임 36→21, 성공률이 떨어진 시퀀스 0개, 프레임 시간 중앙값 평균 8.158→8.219ms(+0.06ms, 최악 +1.04ms)입니다. 기능을 끈 결과는 이전 코드와 50개 시퀀스 전부 동일했습니다. 별도 eval 세트(튜닝 금지)에서는 재획득 조건이 걸리는 상황이 없어 결과가 같았습니다. 닮은 물체 옮겨붙음(155프레임)은 이 기능으로 해결되지 않았습니다.",
+   "en": "In the v1.0.0 brochure, on the synthetic tune set of 50 sequences on an Apple M3, before to after enabling: overall success 0.8858 to 0.8903, exit 0.8567 to 0.9024, pen-exit 0.5877 to 0.8158, pen-exit recovery frames 36 to 21, zero sequences with lower success, and mean median frame time 8.158 to 8.219 ms (+0.06 ms, worst case +1.04 ms). With the feature off, results matched the pre-feature code on all 50 sequences. On the separate eval set (no tuning allowed), no situation triggered re-acquisition so results were identical. The 155 frames of hijacking by look-alike objects were not solved by this feature."
+  },
+  "kw": [
+   "재획득 효과",
+   "튜닝 전후",
+   "before after",
+   "0.8858",
+   "0.8903",
+   "회귀 없음",
+   "ablation",
+   "tune 50",
+   "no regression",
+   "프레임 시간"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#54-이-기능이-실제로-낸-효과"
+  ],
+  "related": [
+   "a-lost-and-return",
+   "a-reacquire-steps",
+   "a-eval-overfit-split"
+  ],
+  "suggest": true
+ }
+]

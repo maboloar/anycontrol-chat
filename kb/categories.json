@@ -1,0 +1,97 @@
+[
+  {
+    "id": "booth",
+    "ko": "부스·발표·대회",
+    "en": "Booth & contest"
+  },
+  {
+    "id": "overview",
+    "ko": "프로젝트 소개",
+    "en": "Overview"
+  },
+  {
+    "id": "usage",
+    "ko": "사용법·데모",
+    "en": "Usage & demos"
+  },
+  {
+    "id": "install",
+    "ko": "설치·준비물",
+    "en": "Install & needs"
+  },
+  {
+    "id": "safety",
+    "ko": "안전·개인정보",
+    "en": "Safety & privacy"
+  },
+  {
+    "id": "arch",
+    "ko": "어떻게 동작해요",
+    "en": "How it works"
+  },
+  {
+    "id": "tracking",
+    "ko": "추적·다시 찾기",
+    "en": "Tracking"
+  },
+  {
+    "id": "pen",
+    "ko": "펜 입력",
+    "en": "Pen"
+  },
+  {
+    "id": "hand",
+    "ko": "손·클릭",
+    "en": "Hands & clicks"
+  },
+  {
+    "id": "eval",
+    "ko": "성능·시험 결과",
+    "en": "Test results"
+  },
+  {
+    "id": "limits",
+    "ko": "한계·아쉬운 점",
+    "en": "Limits"
+  },
+  {
+    "id": "process",
+    "ko": "개발 과정·챗봇",
+    "en": "Making of"
+  },
+  {
+    "id": "team",
+    "ko": "활용·팀·계획",
+    "en": "Uses, team & plans"
+  },
+  {
+    "id": "cursor",
+    "ko": "커서·바닥 기준점",
+    "en": "Cursor & floor anchor",
+    "hidden": true
+  },
+  {
+    "id": "depth",
+    "ko": "깊이 모델",
+    "en": "Depth model",
+    "hidden": true
+  },
+  {
+    "id": "stable",
+    "ko": "떨림 억제",
+    "en": "Stabilization",
+    "hidden": true
+  },
+  {
+    "id": "calib",
+    "ko": "보정·매핑",
+    "en": "Calibration & mapping",
+    "hidden": true
+  },
+  {
+    "id": "code",
+    "ko": "코드 구조",
+    "en": "Code structure",
+    "hidden": true
+  }
+]

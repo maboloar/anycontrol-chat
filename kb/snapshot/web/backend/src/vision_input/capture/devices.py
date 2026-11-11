@@ -1,0 +1,117 @@
+"""AVFoundation 장치 발견. 목록과 캡처에서 같은 장치 ID/순서를 사용한다."""
+from __future__ import annotations
+
+import logging
+import os
+import sys
+from typing import Any
+
+log = logging.getLogger(__name__)
+
+
+def discover_devices() -> list[Any]:
+    if sys.platform != 'darwin':
+        return []
+    import AVFoundation as AVF
+    from Foundation import NSBundle
+
+    names = ['AVCaptureDeviceTypeBuiltInWideAngleCamera', 'AVCaptureDeviceTypeExternal',
+             'AVCaptureDeviceTypeDeskViewCamera']
+    # macOS 14의 새로운 유형은 opt-in된 앱 런처에서만 요청한다.
+    if NSBundle.mainBundle().objectForInfoDictionaryKey_('NSCameraUseContinuityCameraDeviceType'):
+        names.append('AVCaptureDeviceTypeContinuityCamera')
+    types = [getattr(AVF, n) for n in names if hasattr(AVF, n)]
+    session = AVF.AVCaptureDeviceDiscoverySession.discoverySessionWithDeviceTypes_mediaType_position_(
+        types, AVF.AVMediaTypeVideo, AVF.AVCaptureDevicePositionUnspecified)
+    return list(session.devices() or [])
+
+
+def list_cameras() -> list[dict[str, Any]]:
+    try:
+        devices = discover_devices()
+        if not devices:
+            return []
+        import CoreMedia as CM
+    except ImportError:
+        log.warning('pyobjc AVFoundation not installed; camera names unavailable')
+        return []
+    parents = {}
+    companions = {}
+    for d in devices:
+        companion = d.companionDeskViewCamera() if hasattr(d, 'companionDeskViewCamera') else None
+        if companion is not None:
+            companions[str(d.uniqueID())] = str(companion.uniqueID())
+            parents[str(companion.uniqueID())] = str(d.uniqueID())
+    out = []
+    for i, d in enumerate(devices):
+        dtype, uid = str(d.deviceType()), str(d.uniqueID())
+        desk = 'DeskView' in dtype
+        continuity = bool(d.isContinuityCamera()) if hasattr(d, 'isContinuityCamera') else 'Continuity' in dtype
+        continuity = continuity or 'iphone' in str(d.localizedName()).lower()   # 일부 macOS 에서 외장 장치로만 보고될 때
+        best = {}
+        try:
+            for f in d.formats():
+                dim = CM.CMVideoFormatDescriptionGetDimensions(f.formatDescription())
+                fps = max((r.maxFrameRate() for r in f.videoSupportedFrameRateRanges()), default=0)
+                key = (int(dim.width), int(dim.height))
+                best[key] = max(best.get(key, 0), float(fps))
+        except Exception:
+            log.debug('format query failed', exc_info=True)
+        out.append({'index': i, 'name': str(d.localizedName()), 'unique_id': uid,
+                    'model': str(d.modelID() or ''), 'device_type': dtype,
+                    'is_continuity': continuity, 'is_desk_view': desk,
+                    'companion_id': companions.get(uid), 'parent_id': parents.get(uid),
+                    'formats': [{'width': w, 'height': h, 'max_fps': fps}
+                                for (w, h), fps in sorted(best.items())]})
+    return out
+
+
+# 자동 선택 순서: homese → 17sa → iPhone 연속성 카메라 → FaceTime HD Camera → 첫 카메라.
+# (프로그램을 받아 쓰는 다른 사람에게는 homese·17sa 가 없으니 연결된 iPhone 을 가장 먼저 쓴다)
+# 앞의 이름 목록은 ANYCONTROL_CAMERA_PREFER="이름1,이름2" 로 바꿀 수 있다.
+CAMERA_PREFER = tuple(w.strip().lower() for w in os.environ.get('ANYCONTROL_CAMERA_PREFER', 'homese,17sa').split(',') if w.strip())
+CAMERA_FALLBACK = ('facetime hd camera',)
+
+
+def auto_candidate(c: dict[str, Any]) -> bool:
+    """자동 선택·폴백 순서에 드는 카메라인가 (이름 목록, 연속성 카메라, 내장 FaceTime)."""
+    name = str(c.get('name', '')).lower()
+    return bool(c.get('is_continuity')) or any(w in name for w in (*CAMERA_PREFER, *CAMERA_FALLBACK))
+
+
+def preferred_camera(normal: list[dict[str, Any]], exclude: tuple[str, ...] = ()) -> dict[str, Any] | None:
+    """exclude: 프레임이 오지 않아 건너뛸 카메라 unique_id (실행 중 폴백)."""
+    normal = [c for c in normal if c.get('unique_id') not in exclude] or normal
+    def named(words: tuple[str, ...]) -> dict[str, Any] | None:
+        for word in words:
+            hit = next((c for c in normal if word in str(c.get('name', '')).lower()), None)
+            if hit is not None:
+                return hit
+        return None
+    return (named(CAMERA_PREFER) or next((c for c in normal if c.get('is_continuity')), None)
+            or named(CAMERA_FALLBACK) or (normal[0] if normal else None))
+
+
+def select_camera(cameras: list[dict[str, Any]], index: int = -1,
+                  device_id: str | None = None, desk_view: bool = False,
+                  exclude: tuple[str, ...] = ()) -> dict[str, Any]:
+    if device_id:
+        selected = next((c for c in cameras if c['unique_id'] == device_id), None)
+    elif index >= 0:
+        selected = next((c for c in cameras if c['index'] == index), None)
+    else:
+        normal = [c for c in cameras if not c.get('is_desk_view')]
+        selected = preferred_camera(normal, exclude)
+        if desk_view and (selected is None or not selected.get('companion_id')):
+            selected = next((c for c in cameras if c.get('is_desk_view')), None)
+    if selected is None:
+        raise ValueError('카메라가 연결되어 있지 않습니다. 장치 목록을 새로고침하세요.')
+    if desk_view and not selected.get('is_desk_view'):
+        selected = next((c for c in cameras if c['unique_id'] == selected.get('companion_id')), None)
+        if selected is None:
+            raise ValueError('선택한 카메라의 Desk View가 없습니다. 지원되는 iPhone을 연결하세요.')
+    elif not desk_view and selected.get('is_desk_view'):
+        selected = next((c for c in cameras if c['unique_id'] == selected.get('parent_id')), None)
+        if selected is None:
+            raise ValueError('Desk View와 연결된 일반 카메라를 찾을 수 없습니다.')
+    return selected

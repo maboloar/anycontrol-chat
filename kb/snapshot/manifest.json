@@ -1,0 +1,708 @@
+{
+ "synced_at": "2026-10-20 06:32",
+ "app_version": "1.8.0",
+ "files": {
+  "DEVELOPMENT.md": {
+   "sha256": "8106980fb36a48e1647966ef6c4ccfc7f68010fa6b313e9da412ea513abad2bc",
+   "size": 3336
+  },
+  "HANDOFF.md": {
+   "sha256": "65c1eb3c79df46b6ffcc53639c76cca23f103ff6b1bff706e2a75d21f5d194ae",
+   "size": 181056
+  },
+  "INSTALL.md": {
+   "sha256": "3bd32096e7a89d4a94d6dae094c06c94e5bbd105f28d276ef984ff6fcdb2dbdd",
+   "size": 1420
+  },
+  "README-en.md": {
+   "sha256": "be0d62af0b9207e19fa496cb6c57013efa77c2040556667ef939f58d59adb67f",
+   "size": 9910
+  },
+  "README.md": {
+   "sha256": "509c787e3da9e812dc2d4fe9db4895b238a86d3a9653ef4daae52dd6838bd10d",
+   "size": 11569
+  },
+  "THIRD_PARTY.md": {
+   "sha256": "3c49438fd90e2af24969e6918cbff71d29b3c9de90813c8a4e5870bc32b961e1",
+   "size": 1764
+  },
+  "backend/pyproject.toml": {
+   "sha256": "6578cfec6fc225469b9b4426106073b14dab791f8b5cf7fa1c782b873ec05ba6",
+   "size": 1742
+  },
+  "backend/src/vision_input/__init__.py": {
+   "sha256": "8d10eca81c79ff076d4e0df81f12648debd6284de134411ccd4045cd546cd6a8",
+   "size": 145
+  },
+  "backend/src/vision_input/__main__.py": {
+   "sha256": "f8bcc22e67ffb71c145c70da66f689bdb4c8df4ed544d806e3483005ca454faa",
+   "size": 6305
+  },
+  "backend/src/vision_input/auto_calibration.py": {
+   "sha256": "ce5ecbbc85281677838dbc8bacaa8c71d56848dfd5567ce636673ead2d88755f",
+   "size": 43947
+  },
+  "backend/src/vision_input/capture/__init__.py": {
+   "sha256": "cf96f7e5dab846c059818dfd448e373eef00d6d28739e4e83f788bc5e60cfff9",
+   "size": 221
+  },
+  "backend/src/vision_input/capture/avf.py": {
+   "sha256": "e5f2736c3ad3e9326037c874c3eed32e620dee5b25adb7eb14ec37237f1cee54",
+   "size": 10741
+  },
+  "backend/src/vision_input/capture/desk_setup.py": {
+   "sha256": "34abbbcf7d75b11ebef418d5073675a6eaed613d2245762a3979d116014823c1",
+   "size": 1869
+  },
+  "backend/src/vision_input/capture/devices.py": {
+   "sha256": "ec35376e53c3b854891d30b3bdabfdbe439f4a528eaf5a3ea081974ac0c89460",
+   "size": 5990
+  },
+  "backend/src/vision_input/capture/slot.py": {
+   "sha256": "22fe86f67ac99ffcf35fe2d64b47f01167dda2d06b00a4b1144becffd1aa23bc",
+   "size": 2704
+  },
+  "backend/src/vision_input/capture/sources.py": {
+   "sha256": "55ccc5298fbb58e8f6a2658dc6c42aa4dbcad11a69631754a48c689d181b0bcf",
+   "size": 11182
+  },
+  "backend/src/vision_input/config.py": {
+   "sha256": "f49c8abb289875d1ae0ec0298acb22bd049db8f1934621dcfe097c4479fbd062",
+   "size": 1855
+  },
+  "backend/src/vision_input/depth_model.py": {
+   "sha256": "b74dca0e28f8285091911b09d0b3c2d6868db4530d7a81f2062889e7af93820c",
+   "size": 25302
+  },
+  "backend/src/vision_input/engine.py": {
+   "sha256": "54406b4df05faa21f75e1aed95eb78728a4d19beb3dcce84aa64334cff065286",
+   "size": 9661
+  },
+  "backend/src/vision_input/eval/__init__.py": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  "backend/src/vision_input/eval/__main__.py": {
+   "sha256": "3a335571f6ccdfec0e9c29ea61c2ac296b53bc3c483c64d5e82a0838c488fa84",
+   "size": 3705
+  },
+  "backend/src/vision_input/eval/harness.py": {
+   "sha256": "c692fe5fc1ffecfa196c68d11090416896b82d3da0bdf6119790b5b661a8c00d",
+   "size": 8132
+  },
+  "backend/src/vision_input/eval/metrics.py": {
+   "sha256": "674aff52fed7867079589d905a0d00a39b6d4cf1f34ab9f2f15f67daa706e2ae",
+   "size": 9253
+  },
+  "backend/src/vision_input/eval/synth.py": {
+   "sha256": "0d95a1e16ebe3eaaa1847a26ee0ed8f664a5cfb92ef6739d63ac9e3716df1aa0",
+   "size": 18667
+  },
+  "backend/src/vision_input/eval/trackers.py": {
+   "sha256": "86ea74dc85db4d1e62b5323f2f7398032015d469d6b51969df24e4e5178a6fc1",
+   "size": 6033
+  },
+  "backend/src/vision_input/hands/__init__.py": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  "backend/src/vision_input/hands/detector.py": {
+   "sha256": "06f81daa4365304bf9710b6c499632345bf56a606a62c64832f49e83eaba8f02",
+   "size": 8439
+  },
+  "backend/src/vision_input/hands/drawing.py": {
+   "sha256": "b92850b01bdfafeeaad751b4827e610d5d6bbd261bfbad49077c14d48ead271f",
+   "size": 4635
+  },
+  "backend/src/vision_input/hands/finger_click.py": {
+   "sha256": "2dc86dcff47fc0afe053a8527883700a2f34279a53b1a452decd8a91bad8a488",
+   "size": 7457
+  },
+  "backend/src/vision_input/hands/gestures.py": {
+   "sha256": "7869e317d5bc35273bfc38d29457e2ee2ec68d610b74033afa4156c9fb74d2b4",
+   "size": 6473
+  },
+  "backend/src/vision_input/hands/object_tap.py": {
+   "sha256": "e8e651e8e13e38d9323079364bc6c17262532826546793e8521fc9d510376369",
+   "size": 2601
+  },
+  "backend/src/vision_input/hands/tip_click.py": {
+   "sha256": "053eca3b7d0345c0c0da8dee93ad6699343a7a5114024e51ae888942317e7c97",
+   "size": 7983
+  },
+  "backend/src/vision_input/hands/tip_refine.py": {
+   "sha256": "4c2d6aeb03dd56ccbb5ff41d7a05975eb9afc7443b9db42f07c3d1f9274e5f58",
+   "size": 7737
+  },
+  "backend/src/vision_input/hands/tip_track.py": {
+   "sha256": "0f8506cbba5387eb218ec62327741909f83e0b29b6845edf42cf36b583b1ce20",
+   "size": 12289
+  },
+  "backend/src/vision_input/hands/vision.py": {
+   "sha256": "266c25c9736d0d3f5da7aaf5ed1bebe38eb8bf011081f9de2a7ecd3cd79e53ee",
+   "size": 5583
+  },
+  "backend/src/vision_input/io/__init__.py": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  "backend/src/vision_input/io/depth.py": {
+   "sha256": "c41de3e41355553292497ac6bdbc98e74b7c0798e3289899b9465164ab9fc647",
+   "size": 3062
+  },
+  "backend/src/vision_input/io/hybrid.py": {
+   "sha256": "25a2bb4d521158c2855185a208108e6befc84b37ad554001e9f4edcbac55ab38",
+   "size": 6470
+  },
+  "backend/src/vision_input/io/macos.py": {
+   "sha256": "ed8bbf731ed563d5565c9d64651b7008b7116dff35387774987dba61c97f38f1",
+   "size": 15249
+  },
+  "backend/src/vision_input/io/mouse.py": {
+   "sha256": "a1adea05146e0008d536b2d440ba41031170759df23a308f49e4e3fc57a8face",
+   "size": 29275
+  },
+  "backend/src/vision_input/io/sink.py": {
+   "sha256": "4634deea4f0d6ebacf6306422bfdceba31ab41287a672e3e84fc1113c90856f7",
+   "size": 4416
+  },
+  "backend/src/vision_input/io/touchpad.py": {
+   "sha256": "2e2add8b51164dbbc6de135e9a0e718fce6dd20ac4f41219216a6717d8a665f6",
+   "size": 7737
+  },
+  "backend/src/vision_input/mapping/__init__.py": {
+   "sha256": "20ed0a7b71b5a6950696e827cbbb489bbd698ea3d6bd817c8cee93e24d63ce5e",
+   "size": 333
+  },
+  "backend/src/vision_input/mapping/engine.py": {
+   "sha256": "5d6f97d7d7fe991bcce11346bb8a6165b6694fcffa14f76546880ee9ebdcf8c0",
+   "size": 9624
+  },
+  "backend/src/vision_input/mapping/gamepad.py": {
+   "sha256": "768a8278f8ef9575e58aff52553e048c1700807b8e5523cb5aa6d98e53905763",
+   "size": 1491
+  },
+  "backend/src/vision_input/mapping/learn.py": {
+   "sha256": "b0ad50966b77d5ba77b7fb9b6087d712bdbc15732061cdf7dc8800ef47eb0e08",
+   "size": 2380
+  },
+  "backend/src/vision_input/mapping/schema.py": {
+   "sha256": "90650632d2c3eb31306b65dc47786c020505fa786e96d1fcd5ceb4202128904c",
+   "size": 10274
+  },
+  "backend/src/vision_input/mapping/store.py": {
+   "sha256": "610d91f5e185c018554801acc5fca5509edd54e01f2a18134759102f2715d799",
+   "size": 2805
+  },
+  "backend/src/vision_input/object_touch.py": {
+   "sha256": "501a16b0889f90631ae2596d9e0ff4d8aeb97778ebd9075ca9467199edfd42bb",
+   "size": 19157
+  },
+  "backend/src/vision_input/pen.py": {
+   "sha256": "cccc14c059ab9685f090eba4a7abd6a8ca1830a7d91eaa95601b620b905d2977",
+   "size": 56010
+  },
+  "backend/src/vision_input/pen_contact.py": {
+   "sha256": "cfe6f9d994b7a398cca9f2375017af42d96cd07ae05856d76e6e95537ef4c861",
+   "size": 2097
+  },
+  "backend/src/vision_input/pen_floor.py": {
+   "sha256": "300311ee5de65bc809c18e7912b1fe0e1864dd248735c47bddc848101b58183e",
+   "size": 45869
+  },
+  "backend/src/vision_input/pen_skeleton.py": {
+   "sha256": "386fd757af398d170e053e0b239c451d9244b6c0a32e6eaf1e33a929be460e90",
+   "size": 13592
+  },
+  "backend/src/vision_input/pipeline.py": {
+   "sha256": "bce89ed1dc743493e112718184c7df990b88d7b1fe0af6c188ac77210393dc6b",
+   "size": 68449
+  },
+  "backend/src/vision_input/presence.py": {
+   "sha256": "c676c90f198cb18bde99a01c0396364ae494d38a227e4a7874a7e27e3a818c58",
+   "size": 2791
+  },
+  "backend/src/vision_input/server/__init__.py": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  "backend/src/vision_input/server/app.py": {
+   "sha256": "2c6134a6610ca0a12aa89ab7cfd5a3207eb01d162b9aad2fa167da5182a065f2",
+   "size": 19065
+  },
+  "backend/src/vision_input/server/browser_session.py": {
+   "sha256": "2faec642e09e726f896bdf877a47b90706e452bc4008061abe25075323e9c11d",
+   "size": 1097
+  },
+  "backend/src/vision_input/server/control.py": {
+   "sha256": "56c01b7c5889199c9a6c91b84dd4d50e3a9abd93315c96827f402c8117dcb166",
+   "size": 12284
+  },
+  "backend/src/vision_input/server/dev.py": {
+   "sha256": "b8173786fd88381af5434b0792d927f9f47598d44545168ec97d109d512e3c8f",
+   "size": 5171
+  },
+  "backend/src/vision_input/server/hub.py": {
+   "sha256": "bc39fd032c75be8f7a6b7813b8fd1f0e7be0c3a842245fa5651737c6beadf9d5",
+   "size": 2715
+  },
+  "backend/src/vision_input/server/idle.py": {
+   "sha256": "ee844a714f8ea5e6b3e1c5a3cd489e66e23ad8600839d36707461d07e491c285",
+   "size": 1808
+  },
+  "backend/src/vision_input/server/mapping.py": {
+   "sha256": "52e35b15599e42d3825b8ef611efea71acb85063bbb0e5ffa252e2098388cbd2",
+   "size": 3581
+  },
+  "backend/src/vision_input/server/objects.py": {
+   "sha256": "c3628dc726ce3de27d1dbdc290a912af19a7dcafdae273ea2d68fd2740f01556",
+   "size": 19565
+  },
+  "backend/src/vision_input/server/protocol.py": {
+   "sha256": "85f14236dda7349079d0320df9d1d6fbef2cf42902df95475c858a3b043b0e2a",
+   "size": 2401
+  },
+  "backend/src/vision_input/stats.py": {
+   "sha256": "d864d7a214cca6618446295d44e2594e7e019d628e58c8cf9e0e6f6ebad36ef3",
+   "size": 1772
+  },
+  "backend/src/vision_input/tracking/__init__.py": {
+   "sha256": "5712f7b662dac76f7a889d1b218250142ac1b40e8541aa56cf4740340f70181f",
+   "size": 202
+  },
+  "backend/src/vision_input/tracking/anchor.py": {
+   "sha256": "1ad66708883a45d97c9a302ba2f6c5bb1caff04f64eb63a5ff5ea5a49318dd1d",
+   "size": 15225
+  },
+  "backend/src/vision_input/tracking/api.py": {
+   "sha256": "cd2c3362f8fa38d415330a6a698ea3aa3ea93059eab39e0221f19c1fe6279fac",
+   "size": 3836
+  },
+  "backend/src/vision_input/tracking/axes.py": {
+   "sha256": "45ced8244617817881f500ff323dc3671dd26c6ea207a24778d275cd8beb4810",
+   "size": 6944
+  },
+  "backend/src/vision_input/tracking/desk.py": {
+   "sha256": "74fac4030b80fa582efea40c6bcd3e502ef524a018c6e7efefbea40f705695e9",
+   "size": 5000
+  },
+  "backend/src/vision_input/tracking/gpu.py": {
+   "sha256": "5bdd8800a09d7205e4c3ec6669050e5848b65383cab4ad1384c22919d2b59705",
+   "size": 2159
+  },
+  "backend/src/vision_input/tracking/kalman.py": {
+   "sha256": "1bf10a849820db5c873e3e1e6576ce8dcca017c273606a0256cc7041a6a63223",
+   "size": 5732
+  },
+  "backend/src/vision_input/tracking/measure.py": {
+   "sha256": "c6a375c538dd1aa1c76dcdeea6c7e2fbd9c96bd9d7f074a32fa8c0fc61c37112",
+   "size": 6004
+  },
+  "backend/src/vision_input/tracking/memory_view.py": {
+   "sha256": "95eef58e0d0e9bb7565b8a0c1141c91a9782ad812ebaedcfc0d1979112413cc4",
+   "size": 5465
+  },
+  "backend/src/vision_input/tracking/reacquire.py": {
+   "sha256": "5851bb227236656dc15277dd7e5da4660bda11c9d3c9f539027fa20f69a4693f",
+   "size": 12193
+  },
+  "backend/src/vision_input/tracking/refresh.py": {
+   "sha256": "2a0180a6d210e870321742bfc7e44d6f3c37c548b5e49b20c8882659c347bcc5",
+   "size": 4830
+  },
+  "backend/src/vision_input/tracking/register.py": {
+   "sha256": "838590e4c717a60ef1abf93a88b9ba9a81609df9982270f3da5eff378dcb7eb7",
+   "size": 8783
+  },
+  "backend/src/vision_input/tracking/scene.py": {
+   "sha256": "a268cf36f3cdc3fbabe11f2cf1b732a16b04b32b5d557c37a4a69a23de114642",
+   "size": 20970
+  },
+  "backend/src/vision_input/tracking/segment.py": {
+   "sha256": "6d773ceef1143f3b01cc926e389e7aa47864da0b98e5de075da46915501c2ef7",
+   "size": 3662
+  },
+  "backend/src/vision_input/tracking/settle.py": {
+   "sha256": "3d91570f9ddf1b7a21294e46c1dea2771ecfa3b4e80ef706640ebde1665b87ff",
+   "size": 5019
+  },
+  "backend/src/vision_input/tracking/smooth.py": {
+   "sha256": "9ae7ca46cb022dabf1d19c33e9344c378c633f18d7fdee2e47078ceedd840bcd",
+   "size": 5452
+  },
+  "backend/src/vision_input/tracking/still.py": {
+   "sha256": "212f6eddd6188edd8773bcae8c53207014b2f92c9eb5a0e4e3015987eedafb9b",
+   "size": 7675
+  },
+  "backend/src/vision_input/tracking/tier0.py": {
+   "sha256": "fad9ab4fccaa6304ae79b99603ad37b779cfebd60756bf1f662a7ec18b6258ac",
+   "size": 10303
+  },
+  "backend/src/vision_input/tracking/tier1.py": {
+   "sha256": "2cdd1c35088a37b2fd522cb9278f18bbb29c4900b54af253d341f5ff84aa00d6",
+   "size": 14554
+  },
+  "backend/src/vision_input/tracking/vi_tracker.py": {
+   "sha256": "5100a2c29b4d501416c7798bd62a7ef14bf20801aef05065b87bbaea3391ecf7",
+   "size": 81267
+  },
+  "bench/fg/README.md": {
+   "sha256": "408fa47a4ea50a4bc33ad981cd7ff8c128eb7d48569aabcccff24ec75b3328f2",
+   "size": 5356
+  },
+  "bench/pen/README.md": {
+   "sha256": "31b629f9d9acae378b4e81c822465202048124a14620acffb4673aa8d3fb0e9f",
+   "size": 11914
+  },
+  "bench/still/README.md": {
+   "sha256": "a79d5955524ee45f82c89cc7963405e517eae51b19b161b4bf06b4ba7ca53b83",
+   "size": 2357
+  },
+  "frontend/package.json": {
+   "sha256": "fd9bd34ef9125398e96b0b78a78057dd6e96010a5a9845f9f8484ecf600e4d48",
+   "size": 657
+  },
+  "frontend/src/App.tsx": {
+   "sha256": "24287921d8ed009b2232ec9a329f5923aac9912fdd9c35152c7995c0f1e72fe6",
+   "size": 9219
+  },
+  "frontend/src/api.ts": {
+   "sha256": "4fe51a717d30eed6847257e81b7dc18abca54b3533a2c63f6c118de706ad1380",
+   "size": 11415
+  },
+  "frontend/src/components/ActionIcon.tsx": {
+   "sha256": "835805c4b9a83ea929cb99f2ffcf52207db7ebd00d79d5c21463e5976c51f046",
+   "size": 1502
+  },
+  "frontend/src/components/AutoCalibration.tsx": {
+   "sha256": "2ba18664b54016d28279045d77fd949dc2224ae13806ea3958af69bb5495a870",
+   "size": 10871
+  },
+  "frontend/src/components/AutoResegControl.tsx": {
+   "sha256": "990367f7185d366d79ab0a6d7c96d124523515cd18f78b85dc6ab574e492ab11",
+   "size": 2685
+  },
+  "frontend/src/components/BetaBadge.tsx": {
+   "sha256": "437abf3e09d927a7a7aa6ac99556fa9b396688ee6639ccdbf0817fd306b4b557",
+   "size": 433
+  },
+  "frontend/src/components/CameraBuddy.tsx": {
+   "sha256": "d774d7832e50c2596a8e82e89a2bdad4c7ba0a7097ab9e084af1862fe64e7c11",
+   "size": 5415
+  },
+  "frontend/src/components/CameraTools.tsx": {
+   "sha256": "1b4e2ca09055267ec7ee2ee7054d949429acf96946cda6f7c7005f9923296c2f",
+   "size": 8465
+  },
+  "frontend/src/components/CameraView.tsx": {
+   "sha256": "716959b724ec52a83a97e7c96cf1aeac67dcb0ea6944d52700b9c6dea39d5920",
+   "size": 28898
+  },
+  "frontend/src/components/DepthCompareView.tsx": {
+   "sha256": "fd004057eca1ccc4d11168b40c3d2ae27cb8bbf47f8f2eb9787743e0d4e09b5b",
+   "size": 7140
+  },
+  "frontend/src/components/DevMode.tsx": {
+   "sha256": "e4b98f54815f2f4a6a76944656ff1c6ec4ee148a415a19a17d2872f8acd1c02d",
+   "size": 3896
+  },
+  "frontend/src/components/DisplayControls.tsx": {
+   "sha256": "66708aac56142fd77d8f755c023a3bf1db45983bb64903d6d418c4b6c67697a6",
+   "size": 5104
+  },
+  "frontend/src/components/DjDemo.tsx": {
+   "sha256": "be851bcc7670fb815bed50a584928b2d4e47f6b111aa7d9a4b87369d1506e516",
+   "size": 26091
+  },
+  "frontend/src/components/DrawingPad.tsx": {
+   "sha256": "adec8c3b27ba17dce514f316b1e35310b3398ae2112110a84f44cc4cbfd7be93",
+   "size": 26013
+  },
+  "frontend/src/components/FloorMapView.tsx": {
+   "sha256": "f7e4cc2f5c0583d43a06ee3069b77db5cc54b4bfd0219130d403cc34578691da",
+   "size": 4897
+  },
+  "frontend/src/components/FruitDemo.tsx": {
+   "sha256": "20a2df1abd6b84ca1ff32f119e4f67b88c279822d2aee4cfd1046f3502a1a3c1",
+   "size": 11248
+  },
+  "frontend/src/components/GameButtons.tsx": {
+   "sha256": "36cdec5c4a5ab0509edb41b32d7655d30c1693c6c8a2db72701b784e77dff765",
+   "size": 1200
+  },
+  "frontend/src/components/GameMappingBar.tsx": {
+   "sha256": "9d913bd28dd437a3b1aeb62a71a06ce7c9aeb8d37e14ce7b05e72e417f8372a0",
+   "size": 10856
+  },
+  "frontend/src/components/GamepadView.tsx": {
+   "sha256": "66673aae779e0d6d89586d7efee1c65ed452e8df52eb6b8f83591598e7d4df9e",
+   "size": 5418
+  },
+  "frontend/src/components/HandInputCard.tsx": {
+   "sha256": "64fa6c7197e3fb9a1079231eea148aaf66ceb57b13fc0386728a6940e8e0f1c3",
+   "size": 1958
+  },
+  "frontend/src/components/HockeyDemo.tsx": {
+   "sha256": "8841274564bf9b4f38e0763a32dd0f9fafb50d4dc280abcd8c03e5ab0f91ad9b",
+   "size": 8549
+  },
+  "frontend/src/components/Hud.tsx": {
+   "sha256": "b871b12e56bed2fd4bf02849d589ba6a4828f2e8931327e56e43e766ee711373",
+   "size": 8490
+  },
+  "frontend/src/components/IdleShowcase.tsx": {
+   "sha256": "7ef6ce46508ff24e8d415fa254638dac523b49f908b7c47be908453ebb0f2d6b",
+   "size": 4332
+  },
+  "frontend/src/components/Info.tsx": {
+   "sha256": "3591bd1ff9eb9109963006e42efbe003687c80e276fe52cffcbab46eb7c041e7",
+   "size": 2875
+  },
+  "frontend/src/components/MappingEditor.tsx": {
+   "sha256": "fa855f0a355f51a4d5def311b22f3ee3d7edaa7a30db03ac9c3afef722ae6451",
+   "size": 14053
+  },
+  "frontend/src/components/MappingPanel.tsx": {
+   "sha256": "12cd1962d2ccc7b88d8a1e454f4003a5c2aea415863505baa5dd38a32b7bd5a3",
+   "size": 8188
+  },
+  "frontend/src/components/MemoryView.tsx": {
+   "sha256": "c28051038af731fb82fe092b0cbd5527f5ca4347b24aceaa831615626413958a",
+   "size": 8901
+  },
+  "frontend/src/components/MousePanel.tsx": {
+   "sha256": "f63b75328eaee72f01c1ba8375a4bc710c0a433ebad32c1e76710a927b20323c",
+   "size": 30019
+  },
+  "frontend/src/components/ObjectPanel.tsx": {
+   "sha256": "cf2512081f885b015c92fafb736804e644ea343d343f179f41eaf7a1ea92de7e",
+   "size": 22394
+  },
+  "frontend/src/components/Panel.tsx": {
+   "sha256": "a53c5032d96c2ca0b167d3862681d10730441ff06d3ae48b43b5c637b3d456ef",
+   "size": 2306
+  },
+  "frontend/src/components/PatchBay.tsx": {
+   "sha256": "95a4b129b5a30b1558d3038acd6a672ee894c700e97db1367b5f6aa420374943",
+   "size": 7292
+  },
+  "frontend/src/components/PatchCables.tsx": {
+   "sha256": "9389fa4372c0f80857a2b5836f91acf337d2e684ee13103789da2cdc48bd29f2",
+   "size": 9109
+  },
+  "frontend/src/components/PongDemo.tsx": {
+   "sha256": "9a8190c03a60f8cabb166f17c6bd9fccd638bf7d1e357f2485c2dd6243ee1f31",
+   "size": 8851
+  },
+  "frontend/src/components/RacingDemo.tsx": {
+   "sha256": "a23f5c47a4ff97ef8c6623674ce5de2c180ea26d800f9c77d763025b37179fc6",
+   "size": 16191
+  },
+  "frontend/src/components/RealOutputPanel.tsx": {
+   "sha256": "2de8936a1085cfeb9080a859c77948750d0f0823d6285737ec1bfab9991716b9",
+   "size": 4672
+  },
+  "frontend/src/components/ResetMappingsButton.tsx": {
+   "sha256": "95dce8cca0597ece202836d2ba6982670137b18f65da1520f6c8dfc555da22df",
+   "size": 1163
+  },
+  "frontend/src/components/SourcePanel.tsx": {
+   "sha256": "9f241b6b7e064e6a0fcb6f909138f99779dfa55ce4eea02e18fb6693178ec286",
+   "size": 11847
+  },
+  "frontend/src/components/SurvivalDemo.tsx": {
+   "sha256": "41816b9d547c34ed32e0f7ab481dd287b13065b013ac68fca376be147fdc2f1a",
+   "size": 9827
+  },
+  "frontend/src/components/Topbar.tsx": {
+   "sha256": "bbac0aae787705dd76ec6246e5f426b2c084fdfd2196d9b749aef0f7b79d4104",
+   "size": 4813
+  },
+  "frontend/src/components/TouchSensitivity.tsx": {
+   "sha256": "783a35789a3accbbb057b18236d3eec3455a6e8d9cdea0ba4d8a8dfbe1c7034a",
+   "size": 2101
+  },
+  "frontend/src/components/Tutorial.tsx": {
+   "sha256": "3f60a20dac4b6fd2ec2112033da2fb9e493d1ff0cf5e58d8651b9be7e0677a81",
+   "size": 16250
+  },
+  "frontend/src/components/VirtualDesktop.tsx": {
+   "sha256": "727177cfd84a8395c097585d2b0c3b89823e66375612a46387ba0808b2f678f0",
+   "size": 5978
+  },
+  "frontend/src/components/VirtualIoView.tsx": {
+   "sha256": "da4438fd11d78d22be6c3ebcc9d2f027b7358392b820e250fcf0c39c91786fb1",
+   "size": 4243
+  },
+  "frontend/src/components/gameSession.ts": {
+   "sha256": "a5df3043909b6a517d2bbf14637cf52751f322e5fc66e86142306418c115ed08",
+   "size": 8784
+  },
+  "frontend/src/components/useResizable.tsx": {
+   "sha256": "3a6f9ca924831339aea17dfb03437123f5a9874aa1ed2df6d1c5c49701097c9f",
+   "size": 4979
+  },
+  "frontend/src/connection.ts": {
+   "sha256": "2c588c5b0f22e0247b4ad26223b3ea77988e8ca06b80a06f5872c3b0dc35c00c",
+   "size": 8617
+  },
+  "frontend/src/djAudio.ts": {
+   "sha256": "8dedeab2f1cd7706a864a466027d43223b9aecc2e35a9f95c02e6127c951cd90",
+   "size": 10548
+  },
+  "frontend/src/drawing.ts": {
+   "sha256": "07b66405bfa91dbd9e267dda316bb1b3e5d18204de56f7daac7d3f9cb6f61ce2",
+   "size": 2569
+  },
+  "frontend/src/fruit.ts": {
+   "sha256": "97d538ad4aa25d2edf2b890fb24a3bdd05761ce6a71556673c7e8c046c33720e",
+   "size": 8053
+  },
+  "frontend/src/fx.ts": {
+   "sha256": "13033080ca32adea79ff95cbfc953d6bbdfc3bb9fc786679c43eeb238f0de7f9",
+   "size": 10010
+  },
+  "frontend/src/gameCanvas.ts": {
+   "sha256": "f8dabe3c8a22278088ed70c259dbc96c6831f5a39418f7c06320b4aa6e0ec9d8",
+   "size": 943
+  },
+  "frontend/src/gameFunctions.ts": {
+   "sha256": "5e08e5622b43f9523874786da8ab6ee1497e1e686282ad2ce73bfa034e6d1770",
+   "size": 4585
+  },
+  "frontend/src/gameMapping.ts": {
+   "sha256": "fdb888906368f3c3d3d31fcd858685d2df9ee911ba05eed3897f1087d52d4759",
+   "size": 3868
+  },
+  "frontend/src/guidePrompt.ts": {
+   "sha256": "0cde69b01fa6a04f507a2921d9d2b236e23dd3dc8b82274bb8899e73dc03e0c4",
+   "size": 1045
+  },
+  "frontend/src/hockey.ts": {
+   "sha256": "9fb6772cd74ffa27ef483b59e7fc2556197b0c8d9844d1daa0c6bb258520f56e",
+   "size": 4554
+  },
+  "frontend/src/i18n.ts": {
+   "sha256": "61e6a0471b1079c62dfa5702056ff7bb5d55eb18f268071e8df7d669699b119b",
+   "size": 1756
+  },
+  "frontend/src/main.tsx": {
+   "sha256": "a6bcae9c4f04d6ff36406b2966379834342b41b08b83ba7bd0334712d6cf87f0",
+   "size": 236
+  },
+  "frontend/src/mapping.ts": {
+   "sha256": "cbbad183d2f8b943522066ebc8828a492fe64ce8b824788cfcbe050c59a32101",
+   "size": 10063
+  },
+  "frontend/src/mappingDraft.ts": {
+   "sha256": "13e01f29b006bcff4148926c9beda316e3f03288e9f9e37bc809ad834e6de144",
+   "size": 4046
+  },
+  "frontend/src/mappingSensitivity.ts": {
+   "sha256": "8d582a509c5f47cce2d24d3792c94e8e402fdb50840298c8635b9e5ddafa6a87",
+   "size": 1024
+  },
+  "frontend/src/objectRefs.ts": {
+   "sha256": "8bab17f3f9335832b13f0fd721f5f7b38e4debe3eb75cf1c53027e5dc3d037aa",
+   "size": 799
+  },
+  "frontend/src/overlay.ts": {
+   "sha256": "e892a6931bf097c2810930c9b76e78831110de6459ae181d288b7a5b4c3175bb",
+   "size": 12698
+  },
+  "frontend/src/panelLayout.ts": {
+   "sha256": "3ecce63d72a8363f740358ce946875cc6f90a2eddffd3701c94892bf3aefe945",
+   "size": 5502
+  },
+  "frontend/src/patch.ts": {
+   "sha256": "cc38a9a3d94090c94962d65917d9d03c2fa0551230ea32eeebac24043813f43f",
+   "size": 8298
+  },
+  "frontend/src/patchConnections.ts": {
+   "sha256": "0b3c4af1469e466822a69d023ed83cc608068429b824f14bbbc17d2ff93aebfb",
+   "size": 557
+  },
+  "frontend/src/pong.ts": {
+   "sha256": "98bd66bc1dcc1521a559711b21a0b7f6be1a5897368f0cda67a05aeaf50d55a4",
+   "size": 7223
+  },
+  "frontend/src/protocol.ts": {
+   "sha256": "68031a69ebd53f28f8bb5f5c087d7d0bcb34e5bfa42b91c1b80e42b8ff994649",
+   "size": 19665
+  },
+  "frontend/src/racing.ts": {
+   "sha256": "4e4b3e8c175d55dd0507b1ed70612e7e6fb54660140a591842a9db067f7b4435",
+   "size": 8360
+  },
+  "frontend/src/realOutputState.ts": {
+   "sha256": "035b32e6a4862861d19d7b05b283e9bbfc09c46279be7486beb42b510a005e06",
+   "size": 2214
+  },
+  "frontend/src/resetSettings.ts": {
+   "sha256": "112f99989184d7eb6aaac8b893c195a4f470b0250b370c76abe82a66064fb412",
+   "size": 1963
+  },
+  "frontend/src/rolling.ts": {
+   "sha256": "82ab26e3fb4e30fc28554b5e8020679301c902d7852bb38774a1d8da5b45d37e",
+   "size": 738
+  },
+  "frontend/src/serverText.ts": {
+   "sha256": "f6990f2a4e68c5805d0cc8bb7b0fe64021a0d20634cda77ba1fd32326eee5a7b",
+   "size": 33370
+  },
+  "frontend/src/store.ts": {
+   "sha256": "f9dccee20f4021b067a4e97060d3b8c438e1d6212b21e085269f500f73babccf",
+   "size": 13164
+  },
+  "frontend/src/survival.ts": {
+   "sha256": "57acb81a16b44801cf5aec48fae05a4d53e9b2628dc6e2947805da14408064b8",
+   "size": 9878
+  },
+  "frontend/src/tutorial.ts": {
+   "sha256": "a8c6f678f61b784ea491e69e2bdf4bb6771756bbfb50c66bfc6632e4474994e7",
+   "size": 3038
+  },
+  "frontend/src/videoMapping.ts": {
+   "sha256": "69273fd1cb18432baca48d9f0c0d6db8369e8f9e3b2881478153393a0aced47e",
+   "size": 2304
+  },
+  "models/DepthAnythingV2SmallF16.README.md": {
+   "sha256": "a3280768d250f8a0c38f1f60971284e9658bc000eeb897eab126e20bd7cdee46",
+   "size": 3900
+  },
+  "package.json": {
+   "sha256": "d6a0a59b1d93c0b8a763be2511285664e5a7187a2bcd9a52bc64009679ceab32",
+   "size": 251
+  },
+  "packaging/bootstrap.py": {
+   "sha256": "d39148838cb8886894f02e3e375837398de29fc9fafb77bab3c35630e3628c8d",
+   "size": 9662
+  },
+  "packaging/build_bundle.py": {
+   "sha256": "f283080c301624f74eae30b331257f594d0dfc91728a4ff4c64736103ff600a2",
+   "size": 4545
+  },
+  "packaging/launcher.sh.in": {
+   "sha256": "dcf882dff8794f75ad63737bd0c555d9c30ab8be2297cfc886d7c45cfd00d764",
+   "size": 3655
+  },
+  "packaging/test_packaging.py": {
+   "sha256": "a3b1c3c7769a463a825560ee6fa4174bc74540635843c93553fe24806594d501",
+   "size": 1748
+  },
+  "packaging/uninstall.command.in": {
+   "sha256": "faf62ec8f429c4a8ada258739777f1ff21c6f37d54b96ff114b984f496b4fbde",
+   "size": 5406
+  },
+  "server.py": {
+   "sha256": "3ae4d0d5686954b9a482209707545b0d81e24e3d73958e1e11cb1235c1d14cdd",
+   "size": 829
+  }
+ },
+ "releases": [
+  "AnyControl-Uninstall-v1.8.0-macOS.command",
+  "AnyControl-Uninstall-v1.8.0-macOS.command.sha256",
+  "AnyControl-v1.8.0-macOS.command",
+  "AnyControl-v1.8.0-macOS.command.sha256"
+ ]
+}

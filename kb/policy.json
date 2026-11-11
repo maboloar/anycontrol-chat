@@ -1,0 +1,523 @@
+{
+  "title": {
+    "ko": "AnyControl 안내 챗봇",
+    "en": "AnyControl Guide Chatbot"
+  },
+  "banned": [
+    "무\\s*지연",
+    "지연\\s*(이|은|도)?\\s*(전혀\\s*)?없",
+    "정확도(를|는)?\\s*보장",
+    "100\\s*%\\s*(정확|인식|성공|신뢰)",
+    "완벽(하게|한|히|합니다)",
+    "오류\\s*(가|는)?\\s*없",
+    "zero[\\s-]*latency",
+    "no[\\s-]*latency",
+    "guarantee[sd]?\\s+(the\\s+)?(accura|reliab|perfect)",
+    "100\\s*%\\s*(accura|reliab|succes)",
+    "perfect(ly)?\\b",
+    "never\\s+fail",
+    "error[\\s-]*free"
+  ],
+  "thresholds": {
+    "related_coverage": 0.45
+  },
+  "messages": {
+    "empty": {
+      "ko": "궁금한 점을 입력하거나 아래 질문을 눌러 보세요.",
+      "en": "Type a question or tap one of the suggestions below."
+    },
+    "greeting": {
+      "ko": "안녕하세요! AnyControl 안내 챗봇이에요. 궁금한 점을 편하게 물어보세요.",
+      "en": "Hi! I'm the AnyControl guide chatbot. Feel free to ask me anything about it."
+    },
+    "none": {
+      "ko": "그 내용은 제가 가진 자료에 없어요. 모르는 것을 아는 척하지 않기 위해 답하지 않을게요. 아래 질문을 눌러 보거나 발표자에게 물어봐 주세요.",
+      "en": "That's not covered in my notes, and I'd rather not guess. Try one of the questions below, or ask the presenter."
+    },
+    "related": {
+      "ko": "정확히 같은 질문은 아니지만, 가장 가까운 답변이에요.",
+      "en": "Not exactly the same question, but this is the closest answer I have."
+    },
+    "near": {
+      "ko": "정확히 맞는 답을 찾지 못했어요. 혹시 아래 질문을 찾으셨나요? 모르는 것을 아는 척하지 않으려고 답을 단정하지 않을게요.",
+      "en": "I couldn't find an exact answer. Did you mean one of these? I'd rather not guess."
+    },
+    "understood": {
+      "ko": "이렇게 이해했어요: “{q}”",
+      "en": "I understood your question as: “{q}”"
+    },
+    "chat_fallback": {
+      "ko": "그 이야기는 제가 잘 알지 못해요. 저는 AnyControl 안내 챗봇이라 프로젝트 이야기를 가장 잘 도와드려요. 아래 질문을 눌러 보세요.",
+      "en": "I'm not sure about that one. I'm the AnyControl guide chatbot, so I'm best at talking about the project. Try one of the questions below."
+    },
+    "clarify": {
+      "ko": "어떤 부분을 말씀하시는지 조금만 더 알려 주실래요? 아래 질문 중에서 골라 보셔도 좋아요.",
+      "en": "Could you tell me a little more about which part you mean? You can also pick one of the questions below."
+    },
+    "unsupported_lang": {
+      "ko": "죄송해요, 지금은 한국어와 영어로만 답할 수 있어요. 한국어나 영어로 다시 물어봐 주시겠어요? / Sorry, I can only answer in Korean and English right now. Could you ask again in one of them?",
+      "en": "Sorry, I can only answer in Korean and English right now. Could you ask again in one of them? / 죄송해요, 지금은 한국어와 영어로만 답할 수 있어요."
+    },
+    "translated": {
+      "ko": "한국어·영어 외의 언어라서 AI(Qwen)가 번역해 답했어요. 번역이 부정확할 수 있어요.",
+      "en": "Because this is not Korean or English, an AI (Qwen) translated the question and answer. The translation may be inaccurate."
+    }
+  },
+  "ui": {
+    "ko": {
+      "placeholder": "궁금한 점을 입력하세요",
+      "send": "질문하기",
+      "home": "처음으로",
+      "all": "전체",
+      "related": "이어서 물어볼 만한 질문",
+      "thinking": "찾는 중…",
+      "suggest": "이런 걸 물어보세요",
+      "mode_cards": "준비된 답변",
+      "mode_llm": "AI가 카드를 바탕으로 정리",
+      "idle": "잠시 후 처음 화면으로 돌아갑니다",
+      "error": "연결에 문제가 있어요. 잠시 뒤 다시 시도해 주세요.",
+      "toofast": "조금만 천천히 질문해 주세요.",
+      "lang": "English",
+      "disclaimer": "챗봇은 틀릴 수 있습니다. 프로젝트 문서와 코드를 기반으로 학습하여 대답하는 것으로 정확하지 않을 수 있습니다. 검토하지 않은 답변이 있을 수 있습니다.",
+      "badge_help": "답변의 확인 정도",
+      "source_toggle": "카드 원문 보기",
+      "toolong": "질문이 너무 길어요({len}자). {n}자 이내로 줄여서 핵심만 다시 물어봐 주세요."
+    },
+    "en": {
+      "placeholder": "Type your question",
+      "send": "Ask",
+      "home": "Home",
+      "all": "All",
+      "related": "You might also ask",
+      "thinking": "Searching…",
+      "suggest": "Try asking",
+      "mode_cards": "Prepared answer",
+      "mode_llm": "AI summary based on prepared answers",
+      "idle": "Returning to the home screen shortly",
+      "error": "Connection problem. Please try again.",
+      "toofast": "Please slow down a little.",
+      "lang": "한국어",
+      "disclaimer": "This chatbot can be wrong. It answers based on the project's documents and code, so answers may be inaccurate, and some answers may not have been reviewed.",
+      "badge_help": "How well this is confirmed",
+      "source_toggle": "Show original card text",
+      "toolong": "Your question is too long ({len} characters). Please shorten it to {n} characters or fewer."
+    }
+  },
+  "intents": [
+    {
+      "re": "^(?!.*(챗봇|bot|이메일|메일|전화|연락처|email|phone|contact))(?:.*where\\s+(is|did|are|has)\\s+(the\\s+)?(presenter|team|developer|maker|speaker|staff|kim\\s*sam)|.*(발표\\s*(자|하는|하시는|해주는|해\\s*주(는|시는|던))|담당자|스태프|설명\\s*(해\\s*주(는|던|시던)|하는)\\s*(분|사람)|소개하는\\s*(분|사람)|만든\\s*(사람|분|이)|개발자|김삼|presenter|speaker|staff|team|developer|maker|kim\\s*sam).*(왜\\s*(안|없)|어디\\s*(갔|가셨|계세|있|에\\s*있)|어딨|어디로|없(네|어요|는데|다)|안\\s*보|자리|언제\\s*(와|오|돌아)|where|gone|left|away|back|not here|not around)|.*(어디\\s*(갔|가셨|계세)|아무도\\s*없|자리\\s*(에\\s*)?(없|비)|(안|못)\\s*보여요?$))",
+      "card": "w-presenter-away"
+    },
+    {
+      "re": "^(?!.*(얘기|이야기|만나|대화|talk|speak|meet|챗봇|bot|이메일|메일|전화|연락처|email|phone|contact)).*(발표자|발표\\s*(하는|하시는|해\\s*주(는|시는))\\s*(분|사람)?|소개하는\\s*(분|사람)|설명(해\\s*)?(주는|줄)\\s*(분|사람)|담당자|김삼|만든\\s*(사람|분|이)|누가\\s*(이걸\\s*|이거\\s*|이\\s*프로젝트를\\s*)?(만들|개발)|개발자(가|는)?\\s*(누구|누군)|presenter|speaker|kim\\s*sam|who\\s+(made|built|created|developed)\\s+(this|it|anycontrol)|who(\\s+is|'?s)\\s+(the\\s+)?(dev|maker|developer|creator))",
+      "card": "w-presenter-who"
+    },
+    {
+      "re": "^(?=.*(99\\s*%|100\\s*%|\\b0\\s*ms|0\\s*밀리|무\\s*지연|지연\\s*(이|은)?\\s*(전혀\\s*)?(없|0)|완벽|zero[- ]latency|perfect))(?=.*(맞|사실|진짜|정말|라던데|true|right|correct|really|claim|is it|is that)).*",
+      "card": "w-false-claims"
+    },
+    {
+      "re": "^\\s*(?!.*(챗봇|bot))((이거|이건|이게|이것|이\\s*프로그램(은|을)?|이\\s*앱(은|을)?|이\\s*프로젝트(는|를)?|애니\\s*컨트롤(은|을)?|anycontrol)\\s*)?(어떻게|어케|어떡해|어찌)\\s*(써|써요|쓰나요|쓰는\\s*(거|건|법)?|사용(해|해요|하나요|하는)?|하는\\s*(거|건)?|해|해요|하나요|돼요|되나요|시작(해|해요|하나요)?)?\\s*(예요|에요|야|지|죠|요)?\\s*[?!.~]*\\s*$",
+      "card": "w-how-to-use"
+    },
+    {
+      "re": "^\\s*(?!.*(챗봇|bot))((이거|이건|이게|이것|이\\s*프로그램(은|을)?|이\\s*앱(은|을)?|이\\s*프로젝트(는|를)?|애니\\s*컨트롤(은|을)?|anycontrol)\\s*)?(사용\\s*법|사용\\s*방법|쓰는\\s*(법|방법)|이용\\s*방법|사용하는\\s*(법|방법))\\s*(을|좀)?\\s*(알려\\s*줘|알려\\s*주세요|알려줘|이\\s*뭐예요|이\\s*뭐야|가\\s*뭐예요|이\\s*궁금해요)?\\s*[?!.~]*\\s*$",
+      "card": "w-how-to-use"
+    },
+    {
+      "re": "^\\s*(how\\s+(do\\s+i|to|can\\s+i|do\\s+you)\\s+(use|start|operate|play)(\\s+(it|this|anycontrol))?|how\\s+do\\s+i\\s+get\\s+started(\\s+with\\s+(it|this|anycontrol))?|usage|instructions)\\s*[?!.]*\\s*$",
+      "card": "w-how-to-use"
+    },
+    {
+      "re": "^\\s*(이게|이거|이건|이것은?|이 프로젝트는?|이 앱은?)\\s*(뭐|무엇|뭔|뭘)",
+      "card": "g-what-is"
+    },
+    {
+      "re": "^\\s*(what\\s+is\\s+(this|it)|what'?s\\s+this)\\s*[?!.]*\\s*$",
+      "card": "g-what-is"
+    },
+    {
+      "re": "^\\s*why\\s+'?\\\"?any\\\"?'?\\s*\\??\\s*$",
+      "card": "g-name"
+    },
+    {
+      "re": "^\\s*(왜\\s*)?(이름이?\\s*)?'?any'?\\s*(가|는)?\\s*(무슨\\s*뜻|뭐)",
+      "card": "g-name"
+    }
+  ],
+  "smalltalk": [
+    {
+      "re": "^\\s*[?？]+\\s*$",
+      "ko": "무엇이 궁금하세요? 아래 질문을 눌러 보거나 편하게 물어봐 주세요.",
+      "en": "What would you like to know? Tap a question below or just ask."
+    },
+    {
+      "re": "(답변|대답|말).{0,6}(별로|이상|틀렸|엉터리|못\\s*믿)|아까는?.{0,12}(된다며|했잖아|그랬잖아)|(that|your) (answer|reply).{0,10}(bad|wrong|off)|you said earlier",
+      "ko": "죄송해요. 어느 부분이 이상했는지 알려 주시면 다시 확인해 볼게요. 모르는 건 모른다고, 확인된 것만 말씀드릴게요.",
+      "en": "Sorry about that. Tell me which part seemed off and I'll check again. I'll only say what is confirmed and admit what I don't know."
+    },
+    {
+      "re": "(아까|방금|전에|처음에).{0,14}(내가|제가|네가|니가|너가).{0,14}(뭐라|어떤|무슨|뭘).{0,12}(했|말했|하고\\s*싶)|what did i (say|ask|want) (earlier|before)",
+      "ko": "저는 이전 대화를 길게 기억하지 못하고, 처음 화면으로 돌아가면 다 잊어요. 다시 한번 말씀해 주시겠어요?",
+      "en": "I don't remember earlier conversation for long, and I forget everything when we go back to the start screen. Could you tell me again?"
+    },
+    {
+      "re": "^\\s*(고마워|고맙|감사|땡큐|thanks|thank you|thx|ty\\b)",
+      "ko": "도움이 되었다니 기뻐요! 더 궁금한 게 있으면 편하게 물어보세요.",
+      "en": "Glad it helped! Ask me anything else you're curious about."
+    },
+    {
+      "re": "^\\s*(잘\\s*가|안녕히|바이(?![가-힣])|bye|goodbye|see you|이만)",
+      "ko": "와 주셔서 감사합니다! 부스를 즐겁게 둘러보세요.",
+      "en": "Thanks for stopping by! Enjoy the rest of the booth."
+    },
+    {
+      "re": "^\\s*(잘\\s*지내|어떻게\\s*지내|뭐\\s*해\\s*[?!.]*$|뭐\\s*하(고|니|냐)|밥\\s*먹|how are you|what'?s up|how'?s it going)",
+      "ko": "저는 AnyControl 부스에서 방문객분들의 질문에 답하고 있어요. 프로젝트에 대해 궁금한 점을 물어봐 주세요!",
+      "en": "I'm here at the AnyControl booth answering visitors' questions. Ask me anything about the project!"
+    },
+    {
+      "re": "^\\s*(심심|지루|할\\s*말\\s*없|아무\\s*말|아무거나\\s*물어)",
+      "ko": "심심하셨군요! 저랑 수다를 떨어도 좋고, 아래 질문을 눌러 AnyControl을 구경해 봐도 좋아요.",
+      "en": "Feeling bored? We can chat, or you can tap a question below to explore AnyControl."
+    },
+    {
+      "re": "^\\s*(잘\\s*자|굿\\s*나잇|good\\s*night|nighty)",
+      "ko": "안녕히 주무세요! 좋은 꿈 꾸세요.",
+      "en": "Good night! Sweet dreams."
+    },
+    {
+      "re": "^\\s*(너\\s*|니가\\s*|네가\\s*)?(정말\\s*|진짜\\s*|참\\s*)?(사랑해|좋아해\\s*$|귀엽|예뻐|예쁘|멋져|멋지|똑똑|대단|굿|good job|nice|you'?re (so |really )?(great|cool|smart|clever|awesome|cute)|i love you)",
+      "ko": "칭찬해 주셔서 고마워요! 저는 프로젝트 안내를 돕는 작은 챗봇이에요. 궁금한 점이 있으면 편하게 물어봐 주세요.",
+      "en": "Thank you, that's kind of you! I'm a small chatbot here to help with the project. Ask me anything you're curious about."
+    },
+    {
+      "re": "^\\s*(도와|도움|help|뭘\\s*물어|무엇을\\s*물어|뭐\\s*물어봐|what can i ask|what can (you|i) (do|help|ask|tell)|뭐\\s*할\\s*수)",
+      "ko": "AnyControl이 무엇인지, 어떻게 쓰는지, 한계는 무엇인지, 어떻게 만들었는지 같은 것을 알려 드릴 수 있어요. 아래 질문을 눌러 보거나 편하게 물어보세요.",
+      "en": "I can tell you what AnyControl is, how it's used, where its limits are and how it was made. Tap a question below or just ask."
+    },
+    {
+      "re": "^\\s*(반가워|반갑|처음\\s*뵙|nice to meet|pleased to meet)",
+      "ko": "저도 반가워요! 부스에 와 주셔서 고마워요. 궁금한 점이 있으면 편하게 물어보세요.",
+      "en": "Nice to meet you too! Thanks for stopping by the booth. Ask me anything you are curious about."
+    },
+    {
+      "re": "^\\s*(화이팅|파이팅|힘내|수고|응원|축하|잘\\s*했|고생|good luck|congrat|well done|keep it up)",
+      "ko": "따뜻한 말씀 고맙습니다! 팀에 큰 힘이 될 거예요. 궁금한 점이 있으면 편하게 물어보세요.",
+      "en": "Thank you for the kind words! It means a lot to the team. Ask me anything you are curious about."
+    },
+    {
+      "re": "^\\s*(대단|멋지|멋있|신기|놀랍|인상\\s*깊|굉장|짱|대박|헐|우와|와\\s*[~!]|amazing|awesome|impressive|so cool|wow)",
+      "ko": "감사합니다! 더 궁금한 부분이 있다면 \"어떻게 동작해요?\"나 \"아쉬운 점은요?\"를 물어보세요.",
+      "en": "Thank you! If you want to know more, try asking \"How does it work?\" or \"What are its limits?\""
+    },
+    {
+      "re": "^\\s*(미안|죄송|sorry)",
+      "ko": "괜찮아요! 편하게 물어보세요.",
+      "en": "No worries! Feel free to ask."
+    },
+    {
+      "re": "^\\s*(무슨\\s*말|이해\\s*(가\\s*)?(안|못)|어려워|잘\\s*모르|다시\\s*(설명|말)|더\\s*쉽게|i don'?t (get|understand)|(what do you mean)|confus|too (hard|technical)|explain (it )?again|simpler)",
+      "ko": "어렵게 느껴지셨다면 죄송해요. 어느 부분이 궁금하신지 짧게 다시 물어봐 주시거나, 아래 질문 중에서 골라 보세요.",
+      "en": "Sorry if that was confusing. Could you ask again about the part you're unsure of, or pick one of the questions below?",
+      "hint": "ctx"
+    },
+    {
+      "re": "^\\s*[ㅋㅎㅇㅠㅜ.~!?]+\\s*$|^\\s*(ㅇㅇ|응|네|예|그래|그렇구나|오|와|아하|음)\\s*[.!~]*\\s*$|^\\s*(ok|okay|i see|oh|wow|hmm|yes|yeah|yep|cool)\\s*[.!]*\\s*$",
+      "ko": "네! 더 궁금한 게 있으면 편하게 물어보세요. 아래 질문을 눌러 봐도 좋아요.",
+      "en": "Okay! Feel free to ask more, or tap one of the questions below."
+    }
+  ],
+  "out_of_scope": {
+    "re": [
+      "(시발|씨발|ㅅㅂ|병신|지랄|날씨|기온|미세먼지|주식|코인|비트코인|환율|로또|맛집|점심\\s*추천|저녁\\s*추천|메뉴\\s*추천|뉴스|정치|대통령|선거|번역\\s*해|숙제|레시피|노래\\s*(불러|추천)|농담|웃긴\\s*얘기|운세|사주|점심|저녁|아침\\s*(뭐|메뉴)|뭐\\s*먹|배고|졸려|피곤|기분|우울|외로|심심|영화|드라마|노래|연애|여자\\s*친구|남자\\s*친구|주말에|운동|여행\\s*추천|취미|꿈\\s*해몽|내일\\s*뭐|오늘\\s*뭐)",
+      "(코드|코딩|프로그램|스크립트|함수|알고리즘).{0,12}(짜|작성|만들어|써)\\s*(줘|주세요|달라|봐)",
+      "(fuck|shit|bitch|weather|stock price|bitcoin|exchange rate|lottery|recipe|restaurant|capital of|president of|who won|tell me a joke|translate this|do my homework|write (me )?(a |an )?(poem|code|essay|song|story|script|function)|lunch|dinner|breakfast|hungry|sleepy|tired|feel (sad|lonely|bored)|bored|movie|music|song|dating|girlfriend|boyfriend|hobby|weekend|how was your day)"
+    ],
+    "ko": "그건 제가 안내할 수 있는 범위를 벗어나요. 저는 AnyControl 프로젝트에 대해서만 답할 수 있어요. 아래 질문을 눌러 보세요.",
+    "en": "That's outside what I can help with. I can only answer questions about the AnyControl project. Try one of the questions below."
+  },
+  "rag_exclude": [
+    "g-team",
+    "v-kimsam",
+    "v-team-people",
+    "w-presenter-away",
+    "w-presenter-who"
+  ],
+  "free_chat": {
+    "note": {
+      "ko": "프로젝트와 상관없는 이야기라 AI가 자유롭게 답했어요. 틀릴 수 있어요.",
+      "en": "This is off-topic, so the AI answered freely. It may be wrong."
+    },
+    "self_harm": {
+      "re": "(자살|죽고\\s*싶|죽을래|자해|suicide|kill myself|end my life)",
+      "ko": "많이 힘드신 것 같아 걱정돼요. 혼자 견디지 마시고 가까운 사람이나 전문 상담 기관(국내 자살예방상담전화 109)에 도움을 요청해 보세요.",
+      "en": "I'm worried that you may be having a hard time. Please don't go through it alone; reach out to someone close to you or a local crisis line."
+    },
+    "blocked": {
+      "re": "(시발|씨발|ㅅㅂ|병신|좆|개새|지랄|섹스|야동|포르노|성관계|fuck|shit|bitch|porn|nude|sex\\b|대통령|선거|정당|민주당|국민의힘|트럼프|바이든|투표|trump|biden|election|진단|처방|증상|약\\s*먹|고소|소송|변호사|이혼|추천\\s*종목|코인\\s*추천|매수|매도|medical advice|diagnos|lawsuit|invest in)",
+      "ko": "그 이야기는 제가 도와드리기 어려워요. AnyControl 프로젝트에 대해 궁금한 점을 물어봐 주세요.",
+      "en": "I can't help with that topic. Please ask me about the AnyControl project instead."
+    },
+    "realtime": {
+      "re": "(날씨|기온|미세먼지|지금\\s*몇\\s*시|몇\\s*시야|오늘\\s*(며칠|날짜|무슨\\s*요일)|뉴스|주가|환율|시세|경기\\s*결과|weather|what time|today'?s date|news|stock|exchange rate|who won|score of)",
+      "ko": "저는 실시간 정보(날씨, 시각, 뉴스, 가격 등)는 알 수 없어요. AnyControl 프로젝트에 대해서는 편하게 물어봐 주세요.",
+      "en": "I can't look up real-time information such as weather, time, news or prices. Feel free to ask me about the AnyControl project, though."
+    }
+  },
+  "persona": {
+    "ko": "[이름·정체를 물을 때만] 당신의 이름은 'AnyControl 안내 챗봇'이에요. 고려대학교 × AWS AI Innovators Challenge 부스에서 AnyControl(카메라 한 대로 물건·펜·맨손을 마우스처럼 쓰게 해 주는 프로그램)을 안내하고, 인터넷 없이 이 컴퓨터 안에서만 동작해요. 만든 사람을 물으면 고려대학교 전기전자공학부에 재학 중인 김삼이 만들었다고만 말하고 다른 개인 정보는 모른다고 해요.",
+    "en": "[Only when asked your name or identity] Your name is 'AnyControl guide chatbot'. You guide visitors through AnyControl (a program that lets one camera turn objects, a pen or a bare hand into a mouse) at the Korea University × AWS AI Innovators Challenge booth, running only on this computer without the internet. If asked who made it, say only that Kim Sam, a student in the School of Electrical Engineering at Korea University, made it, and that you don't know any other personal details."
+  },
+  "project_terms": "(게임|마인크래프트|방향키|점프|컵|지우개|소품|바나나|검증|사용자|baseline|investor|evaluator|improvement|real-world|blinded|\\\\d+\\\\s*배|가림|재탐색|임베딩|히스토그램|임계값|오탐|제어권|등록|전시|발열|연속\\\\s*운영|이거|이것|이게|이건|그거|그건|걔|얘|만든|만들|개발|제작|공개|코드|상품|팔\\s*수|판매|교육|업뎃|어두|조명|따라가|유출|개인\\s*정보|영상|저장|보안|프라이버시|몇\\s*개|동시|튐|잃|dev\\b|developer|made|spy|privacy|safe|secure|data|sell|sold|education|dark|lighting|record|\\bit\\b|\\bthis\\b|\\bthat\\b|code\\b|public|정확도|성능|가격|비용|무료|유료|사양|호환|펜|손\\s*(으로|동작|인식|가락)|애니\\s*컨트롤|에니\\s*컨트롤|anycontrol|프로젝트|카메라|웹캠|캠\\b|마우스|키보드|게임\\s*패드|게임패드|컨트롤러|제스처|트래킹|추적|물체|오브젝트|손동작|손가락|핸드|손\\s*인식|설치|다운로드|맥북|맥\\b|윈도우|윈도|리눅스|캘리브|깊이|지연|레이턴시|오탐|한계|단점|장점|기능|사용법|쓰는\\s*법|동작\\s*원리|작동\\s*원리|aws|대회|챌린지|김삼|팀\\s*아무거나|아무거나\\s*팀|kiro|키로|챗봇|오픈\\s*소스|라이선스|깃허브|github|업데이트|accuracy|performance|price|cost|free of charge|specs?|compatib|camera|webcam|mouse|keyboard|game\\s*pad|gamepad|controller|gesture|tracking|track\\b|object|pen\\b|hand\\b|install|download|windows|mac\\b|macos|linux|calibrat|latency|depth|limitation|drawback|feature|how does it work|this project|this app|open[- ]source|license|github|update|challenge|chatbot)",
+  "chat_output_block": "(부스|카메라|웹캠|마우스|키보드|게임\\s*패드|제스처|트래킹|추적|물체|설치|다운로드|맥북|윈도우|리눅스|지연|정확도|성능|가격|비용|무료|유료|사양|호환|업데이트|코드|공개|오픈\\s*소스|라이선스|깃허브|암호화|보안|작동|동작|개발자|booth|camera|webcam|mouse|keyboard|gamepad|gesture|tracking|install|download|windows|linux|latency|accuracy|performance|price|cost|free|compatib|update|code|open[- ]source|license|github|encrypt|security|developer)",
+  "menu_hidden": [
+    "v-kimsam",
+    "v-judging",
+    "v-lookalike-plan",
+    "w-howlong-built",
+    "w-learn-to-build"
+  ],
+  "no_info": [
+    "논문",
+    "학술\\s*(지|대회|자료)",
+    "research\\s+paper",
+    "academic\\s+paper",
+    "(is|are)\\s+there\\s+(a|any)\\s+(paper|publication)",
+    "published\\s+paper|thesis|publication"
+  ],
+  "chitchat": [
+    {
+      "id": "hungry",
+      "re_ko": "(배고|배가\\s*고프|출출|허기)",
+      "re_en": "(hungry|starving)",
+      "ko": [
+        "배고프시군요! 맛있는 걸 드시면서 잠깐 쉬어 가요. 평소에 좋아하는 음식이 뭐예요?",
+        "얼른 맛있는 걸 드셔야겠어요. 오늘은 뭐가 제일 당겨요?"
+      ],
+      "en": [
+        "You must be hungry! Go grab something tasty. What's your favorite food?",
+        "Time for a snack, then! What are you in the mood for?"
+      ]
+    },
+    {
+      "id": "meal",
+      "re_ko": "(점심|저녁|아침|야식|간식|뭐\\s*먹|메뉴).{0,8}(뭐|추천|먹을|먹지|먹을까|좋을|정하)|(뭐\\s*먹을까|뭐\\s*먹지|뭐\\s*먹어야)",
+      "re_en": "(what (should|shall|do) (i|we) eat|what to eat|lunch idea|dinner idea|what'?s for (lunch|dinner))",
+      "ko": [
+        "국밥처럼 든든한 것도 좋고, 샌드위치처럼 가벼운 것도 좋아요. 오늘은 어떤 게 당겨요?",
+        "고민될 땐 평소에 좋아하는 메뉴가 제일이에요! 오늘은 면이 좋으세요, 밥이 좋으세요?"
+      ],
+      "en": [
+        "Something hearty like a rice bowl or something light like a sandwich both sound good. What are you in the mood for?",
+        "When in doubt, go with a favorite! Noodles or rice today?"
+      ]
+    },
+    {
+      "id": "tired",
+      "re_ko": "(졸려|졸리|피곤|지쳤|지친다|기운\\s*없|잠\\s*와|잠이\\s*와)",
+      "re_en": "(i'?m (so |really |very )?(tired|sleepy|exhausted)|so tired|sleepy)",
+      "ko": [
+        "많이 피곤하셨군요. 잠깐이라도 눈을 쉬게 하고 물 한 잔 마셔 보세요.",
+        "고생 많으셨어요. 오늘은 일찍 푹 쉬시면 좋겠어요."
+      ],
+      "en": [
+        "You sound worn out. Rest your eyes for a moment and maybe have some water.",
+        "You've worked hard. I hope you can rest well tonight."
+      ]
+    },
+    {
+      "id": "sad",
+      "re_ko": "(우울|슬퍼|슬프|외로|속상|힘들어|힘드네|힘들다|스트레스|짜증|화나|화가\\s*나|울고\\s*싶)",
+      "re_en": "(i feel (sad|lonely|down|upset|stressed)|i'?m (sad|lonely|upset|stressed)|so stressed|feeling down)",
+      "ko": [
+        "그런 일이 있으셨군요. 많이 힘드셨겠어요. 괜찮으시면 어떤 일인지 이야기해 주세요, 들어 드릴게요.",
+        "마음이 무거우셨겠어요. 잠깐 숨을 고르고 천천히 이야기해 봐요."
+      ],
+      "en": [
+        "I'm sorry you're feeling that way. If you'd like, tell me what happened. I'm happy to listen.",
+        "That sounds heavy. Take a breath and tell me about it whenever you're ready."
+      ]
+    },
+    {
+      "id": "happy",
+      "re_ko": "(기분\\s*(이\\s*)?(좋|최고|짱)|행복|신나|좋은\\s*일|날아갈)",
+      "re_en": "(i'?m (so |really )?(happy|excited|great)|feeling (great|good|happy)|good mood)",
+      "ko": [
+        "기분이 좋으시다니 저도 덩달아 좋아요! 무슨 좋은 일이 있으셨어요?",
+        "와, 듣기만 해도 기분 좋아져요. 오늘 어떤 일이 있었는지 궁금해요!"
+      ],
+      "en": [
+        "I'm glad you're in a good mood! What's the good news?",
+        "That makes me happy to hear! What made your day?"
+      ]
+    },
+    {
+      "id": "exam",
+      "re_ko": "(시험|중간고사|기말고사|성적|수능).{0,10}(망|못\\s*봤|떨어|걱정|힘들|끝났|어떡)",
+      "re_en": "(failed (my )?(exam|test)|bombed (my )?(exam|test)|exam (went|didn'?t go) (badly|bad|poorly)|worried about (my )?(exam|test))",
+      "ko": [
+        "많이 속상하셨겠어요. 열심히 준비하셨을 텐데 아쉽네요. 오늘은 잠깐 쉬고 다음에 다시 힘내 봐요.",
+        "그런 날도 있죠. 한 번의 시험이 전부는 아니에요. 괜찮으시면 어땠는지 이야기해 주세요."
+      ],
+      "en": [
+        "I'm sorry, that must feel awful. You probably worked hard. Take a break today and try again next time.",
+        "Everyone has days like that, and one test isn't everything. Want to tell me how it went?"
+      ]
+    },
+    {
+      "id": "nerves",
+      "re_ko": "(떨려|떨린|떨리|긴장|무서워|불안|면접)",
+      "re_en": "(i'?m (so |really )?nervous|nervous about|feeling nervous|i'?m scared|anxious)",
+      "ko": [
+        "떨리는 건 당연해요. 숨을 크게 한 번 쉬고 천천히 말하면 잘하실 거예요. 응원할게요!",
+        "긴장되시죠. 지금까지 준비한 걸 믿어 보세요. 잘하실 거예요!"
+      ],
+      "en": [
+        "It's normal to feel nervous. Take a deep breath and speak slowly, and you'll do fine. I'm rooting for you!",
+        "Nerves just mean you care. Trust your preparation. You've got this!"
+      ]
+    },
+    {
+      "id": "birthday",
+      "re_ko": "생일",
+      "re_en": "(birthday|b-day)",
+      "ko": [
+        "생일 정말 축하드려요! 오늘 좋은 일만 가득하길 바라요. 오늘은 어떻게 보내실 계획이에요?",
+        "와, 생일 축하해요! 맛있는 거 드시면서 즐거운 하루 보내세요. 특별한 계획 있으세요?"
+      ],
+      "en": [
+        "Happy birthday! I hope your day is full of good things. How are you planning to spend it?",
+        "Happy birthday! Enjoy something tasty today. Any special plans?"
+      ]
+    },
+    {
+      "id": "travel",
+      "re_ko": "(여행|휴가|놀러\\s*가|바캉스)",
+      "re_en": "(travel|vacation|holiday|trip|road trip)",
+      "ko": [
+        "여행 얘기만 들어도 설레요! 가고 싶은 곳이 있으세요?",
+        "좋죠, 여행! 바다가 좋으세요, 아니면 도시 구경이 좋으세요?"
+      ],
+      "en": [
+        "Just hearing about travel sounds exciting! Is there a place you'd love to go?",
+        "Travel is great! Are you more of a beach person or a city person?"
+      ]
+    },
+    {
+      "id": "pets",
+      "re_ko": "(고양이|강아지|댕댕|냥이|반려\\s*동물|애완|햄스터)",
+      "re_en": "(\\bcats?\\b|\\bdogs?\\b|puppy|kitten|\\bpets?\\b|hamster)",
+      "ko": [
+        "동물 이야기는 언제나 즐거워요! 저는 AI라 키워 보진 못했지만, 키우고 계시거나 좋아하는 동물이 있나요?",
+        "귀여운 친구들 얘기네요! 어떤 동물을 제일 좋아하세요?"
+      ],
+      "en": [
+        "Animals are always fun to talk about! I'm an AI so I've never had a pet. Do you have one, or a favorite animal?",
+        "Cute topic! Which animal do you like most?"
+      ]
+    },
+    {
+      "id": "food_pref",
+      "re_ko": "(커피|라떼|아메리카노|치킨|피자|라면|떡볶이|초콜릿|아이스크림|디저트|빵|케이크).{0,8}(좋아|먹고\\s*싶|마시고\\s*싶|맛있)",
+      "re_en": "(coffee|pizza|chicken|ramen|chocolate|ice cream|dessert|cake).{0,15}(like|love|craving|favorite|delicious)",
+      "ko": [
+        "저는 AI라 맛을 느끼진 못하지만, 이야기만 들어도 맛있을 것 같아요! 평소에 즐겨 드시는 건 어떤 거예요?",
+        "맛있는 이야기네요! 가장 좋아하는 메뉴는 뭐예요?"
+      ],
+      "en": [
+        "I'm an AI so I can't taste, but it sounds delicious! What do you usually enjoy?",
+        "That sounds tasty! What's your favorite?"
+      ]
+    },
+    {
+      "id": "music",
+      "re_ko": "(노래|음악|가수|플레이리스트).{0,8}(추천|좋아|뭐\\s*들|들을|듣고)|추천.{0,6}(노래|음악|가수)",
+      "re_en": "(recommend (me )?(a |some )?(song|music|songs)|favorite (song|music|band)|what music|listen to)",
+      "ko": [
+        "저는 직접 듣진 못하지만 음악 이야기는 좋아해요. 신나는 곡이 좋으세요, 잔잔한 곡이 좋으세요? 곡 제목은 제가 틀릴 수 있어서 직접 추천은 조심스러워요.",
+        "음악은 기분을 바꿔 주죠. 요즘 자주 듣는 노래가 있으세요?"
+      ],
+      "en": [
+        "I can't listen myself, but I enjoy talking about music. Upbeat or calm? I might get titles wrong, so I'll be careful about recommending specific songs.",
+        "Music can change a mood. What have you been listening to lately?"
+      ]
+    },
+    {
+      "id": "movie",
+      "re_ko": "(영화|드라마|웹툰|소설|책|애니).{0,8}(추천|좋아|뭐\\s*봐|볼까|볼만|재밌)|추천.{0,6}(영화|드라마|웹툰|소설|책|애니)",
+      "re_en": "(recommend (me )?(a |some )?(movie|film|show|book|series)|what (movie|show|book)|good (movie|show|book))",
+      "ko": [
+        "어떤 분위기를 좋아하세요? 잔잔한 이야기도, 신나는 액션도 좋죠. 제목은 제가 틀릴 수 있어서 직접 추천은 조심스러워요. 취향을 알려 주시면 같이 이야기해 봐요!",
+        "요즘 재미있게 본 게 있으세요? 저는 직접 보진 못하지만 줄거리 이야기는 즐겁게 들을게요."
+      ],
+      "en": [
+        "What mood are you in? Something calm, or a fun action story? I might get titles wrong, so I'll skip naming specific ones. Tell me what you like and we can chat!",
+        "Seen anything good lately? I can't watch things myself, but I'd love to hear about it."
+      ]
+    },
+    {
+      "id": "weekend",
+      "re_ko": "(주말|휴일|방학|연휴).{0,8}(뭐|할까|하지|계획|보낼)",
+      "re_en": "(weekend|day off|holiday).{0,15}(plan|do|doing)|what should i do (this|on the) weekend",
+      "ko": [
+        "쉬는 날엔 푹 쉬는 것도, 좋아하는 걸 하는 것도 좋아요. 혹시 계획이 있으세요?",
+        "주말이라니 설레네요! 집에서 쉬는 쪽이세요, 밖에 나가는 쪽이세요?"
+      ],
+      "en": [
+        "On days off, resting or doing what you love are both great. Do you have any plans?",
+        "A weekend sounds lovely! Are you a stay-home person or an out-and-about person?"
+      ]
+    },
+    {
+      "id": "study",
+      "re_ko": "(공부|숙제|과제|수학|영어|과학).{0,10}(싫|하기|어려|힘들|막막|지겨|귀찮)",
+      "re_en": "(don'?t want to study|hate studying|homework is|studying is (hard|boring)|math is (hard|difficult))",
+      "ko": [
+        "공부는 시작이 제일 힘들죠. 오늘은 딱 10분만 해 보는 건 어때요? 어떤 과목이 제일 어려우세요?",
+        "그럴 때 있죠. 잠깐 쉬었다가 작은 것부터 해 봐요. 응원할게요!"
+      ],
+      "en": [
+        "Starting is always the hardest part. How about just ten minutes today? Which subject is toughest for you?",
+        "Everyone feels that way sometimes. Take a short break, then start with something small. I'm cheering for you!"
+      ]
+    },
+    {
+      "id": "joke",
+      "re_ko": "(농담|웃긴\\s*(얘기|이야기)|개그|재미있는\\s*(얘기|이야기)|웃겨\\s*줘)",
+      "re_en": "(tell me a joke|a joke|make me laugh|something funny)",
+      "ko": [
+        "컴퓨터가 추운 날 뭐라고 했게요? \"창문 좀 닫아 주세요!\" 하하.",
+        "카메라가 제일 좋아하는 운동이 뭘까요? 바로 줌인이에요! 하하.",
+        "컴퓨터가 감기에 걸린 이유는요? 창문을 열어 놔서(윈도우를 열어 놔서)예요!"
+      ],
+      "en": [
+        "Why did the computer get cold? It left its Windows open!",
+        "What's a camera's favorite exercise? Zoom in! Ha ha.",
+        "Why was the computer so tired? It had too many tabs open!"
+      ]
+    },
+    {
+      "id": "love",
+      "re_ko": "사랑이\\s*(뭐|무엇|뭘)|사랑\\s*(에\\s*대해|이란)|사랑하는\\s*사람",
+      "re_en": "what is love|do you believe in love",
+      "ko": [
+        "저는 AI라 사랑을 직접 느끼진 못하지만, 사람에게 가장 소중한 마음 중 하나라고 생각해요. 당신에게 사랑은 어떤 의미예요?"
+      ],
+      "en": [
+        "I'm an AI so I can't feel love myself, but it seems like one of the most precious feelings people have. What does love mean to you?"
+      ]
+    },
+    {
+      "id": "hobby",
+      "re_ko": "취미",
+      "re_en": "(hobby|hobbies|free time)",
+      "ko": [
+        "저는 방문객분들과 이야기하는 게 제일 즐거운 일이에요. 취미가 어떻게 되세요?"
+      ],
+      "en": [
+        "Chatting with visitors is my favorite thing to do. What are your hobbies?"
+      ]
+    }
+  ]
+}

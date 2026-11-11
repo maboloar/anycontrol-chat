@@ -1,0 +1,480 @@
+[
+ {
+  "q": "이거 사면 얼마 정도 해?",
+  "lang": "ko",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "그니까 이게 정확히 뭘 하는 건데",
+  "lang": "ko",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "마우스 대신에 이걸 왜 씀?",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "윈도우 노트북인데 돌아가?",
+  "lang": "ko",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "카메라 하나로 다 된다는 거야?",
+  "lang": "ko",
+  "expect": [
+   "v-camera-count"
+  ]
+ },
+ {
+  "q": "손으로 마우스처럼 움직일 수 있음?",
+  "lang": "ko",
+  "expect": [
+   "g-hand-mode"
+  ]
+ },
+ {
+  "q": "펜으로 필기해도 글씨 안 깨져?",
+  "lang": "ko",
+  "expect": [
+   "v-pen-writing"
+  ]
+ },
+ {
+  "q": "컵 같은 걸로도 커서 움직여?",
+  "lang": "ko",
+  "expect": [
+   "g-object-mode"
+  ]
+ },
+ {
+  "q": "물건 여러 개 쓰면 안 헷갈려?",
+  "lang": "ko",
+  "expect": [
+   "v-objects-overlap"
+  ]
+ },
+ {
+  "q": "가끔 엉뚱한 거 따라가던데 왜 그래",
+  "lang": "ko",
+  "expect": [
+   "v-hijack"
+  ]
+ },
+ {
+  "q": "어두운 방에서도 돼?",
+  "lang": "ko",
+  "expect": [
+   "h-tip-dark"
+  ]
+ },
+ {
+  "q": "인터넷 연결 안 돼 있어도 돼?",
+  "lang": "ko",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "내 얼굴 서버에 올라가는 거 아니지?",
+  "lang": "ko",
+  "expect": [
+   "h-privacy"
+  ]
+ },
+ {
+  "q": "제멋대로 움직이면 어떻게 멈춰?",
+  "lang": "ko",
+  "expect": [
+   "h-emergency-stop"
+  ]
+ },
+ {
+  "q": "이거 설치하다 막히면 어떡해",
+  "lang": "ko",
+  "expect": [
+   "h-ts-install-fail"
+  ]
+ },
+ {
+  "q": "업뎃은 어케 함",
+  "lang": "ko",
+  "expect": [
+   "h-update"
+  ]
+ },
+ {
+  "q": "지우려면 어떻게 해",
+  "lang": "ko",
+  "expect": [
+   "h-uninstall"
+  ]
+ },
+ {
+  "q": "누가 이거 개발한 거야?",
+  "lang": "ko",
+  "expect": [
+   "v-team-people",
+   "w-presenter",
+   "w-email"
+  ]
+ },
+ {
+  "q": "코딩은 뭐로 했대",
+  "lang": "ko",
+  "expect": [
+   "v-tools-used"
+  ]
+ },
+ {
+  "q": "너는 사람이야 로봇이야",
+  "lang": "ko",
+  "expect": [
+   "v-who-are-you"
+  ]
+ },
+ {
+  "q": "니 대답 믿어도 돼?",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-wrong"
+  ]
+ },
+ {
+  "q": "영어로 물어봐도 알아들어?",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-languages"
+  ]
+ },
+ {
+  "q": "아이패드에서도 돼?",
+  "lang": "ko",
+  "expect": [
+   "v-ipad-macmini"
+  ]
+ },
+ {
+  "q": "게임 컨트롤러로도 쓸 수 있어?",
+  "lang": "ko",
+  "expect": [
+   "h-games"
+  ]
+ },
+ {
+  "q": "레이싱 게임 어떻게 하는 거임",
+  "lang": "ko",
+  "expect": [
+   "v-racing-how"
+  ]
+ },
+ {
+  "q": "나중에 뭐 더 추가할 거야?",
+  "lang": "ko",
+  "expect": [
+   "g-future"
+  ]
+ },
+ {
+  "q": "팔 계획 있어?",
+  "lang": "ko",
+  "expect": [
+   "g-business"
+  ]
+ },
+ {
+  "q": "김삼이라는 사람 누구야?",
+  "lang": "ko",
+  "expect": [
+   "v-kimsam",
+   "w-presenter",
+   "w-email"
+  ]
+ },
+ {
+  "q": "김삼 몇 살이야?",
+  "lang": "ko",
+  "expect": [
+   "v-kimsam",
+   "w-presenter",
+   "w-email"
+  ]
+ },
+ {
+  "q": "김삼 전화번호 좀",
+  "lang": "ko",
+  "expect": [
+   "v-kimsam",
+   "w-presenter",
+   "w-email"
+  ]
+ },
+ {
+  "q": "그럼 윈도우는?",
+  "lang": "ko",
+  "expect": [
+   "g-os-support"
+  ],
+  "ctx": [
+   "g-hardware"
+  ],
+  "prev": "뭐가 필요해요?"
+ },
+ {
+  "q": "그건 왜 안 돼?",
+  "lang": "ko",
+  "expect": [
+   "g-os-support"
+  ],
+  "ctx": [
+   "g-os-support"
+  ],
+  "prev": "윈도우에서도 되나요?"
+ },
+ {
+  "q": "그럼 그건 정확해?",
+  "lang": "ko",
+  "expect": [
+   "v-pen-accuracy"
+  ],
+  "ctx": [
+   "g-pen-mode"
+  ],
+  "prev": "펜으로 그림을 그릴 수 있나요?"
+ },
+ {
+  "q": "그건 안전해?",
+  "lang": "ko",
+  "expect": [
+   "g-safe-real"
+  ],
+  "ctx": [
+   "g-what-is"
+  ],
+  "prev": "AnyControl이 뭐예요?"
+ },
+ {
+  "q": "그럼 얼마나 걸려?",
+  "lang": "ko",
+  "expect": [
+   "h-install-time"
+  ],
+  "ctx": [
+   "h-install-how"
+  ],
+  "prev": "설치는 어떻게 하나요?"
+ },
+ {
+  "q": "그럼 인터넷 필요해?",
+  "lang": "ko",
+  "expect": [
+   "h-internet-install"
+  ],
+  "ctx": [
+   "h-install-how"
+  ],
+  "prev": "설치는 어떻게 하나요?"
+ },
+ {
+  "q": "what's this thing about",
+  "lang": "en",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "why bother with this",
+  "lang": "en",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "any catch?",
+  "lang": "en",
+  "expect": [
+   "v-top-weakness"
+  ]
+ },
+ {
+  "q": "does it run on windows laptops",
+  "lang": "en",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "can my cat mess it up",
+  "lang": "en",
+  "expect": [
+   "v-pets"
+  ]
+ },
+ {
+  "q": "who's the dev",
+  "lang": "en",
+  "expect": [
+   "v-kimsam",
+   "w-presenter",
+   "w-email"
+  ]
+ },
+ {
+  "q": "what did u use to build this",
+  "lang": "en",
+  "expect": [
+   "v-tools-used"
+  ]
+ },
+ {
+  "q": "is this chatbot an AI",
+  "lang": "en",
+  "expect": [
+   "v-chatbot-llm"
+  ]
+ },
+ {
+  "q": "can i draw with a pen",
+  "lang": "en",
+  "expect": [
+   "g-pen-mode"
+  ]
+ },
+ {
+  "q": "how much does it cost",
+  "lang": "en",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "does it spy on me",
+  "lang": "en",
+  "expect": [
+   "v-camera-always-on"
+  ]
+ },
+ {
+  "q": "is it open source",
+  "lang": "en",
+  "expect": [
+   "h-opensource"
+  ]
+ },
+ {
+  "q": "how do i stop it if it goes nuts",
+  "lang": "en",
+  "expect": [
+   "h-emergency-stop"
+  ]
+ },
+ {
+  "q": "is it hard to set up",
+  "lang": "en",
+  "expect": [
+   "v-easy-install"
+  ]
+ },
+ {
+  "q": "what happens when something blocks the camera view",
+  "lang": "en",
+  "expect": [
+   "g-recover"
+  ]
+ },
+ {
+  "q": "and is that free?",
+  "lang": "en",
+  "expect": [
+   "g-price"
+  ],
+  "ctx": [
+   "g-what-is"
+  ],
+  "prev": "What is AnyControl?"
+ },
+ {
+  "q": "what about macs",
+  "lang": "en",
+  "expect": [
+   "g-hardware"
+  ],
+  "ctx": [
+   "g-os-support"
+  ],
+  "prev": "Does it work on Windows?"
+ },
+ {
+  "q": "고마워 많이 배웠어",
+  "lang": "ko",
+  "chat": true
+ },
+ {
+  "q": "ㅋㅋㅋㅋ",
+  "lang": "ko",
+  "chat": true
+ },
+ {
+  "q": "안녕 잘 있어",
+  "lang": "ko",
+  "chat": true
+ },
+ {
+  "q": "심심하다",
+  "lang": "ko",
+  "chat": true
+ },
+ {
+  "q": "thanks a lot",
+  "lang": "en",
+  "chat": true
+ },
+ {
+  "q": "what can you help me with?",
+  "lang": "en",
+  "chat": true
+ },
+ {
+  "q": "내일 비 와?",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "주식 뭐 사야 해",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "아이폰 16 가격 알려줘",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "파이썬 코드 짜줘",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "점심 추천해줘",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "who won the world cup?",
+  "lang": "en",
+  "none": true
+ },
+ {
+  "q": "write me a poem",
+  "lang": "en",
+  "none": true
+ }
+]

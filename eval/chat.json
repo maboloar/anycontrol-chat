@@ -1,0 +1,446 @@
+[
+ {
+  "q": "이게 왜 좋음?",
+  "lang": "ko",
+  "expect": [
+   "v-top-strengths"
+  ]
+ },
+ {
+  "q": "왜 필요해요?",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "이거 왜 필요함",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "쓸모 있음?",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "이거 뭐하는 거임",
+  "lang": "ko",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "ㅋㅋ 이게 뭔데",
+  "lang": "ko",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "단점은?",
+  "lang": "ko",
+  "expect": [
+   "v-top-weakness"
+  ]
+ },
+ {
+  "q": "뭐가 별로임?",
+  "lang": "ko",
+  "expect": [
+   "v-top-weakness"
+  ]
+ },
+ {
+  "q": "어디에 쓰는거임",
+  "lang": "ko",
+  "expect": [
+   "g-who-for"
+  ]
+ },
+ {
+  "q": "이거 공짜임?",
+  "lang": "ko",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "얼마임",
+  "lang": "ko",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "위험하진 않음?",
+  "lang": "ko",
+  "expect": [
+   "g-safe-real"
+  ]
+ },
+ {
+  "q": "윈도우도 됨?",
+  "lang": "ko",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "인터넷 없어도 됨?",
+  "lang": "ko",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "아이폰 없으면 안됨?",
+  "lang": "ko",
+  "expect": [
+   "h-webcam"
+  ]
+ },
+ {
+  "q": "설치 어렵나",
+  "lang": "ko",
+  "expect": [
+   "v-easy-install"
+  ]
+ },
+ {
+  "q": "펜으로 그림도 됨?",
+  "lang": "ko",
+  "expect": [
+   "g-pen-mode"
+  ]
+ },
+ {
+  "q": "가려지면 어케됨",
+  "lang": "ko",
+  "expect": [
+   "i-occlusion-return"
+  ]
+ },
+ {
+  "q": "이거 믿을만해?",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-wrong"
+  ]
+ },
+ {
+  "q": "다른 거랑 뭐가 달라?",
+  "lang": "ko",
+  "expect": [
+   "g-vs-others"
+  ]
+ },
+ {
+  "q": "누가 만들었음?",
+  "lang": "ko",
+  "expect": [
+   "v-team-people"
+  ]
+ },
+ {
+  "q": "어떤 툴로 만들었음?",
+  "lang": "ko",
+  "expect": [
+   "v-tools-used"
+  ]
+ },
+ {
+  "q": "너 챗지피티임?",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-llm"
+  ]
+ },
+ {
+  "q": "영어도 됨?",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-languages"
+  ]
+ },
+ {
+  "q": "이거 어떻게 써요?",
+  "lang": "ko",
+  "expect": [
+   "h-how-to-start"
+  ]
+ },
+ {
+  "q": "그냥 마우스 쓰면 되지 왜 이걸 써요?",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "이거 진짜 쓸 수 있는 거예요?",
+  "lang": "ko",
+  "expect": [
+   "i-commercial"
+  ]
+ },
+ {
+  "q": "이거 만든 이유가 뭐임?",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "그럼 얼마예요?",
+  "lang": "ko",
+  "expect": [
+   "g-price"
+  ],
+  "ctx": [
+   "g-what-is"
+  ],
+  "prev": "AnyControl이 뭐예요?"
+ },
+ {
+  "q": "그건 안전해요?",
+  "lang": "ko",
+  "expect": [
+   "g-safe-real"
+  ],
+  "ctx": [
+   "g-what-is"
+  ],
+  "prev": "AnyControl이 뭐예요?"
+ },
+ {
+  "q": "그럼 단점은?",
+  "lang": "ko",
+  "expect": [
+   "v-top-weakness"
+  ],
+  "ctx": [
+   "g-what-is"
+  ],
+  "prev": "AnyControl이 뭐예요?"
+ },
+ {
+  "q": "그럼 윈도우는?",
+  "lang": "ko",
+  "expect": [
+   "g-os-support"
+  ],
+  "ctx": [
+   "g-hardware"
+  ],
+  "prev": "뭐가 필요해요?"
+ },
+ {
+  "q": "그건 정확해요?",
+  "lang": "ko",
+  "expect": [
+   "v-pen-accuracy"
+  ],
+  "ctx": [
+   "g-pen-mode"
+  ],
+  "prev": "펜으로 그림을 그릴 수 있나요?"
+ },
+ {
+  "q": "그럼 태블릿 대신 쓸 수 있어요?",
+  "lang": "ko",
+  "expect": [
+   "g-tablet-deck"
+  ],
+  "ctx": [
+   "g-pen-mode"
+  ],
+  "prev": "펜으로 그림을 그릴 수 있나요?"
+ },
+ {
+  "q": "그건 왜 베타예요?",
+  "lang": "ko",
+  "expect": [
+   "v-pen-beta"
+  ],
+  "ctx": [
+   "g-pen-mode"
+  ],
+  "prev": "펜으로 그림을 그릴 수 있나요?"
+ },
+ {
+  "q": "그럼 인터넷은 필요해요?",
+  "lang": "ko",
+  "expect": [
+   "h-offline"
+  ],
+  "ctx": [
+   "g-privacy-server"
+  ],
+  "prev": "개인정보는 안전한가요"
+ },
+ {
+  "q": "그럼 느려지진 않아요?",
+  "lang": "ko",
+  "expect": [
+   "i-many-objects-perf"
+  ],
+  "ctx": [
+   "g-multi-object"
+  ],
+  "prev": "물체 여러 개를 한 번에 쓸 수 있어요?"
+ },
+ {
+  "q": "그럼 얼마나 걸려요?",
+  "lang": "ko",
+  "expect": [
+   "h-install-time"
+  ],
+  "ctx": [
+   "h-install-how"
+  ],
+  "prev": "설치는 어떻게 하나요?"
+ },
+ {
+  "q": "so why would I need it?",
+  "lang": "en",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "what's the catch?",
+  "lang": "en",
+  "expect": [
+   "v-top-weakness"
+  ]
+ },
+ {
+  "q": "is it any good?",
+  "lang": "en",
+  "expect": [
+   "v-top-strengths"
+  ]
+ },
+ {
+  "q": "can I use it on a pc?",
+  "lang": "en",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "how much?",
+  "lang": "en",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "is it dangerous?",
+  "lang": "en",
+  "expect": [
+   "g-safe-real"
+  ]
+ },
+ {
+  "q": "does it need wifi?",
+  "lang": "en",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "what if my hand covers it?",
+  "lang": "en",
+  "expect": [
+   "h-hand-cover"
+  ]
+ },
+ {
+  "q": "is it accurate?",
+  "lang": "en",
+  "expect": [
+   "i-accuracy-honest"
+  ]
+ },
+ {
+  "q": "who built you?",
+  "lang": "en",
+  "expect": [
+   "v-chatbot-how"
+  ]
+ },
+ {
+  "q": "do I need an iphone?",
+  "lang": "en",
+  "expect": [
+   "h-webcam"
+  ]
+ },
+ {
+  "q": "what is this good for?",
+  "lang": "en",
+  "expect": [
+   "g-who-for"
+  ]
+ },
+ {
+  "q": "why do I need this",
+  "lang": "en",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "is this thing legit?",
+  "lang": "en",
+  "expect": [
+   "i-commercial"
+  ]
+ },
+ {
+  "q": "what makes it better than a normal mouse?",
+  "lang": "en",
+  "expect": [
+   "g-vs-others"
+  ]
+ },
+ {
+  "q": "and the price?",
+  "lang": "en",
+  "expect": [
+   "g-price"
+  ],
+  "ctx": [
+   "g-what-is"
+  ],
+  "prev": "What is AnyControl?"
+ },
+ {
+  "q": "what about windows?",
+  "lang": "en",
+  "expect": [
+   "g-os-support"
+  ],
+  "ctx": [
+   "g-hardware"
+  ],
+  "prev": "What do I need to use it?"
+ },
+ {
+  "q": "is that safe?",
+  "lang": "en",
+  "expect": [
+   "g-safe-real"
+  ],
+  "ctx": [
+   "g-what-is"
+  ],
+  "prev": "What is AnyControl?"
+ }
+]

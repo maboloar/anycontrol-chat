@@ -1,0 +1,939 @@
+[
+ {
+  "id": "v180-patch-connect",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "잭은 어떻게 연결해요?",
+    "물체랑 기능을 선으로 잇는 법",
+    "매핑 케이블 연결 순서 알려줘",
+    "패치 베이 사용법"
+   ],
+   "en": [
+    "How do I connect the jacks?",
+    "How do patch cables work?",
+    "Connect an object to a function"
+   ]
+  },
+  "a": {
+   "ko": "먼저 물체를 영상에서 드래그해 등록하거나 기본 맨손 카드를 사용하세요. 카드 옆 동그란 잭을 원하는 기능 잭까지 끌어 놓으면 연결돼요. 끌기 어렵다면 카드 잭을 누른 뒤 반대쪽 기능 잭을 한 번 눌러도 돼요. 기능 잭에는 연결 하나가 들어가고 다른 물체를 꽂으면 그 연결로 바뀌어요. 한 물체에서 여러 기능으로 선을 뽑을 수 있어요. Esc는 진행 중인 연결을 취소하거나 입력을 멈출 때 써요.",
+   "en": "Register an object by dragging around it, or use the built-in hand card. Drag the round jack beside the card to a function jack. You can also click the card jack and then the function jack. Each function jack accepts one connection; plugging in another object replaces it. One object can connect to several functions. Esc cancels a pending connection or stops input."
+  },
+  "kw": [
+   "잭",
+   "패치",
+   "케이블",
+   "연결",
+   "매핑",
+   "선",
+   "꽂기",
+   "jack",
+   "patch",
+   "cable",
+   "connect"
+  ],
+  "src": [
+   "frontend/src/components/PatchCables.tsx; frontend/src/patch.ts"
+  ],
+  "related": [
+   "h-save-settings"
+  ]
+ },
+ {
+  "id": "v180-patch-edit",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "연결한 케이블은 어떻게 수정해요?",
+    "터치 대신 기울기로 바꾸고 싶어요",
+    "매핑 감도와 방향 바꾸기",
+    "잭 연결 끊기"
+   ],
+   "en": [
+    "How do I edit a patch cable?",
+    "Change a jack from touch to movement",
+    "How do I unplug a cable?"
+   ]
+  },
+  "a": {
+   "ko": "케이블이나 이미 연결된 기능 이름을 누르면 아래에 그 연결의 설정이 나와요. 물체는 움직임·회전·터치·보임 같은 입력을 고르고, 움직임 감도와 반대 방향 여부를 조절할 수 있어요. 맨손 연결이라면 집게 동작을 검지나 중지로 바꿔요. 잠깐 끄려면 사용 체크를 끄고, 없애려면 케이블 빼기를 누르세요. 전체 연결을 지우는 버튼과 개별 케이블 삭제는 다른 동작이에요.",
+   "en": "Click a cable or a connected function name to open its settings below. For objects, choose movement, rotation, touch or visibility, then adjust movement sensitivity and direction. For hand connections, choose index or middle pinch. Disable the Enabled checkbox to pause it, or press Unplug to remove it. Removing one cable differs from resetting all connections."
+  },
+  "kw": [
+   "케이블",
+   "수정",
+   "입력 종류",
+   "감도",
+   "반전",
+   "빼기",
+   "unplug",
+   "edit",
+   "sensitivity",
+   "adjust",
+   "existing connection",
+   "change one connection"
+  ],
+  "src": [
+   "frontend/src/components/PatchBay.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-hand-jack",
+  "cat": "hand",
+  "status": "info",
+  "q": {
+   "ko": [
+    "맨손을 매핑 잭에 연결하려면요?",
+    "엄지 검지 집게를 버튼으로 쓰고 싶어요",
+    "중지 집게를 게임 버튼에 연결하는 방법",
+    "맨손 잭에서 손가락 고르기"
+   ],
+   "en": [
+    "How do I map a hand pinch?",
+    "Use thumb and middle pinch as a button",
+    "Choose the finger for the hand jack"
+   ]
+  },
+  "a": {
+   "ko": "물체 패널의 맨손 카드가 활성화되어 있는지 확인하세요. 맨손 잭을 원하는 기능 잭에 연결하면 엄지+검지 집게가 버튼 역할을 해요. 연결된 케이블을 누르고 집게 동작에서 엄지+중지로 바꿀 수도 있어요. 집은 동안 누르고, 손가락을 떼거나 손을 놓치면 해제하는 입력이에요. 이 연결만으로 커서 이동 모드를 켜거나 물체와 손을 자동 전환하지는 않아요. 실제 키 입력을 원하면 출력 설정도 따로 확인하세요.",
+   "en": "Check that the built-in hand card in Objects is enabled. Connect its jack to a function jack to use thumb–index pinch as a button. Click the cable and choose thumb–middle pinch if preferred. It stays pressed while pinched and releases when opened or the hand is lost. This connection alone does not enable cursor movement or automatic object/hand switching. Check output settings separately if you want real key input."
+  },
+  "kw": [
+   "맨손",
+   "잭",
+   "집게",
+   "검지",
+   "중지",
+   "엄지",
+   "버튼",
+   "hand",
+   "pinch",
+   "middle",
+   "index",
+   "jack"
+  ],
+  "src": [
+   "frontend/src/components/HandInputCard.tsx; frontend/src/components/PatchBay.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-hand-enable",
+  "cat": "hand",
+  "status": "info",
+  "q": {
+   "ko": [
+    "맨손 입력을 끄려면 어떻게 해요?",
+    "물체가 없어도 손 카드가 있나요?",
+    "손 인식 활성화 비활성화",
+    "맨손 카드를 삭제하고 싶어요",
+    "등록 없이 나오는 손 항목 사용 중지",
+    "손 컨트롤러 켜고 끄기"
+   ],
+   "en": [
+    "How do I disable hand input?",
+    "Is the hand card available without objects?",
+    "Enable the built-in bare hand",
+    "Switch the built-in hand controller off",
+    "Disable the hand item without deleting it"
+   ]
+  },
+  "a": {
+   "ko": "맨손 카드는 물체를 등록하지 않아도 기본으로 나와요. 카드의 맨손 매핑 활성화 버튼은 맨손 카드의 잭에서 뽑은 연결(집게 버튼, 손바닥 좌우·위아래)만 켜고 꺼요. 맨손 마우스, 맨손 그리기, 물체 터치는 이 버튼과 상관없이 각자의 설정을 따라요. 맨손 마우스를 멈추려면 마우스 패널에서 끄기를 고르세요. 카메라 영상이나 물체 추적을 끄는 버튼은 아니고, 물체 모두 삭제를 눌러도 이 기본 카드는 남아요.",
+   "en": "The hand card is there by default even with no objects registered. Its hand-mapping switch turns only the connections from the hand card's jack (pinch buttons, palm left-right and up-down) on or off. The hand mouse, hand drawing and object touch follow their own settings regardless of this switch. To stop the hand mouse, choose Off in the Mouse panel. It does not turn off the camera or object tracking, and Delete all objects keeps this card."
+  },
+  "kw": [
+   "맨손",
+   "카드",
+   "활성화",
+   "비활성화",
+   "손 입력",
+   "끄기",
+   "hand",
+   "enable",
+   "disable",
+   "손 항목",
+   "손 끄기",
+   "사용 중지",
+   "built-in hand controller"
+  ],
+  "src": [
+   "frontend/src/components/HandInputCard.tsx; backend/src/vision_input/pipeline.py"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-touch-how",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "물체를 손으로 터치해서 버튼처럼 쓰려면요?",
+    "물체 터치는 어떻게 설정해요?",
+    "물체를 눌러 DJ 재생하기",
+    "손가락 터치 매핑"
+   ],
+   "en": [
+    "How do I use object touch as a button?",
+    "Map touching an object",
+    "Tap an object to start the DJ deck",
+    "Configure object contact to press a button"
+   ]
+  },
+  "a": {
+   "ko": "물체를 등록하고 그 카드의 잭을 원하는 기능 잭(예: 스페이스 키, A 버튼)에 연결한 뒤, 케이블을 눌러 입력을 '손이 물체에 닿음'으로 고르세요. 처음에는 손을 물체에서 잠깐 떼어 물체의 원래 모습을 찍게 해 주세요. 그다음 손끝이나 손바닥, 손가락 옆면으로 물체를 덮듯이 대면, 손이 인식된 상태에서 물체 모습이 바뀐 것을 두 번 연속 확인하고 눌림으로 처리해요. 손 인식이 아주 잠깐 끊겨도 손가락이 그대로면 눌림을 유지하고, 손을 떼면 바로 풀려요. 얼마나 덮어야 하는지는 매핑 패널의 물체 터치 민감도로 조절해요. 뒤쪽 손이나 그림자, 조명 변화로는 누르지 않지만, 공중에서 바로 앞을 가리는 동작과 실제 접촉을 완전히 구분하는 센서는 아니에요.",
+   "en": "Register an object and connect its card jack to a button function (for example the Space key or the A button), then click the cable and set the input to 'Hand touches object'. First lift your hand off the object briefly so it can capture its normal look. Then cover the object with a fingertip, palm or the side of a finger. With your hand recognized, it confirms the changed look two frames in a row and presses. A very short hand-detection dropout keeps the press while your finger stays, and lifting your hand releases it at once. Set how much you must cover with Object touch sensitivity in the Mapping panel. Hands behind the object, shadows and lighting changes do not press, but it is not a sensor that fully separates covering in mid-air from real contact."
+  },
+  "kw": [
+   "물체 터치",
+   "손가락",
+   "닿음",
+   "버튼",
+   "누름",
+   "object touch",
+   "tap",
+   "contact",
+   "contact button",
+   "touch button setup",
+   "registered object touch"
+  ],
+  "src": [
+   "backend/src/vision_input/object_touch.py; frontend/src/components/PatchBay.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-touch-false",
+  "cat": "tracking",
+  "status": "info",
+  "q": {
+   "ko": [
+    "안 만졌는데 터치로 눌려요",
+    "배경이 바뀌면 물체 버튼이 눌리나요?",
+    "물체 터치 오인식 줄이는 방법",
+    "손이 없는데 터치가 켜져요"
+   ],
+   "en": [
+    "The object button fires without touching",
+    "Does a background change count as touch?",
+    "Reduce false object touch"
+   ]
+  },
+  "a": {
+   "ko": "지금 판정은 손이 실제로 인식된 상태에서, 손이 덮은 자리의 물체 모습이 바뀌었는지를 함께 확인해요. 손이 없거나 멀면 살색이나 배경, 그림자 변화만으로 켜지지 않아요. 카메라를 고정하고 손가락 전체가 보이게 한 뒤, 물체 바로 앞 공중에서 가리고 있지 않은지 확인하세요. 계속 잘못 눌리면 매핑 패널의 물체 터치 민감도를 낮추고, 고급 모드의 터치 감지 표시로 원인을 볼 수 있어요. 영상만으로 실제 접촉과 아주 가까운 공중 가림을 완전히 구별하지는 못해요. 불안정할 때는 실제 출력을 끄고 먼저 가상 화면에서 확인해 주세요.",
+   "en": "It checks that a hand is actually recognized and that the object's look changed where the hand covers it. Without a hand, or with a hand far away, skin colour, background or shadow changes alone do not press. Keep the camera fixed, keep your whole hand visible, and check you are not hovering just in front of the object. If it keeps pressing by mistake, lower Object touch sensitivity in the Mapping panel and use Show touch detection in advanced mode to see why. Video alone cannot fully tell real contact from covering very close in mid-air. If it is unstable, turn off real output and check on the virtual screen first."
+  },
+  "kw": [
+   "오인식",
+   "안 만짐",
+   "배경",
+   "살색",
+   "터치",
+   "허위",
+   "민감도",
+   "false touch",
+   "background",
+   "hover"
+  ],
+  "src": [
+   "backend/src/vision_input/object_touch.py"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-touch-debug",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "터치 감지 표시를 숨기려면요?",
+    "카메라 위 터치 박스와 막대 끄기",
+    "터치 진단 토글이 어디 있어요?",
+    "접촉 변화 표시 숨기기",
+    "접촉점과 변화 영역을 감추고 싶어요"
+   ],
+   "en": [
+    "How do I hide touch diagnostics?",
+    "Turn off the touch box and bar",
+    "Where is the touch diagnostics toggle?"
+   ]
+  },
+  "a": {
+   "ko": "터치 진단 영역과 변화 막대는 고급 모드에서만 볼 수 있어요. 위쪽 기본·고급 전환으로 고급 모드를 켜고 카메라 도구의 터치 감지 표시를 체크하세요. 체크를 끄거나 기본 모드로 돌아가면 표시가 사라져요. 기본값도 꺼짐이에요. 화면 표시만 바꾸므로 터치 매핑 자체를 끄는 기능과는 달라요.",
+   "en": "Touch areas and change bars are shown only in advanced mode. Switch from Basic to Advanced and enable Touch diagnostics in the camera tools. Disable it or return to basic mode to hide the overlay. It is off by default. This only changes the display, not whether touch mappings are processed."
+  },
+  "kw": [
+   "터치 감지 표시",
+   "진단",
+   "토글",
+   "막대",
+   "박스",
+   "고급",
+   "touch diagnostics",
+   "overlay",
+   "toggle",
+   "접촉 변화 표시",
+   "진단 숨기기",
+   "감지 표시 끄기",
+   "표시만",
+   "접촉점"
+  ],
+  "src": [
+   "frontend/src/components/CameraTools.tsx; frontend/src/components/CameraView.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-rename",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "물체 이름을 바꾸면 연결이 풀리나요?",
+    "등록 물체 이름 수정하기",
+    "컵 이름 바꿔도 매핑 유지돼요?",
+    "물체 라벨을 고쳐도 원래 선은 남나요",
+    "컨트롤러 이름 수정과 연결 보존"
+   ],
+   "en": [
+    "Does renaming disconnect mappings?",
+    "Rename a registered object",
+    "Keep connections after a name change",
+    "Keep existing wiring after editing an object label",
+    "Do patch links survive object label changes?"
+   ]
+  },
+  "a": {
+   "ko": "물체 이름을 바꿔도 지금 연결된 매핑과 케이블은 유지돼요. 연결은 화면에 보이는 이름과 구분해서 물체를 기억하도록 수정했어요. 물체를 선택하고 이름을 눌러 수정한 뒤 저장하거나 입력칸 밖으로 나가면 돼요. 다만 새 이름으로 다음에도 프로필을 쓰려면 프로필을 다시 저장해 주세요. 물체를 삭제하고 같은 이름으로 새로 등록하는 것은 이름만 수정하는 것과 달라요.",
+   "en": "Renaming keeps the current mappings and cables. Connections identify the object separately from its displayed name. Select the object, edit its name, then save or leave the text field. Save the profile again if you want it to use the new name later. Deleting an object and registering a new one with the same name differs from renaming it."
+  },
+  "kw": [
+   "이름",
+   "수정",
+   "매핑 유지",
+   "연결 끊김",
+   "rename",
+   "name",
+   "disconnect",
+   "컨트롤러 이름",
+   "이름 고치기",
+   "라벨 변경",
+   "object label",
+   "label change",
+   "existing wiring",
+   "survive renaming"
+  ],
+  "src": [
+   "frontend/src/components/ObjectPanel.tsx; backend/src/vision_input/pipeline.py"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-mapping-reset",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "매핑만 모두 지우고 싶어요",
+    "매핑 전체 초기화 버튼 사용법",
+    "연결선을 한꺼번에 빼려면요?",
+    "전체 매핑 해제가 안 돼요",
+    "DJ 자동 매핑 후 전체 초기화"
+   ],
+   "en": [
+    "How do I reset all mappings?",
+    "Remove all patch connections",
+    "Clear mappings but keep objects",
+    "Reset all mappings does not work"
+   ]
+  },
+  "a": {
+   "ko": "매핑 패널이나 DJ 패치 베이의 매핑 전체 초기화 버튼을 누르세요. 첫 클릭은 '한 번 더 누르세요' 확인 상태로 바뀔 뿐이고, 잠시 안에 한 번 더 눌러야 실제 연결을 모두 지워요. 다른 곳을 누르거나 잠시 기다리면 확인이 취소돼요. 매핑 패널에 보이지 않는 DJ 연결과 게임 연결까지 현재 연결을 모두 비워요. 등록 물체와 저장된 프로필, 사용자 정의 잭은 그대로 두어요. 모든 세팅 초기화와는 지우는 범위가 달라요.",
+   "en": "Press Reset all mappings in the Mapping panel or the DJ patch bay. The first click only switches to a 'press again' confirmation; press again shortly after to clear the connections. Clicking elsewhere or waiting cancels it. It clears the current profile, including hand, game and DJ connections the Mapping panel hides. Registered objects, saved profile files and custom jacks are kept. Its scope differs from Reset all settings."
+  },
+  "kw": [
+   "매핑 전체 초기화",
+   "연결 모두 삭제",
+   "케이블 초기화",
+   "물체는 남기고",
+   "reset mappings",
+   "clear connections",
+   "wiring",
+   "keep objects",
+   "retain objects"
+  ],
+  "src": [
+   "frontend/src/components/ResetMappingsButton.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-all-reset",
+  "cat": "safety",
+  "status": "info",
+  "q": {
+   "ko": [
+    "모든 세팅 초기화는 무엇을 지워요?",
+    "전체 설정을 처음 상태로 돌리기",
+    "빨간 초기화 버튼 두 번 눌러야 하나요?",
+    "카메라나 저장 프로필도 초기화돼요?"
+   ],
+   "en": [
+    "What does Reset all settings remove?",
+    "Reset the whole experience",
+    "Does full reset delete saved profiles?",
+    "Which settings are retained by a full reset?",
+    "What data survives clearing the entire setup?"
+   ]
+  },
+  "a": {
+   "ko": "위쪽 어두운 빨간 모든 세팅 초기화 버튼을 두 번 누르면 실행돼요. 등록 물체와 펜, 현재 매핑, 입력·추적·보정·화면 설정과 현재 데모 상태를 초기화하고 실제 출력을 꺼요. 저장해 둔 프로필과 사용자 정의 잭, 현재 카메라 연결·해상도·촬영 속도, 시연까지 기다리는 시간과 안내 문구 사용 여부는 그대로 남아요. 첫 클릭만으로는 지워지지 않고 잠시 뒤나 포커스를 잃으면 확인이 취소돼요. 시연 화면에 자동 진입할 때도 같은 초기화가 실행돼요.",
+   "en": "Press the dark-red Reset all settings button at the top twice. It clears registered objects and pens, current mappings, input/tracking/calibration/display settings and the active demo state, and turns real output off. Saved profiles, custom jacks, the current camera connection, resolution and frame rate, the demo wait time and the guide-hint setting are kept. The first press alone does not clear anything; confirmation expires or cancels when focus leaves. Entering the demo screen performs the same reset."
+  },
+  "kw": [
+   "모든 세팅 초기화",
+   "전체 설정",
+   "빨간 버튼",
+   "두 번",
+   "저장 보존",
+   "reset all settings",
+   "factory reset",
+   "reset retention",
+   "entire setup",
+   "data stays",
+   "보존 설정"
+  ],
+  "src": [
+   "frontend/src/resetSettings.ts; backend/src/vision_input/pipeline.py"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-layout-reset",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "배치 초기화와 모든 세팅 초기화는 달라요?",
+    "화면 초기화 버튼 이름 바뀌었나요?",
+    "패널 위치만 처음으로 돌리고 싶어요"
+   ],
+   "en": [
+    "Reset layout or reset all settings?",
+    "Restore only panel positions",
+    "Did the display reset button change its name?"
+   ]
+  },
+  "a": {
+   "ko": "예전 화면 초기화 버튼은 지금 배치 초기화라는 이름이에요. 배치 초기화는 창 배치·크기·접힘 상태·글씨 크기를 기본으로 돌리는 화면용 버튼이에요. 물체나 매핑을 없애려는 기능은 아니에요. 옆의 어두운 빨간 모든 세팅 초기화는 등록 물체와 현재 설정도 지우므로 범위가 훨씬 넓고 두 번 눌러야 실행돼요. 화면만 정리하고 싶다면 배치 초기화를 고르세요.",
+   "en": "The display-reset button is now called Reset layout. It restores panel arrangement, sizes, collapsed state and text size. It is not intended to remove objects or mappings. The neighboring dark-red Reset all settings also clears registered objects and current settings and requires two presses. Choose Reset layout if you only want to tidy the screen."
+  },
+  "kw": [
+   "배치 초기화",
+   "화면 초기화",
+   "위치",
+   "크기",
+   "layout reset",
+   "display reset"
+  ],
+  "src": [
+   "frontend/src/components/DisplayControls.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-panels",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "패널 위치를 옮길 수 있어요?",
+    "설정 창 순서 바꾸기",
+    "창 크기와 글씨 조절하는 방법",
+    "패널을 다른 열로 옮기는 방법",
+    "설정 창의 열 위치 바꾸기"
+   ],
+   "en": [
+    "How do I rearrange panels?",
+    "Move a settings panel to another column",
+    "Resize panels and text",
+    "Move a settings panel between columns",
+    "Reorder panels within a column"
+   ]
+  },
+  "a": {
+   "ko": "패널 제목 줄을 잡고 원하는 열과 위치로 끌어 놓으세요. 버튼이나 입력칸 대신 제목의 빈 부분을 잡는 게 좋아요. 경계와 모서리를 끌어 크기를 조절하고, 위쪽 글씨 버튼으로 읽기 편한 크기를 고를 수 있어요. 배치는 이 브라우저에 기억해요. 엉켰다면 배치 초기화를 눌러 기본으로 돌리면 되고 물체 매핑은 그대로예요.",
+   "en": "Drag a panel header to the desired column and position. Grab an empty header area rather than a button or input. Drag edges or corners to resize, and use the text controls at the top for readability. The browser remembers the layout. Use Reset layout if it becomes confusing; object mappings remain unchanged."
+  },
+  "kw": [
+   "패널",
+   "배치",
+   "끌기",
+   "이동",
+   "크기",
+   "글씨",
+   "panel",
+   "layout",
+   "drag",
+   "resize",
+   "왼쪽 열",
+   "오른쪽 열",
+   "다른 위치",
+   "열 이동",
+   "panel column"
+  ],
+  "src": [
+   "frontend/src/panelLayout.ts; frontend/src/components/DisplayControls.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-idle",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "가만히 두면 시연 영상으로 바뀌나요?",
+    "시연 화면 기본 대기 시간은요?",
+    "시연 영상 켜지면 물체가 사라져요",
+    "자리 비우면 설정이 초기화되나요?"
+   ],
+   "en": [
+    "When does the idle showcase appear?",
+    "Why did objects disappear after the demo screen?",
+    "Does idle mode reset the setup?"
+   ]
+  },
+  "a": {
+   "ko": "기본은 입력 없이 120초 지나면 시연 영상 화면으로 바뀌어요. 영상은 소리 없이 반복되고 화면을 거의 채워요. 진입할 때 등록 물체·현재 매핑·입력과 화면 설정을 초기화해 다음 사람이 처음 상태에서 체험하게 해요. 저장 프로필과 사용자 정의 잭, 현재 카메라 설정, 그리고 시연까지 기다리는 시간은 그대로 남아요. 포인터를 움직이거나 키를 누르거나 카메라 앞으로 다가오면 체험 화면으로 돌아오고, 상단에 '처음이신가요?' 안내 문구가 떠요. 대기 시간은 고급 모드 상단바의 시연 초 칸에서 바꿀 수 있어요.",
+   "en": "By default, after 120 seconds without input it switches to the demo video screen. The video loops silently and nearly fills the screen. On entry it resets registered objects, current mappings, input and display settings so the next person starts fresh. Saved profiles, custom jacks, the current camera settings and the wait time itself are kept. Moving the pointer, pressing a key or stepping up to the camera returns to the app, and a 'First time?' hint appears at the top. Change the wait time in the demo-seconds box of the advanced-mode top bar."
+  },
+  "kw": [
+   "시연 영상",
+   "placeholder",
+   "무입력",
+   "120초",
+   "자리 비움",
+   "자동 초기화",
+   "idle",
+   "showcase",
+   "timeout"
+  ],
+  "src": [
+   "frontend/src/components/IdleShowcase.tsx; frontend/src/store.ts"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-performance",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "성능 패널은 어떻게 읽어요?",
+    "기본 모드에서도 지연을 볼 수 있어요?",
+    "카메라 fps랑 처리 fps가 달라요"
+   ],
+   "en": [
+    "How do I read the performance panel?",
+    "Can basic mode show latency?",
+    "Capture rate versus processing rate"
+   ]
+  },
+  "a": {
+   "ko": "기본 모드에도 성능 패널이 있어요. 카메라가 보내는 속도, 프로그램이 처리하는 속도, 실제 미리보기 속도를 구분해 보여 줘요. 처리와 화면 표시까지의 지연은 보통 값과 느린 경우의 값을 함께 읽을 수 있어요. 연결 왕복 시간과 등록 물체 수, 손 입력 상태도 확인할 수 있어요. 촬영 속도만 높다고 화면이나 실제 입력까지 똑같이 빨라진다는 뜻은 아니에요. 느리면 조명과 카메라 설정을 확인하고 물체 수나 무거운 진단 표시를 줄여 보세요.",
+   "en": "The performance panel is available in basic mode. It separates camera capture rate, processing rate and displayed preview rate. Processing and screen latency include typical and slower-case values. You can also check round-trip time, object count and hand-input status. A faster capture rate alone does not mean the screen or real input is equally fast. If slow, check lighting and camera settings and reduce object count or heavy diagnostics."
+  },
+  "kw": [
+   "성능",
+   "fps",
+   "프레임",
+   "지연",
+   "처리",
+   "미리보기",
+   "performance",
+   "latency",
+   "frame rate"
+  ],
+  "src": [
+   "frontend/src/components/Hud.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-flip",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "영상 좌우 반전과 입력 좌우 반전 차이",
+    "움직이면 반대쪽으로 가요",
+    "기본 모드에서 입력 반전하기"
+   ],
+   "en": [
+    "Flip view versus flip all input",
+    "Movement goes the wrong way",
+    "Input flipping in basic mode"
+   ]
+  },
+  "a": {
+   "ko": "영상 좌우 반전은 보이는 카메라 화면만 거울처럼 바꿔요. 전체 입력 좌우 반전은 마우스·매핑·그리기의 좌우 조작 방향을 바꾸며 기본 모드에서도 쓸 수 있어요. 화면만 편하게 보려면 영상 반전을, 실제 조작이 반대라면 입력 반전을 확인하세요. 둘은 따로 움직이는 설정이라 하나를 눌렀다고 다른 쪽도 바뀌지는 않아요. 필요하면 자동 보정으로 이동 방향을 다시 맞춰 보세요.",
+   "en": "Flip view mirrors only the displayed camera image. Flip all input changes left/right control for mouse, mappings and drawing and is available in basic mode. Use view flipping for a comfortable picture and input flipping if controls go the wrong way. They are independent settings. Automatic calibration can also retune movement direction."
+  },
+  "kw": [
+   "입력 반전",
+   "영상 반전",
+   "좌우",
+   "거울",
+   "flip",
+   "mirror",
+   "direction"
+  ],
+  "src": [
+   "frontend/src/components/CameraTools.tsx; backend/src/vision_input/pipeline.py"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-dj-how",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "DJ 셋은 어떻게 조작해요?",
+    "물체로 디제잉하는 순서",
+    "DJ 재생 버튼을 손 집게에 연결하기"
+   ],
+   "en": [
+    "How do I use DJ Set?",
+    "Control the DJ with objects",
+    "Map a pinch to deck playback"
+   ]
+  },
+  "a": {
+   "ko": "데모에서 DJ 셋을 고르면 위쪽에 자동 매핑 버튼과 DJ 패치 베이, 그 아래에 덱과 믹서가 나와요. 화면의 전원과 재생 버튼으로 먼저 소리를 켜 확인하세요. 가장 쉬운 방법은 물체를 등록하고 [자동 매핑]을 누르는 거예요. 자동 매핑은 매핑 패널의 연결까지 지금 연결을 모두 해제하고 DJ 연결만 만들어요. 다른 연결이 있으면 버튼이 '다른 연결이 해제됩니다 · 한 번 더 누르세요'로 바뀌니 한 번 더 눌러 확인하고, 다른 연결이 없으면 한 번에 바로 연결돼요. 물체 1개면 좌우로 믹스, 앞뒤로 볼륨, 기울기로 필터, 들기로 클랩을 하고 재생은 화면 버튼으로 해요. 물체 2개면 영상 왼쪽부터 A·B 덱을 맡고 각 물체를 손으로 터치하면 그 덱이 재생·정지돼요. 음량은 낮게 시작하세요.",
+   "en": "Choose DJ Set in the demos to see the auto-map button and the DJ patch bay at the top, with decks and a mixer below. Turn the sound on first with the on-screen power and play buttons. The easiest way is to register objects and press Auto-map. Auto-map removes every current connection, including those in the Mapping panel, and creates only the DJ ones. If other connections exist, the button changes to 'other connections will be removed · press again', so press once more to confirm; with no other connections it connects right away. With 1 object, sideways mixes, near/far sets volume, tilt filters and lifting claps, and you play with the on-screen buttons. With 2 objects, decks A and B are assigned left to right in the video, and touching each object plays or stops its deck. Start with a low volume."
+  },
+  "kw": [
+   "DJ",
+   "디제잉",
+   "디제이",
+   "믹서",
+   "덱",
+   "재생",
+   "크로스페이더",
+   "DJ set",
+   "mixer",
+   "deck"
+  ],
+  "src": [
+   "frontend/src/components/DjDemo.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-dj-sound",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "DJ 음악은 무슨 곡이에요?",
+    "에어혼 소리가 바뀌었나요?",
+    "DJ 차임과 음악 설명",
+    "DJ 셋 너무 시끄러워요"
+   ],
+   "en": [
+    "What music does the DJ play?",
+    "Was the air horn replaced?",
+    "Describe the DJ chime and loop"
+   ]
+  },
+  "a": {
+   "ko": "외부 노래 파일을 틀기보다 브라우저에서 만든 124 BPM 멜로딕 하우스 루프를 써요. 비트 덱과 코드·베이스·멜로디 덱을 섞고 필터와 에코로 소리를 바꿔 볼 수 있어요. 큰 에어혼 대신 짧고 부드러운 차임으로 바뀌었어요. 기존 에어혼 연결도 다시 꽂지 않아도 차임을 울려요. 누구에게나 편한 음량을 보장하지 않으니 채널 볼륨이나 컴퓨터 음량을 낮게 시작하세요.",
+   "en": "It uses a browser-generated 124 BPM melodic-house loop rather than an external song file. Mix a beat deck with a chord, bass and melody deck and try filter or echo effects. The loud air horn was replaced with a short, soft chime. Existing horn connections now trigger that chime without repatching. Comfortable loudness is not guaranteed for everyone, so start with low channel or computer volume."
+  },
+  "kw": [
+   "DJ",
+   "음악",
+   "노래",
+   "하우스",
+   "차임",
+   "에어혼",
+   "소리",
+   "music",
+   "chime",
+   "horn",
+   "house"
+  ],
+  "src": [
+   "frontend/src/djAudio.ts; frontend/src/components/DjDemo.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-fruit",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "과일 받기는 어떻게 해요?",
+    "물체 두 개로 그물 움직이기",
+    "과일 게임 조작과 아이템"
+   ],
+   "en": [
+    "How do I play Fruit Catch?",
+    "Control the net with two objects",
+    "Fruit game controls and items"
+   ]
+  },
+  "a": {
+   "ko": "과일 받기를 고르고 인원(기본 1인), 컨트롤러, 조작법을 고른 뒤 [자동 매핑]을 누르세요. 바닥에 놓은 물체의 좌우와 앞뒤, 또는 들고 움직이는 영상 위아래로 바구니를 움직여요. 맨손을 고르면 영상 속 손 위치를 써요. 큰 시작 버튼이나 Space로 시작하고 일시정지해요. 떨어지는 과일을 받고 폭탄은 피하며 콤보·피버와 아이템을 활용하세요. 2인용은 서로 다른 컨트롤러가 필요해요. 연결 없이 시작하면 자동 매핑을 하라는 안내가 떠요.",
+   "en": "Choose Fruit catch, pick players (1 by default), controller and control style, then press Auto-map. The basket follows an object's sideways and near/far movement on the desk, or its up/down movement in the video when you hold it up. Choosing your hand uses its position in the video. Start and pause with the big start button or Space. Catch falling fruit, avoid bombs, and use combos, fever and items. 2-player mode needs two different controllers. Starting without connections shows an auto-map hint."
+  },
+  "kw": [
+   "과일",
+   "그물",
+   "바구니",
+   "폭탄",
+   "피버",
+   "fruit",
+   "net",
+   "Fruit Catch",
+   "waterfall"
+  ],
+  "src": [
+   "frontend/src/components/FruitDemo.tsx; frontend/src/fruit.ts"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-pong",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "퐁 게임은 어떻게 해요?",
+    "패들을 물체로 움직이는 방법",
+    "퐁 두 명 플레이와 아이템"
+   ],
+   "en": [
+    "How do I play Pong?",
+    "Move a Pong paddle with an object",
+    "Pong multiplayer and items"
+   ]
+  },
+  "a": {
+   "ko": "퐁을 고르고 인원(기본 1인), 컨트롤러, 조작법을 고른 뒤 [자동 매핑]을 누르세요. 바닥 방식이면 물체를 카메라 쪽으로 밀거나 당겨서, 들기 방식이면 영상 위아래로 움직여 패들을 조작해요. 패들을 움직이며 공을 치면 휘는 효과가 나고, 가운데 아이템을 맞히면 패들 크기나 공 속도, 공 개수가 달라져요. 2인용은 왼쪽·오른쪽 패들에 서로 다른 컨트롤러를 연결해요. 큰 시작 버튼이나 Space로 시작하고 일시정지해요.",
+   "en": "Choose Pong, pick players (1 by default), controller and control style, then press Auto-map. In desk style, push or pull the object toward the camera; in hold-up style, move it up/down in the video to steer the paddle. Hitting the ball while moving curves it, and hitting the centre items changes paddle size, ball speed or ball count. In 2-player mode, connect a different controller to each paddle. Start and pause with the big start button or Space."
+  },
+  "kw": [
+   "퐁",
+   "패들",
+   "공",
+   "멀티볼",
+   "두 명",
+   "pong",
+   "paddle",
+   "multiplayer"
+  ],
+  "src": [
+   "frontend/src/components/PongDemo.tsx; frontend/src/pong.ts"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-removed",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "그리드나 두더지 게임이 안 보여요",
+    "틱택토와 종이 보정은 어디 갔어요?",
+    "바닥 아홉 칸 버튼을 찾고 있어요"
+   ],
+   "en": [
+    "Where did the grid and mole game go?",
+    "Is tic-tac-toe still available?",
+    "Where is paper calibration?"
+   ]
+  },
+  "a": {
+   "ko": "바닥을 칸으로 나누는 그리드와 틱택토·두더지 잡기 화면은 현재 제공하지 않아요. 종이 모서리나 수평선을 직접 찍는 수동 등록 화면도 없어졌어요. 대신 등록 물체나 기본 맨손 잭을 원하는 버튼 기능에 연결할 수 있어요. 이동 방향과 감도는 대상 선택 후 간단한 자동 보정으로 맞추세요. 펜의 닿음·들기 보정은 별도로 남아 있어요.",
+   "en": "The floor grid, tic-tac-toe and mole-game screens are no longer available. Manual paper-corner and horizontal-line registration controls were also removed. Use registered object or built-in hand jacks for button functions instead. Select a target and use simple automatic calibration for movement direction and sensitivity. Pen contact/lift calibration remains separate."
+  },
+  "kw": [
+   "그리드",
+   "틱택토",
+   "두더지",
+   "종이",
+   "수평선",
+   "없어짐",
+   "grid",
+   "tic tac toe",
+   "mole",
+   "paper"
+  ],
+  "src": [
+   "HANDOFF.md §20; frontend/src/App.tsx"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-calibration-center",
+  "cat": "calib",
+  "status": "info",
+  "q": {
+   "ko": [
+    "보정할 때 매번 중앙에 다시 놔야 하나요?",
+    "원위치 없이 자동 보정 가능해요?",
+    "가운데를 지나지 않아도 왕복으로 인식하나요?"
+   ],
+   "en": [
+    "Must I return to center for every calibration step?",
+    "Calibrate without resetting the object position",
+    "Can the sweep reverse before reaching the start?"
+   ]
+  },
+  "a": {
+   "ko": "이제 매번 화면 중앙이나 원래 위치로 돌려놓지 않아도 돼요. 좌우 단계는 지금 위치에서 오른쪽으로 움직여 잠깐 멈추고, 그 자리에서 왼쪽으로 움직이면 돼요. 다음 단계도 현재 위치에서 앞뒤 또는 영상 위아래로 이어서 움직이세요. 프로그램이 방향을 바꾸는 지점을 찾아 앞쪽 움직임과 돌아오는 움직임을 따로 읽어요. 너무 작게 움직이거나 반대 방향 움직임이 없으면 다시 해 달라고 안내해요.",
+   "en": "You no longer need to return to the screen center or original position each time. For left/right, move right from where you are, pause, then move left from there. Continue the next near/far or video up/down step from your current position. The program detects the turn and reads the outgoing and returning strokes separately. It asks you to retry if travel is too small or there is no reverse stroke."
+  },
+  "kw": [
+   "자동 보정",
+   "중앙",
+   "원위치",
+   "왕복",
+   "돌아가기",
+   "calibration",
+   "center",
+   "return",
+   "sweep"
+  ],
+  "src": [
+   "backend/src/vision_input/auto_calibration.py"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-calibration-options",
+  "cat": "calib",
+  "status": "info",
+  "q": {
+   "ko": [
+    "보정에서 클릭도 꼭 해야 해요?",
+    "이동만 빠르게 맞추고 싶어요",
+    "보정 건너뛰기와 취소 차이"
+   ],
+   "en": [
+    "Must I calibrate clicks too?",
+    "Quick movement-only calibration",
+    "Skip a calibration check or cancel"
+   ]
+  },
+  "a": {
+   "ko": "일반 물체와 맨손은 기본적으로 이동만 빠르게 맞춰요. 클릭·스크롤도 조절하고 싶을 때만 보정을 열기 전에 선택 항목을 켜세요. 펜은 닿음과 들기 확인이 중요해서 별도 과정을 유지해요. 한 검사를 건너뛰면 그 검사에 필요한 설정은 기존 값으로 두고 다음으로 가요. 전체 보정을 취소하면 새 결과를 적용하지 않아요. 마지막 결과 화면에서 적용을 눌러야 설정을 바꿔요.",
+   "en": "Object and hand calibration tune movement only by default. Enable the optional click/scroll checks before starting if you want those tuned too. Pen calibration keeps its separate contact/lift process. Skipping a check keeps its corresponding settings and moves on. Canceling the session does not apply new results. Settings change when you press Apply on the review screen."
+  },
+  "kw": [
+   "보정",
+   "이동만",
+   "클릭 선택",
+   "건너뛰기",
+   "취소",
+   "적용",
+   "quick calibration",
+   "optional",
+   "skip",
+   "cancel"
+  ],
+  "src": [
+   "frontend/src/components/AutoCalibration.tsx; backend/src/vision_input/auto_calibration.py"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-missing-jacks",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "잭이나 연결선이 갑자기 없어져요",
+    "매핑 패널 다시 열면 연결이 지워져요",
+    "DJ로 갔다 오니 매핑이 사라졌어요",
+    "설정과 음악 화면 전환 후 케이블 유실",
+    "화면을 오가도 잭을 유지하나요"
+   ],
+   "en": [
+    "Patch jacks or cables disappear",
+    "Mappings vanish after reopening the panel",
+    "Connections disappear when switching to DJ",
+    "Preserve jacks while changing panels",
+    "Recover wiring hidden after switching screens"
+   ]
+  },
+  "a": {
+   "ko": "패널을 다시 열 때 오래된 응답이 편집 중인 연결을 덮거나, 이전 패널이 새 패널의 연결 처리를 끄는 문제를 수정했어요. 현재는 매핑과 DJ가 편집 내용을 공유하고 저장도 순서대로 처리해요. 그래도 선이 안 보이면 연결된 물체가 등록되어 있는지, 해당 기능 잭이 보이는지, 패널이 접혀 있지 않은지 확인하세요. 이름만 바꾸는 것은 연결을 끊지 않아요. 새 코드를 적용하려면 실행 중인 프로그램을 다시 켜고 브라우저를 새로고침해야 할 수 있어요. 같은 증상이 반복되면 저장 오류 표시도 확인해 주세요.",
+   "en": "Fixes prevent late responses from overwriting edits and old panels from disabling a newer panel’s connection handler. Mapping and DJ now share a draft and save changes in order. If a cable is still missing, check that its object is registered, its function jack is visible and the panel is expanded. Renaming alone does not disconnect it. Applying updated code may require restarting the program and refreshing the browser. This is not a guarantee against every fault; check for save errors too."
+  },
+  "kw": [
+   "잭 사라짐",
+   "연결선",
+   "매핑 없어짐",
+   "패널 전환",
+   "저장 오류",
+   "missing jack",
+   "cable",
+   "vanish",
+   "save",
+   "화면 전환",
+   "케이블 유실",
+   "원래 케이블",
+   "DJ 전환",
+   "잃는 문제",
+   "panel switching"
+  ],
+  "src": [
+   "frontend/src/mappingDraft.ts; frontend/src/patchConnections.ts"
+  ],
+  "related": []
+ },
+ {
+  "id": "v180-object-touch-or-hand",
+  "cat": "hand",
+  "status": "info",
+  "q": {
+   "ko": [
+    "물체 터치와 맨손 집게는 뭐가 달라요?",
+    "물체를 눌러야 하나요 집게를 해야 하나요?",
+    "손 버튼 입력 두 가지 차이"
+   ],
+   "en": [
+    "Object touch versus hand pinch",
+    "Should I tap the object or pinch?",
+    "Difference between touch and pinch buttons"
+   ]
+  },
+  "a": {
+   "ko": "물체 터치는 등록한 물건을 덮으면 그 모습이 바뀌는 것을 눌림으로 추정해요. 맨손 집게는 아무것도 만지지 않고 엄지와 검지 또는 중지를 모으는 동작을 버튼으로 써요. 물체 카드에서 뽑은 케이블의 입력이 터치라면 그 물건에 대 주고, 맨손 카드의 케이블이라면 고른 집게 동작을 해 주세요. 둘 다 카메라에 손이 보여야 해요.",
+   "en": "Object touch treats covering a registered object with your hand, which changes its look, as a press. A hand pinch uses bringing the thumb and index or middle finger together as a button, with no object involved. If a cable from an object card uses touch, put your hand on that object; if it comes from the hand card, make the chosen pinch. Either way your hand must be visible to the camera."
+  },
+  "kw": [
+   "터치",
+   "집게",
+   "차이",
+   "물체",
+   "맨손",
+   "버튼",
+   "touch",
+   "pinch",
+   "difference"
+  ],
+  "src": [
+   "backend/src/vision_input/object_touch.py; frontend/src/patch.ts"
+  ],
+  "related": []
+ }
+]

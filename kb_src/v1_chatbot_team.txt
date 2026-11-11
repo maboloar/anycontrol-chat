@@ -1,0 +1,164 @@
+@cat process | 개발 과정 · 이 챗봇
+
+I: v-tools-used
+Q: 어떤 도구로 개발했어요?
+V: 개발 툴이 뭐예요 / 어떤 프로그램으로 만들었어요 / 개발 환경이 뭐예요 / 코딩은 뭘로 했어요 / 무슨 에디터 썼어요
+EQ: What tools did you use to build it?
+EV: Which development tool did you use? / What IDE was used? / What did you code it with?
+A: 주로 Kiro IDE를 활용해서 개발했어요. Kiro는 이번 대회에서 AWS가 제공한 AI 개발 도구예요. 만들어야 할 내용을 먼저 글로 정리한 뒤 그 기준에 맞춰 만들고 확인하는 방식으로 진행했어요.
+EA: It was built mostly with the Kiro IDE, the AI development tool AWS provided for this challenge. We first wrote down what the software had to do, then built and checked it against that list.
+K: Kiro, Kiro IDE, 키로, 개발 도구, 개발툴, IDE, 에디터, AWS, development tool, editor, built with
+S: info
+F: 팀 확인(개발 도구는 주로 Kiro IDE), 소개서 §8
+R: g-kiro, v-ai-made, g-hardest
+G: yes
+
+I: v-ai-made
+Q: AI로 만든 건가요? 직접 만든 건가요?
+V: 바이브 코딩인가요 / AI가 코딩했어요 / 사람이 직접 짰어요 / AI 도움을 받았나요
+EQ: Was it made with AI, or by hand?
+EV: Is this vibe coding? / Did AI write the code? / Did you get help from AI?
+A: 주로 Kiro IDE로 개발했고, AI 개발 도구의 도움을 받았어요. 다만 단순히 화면만 만든 게 아니라, 직접 만든 테스트 영상으로 성능을 재 보고, 시도했다가 버린 방법과 이유를 기록하고, 확인된 것과 아닌 것을 나눠서 정직하게 밝히는 데 신경 썼어요. AI를 얼마나 썼는지의 자세한 비율은 확인된 내용이 없어요.
+EA: It was built mostly with the Kiro IDE, an AI development tool, so AI did help. But we also measured performance on test videos we made ourselves, recorded the methods we tried and dropped, and were careful to separate what is confirmed from what is not. We don't have an exact breakdown of how much AI was used.
+K: 바이브코딩, vibe coding, AI 코딩, 직접, 개발 방식, Kiro, written by AI, hand-written
+S: info
+F: 팀 확인, 소개서 §8
+R: v-tools-used, g-kiro
+
+I: v-spec-driven
+Q: 요구사항을 먼저 글로 쓰고 개발했다는 게 무슨 뜻이에요?
+V: 스펙 기반 개발이 뭐예요 / 명세 먼저 쓰는 개발 / Kiro 스펙이 뭐예요 / 계획을 먼저 쓰는 건가요
+EQ: What does writing the requirements first mean?
+EV: What is spec-driven development? / What is a Kiro spec? / Did you plan before coding?
+A: "이 기능은 이런 조건을 만족해야 한다"를 먼저 글로 적고, 그 조건을 기준으로 만들고 시험하는 방식이에요. 예를 들어 놓친 물건을 다시 찾는 기능은 조건을 쓰고, 만들고, 시험 결과를 기록하는 순서로 진행했어요. 나중에 무엇을 왜 그렇게 만들었는지 따라가기 쉬워져요.
+EA: You first write down the conditions a feature must meet, then build and test against them. For example, the feature that finds a lost object again went through writing conditions, building it, and recording test results. It makes it easy to see later what was built and why.
+K: 스펙, 명세, 요구사항, spec, requirements, Kiro, 계획, 기록, documentation
+S: info
+F: 소개서 §8
+R: v-tools-used, v-failed-ideas
+
+I: v-failed-ideas
+Q: 시도했다가 실패하거나 버린 방법도 있어요?
+V: 안 된 건 없어요 / 버린 방법 / 실패 사례 / 되돌린 기능이 있나요
+EQ: Did you try anything that failed or get dropped?
+EV: Anything that didn't work? / Which ideas did you abandon?
+A: 있어요. 펜 끝의 그림자를 매 순간 확인하면 선이 끊겨서 버렸고, 물건 기억을 계속 새로 고치면 닮은 물건으로 잘못 옮겨 가는 일이 늘어서 껐어요. 이런 시도와 버린 이유를 기록으로 남겨 두었어요.
+EA: Yes. Checking the pen's shadow every moment broke the lines up, so we dropped it. Constantly refreshing the memory of an object made it jump to look-alikes more often, so we turned it off. We kept notes on what was tried and why it was dropped.
+K: 실패, 버린 방법, 시행착오, failed, dropped, abandoned, trial and error, 기록
+S: info
+F: 소개서 §5.3, §8
+R: g-hardest, v-spec-driven
+
+@cat process | 이 챗봇은 어떻게 만들었나
+
+I: v-chatbot-how
+Q: 이 챗봇은 어떻게 만들었어요?
+V: 이 챗봇도 AI예요 / 챗봇 만든 방법 / 이 챗봇은 누가 만들었어요 / 챗봇 기술이 뭐예요 / 챗봇은 무슨 AI를 써요
+EQ: How was this chatbot made?
+EV: Is this chatbot an AI too? / What technology does this chatbot use? / Who built this chatbot?
+A: AnyControl의 문서와 코드를 읽고, 방문객이 물어볼 만한 질문과 그 답을 미리 정리해 두었어요. 정리 작업에는 AI 코딩 도구의 도움을 받았어요. 질문을 하면 그 모음에서 가장 비슷한 답을 찾아 보여 줘요. 그래서 프로젝트에 대한 답은 말을 새로 지어내지 않고, 인터넷 없이도 바로 나와요. 잡담에는 이 컴퓨터 안의 작은 AI가 짧게 답해요.
+EA: We read AnyControl's documents and code and prepared the questions visitors are likely to ask, together with their answers. An AI coding tool helped with that work. When you ask something, the chatbot looks up the closest prepared answer and shows it, so answers about the project don't make up new sentences and work without the internet. For small talk, a small AI inside this computer replies briefly.
+K: 챗봇, 만든 방법, 제작, chatbot, how made, Claude Code, 안내 챗봇, booth guide, 구조, 원리
+S: info
+F: anycontrol-chat/README.md, HANDOFF.md
+R: v-chatbot-structure, v-chatbot-wrong, v-chatbot-offline
+G: yes
+
+I: v-chatbot-structure
+Q: 이 챗봇은 어떤 구조로 동작해요?
+V: 챗봇 원리가 뭐예요 / 질문하면 어떻게 답이 나와요 / 챗봇 내부 구조 / 어떻게 답을 찾아요
+EQ: How does this chatbot work inside?
+EV: What is the structure of this chatbot? / How does it find an answer to my question? / How does it work?
+A: 이 컴퓨터 안에서 작은 프로그램이 돌아가요. 질문이 들어오면 ① 중요한 단어를 뽑고 ② 미리 정리해 둔 질문-답 모음에서 단어가 가장 많이 맞는 항목을 찾고 ③ 충분히 비슷하면 그 답을 보여 줘요. 비슷한 항목이 없는 프로젝트 질문은 지어내지 않고 "자료에 없어요"라고 하거나 "혹시 이런 질문인가요?"라고 되물어요. 프로젝트와 상관없는 이야기는 작은 AI가 짧게 대화해요.
+EA: A small program runs on this computer. When a question comes in, it ① picks out the key words, ② searches the prepared Q&A collection for the entry whose words match best, and ③ shows that answer if it is close enough. If nothing is close for a project question, it doesn't invent anything: it says it isn't in the notes, or asks "Did you mean one of these?" For talk unrelated to the project, a small AI chats briefly.
+K: 구조, 동작 원리, 검색, 질문 답 모음, structure, architecture, search, how it works, 카드, retrieval
+S: info
+F: anycontrol-chat/README.md, bot/engine.py
+R: v-chatbot-how, v-chatbot-wrong
+
+I: v-chatbot-wrong
+Q: 챗봇이 틀린 답을 할 수도 있나요?
+V: 이 답을 믿어도 돼요 / 챗봇 정확해요 / 챗봇 오류 / 답이 맞는지 어떻게 알아요
+EQ: Can this chatbot give a wrong answer?
+EV: Can I trust these answers? / Is the chatbot accurate? / How do I know an answer is correct?
+A: 네, 틀릴 수 있어요. 프로젝트 문서와 코드를 바탕으로 만든 답이지만 정확하지 않을 수 있고, 아직 사람이 하나하나 검토하지 못한 답도 있어요. 질문을 조금 다르게 이해해서 비슷하지만 다른 답을 보여 줄 수도 있어요. 중요한 내용은 발표자에게 꼭 다시 확인해 주세요. 답 아래에 표시되는 "확인 정도" 표시도 참고해 주세요.
+EA: Yes, it can. The answers are based on the project's documents and code, but they may be inaccurate, and some have not been checked one by one by a person. It may also read your question slightly differently and show a similar but different answer. Please double-check anything important with the presenter, and look at the "how well confirmed" label under each answer.
+K: 틀림, 오류, 정확도, 신뢰, 믿어도, wrong, accurate, trust, reliable, mistake, 검토
+S: info
+F: anycontrol-chat/HANDOFF.md §6
+B: yes
+R: v-chatbot-structure, v-chatbot-unknown
+
+I: v-chatbot-unknown
+Q: 모르는 질문을 하면 어떻게 돼요?
+V: 자료에 없는 질문 / 챗봇이 모르면 / 없는 내용을 물어보면 / 엉뚱한 질문
+EQ: What happens if I ask something it doesn't know?
+EV: What if my question isn't covered? / What does it do when it doesn't know?
+A: 아는 척하지 않아요. 가까운 질문이 있으면 "혹시 이런 질문인가요?"라고 보여 주고, 전혀 없으면 자료에 없다고 말해요. 그럴 땐 발표자에게 직접 물어봐 주세요.
+EA: It won't pretend. If something close exists it asks "Did you mean one of these?", and if not it says the topic isn't in its notes. In that case, please ask the presenter directly.
+K: 모르는 질문, 자료 밖, 없음, unknown, not covered, out of scope, 모르면
+S: info
+F: anycontrol-chat/README.md
+R: v-chatbot-wrong
+
+I: v-chatbot-offline
+Q: 이 챗봇은 인터넷이 필요해요?
+V: 챗봇은 서버에 연결돼요 / 챗봇이 인터넷으로 답해요 / 챗봇 오프라인 / 내 질문이 어디로 가요
+EQ: Does this chatbot need the internet?
+EV: Does it connect to a server? / Does it work offline? / Where does my question go?
+A: 필요 없어요. 이 컴퓨터 안에서만 돌아가고, 입력한 질문은 인터넷으로 어디에도 보내지지 않아요.
+EA: No. It runs only on this computer, and what you type is never sent anywhere over the internet.
+K: 인터넷, 오프라인, 개인정보, internet, offline, privacy, local, server
+S: info
+F: anycontrol-chat/README.md, bot/server.py
+R: v-chatbot-how, h-privacy
+
+I: v-chatbot-llm
+Q: 이 챗봇은 ChatGPT 같은 생성형 AI인가요?
+V: 챗봇이 문장을 새로 만들어요 / LLM 써요 / 챗봇이 AI로 대답해요 / 답을 지어내나요
+EQ: Is this chatbot a generative AI like ChatGPT?
+EV: Does it write new sentences? / Does it use an LLM? / Does it make up answers?
+A: 프로젝트에 대한 답은 아니에요. 그 답은 미리 정리해 둔 문장을 그대로 보여 줘서 없는 내용을 지어낼 위험이 적어요. 다만 표현이 다른 질문을 알아듣거나 AnyControl과 상관없는 가벼운 잡담에 답할 때는, 이 컴퓨터 안에서 돌아가는 작은 AI가 도와요. 그런 잡담 답에는 "AI가 자유롭게 답했어요" 표시가 붙고 틀릴 수 있어요.
+EA: Not for answers about the project. Those are prepared sentences shown as they are, so there is little risk of inventing things. But to understand differently phrased questions and to reply to light small talk unrelated to AnyControl, a small AI running inside this computer helps. Such small-talk replies carry an "AI answered freely" note and may be wrong.
+K: 생성형 AI, ChatGPT, LLM, 지어내, generative AI, hallucination, make up, 대화형 AI
+S: info
+F: anycontrol-chat/README.md
+R: v-chatbot-structure, g-llm
+
+I: v-chatbot-languages
+Q: 영어로도 질문할 수 있나요?
+V: 한국어 말고 영어도 되나요 / English / 외국인도 쓸 수 있어요 / 언어를 바꾸려면
+EQ: Can I ask in English?
+EV: Does it support English? / How do I change the language? / Can foreigners use it?
+A: 네, 한국어와 영어 모두 돼요. 처음에는 한국어로 열리고, 오른쪽 위의 언어 버튼을 누르면 영어로 바뀌어요. 영어로 질문을 입력해도 영어로 답해요.
+EA: Yes, both Korean and English work. It opens in Korean first; press the language button at the top right to switch to English. If you type in English, it answers in English.
+K: 영어, English, 한국어, 언어, language, 번역, translate, 외국인, foreigner
+S: info
+F: anycontrol-chat/web
+R: v-chatbot-how
+
+@cat team | 팀 · 김삼
+
+I: v-kimsam
+Q: 김삼은 누구예요?
+V: 김삼에 대해 알려주세요 / 팀원 김삼 / 만든 사람이 누구예요 / 개발자 소개 / 김삼 나이는요 / 김삼 연락처 / 김삼 어디 살아요
+EQ: Who is Kim Sam?
+EV: Tell me about Kim Sam / Who made this? / Who is the developer? / How old is Kim Sam? / How can I contact Kim Sam?
+A: 김삼은 고려대학교 전기전자공학부에 재학 중인 학생이고, 2026 고려대학교 × AWS AI Innovators Challenge에서 이 프로젝트를 만들었어요.
+EA: Kim Sam is a student in the School of Electrical Engineering at Korea University and built this project for the 2026 Korea University × AWS AI Innovators Challenge.
+K: 김삼, Kim Sam, 팀원, 개발자, 만든 사람, 학생, 전기전자공학부, 고려대학교, developer, member, student, 연락처, 나이, 개인정보
+S: info
+F: 팀 확인(전기전자공학부 재학 중인 학생이라는 정보만 공개)
+R: g-team, g-contest
+
+I: v-team-people
+Q: 팀은 몇 명이에요?
+V: 혼자 만든 거예요 / 팀원이 누구예요 / 팀 구성이 어떻게 돼요 / 역할 분담은요
+EQ: How many people are on the team?
+EV: Did one person make this? / Who is on the team? / How were roles divided?
+A: 팀 이름은 '팀 아무거나'이고 팀원은 김삼 1명으로 표기돼 있어요. 김삼은 고려대학교 전기전자공학부에 재학 중인 학생이고, 2026 고려대학교 × AWS AI Innovators Challenge에서 이 프로젝트를 만들었어요. 그 밖의 팀 구성이나 역할 분담은 말씀드릴 수 있는 내용이 없어요.
+EA: The team is called "Team Anything" (아무거나), and the team has 1 listed member, Kim Sam, a student in the School of Electrical Engineering at Korea University who built this project for the 2026 Korea University × AWS AI Innovators Challenge. I have nothing else to share about the team's makeup or roles.
+K: 팀원, 몇 명, 팀 구성, 역할, team size, members, roles, 팀 아무거나
+S: info
+F: 포스터, 팀 확인
+R: v-kimsam, g-team

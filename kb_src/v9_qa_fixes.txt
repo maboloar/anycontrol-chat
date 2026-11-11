@@ -1,0 +1,50 @@
+@cat limits | 한계·아쉬운 점
+
+I: w-false-claims
+Q: 99% 정확하고 지연이 0ms라던데 맞죠?
+V: 정확도 99%라는 게 사실이에요 / 지연이 전혀 없다던데요 / 완벽하게 동작한다던데 맞아요 / 오류가 없다는 게 진짜예요
+EQ: Is it true that it is 99% accurate with 0 ms delay?
+EV: I heard the accuracy is 99%, is that right? / Is it true there is no delay at all? / I heard it works perfectly, is that real?
+A: 아니요, 그렇게 말할 수 있는 근거가 없어요. 정확도가 99%라거나 지연이 0이라는 측정 자료는 없어요. 확인된 것은 직접 만든 시험 영상에서 기존 추적 방식보다 잘 따라간 비율이 약 2배였다는 것이고, 카메라부터 커서까지의 전체 지연은 아직 재지 못했어요. 지연이 전혀 없다거나 오류가 없다고는 말씀드릴 수 없어요.
+EA: No, there is no basis for saying that. We have no measurement showing 99% accuracy or a delay of 0. What is confirmed is that on our own test videos it followed objects about 2 times better than the classic method, and we have not yet measured the full delay from camera to cursor. We cannot say there is no delay or that there are no errors.
+K: 99%, 0ms, 지연 없음, 완벽, 오류 없음, 과장, 사실, 맞아요, 99 percent, zero latency, perfect, error free, true, exaggeration
+S: measured
+F: 소개서 §6, 논문 §17.2
+B: yes
+R: i-accuracy-honest, i-latency-honest, g-recover-numbers
+
+I: w-long-run
+Q: 8시간 연속으로 전시해도 괜찮아요? 발열이나 안정성은요?
+V: 오래 켜 두면 뜨거워져요 / 하루 종일 돌려도 돼요 / 장시간 운영한 기록이 있어요 / 전시 운영 중 교대 절차 / 관람객이 계속 바뀌어도 돼요 / 추적 실패율을 검증했어요
+EQ: Is it fine to run for 8 hours straight at an exhibition? What about heat and stability?
+EV: Does it get hot when left on? / Can it run all day? / Is there a record of long operation? / What about visitors rotating? / Have you measured the failure rate?
+A: 관람객이 바뀔 때 현재 물체와 설정을 초기화하는 시연 화면이 있고, 오래 켜 두면 메모리가 계속 늘거나 갑자기 크게 튀던 문제도 고쳤어요. 녹화 영상으로 10분 시험했을 때 메모리는 약 1.5GB에서 멈췄어요. 하지만 실제 행사장에서 장시간 켰을 때의 발열·추적 실패율·복귀 성공률까지 충분히 검증한 것은 아니에요. 행사 전에 실제 카메라와 조명으로 짧게 확인하고, 필요할 때 다시 선택이나 모든 세팅 초기화를 사용하세요.
+EA: There is a demo screen that resets the current objects and settings between visitors, and problems where memory kept growing or suddenly spiked during long runs have been fixed. In a 10-minute recorded-video test, memory levelled off at about 1.5GB. However, heat, tracking failures and recovery over long sessions at a real venue have not been verified enough. Check briefly with the real camera and lighting before the event, and use reselect or Reset all settings when needed.
+K: 8시간, 연속, 장시간, 발열, 안정성, 과학관, 운영, 교대, 실패율, long run, hours, heat, stability, uptime, exhibition operation
+S: not_validated
+F: 확인된 내용 없음, 소개서 §8
+R: g-exhibit, v-resource-use, v-multi-user
+
+I: w-no-mac-demo
+Q: 윈도우 노트북만 있고 아이폰도 없는데 오늘 체험할 수 있나요?
+V: 맥북이 없어도 체험해 볼 수 있어요 / 내 컴퓨터가 윈도우인데 여기서 해 볼 수 있나요 / 장비가 없어도 구경만 할 수 있어요 / 가진 게 윈도우뿐이에요
+EQ: I only have a Windows laptop and no iPhone. Can I try it today?
+EV: Can I try it without a Mac? / My computer is Windows, can I still experience it here? / Can I just watch without any equipment? / All I have is Windows
+A: 내 컴퓨터에 설치해 쓰려면 Apple 칩이 들어간 Mac이 필요해서 Windows 노트북으로는 지금 설치할 수 없어요. iPhone은 권장일 뿐 꼭 필요하지 않아요. 현장에서 시연을 볼 수 있는지는 발표자에게 물어봐 주시고, 궁금한 점은 저에게 편하게 물어보세요.
+EA: To install and use it on your own computer you need a Mac with an Apple chip, so you can't install it on a Windows laptop right now. An iPhone is only recommended, not required. Please ask the presenter whether a live demo is possible on site, and feel free to ask me anything.
+K: 윈도우만, 맥북 없어, 아이폰 없어, 체험, 장비 없이, only Windows, no Mac, no iPhone, try today, without equipment
+S: info
+F: README, 소개서 §11
+R: g-os-support, h-camera-required, w-demo-here
+
+I: w-impl-details
+Q: 가림 뒤 다시 찾을 때 어떤 기준으로 같은 물건인지 판단해요? 임계값도 알려 주세요
+V: 색 히스토그램을 써요 / 임베딩으로 재식별하나요 / 재획득 임계값이 얼마예요 / 오탐은 어떻게 막아요 / 다시 찾기 알고리즘을 자세히 / 형상 모멘트를 써요
+EQ: How does it decide it is the same object when finding it again? What are the thresholds?
+EV: Does it use a color histogram? / Does it re-identify with embeddings? / What is the re-acquisition threshold? / How do you prevent false positives? / Explain the re-find algorithm in detail / Does it use shape moments?
+A: 임베딩(외형 벡터) 비교는 쓰지 않고, 등록할 때 저장한 모양과 색을 여러 조건으로 확인해요. 후보의 모양 겹침 0.72 이상, 색 유사도 0.6 이상, AI가 매긴 품질 0.7 이상, 크기가 예상의 0.4~2.5배 안이어야 해요. 다른 추적 물체와 절반 이상 겹치는 후보는 빼고, 상위 후보끼리 점수 차이가 0.04보다 작으면 고르지 않고, 같은 자리에서 연속 2번 합격해야 다시 붙잡아요. 이 값들은 직접 만든 시험 영상으로 정한 기본값이에요.
+EA: It does not use embedding (appearance vector) comparison; it checks the shape and color saved at registration against several conditions. A candidate needs a shape overlap of at least 0.72, a color similarity of at least 0.6, an AI quality score of at least 0.7, and a size within 0.4 to 2.5 times the expected one. Candidates that overlap another tracked object by half or more are dropped, it refuses to choose when the top candidates differ by less than 0.04, and it must pass 2 times in a row at the same place before locking on. These are default values set using our own test videos.
+K: 임계값, 히스토그램, 임베딩, 재식별, 재획득, 오탐, 모멘트, 알고리즘, threshold, histogram, embedding, re-identification, re-acquisition, false positive, moments
+S: partial
+F: 논문 §6.1, §6.2
+R: i-why-find-again, i-lookalike

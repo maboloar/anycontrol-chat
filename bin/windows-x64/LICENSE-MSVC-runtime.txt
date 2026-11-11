@@ -1,0 +1,3 @@
+Microsoft Visual C++ 2015-2022 Redistributable runtime DLLs (vcruntime140, vcruntime140_1, msvcp140, msvcp140_1), version 14.44.35112,
+redistributed app-local alongside llama-server.exe so the Qwen helper starts on Windows PCs without the VC++ Redistributable.
+Source: the 'msvc-runtime' package on PyPI. These DLLs are Microsoft's redistributable files (see https://learn.microsoft.com/cpp/windows/redistributing-visual-cpp-files).

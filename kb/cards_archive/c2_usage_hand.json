@@ -1,0 +1,650 @@
+[
+ {
+  "id": "c-continuity-camera",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "iPhone을 카메라로 쓸 수 있나요?",
+    "연속성 카메라 조건이 뭐예요?",
+    "아이폰 연결하려면 뭐가 필요해요?",
+    "iPhone 웹캠"
+   ],
+   "en": [
+    "Can I use an iPhone as the camera?",
+    "What are the Continuity Camera requirements?",
+    "What do I need to connect an iPhone?",
+    "iPhone webcam"
+   ]
+  },
+  "a": {
+   "ko": "README는 Apple 연속성 카메라로 iPhone을 Mac 웹캠으로 쓰는 것을 권장하며, USB 유선 연결을 권장합니다. Apple 공식 안내에 따른 조건은 iPhone XR 이후 모델·iOS 16 이상, 두 기기가 이중 인증을 사용하는 같은 Apple 계정, iPhone 설정에서 연속성 카메라 켜기, 가까운 거리에서 Wi-Fi·Bluetooth 켜기(개인용 핫스팟·인터넷 공유는 끔)입니다. USB 연결 시에는 iPhone에서 이 컴퓨터를 신뢰해야 합니다.",
+   "en": "The README recommends using an iPhone as the Mac webcam via Apple's Continuity Camera, preferably over a wired USB connection. Per Apple's guide, you need iPhone XR or later with iOS 16 or later, both devices signed in to the same Apple Account with two-factor authentication, Continuity Camera turned on in iPhone settings, and the devices nearby with Wi-Fi and Bluetooth on (Personal Hotspot and internet sharing off). For USB, set the iPhone to trust the computer."
+  },
+  "kw": [
+   "연속성 카메라",
+   "Continuity Camera",
+   "iPhone",
+   "아이폰",
+   "웹캠",
+   "USB",
+   "iOS 16",
+   "iPhone XR",
+   "Desk View"
+  ],
+  "src": [
+   "sources/02_README_ko.md#iPhone 연결 — 연속성 카메라",
+   "sources/03_README_en.md#Connect an iPhone"
+  ],
+  "related": [
+   "c-iphone-setup",
+   "c-ts-camera"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "c-iphone-setup",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "iPhone을 어떻게 놓아야 해요?",
+    "아이폰 거치는 어떻게 해요?",
+    "iPhone을 선택하려면?",
+    "장치 새로고침이 뭐예요?"
+   ],
+   "en": [
+    "How should I place the iPhone?",
+    "How do I mount the iPhone?",
+    "How do I select the iPhone in the app?",
+    "What does refresh devices do?"
+   ]
+  },
+  "a": {
+   "ko": "README는 iPhone을 USB로 연결하고 잠근 뒤, 거치대에 고정해 후면 카메라가 추적할 물체·손을 향하도록 놓으라고 안내합니다. AnyControl의 카메라 → 장치 새로고침을 누르고 iPhone을 선택하며, 연결된 카메라가 자동 선택될 수도 있습니다. Desk View는 지원되는 iPhone에서 사용할 수 있고 기기별 조건은 Apple 공식 안내를 따릅니다.",
+   "en": "The README says to connect the iPhone over USB, lock it, and secure it on a stand with its rear camera facing the objects or hands to track. In AnyControl use Camera → Refresh devices (카메라 → 장치 새로고침), then select the iPhone; a connected camera may also be selected automatically. Desk View is available on supported iPhones, and device requirements follow Apple's guide."
+  },
+  "kw": [
+   "거치대",
+   "stand",
+   "후면 카메라",
+   "rear camera",
+   "장치 새로고침",
+   "refresh devices",
+   "카메라 선택",
+   "Desk View"
+  ],
+  "src": [
+   "sources/02_README_ko.md#iPhone 연결 — 연속성 카메라",
+   "sources/03_README_en.md#Connect an iPhone"
+  ],
+  "related": [
+   "c-continuity-camera",
+   "c-ts-camera"
+  ]
+ },
+ {
+  "id": "c-usage-object-mapping",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "물체 매핑은 어떻게 쓰나요?",
+    "물체를 마우스로 쓰려면?",
+    "컵을 입력 장치로 만드는 방법",
+    "물체 입력 설정"
+   ],
+   "en": [
+    "How do I use object mapping?",
+    "How do I use an object as a mouse?",
+    "How do I turn a cup into an input device?",
+    "object input setup"
+   ]
+  },
+  "a": {
+   "ko": "README의 사용법은 카메라 화면에서 물체를 선택한 뒤 입력 매핑을 설정하는 방식입니다. 화면의 튜토리얼이 카메라 선택과 물체·손 입력 설정을 안내합니다. 자주 쓰는 매핑은 프로필로 저장할 수 있습니다.",
+   "en": "Per the README, you select an object in the camera view and then configure its input mappings. The on-screen tutorial walks you through choosing a camera and setting up object or hand input. You can save frequently used mappings as profiles."
+  },
+  "kw": [
+   "물체 매핑",
+   "object mapping",
+   "물체 선택",
+   "입력 매핑",
+   "mapping",
+   "컵",
+   "사용법",
+   "how to use"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/03_README_en.md#Use and quit"
+  ],
+  "related": [
+   "c-profiles",
+   "c-hybrid",
+   "c-bare-hand"
+  ]
+ },
+ {
+  "id": "c-bare-hand",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "맨손으로 마우스를 쓸 수 있나요?",
+    "손만으로 컴퓨터를 조작해요?",
+    "맨손 마우스 설정",
+    "손 입력 방법"
+   ],
+   "en": [
+    "Can I use my bare hand as a mouse?",
+    "Can I control the computer with just my hand?",
+    "bare-hand mouse setup",
+    "hand input"
+   ]
+  },
+  "a": {
+   "ko": "README는 맨손 마우스를 제공 기능으로 소개합니다. 마우스 또는 그리기 패널에서 모드를 고르고 화면 안내에 따라 보정하면 됩니다. 클릭 방식으로 손가락 클릭 또는 엄지 집기+스크롤을 고를 수 있는 것은 HANDOFF 개발 기록 기준이며, 실제 카메라 환경의 정확도 수치는 문서에 없습니다.",
+   "en": "The README lists bare-hand mouse control as a feature. Choose a mode in the mouse or drawing panel and follow the on-screen calibration prompts. The HANDOFF development log describes selectable click styles (finger click, or thumb pinch with scrolling); no accuracy figures for real camera conditions are given in the documents."
+  },
+  "kw": [
+   "맨손",
+   "bare hand",
+   "손 마우스",
+   "hand mouse",
+   "손 입력",
+   "집기",
+   "pinch",
+   "스크롤",
+   "보정"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/04_HANDOFF_개발기록.md#11.4"
+  ],
+  "related": [
+   "c-hand-engine",
+   "c-finger-click",
+   "c-hybrid"
+  ]
+ },
+ {
+  "id": "c-pen-beta",
+  "cat": "pen",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜 입력이 Beta인 이유는?",
+    "펜으로 그릴 수 있나요?",
+    "펜 입력은 안정적인가요?",
+    "펜 Beta 기능"
+   ],
+   "en": [
+    "Why is pen input Beta?",
+    "Can I draw with a pen?",
+    "Is pen input stable?",
+    "pen Beta feature"
+   ]
+  },
+  "a": {
+   "ko": "README는 펜 등록·그리기·클릭을 Beta 기능으로 표시하며, 펜촉과 접촉 판정이 카메라 구도·가림·조명에 따라 달라질 수 있으니 자동 보정 후 사용하라고 안내합니다. HANDOFF 기준 펜 접촉 검증은 영상 2개(pen_test, IMG_0002)뿐이고, 접촉 판정 F1은 pen_test 0.946, IMG_0002 0.889(step 2, 30fps 벤치)입니다. 표본이 적어 일반화는 어렵습니다.",
+   "en": "The README marks pen registration, drawing and clicks as Beta, noting that tip tracking and contact detection vary with camera angle, occlusion and lighting, so calibrate before use. Per HANDOFF, pen contact was validated on only 2 videos (pen_test and IMG_0002); contact F1 was 0.946 on pen_test and 0.889 on IMG_0002 (step 2, 30fps benchmark). With so few samples, results may not generalize."
+  },
+  "kw": [
+   "펜",
+   "pen",
+   "Beta",
+   "베타",
+   "그리기",
+   "drawing",
+   "접촉 판정",
+   "F1",
+   "펜촉",
+   "pen tip"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/04_HANDOFF_개발기록.md#6. 알려진 한계 / 주의",
+   "sources/04_HANDOFF_개발기록.md#8. 재현 명령 모음"
+  ],
+  "related": [
+   "c-depth-model-usage",
+   "c-limits-real-camera"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "c-hybrid",
+  "cat": "usage",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "한 손 하이브리드가 뭐예요?",
+    "물체와 손을 같이 쓰는 모드는?",
+    "하이브리드 모드 사용법",
+    "손으로 클릭하는 방법"
+   ],
+   "en": [
+    "What is one-hand hybrid?",
+    "What is the mode that uses an object and a hand together?",
+    "How do I use hybrid mode?",
+    "How do I click with my hand?"
+   ]
+  },
+  "a": {
+   "ko": "일반 물체를 등록한 뒤 마우스 패널에서 선택하는 모드입니다. 물체로 커서를 움직이고, 물체를 놓고 손을 옆으로 분리해 펼치면 커서를 고정한 채 엄지·검지는 왼쪽 클릭, 엄지·중지는 오른쪽 클릭만 합니다. 한 번 집으면 한 번 클릭하고, 집기를 풀고 다시 잡으면 물체 이동으로 복귀합니다. 맨손 이동·드래그·스크롤은 없고, 손을 위로만 들면 영상상 겹침 때문에 전환되지 않을 수 있으며, 자동 보정은 물체 이동만 보정합니다.",
+   "en": "Register a regular object and select this mode in the mouse panel. Move the cursor with the object; release it, move your hand aside and open your fingers to park the cursor and click only: thumb and index is a left click, thumb and middle is a right click. Each pinch makes one click, and releasing then gripping again returns to object movement. There is no hand movement, dragging or scrolling; lifting the hand straight up may fail to switch because it overlaps the object in the video, and auto calibration tunes object movement only."
+  },
+  "kw": [
+   "한 손 하이브리드",
+   "hybrid",
+   "one-hand",
+   "하이브리드",
+   "클릭",
+   "왼쪽 클릭",
+   "오른쪽 클릭",
+   "엄지",
+   "검지",
+   "중지"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/04_HANDOFF_개발기록.md#10.1 포크에서 가져온 것"
+  ],
+  "related": [
+   "c-hybrid-limits",
+   "c-finger-click",
+   "c-usage-object-mapping"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "c-hybrid-limits",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "하이브리드 모드의 한계는?",
+    "하이브리드는 실제 카메라로 검증됐나요?",
+    "손가락 클릭 정확도는?",
+    "손 클릭이 안 먹을 때 이유"
+   ],
+   "en": [
+    "What are the limits of hybrid mode?",
+    "Was hybrid validated on a real camera?",
+    "How accurate is finger clicking?",
+    "why hand clicks might fail"
+   ]
+  },
+  "a": {
+   "ko": "HANDOFF(§10.4)는 손가락 클릭·끝점 추적·하이브리드 관련해 실제 카메라·손 검증이 없고 문턱값은 합성 기준이라고 기록합니다. 접촉은 영상상 박스 거리로 추정하고, 하이브리드는 쥠 분류기가 아니라 영상 근접·분리 기반이며, 끝점 추적은 곧게 든 순간에만 점을 찍고, EfficientTAM 손끝 보정의 효과는 입증되지 않았다고 합니다. 따라서 클릭 정확도 수치는 제시할 수 없습니다.",
+   "en": "HANDOFF (section 10.4) records that finger click, tip tracking and hybrid mode have no real camera or hand validation, and that thresholds are based on synthetic data. Contact is estimated from box distance in the video, hybrid relies on video proximity and separation rather than a grip classifier, tip tracking only marks points when the finger is held straight, and the benefit of EfficientTAM fingertip refinement is unproven. So no click accuracy figure can be given."
+  },
+  "kw": [
+   "한계",
+   "limits",
+   "미검증",
+   "not validated",
+   "실카메라",
+   "synthetic",
+   "합성",
+   "손끝 보정",
+   "tip refine"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#10.4 검증"
+  ],
+  "related": [
+   "c-hybrid",
+   "c-finger-click",
+   "c-limits-real-camera"
+  ]
+ },
+ {
+  "id": "c-finger-click",
+  "cat": "hand",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "손가락 클릭은 어떻게 동작해요?",
+    "검지 중지로 클릭하는 방식은?",
+    "엄지 집기랑 뭐가 달라요?",
+    "손가락 클릭 방식"
+   ],
+   "en": [
+    "How does finger click work?",
+    "How does clicking with index and middle fingers work?",
+    "How is it different from thumb pinch?",
+    "finger click style"
+   ]
+  },
+  "a": {
+   "ko": "HANDOFF에 따르면 손가락 클릭은 검지·중지를 든 채 내려서 클릭하는 방식으로, 중지가 왼쪽 클릭, 검지가 오른쪽 클릭입니다(hands/finger_click.py). 손가락 클릭이 백엔드 기본이고, 엄지 집기+스크롤은 선택지입니다. 물체 모드에서는 엄지 집기와 스크롤이 빠지며, 문턱값은 합성 기준이고 실제 카메라 검증은 없습니다.",
+   "en": "Per HANDOFF, finger click means holding up the index and middle fingers and lowering one to click: the middle finger is a left click and the index finger is a right click (hands/finger_click.py). Finger click is the backend default, with thumb pinch plus scrolling as an alternative. In object mode, thumb pinch and scrolling are removed; thresholds are synthetic-based and there is no real camera validation."
+  },
+  "kw": [
+   "손가락 클릭",
+   "finger click",
+   "finger_click",
+   "finger_press",
+   "검지",
+   "중지",
+   "엄지 집기",
+   "pinch",
+   "클릭 방식"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#10.1 포크에서 가져온 것",
+   "sources/04_HANDOFF_개발기록.md#11.1 UI 롤백"
+  ],
+  "related": [
+   "c-tip-tracking",
+   "c-hybrid",
+   "c-hybrid-limits"
+  ]
+ },
+ {
+  "id": "c-tip-tracking",
+  "cat": "tracking",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "손끝(지문 팁) 추적이 뭐예요?",
+    "끝점 직접 추적은 어떻게 해요?",
+    "tip_track이 뭐죠?",
+    "손가락 끝을 어떻게 따라가요?"
+   ],
+   "en": [
+    "What is fingertip tracking?",
+    "How does direct tip tracking work?",
+    "What is tip_track?",
+    "How are fingertips followed?"
+   ]
+  },
+  "a": {
+   "ko": "HANDOFF에 따르면 hands/tip_track.py는 LK 광학 흐름, NCC, 살색 단서로 검지·중지 끝점을 직접 추적하고, tip_click.py가 클릭을, tip_refine.py가 EfficientTAM 살색 분할 보정을 맡습니다. 설정은 finger_track, tip_drop, tip_refine이며 끝점 추적 기본값은 켬입니다. 한계로 곧게 든 순간에만 점을 찍고 손끝 보정의 효과는 입증되지 않았으며 실제 카메라 검증이 없습니다.",
+   "en": "Per HANDOFF, hands/tip_track.py follows index and middle fingertips directly using LK optical flow, NCC and skin-color cues, tip_click.py handles clicking, and tip_refine.py adds EfficientTAM skin segmentation refinement. Settings are finger_track, tip_drop and tip_refine, and tip tracking is on by default. Limitations: it only marks points when the finger is held straight, the refinement benefit is unproven, and there is no real camera validation."
+  },
+  "kw": [
+   "끝점 추적",
+   "tip tracking",
+   "tip_track",
+   "fingertip",
+   "지문",
+   "손끝",
+   "LK",
+   "NCC",
+   "optical flow",
+   "tip_refine"
+  ],
+  "src": [
+   "sources/04_HANDOFF_개발기록.md#10.1 포크에서 가져온 것",
+   "sources/04_HANDOFF_개발기록.md#10.4 검증",
+   "sources/04_HANDOFF_개발기록.md#11.1 UI 롤백"
+  ],
+  "related": [
+   "c-finger-click",
+   "c-hybrid-limits",
+   "c-hand-engine"
+  ]
+ },
+ {
+  "id": "c-hand-engine",
+  "cat": "hand",
+  "status": "info",
+  "q": {
+   "ko": [
+    "손 인식은 뭘로 해요?",
+    "Apple Vision과 MediaPipe 차이는?",
+    "손 엔진을 고를 수 있나요?",
+    "MediaPipe는 언제 쓰나요?"
+   ],
+   "en": [
+    "What does hand detection use?",
+    "What is the difference between Apple Vision and MediaPipe?",
+    "Can I choose the hand engine?",
+    "When is MediaPipe used?"
+   ]
+  },
+  "a": {
+   "ko": "README 기준으로 기본 손 엔진은 Apple Vision(macOS 시스템 프레임워크로 별도 번들 모델이 없음)이고, 선택 가능한 손 엔진이 MediaPipe입니다. MediaPipe 손 모델은 models/hand_landmarker.task 로 포함되며 Apache 2.0 라이선스입니다. 두 엔진의 성능 비교 수치는 제가 가진 문서에 없습니다.",
+   "en": "Per the README, the default hand engine is Apple Vision (a macOS system framework with no separately bundled model), and MediaPipe is the optional hand engine. The MediaPipe hand model is included as models/hand_landmarker.task under Apache 2.0. The documents I have contain no performance comparison between the two engines."
+  },
+  "kw": [
+   "손 엔진",
+   "hand engine",
+   "Apple Vision",
+   "MediaPipe",
+   "hand_landmarker",
+   "손 인식",
+   "hand tracking",
+   "Apache 2.0"
+  ],
+  "src": [
+   "sources/02_README_ko.md#외부 구성요소",
+   "sources/08_THIRD_PARTY.md"
+  ],
+  "related": [
+   "c-third-party-list",
+   "c-bare-hand"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "c-calib-simplified",
+  "cat": "calib",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "자동 보정은 어떻게 돼요?",
+    "보정 단계가 간단해졌다고요?",
+    "보정이 몇 단계예요?",
+    "auto calibration",
+    "보정은 어떻게 하는 건가요?",
+    "캘리브레이션 방법"
+   ],
+   "en": [
+    "How does auto calibration work?",
+    "Was calibration simplified?",
+    "How many calibration steps are there?",
+    "auto calibration steps",
+    "How does calibration work?"
+   ]
+  },
+  "a": {
+   "ko": "README는 손·펜 입력에서 모드를 고르고 화면 안내에 따라 보정하며, 펜은 자동 보정 후 쓰라고 안내합니다. HANDOFF에 따르면 auto_calibration.py가 단계를 합성해 rest→lr→nf→clicks 순서로 진행하고, 펜은 6단계, 한 손 하이브리드는 3단계이며 물체 이동만 보정합니다. 이후 UI 롤백으로 3초 카운트다운과 단계 점은 되살리지 않았다고 기록되어 있습니다.",
+   "en": "The README says to choose a mode for hand and pen input and follow the on-screen calibration prompts, and to calibrate the pen before use. Per HANDOFF, auto_calibration.py composes the steps in the order rest, lr, nf, clicks; the pen has 6 steps and one-hand hybrid has 3 steps and tunes object movement only. The log also notes that after a UI rollback the 3-second countdown and step dots were not restored."
+  },
+  "kw": [
+   "자동 보정",
+   "auto calibration",
+   "보정",
+   "calibration",
+   "단계",
+   "카운트다운",
+   "rest",
+   "clicks",
+   "간소화"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/04_HANDOFF_개발기록.md#10.1 포크에서 가져온 것",
+   "sources/04_HANDOFF_개발기록.md#11.4 롤백 후 다시 넣은 것"
+  ],
+  "related": [
+   "c-hybrid",
+   "c-pen-beta"
+  ]
+ },
+ {
+  "id": "c-depth-model-usage",
+  "cat": "depth",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "깊이 모델은 어디에 쓰이나요?",
+    "Depth Anything은 무슨 역할이에요?",
+    "깊이 감도와 기준 다시 잡기가 뭐예요?",
+    "깊이 모델을 끌 수 있나요?"
+   ],
+   "en": [
+    "Where is the depth model used?",
+    "What does Depth Anything do here?",
+    "What are depth sensitivity and retake reference?",
+    "Can I turn off the depth model?"
+   ]
+  },
+  "a": {
+   "ko": "Depth Anything V2 Small 가중치는 프로그램에 포함되어 있습니다(models/). 펜은 바닥 기하 접촉 판정이 기본이고 책상 기울기를 깊이 모델로 재며(펜 패널에서 끌 수 있음), 물체 마우스의 앞뒤 이동에도 깊이 모델을 선택할 수 있고 깊이 감도 슬라이더와 깊이 기준 다시 잡기 버튼이 있습니다. 개발자 모드(렌치 버튼)에서는 깊이 맵을 카메라 영상 위에 겹쳐 볼 수 있습니다. 마우스 깊이의 기본값은 문서마다 달라(README는 모델, HANDOFF §11은 물체 크기) 확정해 말할 수 없습니다.",
+   "en": "The Depth Anything V2 Small weights ship with the program (models/). The pen uses floor-geometry contact detection by default and measures desk tilt with the depth model (can be turned off in the pen panel); the object mouse can also use the depth model for near/far movement, with a depth sensitivity slider and a retake-depth-reference button. Developer mode (wrench button) can overlay the depth map on the camera view. The default for mouse depth differs between documents (README says model, HANDOFF section 11 says object size), so I cannot state it definitively."
+  },
+  "kw": [
+   "깊이 모델",
+   "depth model",
+   "Depth Anything V2",
+   "깊이 감도",
+   "depth sensitivity",
+   "기준 다시 잡기",
+   "개발자 모드",
+   "책상 기울기",
+   "desk tilt"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/04_HANDOFF_개발기록.md#11.2 마우스 깊이 기본값을 예전 방식으로"
+  ],
+  "related": [
+   "c-pen-beta",
+   "c-third-party-list"
+  ]
+ },
+ {
+  "id": "c-ema",
+  "cat": "stable",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "튐 억제(EMA)가 뭐예요?",
+    "추적이 튀는 걸 막는 기능이 있나요?",
+    "EMA 설정은 어디서 바꿔요?",
+    "spike guard"
+   ],
+   "en": [
+    "What is spike guard (EMA)?",
+    "Is there a feature to stop tracking jumps?",
+    "Where do I change the EMA setting?",
+    "spike suppression"
+   ]
+  },
+  "a": {
+   "ko": "물체 패널의 '튐 억제' 체크박스로 켜고 끄며 기본은 켬입니다. 물체·펜 추적에서 한두 프레임짜리 튐을 눌러 줍니다. HANDOFF에 따르면 평소엔 시간상수 EMA를 쓰고, 평소 변화량의 5배를 넘는 점프는 천천히만 따라가다 0.18초 넘게 지속되면 진짜 이동으로 인정합니다. 실제 마우스 커서 체감 개선은 측정하지 않았다고 기록되어 있습니다.",
+   "en": "Toggle it with the Spike guard checkbox in the object panel; it is on by default. It smooths out one- or two-frame jumps in object and pen tracking. Per HANDOFF, it uses a time-constant EMA normally, follows jumps larger than 5 times the usual change only slowly, and accepts them as real movement once they last more than 0.18 seconds. The log states that the actual cursor smoothness improvement was not measured."
+  },
+  "kw": [
+   "EMA",
+   "튐 억제",
+   "spike guard",
+   "SpikeEma",
+   "스무딩",
+   "smoothing",
+   "지터",
+   "jitter",
+   "떨림"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/04_HANDOFF_개발기록.md#3.6 실시간 EMA",
+   "sources/04_HANDOFF_개발기록.md#6. 알려진 한계 / 주의"
+  ],
+  "related": [
+   "c-ts-shaky",
+   "c-depth-model-usage"
+  ]
+ },
+ {
+  "id": "c-esc-stop",
+  "cat": "safety",
+  "status": "info",
+  "q": {
+   "ko": [
+    "긴급 정지는 어떻게 하나요?",
+    "Esc 키를 누르면 어떻게 돼요?",
+    "마우스가 제멋대로 움직일 때",
+    "입력을 멈추는 법"
+   ],
+   "en": [
+    "How do I do an emergency stop?",
+    "What does the Esc key do?",
+    "What if the cursor goes wild?",
+    "how to stop input"
+   ]
+  },
+  "a": {
+   "ko": "Esc를 누르면 입력 출력이 중지되고 눌려 있던 키·버튼이 해제됩니다. 실제 OS 입력은 앱에서 실제 입력을 켜고 손쉬운 사용 권한을 허용했을 때만 나갑니다.",
+   "en": "Pressing Esc stops input output and releases any held keys and buttons. Actual OS input is only sent when you have turned on actual input in the app and granted Accessibility permission."
+  },
+  "kw": [
+   "Esc",
+   "긴급 정지",
+   "emergency stop",
+   "정지",
+   "안전",
+   "키 해제",
+   "release",
+   "stop"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/03_README_en.md#Use and quit"
+  ],
+  "related": [
+   "c-permissions",
+   "c-quit-tab"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "c-quit-tab",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어떻게 종료해요?",
+    "탭을 닫으면 꺼지나요?",
+    "터미널은 어떻게 하나요?",
+    "/api/bye가 뭐예요?"
+   ],
+   "en": [
+    "How do I quit?",
+    "Does closing the tab quit the app?",
+    "What about the Terminal window?",
+    "What is /api/bye?"
+   ]
+  },
+  "a": {
+   "ko": "브라우저의 AnyControl 탭을 닫으면 종료됩니다. 여러 탭을 열었다면 모두 닫아야 하며, 약 5초 후 서버와 터미널의 프로그램이 자동 종료됩니다. 구현은 HANDOFF 기준 창을 닫을 때 sendBeacon으로 /api/bye를 호출하고, __main__.py의 종료 워치독이 8초 후 os._exit 하는 보강이 있습니다. 계속 실행되면 해당 터미널에서 Ctrl+C로 종료합니다.",
+   "en": "Closing the AnyControl browser tab quits the app. If several tabs are open, close all of them; after about 5 seconds the server and the program in Terminal exit automatically. Per HANDOFF, the implementation calls /api/bye via sendBeacon when the window closes, with a shutdown watchdog in __main__.py that calls os._exit after 8 seconds. If it keeps running, press Ctrl+C in its Terminal window."
+  },
+  "kw": [
+   "종료",
+   "quit",
+   "탭 닫기",
+   "close tab",
+   "api/bye",
+   "sendBeacon",
+   "watchdog",
+   "Ctrl+C",
+   "터미널"
+  ],
+  "src": [
+   "sources/02_README_ko.md#사용 및 종료",
+   "sources/04_HANDOFF_개발기록.md#10.1 포크에서 가져온 것"
+  ],
+  "related": [
+   "c-ts-tab-close",
+   "c-esc-stop",
+   "c-update"
+  ],
+  "suggest": true
+ }
+]

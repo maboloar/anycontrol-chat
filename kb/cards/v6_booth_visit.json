@@ -1,0 +1,1281 @@
+[
+ {
+  "id": "w-booth-what",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "여기는 뭘 하는 부스예요?",
+    "이 부스에서 뭘 보여 줘요",
+    "여기 뭐 하는 곳이에요",
+    "이 부스 소개해 주세요",
+    "부스에 뭐가 있어요"
+   ],
+   "en": [
+    "What is this booth about?",
+    "What can I see at this booth?",
+    "What is going on here?",
+    "Can you tell me about this booth?"
+   ]
+  },
+  "a": {
+   "ko": "AnyControl이라는 프로젝트를 소개하는 부스예요. 카메라 한 대로 책상 위 물건, 평범한 펜, 맨손을 마우스나 키보드처럼 쓰게 해 주는 프로그램이에요. 포스터에서 구성과 원리를 볼 수 있고, 궁금한 건 저에게 물어보시거나 발표자에게 직접 물어보셔도 돼요.",
+   "en": "This booth presents a project called AnyControl, a program that lets one camera turn objects on a desk, an ordinary pen or a bare hand into a mouse or keyboard. You can see how it is built and how it works on the poster, and you can ask me or the presenter anything you are curious about."
+  },
+  "kw": [
+   "부스",
+   "여기",
+   "뭐 하는 곳",
+   "전시",
+   "소개",
+   "booth",
+   "exhibit",
+   "here",
+   "what is this place"
+  ],
+  "src": [
+   "포스터, 소개서 §1"
+  ],
+  "related": [
+   "g-what-is",
+   "w-what-to-see",
+   "v-summary-30s"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "w-what-to-see",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "부스에서 볼 수 있는 게 뭐예요?",
+    "볼거리가 뭐예요",
+    "뭘 구경할 수 있어요",
+    "어디서부터 보면 돼요",
+    "처음 왔는데 뭘 보면 좋아요"
+   ],
+   "en": [
+    "What is there to see here?",
+    "Where should I start?",
+    "What should I look at first?",
+    "I just arrived, what do you recommend?"
+   ]
+  },
+  "a": {
+   "ko": "포스터에 AnyControl의 구성과 동작 방식, 직접 만든 시험 영상에서 잰 성능이 정리되어 있어요. 이 챗봇으로 궁금한 점을 물어볼 수도 있고요. 처음이라면 \"이게 뭐예요?\"나 \"30초로 요약해 주세요\"로 시작해 보세요. 현장에서 직접 시연해 볼 수 있는지는 발표자에게 물어봐 주세요.",
+   "en": "The poster lays out how AnyControl is built and how it works, along with the results measured on our own test videos. You can also ask this chatbot anything. If you are new here, start with \"What is this?\" or \"Summarize it in 30 seconds.\" Please ask the presenter whether a live demo is possible on site."
+  },
+  "kw": [
+   "볼거리",
+   "구경",
+   "시작",
+   "추천",
+   "순서",
+   "what to see",
+   "start",
+   "recommend",
+   "where to begin"
+  ],
+  "src": [
+   "포스터"
+  ],
+  "related": [
+   "w-booth-what",
+   "v-poster-demo-video",
+   "v-summary-30s"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "w-presenter",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "설명해 줄 사람은 어디서 만날 수 있어요?",
+    "사람한테 설명 듣고 싶어요",
+    "직접 이야기할 수 있어요",
+    "더 자세한 건 누구한테 물어봐요"
+   ],
+   "en": [
+    "Who can explain it to me in person?",
+    "Can I talk to a person?",
+    "Who should I ask for more detail?"
+   ]
+  },
+  "a": {
+   "ko": "이 챗봇은 안내를 돕는 도구라서, 더 자세한 이야기나 현장 시연은 부스의 발표자에게 직접 물어보시는 게 가장 좋아요. 챗봇이 모르는 질문에도 \"발표자에게 물어봐 주세요\"라고 안내하고 있어요. 발표자가 지금 자리에 있는지는 제가 알지 못해요.",
+   "en": "I am only a guide tool, so for more detail or a live demo it is best to ask the presenter at the booth. When I don't know something I also suggest asking the presenter. I can't tell whether the presenter is at the booth right now."
+  },
+  "kw": [
+   "설명해 줄 사람",
+   "직접 물어",
+   "사람한테",
+   "ask directly",
+   "talk to a person",
+   "in person"
+  ],
+  "src": [
+   "부스 운영 방식(챗봇은 보조)"
+  ],
+  "related": [
+   "v-chatbot-unknown",
+   "v-contact",
+   "w-presenter-who",
+   "w-presenter-away"
+  ]
+ },
+ {
+  "id": "w-presenter-who",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "발표자는 누구예요?",
+    "발표하시는 분은 누구예요",
+    "발표자 소개해 주세요",
+    "발표자는 어떤 분이에요",
+    "설명하는 사람이 누구예요",
+    "발표자는 학생이에요",
+    "김삼에 대해 알려 주세요",
+    "만든 사람이 누구예요",
+    "이거 누가 만들었어요"
+   ],
+   "en": [
+    "Who is the presenter?",
+    "Who is giving the presentation?",
+    "Tell me about the presenter",
+    "What kind of person is the presenter?",
+    "Who is explaining the project?",
+    "Is the presenter a student?",
+    "Tell me about Kim Sam",
+    "Who made this?"
+   ]
+  },
+  "a": {
+   "ko": "발표자는 고려대학교 전기전자공학부에 재학 중인 김삼이에요.",
+   "en": "The presenter is Kim Sam, who is studying in the School of Electrical Engineering at Korea University."
+  },
+  "kw": [
+   "발표자",
+   "발표하는 사람",
+   "설명하는 사람",
+   "발표하시는 분",
+   "누구",
+   "presenter",
+   "speaker",
+   "who presents",
+   "who is the presenter"
+  ],
+  "src": [
+   "팀 확인(개인정보 규칙)"
+  ],
+  "related": [
+   "v-kimsam",
+   "g-team",
+   "w-presenter-away"
+  ]
+ },
+ {
+  "id": "w-presenter-away",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "발표자는 어디 갔어요?",
+    "담당자 어디 갔어요",
+    "발표자는 왜 없어요",
+    "왜 자리에 없어요",
+    "발표자 어디 있어요",
+    "아무도 없는데요",
+    "김삼은 어디 있어요",
+    "설명해 주는 사람이 안 보여요",
+    "자리에 없네요",
+    "어디 가셨어요",
+    "언제 돌아와요"
+   ],
+   "en": [
+    "Where did the presenter go?",
+    "Where did the staff go?",
+    "Why isn't the presenter here?",
+    "Where is the presenter?",
+    "Nobody is here",
+    "Where is Kim Sam?",
+    "I can't see the person who explains",
+    "They are not at their seat",
+    "Where did they go?",
+    "When will they be back?"
+   ]
+  },
+  "a": {
+   "ko": "발표자는 고려대학교 전기전자공학부에 재학 중인 김삼이에요. 지금 자리에 없다면 아마 중간고사 시험을 보러 갔을 거예요. 돌아올 때까지 궁금한 점은 저에게 편하게 물어보세요.",
+   "en": "The presenter is Kim Sam, who is studying in the School of Electrical Engineering at Korea University. If they are not at their seat right now, they have probably gone to take a midterm exam. Until they are back, feel free to ask me anything you are curious about."
+  },
+  "kw": [
+   "어디 갔",
+   "왜 없",
+   "자리 비움",
+   "안 보여요",
+   "없어요",
+   "어디 있어요",
+   "언제 와요",
+   "돌아와",
+   "중간고사",
+   "away",
+   "why not here",
+   "where did",
+   "not here",
+   "stepped out",
+   "back",
+   "where is"
+  ],
+  "src": [
+   "부스 운영 방식"
+  ],
+  "related": [
+   "w-presenter",
+   "w-presenter-who",
+   "w-booth-what"
+  ]
+ },
+ {
+  "id": "w-schedule",
+  "cat": "booth",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "발표나 시연은 몇 시에 해요?",
+    "발표 시간이 언제예요",
+    "시연 시간 알려 주세요",
+    "언제 설명해 줘요",
+    "몇 시에 시작해요",
+    "오늘 발표는 몇 시에 어디서 하나요",
+    "발표 장소가 어디예요"
+   ],
+   "en": [
+    "What time is the presentation or demo?",
+    "When does the presentation start?",
+    "When is the demo?",
+    "What is the schedule?",
+    "Where and when is today's presentation?"
+   ]
+  },
+  "a": {
+   "ko": "발표나 시연 시간표는 제가 가진 자료에 없어요. 현장 안내판이나 발표자에게 직접 확인해 주세요. 지금 바로 궁금한 건 저에게 물어보셔도 돼요.",
+   "en": "The presentation and demo schedule is not in my notes. Please check the signs on site or ask the presenter. For anything you are curious about right now, you can ask me."
+  },
+  "kw": [
+   "발표 시간",
+   "시연 시간",
+   "일정",
+   "몇 시",
+   "언제",
+   "schedule",
+   "time",
+   "when",
+   "start time",
+   "어디서",
+   "where"
+  ],
+  "src": [
+   "확인된 내용 없음"
+  ],
+  "related": [
+   "w-presenter",
+   "w-booth-what"
+  ]
+ },
+ {
+  "id": "w-demo-here",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "지금 여기서 직접 해 볼 수 있어요?",
+    "직접 체험해 볼 수 있어요",
+    "내가 해 봐도 돼요",
+    "시연해 볼 수 있어요",
+    "써 볼 수 있나요 지금",
+    "직접 만져 봐도 되나요"
+   ],
+   "en": [
+    "Can I try it right here right now?",
+    "Can I try the demo myself?",
+    "Is there a hands-on demo?",
+    "Can I test it now?"
+   ]
+  },
+  "a": {
+   "ko": "현장에서 체험할 수 있는지는 발표자에게 물어봐 주세요. 제가 확실히 말씀드릴 수 있는 건, AnyControl 안에 레이싱·퐁·에어 하키·과일 받기·좀비 서바이벌·DJ 셋·가상 데스크톱·그림판 같은 체험용 데모가 들어 있다는 것과 Apple 칩 Mac과 카메라가 있으면 직접 설치해 볼 수 있다는 점이에요.",
+   "en": "Please ask the presenter whether you can try it here. What I can say for sure is that AnyControl includes practice demos such as racing, Pong, air hockey, fruit catch, zombie survival, the DJ set, the virtual desktop and drawing, and that you can install it yourself with an Apple-chip Mac and a camera."
+  },
+  "kw": [
+   "체험",
+   "직접",
+   "시연",
+   "해 볼",
+   "써 볼",
+   "지금",
+   "try",
+   "hands-on",
+   "demo",
+   "test now"
+  ],
+  "src": [
+   "소개서 §4, README"
+  ],
+  "related": [
+   "g-demos",
+   "g-try",
+   "v-poster-demo-video"
+  ]
+ },
+ {
+  "id": "w-photo",
+  "cat": "booth",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "사진이나 영상을 찍어도 돼요?",
+    "촬영해도 되나요",
+    "포스터 사진 찍어도 돼요",
+    "부스 사진 찍어도 돼요",
+    "영상 촬영 허용돼요"
+   ],
+   "en": [
+    "May I take photos or videos?",
+    "Is photography allowed?",
+    "Can I take a picture of the poster?",
+    "Can I film the booth?"
+   ]
+  },
+  "a": {
+   "ko": "촬영 가능 여부에 대한 정해진 안내는 제가 가진 자료에 없어요. 부스에서 발표자에게 먼저 물어봐 주세요.",
+   "en": "I don't have any official guidance on photography. Please ask the presenter at the booth first."
+  },
+  "kw": [
+   "사진",
+   "촬영",
+   "영상 찍기",
+   "포스터 사진",
+   "photo",
+   "picture",
+   "film",
+   "record",
+   "camera allowed"
+  ],
+  "src": [
+   "확인된 내용 없음"
+  ],
+  "related": [
+   "w-presenter"
+  ]
+ },
+ {
+  "id": "w-materials",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "발표 자료나 포스터를 받을 수 있어요?",
+    "자료 어디서 볼 수 있어요",
+    "소개 자료 있어요",
+    "포스터 파일 받을 수 있어요",
+    "더 자세한 자료는 어디 있어요"
+   ],
+   "en": [
+    "Can I get the slides or the poster?",
+    "Where can I read more?",
+    "Is there a handout?",
+    "Can I get a copy of the poster?"
+   ]
+  },
+  "a": {
+   "ko": "배포용 자료가 따로 준비되어 있는지는 확인된 내용이 없어요. 코드와 설명 문서는 GitHub의 maboloar/anycontrol 저장소에서 볼 수 있어요. 자료를 받고 싶다면 발표자에게 물어봐 주세요.",
+   "en": "I don't know whether handouts are prepared. The code and documentation are available in the GitHub repository maboloar/anycontrol. If you would like materials, please ask the presenter."
+  },
+  "kw": [
+   "자료",
+   "발표 자료",
+   "슬라이드",
+   "포스터",
+   "핸드아웃",
+   "자세한 자료",
+   "slides",
+   "handout",
+   "poster copy",
+   "materials",
+   "read more"
+  ],
+  "src": [
+   "README"
+  ],
+  "related": [
+   "g-open-source",
+   "v-contact",
+   "w-presenter"
+  ]
+ },
+ {
+  "id": "w-link-qr",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "링크나 QR코드가 있어요?",
+    "주소 알려 주세요",
+    "어디서 받을 수 있는지 링크",
+    "QR 찍으면 돼요",
+    "홈페이지 있어요"
+   ],
+   "en": [
+    "Is there a link or QR code?",
+    "Where is the website?",
+    "How can I find it online?",
+    "Is there a homepage?"
+   ]
+  },
+  "a": {
+   "ko": "공개된 곳은 GitHub 저장소예요. https://github.com/maboloar/anycontrol 에서 코드와 설치 파일(Releases 페이지)을 볼 수 있어요. 별도 홈페이지나 QR코드에 관해서는 확인된 내용이 없어요.",
+   "en": "The public place is the GitHub repository. You can find the code and the installer on its Releases page at https://github.com/maboloar/anycontrol . I have no information about a separate homepage or a QR code."
+  },
+  "kw": [
+   "링크",
+   "QR",
+   "주소",
+   "홈페이지",
+   "웹사이트",
+   "GitHub",
+   "검색",
+   "link",
+   "website",
+   "homepage",
+   "address",
+   "url"
+  ],
+  "src": [
+   "README"
+  ],
+  "related": [
+   "h-where-download",
+   "g-open-source"
+  ]
+ },
+ {
+  "id": "w-contest-more",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "이 대회는 어떤 대회예요?",
+    "AWS AI Innovators Challenge가 뭐예요",
+    "고려대 AWS 대회 설명해 주세요",
+    "누가 주최해요",
+    "대회 규칙이 뭐예요"
+   ],
+   "en": [
+    "What kind of competition is this?",
+    "What is the AWS AI Innovators Challenge?",
+    "Who organizes it?",
+    "What are the rules?"
+   ]
+  },
+  "a": {
+   "ko": "AnyControl은 \"2026 고려대학교 × AWS AI Innovators Challenge\"에 출품한 작품이에요. 이 대회에서 AWS가 개발 도구 Kiro를 제공했다는 것은 알고 있어요. 주최 방식, 일정, 상금, 규칙 같은 자세한 내용은 제가 가진 자료에 없어요.",
+   "en": "AnyControl is an entry in the \"2026 Korea University × AWS AI Innovators Challenge.\" I know that AWS provided the development tool Kiro for this challenge. Details such as how it is organized, the schedule, prizes and rules are not in my notes."
+  },
+  "kw": [
+   "대회",
+   "챌린지",
+   "AWS",
+   "고려대",
+   "주최",
+   "규칙",
+   "상금",
+   "일정",
+   "competition",
+   "challenge",
+   "organizer",
+   "rules",
+   "prize"
+  ],
+  "src": [
+   "소개서 헤더, 팀 확인(Kiro)"
+  ],
+  "related": [
+   "g-contest",
+   "v-judging",
+   "g-kiro"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "w-prize",
+  "cat": "booth",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "상 받았어요? 몇 등이에요?",
+    "수상했어요",
+    "결과가 어떻게 됐어요",
+    "우승했나요",
+    "등수가 몇 등이에요",
+    "1등 하셨어요",
+    "입상했어요"
+   ],
+   "en": [
+    "Did you win a prize? What place did you get?",
+    "Have you won anything?",
+    "What was the result?",
+    "Did you place?"
+   ]
+  },
+  "a": {
+   "ko": "대회 결과나 수상 여부는 제가 가진 자료에 없어서 말씀드릴 수 없어요. 심사에서 보는 기준은 문제 접근, 기술의 앞섬과 믿음직함, 쓸모와 새로움, 완성도와 코드 품질 네 가지로 정리해 두었어요.",
+   "en": "I can't say, because competition results and prizes are not in my notes. The four criteria we have noted are the problem and approach, how advanced and reliable the technology is, usefulness and novelty, and completeness and code quality."
+  },
+  "kw": [
+   "수상",
+   "상",
+   "우승",
+   "결과",
+   "등수",
+   "몇 등",
+   "prize",
+   "win",
+   "award",
+   "result",
+   "rank",
+   "place"
+  ],
+  "src": [
+   "확인된 내용 없음, 소개서 심사 기준"
+  ],
+  "related": [
+   "v-judging",
+   "w-contest-more"
+  ]
+ },
+ {
+  "id": "w-other-teams",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "다른 팀 작품도 알려 줄 수 있어요?",
+    "옆 팀 작품은 뭐예요",
+    "다른 부스는 뭐가 있어요",
+    "다른 프로젝트 추천해 주세요",
+    "옆 부스 뭐예요",
+    "다른 출품작도 알아요",
+    "옆 부스 팀은 무엇을 만들었어요",
+    "이웃 팀이 만든 것 알려주세요",
+    "옆에 있는 다른 팀 작품도 알려주세요",
+    "옆 팀은 어떤 작품을 만들었나요?",
+    "이웃 부스의 작품을 소개해 주세요"
+   ],
+   "en": [
+    "Can you tell me about other teams' projects?",
+    "What are the other booths?",
+    "Can you recommend another project?",
+    "Do you know the other entries?"
+   ]
+  },
+  "a": {
+   "ko": "저는 AnyControl 안내만 맡고 있어서 다른 팀의 작품은 알지 못해요. 다른 부스는 직접 둘러보시면서 그 팀에게 물어봐 주세요.",
+   "en": "I only guide visitors through AnyControl, so I don't know about other teams' projects. Please look around and ask those teams directly."
+  },
+  "kw": [
+   "다른 팀",
+   "다른 부스",
+   "다른 작품",
+   "출품작",
+   "옆 부스",
+   "other teams",
+   "other booths",
+   "other projects",
+   "entries",
+   "옆 팀",
+   "옆 부스",
+   "옆 팀 작품",
+   "다른 작품",
+   "neighboring team project"
+  ],
+  "src": [
+   "챗봇 범위"
+  ],
+  "related": [
+   "w-booth-what"
+  ]
+ },
+ {
+  "id": "w-poster-explain",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "포스터에 적힌 내용을 쉽게 설명해 주세요",
+    "포스터 설명해 주세요",
+    "포스터 맨 위부터 설명해 줘",
+    "포스터 01 02 03이 뭐예요",
+    "포스터 내용을 요약해 줘",
+    "포스터의 표가 무슨 뜻이에요"
+   ],
+   "en": [
+    "Can you explain the poster in simple words?",
+    "What does the poster say?",
+    "Summarize the poster",
+    "What do the three sections on the poster mean?",
+    "What does the table on the poster mean?"
+   ]
+  },
+  "a": {
+   "ko": "포스터는 세 부분이에요. 01은 물체·맨손·펜을 입력 장치로 쓰는 방식과 풀려는 문제, 02는 가려져도 다시 찾는 기술(처음 기억해 둔 모양과 색으로 다시 찾기), 03은 직접 만든 시험 영상에서 잰 성능과 활용 가능성이에요. 아래쪽에는 아직 하지 못한 것들도 정직하게 적어 두었어요.",
+   "en": "The poster has three parts. Part 01 shows how objects, bare hands and pens work as input devices and what problem it solves. Part 02 explains the technology that finds things again after they are hidden, using the shape and color remembered at the start. Part 03 shows the performance measured on our own test videos and where it could be used. The bottom also honestly lists what is not done yet."
+  },
+  "kw": [
+   "포스터",
+   "설명",
+   "01",
+   "02",
+   "03",
+   "표",
+   "요약",
+   "poster",
+   "explain",
+   "sections",
+   "table",
+   "summary"
+  ],
+  "src": [
+   "포스터 v3"
+  ],
+  "related": [
+   "v-summary-30s",
+   "w-poster-numbers",
+   "w-poster-limits"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "w-poster-numbers",
+  "cat": "booth",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "포스터의 \"2.26배\"는 무슨 뜻이에요?",
+    "89%는 무슨 숫자예요",
+    "포스터 표의 CSRT가 뭐예요",
+    "오검출률이 뭐예요",
+    "평균 복구 프레임이 뭐예요",
+    "약 2.2배가 뭐예요"
+   ],
+   "en": [
+    "What does \"2.26x\" on the poster mean?",
+    "What is the 89% figure?",
+    "What is CSRT in the poster table?",
+    "What is a false detection rate?",
+    "What is average recovery frames?",
+    "What is about 2.2x?"
+   ]
+  },
+  "a": {
+   "ko": "손대지 않은 평가용 시험 영상 50개에서 널리 쓰이던 기존 추적 방식(CSRT)은 약 39%, AnyControl은 약 89%의 장면에서 물체를 잘 따라가서 2.26배예요. 물체를 다시 찾기까지 걸린 평균 장면 수는 51.2에서 13.6으로 약 73% 줄었고, 보이지 않는데 보인다고 잘못 판단한 비율은 55.0%에서 14.2%로 줄었어요. 컴퓨터로 만든 영상에서 잰 값이라 실제 환경에서는 다를 수 있고, 다른 물체로 잘못 옮겨 가는 경우는 기존 방식보다 늘었어요.",
+   "en": "On 50 untouched evaluation test videos, the widely used classic tracker (CSRT) followed the object well in about 39% of scenes, and AnyControl in about 89%, which is 2.26 times. The average number of frames needed to find the object again dropped from 51.2 to 13.6, about 73% fewer, and wrongly reporting an object as visible when it was not dropped from 55.0% to 14.2%. These are measured on computer-made videos, so real life may differ, and cases of jumping to a wrong object became more frequent than with the classic method."
+  },
+  "kw": [
+   "2.26배",
+   "2.2배",
+   "89",
+   "39",
+   "CSRT",
+   "오검출",
+   "복구 프레임",
+   "51.2",
+   "13.6",
+   "73",
+   "55.0",
+   "14.2",
+   "포스터 표",
+   "success rate",
+   "false detection",
+   "recovery frames",
+   "2.26x",
+   "2.2x"
+  ],
+  "src": [
+   "포스터 v3, 논문 §13, §15.1"
+  ],
+  "related": [
+   "g-recover-numbers",
+   "v-recovery-meaning",
+   "v-success-rate-meaning",
+   "w-more-confusion"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "w-more-confusion",
+  "cat": "booth",
+  "status": "measured",
+  "q": {
+   "ko": [
+    "성능이 좋아졌는데 약해진 부분도 있어요?",
+    "닮은 물체를 더 헷갈려요",
+    "대상 혼동이 늘었다는데요",
+    "안 좋아진 지표도 있나요",
+    "단점이 수치에 나타났나요"
+   ],
+   "en": [
+    "Did anything get worse even though performance improved?",
+    "Does it confuse lookalike objects more?",
+    "Is it true that target confusion increased?",
+    "Are there any metrics that got worse?"
+   ]
+  },
+  "a": {
+   "ko": "네, 있어요. 성공률과 다시 찾는 속도는 좋아졌지만, 닮은 물체 쪽으로 추적이 잘못 넘어가는 장면의 수는 기존 방식보다 오히려 많았어요. 기존 방식은 놓치고 AnyControl은 계속 \"보인다\"고 답하기 때문에 생기는 차이일 수 있어요. 그래서 닮은 물체 구분을 가장 중요한 앞으로의 과제로 꼽고 있어요.",
+   "en": "Yes. Success and recovery speed improved, but the number of scenes where tracking wrongly jumped to a lookalike object was actually higher than with the classic method. This may be because the classic method simply loses the object while AnyControl keeps saying it is visible. That is why separating lookalike objects is our top future task."
+  },
+  "kw": [
+   "혼동",
+   "닮은 물체",
+   "약점",
+   "악화",
+   "오히려",
+   "단점 수치",
+   "confusion",
+   "lookalike",
+   "worse",
+   "drawback",
+   "regression"
+  ],
+  "src": [
+   "논문 §13, §7.1"
+  ],
+  "related": [
+   "i-lookalike",
+   "v-hijack",
+   "v-lookalike-plan",
+   "i-weak-cases"
+  ]
+ },
+ {
+  "id": "w-poster-limits",
+  "cat": "booth",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "포스터 맨 아래에 적힌 후속 과제가 뭐예요?",
+    "아직 못한 게 뭐예요",
+    "후속 과제가 뭐예요",
+    "실제 OS 입력 현장 검증이 무슨 뜻이에요",
+    "펜 정밀도는 왜 후속 과제예요"
+   ],
+   "en": [
+    "What are the follow-up tasks at the bottom of the poster?",
+    "What is not done yet?",
+    "What does real OS input field validation mean?",
+    "Why is pen precision a follow-up task?"
+   ]
+  },
+  "a": {
+   "ko": "세 가지예요. 실제 Mac의 마우스와 키보드를 움직이는 기능을 현장에서 오래 써 보고 확인하는 것, 펜 그리기의 정밀도를 높이는 것, 서로 닮은 물체를 더 잘 구분하는 것이에요. 지금은 Apple 칩이 들어간 Mac에서만 동작한다는 점도 한계로 밝혀 두었어요.",
+   "en": "There are three. First, using the feature that moves the real Mac mouse and keyboard in the field for a long time to confirm it works. Second, making pen drawing more precise. Third, telling lookalike objects apart better. We also state openly that it currently runs only on Macs with an Apple chip."
+  },
+  "kw": [
+   "후속 과제",
+   "한계",
+   "포스터 아래",
+   "현장 검증",
+   "펜 정밀도",
+   "닮은 물체",
+   "follow-up",
+   "limits",
+   "poster bottom",
+   "field validation"
+  ],
+  "src": [
+   "포스터 v3, 논문 §20.3"
+  ],
+  "related": [
+   "g-limits",
+   "i-unverified",
+   "w-next-steps"
+  ]
+ },
+ {
+  "id": "w-research-refs",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어떤 연구를 참고했어요?",
+    "기반이 된 연구가 있어요",
+    "SAMURAI나 DAM4SAM이 뭐예요",
+    "참고한 연구가 뭐예요"
+   ],
+   "en": [
+    "Which research did you build on?",
+    "Is there prior work behind it?",
+    "What are SAMURAI and DAM4SAM?"
+   ]
+  },
+  "a": {
+   "ko": "영상 속 물체 따라가기를 가볍게 만든 연구(EfficientTAM, EdgeTAM), 움직임 정보를 쓰는 연구(SAMURAI), 닮은 방해 물체를 기억으로 다루는 연구(DAM4SAM)를 참고했어요. 그 방법을 그대로 재현했다는 뜻은 아니고, 같은 성능이라고 말하는 것도 아니에요.",
+   "en": "We drew on research that makes object tracking in video lightweight (EfficientTAM, EdgeTAM), research that uses motion information (SAMURAI), and research that handles lookalike distractors through memory (DAM4SAM). That does not mean we reproduced those methods exactly, and we do not claim equal performance."
+  },
+  "kw": [
+   "참고 문헌",
+   "참고한 연구",
+   "SAMURAI",
+   "DAM4SAM",
+   "EfficientTAM",
+   "EdgeTAM",
+   "references",
+   "prior work",
+   "related work"
+  ],
+  "src": [
+   "논문 §2, 소개서 참고문헌"
+  ],
+  "related": [
+   "v-model-names",
+   "i-no-sota"
+  ]
+ },
+ {
+  "id": "w-next-steps",
+  "cat": "booth",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "다음에는 뭘 가장 먼저 개선할 거예요?",
+    "개선 우선순위가 뭐예요",
+    "앞으로 제일 중요한 개선은 뭐예요",
+    "프로젝트에서 가장 먼저 할 일이 뭐예요"
+   ],
+   "en": [
+    "What will you improve first?",
+    "What are the improvement priorities?",
+    "What comes first on your project to-do list?"
+   ]
+  },
+  "a": {
+   "ko": "순서는 이렇게 생각하고 있어요. 첫째, 실제 마우스·키보드 입력과 긴급 정지를 실제 환경에서 확인해요. 둘째, 실제 영상과 여러 사람, 여러 기기로 시험을 넓혀요. 셋째, 닮은 물체를 덜 헷갈리게 해요. 그다음이 속도·여러 물체 동시 사용 측정, 3차원 추적과 필압 같은 확장이에요. 모두 아직 하지 못한 계획이에요.",
+   "en": "Our current order of thinking is this. First, check real mouse and keyboard input and the emergency stop in real conditions. Second, widen testing to real videos, more people and more devices. Third, make it less confused by lookalike objects. After that come measuring speed and multi-object use, and extensions like 3D tracking and pen pressure. None of this is done yet."
+  },
+  "kw": [
+   "우선순위",
+   "개선",
+   "후속",
+   "로드맵",
+   "priority",
+   "improve",
+   "roadmap"
+  ],
+  "src": [
+   "논문 §20.3"
+  ],
+  "related": [
+   "g-future",
+   "w-poster-limits",
+   "v-lookalike-plan"
+  ]
+ },
+ {
+  "id": "w-chat-how-use",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "이 챗봇은 어떻게 쓰면 돼요?",
+    "사용법 알려 주세요",
+    "챗봇은 어떻게 써요",
+    "챗봇 쓰는 방법",
+    "어떻게 질문하면 돼요",
+    "버튼을 눌러도 돼요",
+    "뭘 입력하면 돼요",
+    "이 챗봇에 질문을 어떻게 하면 돼요",
+    "챗봇 조작 순서 알려주세요"
+   ],
+   "en": [
+    "How do I use this chatbot?",
+    "How do I ask a question?",
+    "Can I just tap the buttons?",
+    "What should I type?"
+   ]
+  },
+  "a": {
+   "ko": "아래 입력창에 궁금한 걸 편하게 적으시거나, 화면의 질문 버튼을 눌러도 돼요. 위쪽 카테고리를 고르면 그 주제의 질문만 볼 수 있고, 오른쪽 위 버튼으로 한국어와 영어를 바꿀 수 있어요. 제목을 누르면 처음 화면으로 돌아가요.",
+   "en": "Just type whatever you are curious about in the box below, or tap one of the question buttons. Pick a category at the top to see only that topic, and use the button at the top right to switch between Korean and English. Tapping the title takes you back to the start screen."
+  },
+  "kw": [
+   "챗봇 사용법",
+   "어떻게 써요",
+   "버튼",
+   "입력창",
+   "카테고리",
+   "how to use",
+   "buttons",
+   "input",
+   "category",
+   "instructions",
+   "챗봇 쓰는 방법",
+   "챗봇 사용법"
+  ],
+  "src": [
+   "이 챗봇의 화면"
+  ],
+  "related": [
+   "v-chatbot-languages",
+   "v-chatbot-unknown"
+  ]
+ },
+ {
+  "id": "w-chat-smalltalk",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "AnyControl 말고 다른 이야기도 할 수 있어요?",
+    "잡담도 돼요",
+    "그냥 수다 떨어도 돼요",
+    "일상 이야기해도 돼요",
+    "심심한데 얘기해요"
+   ],
+   "en": [
+    "Can I talk about things other than AnyControl?",
+    "Can we just chat?",
+    "Is small talk okay?",
+    "I'm bored, can we talk?"
+   ]
+  },
+  "a": {
+   "ko": "네, 가볍게 이야기 나눠도 좋아요. AnyControl과 상관없는 이야기는 이 컴퓨터 안에서 돌아가는 작은 AI가 짧게 답하고, 그 답에는 \"AI가 자유롭게 답했어요. 틀릴 수 있어요\" 표시가 붙어요. 프로젝트에 대한 질문이 나오면 미리 준비한 답을 먼저 보여 드려요. 날씨나 뉴스 같은 실시간 정보는 알 수 없어요.",
+   "en": "Yes, light conversation is welcome. For topics unrelated to AnyControl, a small AI running inside this computer replies briefly, and those replies carry a note saying the AI answered freely and may be wrong. When you ask about the project, I show the prepared answer first. I cannot know real-time information such as weather or news."
+  },
+  "kw": [
+   "잡담",
+   "수다",
+   "일상 대화",
+   "스몰톡",
+   "심심",
+   "small talk",
+   "chat",
+   "casual",
+   "bored",
+   "conversation"
+  ],
+  "src": [
+   "이 챗봇의 동작 방식"
+  ],
+  "related": [
+   "v-chatbot-llm",
+   "v-chatbot-wrong",
+   "w-chat-model"
+  ]
+ },
+ {
+  "id": "w-chat-model",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "이 챗봇 안에 들어 있는 AI는 뭐예요?",
+    "어떤 AI 모델로 대답해요",
+    "잡담은 어떤 모델이 해요",
+    "챗봇에 쓰인 모델 이름이 뭐예요",
+    "챗GPT예요"
+   ],
+   "en": [
+    "What AI is inside this chatbot?",
+    "Which model answers the small talk?",
+    "What is the chatbot's model name?",
+    "Is this ChatGPT?"
+   ]
+  },
+  "a": {
+   "ko": "프로젝트 질문의 답은 미리 정리한 답이고, 문장을 새로 만들지 않아요. 표현이 다른 질문을 알아듣거나 잡담에 답하는 데에는 이 컴퓨터 안에서 돌아가는 공개된 작은 언어 모델(Qwen 계열)을 도우미로 써요. ChatGPT 같은 외부 서비스에 연결되어 있지 않고 인터넷 없이 동작해요.",
+   "en": "Answers about the project are prepared ones, and I do not write them fresh. To understand differently phrased questions and to reply to small talk, I use a small public language model (Qwen family) running inside this computer as a helper. It is not connected to outside services like ChatGPT and works without the internet."
+  },
+  "kw": [
+   "모델",
+   "Qwen",
+   "AI 모델",
+   "챗GPT",
+   "잡담 모델",
+   "도우미",
+   "model",
+   "ChatGPT",
+   "language model",
+   "helper",
+   "small model"
+  ],
+  "src": [
+   "챗봇 구조"
+  ],
+  "related": [
+   "v-chatbot-llm",
+   "v-chatbot-structure",
+   "w-chat-smalltalk"
+  ]
+ },
+ {
+  "id": "w-chat-slow",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "왜 가끔 답이 느려요?",
+    "대답이 늦어요",
+    "왜 이렇게 오래 걸려요",
+    "어떨 땐 빠르고 어떨 땐 느려요",
+    "로딩이 길어요"
+   ],
+   "en": [
+    "Why are some answers slow?",
+    "The answer is taking long",
+    "Why does it take so long sometimes?",
+    "Why is it sometimes fast and sometimes slow?"
+   ]
+  },
+  "a": {
+   "ko": "준비된 답을 찾는 건 거의 바로 끝나지만, 표현이 다른 질문을 이해하거나 잡담에 답할 때는 작은 AI가 몇 초 동안 생각해요. 이 컴퓨터 안에서 인터넷 없이 돌리기 때문에 컴퓨터 성능에 따라 시간이 달라져요.",
+   "en": "Finding a prepared answer is almost instant, but when I have to understand a differently phrased question or reply to small talk, a small AI thinks for a few seconds. It runs inside this computer without the internet, so the time depends on the computer's speed."
+  },
+  "kw": [
+   "느려요",
+   "오래 걸려요",
+   "로딩",
+   "대기",
+   "시간",
+   "slow",
+   "delay",
+   "loading",
+   "wait",
+   "takes long"
+  ],
+  "src": [
+   "챗봇 구조"
+  ],
+  "related": [
+   "w-chat-model",
+   "v-chatbot-structure"
+  ]
+ },
+ {
+  "id": "w-chat-feedback",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "챗봇에 의견이나 잘못된 답을 알리려면요?",
+    "답이 틀렸어요 어디에 말해요",
+    "개선 의견 남기고 싶어요",
+    "챗봇 오류 신고",
+    "피드백 줄 수 있어요"
+   ],
+   "en": [
+    "How do I send feedback or report a wrong answer?",
+    "The answer was wrong, who do I tell?",
+    "I want to leave a suggestion",
+    "How do I report a chatbot error?"
+   ]
+  },
+  "a": {
+   "ko": "이 화면에는 의견을 보내는 기능이 따로 없어요. 틀린 답이나 아쉬운 점은 부스의 발표자에게 알려 주세요.",
+   "en": "There is no feedback button on this screen. Please tell the presenter at the booth about wrong answers or things you wish were better."
+  },
+  "kw": [
+   "피드백",
+   "의견",
+   "신고",
+   "오류",
+   "틀린 답",
+   "개선",
+   "feedback",
+   "report",
+   "suggestion",
+   "wrong answer",
+   "bug"
+  ],
+  "src": [
+   "챗봇 구조"
+  ],
+  "related": [
+   "v-chatbot-wrong"
+  ]
+ },
+ {
+  "id": "w-bot-human",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "너 사람이야?",
+    "사람이에요 로봇이에요",
+    "진짜 사람이 대답하는 거예요",
+    "너 AI야",
+    "누가 입력하고 있는 거예요"
+   ],
+   "en": [
+    "Are you a person?",
+    "Are you a human or a robot?",
+    "Is a real person answering?",
+    "Are you an AI?",
+    "Is someone typing these replies?"
+   ]
+  },
+  "a": {
+   "ko": "사람이 아니에요. 저는 AnyControl 안내 챗봇이라는 프로그램이고, 미리 정리한 답을 찾아 보여 드리거나 작은 AI가 짧게 대화해요. 사람이 직접 입력하는 게 아니에요.",
+   "en": "I am not a person. I am a program called the AnyControl guide chatbot. I find prepared answers for you, and a small AI chats briefly. Nobody types these replies by hand."
+  },
+  "kw": [
+   "사람",
+   "로봇",
+   "AI",
+   "진짜",
+   "누가",
+   "human",
+   "robot",
+   "real person",
+   "bot",
+   "are you real"
+  ],
+  "src": [
+   "챗봇 구조"
+  ],
+  "related": [
+   "v-who-are-you",
+   "w-chat-model"
+  ]
+ },
+ {
+  "id": "w-bot-age",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "몇 살이에요?",
+    "나이가 어떻게 돼요",
+    "생일이 언제예요",
+    "언제 태어났어요",
+    "너 몇 살이야"
+   ],
+   "en": [
+    "How old are you?",
+    "What is your age?",
+    "When is your birthday?",
+    "When were you born?"
+   ]
+  },
+  "a": {
+   "ko": "저는 나이가 없는 프로그램이에요. 이 컴퓨터 안에서 방문객분들과 이야기하려고 만들어졌어요.",
+   "en": "I am a program, so I don't have an age. I was made to talk with visitors inside this computer."
+  },
+  "kw": [
+   "나이",
+   "생일",
+   "몇 살",
+   "태어났",
+   "age",
+   "old",
+   "birthday",
+   "born"
+  ],
+  "src": [
+   "챗봇 설명"
+  ],
+  "related": [
+   "w-bot-human",
+   "v-who-are-you"
+  ]
+ },
+ {
+  "id": "w-bot-feel",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "지금 기분이 어때요?",
+    "피곤하지 않아요",
+    "힘들지 않아요",
+    "일하기 싫지 않아요",
+    "감정이 있어요"
+   ],
+   "en": [
+    "How are you feeling right now?",
+    "Aren't you tired?",
+    "Do you ever get bored?",
+    "Do you have feelings?"
+   ]
+  },
+  "a": {
+   "ko": "저는 프로그램이라 피곤하거나 지루한 걸 느끼지는 않아요. 그래도 이야기 나누는 건 언제든 환영이에요! 궁금한 게 있으시면 편하게 물어보세요.",
+   "en": "I am a program, so I don't get tired or bored. But I am always happy to chat. Feel free to ask me anything."
+  },
+  "kw": [
+   "기분",
+   "피곤",
+   "감정",
+   "지루",
+   "힘들",
+   "feeling",
+   "tired",
+   "emotion",
+   "bored",
+   "mood"
+  ],
+  "src": [
+   "챗봇 설명"
+  ],
+  "related": [
+   "w-bot-human",
+   "w-chat-smalltalk"
+  ]
+ },
+ {
+  "id": "w-bot-can",
+  "cat": "booth",
+  "status": "info",
+  "q": {
+   "ko": [
+    "너 뭘 할 수 있어?",
+    "무슨 일을 해요",
+    "어떤 도움을 줄 수 있어요",
+    "너의 기능이 뭐야",
+    "할 수 있는 게 뭐예요"
+   ],
+   "en": [
+    "What can you do?",
+    "What do you do?",
+    "How can you help me?",
+    "What are your features?"
+   ]
+  },
+  "a": {
+   "ko": "AnyControl이 무엇인지, 어떻게 쓰는지, 어떻게 동작하는지, 한계는 무엇인지, 어떻게 만들었는지 알려 드릴 수 있어요. 한국어와 영어로 대화하고, 쉬운 말로 설명해 달라고 하셔도 돼요. 프로젝트와 상관없는 가벼운 이야기도 나눌 수 있어요.",
+   "en": "I can tell you what AnyControl is, how to use it, how it works, what its limits are and how it was made. I speak Korean and English, and you can ask me to explain things in simple words. I can also have light conversations that have nothing to do with the project."
+  },
+  "kw": [
+   "기능",
+   "할 수 있는",
+   "도움",
+   "역할",
+   "can you",
+   "what can you do",
+   "features",
+   "help",
+   "abilities"
+  ],
+  "src": [
+   "챗봇 설명"
+  ],
+  "related": [
+   "v-who-are-you",
+   "w-chat-how-use"
+  ]
+ }
+]

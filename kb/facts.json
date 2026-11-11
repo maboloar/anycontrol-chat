@@ -1,0 +1,586 @@
+{
+ "_설명": "챗봇 카드가 기대고 있는 사실(수치·기본값·존재 여부)을 AnyControl 코드/문서에서 자동으로 다시 확인하기 위한 목록. python3 tools/sync_check.py 가 읽는다. 앱이 업데이트되어 값이 바뀌면 '어긋남'으로 표시되고, 연결된 cards 를 다시 검토해야 한다. 값이 의도대로 바뀐 것이 확인되면 expect 를 고친다.",
+ "_종류": {
+  "regex": "file 에서 pattern 의 첫 번째 괄호 값이 expect 와 같아야 함",
+  "exists": "path(글롭 가능)가 있는지(expect: true/false)",
+  "contains": "file 에 texts 가 모두 들어 있어야 함"
+ },
+ "facts": [
+  {
+   "id": "app-version",
+   "desc": "앱 버전",
+   "kind": "regex",
+   "file": "package.json",
+   "pattern": "\"version\":\\s*\"([^\"]+)\"",
+   "expect": "1.8.0",
+   "cards": [
+    "v-version",
+    "h-update",
+    "g-try",
+    "h-where-download"
+   ]
+  },
+  {
+   "id": "max-objects",
+   "desc": "동시에 추적하는 최대 물체 수",
+   "kind": "regex",
+   "file": "backend/src/vision_input/pipeline.py",
+   "pattern": "MAX_OBJECTS\\s*=\\s*(\\d+)",
+   "expect": "6",
+   "cards": [
+    "g-multi-object",
+    "i-max-objects",
+    "i-many-objects-perf",
+    "v-vision-input"
+   ]
+  },
+  {
+   "id": "mouse-depth-default",
+   "desc": "물체 마우스의 앞뒤 신호 기본값 (README 는 '깊이 모델'이라 쓰지만 코드는 size)",
+   "kind": "regex",
+   "file": "backend/src/vision_input/io/mouse.py",
+   "pattern": "depth_source:\\s*Literal\\[[^\\]]*\\]\\s*=\\s*\"(\\w+)\"",
+   "expect": "size",
+   "cards": [
+    "i-depth-how",
+    "i-depth-ai",
+    "i-depth-not-validated",
+    "v-why-depth-updown"
+   ]
+  },
+  {
+   "id": "pen-contact-default",
+   "desc": "펜 접촉 판정 기본 방식",
+   "kind": "regex",
+   "file": "backend/src/vision_input/pen.py",
+   "pattern": "contact_method:\\s*str\\s*=\\s*\"(\\w+)\"",
+   "expect": "floor",
+   "cards": [
+    "i-pen-contact",
+    "g-pen-mode",
+    "v-pen-air",
+    "v-pen-accuracy"
+   ]
+  },
+  {
+   "id": "on-lost-default",
+   "desc": "물체를 놓쳤을 때 입력 기본 동작",
+   "kind": "regex",
+   "file": "backend/src/vision_input/mapping/schema.py",
+   "pattern": "on_lost:\\s*Literal\\[[^\\]]*\\]\\s*=\\s*\"(\\w+)\"",
+   "expect": "center",
+   "cards": [
+    "v-lost-input",
+    "g-recover"
+   ]
+  },
+  {
+   "id": "lost-ms-default",
+   "desc": "놓쳤을 때 중립으로 돌아오는 시간(ms)",
+   "kind": "regex",
+   "file": "backend/src/vision_input/mapping/schema.py",
+   "pattern": "lost_ms:\\s*float\\s*=\\s*Field\\(([\\d.]+)",
+   "expect": "300.0",
+   "cards": [
+    "v-lost-input"
+   ]
+  },
+  {
+   "id": "real-input-delay",
+   "desc": "실제 입력을 켠 뒤 시작까지의 유예(초)",
+   "kind": "regex",
+   "file": "backend/src/vision_input/io/macos.py",
+   "pattern": "ARM_S\\s*=\\s*([\\d.]+)",
+   "expect": "3.0",
+   "cards": [
+    "v-3sec",
+    "g-safe-real",
+    "h-safety-guards"
+   ]
+  },
+  {
+   "id": "esc-emergency-stop",
+   "desc": "ESC 긴급 정지 키 코드",
+   "kind": "contains",
+   "file": "backend/src/vision_input/io/macos.py",
+   "texts": [
+    "ESCAPE = 53"
+   ],
+   "cards": [
+    "h-emergency-stop",
+    "g-safe-real",
+    "v-3sec"
+   ]
+  },
+  {
+   "id": "macos-min",
+   "desc": "필요한 macOS 최소 버전",
+   "kind": "regex",
+   "file": "README.md",
+   "pattern": "macOS (\\d+) 이상",
+   "expect": "14",
+   "cards": [
+    "h-mac-spec",
+    "g-hardware",
+    "g-os-support",
+    "h-windows"
+   ]
+  },
+  {
+   "id": "ram-min",
+   "desc": "최소 메모리(GB)",
+   "kind": "regex",
+   "file": "README.md",
+   "pattern": "\\*\\*메모리:\\*\\*\\s*(\\d+)GB 이상",
+   "expect": "8",
+   "cards": [
+    "h-mac-spec",
+    "h-memory-disk",
+    "g-hardware"
+   ]
+  },
+  {
+   "id": "disk-min",
+   "desc": "첫 설치에 필요한 여유 공간(GB)",
+   "kind": "regex",
+   "file": "README.md",
+   "pattern": "디스크 여유 공간 (\\d+)GB",
+   "expect": "4",
+   "cards": [
+    "h-memory-disk",
+    "h-ts-install-fail",
+    "v-file-size"
+   ]
+  },
+  {
+   "id": "dev-python-min",
+   "desc": "소스 실행에 필요한 Python 최소 버전",
+   "kind": "regex",
+   "file": "README.md",
+   "pattern": "\\*\\*Python:\\*\\*\\s*([\\d.]+) 이상",
+   "expect": "3.12",
+   "cards": [
+    "v-modify-code"
+   ]
+  },
+  {
+   "id": "dev-node-min",
+   "desc": "소스 실행에 필요한 Node.js (빌드) 최소 버전",
+   "kind": "regex",
+   "file": "README.md",
+   "pattern": "\\*\\*Node\\.js:\\*\\*\\s*빌드 (\\d+)",
+   "expect": "22",
+   "cards": [
+    "v-modify-code"
+   ]
+  },
+  {
+   "id": "github-repo",
+   "desc": "공식 GitHub 저장소",
+   "kind": "regex",
+   "file": "README.md",
+   "pattern": "github\\.com/(maboloar/anycontrol)",
+   "expect": "maboloar/anycontrol",
+   "cards": [
+    "g-open-source",
+    "h-opensource",
+    "v-contact",
+    "h-where-download",
+    "h-ts-install-fail"
+   ]
+  },
+  {
+   "id": "local-address",
+   "desc": "기본 접속 주소와 포트",
+   "kind": "regex",
+   "file": "README.md",
+   "pattern": "127\\.0\\.0\\.1:(\\d+)",
+   "expect": "8767",
+   "cards": [
+    "h-ts-browser",
+    "h-privacy"
+   ]
+  },
+  {
+   "id": "install-dir",
+   "desc": "설치 위치",
+   "kind": "contains",
+   "file": "README.md",
+   "texts": [
+    "~/Library/Application Support/AnyControl"
+   ],
+   "cards": [
+    "v-install-changes",
+    "h-uninstall"
+   ]
+  },
+  {
+   "id": "quit-by-tab-close",
+   "desc": "탭을 닫으면 약 5초 뒤 종료",
+   "kind": "contains",
+   "file": "README.md",
+   "texts": [
+    "약 5초"
+   ],
+   "cards": [
+    "h-quit",
+    "h-ts-wont-quit",
+    "v-camera-always-on"
+   ]
+  },
+  {
+   "id": "continuity-conditions",
+   "desc": "iPhone 연속성 카메라 조건",
+   "kind": "contains",
+   "file": "README.md",
+   "texts": [
+    "iPhone XR",
+    "iOS 16",
+    "USB"
+   ],
+   "cards": [
+    "h-iphone-conditions",
+    "h-iphone-camera",
+    "v-iphone-wireless"
+   ]
+  },
+  {
+   "id": "preset-kinds",
+   "desc": "준비된 설정(프리셋) 종류",
+   "kind": "regex",
+   "file": "frontend/src/mapping.ts",
+   "pattern": "export function preset\\(kind: ([^,]+),",
+   "expect": "\"racing\" | \"wasd\" | \"mouse\" | \"joystick\" | \"race-stick\" | \"zombie\"",
+   "cards": [
+    "v-presets",
+    "v-racing-how",
+    "g-demos"
+   ]
+  },
+  {
+   "id": "show-and-set-ms",
+   "desc": "'보여 주며 설정' 시연 시간(ms)",
+   "kind": "regex",
+   "file": "frontend/src/components/MappingEditor.tsx",
+   "pattern": "setTimeout\\(r,\\s*(\\d+)\\)",
+   "expect": "2500",
+   "cards": [
+    "v-show-and-set",
+    "g-any-motion"
+   ]
+  },
+  {
+   "id": "demos-exist",
+   "desc": "체험 데모 화면 4종",
+   "kind": "exists",
+   "paths": [
+    "frontend/src/components/RacingDemo.tsx",
+    "frontend/src/components/SurvivalDemo.tsx",
+    "frontend/src/components/DrawingPad.tsx",
+    "frontend/src/components/VirtualDesktop.tsx"
+   ],
+   "expect": true,
+   "cards": [
+    "g-demos",
+    "v-poster-demo-video",
+    "v-racing-how",
+    "v-pen-color"
+   ]
+  },
+  {
+   "id": "pen-beta-badge",
+   "desc": "펜 기능 베타 표시",
+   "kind": "exists",
+   "paths": [
+    "frontend/src/components/BetaBadge.tsx"
+   ],
+   "expect": true,
+   "cards": [
+    "v-pen-beta",
+    "h-pen-draw"
+   ]
+  },
+  {
+   "id": "dev-mode-exists",
+   "desc": "개발자 모드(렌치 버튼)",
+   "kind": "exists",
+   "paths": [
+    "frontend/src/components/DevMode.tsx"
+   ],
+   "expect": true,
+   "cards": [
+    "v-dev-mode"
+   ]
+  },
+  {
+   "id": "no-license-file",
+   "desc": "AnyControl 자체 라이선스 파일이 없음 (생기면 라이선스·가격·수정 가능 여부 카드 갱신)",
+   "kind": "exists",
+   "paths": [
+    "LICENSE",
+    "LICENSE.md",
+    "LICENSE.txt",
+    "COPYING"
+   ],
+   "expect": false,
+   "cards": [
+    "g-open-source",
+    "h-opensource",
+    "g-price",
+    "h-free",
+    "v-modify-code",
+    "g-business"
+   ]
+  },
+  {
+   "id": "third-party-models",
+   "desc": "쓰는 외부 모델",
+   "kind": "contains",
+   "file": "THIRD_PARTY.md",
+   "texts": [
+    "EfficientTAM",
+    "MediaPipe",
+    "Depth Anything V2 Small",
+    "Apple Vision"
+   ],
+   "cards": [
+    "v-model-names",
+    "i-which-ai",
+    "h-opensource"
+   ]
+  },
+  {
+   "id": "depth-model-bundled",
+   "desc": "깊이 모델 설명 파일이 프로그램에 포함",
+   "kind": "exists",
+   "paths": [
+    "models/DepthAnythingV2SmallF16.README.md"
+   ],
+   "expect": true,
+   "cards": [
+    "i-depth-ai",
+    "v-model-names",
+    "v-file-size"
+   ]
+  },
+  {
+   "id": "windows-linux-support",
+   "desc": "README 에 Windows/Linux 지원이 아직 없음",
+   "kind": "contains",
+   "file": "README.md",
+   "texts": [
+    "macOS 14 이상"
+   ],
+   "not_texts": [
+    "Windows 지원",
+    "Windows 11",
+    "Linux 지원"
+   ],
+   "cards": [
+    "g-os-support",
+    "h-windows",
+    "v-windows-when",
+    "h-intel-mac"
+   ]
+  },
+  {
+   "id": "hand-movement-default",
+   "desc": "맨손 기본 이동은 영상 XY",
+   "kind": "regex",
+   "file": "backend/src/vision_input/io/mouse.py",
+   "pattern": "hand_control:\\s*Literal\\[[^\\]]*\\]\\s*=\\s*\"(\\w+)\"",
+   "expect": "air",
+   "cards": [
+    "h-bare-hand",
+    "g-hand-mode",
+    "v-click-drag-scroll"
+   ]
+  },
+  {
+   "id": "hand-click-default",
+   "desc": "맨손 기본 클릭은 엄지 집게",
+   "kind": "regex",
+   "file": "backend/src/vision_input/io/mouse.py",
+   "pattern": "hand_click_style:\\s*Literal\\[[^\\]]*\\]\\s*=\\s*\"(\\w+)\"",
+   "expect": "pinch",
+   "cards": [
+    "v-click-styles",
+    "h-bare-hand"
+   ]
+  },
+  {
+   "id": "quick-calibration-default",
+   "desc": "보정 API 기본은 이동만",
+   "kind": "contains",
+   "file": "backend/src/vision_input/server/control.py",
+   "texts": [
+    "movement_only: bool = True"
+   ],
+   "cards": [
+    "h-calibration",
+    "w-calib-steps",
+    "v180-calibration-options",
+    "v180-calibration-center"
+   ]
+  },
+  {
+   "id": "idle-showcase-default",
+   "desc": "시연 기본 120초 및 진입 초기화",
+   "kind": "contains",
+   "file": "frontend/src/components/IdleShowcase.tsx",
+   "texts": [
+    "120_000",
+    "resetAllSettings()"
+   ],
+   "cards": [
+    "v180-idle",
+    "v180-all-reset"
+   ]
+  },
+  {
+   "id": "hand-card-exists",
+   "desc": "기본 맨손 카드",
+   "kind": "exists",
+   "paths": [
+    "frontend/src/components/HandInputCard.tsx"
+   ],
+   "expect": true,
+   "cards": [
+    "v180-hand-jack",
+    "v180-hand-enable"
+   ]
+  },
+  {
+   "id": "touch-requires-hand",
+   "desc": "물체 터치의 살색 fallback 제거",
+   "kind": "contains",
+   "file": "backend/src/vision_input/object_touch.py",
+   "texts": [
+    "no-near-hand",
+    "no-front-occlusion"
+   ],
+   "not_texts": [
+    "elif run.skin >= 0.3"
+   ],
+   "cards": [
+    "v180-touch-how",
+    "v180-touch-false",
+    "v180-object-touch-or-hand"
+   ]
+  },
+  {
+   "id": "current-demos",
+   "desc": "현재 추가 데모",
+   "kind": "exists",
+   "paths": [
+    "frontend/src/components/DjDemo.tsx",
+    "frontend/src/components/PongDemo.tsx",
+    "frontend/src/components/FruitDemo.tsx"
+   ],
+   "expect": true,
+   "cards": [
+    "g-demos",
+    "v180-dj-how",
+    "v180-pong",
+    "v180-fruit"
+   ]
+  },
+  {
+   "id": "reset-settings-route",
+   "desc": "현재 설정 초기화 API",
+   "kind": "contains",
+   "file": "backend/src/vision_input/server/control.py",
+   "texts": [
+    "@r.post(\"/settings/reset\")"
+   ],
+   "cards": [
+    "v180-all-reset",
+    "v180-idle",
+    "v180-layout-reset"
+   ]
+  },
+  {
+   "id": "guide-prompt-idle-ms",
+   "desc": "'처음이신가요?' 안내 문구가 뜨는 무입력 시간(ms)",
+   "kind": "regex",
+   "file": "frontend/src/guidePrompt.ts",
+   "pattern": "GUIDE_IDLE_MS\\s*=\\s*([\\d_]+)",
+   "expect": "20_000",
+   "cards": [
+    "v181-guide-prompt"
+   ]
+  },
+  {
+   "id": "touch-hand-hold-s",
+   "desc": "손 인식이 끊겨도 터치를 유지하는 시간(초)",
+   "kind": "regex",
+   "file": "backend/src/vision_input/object_touch.py",
+   "pattern": "HAND_HOLD_S\\s*=\\s*([\\d.]+)",
+   "expect": "0.6",
+   "cards": [
+    "v180-touch-how",
+    "v181-touch-gauge"
+   ]
+  },
+  {
+   "id": "object-mouse-no-hands",
+   "desc": "물체 마우스의 손 클릭·하이브리드 항상 꺼짐",
+   "kind": "contains",
+   "file": "backend/src/vision_input/io/mouse.py",
+   "texts": [
+    "\"finger_track\", \"hand_clicks\", \"object_hybrid\"",
+    "_removed_hand_features"
+   ],
+   "cards": [
+    "v181-object-mouse-click",
+    "h-object-mouse",
+    "g-object-mode",
+    "h-hybrid-easy",
+    "v-click-styles"
+   ]
+  },
+  {
+   "id": "camera-prefer-default",
+   "desc": "카메라 자동 선택 이름 목록(그 뒤 연속성 카메라 → FaceTime)",
+   "kind": "contains",
+   "file": "backend/src/vision_input/capture/devices.py",
+   "texts": [
+    "'homese,17sa'",
+    "CAMERA_FALLBACK = ('facetime hd camera',)"
+   ],
+   "cards": [
+    "v181-camera-order",
+    "h-iphone-camera"
+   ]
+  },
+  {
+   "id": "dj-preset-replaces-all",
+   "desc": "DJ 자동 매핑은 모든 연결을 교체",
+   "kind": "contains",
+   "file": "frontend/src/components/DjDemo.tsx",
+   "texts": [
+    "let next: Profile = { ...profile, mappings: [] };",
+    "djPresetRemoves"
+   ],
+   "cards": [
+    "v180-dj-how",
+    "v181-dj-hidden"
+   ]
+  },
+  {
+   "id": "idle-seconds-kept",
+   "desc": "초기화해도 시연 대기 초 유지",
+   "kind": "contains",
+   "file": "frontend/src/resetSettings.ts",
+   "texts": [
+    "anycontrol.idleSeconds",
+    "idleSeconds: current.idleSeconds"
+   ],
+   "cards": [
+    "v180-idle",
+    "v182-demo-video",
+    "v180-all-reset"
+   ]
+  }
+ ]
+}

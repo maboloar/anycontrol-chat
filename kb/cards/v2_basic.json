@@ -1,0 +1,856 @@
+[
+ {
+  "id": "v-explain-easy",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "아주 쉽게 설명해 주세요",
+    "초등학생한테 설명하듯이 말해 주세요",
+    "쉽게 말하면 뭐예요",
+    "간단히 설명해 줘",
+    "한마디로 뭐예요"
+   ],
+   "en": [
+    "Please explain it in a very simple way",
+    "Explain it like I'm a kid",
+    "In simple words, what is it?",
+    "Give me the short version"
+   ]
+  },
+  "a": {
+   "ko": "컵을 옆으로 밀면 화면의 화살표(커서)도 옆으로 가요. 펜을 책상에 대고 움직이면 그림이 그려지고, 손가락을 모으면 클릭이 돼요. 카메라가 이 움직임을 보고 컴퓨터에 \"이렇게 움직였어\"라고 알려 주는 거예요.",
+   "en": "Push a cup sideways and the arrow on the screen (the cursor) moves sideways too. Move a pen on the desk and a drawing appears; pinch your fingers and it clicks. A camera watches these movements and tells the computer what happened."
+  },
+  "kw": [
+   "쉽게",
+   "간단히",
+   "한마디",
+   "초등학생",
+   "설명",
+   "simple",
+   "easy",
+   "kid",
+   "short version",
+   "ELI5"
+  ],
+  "src": [
+   "소개서 §1, §4"
+  ],
+  "related": [
+   "g-what-is",
+   "g-examples"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "v-summary-30s",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "30초로 요약해 주세요",
+    "핵심만 알려 주세요",
+    "짧게 요약해 줘",
+    "요약",
+    "3줄 요약"
+   ],
+   "en": [
+    "Can you sum it up in 30 seconds?",
+    "Just the key points, please",
+    "Short summary",
+    "Summarize it"
+   ]
+  },
+  "a": {
+   "ko": "① 카메라로 책상 위 물건, 평범한 펜, 맨손의 움직임을 읽어서 마우스·키보드·게임 조작으로 바꿔요. ② 물건이 손에 가려지거나 화면 밖으로 나가도 처음에 기억해 둔 모양과 색으로 다시 찾아요. ③ 여러 물건을 동시에 쓰면서 물건마다 다른 입력에 연결할 수 있어요. 영상 처리는 모두 내 컴퓨터 안에서 해요.",
+   "en": "① A camera reads the movement of objects on your desk, an ordinary pen, or your bare hand and turns it into mouse, keyboard or game input. ② If an object is hidden by your hand or leaves the picture, it finds it again from the shape and color it remembered. ③ You can use several objects at once and connect each to a different input. All video processing stays on your own computer."
+  },
+  "kw": [
+   "요약",
+   "30초",
+   "핵심",
+   "한눈에",
+   "summary",
+   "key points",
+   "overview",
+   "3 lines"
+  ],
+  "src": [
+   "소개서 §1"
+  ],
+  "related": [
+   "g-what-is",
+   "v-top-strengths"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "v-top-strengths",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "가장 큰 장점이 뭐예요?",
+    "강점이 뭐예요",
+    "어떤 점이 좋아요",
+    "장점 세 가지",
+    "제일 자랑하고 싶은 점",
+    "왜 이게 더 좋은가요",
+    "이게 왜 좋아요",
+    "가장 신기한 점이 뭐예요",
+    "제일 대단한 게 뭐예요",
+    "이 프로젝트에서 가장 신기한 점",
+    "뭐가 좋아요",
+    "어디가 좋아요",
+    "이거 쓰면 뭐가 좋아요",
+    "쓰면 좋은 점이 뭐예요",
+    "세일즈 포인트가 뭐예요",
+    "이거 괜찮아요",
+    "쓸 만해요",
+    "특별한 점이 뭐예요"
+   ],
+   "en": [
+    "What are its biggest strengths?",
+    "What is good about it?",
+    "Top three advantages",
+    "What are you proudest of?",
+    "Why is this better?",
+    "Why is it good?",
+    "What is the most impressive thing?",
+    "What is the coolest part?",
+    "what's good about it",
+    "is it any good",
+    "what's special about it",
+    "why should I care",
+    "what are the benefits",
+    "is it worth it"
+   ]
+  },
+  "a": {
+   "ko": "일반 물체와 펜, 맨손을 서로 다른 입력 도구로 쓸 수 있어요. 물체는 드래그로 등록하고 펜은 양 끝을 지정하며 맨손 카드는 기본 제공돼요. 가려지거나 놓친 물체를 기억한 모양으로 다시 찾고, 여러 물체와 손 집게를 원하는 기능에 연결할 수 있어요. 영상 인식은 내 컴퓨터에서 처리해요.",
+   "en": "Objects, pens and bare hands can act as different input tools. Register objects by dragging, pens by marking both ends, and use the built-in hand card. Remembered shapes help recover lost objects, and objects or hand pinches can be connected to functions. Video recognition runs on your computer."
+  },
+  "kw": [
+   "장점",
+   "강점",
+   "자랑",
+   "좋은 점",
+   "특징",
+   "advantage",
+   "strength",
+   "pros",
+   "benefits",
+   "good",
+   "better",
+   "왜 좋",
+   "신기",
+   "대단",
+   "impressive",
+   "괜찮",
+   "쓸 만",
+   "특별",
+   "worth it"
+  ],
+  "src": [
+   "소개서 §3.0"
+  ],
+  "related": [
+   "g-vs-others",
+   "v-top-weakness"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "v-top-weakness",
+  "cat": "overview",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "가장 아쉬운 점이 뭐예요?",
+    "단점이 뭐예요",
+    "제일 큰 약점",
+    "나쁜 점",
+    "개선할 점",
+    "뭐가 별로예요",
+    "별로인 점이 뭐예요",
+    "안 좋은 점이 뭐예요",
+    "문제가 뭐예요",
+    "약점 있어요",
+    "부족한 게 뭐예요",
+    "단점 알려줘요",
+    "아쉬운 건 없어요",
+    "한계가 뭐예요"
+   ],
+   "en": [
+    "What is its biggest weakness?",
+    "What are the downsides?",
+    "What needs improvement?",
+    "what's the catch",
+    "what's bad about it",
+    "any problems with it",
+    "what are its weak points",
+    "what's wrong with it",
+    "what doesn't work",
+    "any downsides"
+   ]
+  },
+  "a": {
+   "ko": "지금은 Apple 칩이 들어간 Mac에서만 쓸 수 있어요. 또 닮은 물건이 지나가거나 손으로 꽉 쥐면 추적이 약해지고, 실제 환경에서 폭넓게 써 본 시험이 아직 부족해요. 펜 그리기도 전문 태블릿만큼 정밀하지는 않아요.",
+   "en": "For now it only works on Macs with an Apple chip. Tracking gets weaker when look-alike objects pass by or when the object is gripped tightly, and it hasn't been tested widely in real-world conditions yet. Pen drawing is also not as precise as a professional tablet."
+  },
+  "kw": [
+   "단점",
+   "약점",
+   "아쉬운",
+   "한계",
+   "개선",
+   "weakness",
+   "downside",
+   "cons",
+   "drawback",
+   "limitation",
+   "별로",
+   "안 좋은",
+   "catch",
+   "weak points",
+   "what's wrong"
+  ],
+  "src": [
+   "소개서 §14"
+  ],
+  "related": [
+   "g-limits",
+   "v-top-strengths"
+  ]
+ },
+ {
+  "id": "v-version",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "지금 버전이 몇이에요?",
+    "최신 버전이 뭐예요",
+    "버전 알려 주세요",
+    "몇 버전이에요",
+    "어떤 버전이에요"
+   ],
+   "en": [
+    "What version is it now?",
+    "What is the latest version?",
+    "Which version are you showing?",
+    "which version are you running",
+    "What version is this?"
+   ]
+  },
+  "a": {
+   "ko": "현재 프로그램과 안내의 버전은 1.8.0이에요. 간단해진 보정, 맨손 버튼 연결, 손 전체로 하는 물체 터치, 에어 하키와 게임 자동 매핑, 따라 하기 튜토리얼, 오래 켜 둘 때의 안정성 개선이 포함돼요. 배포용 설치 파일도 1.8.0으로 만들었지만, 내려받을 때는 배포 페이지에 실제로 올라온 파일을 확인해 주세요.",
+   "en": "The program and this guide are version 1.8.0. It includes simpler calibration, hand button connections, object touch with the whole hand, air hockey and game auto-mapping, a follow-along tutorial, and better stability for long sessions. The 1.8.0 installer has been built, but check the files actually posted on the release page when downloading."
+  },
+  "kw": [
+   "버전",
+   "1.3.0",
+   "최신",
+   "릴리스",
+   "version",
+   "release",
+   "latest",
+   "update",
+   "running",
+   "which version"
+  ],
+  "src": [
+   "anycontrol-web/README.md"
+  ],
+  "related": [
+   "h-update"
+  ]
+ },
+ {
+  "id": "v-app-or-web",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "앱이에요, 웹사이트예요?",
+    "설치해야 해요",
+    "인터넷 사이트인가요",
+    "프로그램이에요",
+    "웹으로 되나요"
+   ],
+   "en": [
+    "Is it an app or a website?",
+    "Do I need to install it?",
+    "Is it an online site?",
+    "Does it run in the browser?"
+   ]
+  },
+  "a": {
+   "ko": "내 Mac에서 돌아가는 프로그램이에요. 설치 파일을 실행하면 내 컴퓨터 안에서 프로그램이 켜지고, 화면은 브라우저로 열려요. 인터넷 사이트에 접속하는 방식이 아니라서 영상이 밖으로 나가지 않아요.",
+   "en": "It's a program that runs on your own Mac. When you run the installer, it starts on your computer and the screen opens in your browser. It isn't a website you connect to, so your video never leaves your machine."
+  },
+  "kw": [
+   "앱",
+   "웹앱",
+   "웹사이트",
+   "설치",
+   "프로그램",
+   "app",
+   "website",
+   "web app",
+   "install",
+   "browser"
+  ],
+  "src": [
+   "소개서 §7, README"
+  ],
+  "related": [
+   "h-install-how",
+   "h-privacy"
+  ]
+ },
+ {
+  "id": "v-vision-input",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "비전 인풋(Vision Input)이 뭐예요?",
+    "비전 입력이 뭐예요",
+    "이 프로젝트의 개념이 뭐예요",
+    "핵심 아이디어가 뭐예요"
+   ],
+   "en": [
+    "What is \"Vision Input\"?",
+    "What is the core idea of this project?",
+    "What does vision-based input mean?"
+   ]
+  },
+  "a": {
+   "ko": "카메라 영상만으로 작동하는 범용 입력 방식이라는 아이디어예요. 손 제스처만 되거나 특정 물건에만 묶여 있지 않고, 손·펜·평범한 물건을 모두 같은 방식으로 입력 장치로 쓰자는 제안이에요.",
+   "en": "It's the idea of a general-purpose input method that works from camera video alone. Instead of handling only hand gestures or one specific object, hands, pens and everyday objects are all treated as input devices in the same way."
+  },
+  "kw": [
+   "비전 인풋",
+   "Vision Input",
+   "개념",
+   "아이디어",
+   "범용",
+   "concept",
+   "idea",
+   "general-purpose",
+   "camera-only"
+  ],
+  "src": [
+   "소개서 머리말, §3.0"
+  ],
+  "related": [
+   "g-vs-others",
+   "g-what-is"
+  ]
+ },
+ {
+  "id": "v-poster-demo-video",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "시연 영상이나 포스터를 볼 수 있어요?",
+    "데모 영상 있어요",
+    "동작하는 모습을 보고 싶어요",
+    "직접 보여 주세요"
+   ],
+   "en": [
+    "Can I see a demo video or the poster?",
+    "Is there a demo video?",
+    "I want to see it in action",
+    "Can you show me?"
+   ]
+  },
+  "a": {
+   "ko": "부스 자료에서 구성과 동작 방식을 볼 수 있어요. 앱에는 레이싱·퐁·에어 하키·과일 받기·좀비 서바이벌·DJ 셋·가상 데스크톱·펜과 맨손 그리기가 있어요. 데모별 사용 입력은 화면 안내를 확인해 주세요. 현장 시연이나 촬영 자료를 받을 수 있는지는 발표자에게 물어봐 주세요.",
+   "en": "The booth materials show how it is built and how it works. The app includes racing, Pong, air hockey, fruit catch, zombie survival, the DJ set, the virtual desktop and pen/hand drawing. Check the on-screen guide for each demo's input. Ask the presenter about live demos or recorded material."
+  },
+  "kw": [
+   "시연",
+   "영상",
+   "포스터",
+   "데모",
+   "demo",
+   "video",
+   "poster",
+   "show"
+  ],
+  "src": [
+   "포스터"
+  ],
+  "related": [
+   "g-demos",
+   "g-try"
+  ]
+ },
+ {
+  "id": "v-virtual-vs-real",
+  "cat": "usage",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "가상 모드와 실제 입력은 뭐가 달라요?",
+    "연습 모드가 뭐예요",
+    "실제 입력이 뭐예요",
+    "진짜 마우스가 움직이나요",
+    "가상 마우스가 뭐예요"
+   ],
+   "en": [
+    "What's the difference between virtual mode and real input?",
+    "What is practice mode?",
+    "Does my real mouse move?",
+    "What is a virtual mouse?"
+   ]
+  },
+  "a": {
+   "ko": "가상 모드는 앱 화면 안에서만 커서와 키가 움직이는 연습용이라 내 컴퓨터에는 아무 영향이 없어요. 실제 입력을 켜면 진짜 Mac의 마우스와 키보드가 움직여요. 처음에는 꺼져 있으니 가상 모드에서 충분히 연습한 뒤 켜는 걸 권해요.",
+   "en": "Virtual mode only moves the cursor and keys inside the app's window, so it has no effect on your computer. Turning on real input moves your Mac's actual mouse and keyboard. It starts off, so we suggest practicing in virtual mode first."
+  },
+  "kw": [
+   "가상 모드",
+   "실제 입력",
+   "연습",
+   "virtual mode",
+   "real input",
+   "practice",
+   "진짜 마우스"
+  ],
+  "src": [
+   "소개서 §4, §9"
+  ],
+  "related": [
+   "h-practice-mode",
+   "g-safe-real"
+  ]
+ },
+ {
+  "id": "v-register-pen",
+  "cat": "usage",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "펜은 어떻게 등록해요?",
+    "펜촉은 어떻게 지정해요",
+    "펜 설정 방법",
+    "두 점을 찍는다는 게 뭐예요",
+    "펜 사용 순서"
+   ],
+   "en": [
+    "How do I register a pen?",
+    "How do I set the pen tip?",
+    "What does clicking two points mean?",
+    "What are the steps for the pen?"
+   ]
+  },
+  "a": {
+   "ko": "화면에서 펜촉을 먼저 누르고, 이어서 펜의 반대쪽 끝을 눌러 두 점으로 등록해요. 그다음 자동 보정을 하면 펜이 책상에 닿는 순간을 알아볼 수 있어요. 펜 기능은 아직 베타예요.",
+   "en": "On the screen, click the pen tip first and then the opposite end of the pen. After that, run the automatic setup so it can tell when the pen touches the desk. The pen feature is still in beta."
+  },
+  "kw": [
+   "펜 등록",
+   "펜촉",
+   "두 점",
+   "보정",
+   "register pen",
+   "pen tip",
+   "two points",
+   "calibration",
+   "beta"
+  ],
+  "src": [
+   "소개서 §12"
+  ],
+  "related": [
+   "g-pen-mode",
+   "h-calibration"
+  ]
+ },
+ {
+  "id": "v-calib-time",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "설정하는 데 시간이 얼마나 걸려요?",
+    "준비 시간",
+    "세팅 오래 걸려요",
+    "바로 쓸 수 있어요",
+    "처음 설정이 어려워요"
+   ],
+   "en": [
+    "How long does setup take?",
+    "How long to get started?",
+    "Can I use it right away?",
+    "Is the first setup hard?"
+   ]
+  },
+  "a": {
+   "ko": "일반 물체와 맨손의 빠른 보정은 잠깐 정지, 좌우 왕복, 앞뒤 또는 위아래 왕복으로 진행돼요. 지금 있는 자리에서 이어서 움직이면 되고 중앙으로 매번 돌아올 필요가 없어요. 클릭·스크롤을 추가하거나 펜의 닿음·들기를 보정하면 과정이 더 늘어나요. 인식이 끊기거나 다시 측정하면 오래 걸릴 수 있어서 실제 총 소요 시간을 보장하지는 않아요.",
+   "en": "Quick object and hand calibration uses a brief pause, a left/right sweep and a near/far or up/down sweep. Continue from your current position without repeatedly returning to the center. Optional click/scroll checks and pen contact/lift checks take longer. Tracking interruptions or retries add time, so there is no guaranteed total duration."
+  },
+  "kw": [
+   "설정 시간",
+   "준비",
+   "보정",
+   "얼마나 걸려",
+   "setup time",
+   "how long",
+   "calibration",
+   "quick start"
+  ],
+  "src": [
+   "소개서 §12"
+  ],
+  "related": [
+   "h-calibration",
+   "h-install-time"
+  ]
+ },
+ {
+  "id": "v-racing-how",
+  "cat": "usage",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "레이싱 게임은 어떻게 조작해요?",
+    "핸들은 뭘로 해요",
+    "물건으로 운전해요",
+    "레이싱 어떻게 하는 거예요",
+    "필통이 핸들이 된다는 게 뭐예요"
+   ],
+   "en": [
+    "How do you play the racing game?",
+    "What do you use as a steering wheel?",
+    "Can I drive with an object?",
+    "How does a pencil case become a wheel?"
+   ]
+  },
+  "a": {
+   "ko": "레이싱을 고르고 인원(기본 1인), 컨트롤러, 조작법(좌우 이동 또는 기울기로 조향)을 고른 뒤 [자동 매핑]을 누르세요. 1인은 가속·브레이크도 연결되고, '자동 가속'을 켜면 조향만 연습할 수 있어요. 코인·부스터를 모으고 다른 차와 기름을 피하며 달려요. 2인용은 서로 다른 컨트롤러로 화면을 나눠 달려요. 큰 시작 버튼이나 Space로 시작하고 일시정지해요. 게임 중에도 매핑 패널이나 게임 옆 민감도로 조작감을 바꿀 수 있어요.",
+   "en": "Choose Racing, pick players (1 by default), controller and control style (steer by sideways movement or tilt), then press Auto-map. In 1-player mode throttle and brake are connected too, and turning on Auto accelerate lets you practice steering only. Collect coins and boosters while avoiding cars and oil. 2-player mode splits the screen with two different controllers. Start and pause with the big start button or Space. You can change the feel during play with the Mapping panel or the sensitivity next to the game."
+  },
+  "kw": [
+   "레이싱",
+   "핸들",
+   "페달",
+   "운전",
+   "게임",
+   "racing",
+   "steering",
+   "pedal",
+   "driving",
+   "game"
+  ],
+  "src": [
+   "소개서 §3.2, 포스터"
+  ],
+  "related": [
+   "g-demos",
+   "h-games"
+  ]
+ },
+ {
+  "id": "v-presets",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "바로 쓸 수 있는 준비된 설정이 있어요?",
+    "프리셋이 뭐예요",
+    "기본 설정 제공해요",
+    "설정을 처음부터 해야 해요",
+    "추천 설정"
+   ],
+   "en": [
+    "Are there ready-made settings?",
+    "What are presets?",
+    "Do I have to set everything from scratch?",
+    "Any recommended setup?"
+   ]
+  },
+  "a": {
+   "ko": "네, 레이싱, WASD 키, 조이스틱 마우스, 좀비 게임용 같은 준비된 설정이 있어서 고르기만 하면 돼요. 내가 만든 설정은 저장해 두고 다음에 불러올 수도 있어요.",
+   "en": "Yes. There are ready-made setups for racing, WASD keys, a joystick-style mouse, and the zombie game, so you can just pick one. You can also save your own setups and load them next time."
+  },
+  "kw": [
+   "프리셋",
+   "준비된 설정",
+   "기본 설정",
+   "레이싱",
+   "WASD",
+   "조이스틱",
+   "preset",
+   "ready-made",
+   "template"
+  ],
+  "src": [
+   "소개서 §4"
+  ],
+  "related": [
+   "h-save-settings",
+   "g-any-motion"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "v-show-and-set",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "동작을 보여 주면 설정이 된다는 게 무슨 뜻이에요?",
+    "보여 주며 설정이 뭐예요",
+    "시연 학습",
+    "자동으로 설정해 줘요",
+    "숫자를 직접 안 넣어도 돼요"
+   ],
+   "en": [
+    "What does \"show it and it sets itself up\" mean?",
+    "What is show-to-set?",
+    "Does it set itself automatically?",
+    "Do I need to type numbers?"
+   ]
+  },
+  "a": {
+   "ko": "연결을 고른 뒤 케이블 설정의 [보여 주며 설정] 버튼을 누르고 약 2.5초 동안 원하는 방식으로 물체를 움직이면, 어떤 움직임을 쓸지와 움직이는 범위를 앱이 알아서 맞춰 줘요. 숫자를 하나하나 입력하지 않아도 돼요.",
+   "en": "Pick a connection, press Learn by showing in the cable settings, and move the object the way you want for about 2.5 seconds. The app then sets which movement to use and its range for you, with no numbers to type."
+  },
+  "kw": [
+   "보여 주며 설정",
+   "시연",
+   "자동 설정",
+   "학습",
+   "show and set",
+   "demonstration",
+   "auto setup",
+   "2.5초"
+  ],
+  "src": [
+   "소개서 §3.1"
+  ],
+  "related": [
+   "g-any-motion"
+  ]
+ },
+ {
+  "id": "v-sensitivity",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "커서가 너무 빠르거나 느려요. 조절할 수 있나요?",
+    "감도 조절",
+    "방향이 반대로 움직여요",
+    "속도를 바꾸고 싶어요",
+    "거울처럼 좌우가 뒤집혀요"
+   ],
+   "en": [
+    "The cursor is too fast or too slow. Can I adjust it?",
+    "How do I change the sensitivity?",
+    "It moves in the opposite direction",
+    "I want to change the speed",
+    "Left and right are mirrored"
+   ]
+  },
+  "a": {
+   "ko": "마우스나 연결 케이블의 감도와 움직이는 범위를 조절할 수 있어요. 방향이 거꾸로면 입력 좌우 반전을 확인해 주세요. 영상 좌우 반전은 보이는 그림만 바꾸고, 전체 입력 좌우 반전은 실제 조작 방향을 바꾸므로 서로 독립이에요. 자동 보정으로 방향과 감도를 맞춘 뒤 작은 값부터 조절해 보세요.",
+   "en": "You can adjust sensitivity and movement range in the mouse or cable settings. If controls go the wrong way, check input flipping. Flip view changes only the picture, while Flip all input reverses control direction; they are independent. Try automatic calibration first, then make small adjustments."
+  },
+  "kw": [
+   "감도",
+   "방향",
+   "속도",
+   "반전",
+   "거울",
+   "sensitivity",
+   "direction",
+   "speed",
+   "mirror",
+   "flip",
+   "too fast"
+  ],
+  "src": [
+   "소개서 §4"
+  ],
+  "related": [
+   "h-calibration"
+  ]
+ },
+ {
+  "id": "v-tutorial",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "처음 쓰는 사람을 위한 안내가 있어요?",
+    "튜토리얼이 있나요",
+    "사용법 안내가 나오나요",
+    "쉬워요",
+    "가이드",
+    "따라 하기 튜토리얼이 뭐예요?",
+    "안내 버튼 누르면 뭐가 나와요?"
+   ],
+   "en": [
+    "Is there a guide for first-time users?",
+    "Is there a tutorial?",
+    "Does it show instructions?",
+    "Is it easy to use?",
+    "What does the Guide button do?"
+   ]
+  },
+  "a": {
+   "ko": "네, 제목 바로 오른쪽의 [? 안내] 버튼을 누르면 따라 하기 튜토리얼이 열려요. 물건 하나 등록하기, 물건을 기능에 연결하기, 게임 고르기, 자동 매핑 누르기, 직접 해 보기 순서로 실제로 해 보면서 배우고, 해낸 단계는 초록색으로 바뀌며 자동으로 넘어가요. 안내가 떠 있어도 화면을 그대로 누르고 조작할 수 있고, 언제든 [건너뛰기]로 끝낼 수 있어요. 한동안 입력이 없으면 '처음이신가요?' 문구가 안내 버튼을 알려 줘요.",
+   "en": "Yes. Press the Guide button right next to the title to open a follow-along tutorial. You learn by doing: register one object, connect it to a function, pick a game, press Auto-map, then play. Each step turns green and moves on by itself when you complete it. You can keep clicking and using the screen while the guide is open, and Skip ends it any time. After a while without input, a 'First time?' hint points you to the Guide button."
+  },
+  "kw": [
+   "튜토리얼",
+   "안내",
+   "가이드",
+   "초보",
+   "tutorial",
+   "guide",
+   "beginner",
+   "onboarding"
+  ],
+  "src": [
+   "소개서 §12~14"
+  ],
+  "related": [
+   "g-setup-flow",
+   "h-how-to-start"
+  ]
+ },
+ {
+  "id": "v-view-camera",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "내 카메라 화면을 볼 수 있어요?",
+    "영상이 화면에 보여요",
+    "카메라 화면을 작게 띄울 수 있나요",
+    "추적되는 걸 볼 수 있나요",
+    "화면에 내 카메라 영상이 보이나요",
+    "카메라 영상이 화면에 나와요"
+   ],
+   "en": [
+    "Can I see my camera picture?",
+    "Does the video show on screen?",
+    "Can I pop the camera view out small?",
+    "Can I see what is being tracked?",
+    "Does my camera picture show on screen?"
+   ]
+  },
+  "a": {
+   "ko": "네, 추적 중인 물건이 표시된 카메라 영상이 화면에 보여요. 영상을 작은 창으로 띄우기, 일시정지, 카메라 켜고 끄기, 영상 크기 조절도 할 수 있어요.",
+   "en": "Yes. The camera picture appears on screen with the tracked objects marked. You can also pop it out into a small window, pause, turn the camera on or off, and resize the picture."
+  },
+  "kw": [
+   "카메라 화면",
+   "영상 보기",
+   "PiP",
+   "일시정지",
+   "camera view",
+   "picture-in-picture",
+   "pause",
+   "resize",
+   "보이나요"
+  ],
+  "src": [
+   "소개서 §4"
+  ],
+  "related": [
+   "h-camera-required"
+  ]
+ },
+ {
+  "id": "v-typing",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "키보드처럼 글자를 칠 수 있어요?",
+    "타자 칠 수 있나요",
+    "글씨 입력",
+    "키보드 대신 쓸 수 있어요",
+    "문장을 입력할 수 있어요"
+   ],
+   "en": [
+    "Can I type text with it?",
+    "Can it replace a keyboard?",
+    "Can I enter sentences?",
+    "Can I type letters?"
+   ]
+  },
+  "a": {
+   "ko": "문장을 입력하는 기능은 아니에요. 물건의 움직임이나 보이는지 여부를 스페이스 같은 키 하나하나에 연결하는 방식이에요. 키보드 전체를 대신한다고 말씀드리기는 어려워요.",
+   "en": "It isn't a text-entry feature. Instead, an object's movement or whether it is visible can be connected to individual keys such as Space. We can't say it replaces a whole keyboard."
+  },
+  "kw": [
+   "타자",
+   "글자",
+   "문장 입력",
+   "키보드 대체",
+   "typing",
+   "text input",
+   "keyboard",
+   "keys"
+  ],
+  "src": [
+   "소개서 §3.1"
+  ],
+  "related": [
+   "g-three-inputs",
+   "g-any-motion"
+  ]
+ },
+ {
+  "id": "v-voice",
+  "cat": "usage",
+  "status": "plan",
+  "q": {
+   "ko": [
+    "목소리로 명령할 수 있어요?",
+    "음성 인식 되나요",
+    "말로 시켜도 돼요",
+    "말로 설정할 수 있어요",
+    "음성으로 조작"
+   ],
+   "en": [
+    "Can I control it with my voice?",
+    "Does it have voice recognition?",
+    "Can I give spoken commands?",
+    "Can I set it up by talking?"
+   ]
+  },
+  "a": {
+   "ko": "아니요, 지금은 카메라 영상만 써요. 말로 설정하는 기능은 앞으로의 아이디어일 뿐 아직 만들지 않았어요.",
+   "en": "No, right now it uses camera video only. Setting things up by speaking is just an idea for the future and hasn't been built yet."
+  },
+  "kw": [
+   "음성",
+   "목소리",
+   "말로",
+   "음성 인식",
+   "voice",
+   "speech",
+   "speak",
+   "spoken",
+   "자연어"
+  ],
+  "src": [
+   "소개서 §14"
+  ],
+  "related": [
+   "g-llm"
+  ],
+  "suggest": true
+ }
+]

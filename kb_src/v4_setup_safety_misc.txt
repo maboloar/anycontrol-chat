@@ -1,0 +1,321 @@
+@cat install | 카메라 · 설치 · 환경
+
+I: v-iphone-wireless
+Q: 아이폰을 케이블 없이 무선으로 연결해도 돼요?
+V: 선 없이 쓸 수 있나요 / 와이파이로 연결 / 유선이 꼭 필요해요
+EQ: Can I connect the iPhone wirelessly, without a cable?
+EV: Can I use it without a wire? / Connect over Wi-Fi / Is a cable required?
+A: 무선도 Apple 기능상 가능하지만, 가장 안정적이고 정확한 방법은 USB 케이블 연결이라 유선을 권해요. 무선으로 쓸 때는 Mac의 AirPlay와 Sidecar를 쓰지 않아야 해요.
+EA: Wireless works with Apple's feature too, but the steadiest and most accurate way is a USB cable, so we recommend wired. If you go wireless, don't use AirPlay or Sidecar on the Mac at the same time.
+K: 무선, 유선, USB, 케이블, 와이파이, wireless, wired, cable, Wi-Fi
+S: info
+F: README
+R: h-iphone-camera, h-iphone-conditions
+
+I: v-camera-count
+Q: 카메라는 몇 대 필요해요?
+V: 카메라 하나로 돼요 / 여러 대 써야 해요 / 카메라 두 대
+EQ: How many cameras do I need?
+EV: Is one camera enough? / Do I need several? / Two cameras?
+A: 한 대면 충분해요. 책상 옆에 세운 카메라 한 대가 물건, 손, 펜을 모두 알아봐요.
+EA: One is enough. A single camera set beside the desk recognizes objects, hands and pens.
+K: 카메라 개수, 한 대, 여러 대, one camera, how many cameras, single, two
+S: info
+F: 포스터
+R: h-camera-required
+
+I: v-desk-view
+Q: 위에서 내려다보는 카메라(Desk View)도 돼요?
+V: 데스크 뷰가 뭐예요 / 위에서 찍어도 돼요 / 책상을 위에서 보는 모드
+EQ: Does a top-down camera (Desk View) work?
+EV: What is Desk View? / Can I film from above? / A mode that looks down at the desk
+A: 지원되는 카메라의 책상 보기 방식을 사용할 수 있어요. 위에서 보는 영상 위치를 책상 위치로 사용하는 방식이에요. 펜의 자동 닿음은 외형으로 추정하므로 닿음·들기 표본을 맞추고, 구분이 어렵다면 직접 누르는 그리기 버튼을 사용하세요. 어떤 기기에서 되는지는 카메라 지원 조건을 확인해 주세요.
+EA: Supported cameras can use desk-view capture, mapping the overhead image to desk positions. Pen contact is estimated from appearance, so record matching touch/lift samples. Use the manual hold-to-draw control if the two states are hard to distinguish. Check camera compatibility for your device.
+K: Desk View, 데스크 뷰, 위에서, 탑다운, 트랙패드, top-down, overhead, trackpad
+S: partial
+F: 소개서 §4, §14
+R: i-depth-camera-setup, v-camera-place
+
+I: v-camera-conflict
+Q: 화상회의나 다른 카메라 앱과 같이 쓸 수 있어요?
+V: 줌이랑 같이 쓸 수 있나요 / 카메라가 이미 사용 중이에요 / 다른 앱이 카메라를 쓰고 있어요
+EQ: Can I use it together with video calls or other camera apps?
+EV: Can it run alongside Zoom? / The camera is already in use / Another app is using the camera
+A: 카메라가 안 보일 때는 카메라를 쓰는 다른 앱을 모두 끄라고 안내해요. 화상회의와 동시에 써 본 시험은 없어요.
+EA: If the camera doesn't show up, we advise closing every other app that uses the camera. We haven't tested running it at the same time as a video call.
+K: 화상회의, 줌, 카메라 충돌, 다른 앱, Zoom, video call, camera in use, conflict
+S: not_validated
+F: README
+R: h-ts-camera
+
+I: v-permission-denied
+Q: 권한을 허용하지 않으면 어떻게 돼요?
+V: 카메라 권한을 거부하면 / 손쉬운 사용 허용 안 하면 / 권한이 꼭 필요해요
+EQ: What happens if I don't grant permissions?
+EV: If I deny camera access / If I don't allow accessibility / Are permissions required?
+A: 카메라 권한이 없으면 아무것도 볼 수 없어서 쓸 수 없어요. 손쉬운 사용 권한이 없으면 실제 마우스와 키보드를 움직이는 것만 안 되고, 앱 안에서 연습하는 건 그대로 돼요.
+EA: Without camera permission it can't see anything, so it can't be used. Without accessibility permission, only moving the real mouse and keyboard is blocked; practicing inside the app still works.
+K: 권한, 거부, 허용, 카메라 권한, 손쉬운 사용, permission, deny, allow, accessibility
+S: info
+F: 소개서 §9, §12
+R: h-permissions, h-why-accessibility
+
+I: v-install-changes
+Q: 설치하면 내 Mac에 어떤 변화가 생겨요?
+V: 시스템에 영향이 있나요 / 관리자 권한이 필요해요 / 어디에 설치돼요 / 설치 흔적
+EQ: What changes on my Mac when I install it?
+EV: Does it affect the system? / Do I need admin rights? / Where does it install? / What does it leave behind?
+A: 관리자 암호 없이 내 사용자 폴더 안에만 설치돼요. 프로그램, 필요한 구성요소, 저장한 설정, 기록이 그 폴더에 모여 있고, 삭제용 파일로 깨끗이 지울 수 있어요. 내려받은 설치 파일과 Mac의 권한 목록은 남으니 필요하면 직접 정리해 주세요.
+EA: It installs only inside your own user folder, with no administrator password. The program, its components, your saved settings and logs all live in that folder, and the uninstaller removes them cleanly. The downloaded installer file and the Mac's permission list remain, so tidy those up yourself if you like.
+K: 설치 위치, 관리자 권한, 흔적, 폴더, install location, admin, footprint, leftover
+S: info
+F: README
+R: h-uninstall, h-install-how
+
+I: v-safe-download
+Q: 서명이 안 된 파일이라는데 안전한가요?
+V: 악성코드 아닌가요 / 바이러스는 없나요 / 믿고 설치해도 돼요 / 파일이 변조되지 않았는지 확인할 수 있나요
+EQ: The file isn't signed. Is it safe?
+EV: Isn't it malware? / Is there a virus? / Can I trust it enough to install? / Can I check that the file wasn't tampered with?
+A: Apple의 서명을 받지 않아서 Mac이 경고를 띄우는 것이고, 그래서 공식 GitHub에서 받은 파일인지 꼭 확인하라고 안내해요. 설치 파일은 시작할 때 스스로 손상 여부를 확인하고, 배포 파일마다 확인용 값(해시)도 함께 올려 둬요. 외부 기관의 보안 점검을 받은 것은 아니에요.
+EA: Mac warns because the file isn't signed by Apple, which is why we tell you to make sure you downloaded it from the official GitHub page. The installer checks itself for damage at startup, and a verification value (a hash) is published with each release. It has not been through an external security audit.
+K: 안전, 악성코드, 바이러스, 서명, 해시, 변조, safe, malware, virus, signed, hash, checksum
+S: info
+F: README, 소개서 §12
+R: h-security-block, h-privacy
+
+I: v-file-size
+Q: 설치 파일이 왜 이렇게 커요?
+V: 용량이 큰 이유 / 파일 크기 / 모델이 들어 있어서
+EQ: Why is the installer so large?
+EV: Why so big? / File size / Because of the models?
+A: 영상을 이해하는 AI 모델과 화면이 파일 안에 함께 들어 있어서 인터넷이 없어도 쓸 수 있도록 했기 때문이에요. 설치하면서 필요한 구성요소까지 더해지니 저장 공간은 4GB 이상 비워 두세요.
+EA: The AI models that understand video and the screens are bundled inside so it can run without internet. Installation adds further components, so keep at least 4 GB of free space.
+K: 용량, 크기, 큰 이유, 4GB, size, large, storage, disk
+S: info
+F: 소개서 §11
+R: h-memory-disk
+
+I: v-terminal-window
+Q: 검은 터미널 창이 같이 열리는데 닫아도 돼요?
+V: 터미널이 계속 떠 있어요 / 이 창은 뭐예요 / 터미널 창을 닫으면
+EQ: A black terminal window opens too. Can I close it?
+EV: The terminal stays open / What is this window? / What if I close the terminal?
+A: 그 창에서 설치와 프로그램 실행이 진행돼요. 쓰는 동안에는 두세요. 브라우저 탭을 닫아 프로그램이 꺼진 뒤에도 창이 남아 있으면 닫아도 돼요.
+EA: Installation and the program itself run in that window, so leave it open while you are using AnyControl. If it's still there after you close the browser tab and the program has shut down, you can close it.
+K: 터미널, 검은 창, 닫기, terminal, black window, close
+S: info
+F: README
+R: h-quit, h-ts-wont-quit
+
+I: v-browser-choice
+Q: 어떤 브라우저로 열어야 해요?
+V: 크롬 사파리 / 브라우저 추천 / 다른 브라우저도 되나요
+EQ: Which browser should I use?
+EV: Chrome or Safari? / Browser recommendation / Do other browsers work?
+A: Chrome이나 Safari 같은 최신 브라우저에서 쓸 수 있고, Chrome을 권해요.
+EA: Recent browsers such as Chrome or Safari work, and Chrome is recommended.
+K: 브라우저, 크롬, 사파리, browser, Chrome, Safari
+S: info
+F: 소개서 §11
+R: h-ts-browser
+
+I: v-no-camera-try
+Q: 카메라 없이 체험해 볼 수 있어요?
+V: 카메라가 없는데 / 녹화 영상으로 해 볼 수 있나요 / 일단 구경만 해 보고 싶어요
+EQ: Can I try it without a camera?
+EV: I don't have a camera / Can I try it with a recorded video? / I just want to look around
+A: 개발자용 실행 옵션으로 컴퓨터가 만든 가짜 장면이나 녹화한 영상 파일로 돌려 볼 수 있어요. 일반 사용에서는 카메라가 꼭 필요해요.
+EA: A developer start-up option lets you run it on a computer-generated scene or a recorded video file. For normal use, a camera is required.
+K: 카메라 없이, 합성, 녹화 영상, no camera, synthetic, recorded video
+S: info
+F: README, 소개서 §12
+R: h-camera-required
+
+@cat safety | 안전 · 개인정보
+
+I: v-remote-hack
+Q: 다른 사람이 인터넷으로 내 컴퓨터를 조종할 수 있어요?
+V: 해킹 위험은 없나요 / 외부에서 접속할 수 있나요 / 보안은 어떻게 돼요
+EQ: Could someone control my computer over the internet?
+EV: Is there a hacking risk? / Can it be reached from outside? / How is security handled?
+A: 막아 두었어요. 프로그램은 내 컴퓨터 안에서만 열리고 밖에서 들어오는 접속은 받지 않아요. 다른 웹사이트가 내 브라우저를 통해 몰래 접속하는 것도 막는 장치를 넣었어요. 다만 외부 기관의 보안 점검을 받은 것은 아니에요.
+EA: It's locked down. The program only opens on your own computer and doesn't accept connections from outside. We also added safeguards against other websites reaching it through your browser. It has not, however, been audited by an outside security group.
+K: 해킹, 보안, 외부 접속, 원격, hacking, security, remote, attack, intrusion
+S: verified
+F: 소개서 §9
+R: h-privacy, g-privacy-server
+
+I: v-camera-always-on
+Q: 카메라가 계속 켜져 있는 거 아니에요?
+V: 몰래 촬영하나요 / 카메라를 끌 수 있어요 / 감시당하는 느낌이에요
+EQ: Isn't the camera on all the time?
+EV: Does it film secretly? / Can I turn the camera off? / Does it feel like surveillance?
+A: 앱을 쓰는 동안에만 카메라를 써요. 앱에서 카메라를 켜고 끄거나 일시정지할 수 있고, 브라우저 탭을 닫으면 프로그램이 꺼지면서 카메라도 닫혀요. 영상은 내 컴퓨터 밖으로 나가지 않아요.
+EA: It only uses the camera while you are using the app. You can switch the camera on or off or pause inside the app, and closing the browser tab shuts the program and closes the camera. The video never leaves your computer.
+K: 카메라 켜짐, 몰래, 감시, 끄기, always on, secretly, surveillance, turn off camera
+S: verified
+F: 소개서 §4, README
+R: h-privacy, h-quit
+
+I: v-people-in-view
+Q: 지나가는 사람이 카메라에 찍히면 어떻게 돼요?
+V: 얼굴이 나와도 되나요 / 사람이 화면에 보이면 / 초상권은요
+EQ: What happens if a passerby is caught on camera?
+EV: Is it OK if faces appear? / If people show up in the picture / What about privacy of other people?
+A: 영상은 내 컴퓨터 안에서만 처리되고 밖으로 보내지지 않아요. 지나가는 사람이 보일 때를 따로 다루는 내용이나 영상 저장 여부에 대해서는 확인된 게 없어요.
+EA: Video is processed only on your computer and is never sent out. There's no confirmed information about handling passersby specifically or about whether video is stored.
+K: 사람, 얼굴, 지나가는, 초상권, 저장, people, face, passerby, recording, stored
+S: not_validated
+F: 소개서 §9(저장 여부 언급 없음)
+R: h-privacy
+
+@cat limits | 한계 · 확인 상태
+
+I: v-real-input-verified
+Q: 진짜 마우스를 움직이는 건 확인했어요?
+V: 실제 입력 테스트했어요 / 가상 말고 실제로도 돼요 / 실제 컴퓨터 조작은 검증됐나요
+EQ: Have you confirmed that it really moves the real mouse?
+EV: Did you test real input? / Does it work for real, not just virtual? / Is real computer control verified?
+A: 마우스와 키보드를 실제로 움직이는 기능과 안전장치는 만들어 두었고, 가짜 환경에서 동작을 시험했어요. 하지만 권한을 허용하고 실제 화면에서 오래 써 본 기록은 아직 없어요. 그래서 실제 입력은 연습해 본 뒤에 켜시길 권해요.
+EA: The feature that really moves the mouse and keyboard, with its safeguards, has been built and tested in a simulated setting. But there is no record yet of using it for long on a real screen with permissions granted. That's why we suggest practicing first and then turning it on.
+K: 실제 입력, 검증, 테스트, 진짜 마우스, real input, verified, tested, real mouse
+S: not_validated
+F: 소개서 §15
+R: g-safe-real, i-unverified
+
+I: v-ui-state
+Q: 화면(UI)은 완성됐어요?
+V: 디자인이 아쉬워요 / 인터페이스가 어려워요 / 화면 구성이 복잡해요
+EQ: Is the interface finished?
+EV: The design could be better / The interface is hard to use / The layout is complicated
+A: 기본·고급 모드를 나누고 패널 배치와 글씨 크기를 조절할 수 있게 다듬었어요. 기본 모드에도 맨손 카드, 성능 정보와 입력 반전이 있고, 진단 표시는 고급 모드에서 골라 켜요. 보정과 초기화 과정도 간단하게 정리했어요. 다만 여러 사용자를 대상으로 편의성을 충분히 시험했다는 뜻은 아니에요.
+EA: The interface now separates basic and advanced modes and supports panel arrangement and text sizing. Basic mode includes the hand card, performance information and input flipping; diagnostics are selectable in advanced mode. Calibration and reset flows were simplified too. This does not mean usability has been thoroughly tested across many users.
+K: UI, 화면, 디자인, 인터페이스, 완성, interface, design, layout, finished
+S: plan
+F: 소개서 §14
+R: g-future, g-limits
+
+I: v-3d
+Q: 3D로도 추적하나요?
+V: 3차원 인식 / 깊이를 정확히 재요 / 6DoF
+EQ: Does it track in 3D?
+EV: Three-dimensional tracking / Is depth measured exactly? / 6DoF
+A: 지금은 2D 영상 추적이에요. 거리는 물건의 크기 변화나 깊이를 짐작하는 AI로 가늠해요. 가능하다면 물건의 3차원 자세까지 추적해 정확도를 높이는 것이 앞으로의 과제예요.
+EA: Right now it is 2D video tracking. Distance is estimated from changes in an object's apparent size or by an AI that estimates depth. Tracking the full 3D pose to improve accuracy is future work.
+K: 3D, 삼차원, 깊이, 6DoF, three dimensional, depth, pose
+S: plan
+F: 소개서 §14
+R: i-depth-how, g-future
+
+I: v-multi-user
+Q: 여러 사람이 동시에 쓸 수 있어요?
+V: 두 명이 같이 / 멀티플레이 / 친구랑 함께 게임
+EQ: Can several people use it at once?
+EV: Two people together / Multiplayer / Playing a game with a friend
+A: 레이싱·퐁·과일 받기·에어 하키는 2인 모드가 있어서, 서로 다른 물체나 맨손을 각 플레이어의 컨트롤러로 고르고 자동 매핑하면 함께 할 수 있어요. 좀비 서바이벌은 1인용이에요. 다만 여러 사람이 함께 쓸 때의 인식이나 조작 편의성을 충분히 시험한 것은 아니에요.
+EA: Racing, Pong, fruit catch and air hockey have a 2-player mode: choose a different object or hand as each player's controller and auto-map to play together. Zombie survival is for 1 player. Recognition and ease of use with several people have not been tested enough.
+K: 여러 사람, 동시, 멀티플레이, 협동, multiple people, multiplayer, together
+S: not_validated
+F: 팀 확인
+R: g-multi-object
+
+@cat team | 활용 · 미래 · 대회
+
+I: v-judging
+Q: 대회에서 뭘 평가해요?
+V: 심사 기준이 뭐예요 / 어떤 점을 보고 점수를 줘요 / 평가 항목
+EQ: What does the competition judge?
+EV: What are the judging criteria? / What do they score? / Evaluation items
+A: 저희가 정리한 기준은 네 가지예요. 해결하려는 문제와 접근 과정, 기술이 얼마나 앞서고 믿을 만한지, 실제로 쓸모 있고 새로운지, 그리고 완성도와 코드 품질이에요.
+EA: Our understanding is four criteria: the problem being solved and how it was approached, how advanced and reliable the technology is, how useful and novel it is in practice, and the polish and code quality.
+K: 심사, 평가, 기준, 점수, judging, criteria, evaluation, score
+S: info
+F: 소개서 §1
+R: g-contest
+
+I: v-lookalike-plan
+Q: 닮은 물건 문제는 앞으로 어떻게 해결할 거예요?
+V: 헷갈리는 문제 개선 방법 / 구분 성능을 높이려면 / 앞으로 추적을 어떻게 좋게 만들어요
+EQ: How will you fix the look-alike problem?
+EV: How do you plan to reduce the confusion? / How will tracking get better?
+A: 두 가지를 생각하고 있어요. 방해가 되는 닮은 물건을 따로 기억해 두는 방법, 그리고 모양뿐 아니라 생김새의 세부 특징으로 같은 물건인지 다시 확인하는 방법이에요. 둘 다 계획이고 효과는 아직 확인하지 못했어요.
+EA: We're considering two ideas: remembering the confusing look-alike objects separately, and re-checking whether it is the same object using finer visual features rather than just overall shape. Both are plans, and we haven't confirmed their effect yet.
+K: 닮은 물건, 개선, 계획, 방해물, look-alike, improve, plan, distractor
+S: plan
+F: 소개서 §6.6
+R: i-lookalike, g-future
+
+I: v-windows-when
+Q: Windows 버전은 언제 나와요?
+V: 윈도우 지원 계획 / PC에서도 쓰고 싶어요 / 크로스 플랫폼
+EQ: When will a Windows version come out?
+EV: Plans for Windows support / I want to use it on a PC / Cross-platform
+A: Windows와 Linux 지원은 계획에 있지만 언제 나올지는 정해진 게 없어요. 지금 쓰는 일부 기능이 Mac 전용이라 대신할 방법을 찾아야 해요.
+EA: Windows and Linux support are planned, but no date has been set. Some features it uses today are Mac-only, so replacements have to be found.
+K: 윈도우, 리눅스, 출시, 언제, Windows, Linux, release date, when
+S: plan
+F: 소개서 §14
+R: g-os-support, h-windows
+
+I: v-easy-install
+Q: 컴퓨터를 잘 몰라도 설치할 수 있어요?
+V: 초보도 가능한가요 / 설치가 어렵지 않나요 / 비전문가도 쓸 수 있어요
+EQ: Can I install it if I'm not good with computers?
+EV: Is it OK for beginners? / Isn't installation hard? / Can non-experts use it?
+A: 파일 하나를 더블클릭하면 설치가 되도록 만들었어요. 다만 서명되지 않은 파일이라 처음에 보안 안내를 따라야 할 수 있고, iPhone을 쓴다면 연속성 카메라도 미리 설정해야 해서 아주 쉽다고 말씀드리긴 어려워요. 설치 안내를 더 친절하게 만들려고 하고 있어요.
+EA: Installing takes a double-click on one file. But because the file isn't signed you may need to follow a security prompt the first time, and if you use an iPhone its camera feature must be set up beforehand, so we can't call it very easy. We're working on friendlier setup instructions.
+K: 초보, 쉬운, 설치 난이도, 비전문가, beginner, easy, difficulty, non-technical
+S: partial
+F: README, 소개서 §12
+R: h-install-how, h-security-block
+
+@cat overview | 가벼운 질문
+
+I: v-who-are-you
+Q: 너는 누구야?
+V: 넌 뭐야 / 사람이에요 / 챗봇이에요 / 이름이 뭐예요
+EQ: Who are you?
+EV: What are you? / Are you a person? / Are you a bot? / What's your name?
+A: 저는 AnyControl 부스를 안내하는 챗봇이에요. 프로젝트 문서와 코드를 바탕으로 준비된 답을 찾아 보여 드려요. 모르는 건 모른다고 말씀드릴게요.
+EA: I'm the chatbot guiding you around the AnyControl booth. I find prepared answers based on the project's documents and code, and I'll tell you honestly when I don't know something.
+K: 너는 누구, 챗봇, 이름, who are you, bot, name, assistant
+S: info
+F: anycontrol-chat/README.md
+R: v-chatbot-how
+
+I: v-pets
+Q: 고양이나 강아지가 지나가면 어떻게 돼요?
+V: 반려동물이 화면에 나오면 / 다른 게 들어오면 / 사람이 지나가면
+EQ: What happens if a cat or dog walks by?
+EV: If a pet appears in the picture / If something else enters the view / If a person passes by
+A: 반려동물로 시험한 결과는 없어요. 등록해 둔 물건과 모양과 색이 다르면 따라가지 않도록 만들었지만, 닮은 것이 지나가면 헷갈릴 수 있어요.
+EA: We have no test results with pets. It's designed not to follow anything whose shape and color differ from the registered object, but a look-alike passing by can still confuse it.
+K: 고양이, 강아지, 반려동물, 지나가면, cat, dog, pet, passing
+S: not_validated
+F: 팀 확인, 소개서 §5.3
+R: h-similar-objects
+
+I: v-weird-objects
+Q: 어떤 물건으로 해 봤어요? 재밌는 사용 예가 있어요?
+V: 특이한 물건 / 지갑으로도 돼요 / 어떤 물체를 써 봤어요 / 활용 사례
+EQ: What objects have you tried? Any fun examples?
+EV: Any unusual objects? / Does a wallet work? / Which things did you use? / Use cases
+A: 포스터에는 지갑으로 커서를 움직이고, 필통을 기울여 게임 핸들을 돌리고, 볼펜으로 책상에 그리는 예가 있어요. 컵, 지우개, 블록, 리모컨도 예로 소개해요. 아무 물건이나 등록해서 마음대로 연결해 보는 게 이 프로젝트의 취지예요.
+EA: The poster shows a wallet moving the cursor, a pencil case tilted like a game steering wheel, and a ballpoint pen drawing on the desk. A cup, an eraser, a block and a remote control are given as examples too. The point of the project is to register any object and connect it however you like.
+K: 사용 예, 활용 사례, 특이한 물건, 재밌는, examples, use cases, unusual, fun
+S: info
+F: 포스터
+R: g-examples, h-object-kinds
+
+I: v-contact
+Q: 개발팀에게 질문하거나 오류를 알리려면 어떻게 해요?
+V: 문의는 어디로 하나요 / 버그 신고 / 연락할 방법
+EQ: How can I ask the team a question or report a problem?
+EV: Where do I send inquiries? / Bug report / How can I get in touch?
+A: 공식 GitHub 저장소(maboloar/anycontrol)의 Issues에 Mac 버전, Mac 모델, 오류 메시지를 남겨 주세요. 기록을 올리기 전에 이름 같은 개인 정보가 들어 있지 않은지 먼저 확인해 주세요. 부스에서는 발표자에게 직접 물어보셔도 돼요.
+EA: Please post on the Issues page of the official GitHub repository (maboloar/anycontrol) with your macOS version, Mac model and the error message. Before attaching logs, check they contain no personal details such as your name. At the booth you can simply ask the presenter.
+K: 문의, 연락, 버그, 오류 신고, GitHub, Issues, contact, bug report, feedback
+S: info
+F: README
+R: h-ts-install-fail

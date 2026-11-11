@@ -1,0 +1,340 @@
+[
+  {
+    "q": "카드에 있는 동그라미로 조작 기능을 이어 쓰는 순서가 궁금해요",
+    "lang": "ko",
+    "expect": [
+      "v180-patch-connect"
+    ]
+  },
+  {
+    "q": "Explain connecting a registered controller to a patch socket",
+    "lang": "en",
+    "expect": [
+      "v180-patch-connect"
+    ]
+  },
+  {
+    "q": "이미 이어 둔 선 하나의 입력 동작만 바꾸고 싶습니다",
+    "lang": "ko",
+    "expect": [
+      "v180-patch-edit"
+    ]
+  },
+  {
+    "q": "Can I adjust an existing connection without removing every mapping?",
+    "lang": "en",
+    "expect": [
+      "v180-patch-edit"
+    ]
+  },
+  {
+    "q": "손 집기를 스페이스 버튼 역할로 지정하고 중지 쪽으로 바꿔보고 싶어요",
+    "lang": "ko",
+    "expect": [
+      "v180-hand-jack"
+    ]
+  },
+  {
+    "q": "Assign a thumb pinch to a function socket and choose the middle finger",
+    "lang": "en",
+    "expect": [
+      "v180-hand-jack"
+    ]
+  },
+  {
+    "q": "아무 물건도 등록하지 않았는데 보이는 손 항목을 꺼도 되나요",
+    "lang": "ko",
+    "expect": [
+      "v180-hand-enable"
+    ]
+  },
+  {
+    "q": "Can the built-in hand controller be turned off without removing objects?",
+    "lang": "en",
+    "expect": [
+      "v180-hand-enable"
+    ]
+  },
+  {
+    "q": "등록한 물건을 손끝으로 건드려 버튼 신호를 만들려면 어떻게 시작하죠",
+    "lang": "ko",
+    "expect": [
+      "v180-touch-how"
+    ]
+  },
+  {
+    "q": "Walk me through setting a registered object up as a touch button",
+    "lang": "en",
+    "expect": [
+      "v180-touch-how"
+    ]
+  },
+  {
+    "q": "책상 뒤쪽만 달라졌는데 손 없이 누른 것처럼 처리되는 걸 막나요",
+    "lang": "ko",
+    "expect": [
+      "v180-touch-false"
+    ]
+  },
+  {
+    "q": "Will skin-colored background movement activate touch when no hand is detected?",
+    "lang": "en",
+    "expect": [
+      "v180-touch-false"
+    ]
+  },
+  {
+    "q": "영상 위에 뜨는 접촉 변화 표시만 안 보이게 하고 싶습니다",
+    "lang": "ko",
+    "expect": [
+      "v180-touch-debug"
+    ]
+  },
+  {
+    "q": "Hide contact diagnostics without disabling the actual button detection",
+    "lang": "en",
+    "expect": [
+      "v180-touch-debug"
+    ]
+  },
+  {
+    "q": "등록된 컨트롤러 이름만 고칠 때 원래 선도 남아 있나요",
+    "lang": "ko",
+    "expect": [
+      "v180-rename"
+    ]
+  },
+  {
+    "q": "Do the existing patch connections survive changing an object label?",
+    "lang": "en",
+    "expect": [
+      "v180-rename"
+    ]
+  },
+  {
+    "q": "대상 물체는 살리고 지금 이어 둔 매핑만 전부 비우고 싶습니다",
+    "lang": "ko",
+    "expect": [
+      "v180-mapping-reset"
+    ]
+  },
+  {
+    "q": "Clear current patch wiring while retaining registered objects",
+    "lang": "en",
+    "expect": [
+      "v180-mapping-reset"
+    ]
+  },
+  {
+    "q": "처음 상태로 만드는 붉은 버튼을 쓰면 카메라 선택도 날아가나요",
+    "lang": "ko",
+    "expect": [
+      "v180-all-reset"
+    ]
+  },
+  {
+    "q": "Explain which data stays after resetting the entire setup",
+    "lang": "en",
+    "expect": [
+      "v180-all-reset"
+    ]
+  },
+  {
+    "q": "패널 정리 버튼과 빨간 전체 설정 복원 버튼의 범위가 궁금해요",
+    "lang": "ko",
+    "expect": [
+      "v180-layout-reset"
+    ]
+  },
+  {
+    "q": "Which reset restores display arrangement without removing input connections?",
+    "lang": "en",
+    "expect": [
+      "v180-layout-reset"
+    ]
+  },
+  {
+    "q": "오른쪽 설정 패널을 왼쪽 열의 다른 위치로 보내고 싶습니다",
+    "lang": "ko",
+    "expect": [
+      "v180-panels"
+    ]
+  },
+  {
+    "q": "Can I drag a panel heading to change its column and order?",
+    "lang": "en",
+    "expect": [
+      "v180-panels"
+    ]
+  },
+  {
+    "q": "무입력으로 홍보 화면에 들어갔다가 돌아오니 등록한 물건이 없어졌어요",
+    "lang": "ko",
+    "expect": [
+      "v180-idle"
+    ]
+  },
+  {
+    "q": "Why does returning from the idle showcase leave a fresh setup?",
+    "lang": "en",
+    "expect": [
+      "v180-idle"
+    ]
+  },
+  {
+    "q": "촬영 속도와 화면 지연을 기본 화면에서 따로 확인할 수 있나요",
+    "lang": "ko",
+    "expect": [
+      "v180-performance"
+    ]
+  },
+  {
+    "q": "Explain the capture, processing and display readings shown in the performance panel",
+    "lang": "en",
+    "expect": [
+      "v180-performance"
+    ]
+  },
+  {
+    "q": "거울처럼 보이기만 하는 옵션과 실제 조작 방향을 뒤집는 옵션이 같은가요",
+    "lang": "ko",
+    "expect": [
+      "v180-flip",
+      "v-sensitivity"
+    ]
+  },
+  {
+    "q": "Does mirroring the camera picture also reverse all controls?",
+    "lang": "en",
+    "expect": [
+      "v180-flip",
+      "v-sensitivity"
+    ]
+  },
+  {
+    "q": "음악 데모에서 물건과 집게 동작을 재생이나 믹서에 연결해 보고 싶어요",
+    "lang": "ko",
+    "expect": [
+      "v180-dj-how"
+    ]
+  },
+  {
+    "q": "Walk me through patching physical controllers into the DJ mixer",
+    "lang": "en",
+    "expect": [
+      "v180-dj-how"
+    ]
+  },
+  {
+    "q": "디제이 데모에 나오는 소리는 외부 음원인가요 차임은 뭔가요",
+    "lang": "ko",
+    "expect": [
+      "v180-dj-sound"
+    ]
+  },
+  {
+    "q": "Describe the generated house groove and replacement for the loud horn",
+    "lang": "en",
+    "expect": [
+      "v180-dj-sound"
+    ]
+  },
+  {
+    "q": "그물로 떨어지는 과일을 받는 데모에서 물건을 어디로 움직이나요",
+    "lang": "ko",
+    "expect": [
+      "v180-fruit"
+    ]
+  },
+  {
+    "q": "Explain how physical handles control the net in the catching game",
+    "lang": "en",
+    "expect": [
+      "v180-fruit"
+    ]
+  },
+  {
+    "q": "공을 튕기는 패들 데모의 물체 조작과 아이템 효과가 궁금합니다",
+    "lang": "ko",
+    "expect": [
+      "v180-pong"
+    ]
+  },
+  {
+    "q": "How does bringing a controller closer affect a Pong paddle?",
+    "lang": "en",
+    "expect": [
+      "v180-pong"
+    ]
+  },
+  {
+    "q": "바닥 격자나 종이 네 점을 고르는 화면이 지금도 있나요",
+    "lang": "ko",
+    "expect": [
+      "v180-removed"
+    ]
+  },
+  {
+    "q": "Are the floor-button grid and paper-corner registration still in the interface?",
+    "lang": "en",
+    "expect": [
+      "v180-removed"
+    ]
+  },
+  {
+    "q": "자동 설정 중 오른쪽으로 갔다가 원래 시작점까지 꼭 되돌려야 하나요",
+    "lang": "ko",
+    "expect": [
+      "v180-calibration-center"
+    ]
+  },
+  {
+    "q": "May I reverse a calibration stroke without going back to its original center?",
+    "lang": "en",
+    "expect": [
+      "v180-calibration-center"
+    ]
+  },
+  {
+    "q": "방향과 이동 감도만 맞추고 클릭 검사는 나중에 하고 싶습니다",
+    "lang": "ko",
+    "expect": [
+      "v180-calibration-options"
+    ]
+  },
+  {
+    "q": "Can movement tuning be done without also retuning click and scroll gestures?",
+    "lang": "en",
+    "expect": [
+      "v180-calibration-options"
+    ]
+  },
+  {
+    "q": "설정 화면과 DJ를 오갈 때 원래 케이블을 잃는 문제를 고쳤나요",
+    "lang": "ko",
+    "expect": [
+      "v180-missing-jacks"
+    ]
+  },
+  {
+    "q": "Were stale saves and panel switching that hid jacks addressed?",
+    "lang": "en",
+    "expect": [
+      "v180-missing-jacks"
+    ]
+  },
+  {
+    "q": "맨손 카드를 이어서 집는 것과 물건을 터치하도록 연결한 것의 차이는요",
+    "lang": "ko",
+    "expect": [
+      "v180-object-touch-or-hand"
+    ]
+  },
+  {
+    "q": "Compare a pinch from the hand card with contact on a registered object",
+    "lang": "en",
+    "expect": [
+      "v180-object-touch-or-hand"
+    ]
+  }
+]

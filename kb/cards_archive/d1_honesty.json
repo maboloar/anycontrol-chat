@@ -1,0 +1,136 @@
+[
+ {
+  "id": "d-latency-honest",
+  "cat": "limits",
+  "status": "partial",
+  "allow_banned": true,
+  "q": {
+   "ko": [
+    "지연이 없나요?",
+    "무지연인가요?",
+    "딜레이 없이 바로 반응하나요?",
+    "실시간으로 지연 없이 되나요"
+   ],
+   "en": [
+    "Is there no latency?",
+    "Is it zero latency?",
+    "Does it react instantly without delay?",
+    "Is there any lag?"
+   ]
+  },
+  "a": {
+   "ko": "지연이 없다고는 말할 수 없습니다. 소개서 v1.0.0 기준 개발 PC(M3)에서 iPhone 연속성 카메라 캡처 지연이 약 53~55ms, 매 프레임 처리가 p95 약 13ms로 측정됐습니다. 이 두 값을 합친 화면 반응(end-to-end) 지연을 따로 측정한 기록은 없습니다. Desk View는 약 120ms로 안내됩니다.",
+   "en": "I cannot say there is no delay. In the v1.0.0 brochure, on the development PC (M3), iPhone Continuity Camera capture delay was measured at about 53-55 ms and per-frame processing at about 13 ms at p95. No end-to-end latency combining them was measured. Desk View is described as about 120 ms."
+  },
+  "kw": [
+   "지연",
+   "딜레이",
+   "무지연",
+   "latency",
+   "lag",
+   "delay",
+   "zero latency",
+   "실시간",
+   "반응 속도"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과",
+   "sources/04_HANDOFF_개발기록.md#6. 알려진 한계 / 주의"
+  ],
+  "related": [
+   "a-eval-speed",
+   "b-limits-latency",
+   "a-limit-pen-tablet"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "d-accuracy-honest",
+  "cat": "limits",
+  "status": "partial",
+  "allow_banned": true,
+  "q": {
+   "ko": [
+    "정확도가 100%인가요?",
+    "완벽하게 동작하나요?",
+    "오류가 없나요?",
+    "항상 정확하게 추적하나요?",
+    "정확도를 보장하나요?"
+   ],
+   "en": [
+    "Is it 100% accurate?",
+    "Does it work perfectly?",
+    "Is it error-free?",
+    "Does it always track correctly?",
+    "Do you guarantee accuracy?"
+   ]
+  },
+  "a": {
+   "ko": "아니요. 정확도를 보장하지 않습니다. 소개서 v1.0.0의 합성 평가에서 성공률은 0.890(고전 추적기 CSRT 0.446)이고, 닮은 물체와 손에 쥔 구간이 가장 약합니다. 실제 영상 평가는 영상 1개뿐이고 펜 접촉 판정 검증도 영상 2개뿐이라 모든 환경에서의 성능으로 읽으면 안 됩니다.",
+   "en": "No. Accuracy is not guaranteed. In the v1.0.0 brochure's synthetic evaluation the success rate is 0.890 (the classic CSRT tracker gets 0.446), and look-alike objects and held-in-hand segments are the weakest. Real-video evaluation is a single video and pen-contact validation covers only 2 videos, so the numbers must not be read as performance in every environment."
+  },
+  "kw": [
+   "정확도",
+   "100%",
+   "완벽",
+   "오류",
+   "보장",
+   "accuracy",
+   "perfect",
+   "guarantee",
+   "error-free",
+   "신뢰성"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#63-내부-측정-결과",
+   "sources/04_HANDOFF_개발기록.md#6. 알려진 한계 / 주의"
+  ],
+  "related": [
+   "a-eval-csrt-summary",
+   "a-limit-twin",
+   "b-limits-two-videos"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "d-any-environment",
+  "cat": "limits",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "어떤 환경에서도 잘 되나요?",
+    "다른 컴퓨터나 조명에서도 검증됐나요?",
+    "상용 제품 수준인가요?"
+   ],
+   "en": [
+    "Does it work in any environment?",
+    "Was it validated on other computers or lighting?",
+    "Is it production-grade?"
+   ]
+  },
+  "a": {
+   "ko": "모든 환경에서의 동작은 확인되지 않았습니다. 문서에 있는 측정은 개발용 Mac 한 대 위주이고, 어두운 곳과 반사 바닥에서는 정확도가 떨어진다고 안내합니다. 실제 카메라 검증이 없는 기능도 있습니다(손가락 클릭, 끝점 추적, 하이브리드). 상용 수준이라고는 말할 수 없는 대회 출품 단계의 프로젝트입니다.",
+   "en": "Operation in every environment has not been confirmed. The documented measurements center on a single development Mac, and accuracy is said to drop in dark rooms and on reflective floors. Some features have no real-camera validation (finger click, tip tracking, hybrid). It is a competition-stage project and I cannot call it production-grade."
+  },
+  "kw": [
+   "환경",
+   "조명",
+   "다른 컴퓨터",
+   "상용",
+   "production",
+   "any environment",
+   "일반화",
+   "검증",
+   "한계"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#14-알려진-한계와-앞으로의-계획",
+   "sources/04_HANDOFF_개발기록.md#6. 알려진 한계 / 주의"
+  ],
+  "related": [
+   "a-limit-single-machine",
+   "c-limits-real-camera",
+   "a-limit-low-light"
+  ]
+ }
+]

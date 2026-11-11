@@ -1,0 +1,236 @@
+@cat overview | 소개 · 한눈에
+
+I: v-explain-easy
+Q: 아주 쉽게 설명해 주세요
+V: 초등학생한테 설명하듯이 말해 주세요 / 쉽게 말하면 뭐예요 / 간단히 설명해 줘 / 한마디로 뭐예요
+EQ: Please explain it in a very simple way
+EV: Explain it like I'm a kid / In simple words, what is it? / Give me the short version
+A: 컵을 옆으로 밀면 화면의 화살표(커서)도 옆으로 가요. 펜을 책상에 대고 움직이면 그림이 그려지고, 손가락을 모으면 클릭이 돼요. 카메라가 이 움직임을 보고 컴퓨터에 "이렇게 움직였어"라고 알려 주는 거예요.
+EA: Push a cup sideways and the arrow on the screen (the cursor) moves sideways too. Move a pen on the desk and a drawing appears; pinch your fingers and it clicks. A camera watches these movements and tells the computer what happened.
+K: 쉽게, 간단히, 한마디, 초등학생, 설명, simple, easy, kid, short version, ELI5
+S: info
+F: 소개서 §1, §4
+R: g-what-is, g-examples
+G: yes
+
+I: v-summary-30s
+Q: 30초로 요약해 주세요
+V: 핵심만 알려 주세요 / 짧게 요약해 줘 / 요약 / 3줄 요약
+EQ: Can you sum it up in 30 seconds?
+EV: Just the key points, please / Short summary / Summarize it
+A: ① 카메라로 책상 위 물건, 평범한 펜, 맨손의 움직임을 읽어서 마우스·키보드·게임 조작으로 바꿔요. ② 물건이 손에 가려지거나 화면 밖으로 나가도 처음에 기억해 둔 모양과 색으로 다시 찾아요. ③ 여러 물건을 동시에 쓰면서 물건마다 다른 입력에 연결할 수 있어요. 영상 처리는 모두 내 컴퓨터 안에서 해요.
+EA: ① A camera reads the movement of objects on your desk, an ordinary pen, or your bare hand and turns it into mouse, keyboard or game input. ② If an object is hidden by your hand or leaves the picture, it finds it again from the shape and color it remembered. ③ You can use several objects at once and connect each to a different input. All video processing stays on your own computer.
+K: 요약, 30초, 핵심, 한눈에, summary, key points, overview, 3 lines
+S: info
+F: 소개서 §1
+R: g-what-is, v-top-strengths
+G: yes
+
+I: v-top-strengths
+Q: 가장 큰 장점이 뭐예요?
+V: 강점이 뭐예요 / 어떤 점이 좋아요 / 장점 세 가지 / 제일 자랑하고 싶은 점
+EQ: What are its biggest strengths?
+EV: What is good about it? / Top three advantages / What are you proudest of?
+A: 일반 물체와 펜, 맨손을 서로 다른 입력 도구로 쓸 수 있어요. 물체는 드래그로 등록하고 펜은 양 끝을 지정하며 맨손 카드는 기본 제공돼요. 가려지거나 놓친 물체를 기억한 모양으로 다시 찾고, 여러 물체와 손 집게를 원하는 기능에 연결할 수 있어요. 영상 인식은 내 컴퓨터에서 처리해요.
+EA: Objects, pens and bare hands can act as different input tools. Register objects by dragging, pens by marking both ends, and use the built-in hand card. Remembered shapes help recover lost objects, and objects or hand pinches can be connected to functions. Video recognition runs on your computer.
+K: 장점, 강점, 자랑, 좋은 점, 특징, advantage, strength, pros, benefits, good
+S: info
+F: 소개서 §3.0
+R: g-vs-others, v-top-weakness
+G: yes
+
+I: v-top-weakness
+Q: 가장 아쉬운 점이 뭐예요?
+V: 단점이 뭐예요 / 제일 큰 약점 / 나쁜 점 / 개선할 점
+EQ: What is its biggest weakness?
+EV: What are the downsides? / What needs improvement?
+A: 지금은 Apple 칩이 들어간 Mac에서만 쓸 수 있어요. 또 닮은 물건이 지나가거나 손으로 꽉 쥐면 추적이 약해지고, 실제 환경에서 폭넓게 써 본 시험이 아직 부족해요. 펜 그리기도 전문 태블릿만큼 정밀하지는 않아요.
+EA: For now it only works on Macs with an Apple chip. Tracking gets weaker when look-alike objects pass by or when the object is gripped tightly, and it hasn't been tested widely in real-world conditions yet. Pen drawing is also not as precise as a professional tablet.
+K: 단점, 약점, 아쉬운, 한계, 개선, weakness, downside, cons, drawback, limitation
+S: partial
+F: 소개서 §14
+R: g-limits, v-top-strengths
+
+I: v-version
+Q: 지금 버전이 몇이에요?
+V: 최신 버전이 뭐예요 / 버전 알려 주세요 / 몇 버전이에요
+EQ: What version is it now?
+EV: What is the latest version? / Which version are you showing?
+A: 현재 프로그램과 안내의 버전은 1.8.0이에요. 간단해진 보정, 맨손 버튼 연결, 손 전체로 하는 물체 터치, 에어 하키와 게임 자동 매핑, 따라 하기 튜토리얼, 오래 켜 둘 때의 안정성 개선이 포함돼요. 배포용 설치 파일도 1.8.0으로 만들었지만, 내려받을 때는 배포 페이지에 실제로 올라온 파일을 확인해 주세요.
+EA: The program and this guide are version 1.8.0. It includes simpler calibration, hand button connections, object touch with the whole hand, air hockey and game auto-mapping, a follow-along tutorial, and better stability for long sessions. The 1.8.0 installer has been built, but check the files actually posted on the release page when downloading.
+K: 버전, 1.3.0, 최신, 릴리스, version, release, latest, update
+S: info
+F: anycontrol-web/README.md
+R: h-update
+
+I: v-app-or-web
+Q: 앱이에요, 웹사이트예요?
+V: 설치해야 해요 / 인터넷 사이트인가요 / 프로그램이에요 / 웹으로 되나요
+EQ: Is it an app or a website?
+EV: Do I need to install it? / Is it an online site? / Does it run in the browser?
+A: 내 Mac에서 돌아가는 프로그램이에요. 설치 파일을 실행하면 내 컴퓨터 안에서 프로그램이 켜지고, 화면은 브라우저로 열려요. 인터넷 사이트에 접속하는 방식이 아니라서 영상이 밖으로 나가지 않아요.
+EA: It's a program that runs on your own Mac. When you run the installer, it starts on your computer and the screen opens in your browser. It isn't a website you connect to, so your video never leaves your machine.
+K: 앱, 웹앱, 웹사이트, 설치, 프로그램, app, website, web app, install, browser
+S: info
+F: 소개서 §7, README
+R: h-install-how, h-privacy
+
+I: v-vision-input
+Q: 비전 인풋(Vision Input)이 뭐예요?
+V: 비전 입력이 뭐예요 / 이 프로젝트의 개념이 뭐예요 / 핵심 아이디어가 뭐예요
+EQ: What is "Vision Input"?
+EV: What is the core idea of this project? / What does vision-based input mean?
+A: 카메라 영상만으로 작동하는 범용 입력 방식이라는 아이디어예요. 손 제스처만 되거나 특정 물건에만 묶여 있지 않고, 손·펜·평범한 물건을 모두 같은 방식으로 입력 장치로 쓰자는 제안이에요.
+EA: It's the idea of a general-purpose input method that works from camera video alone. Instead of handling only hand gestures or one specific object, hands, pens and everyday objects are all treated as input devices in the same way.
+K: 비전 인풋, Vision Input, 개념, 아이디어, 범용, concept, idea, general-purpose, camera-only
+S: info
+F: 소개서 머리말, §3.0
+R: g-vs-others, g-what-is
+
+I: v-poster-demo-video
+Q: 시연 영상이나 포스터를 볼 수 있어요?
+V: 데모 영상 있어요 / 동작하는 모습을 보고 싶어요 / 직접 보여 주세요
+EQ: Can I see a demo video or the poster?
+EV: Is there a demo video? / I want to see it in action / Can you show me?
+A: 부스 자료에서 구성과 동작 방식을 볼 수 있어요. 앱에는 레이싱·퐁·에어 하키·과일 받기·좀비 서바이벌·DJ 셋·가상 데스크톱·펜과 맨손 그리기가 있어요. 데모별 사용 입력은 화면 안내를 확인해 주세요. 현장 시연이나 촬영 자료를 받을 수 있는지는 발표자에게 물어봐 주세요.
+EA: The booth materials show how it is built and how it works. The app includes racing, Pong, air hockey, fruit catch, zombie survival, the DJ set, the virtual desktop and pen/hand drawing. Check the on-screen guide for each demo's input. Ask the presenter about live demos or recorded material.
+K: 시연, 영상, 포스터, 데모, demo, video, poster, show
+S: info
+F: 포스터
+R: g-demos, g-try
+
+@cat usage | 사용법 · 설정
+
+I: v-virtual-vs-real
+Q: 가상 모드와 실제 입력은 뭐가 달라요?
+V: 연습 모드가 뭐예요 / 실제 입력이 뭐예요 / 진짜 마우스가 움직이나요 / 가상 마우스가 뭐예요
+EQ: What's the difference between virtual mode and real input?
+EV: What is practice mode? / Does my real mouse move? / What is a virtual mouse?
+A: 가상 모드는 앱 화면 안에서만 커서와 키가 움직이는 연습용이라 내 컴퓨터에는 아무 영향이 없어요. 실제 입력을 켜면 진짜 Mac의 마우스와 키보드가 움직여요. 처음에는 꺼져 있으니 가상 모드에서 충분히 연습한 뒤 켜는 걸 권해요.
+EA: Virtual mode only moves the cursor and keys inside the app's window, so it has no effect on your computer. Turning on real input moves your Mac's actual mouse and keyboard. It starts off, so we suggest practicing in virtual mode first.
+K: 가상 모드, 실제 입력, 연습, virtual mode, real input, practice, 진짜 마우스
+S: verified
+F: 소개서 §4, §9
+R: h-practice-mode, g-safe-real
+
+I: v-register-pen
+Q: 펜은 어떻게 등록해요?
+V: 펜촉은 어떻게 지정해요 / 펜 설정 방법 / 두 점을 찍는다는 게 뭐예요 / 펜 사용 순서
+EQ: How do I register a pen?
+EV: How do I set the pen tip? / What does clicking two points mean? / What are the steps for the pen?
+A: 화면에서 펜촉을 먼저 누르고, 이어서 펜의 반대쪽 끝을 눌러 두 점으로 등록해요. 그다음 자동 보정을 하면 펜이 책상에 닿는 순간을 알아볼 수 있어요. 펜 기능은 아직 베타예요.
+EA: On the screen, click the pen tip first and then the opposite end of the pen. After that, run the automatic setup so it can tell when the pen touches the desk. The pen feature is still in beta.
+K: 펜 등록, 펜촉, 두 점, 보정, register pen, pen tip, two points, calibration, beta
+S: partial
+F: 소개서 §12
+R: g-pen-mode, h-calibration
+
+I: v-calib-time
+Q: 설정하는 데 시간이 얼마나 걸려요?
+V: 준비 시간 / 세팅 오래 걸려요 / 바로 쓸 수 있어요 / 처음 설정이 어려워요
+EQ: How long does setup take?
+EV: How long to get started? / Can I use it right away? / Is the first setup hard?
+A: 일반 물체와 맨손의 빠른 보정은 잠깐 정지, 좌우 왕복, 앞뒤 또는 위아래 왕복으로 진행돼요. 지금 있는 자리에서 이어서 움직이면 되고 중앙으로 매번 돌아올 필요가 없어요. 클릭·스크롤을 추가하거나 펜의 닿음·들기를 보정하면 과정이 더 늘어나요. 인식이 끊기거나 다시 측정하면 오래 걸릴 수 있어서 실제 총 소요 시간을 보장하지는 않아요.
+EA: Quick object and hand calibration uses a brief pause, a left/right sweep and a near/far or up/down sweep. Continue from your current position without repeatedly returning to the center. Optional click/scroll checks and pen contact/lift checks take longer. Tracking interruptions or retries add time, so there is no guaranteed total duration.
+K: 설정 시간, 준비, 보정, 얼마나 걸려, setup time, how long, calibration, quick start
+S: info
+F: 소개서 §12
+R: h-calibration, h-install-time
+
+I: v-racing-how
+Q: 레이싱 게임은 어떻게 조작해요?
+V: 핸들은 뭘로 해요 / 물건으로 운전해요 / 레이싱 어떻게 하는 거예요 / 필통이 핸들이 된다는 게 뭐예요
+EQ: How do you play the racing game?
+EV: What do you use as a steering wheel? / Can I drive with an object? / How does a pencil case become a wheel?
+A: 레이싱을 고르고 인원(기본 1인), 컨트롤러, 조작법(좌우 이동 또는 기울기로 조향)을 고른 뒤 [자동 매핑]을 누르세요. 1인은 가속·브레이크도 연결되고, '자동 가속'을 켜면 조향만 연습할 수 있어요. 코인·부스터를 모으고 다른 차와 기름을 피하며 달려요. 2인용은 서로 다른 컨트롤러로 화면을 나눠 달려요. 큰 시작 버튼이나 Space로 시작하고 일시정지해요. 게임 중에도 매핑 패널이나 게임 옆 민감도로 조작감을 바꿀 수 있어요.
+EA: Choose Racing, pick players (1 by default), controller and control style (steer by sideways movement or tilt), then press Auto-map. In 1-player mode throttle and brake are connected too, and turning on Auto accelerate lets you practice steering only. Collect coins and boosters while avoiding cars and oil. 2-player mode splits the screen with two different controllers. Start and pause with the big start button or Space. You can change the feel during play with the Mapping panel or the sensitivity next to the game.
+K: 레이싱, 핸들, 페달, 운전, 게임, racing, steering, pedal, driving, game
+S: partial
+F: 소개서 §3.2, 포스터
+R: g-demos, h-games
+
+I: v-presets
+Q: 바로 쓸 수 있는 준비된 설정이 있어요?
+V: 프리셋이 뭐예요 / 기본 설정 제공해요 / 설정을 처음부터 해야 해요 / 추천 설정
+EQ: Are there ready-made settings?
+EV: What are presets? / Do I have to set everything from scratch? / Any recommended setup?
+A: 네, 레이싱, WASD 키, 조이스틱 마우스, 좀비 게임용 같은 준비된 설정이 있어서 고르기만 하면 돼요. 내가 만든 설정은 저장해 두고 다음에 불러올 수도 있어요.
+EA: Yes. There are ready-made setups for racing, WASD keys, a joystick-style mouse, and the zombie game, so you can just pick one. You can also save your own setups and load them next time.
+K: 프리셋, 준비된 설정, 기본 설정, 레이싱, WASD, 조이스틱, preset, ready-made, template
+S: info
+F: 소개서 §4
+R: h-save-settings, g-any-motion
+G: yes
+
+I: v-show-and-set
+Q: 동작을 보여 주면 설정이 된다는 게 무슨 뜻이에요?
+V: 보여 주며 설정이 뭐예요 / 시연 학습 / 자동으로 설정해 줘요 / 숫자를 직접 안 넣어도 돼요
+EQ: What does "show it and it sets itself up" mean?
+EV: What is show-to-set? / Does it set itself automatically? / Do I need to type numbers?
+A: 연결을 고른 뒤 케이블 설정의 [보여 주며 설정] 버튼을 누르고 약 2.5초 동안 원하는 방식으로 물체를 움직이면, 어떤 움직임을 쓸지와 움직이는 범위를 앱이 알아서 맞춰 줘요. 숫자를 하나하나 입력하지 않아도 돼요.
+EA: Pick a connection, press Learn by showing in the cable settings, and move the object the way you want for about 2.5 seconds. The app then sets which movement to use and its range for you, with no numbers to type.
+K: 보여 주며 설정, 시연, 자동 설정, 학습, show and set, demonstration, auto setup, 2.5초
+S: info
+F: 소개서 §3.1
+R: g-any-motion
+
+I: v-sensitivity
+Q: 커서가 너무 빠르거나 느려요. 조절할 수 있나요?
+V: 감도 조절 / 방향이 반대로 움직여요 / 속도를 바꾸고 싶어요 / 거울처럼 좌우가 뒤집혀요
+EQ: The cursor is too fast or too slow. Can I adjust it?
+EV: How do I change the sensitivity? / It moves in the opposite direction / I want to change the speed / Left and right are mirrored
+A: 마우스나 연결 케이블의 감도와 움직이는 범위를 조절할 수 있어요. 방향이 거꾸로면 입력 좌우 반전을 확인해 주세요. 영상 좌우 반전은 보이는 그림만 바꾸고, 전체 입력 좌우 반전은 실제 조작 방향을 바꾸므로 서로 독립이에요. 자동 보정으로 방향과 감도를 맞춘 뒤 작은 값부터 조절해 보세요.
+EA: You can adjust sensitivity and movement range in the mouse or cable settings. If controls go the wrong way, check input flipping. Flip view changes only the picture, while Flip all input reverses control direction; they are independent. Try automatic calibration first, then make small adjustments.
+K: 감도, 방향, 속도, 반전, 거울, sensitivity, direction, speed, mirror, flip, too fast
+S: info
+F: 소개서 §4
+R: h-calibration
+
+I: v-tutorial
+Q: 처음 쓰는 사람을 위한 안내가 있어요?
+V: 튜토리얼이 있나요 / 사용법 안내가 나오나요 / 쉬워요 / 가이드 / 따라 하기 튜토리얼이 뭐예요? / 안내 버튼 누르면 뭐가 나와요?
+EQ: Is there a guide for first-time users?
+EV: Is there a tutorial? / Does it show instructions? / Is it easy to use? / What does the Guide button do?
+A: 네, 제목 바로 오른쪽의 [? 안내] 버튼을 누르면 따라 하기 튜토리얼이 열려요. 물건 하나 등록하기, 물건을 기능에 연결하기, 게임 고르기, 자동 매핑 누르기, 직접 해 보기 순서로 실제로 해 보면서 배우고, 해낸 단계는 초록색으로 바뀌며 자동으로 넘어가요. 안내가 떠 있어도 화면을 그대로 누르고 조작할 수 있고, 언제든 [건너뛰기]로 끝낼 수 있어요. 한동안 입력이 없으면 '처음이신가요?' 문구가 안내 버튼을 알려 줘요.
+EA: Yes. Press the Guide button right next to the title to open a follow-along tutorial. You learn by doing: register one object, connect it to a function, pick a game, press Auto-map, then play. Each step turns green and moves on by itself when you complete it. You can keep clicking and using the screen while the guide is open, and Skip ends it any time. After a while without input, a 'First time?' hint points you to the Guide button.
+K: 튜토리얼, 안내, 가이드, 초보, tutorial, guide, beginner, onboarding
+S: info
+F: 소개서 §12~14
+R: g-setup-flow, h-how-to-start
+
+I: v-view-camera
+Q: 내 카메라 화면을 볼 수 있어요?
+V: 영상이 화면에 보여요 / 카메라 화면을 작게 띄울 수 있나요 / 추적되는 걸 볼 수 있나요
+EQ: Can I see my camera picture?
+EV: Does the video show on screen? / Can I pop the camera view out small? / Can I see what is being tracked?
+A: 네, 추적 중인 물건이 표시된 카메라 영상이 화면에 보여요. 영상을 작은 창으로 띄우기, 일시정지, 카메라 켜고 끄기, 영상 크기 조절도 할 수 있어요.
+EA: Yes. The camera picture appears on screen with the tracked objects marked. You can also pop it out into a small window, pause, turn the camera on or off, and resize the picture.
+K: 카메라 화면, 영상 보기, PiP, 일시정지, camera view, picture-in-picture, pause, resize
+S: info
+F: 소개서 §4
+R: h-camera-required
+
+I: v-typing
+Q: 키보드처럼 글자를 칠 수 있어요?
+V: 타자 칠 수 있나요 / 글씨 입력 / 키보드 대신 쓸 수 있어요 / 문장을 입력할 수 있어요
+EQ: Can I type text with it?
+EV: Can it replace a keyboard? / Can I enter sentences? / Can I type letters?
+A: 문장을 입력하는 기능은 아니에요. 물건의 움직임이나 보이는지 여부를 스페이스 같은 키 하나하나에 연결하는 방식이에요. 키보드 전체를 대신한다고 말씀드리기는 어려워요.
+EA: It isn't a text-entry feature. Instead, an object's movement or whether it is visible can be connected to individual keys such as Space. We can't say it replaces a whole keyboard.
+K: 타자, 글자, 문장 입력, 키보드 대체, typing, text input, keyboard, keys
+S: info
+F: 소개서 §3.1
+R: g-three-inputs, g-any-motion
+
+I: v-voice
+Q: 목소리로 명령할 수 있어요?
+V: 음성 인식 되나요 / 말로 시켜도 돼요 / 말로 설정할 수 있어요 / 음성으로 조작
+EQ: Can I control it with my voice?
+EV: Does it have voice recognition? / Can I give spoken commands? / Can I set it up by talking?
+A: 아니요, 지금은 카메라 영상만 써요. 말로 설정하는 기능은 앞으로의 아이디어일 뿐 아직 만들지 않았어요.
+EA: No, right now it uses camera video only. Setting things up by speaking is just an idea for the future and hasn't been built yet.
+K: 음성, 목소리, 말로, 음성 인식, voice, speech, speak, spoken, 자연어
+S: plan
+F: 소개서 §14
+R: g-llm
+G: yes

@@ -1,0 +1,803 @@
+{
+ "_설명": "AnyControl 폴더의 파일 경로(글롭) -> 그 파일이 바뀌면 다시 확인해야 할 카드. tools/sync_check.py 가 변경된 파일에 맞는 항목을 보여 준다. 위에서부터 맞는 항목을 모두 합친다. 새 기능 영역이 생기면 항목을 추가한다.",
+ "map": [
+  {
+   "glob": "package.json",
+   "topic": "버전",
+   "cards": [
+    "v-version",
+    "h-update"
+   ]
+  },
+  {
+   "glob": "README.md",
+   "topic": "설치·사용·요구사항 (한국어 README)",
+   "cards": [
+    "h-install-how",
+    "h-where-download",
+    "h-update",
+    "h-uninstall",
+    "h-security-block",
+    "h-exec-permission",
+    "h-iphone-camera",
+    "h-iphone-conditions",
+    "h-mac-spec",
+    "h-memory-disk",
+    "h-quit",
+    "h-ts-camera",
+    "h-ts-browser",
+    "h-ts-install-fail",
+    "h-permissions",
+    "g-hardware",
+    "g-try",
+    "v-install-changes",
+    "v-version",
+    "v-iphone-wireless",
+    "v-camera-conflict"
+   ]
+  },
+  {
+   "glob": "README-en.md",
+   "topic": "영어 README (한국어 README 와 같은 내용이어야 함)",
+   "cards": [
+    "h-install-how",
+    "h-mac-spec"
+   ]
+  },
+  {
+   "glob": "INSTALL.md",
+   "topic": "설치 안내",
+   "cards": [
+    "h-install-how",
+    "h-security-block",
+    "h-exec-permission",
+    "h-install-time"
+   ]
+  },
+  {
+   "glob": "DEVELOPMENT.md",
+   "topic": "개발자용 실행·빌드",
+   "cards": [
+    "v-modify-code",
+    "h-opensource",
+    "v-code-quality"
+   ]
+  },
+  {
+   "glob": "THIRD_PARTY.md",
+   "topic": "외부 구성요소·라이선스",
+   "cards": [
+    "v-model-names",
+    "i-which-ai",
+    "h-opensource",
+    "g-open-source",
+    "i-depth-ai"
+   ]
+  },
+  {
+   "glob": "HANDOFF.md",
+   "topic": "개발 기록(변경 이력) — 가장 먼저 읽고 어느 영역이 바뀌었는지 판단 (카드는 아래 다른 영역 항목이 알려 줌)",
+   "cards": []
+  },
+  {
+   "glob": "LICENSE*",
+   "topic": "AnyControl 라이선스",
+   "cards": [
+    "g-open-source",
+    "h-opensource",
+    "g-price",
+    "h-free",
+    "v-modify-code",
+    "g-business"
+   ]
+  },
+  {
+   "glob": "packaging/**",
+   "topic": "설치 파일·배포",
+   "cards": [
+    "h-install-how",
+    "v-safe-download",
+    "v-file-size",
+    "h-uninstall",
+    "h-exec-permission",
+    "h-security-block"
+   ]
+  },
+  {
+   "glob": "releases/**",
+   "topic": "배포 파일 이름·버전",
+   "cards": [
+    "v-version",
+    "h-where-download",
+    "v-safe-download"
+   ]
+  },
+  {
+   "glob": "backend/pyproject.toml",
+   "topic": "파이썬 구성요소·버전",
+   "cards": [
+    "v-version",
+    "v-modify-code"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/pipeline.py",
+   "topic": "전체 처리 흐름·물체 수",
+   "cards": [
+    "g-multi-object",
+    "i-max-objects",
+    "i-many-objects-perf",
+    "g-tech-short",
+    "i-how-simple",
+    "i-fast-plus-ai"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/engine.py",
+   "topic": "엔진·스레드",
+   "cards": [
+    "g-tech-short",
+    "g-speed",
+    "v-fps"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/server/**",
+   "topic": "로컬 서버·보안",
+   "cards": [
+    "h-quit",
+    "h-privacy",
+    "g-privacy-server",
+    "v-remote-hack",
+    "h-ts-browser",
+    "v-camera-always-on"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/__main__.py",
+   "topic": "실행 옵션·종료",
+   "cards": [
+    "h-quit",
+    "h-ts-wont-quit",
+    "v-no-camera-try",
+    "h-ts-browser"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/reacquire.py",
+   "topic": "가림·이탈 뒤 다시 찾기",
+   "cards": [
+    "g-recover",
+    "g-recover-numbers",
+    "i-why-find-again",
+    "i-lookalike",
+    "i-why-no-guess",
+    "i-offscreen-return",
+    "v-states-simple",
+    "v-no-search-while-tracking",
+    "v-memory-fixed",
+    "v-hand-not-in-memory",
+    "v-hijack",
+    "v-recovery-meaning"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/vi_tracker.py",
+   "topic": "추적 상태·보정 흐름",
+   "cards": [
+    "g-recover",
+    "i-occlusion-return",
+    "i-reselect",
+    "v-states-simple",
+    "v-never-lose",
+    "i-fast-plus-ai"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/tier*.py",
+   "topic": "빠른 추적 + AI 보정 구조",
+   "cards": [
+    "g-tech-short",
+    "i-fast-plus-ai",
+    "i-why-not-ai-only",
+    "v-deep-tech",
+    "i-why-that-ai",
+    "v-why-ai"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/still.py",
+   "topic": "멈춘 물체 안정화",
+   "cards": [
+    "i-still-jitter",
+    "i-still-why"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/smooth.py",
+   "topic": "튐 억제(EMA)",
+   "cards": [
+    "i-cursor-spike",
+    "i-spike-unmeasured",
+    "h-ts-shaky"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/anchor.py",
+   "topic": "바닥 기준점",
+   "cards": [
+    "i-anchor-point",
+    "i-anchor-limit",
+    "v-hold-object"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/axes.py",
+   "topic": "물체 움직임을 입력 축으로",
+   "cards": [
+    "g-any-motion",
+    "v-why-depth-updown",
+    "i-camera-to-mouse"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/memory_view.py",
+   "topic": "기억 보기(개발자 모드)",
+   "cards": [
+    "v-dev-mode"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/pen*.py",
+   "topic": "펜 입력",
+   "cards": [
+    "g-pen-mode",
+    "h-pen-draw",
+    "i-pen-contact",
+    "i-pen-shadow",
+    "i-pen-few-videos",
+    "i-pen-hidden",
+    "i-stroke-flick",
+    "i-stroke-tradeoff",
+    "v-pen-beta",
+    "v-pen-air",
+    "v-pen-pressure",
+    "v-pen-types",
+    "v-pen-writing",
+    "v-pen-accuracy",
+    "v-pen-flip",
+    "v-pen-color",
+    "v-register-pen"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/depth_model.py",
+   "topic": "깊이 AI",
+   "cards": [
+    "i-depth-how",
+    "i-depth-ai",
+    "i-depth-not-validated",
+    "v-model-names",
+    "v-why-depth-updown"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/io/depth.py",
+   "topic": "깊이 입력",
+   "cards": [
+    "i-depth-how",
+    "i-depth-ai",
+    "v-why-depth-updown"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/io/mouse.py",
+   "topic": "마우스 입력(물체·손) 설정과 기본값",
+   "cards": [
+    "g-object-mode",
+    "h-object-mouse",
+    "i-depth-how",
+    "i-depth-ai",
+    "i-camera-to-mouse",
+    "h-bare-hand",
+    "v-sensitivity",
+    "v-click-drag-scroll",
+    "v-click-styles",
+    "v-pinch-sensitivity",
+    "v-hold-object"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/io/hybrid.py",
+   "topic": "한 손 하이브리드",
+   "cards": [
+    "h-hybrid-easy",
+    "h-hybrid-limit"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/io/macos.py",
+   "topic": "실제 마우스·키보드 출력과 안전장치",
+   "cards": [
+    "g-safe-real",
+    "h-safety-guards",
+    "h-emergency-stop",
+    "h-permissions",
+    "h-why-accessibility",
+    "v-3sec",
+    "v-real-input-verified",
+    "v-permission-denied"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/io/*.py",
+   "topic": "입출력",
+   "cards": [
+    "g-safe-real",
+    "h-bare-hand"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/hands/**",
+   "topic": "손 인식·클릭",
+   "cards": [
+    "g-hand-mode",
+    "h-bare-hand",
+    "i-hand-find",
+    "v-click-drag-scroll",
+    "v-click-styles",
+    "v-pinch-sensitivity",
+    "v-hand-wrong-click",
+    "v-left-hand",
+    "h-hybrid-limit"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/mapping/**",
+   "topic": "움직임→입력 연결(매핑)·프로필",
+   "cards": [
+    "g-any-motion",
+    "g-multi-object",
+    "v-lost-input",
+    "v-presets",
+    "v-show-and-set",
+    "h-save-settings",
+    "v-launch-apps",
+    "v-paper-buttons"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/auto_calibration.py",
+   "topic": "자동 보정",
+   "cards": [
+    "h-calibration",
+    "v-calib-time",
+    "g-setup-flow",
+    "v-pinch-sensitivity",
+    "v-desk-area",
+    "w-calib-steps",
+    "v180-calibration-center",
+    "v180-calibration-options"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/eval/**",
+   "topic": "성능 평가 도구(수치의 근거)",
+   "cards": [
+    "g-recover-numbers",
+    "i-vs-classic",
+    "g-tested",
+    "v-success-rate-meaning",
+    "v-synthetic",
+    "v-trust-numbers",
+    "v-fair-comparison",
+    "v-recovery-meaning",
+    "i-weak-cases"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/camera*.py",
+   "topic": "카메라 입력",
+   "cards": [
+    "h-iphone-camera",
+    "h-webcam",
+    "v-fps",
+    "v-resolution",
+    "v-camera-conflict"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/**",
+   "topic": "그 밖의 백엔드(분류 안 됨 — 직접 판단)",
+   "cards": []
+  },
+  {
+   "glob": "backend/tests/**",
+   "topic": "자동 시험(개수 변화는 v-code-quality 의 '약 580개' 확인)",
+   "cards": [
+    "g-tested",
+    "v-code-quality",
+    "v-project-size"
+   ]
+  },
+  {
+   "glob": "bench/**",
+   "topic": "측정 스크립트·결과(수치의 근거)",
+   "cards": [
+    "g-speed",
+    "i-why-that-ai",
+    "i-pen-contact",
+    "i-still-jitter",
+    "i-anchor-point",
+    "g-recover-numbers"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/Tutorial.tsx",
+   "topic": "처음 실행 안내",
+   "cards": [
+    "v-tutorial",
+    "g-setup-flow",
+    "h-how-to-start"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/*Demo.tsx",
+   "topic": "체험 데모(레이싱·서바이벌)",
+   "cards": [
+    "g-demos",
+    "v-racing-how",
+    "h-games"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/DrawingPad.tsx",
+   "topic": "그림판",
+   "cards": [
+    "g-demos",
+    "g-pen-mode",
+    "v-pen-finger",
+    "v-pen-color"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/VirtualDesktop.tsx",
+   "topic": "가상 데스크톱",
+   "cards": [
+    "g-demos",
+    "h-practice-mode"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/MousePanel.tsx",
+   "topic": "마우스 설정 화면",
+   "cards": [
+    "h-bare-hand",
+    "h-hybrid-easy",
+    "v-sensitivity",
+    "v-click-styles",
+    "v-pinch-sensitivity",
+    "i-depth-how"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/ObjectPanel.tsx",
+   "topic": "물체 패널(다시 선택·튐 억제)",
+   "cards": [
+    "i-reselect",
+    "i-cursor-spike",
+    "h-ts-shaky",
+    "g-object-mode"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/MappingPanel.tsx",
+   "topic": "매핑 화면(프리셋·보여 주며 설정)",
+   "cards": [
+    "v-presets",
+    "v-show-and-set",
+    "g-any-motion",
+    "h-save-settings"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/RealOutputPanel.tsx",
+   "topic": "실제 입력 켜기·경고",
+   "cards": [
+    "g-safe-real",
+    "h-safety-guards",
+    "v-3sec",
+    "v-virtual-vs-real"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/AutoCalibration.tsx",
+   "topic": "자동 보정 화면",
+   "cards": [
+    "h-calibration",
+    "v-calib-time",
+    "v180-calibration-center",
+    "v180-calibration-options"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/Camera*.tsx",
+   "topic": "카메라 화면·도구",
+   "cards": [
+    "v-view-camera",
+    "v-dev-mode",
+    "v-sensitivity"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/DevMode.tsx",
+   "topic": "개발자 모드",
+   "cards": [
+    "v-dev-mode"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/BetaBadge.tsx",
+   "topic": "펜 베타 표시",
+   "cards": [
+    "v-pen-beta",
+    "h-pen-draw"
+   ]
+  },
+  {
+   "glob": "frontend/src/mapping.ts",
+   "topic": "프리셋·매핑 규칙",
+   "cards": [
+    "v-presets",
+    "v-racing-how",
+    "g-any-motion"
+   ]
+  },
+  {
+   "glob": "frontend/src/**",
+   "topic": "그 밖의 화면(분류 안 됨 — 직접 판단)",
+   "cards": []
+  },
+  {
+   "glob": "models/**",
+   "topic": "포함된 AI 모델",
+   "cards": [
+    "v-model-names",
+    "i-which-ai",
+    "i-depth-ai",
+    "v-file-size"
+   ]
+  },
+  {
+   "glob": "samples/**",
+   "topic": "시험 영상",
+   "cards": [
+    "i-real-video-few",
+    "i-pen-few-videos"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/object_touch.py",
+   "topic": "손 근접·국소 변화 터치",
+   "cards": [
+    "v180-touch-how",
+    "v180-touch-false",
+    "v180-object-touch-or-hand"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/HandInputCard.tsx",
+   "topic": "기본 맨손 입력 카드",
+   "cards": [
+    "v180-hand-jack",
+    "v180-hand-enable"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/Patch*.tsx",
+   "topic": "케이블 편집·렌더링",
+   "cards": [
+    "v180-patch-connect",
+    "v180-patch-edit",
+    "v180-missing-jacks",
+    "v180-hand-jack",
+    "v180-touch-how",
+    "v180-mapping-reset",
+    "v180-object-touch-or-hand"
+   ]
+  },
+  {
+   "glob": "frontend/src/mappingDraft.ts",
+   "topic": "공유 초안 저장",
+   "cards": [
+    "v180-missing-jacks",
+    "v180-mapping-reset",
+    "v180-all-reset"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/IdleShowcase.tsx",
+   "topic": "시연 진입과 초기화",
+   "cards": [
+    "v180-idle",
+    "v180-all-reset"
+   ]
+  },
+  {
+   "glob": "frontend/src/resetSettings.ts",
+   "topic": "현재 설정 초기화 범위",
+   "cards": [
+    "v180-all-reset",
+    "v180-layout-reset",
+    "h-save-settings"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/DisplayControls.tsx",
+   "topic": "표시·전체 초기화",
+   "cards": [
+    "v180-layout-reset",
+    "v180-all-reset",
+    "v180-panels"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/Hud.tsx",
+   "topic": "기본 성능 표시",
+   "cards": [
+    "v180-performance"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/DjDemo.tsx",
+   "topic": "DJ 조작",
+   "cards": [
+    "v180-dj-how",
+    "v180-dj-sound",
+    "g-demos"
+   ]
+  },
+  {
+   "glob": "frontend/src/djAudio.ts",
+   "topic": "DJ 음악",
+   "cards": [
+    "v180-dj-sound"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/FruitDemo.tsx",
+   "topic": "과일 받기",
+   "cards": [
+    "v180-fruit"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/PongDemo.tsx",
+   "topic": "퐁",
+   "cards": [
+    "v180-pong"
+   ]
+  },
+  {
+   "glob": "frontend/src/objectRefs.ts",
+   "topic": "물체 이름과 ID",
+   "cards": [
+    "v180-rename",
+    "h-save-settings"
+   ]
+  },
+  {
+   "glob": "frontend/src/patchConnections.ts",
+   "topic": "잭 표시 소유자",
+   "cards": [
+    "v180-missing-jacks"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/GameMappingBar.tsx",
+   "topic": "게임 자동 매핑·민감도",
+   "cards": [
+    "v181-auto-map",
+    "v181-game-sensitivity",
+    "v181-game-not-start"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/gameSession.ts",
+   "topic": "게임 시작·일시정지·연결 확인",
+   "cards": [
+    "v181-game-pause",
+    "v181-game-not-start"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/HockeyDemo.tsx",
+   "topic": "에어 하키",
+   "cards": [
+    "v181-hockey"
+   ]
+  },
+  {
+   "glob": "frontend/src/hockey.ts",
+   "topic": "에어 하키 규칙",
+   "cards": [
+    "v181-hockey"
+   ]
+  },
+  {
+   "glob": "frontend/src/guidePrompt.ts",
+   "topic": "처음이신가요 안내 문구",
+   "cards": [
+    "v181-guide-prompt"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/Topbar.tsx",
+   "topic": "상단바·안내 버튼·실제 입력 표시",
+   "cards": [
+    "v181-guide-prompt",
+    "v181-real-output-bar",
+    "v-tutorial"
+   ]
+  },
+  {
+   "glob": "frontend/src/realOutputState.ts",
+   "topic": "실제 입력 상태 표시",
+   "cards": [
+    "v181-real-output-bar"
+   ]
+  },
+  {
+   "glob": "frontend/src/videoMapping.ts",
+   "topic": "영상 클릭 연결",
+   "cards": [
+    "v181-video-click"
+   ]
+  },
+  {
+   "glob": "frontend/src/components/MappingEditor.tsx",
+   "topic": "매핑 추가·케이블 편집기",
+   "cards": [
+    "v181-add-mapping",
+    "v180-patch-edit",
+    "v-show-and-set"
+   ]
+  },
+  {
+   "glob": "frontend/src/gameMapping.ts",
+   "topic": "게임 잭·DJ 숨김",
+   "cards": [
+    "v181-dj-hidden",
+    "v181-auto-map"
+   ]
+  },
+  {
+   "glob": "frontend/src/overlay.ts",
+   "topic": "카메라 화면 표시·터치 이유",
+   "cards": [
+    "v181-touch-gauge"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/capture/devices.py",
+   "topic": "카메라 우선순위",
+   "cards": [
+    "v181-camera-order"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/hands/vision.py",
+   "topic": "손 인식·장시간 메모리",
+   "cards": [
+    "v181-long-session"
+   ]
+  },
+  {
+   "glob": "backend/src/vision_input/tracking/kalman.py",
+   "topic": "추적 안정성·장시간",
+   "cards": [
+    "v181-long-session"
+   ]
+  }
+ ]
+}

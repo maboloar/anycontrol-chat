@@ -1,0 +1,545 @@
+[
+ {
+  "id": "a-one-line",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "AnyControl이 뭔가요?",
+    "한 줄로 소개해 주세요",
+    "이 프로젝트 뭐예요",
+    "애니컨트롤 소개"
+   ],
+   "en": [
+    "What is AnyControl?",
+    "Give me a one-line summary",
+    "What does this project do?",
+    "AnyControl intro"
+   ]
+  },
+  "a": {
+   "ko": "AnyControl은 카메라 한 대로 책상 위 물체, 일반 펜, 맨손을 인식해 마우스·키보드·게임패드 입력으로 바꾸는 웹앱입니다. 전용 컨트롤러나 마커 없이 이미 있는 iPhone 연속성 카메라와 주변 물건만 씁니다. 핵심은 가려지거나 화면 밖으로 나갔다 와도 모양을 기억해 다시 찾아내는 강건한 추적입니다. (소개서 v1.0.0 기준: macOS 14 이상, Apple Silicon 환경)",
+   "en": "AnyControl is a web app that uses a single camera to recognize everyday objects, an ordinary pen, or a bare hand and turn them into mouse, keyboard, or gamepad input. It needs no dedicated controller or marker, only an iPhone Continuity Camera and items already on the desk. Its core is robust tracking that remembers an object's shape and finds it again after occlusion or leaving the frame. (Based on the v1.0.0 brochure: macOS 14+, Apple Silicon.)"
+  },
+  "kw": [
+   "AnyControl",
+   "애니컨트롤",
+   "소개",
+   "한 줄",
+   "Vision Input",
+   "카메라 입력",
+   "물체 마우스",
+   "overview",
+   "camera",
+   "input device"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#1-30초-요약"
+  ],
+  "related": [
+   "a-problem",
+   "a-differentiator",
+   "a-three-input-modes"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-problem",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어떤 문제를 해결하나요?",
+    "문제 정의가 뭔가요?",
+    "왜 만들었나요",
+    "기획 배경",
+    "왜 만들었어요?",
+    "만든 이유가 뭐예요"
+   ],
+   "en": [
+    "What problem does it solve?",
+    "What is the problem statement?",
+    "Why did you build this?",
+    "Project background",
+    "Why did you make it?"
+   ]
+  },
+  "a": {
+   "ko": "마우스나 트랙패드가 없거나 쓸 수 없는 상황(신체적 제약, 전시장, 키오스크, 입력 장치가 없는 기기)이 생각보다 많고, 전용 장비는 비싸며 사용자별로 맞추기 어렵습니다. 기존 카메라 입력도 대부분 손 제스처만 다루거나 마커가 필요하거나 가림에 약합니다. 포스터는 용도마다 태블릿, 스트림덱, 레이싱 휠을 따로 사야 하고 책상 공간도 차지하는 점을 배경으로 듭니다. AnyControl은 이미 있는 카메라와 주변 물건만으로 입력 장치를 만드는 접근입니다. (소개서 v1.0.0, 포스터 기준)",
+   "en": "Situations without a usable mouse or trackpad are common: physical limitations, exhibitions, kiosks, and devices with no input hardware. Dedicated hardware is expensive and hard to tailor per user, and existing camera input usually handles only hand gestures, needs markers, or fails under occlusion. The poster adds that every use case (drawing tablet, stream deck, racing wheel) means buying and connecting separate gear that also takes desk space. AnyControl builds an input device from the camera and objects people already have. (Based on the v1.0.0 brochure and poster.)"
+  },
+  "kw": [
+   "문제 정의",
+   "배경",
+   "동기",
+   "problem",
+   "motivation",
+   "마우스 없음",
+   "전용 장비",
+   "접근성",
+   "키오스크",
+   "background"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#2-왜-필요한가-문제-정의",
+   "sources/11_포스터_텍스트.md#프로젝트-배경"
+  ],
+  "related": [
+   "a-why-needed",
+   "a-who-for",
+   "a-vs-existing"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-why-needed",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "왜 이게 필요한가요?",
+    "기존 마우스로 충분하지 않나요?",
+    "필요성이 뭔가요",
+    "어디에 쓸모가 있죠",
+    "마우스 대신 쓰는 이유가 뭐예요"
+   ],
+   "en": [
+    "Why is this needed?",
+    "Isn't a regular mouse enough?",
+    "What is the need for this?",
+    "What is it useful for?",
+    "Why use this instead of a mouse?"
+   ]
+  },
+  "a": {
+   "ko": "일반 상황에서는 마우스가 충분합니다. 필요성은 마우스가 없거나 쓸 수 없는 경우, 그리고 용도가 늘 때마다 장비를 사야 하는 부담에서 나옵니다. 소개서 v1.0.0은 접근성, 전시·키오스크, 입력 장치가 없을 때, 교육·게임·창작을 활용 분야로 듭니다. 다만 시장 규모나 사업성은 아직 검증 전입니다.",
+   "en": "A regular mouse is enough in ordinary situations. The need comes from cases where no mouse is available or usable, and from the cost of buying new gear for each use case. The v1.0.0 brochure lists accessibility, exhibitions and kiosks, missing input devices, and education, games, and creative work as target areas. Market size and business viability have not been validated yet."
+  },
+  "kw": [
+   "필요성",
+   "왜 필요",
+   "마우스 대체",
+   "need",
+   "use case",
+   "필요",
+   "시장",
+   "접근성",
+   "임시 마우스",
+   "value"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#2-왜-필요한가-문제-정의",
+   "sources/01_소개서_v1.0.0.md#10-어디에-쓸-수-있나"
+  ],
+  "related": [
+   "a-problem",
+   "a-use-cases",
+   "a-business"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-who-for",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "누구를 위한 서비스인가요?",
+    "타깃 사용자가 누구예요?",
+    "누가 쓰나요",
+    "대상 사용자"
+   ],
+   "en": [
+    "Who is it for?",
+    "Who are the target users?",
+    "Who would use this?",
+    "Target audience"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0은 네 부류를 듭니다. 마우스 조작이 어려운 접근성 사용자, 특수 장비 없이 콘텐츠를 조작하게 하려는 전시·키오스크, 마우스가 없거나 고장 난 상황의 일반 사용자, 그리고 펜 그리기·게임·발표 등을 시도하려는 교육·게임·창작 사용자입니다. 현재 버전은 Apple Silicon Mac과 iPhone 연속성 카메라 환경을 전제로 합니다.",
+   "en": "The v1.0.0 brochure names four groups: users with difficulty operating a mouse (accessibility), exhibitions and kiosks that want visitors to interact without special hardware, ordinary users whose mouse is missing or broken, and education, game, and creative users who want pen drawing, game control, or gesture-based presentations. This version assumes an Apple Silicon Mac and an iPhone Continuity Camera."
+  },
+  "kw": [
+   "대상",
+   "타깃",
+   "사용자",
+   "누구",
+   "접근성",
+   "전시",
+   "키오스크",
+   "교육",
+   "target users",
+   "audience"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#10-어디에-쓸-수-있나",
+   "sources/11_포스터_텍스트.md#활용-분야"
+  ],
+  "related": [
+   "a-use-cases",
+   "a-why-needed",
+   "a-requirements"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-use-cases",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어디에 활용할 수 있나요?",
+    "활용 분야",
+    "사용 사례가 뭐예요",
+    "어떤 용도로 쓰나요"
+   ],
+   "en": [
+    "Where can it be used?",
+    "Application areas",
+    "What are the use cases?",
+    "What is it used for?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0의 활용 분야는 접근성(사용자별 프로필로 민감도·범위·방향 조정), 전시·인터랙티브 미디어(매핑만 바꿔 다른 전시에 사용), 입력 장치가 없을 때의 임시 마우스, 입력 장치가 없는 기기(Mac mini, iPad 등은 향후 적용 가능성이며 미검증), 교육·게임·창작입니다. 매핑 스키마가 마우스·키보드·게임패드를 모두 다루므로 설정만 바꿔 목적을 바꿀 수 있는 구조입니다.",
+   "en": "The v1.0.0 brochure lists accessibility (per-user profiles for sensitivity, range, and direction), exhibitions and interactive media (swap the mapping to reuse for another exhibit), a stand-in mouse when none is available, devices without input hardware (Mac mini and iPad are future possibilities and unverified), and education, games, and creative work. Because the mapping schema covers mouse, keyboard, and gamepad, a different purpose is mostly a settings change."
+  },
+  "kw": [
+   "활용",
+   "사용 사례",
+   "접근성",
+   "전시",
+   "키오스크",
+   "교육",
+   "게임",
+   "창작",
+   "use cases",
+   "applications"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#10-어디에-쓸-수-있나"
+  ],
+  "related": [
+   "a-who-for",
+   "a-business",
+   "a-peripheral-vision"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-differentiator",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "가장 큰 차별점이 뭔가요?",
+    "혁신 포인트",
+    "무엇이 다른가요",
+    "독창성이 뭐죠"
+   ],
+   "en": [
+    "What is the main differentiator?",
+    "What is innovative here?",
+    "What makes it different?",
+    "What is unique about it?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0은 차별점을 범용성, 강건함, 다중 매칭 세 가지로 정리합니다. 대상이 손·펜·물체로 정해져 있지 않고 드래그 한 번으로 등록되며, 모양을 기억해 가림·이탈에서 스스로 복구하고, 여러 물체를 동시에 추적해 물체마다 다른 입력에 연결합니다. 이를 카메라만으로 쓰는 범용 Vision Input이라는 개념으로 제안합니다.",
+   "en": "The v1.0.0 brochure sums up the differentiators as versatility, robustness, and multi-object mapping. The target is not fixed to hands, pens, or objects and is registered with one drag; the system remembers shape so it recovers from occlusion and leaving the frame; and it tracks several objects at once, each linked to a different input. The brochure frames this as a general-purpose Vision Input concept using only a camera."
+  },
+  "kw": [
+   "차별점",
+   "혁신",
+   "독창성",
+   "범용",
+   "강건",
+   "다중 매칭",
+   "differentiator",
+   "novelty",
+   "innovation",
+   "Vision Input"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#30-한-문장-차별점"
+  ],
+  "related": [
+   "a-vs-existing",
+   "a-multi-object-mapping",
+   "a-reacquire-steps"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-vs-existing",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "기존 솔루션과 뭐가 다른가요?",
+    "기존 제스처 인식, 마커 방식과의 차이",
+    "경쟁 제품과 비교",
+    "다른 카메라 입력 방식과 차이"
+   ],
+   "en": [
+    "How is it different from existing solutions?",
+    "Difference from gesture or marker-based tools",
+    "Compared with competing products",
+    "How does it differ from other camera-input approaches?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0의 일반 특성 비교: 전용 트래킹 컨트롤러·깊이 카메라는 특수 하드웨어가 필요하고 임의 물체가 불가합니다. 마커 기반은 마커를 붙인 물체만 되고, 손 제스처 웹캠 데모는 손만 다루며 손이 사라지면 끝납니다. 고전 추적기(CSRT 등)는 가림 뒤 복구가 약합니다. AnyControl은 특수 하드웨어와 마커 없이 임의 물체를 모양 기억으로 재획득하고 마우스·키·게임패드·실제 OS 입력까지 출력합니다. 단, 이 표는 방식의 일반 특성이며 특정 제품을 측정해 비교한 것이 아니고, 직접 측정한 상대는 CSRT뿐입니다.",
+   "en": "The v1.0.0 brochure's comparison of general characteristics: dedicated tracking controllers and depth cameras need special hardware and cannot use arbitrary objects; marker-based tracking works only for marked objects; webcam hand-gesture demos handle only hands and end when the hand disappears; classic trackers such as CSRT are weak at recovery after occlusion. AnyControl needs no special hardware or markers, re-acquires arbitrary objects by remembered shape, and outputs to mouse, keyboard, gamepad, and real OS input. This table describes approaches in general, not measured products; CSRT is the only baseline the team measured directly."
+  },
+  "kw": [
+   "비교",
+   "경쟁",
+   "기존 솔루션",
+   "마커",
+   "제스처",
+   "CSRT",
+   "차이",
+   "comparison",
+   "competitors",
+   "existing solutions",
+   "marker"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#기존-방식과의-비교"
+  ],
+  "related": [
+   "a-differentiator",
+   "a-eval-csrt-summary",
+   "a-eval-sota-not-compared"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-three-input-modes",
+  "cat": "overview",
+  "status": "info",
+  "q": {
+   "ko": [
+    "어떤 입력 방식을 지원하나요?",
+    "물체, 손, 펜 입력이 뭐예요",
+    "핵심 기능 목록",
+    "세 가지 입력 방식"
+   ],
+   "en": [
+    "What input modes are supported?",
+    "What are object, hand, and pen input?",
+    "List of core features",
+    "The three input methods"
+   ]
+  },
+  "a": {
+   "ko": "물체 입력은 드래그로 등록한 물체의 좌우 이동을 커서 X, 앞뒤(깊이) 이동을 커서 Y로 바꾸고 기울기·크기도 축으로 씁니다. 맨손 입력은 손 이동으로 커서를 움직이고 엄지+검지 집기는 왼쪽 클릭·드래그, 엄지+중지는 오른쪽 클릭, 두 손가락 자세는 스크롤입니다. 펜 입력은 펜촉과 끝 두 점을 등록해 책상 접촉을 자동 판정하고 접촉 구간만 획으로 입력합니다. (소개서 v1.0.0, 포스터 기준)",
+   "en": "Object input maps a dragged-and-registered object's left-right movement to cursor X and front-back (depth) movement to cursor Y, and can also use tilt and size as axes. Hand input moves the cursor with the hand, thumb+index pinch is left click/drag, thumb+middle is right click, and a two-finger pose scrolls. Pen input registers the pen tip and the other end, detects desk contact automatically, and draws only the contact segments. (Based on the v1.0.0 brochure and poster.)"
+  },
+  "kw": [
+   "물체 입력",
+   "맨손",
+   "펜",
+   "입력 방식",
+   "object",
+   "hand",
+   "pen",
+   "집기",
+   "pinch",
+   "스크롤",
+   "클릭"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#4-핵심-기능",
+   "sources/11_포스터_텍스트.md#세-가지-입력-방식"
+  ],
+  "related": [
+   "a-one-line",
+   "a-multi-object-mapping",
+   "a-demos"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-multi-object-mapping",
+  "cat": "overview",
+  "status": "verified",
+  "q": {
+   "ko": [
+    "여러 물체를 동시에 쓸 수 있나요?",
+    "물체마다 다른 입력을 연결하나요",
+    "다중 매칭이 뭐예요",
+    "컵은 마우스 X, 지우개는 Space 같은 설정"
+   ],
+   "en": [
+    "Can I use several objects at once?",
+    "Can each object map to a different input?",
+    "What is multi-object mapping?",
+    "Cup as mouse X, eraser as Space key"
+   ]
+  },
+  "a": {
+   "ko": "가능합니다. 소개서 v1.0.0 기준 현재 최대 6개(코드의 MAX_OBJECTS)를 동시에 추적하고 물체마다 매핑을 따로 정합니다. 예를 들어 컵 좌우 이동은 마우스 X, 리모컨 앞뒤 이동은 마우스 Y, 지우개 보이기/가리기는 Space 키, 블록 기울이기는 게임패드 축입니다. 다만 6개를 동시에 추적할 때의 정확도와 지연은 아직 종합 측정하지 않았고, 물체 3개일 때 AI 보정 지연 138ms만 측정했습니다.",
+   "en": "Yes. In the v1.0.0 brochure, up to 6 objects (MAX_OBJECTS in the code) are tracked at once, and each object gets its own mapping. For example, a cup's left-right motion maps to mouse X, a remote's front-back motion to mouse Y, an eraser's show/hide to the Space key, and a block's tilt to a gamepad axis. Accuracy and latency with 6 simultaneous objects have not been measured comprehensively; only the 138 ms AI-correction latency for 3 objects was measured."
+  },
+  "kw": [
+   "다중 추적",
+   "여러 물체",
+   "최대 6개",
+   "MAX_OBJECTS",
+   "매핑",
+   "multi-object",
+   "mapping",
+   "동시 추적",
+   "6 objects"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#31-여러-물체를-동시에-추적하고-하나하나-입력에-연결",
+   "sources/12_서비스소개서_최종본_텍스트.md#슬라이드-4"
+  ],
+  "related": [
+   "a-max-objects",
+   "a-limit-six-objects",
+   "a-peripheral-vision"
+  ],
+  "suggest": true
+ },
+ {
+  "id": "a-peripheral-vision",
+  "cat": "overview",
+  "status": "partial",
+  "q": {
+   "ko": [
+    "태블릿이나 스트림덱도 대체할 수 있나요?",
+    "주변기기를 물체 하나로 대체한다는 비전",
+    "와콤, 핸들, 런치패드 대체",
+    "책상 위 장비를 줄일 수 있나요"
+   ],
+   "en": [
+    "Can it replace a drawing tablet or stream deck?",
+    "Vision of replacing peripherals with objects",
+    "Replacing Wacom, wheel, or launchpad",
+    "Can it reduce desk clutter?"
+   ]
+  },
+  "a": {
+   "ko": "일부만 구현된 비전입니다(소개서 v1.0.0 기준). 마우스·트랙패드, 조이스틱, 레이싱 핸들·액셀(웹앱 안 게임패드 프리셋과 데모)은 구현됐습니다. 그림 태블릿은 스케치 수준만 되고 정밀도·필압·지연이 부족해 연구 중입니다. 번호 키패드는 여러 물체를 키에 연결하는 것까지 가능하고, 런치패드·스트림덱과 발판은 앱 실행 연동이 없어 아직 비전 단계입니다.",
+   "en": "This is a partly implemented vision (v1.0.0 brochure). Mouse/trackpad, joystick, and racing wheel/pedals (in-app gamepad presets and demos) are implemented. A drawing tablet is only at sketch level, with precision, pressure sensitivity, and latency gaps still under research. A number keypad is possible to the extent of mapping several objects to keys, while launchpad/stream deck and foot pedals remain vision-stage because app-launch integration does not exist."
+  },
+  "kw": [
+   "주변기기 대체",
+   "와콤",
+   "스트림덱",
+   "런치패드",
+   "핸들",
+   "태블릿",
+   "peripheral",
+   "stream deck",
+   "wacom",
+   "launchpad",
+   "replace"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#32-비전-번거로운-컴퓨터-주변기기를-물체-하나로-대체",
+   "sources/12_서비스소개서_최종본_텍스트.md#슬라이드-8"
+  ],
+  "related": [
+   "a-limit-pen-tablet",
+   "a-multi-object-mapping",
+   "a-limit-app-launch"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-demos",
+  "cat": "usage",
+  "status": "info",
+  "q": {
+   "ko": [
+    "체험 데모가 있나요?",
+    "어떤 데모를 해볼 수 있죠",
+    "게임이나 그림판도 되나요",
+    "시연 가능한 것"
+   ],
+   "en": [
+    "Are there demos?",
+    "What demos can I try?",
+    "Can I try games or a paint app?",
+    "What can be demonstrated?"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0 기준 그림판, 콘·코인 레이싱 게임, 탑다운 좀비 서바이벌 게임 '등불지기', 가상 데스크톱 데모가 있어 입력 방식을 바로 체험할 수 있습니다. 매핑 프리셋은 레이싱, WASD, 조이스틱 마우스, 좀비 게임입니다. 게임 체감은 사람이 써 본 확인이 아직 미완입니다.",
+   "en": "In the v1.0.0 brochure there are four demos for trying input right away: a paint app, a cone-and-coin racing game, a top-down zombie survival game called 'Lantern Keeper', and a virtual desktop. Mapping presets are racing, WASD, joystick mouse, and zombie game. Human playtesting to confirm how the games feel is not yet complete."
+  },
+  "kw": [
+   "데모",
+   "체험",
+   "그림판",
+   "레이싱",
+   "좀비",
+   "등불지기",
+   "가상 데스크톱",
+   "demo",
+   "paint",
+   "racing",
+   "preset"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#4-핵심-기능",
+   "sources/01_소개서_v1.0.0.md#15-검증-상태-한눈에-보기"
+  ],
+  "related": [
+   "a-three-input-modes",
+   "a-limit-human-checks",
+   "a-multi-object-mapping"
+  ],
+  "suggest": false
+ },
+ {
+  "id": "a-business",
+  "cat": "overview",
+  "status": "not_validated",
+  "q": {
+   "ko": [
+    "상용화 가능성은 어떤가요?",
+    "사업화 방향이 뭐예요",
+    "수익 모델이 있나요",
+    "시장성"
+   ],
+   "en": [
+    "What is the commercialization potential?",
+    "What is the business direction?",
+    "Is there a revenue model?",
+    "Market viability"
+   ]
+  },
+  "a": {
+   "ko": "소개서 v1.0.0은 사업화 방향을 아이디어 단계로, 시장 검증 전이라고 밝힙니다. 제시된 방향은 보조기기 기관·복지 현장 대상 설치·맞춤 프로필 서비스, 전시 기획사 대상 매핑 프로필+카메라 세트, 추적 엔진과 매핑 스키마를 다른 앱에 내장하는 SDK/라이선스, 가상 HID 드라이버나 USB HID 동글을 통한 하드웨어 확장입니다. 사업성과 시장 규모는 검증되지 않았습니다.",
+   "en": "The v1.0.0 brochure states that business direction is at the idea stage and not yet market-validated. The directions it proposes are installation and custom-profile services for assistive-technology and welfare sites, a mapping-profile plus camera kit for exhibition planners, an SDK/license embedding the tracking engine and mapping schema in other apps, and hardware extension through a virtual HID driver or USB HID dongle. Business viability and market size have not been validated."
+  },
+  "kw": [
+   "상용화",
+   "사업화",
+   "수익",
+   "시장",
+   "SDK",
+   "라이선스",
+   "business",
+   "commercialization",
+   "revenue",
+   "market"
+  ],
+  "src": [
+   "sources/01_소개서_v1.0.0.md#사업화-방향-아이디어-단계-시장-검증-전"
+  ],
+  "related": [
+   "a-use-cases",
+   "a-limit-market",
+   "a-who-for"
+  ],
+  "suggest": true
+ }
+]

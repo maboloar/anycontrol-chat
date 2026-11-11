@@ -1,0 +1,19 @@
+AnyControl 안내 챗봇 — 빠른 시작 / Quick start
+
+[한국어]
+ 1) Mac:     run.command 더블클릭   (Windows: run.bat 더블클릭)
+ 2) 브라우저가 자동으로 열립니다. 안 열리면 터미널 창에 적힌 주소(http://127.0.0.1:8765)를 여세요.
+ 3) 끝내려면 검은 창을 닫거나 Ctrl+C.
+ * Python 3.9 이상이 필요합니다 (https://www.python.org/downloads/). 인터넷은 필요 없습니다.
+ * Mac 에서 'Apple 이 확인할 수 없음' 경고가 뜨면: 파일을 우클릭 > 열기. 실행 권한이 없다고 하면 터미널에서  bash run.command
+ * Windows 에서 파란 'SmartScreen' 창이 뜨면: 추가 정보 > 실행.
+ * 전체 안내: README.md   /   업데이트 방법: UPDATE_GUIDE.md
+
+[English]
+ 1) Mac: double-click run.command   (Windows: double-click run.bat)
+ 2) The browser opens by itself; if not, open the address shown in the black window (http://127.0.0.1:8765).
+ 3) To stop, close the black window or press Ctrl+C.
+ * Python 3.9+ is required (https://www.python.org/downloads/). No internet is needed.
+ * 'Qwen' (offline question helper) starts automatically if models/ and bin/ are present; otherwise the chatbot uses rule+card search only. Use --no-llm to turn it off.
+ * 질문 이해 보조(Qwen)는 models/ 와 bin/ 이 있으면 자동으로 켜지고, 없거나 느리면 자동으로 꺼집니다.
+ * 검은 창을 닫거나 브라우저 탭을 닫으면 챗봇과 Qwen 이 함께 꺼집니다. Closing the black window or the browser tab stops the chatbot and Qwen. (--keep-alive: keep running after the tab closes)

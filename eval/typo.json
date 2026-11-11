@@ -1,0 +1,522 @@
+[
+ {
+  "q": "가려지먼 어케 되요",
+  "lang": "ko",
+  "expect": [
+   "i-occlusion-return"
+  ]
+ },
+ {
+  "q": "윈도우에서도 대나요",
+  "lang": "ko",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "인터넷 업시도 대요?",
+  "lang": "ko",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "펜으로 그림 그릴수잇어요",
+  "lang": "ko",
+  "expect": [
+   "g-pen-mode"
+  ]
+ },
+ {
+  "q": "가격이 얼마에오",
+  "lang": "ko",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "무료인가여",
+  "lang": "ko",
+  "expect": [
+   "h-free"
+  ]
+ },
+ {
+  "q": "개인정보 안전한가여ㅠㅠ",
+  "lang": "ko",
+  "expect": [
+   "h-privacy"
+  ]
+ },
+ {
+  "q": "영상이 서버로 가나여",
+  "lang": "ko",
+  "expect": [
+   "g-privacy-server"
+  ]
+ },
+ {
+  "q": "아이폰업시도되나요",
+  "lang": "ko",
+  "expect": [
+   "h-webcam"
+  ]
+ },
+ {
+  "q": "맥북만되는거에요",
+  "lang": "ko",
+  "expect": [
+   "g-hardware"
+  ]
+ },
+ {
+  "q": "오프라인 대나요",
+  "lang": "ko",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "만든사람이누구에여",
+  "lang": "ko",
+  "expect": [
+   "v-team-people"
+  ]
+ },
+ {
+  "q": "카메라가 안보여여",
+  "lang": "ko",
+  "expect": [
+   "h-ts-camera"
+  ]
+ },
+ {
+  "q": "설치가 중간에 멈쳣어요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-install-fail"
+  ]
+ },
+ {
+  "q": "브라우져가 안열려요",
+  "lang": "ko",
+  "expect": [
+   "h-ts-browser"
+  ]
+ },
+ {
+  "q": "어떻게 삭재해요",
+  "lang": "ko",
+  "expect": [
+   "h-uninstall"
+  ]
+ },
+ {
+  "q": "업데이트는 어캐해여",
+  "lang": "ko",
+  "expect": [
+   "h-update"
+  ]
+ },
+ {
+  "q": "김삼 누규에요",
+  "lang": "ko",
+  "expect": [
+   "v-kimsam"
+  ]
+ },
+ {
+  "q": "마우스가 업을때 쓸수잇나요",
+  "lang": "ko",
+  "expect": [
+   "g-no-mouse"
+  ]
+ },
+ {
+  "q": "물체 여러게 쓸수있어요",
+  "lang": "ko",
+  "expect": [
+   "g-multi-object"
+  ]
+ },
+ {
+  "q": "펜 정학도가 어때여",
+  "lang": "ko",
+  "expect": [
+   "v-pen-accuracy"
+  ]
+ },
+ {
+  "q": "손으로 크릭 어케함",
+  "lang": "ko",
+  "expect": [
+   "v-click-drag-scroll"
+  ]
+ },
+ {
+  "q": "어두운데서도 대여",
+  "lang": "ko",
+  "expect": [
+   "h-tip-dark"
+  ]
+ },
+ {
+  "q": "추적이 흔들려여",
+  "lang": "ko",
+  "expect": [
+   "h-ts-shaky"
+  ]
+ },
+ {
+  "q": "긴급정지 어케해",
+  "lang": "ko",
+  "expect": [
+   "h-emergency-stop"
+  ]
+ },
+ {
+  "q": "권한은 먼저 허용해야대요",
+  "lang": "ko",
+  "expect": [
+   "h-permissions"
+  ]
+ },
+ {
+  "q": "레이싱게임 어떻게해요",
+  "lang": "ko",
+  "expect": [
+   "v-racing-how"
+  ]
+ },
+ {
+  "q": "튜토리얼 잇나여",
+  "lang": "ko",
+  "expect": [
+   "v-tutorial"
+  ]
+ },
+ {
+  "q": "AI는 머쓰나요",
+  "lang": "ko",
+  "expect": [
+   "i-which-ai"
+  ]
+ },
+ {
+  "q": "기로는 머에요",
+  "lang": "ko",
+  "expect": [
+   "g-kiro"
+  ]
+ },
+ {
+  "q": "이챗봇은 어캐 만들엇어요",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-how"
+  ]
+ },
+ {
+  "q": "영어로도 말할수잇어",
+  "lang": "ko",
+  "expect": [
+   "v-chatbot-languages"
+  ]
+ },
+ {
+  "q": "써도 안전한가염",
+  "lang": "ko",
+  "expect": [
+   "g-safe-real"
+  ]
+ },
+ {
+  "q": "코드는 공개대잇나여",
+  "lang": "ko",
+  "expect": [
+   "h-opensource"
+  ]
+ },
+ {
+  "q": "한계가 머에요",
+  "lang": "ko",
+  "expect": [
+   "g-limits"
+  ]
+ },
+ {
+  "q": "장점이 먼가여",
+  "lang": "ko",
+  "expect": [
+   "v-top-strengths"
+  ]
+ },
+ {
+  "q": "왜 만드럿어요",
+  "lang": "ko",
+  "expect": [
+   "g-why-made"
+  ]
+ },
+ {
+  "q": "누가 쓰면 조아여",
+  "lang": "ko",
+  "expect": [
+   "g-who-for"
+  ]
+ },
+ {
+  "q": "상품으로 팔수있나여",
+  "lang": "ko",
+  "expect": [
+   "g-business"
+  ]
+ },
+ {
+  "q": "앞으로 계휙이 머에요",
+  "lang": "ko",
+  "expect": [
+   "g-future"
+  ]
+ },
+ {
+  "q": "그거 되나",
+  "lang": "ko",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "이거 쓰는법 좀",
+  "lang": "ko",
+  "expect": [
+   "h-how-to-start"
+  ]
+ },
+ {
+  "q": "카메라 필수?",
+  "lang": "ko",
+  "expect": [
+   "h-camera-required"
+  ]
+ },
+ {
+  "q": "폰 없어도 됨?",
+  "lang": "ko",
+  "expect": [
+   "h-webcam"
+  ]
+ },
+ {
+  "q": "몇개까지?",
+  "lang": "ko",
+  "expect": [
+   "g-multi-object"
+  ]
+ },
+ {
+  "q": "느려?",
+  "lang": "ko",
+  "expect": [
+   "g-speed"
+  ]
+ },
+ {
+  "q": "정확함?",
+  "lang": "ko",
+  "expect": [
+   "i-accuracy-honest"
+  ]
+ },
+ {
+  "q": "오류나면?",
+  "lang": "ko",
+  "expect": [
+   "h-ts-camera"
+  ]
+ },
+ {
+  "q": "지금 바로 써볼수있나",
+  "lang": "ko",
+  "expect": [
+   "g-try"
+  ]
+ },
+ {
+  "q": "어디서 받음",
+  "lang": "ko",
+  "expect": [
+   "h-where-download"
+  ]
+ },
+ {
+  "q": "does it neeed internet",
+  "lang": "en",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "can i use it on windws",
+  "lang": "en",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "whats the pirce",
+  "lang": "en",
+  "expect": [
+   "g-price"
+  ]
+ },
+ {
+  "q": "who mad this",
+  "lang": "en",
+  "expect": [
+   "v-team-people"
+  ]
+ },
+ {
+  "q": "how do i unistall",
+  "lang": "en",
+  "expect": [
+   "h-uninstall"
+  ]
+ },
+ {
+  "q": "is it safe 2 use",
+  "lang": "en",
+  "expect": [
+   "g-safe-real"
+  ]
+ },
+ {
+  "q": "wat is anycontrol",
+  "lang": "en",
+  "expect": [
+   "g-what-is"
+  ]
+ },
+ {
+  "q": "can i draw wit a pen",
+  "lang": "en",
+  "expect": [
+   "g-pen-mode"
+  ]
+ },
+ {
+  "q": "how mny objects at once",
+  "lang": "en",
+  "expect": [
+   "g-multi-object"
+  ]
+ },
+ {
+  "q": "is it frre",
+  "lang": "en",
+  "expect": [
+   "h-free"
+  ]
+ },
+ {
+  "q": "does it wrk offline",
+  "lang": "en",
+  "expect": [
+   "h-offline"
+  ]
+ },
+ {
+  "q": "wich camera do i need",
+  "lang": "en",
+  "expect": [
+   "g-hardware"
+  ]
+ },
+ {
+  "q": "is my video sent 2 a server",
+  "lang": "en",
+  "expect": [
+   "g-privacy-server"
+  ]
+ },
+ {
+  "q": "how do i stpo it",
+  "lang": "en",
+  "expect": [
+   "h-emergency-stop"
+  ]
+ },
+ {
+  "q": "can it track a pne",
+  "lang": "en",
+  "expect": [
+   "g-pen-mode"
+  ]
+ },
+ {
+  "q": "whats ur limitaions",
+  "lang": "en",
+  "expect": [
+   "g-limits"
+  ]
+ },
+ {
+  "q": "dose it work on mac only",
+  "lang": "en",
+  "expect": [
+   "g-os-support"
+  ]
+ },
+ {
+  "q": "how to isntall",
+  "lang": "en",
+  "expect": [
+   "h-install-how"
+  ]
+ },
+ {
+  "q": "is it opne source",
+  "lang": "en",
+  "expect": [
+   "h-opensource"
+  ]
+ },
+ {
+  "q": "wat tools did u use",
+  "lang": "en",
+  "expect": [
+   "v-tools-used"
+  ]
+ },
+ {
+  "q": "내일 점심 머먹지 추천해줘잉",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "오늘 주식 머살까여",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "파이선 코드 짜줘여",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "비트코인 얼마에오",
+  "lang": "ko",
+  "none": true
+ },
+ {
+  "q": "whats the wether tomorow",
+  "lang": "en",
+  "none": true
+ },
+ {
+  "q": "wirte me a pome",
+  "lang": "en",
+  "none": true
+ }
+]

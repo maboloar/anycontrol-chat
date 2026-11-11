@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnyControl 챗봇 · 운영자 로그</title>
+<style>
+  body { font: 15px/1.5 system-ui, "Malgun Gothic", sans-serif; margin: 24px; color: #1b1f24; background: #f6f7f9; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  p.hint { color: #57606a; margin: 0 0 16px; }
+  .bar { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  button, select { font: inherit; padding: 6px 12px; border: 1px solid #c8ccd1; border-radius: 6px; background: #fff; cursor: pointer; }
+  table { border-collapse: collapse; width: 100%; background: #fff; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+  th { background: #eef0f3; position: sticky; top: 0; }
+  .none { background: #fff1f0; }
+  .related { background: #fff8e6; }
+  .num { text-align: right; white-space: nowrap; }
+</style>
+</head>
+<body>
+<h1>운영자 로그</h1>
+<p class="hint">이 화면은 이 컴퓨터(localhost)에서만 열립니다. “없음”과 “가까운 답”으로 나온 질문은 카드를 추가할 후보입니다.</p>
+<div class="bar">
+  <label>보기 <select id="filter">
+    <option value="all">전체</option>
+    <option value="weak" selected>없음 · 가까운 답만</option>
+    <option value="none">없음만</option>
+  </select></label>
+  <button id="reload" type="button">새로고침</button>
+  <span id="summary" role="status"></span>
+</div>
+<table>
+  <thead><tr><th>시각</th><th>질문</th><th>종류</th><th>카드</th><th class="num">점수</th><th class="num">일치율</th><th>모드</th><th class="num">ms</th></tr></thead>
+  <tbody id="rows"></tbody>
+</table>
+<script>
+  const $ = (id) => document.getElementById(id);
+  async function load() {
+    const r = await fetch("/api/admin/log", { cache: "no-store" });
+    if (!r.ok) { $("summary").textContent = "불러오지 못했어요 (" + r.status + ")"; return; }
+    const rows = (await r.json()).rows.slice().reverse();
+    const f = $("filter").value;
+    const shown = rows.filter((x) => f === "all" || (f === "none" ? x.kind === "none" : x.kind === "none" || x.kind === "related"));
+    const tb = $("rows");
+    tb.textContent = "";
+    for (const x of shown) {
+      const tr = document.createElement("tr");
+      if (x.kind === "none") tr.className = "none"; else if (x.kind === "related") tr.className = "related";
+      const cells = [x.t || x.time || "", x.q || "", x.kind || "", x.card || "", x.score ?? "", x.coverage ?? "", x.mode || "", x.ms ?? ""];
+      cells.forEach((v, i) => {
+        const td = document.createElement("td");
+        if (i >= 4 && i !== 6) td.className = "num";
+        td.textContent = String(v);
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    }
+    const c = (k) => rows.filter((x) => x.kind === k).length;
+    $("summary").textContent = "최근 " + rows.length + "건 · 답변 " + c("answer") + " · 가까운 답 " + c("related") + " · 없음 " + c("none");
+  }
+  // 이 화면도 채팅 화면처럼 열림/닫힘을 서버에 알린다 (채팅 화면에서 이동해 와도 서버가 꺼지지 않게)
+  const PAGE_ID = Math.random().toString(36).slice(2, 12);
+  const beacon = (path) => { try { navigator.sendBeacon(path, new Blob([JSON.stringify({ pid: PAGE_ID })], { type: "application/json" })); } catch (e) { /* 무시 */ } };
+  beacon("/api/hello");
+  window.addEventListener("pageshow", () => beacon("/api/hello"));
+  window.addEventListener("pagehide", () => beacon("/api/bye"));
+  setInterval(load, 3000);                      // 목록도 저절로 갱신
+  $("reload").addEventListener("click", load);
+  $("filter").addEventListener("change", load);
+  load();
+</script>
+</body>
+</html>
