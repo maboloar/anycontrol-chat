@@ -8,7 +8,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-lightgrey)
-![Offline](https://img.shields.io/badge/runs-offline-success)
+![Runs](https://img.shields.io/badge/runs-on--device%20%C2%B7%20offline-success)
 
 [AnyControl](https://github.com/maboloar/anycontrol)의 부스·시연용 안내 챗봇입니다.
 
